@@ -398,22 +398,58 @@ document.write(`
 <p>e aggiornare la soluzione <span class="math notranslate nohighlight">\(x^{n+1} = x^{n} + \Delta x\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Example of Newton method</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+<span class="sd">Find the solution of the problem f(x) = 0</span>
+<span class="sd">with f(x) = e^x - x</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a: </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">e</span><span class="o">**</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span>
-<span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">e</span><span class="o">**</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="c1"># Function f and its derivative</span>
+<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span>
+<span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="c1"># Parameters of the Newton method, for stopping criteria</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-6</span>          <span class="c1"># tolerance on the residual |f(x)| &lt; tol</span>
+<span class="n">max_niter</span> <span class="o">=</span> <span class="mi">100</span>     <span class="c1"># max n. of iterations      niter &gt; max_niter</span>
+
+<span class="c1"># Initial guess, residual and number of iterations</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">.0</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">niter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Newton algorithm</span>
+<span class="k">while</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">niter</span> <span class="o">&lt;</span> <span class="n">max_niter</span> <span class="p">):</span>
+    <span class="c1"># Solve linear approximation step, and update solution</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="o">-</span> <span class="n">res</span> <span class="o">/</span> <span class="n">df</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="n">x</span>
+
+    <span class="c1">#&gt; Evaluate new residual and n. of iter</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">niter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Newton method summary&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span> <span class="n">niter</span> <span class="o">&lt;</span> <span class="n">max_niter</span> <span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;solution, x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tol  : </span><span class="si">{</span><span class="n">tol</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;niter: </span><span class="si">{</span><span class="n">niter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;max n.iter reached without convergence&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tol: </span><span class="si">{</span><span class="n">tol</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world!
-a: [0 1 2 3 4]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Newton method summary
+max n.iter reached without convergence
+tol: 1e-06
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_193892/871110665.py:27: RuntimeWarning: divide by zero encountered in scalar divide
+  dx = - res / df(x)
 </pre></div>
 </div>
 </div>
