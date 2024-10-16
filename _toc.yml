@@ -3,5 +3,9 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: ch/numerics/nonlinear
+parts:
+- caption: Introduzione al calcolo numerico
+  chapters:
+  - file: ch/numerics
+    sections:
+    - file: ch/numerics/nonlinear
