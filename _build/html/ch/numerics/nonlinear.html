@@ -409,27 +409,30 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Function f and its derivative</span>
-<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span>
-<span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span>
+<span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 
 <span class="c1"># Parameters of the Newton method, for stopping criteria</span>
 <span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-6</span>          <span class="c1"># tolerance on the residual |f(x)| &lt; tol</span>
-<span class="n">max_niter</span> <span class="o">=</span> <span class="mi">100</span>     <span class="c1"># max n. of iterations      niter &gt; max_niter</span>
+<span class="n">max_niter</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># max n. of iterations      niter &gt; max_niter</span>
 
 <span class="c1"># Initial guess, residual and number of iterations</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mf">.0</span>
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">niter</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1"># Newton algorithm</span>
 <span class="k">while</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">niter</span> <span class="o">&lt;</span> <span class="n">max_niter</span> <span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
     <span class="c1"># Solve linear approximation step, and update solution</span>
     <span class="n">dx</span> <span class="o">=</span> <span class="o">-</span> <span class="n">res</span> <span class="o">/</span> <span class="n">df</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="n">dx</span>
 
     <span class="c1">#&gt; Evaluate new residual and n. of iter</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">niter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;niter, res: </span><span class="si">{</span><span class="n">niter</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Newton method summary&quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="p">(</span> <span class="n">niter</span> <span class="o">&lt;</span> <span class="n">max_niter</span> <span class="p">):</span>
@@ -443,13 +446,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Newton method summary
-max n.iter reached without convergence
-tol: 1e-06
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_193892/871110665.py:27: RuntimeWarning: divide by zero encountered in scalar divide
-  dx = - res / df(x)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.6321205588285577
+niter, res: 1, 0.046100486291689724
+0.046100486291689724
+niter, res: 2, 0.0002449498638371628
+0.0002449498638371628
+niter, res: 3, 6.927808993140161e-09
+Newton method summary
+solution, x = -0.567143285989123
+tol  : 1e-06
+niter: 3
 </pre></div>
 </div>
 </div>
