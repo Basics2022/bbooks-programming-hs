@@ -9,3 +9,4 @@
 - Equazioni differenziali ordinarie:
   - problema di Cauchy ai valori iniziali
   - problema ai valori al contorno
+- Ottimizzazione, vincolata e non

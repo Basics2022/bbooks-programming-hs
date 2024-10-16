@@ -13,7 +13,7 @@ parts:
     sections:
     - file: ch/numerics/linear
     - file: ch/numerics/nonlinear
-    - file: ch/numerics/approximations
+    - file: ch/numerics/approximation
     - file: ch/numerics/derivatives
     - file: ch/numerics/integrals
     - file: ch/numerics/ode
