@@ -1,0 +1,83 @@
+Traceback (most recent call last):
+  File "/home/davide/.local/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/davide/.local/lib/python3.8/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/davide/.local/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/davide/.local/lib/python3.8/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/davide/.local/lib/python3.8/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/davide/.local/lib/python3.8/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+"""
+Example of Newton method
+
+Find the solution of the problem f(x) = 0
+with f(x) = e^x - x
+
+"""
+
+import numpy as np
+
+# Function f and its derivative
+f  = lambda x: e**x - x
+df = lambda x: e**x - 1
+
+# Parameters of the Newton method, for stopping criteria
+tol = 1e-6          # tolerance on the residual |f(x)| < tol
+max_niter = 100     # max n. of iterations      niter > max_niter
+
+# Initial guess, residual and number of iterations
+x = .0
+res = f(x)
+niter = 0
+
+# Newton algorithm
+while ( np.abs(res) > tol and niter < max_niter ):
+    # Solve linear approximation step, and update solution
+    dx = - res / df(x)
+    x += x
+
+    #> Evaluate new residual and n. of iter
+    res = f(x)
+    niter += 1
+
+print("Newton method summary")
+if ( niter < max_niter ):
+    print(f"solution, x = {x}")
+    print(f"tol  : {tol}")
+    print(f"niter: {niter}")
+else:
+    print(f"max n.iter reached without convergence")
+    print(f"tol: {tol}")
+
+
+
+
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[1], line 21[0m
+[1;32m     19[0m [38;5;66;03m# Initial guess, residual and number of iterations[39;00m
+[1;32m     20[0m x [38;5;241m=[39m [38;5;241m.0[39m
+[0;32m---> 21[0m res [38;5;241m=[39m [43mf[49m[43m([49m[43mx[49m[43m)[49m
+[1;32m     22[0m niter [38;5;241m=[39m [38;5;241m0[39m
+[1;32m     24[0m [38;5;66;03m# Newton algorithm[39;00m
+
+Cell [0;32mIn[1], line 12[0m, in [0;36m<lambda>[0;34m(x)[0m
+[1;32m      9[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[1;32m     11[0m [38;5;66;03m# Function f and its derivative[39;00m
+[0;32m---> 12[0m f  [38;5;241m=[39m [38;5;28;01mlambda[39;00m x: [43me[49m[38;5;241m*[39m[38;5;241m*[39mx [38;5;241m-[39m x
+[1;32m     13[0m df [38;5;241m=[39m [38;5;28;01mlambda[39;00m x: e[38;5;241m*[39m[38;5;241m*[39mx [38;5;241m-[39m [38;5;241m1[39m
+[1;32m     15[0m [38;5;66;03m# Parameters of the Newton method, for stopping criteria[39;00m
+
+[0;31mNameError[0m: name 'e' is not defined
+
