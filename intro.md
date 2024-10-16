@@ -1,5 +1,7 @@
 # Introduzione alla programmazione
 
+Questo libro fa parte del materiale pensato per [le scuole superiori](https://basics2022.github.io/bbooks-hs)
+
 **Metodo.**
 Usando Python, per ottenere un approccio abbastanza diretto all'applicazione.
 Un approccio più generale all'informatica e alla programmazione prevederebbe l'utilizzo di altri linguaggio di programmazione (come C).
