@@ -4,8 +4,23 @@
 format: jb-book
 root: intro
 parts:
+- caption: Introduzione alla programmazione
+  chapters:
+  - file: ch/programming
 - caption: Introduzione al calcolo numerico
   chapters:
   - file: ch/numerics
     sections:
+    - file: ch/numerics/linear
     - file: ch/numerics/nonlinear
+    - file: ch/numerics/approximations
+    - file: ch/numerics/derivatives
+    - file: ch/numerics/integrals
+    - file: ch/numerics/ode
+      sections:
+      - file: ch/numerics/ode-cauchy
+      - file: ch/numerics/ode-boundary
+    - file: ch/numerics/optimization
+- caption: Introduzione ai metodi in AI
+  chapters:
+  - file: ch/ai
