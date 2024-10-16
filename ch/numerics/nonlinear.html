@@ -409,15 +409,15 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Function f and its derivative</span>
-<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">e</span><span class="o">**</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span>
-<span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">e</span><span class="o">**</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span>
+<span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 
 <span class="c1"># Parameters of the Newton method, for stopping criteria</span>
 <span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-6</span>          <span class="c1"># tolerance on the residual |f(x)| &lt; tol</span>
 <span class="n">max_niter</span> <span class="o">=</span> <span class="mi">100</span>     <span class="c1"># max n. of iterations      niter &gt; max_niter</span>
 
 <span class="c1"># Initial guess, residual and number of iterations</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mf">.0</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">1.</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">niter</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -443,23 +443,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">21</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="c1"># Initial guess, residual and number of iterations</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">.0</span>
-<span class="ne">---&gt; </span><span class="mi">21</span> <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="n">niter</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="c1"># Newton algorithm</span>
-
-<span class="nn">Cell In[1], line 12,</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(x)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># Function f and its derivative</span>
-<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">e</span><span class="o">**</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">e</span><span class="o">**</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># Parameters of the Newton method, for stopping criteria</span>
-
-<span class="ne">NameError</span>: name &#39;e&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Newton method summary
+max n.iter reached without convergence
+tol: 1e-06
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_194038/1635793427.py:12: RuntimeWarning: overflow encountered in exp
+  f  = lambda x: np.exp(x) - x
+/tmp/ipykernel_194038/1635793427.py:13: RuntimeWarning: overflow encountered in exp
+  df = lambda x: np.exp(x) - 1
+/tmp/ipykernel_194038/1635793427.py:27: RuntimeWarning: invalid value encountered in scalar divide
+  dx = - res / df(x)
 </pre></div>
 </div>
 </div>
