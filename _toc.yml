@@ -7,6 +7,11 @@ parts:
 - caption: Introduzione alla programmazione
   chapters:
   - file: ch/programming
+  - file: ch/programming/types
+  - file: ch/programming/flow_control
+  - file: ch/programming/functions
+  - file: ch/programming/oo
+  - file: ch/programming/libraries
 - caption: Introduzione al calcolo numerico
   chapters:
   - file: ch/numerics

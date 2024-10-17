@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/numerics/ode-cauchy';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -171,11 +173,18 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione alla programmazione</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../programming.html">Basi di programmazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/types.html">Tipi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/flow_control.html">Controllo del flusso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/functions.html">Funzioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/oo.html">Classi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/libraries.html">Librerie</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione al calcolo numerico</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo numerico</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linear.html">Sistemi lineari</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nonlinear.html">Problemi non lineari</a></li>
+<li class="toctree-l2"><a class="reference internal" href="approximation.html">Approssimazione di funzioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="derivatives.html">Derivate di funzioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integrals.html">Integrali</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="ode.html">Equazioni differenziali ordinarie</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -244,7 +253,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -261,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch/numerics/ode-cauchy.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/numerics/ode-cauchy.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +371,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -378,6 +389,20 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approccio-a-un-problema-di-cauchy-di-ordine-n">Approccio a un problema di Cauchy di ordine <span class="math notranslate nohighlight">\(n\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caratteristiche-cenni">Caratteristiche (cenni)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schemi-numerici">Schemi numerici</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schemi-numerici-a-un-passo">Schemi numerici a un passo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schemi-numerici-multi-step">Schemi numerici multi-step</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -389,6 +414,61 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="problemi-di-cauchy-ai-valori-iniziali">
 <h1>Problemi di Cauchy ai valori iniziali<a class="headerlink" href="#problemi-di-cauchy-ai-valori-iniziali" title="Permalink to this heading">#</a></h1>
+<div class="section" id="approccio-a-un-problema-di-cauchy-di-ordine-n">
+<h2>Approccio a un problema di Cauchy di ordine <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#approccio-a-un-problema-di-cauchy-di-ordine-n" title="Permalink to this heading">#</a></h2>
+<p>Un problema di Cauchy di ordine <span class="math notranslate nohighlight">\(n\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  F(y^{(n)}(x), y^{(n-1)}(x), \dots, y'(x), y(x), x) = 0 \\
+  y(x_0) = y^0 \\
+  y'(x_0) = y'^0 \\
+  \dots \\
+  y^{(n-1)}(x_0) = y^{(n-1),0}
+\end{cases}\end{split}\]</div>
+<p>con funzione incognita <span class="math notranslate nohighlight">\(y(x): D \in \mathbb{R} \rightarrow \mathbb{R}\)</span>, può essere riscritto come un problema di <em>“ordine 1”</em> per la funzione incognita <span class="math notranslate nohighlight">\(\mathbf{z}(x): D \in \mathbb{R} \rightarrow \mathbb{R}^n\)</span>, definita come</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{z}(x) = (z_0(x), z_1(x), \dots z_{n-1}(x)) := (y(x), y'(x), \dots, y^{(n-1)}(x)) \ .\]</div>
+<p>Esplicitando le relazioni tra le componenti di <span class="math notranslate nohighlight">\(\mathbf{z}(x)\)</span> e le derivate della funzione <span class="math notranslate nohighlight">\(y(x)\)</span>, <span class="math notranslate nohighlight">\(z_{k}(x) = y^{(k)}(x) = {y^{(k-1)}}'(x) = z'_{k-1}(x)\)</span>, il problema di Cauchy può essere riformulato come</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+z'_0 - z_1 = 0 \\
+z'_1 - z_2 = 0 \\
+\dots \\
+z'_{n-2} - z_{n-1} = 0 \\
+F(z'_{n-1}(x), z_{n-1}(x), \dots, z_1(x), z_0(x)) = 0 \ ,
+\end{cases}
+\qquad , \qquad
+\text{i.c.} \quad
+\begin{cases}
+z_0(x_0) = y^0 \\
+z_1(x_0) = y'^0 \\
+\dots \\
+z_{n-1}(x_0) = y^{(n-1),0}
+\end{cases}
+\end{split}\]</div>
+<p>che può essere riscritto con il formalismo vettoriale come</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  \mathbf{F}(\mathbf{z}'(x), \mathbf{z}) = \mathbf{0} \\
+  \mathbf{z}(x_0) = \mathbf{z}_0
+\end{cases}\end{split}\]</div>
+</div>
+<div class="section" id="caratteristiche-cenni">
+<h2>Caratteristiche (cenni)<a class="headerlink" href="#caratteristiche-cenni" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>accuratezza, consistenza, convergenza</p></li>
+<li><p>stabilità: 0-, A- condizionata e incondizionata</p></li>
+</ul>
+</div>
+<div class="section" id="schemi-numerici">
+<h2>Schemi numerici<a class="headerlink" href="#schemi-numerici" title="Permalink to this heading">#</a></h2>
+<div class="section" id="schemi-numerici-a-un-passo">
+<h3>Schemi numerici a un passo<a class="headerlink" href="#schemi-numerici-a-un-passo" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="schemi-numerici-multi-step">
+<h3>Schemi numerici multi-step<a class="headerlink" href="#schemi-numerici-multi-step" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -445,6 +525,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approccio-a-un-problema-di-cauchy-di-ordine-n">Approccio a un problema di Cauchy di ordine <span class="math notranslate nohighlight">\(n\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caratteristiche-cenni">Caratteristiche (cenni)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schemi-numerici">Schemi numerici</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schemi-numerici-a-un-passo">Schemi numerici a un passo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schemi-numerici-multi-step">Schemi numerici multi-step</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
