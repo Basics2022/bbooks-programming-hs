@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Approssimazione di funzioni &#8212; My sample book</title>
+    <title>Funzioni &#8212; My sample book</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/numerics/approximation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/programming/functions';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Derivate di funzioni" href="derivatives.html" />
-    <link rel="prev" title="Problemi non lineari" href="nonlinear.html" />
+    <link rel="next" title="Classi" href="oo.html" />
+    <link rel="prev" title="Controllo del flusso" href="flow_control.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,28 +169,28 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione alla programmazione</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../programming.html">Basi di programmazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../programming/types.html">Tipi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../programming/flow_control.html">Controllo del flusso</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../programming/functions.html">Funzioni</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../programming/oo.html">Classi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../programming/libraries.html">Librerie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types.html">Tipi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flow_control.html">Controllo del flusso</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Funzioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oo.html">Classi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Librerie</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione al calcolo numerico</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo numerico</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="linear.html">Sistemi lineari</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nonlinear.html">Problemi non lineari</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Approssimazione di funzioni</a></li>
-<li class="toctree-l2"><a class="reference internal" href="derivatives.html">Derivate di funzioni</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrals.html">Integrali</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="ode.html">Equazioni differenziali ordinarie</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="ode-cauchy.html">Problemi di Cauchy ai valori iniziali</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ode-boundary.html">Problemi al contorno</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo numerico</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/linear.html">Sistemi lineari</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/nonlinear.html">Problemi non lineari</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/approximation.html">Approssimazione di funzioni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/derivatives.html">Derivate di funzioni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/integrals.html">Integrali</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../numerics/ode.html">Equazioni differenziali ordinarie</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../numerics/ode-cauchy.html">Problemi di Cauchy ai valori iniziali</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../numerics/ode-boundary.html">Problemi al contorno</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="optimization.html">Ottimizzazione</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/optimization.html">Ottimizzazione</a></li>
 </ul>
 </li>
 </ul>
@@ -268,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/numerics/approximation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/programming/functions.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/numerics/approximation.ipynb" target="_blank"
+      <li><a href="../../_sources/ch/programming/functions.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Approssimazione di funzioni</h1>
+    <h1>Funzioni</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,8 +392,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolazione">Interpolazione</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressione">Regressione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-value-of-function-arguments">Default value of function arguments</a></li>
 </ul>
             </nav>
         </div>
@@ -405,13 +404,66 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="approssimazione-di-funzioni">
-<h1>Approssimazione di funzioni<a class="headerlink" href="#approssimazione-di-funzioni" title="Permalink to this heading">#</a></h1>
-<div class="section" id="interpolazione">
-<h2>Interpolazione<a class="headerlink" href="#interpolazione" title="Permalink to this heading">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="funzioni">
+<h1>Funzioni<a class="headerlink" href="#funzioni" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Define a function to tell if a number is positive or not</span>
+<span class="k">def</span> <span class="nf">is_positive</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Function returning True if x&gt;0, False if x&lt;=0 &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+<span class="c1">#&gt; User input to test the function: tuple of numbers</span>
+<span class="n">n_tuple</span> <span class="o">=</span> <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">.003</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">3.</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.4</span> <span class="p">]</span>
+
+<span class="c1">#&gt; Test function on all the elements in the user-defined tuple</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_tuple</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">is_positive</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">):</span> 
+        <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;not &#39;</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> is &#39;</span><span class="o">+</span><span class="n">string</span><span class="o">+</span><span class="s1">&#39;positive&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="regressione">
-<h2>Regressione<a class="headerlink" href="#regressione" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1 is not positive
+2.0 is positive
+0.003 is positive
+0.3333333333333333 is positive
+-2.2 is not positive
+0 is not positive
+-7.4 is not positive
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="default-value-of-function-arguments">
+<h2>Default value of function arguments<a class="headerlink" href="#default-value-of-function-arguments" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Define a user function to tell is the first argument is greater than the second.</span>
+<span class="c1"># If no second argument is given, it&#39;s set = 0 (default value, defined in the function)</span>
+<span class="k">def</span> <span class="nf">is_greater_than</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;  &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">is_positive</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Is </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> greater than </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">? is_greater_than(</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">):&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">is_greater_than</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Is </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> greater than  0 ? is_greater_than(</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">,    ):&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">is_greater_than</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
+
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Is -2 greater than -3? is_greater_than(-2, -3):True
+Is -2 greater than  0 ? is_greater_than(-2,    ):False
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -428,7 +480,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./ch/numerics"
+            path: "./ch/programming"
         },
         predefinedOutput: true
     }
@@ -446,20 +498,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="nonlinear.html"
+       href="flow_control.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Problemi non lineari</p>
+        <p class="prev-next-title">Controllo del flusso</p>
       </div>
     </a>
     <a class="right-next"
-       href="derivatives.html"
+       href="oo.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Derivate di funzioni</p>
+        <p class="prev-next-title">Classi</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -478,8 +530,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolazione">Interpolazione</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressione">Regressione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-value-of-function-arguments">Default value of function arguments</a></li>
 </ul>
   </nav></div>
 

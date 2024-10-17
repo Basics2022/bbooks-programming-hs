@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Approssimazione di funzioni &#8212; My sample book</title>
+    <title>Controllo del flusso &#8212; My sample book</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/numerics/approximation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/programming/flow_control';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Derivate di funzioni" href="derivatives.html" />
-    <link rel="prev" title="Problemi non lineari" href="nonlinear.html" />
+    <link rel="next" title="Funzioni" href="functions.html" />
+    <link rel="prev" title="Tipi" href="types.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,28 +169,28 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione alla programmazione</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../programming.html">Basi di programmazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../programming/types.html">Tipi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../programming/flow_control.html">Controllo del flusso</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../programming/functions.html">Funzioni</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../programming/oo.html">Classi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../programming/libraries.html">Librerie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types.html">Tipi</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Controllo del flusso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Funzioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oo.html">Classi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Librerie</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione al calcolo numerico</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo numerico</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="linear.html">Sistemi lineari</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nonlinear.html">Problemi non lineari</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Approssimazione di funzioni</a></li>
-<li class="toctree-l2"><a class="reference internal" href="derivatives.html">Derivate di funzioni</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrals.html">Integrali</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="ode.html">Equazioni differenziali ordinarie</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="ode-cauchy.html">Problemi di Cauchy ai valori iniziali</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ode-boundary.html">Problemi al contorno</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo numerico</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/linear.html">Sistemi lineari</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/nonlinear.html">Problemi non lineari</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/approximation.html">Approssimazione di funzioni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/derivatives.html">Derivate di funzioni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/integrals.html">Integrali</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../numerics/ode.html">Equazioni differenziali ordinarie</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../numerics/ode-cauchy.html">Problemi di Cauchy ai valori iniziali</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../numerics/ode-boundary.html">Problemi al contorno</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="optimization.html">Ottimizzazione</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/optimization.html">Ottimizzazione</a></li>
 </ul>
 </li>
 </ul>
@@ -268,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/numerics/approximation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/programming/flow_control.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/numerics/approximation.ipynb" target="_blank"
+      <li><a href="../../_sources/ch/programming/flow_control.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Approssimazione di funzioni</h1>
+    <h1>Controllo del flusso</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,8 +392,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolazione">Interpolazione</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressione">Regressione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternativa">Alternativa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-then-e-if-then-else">if-then e if-then-else</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch">switch</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterazione">Iterazione</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">for loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">while loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#altri-cicli">altri cicli</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -405,13 +414,77 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="approssimazione-di-funzioni">
-<h1>Approssimazione di funzioni<a class="headerlink" href="#approssimazione-di-funzioni" title="Permalink to this heading">#</a></h1>
-<div class="section" id="interpolazione">
-<h2>Interpolazione<a class="headerlink" href="#interpolazione" title="Permalink to this heading">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="controllo-del-flusso">
+<h1>Controllo del flusso<a class="headerlink" href="#controllo-del-flusso" title="Permalink to this heading">#</a></h1>
+<p>Nei paradigmi di <em>programmazione imperativa</em> (<strong>todo</strong> fare riferimento ai paradigmi di programmazione. Ha senso questa distinzione?), vengono usate delle strutture di controllo del flusso di esecuzione di un programma.</p>
+<p>Si possono distinguere due categorie delle strutture di controllo:</p>
+<ul class="simple">
+<li><p>alternativa: if-then, if-then-else</p></li>
+<li><p>iterazione: for, while, …</p></li>
+</ul>
+<div class="section" id="alternativa">
+<h2>Alternativa<a class="headerlink" href="#alternativa" title="Permalink to this heading">#</a></h2>
+<div class="section" id="if-then-e-if-then-else">
+<h3>if-then e if-then-else<a class="headerlink" href="#if-then-e-if-then-else" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Test if-then &quot;&quot;&quot;</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mf">2.1</span>
+
+<span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;odd&#39;</span>
+<span class="k">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">):</span>   <span class="c1"># automatic casting into an int -&gt; a % 2 = floor(a) % 2</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;even&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;User input (</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">) is an </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2"> number&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="regressione">
-<h2>Regressione<a class="headerlink" href="#regressione" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User input (2.1) is an odd number
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Test if-then-else &quot;&quot;&quot;</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mf">15.7</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">):</span>
+    <span class="n">reminder</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">elif</span> <span class="p">(</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">):</span>
+    <span class="n">reminder</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">reminder</span> <span class="o">=</span> <span class="mi">0</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;User input (</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">). </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> % 3 = </span><span class="si">{</span><span class="n">reminder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User input (15.7). 15.7 % 3 = 0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="switch">
+<h3>switch<a class="headerlink" href="#switch" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+<div class="section" id="iterazione">
+<h2>Iterazione<a class="headerlink" href="#iterazione" title="Permalink to this heading">#</a></h2>
+<div class="section" id="for-loop">
+<h3>for loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="while-loop">
+<h3>while loop<a class="headerlink" href="#while-loop" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="altri-cicli">
+<h3>altri cicli<a class="headerlink" href="#altri-cicli" title="Permalink to this heading">#</a></h3>
+</div>
 </div>
 </div>
 
@@ -428,7 +501,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./ch/numerics"
+            path: "./ch/programming"
         },
         predefinedOutput: true
     }
@@ -446,20 +519,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="nonlinear.html"
+       href="types.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Problemi non lineari</p>
+        <p class="prev-next-title">Tipi</p>
       </div>
     </a>
     <a class="right-next"
-       href="derivatives.html"
+       href="functions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Derivate di funzioni</p>
+        <p class="prev-next-title">Funzioni</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -478,8 +551,17 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolazione">Interpolazione</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressione">Regressione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternativa">Alternativa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-then-e-if-then-else">if-then e if-then-else</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch">switch</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterazione">Iterazione</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">for loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">while loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#altri-cicli">altri cicli</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
