@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Problemi non lineari &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>Equazioni algebriche non lineari &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo scientifico</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="linear.html">Sistemi lineari</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problemi non lineari</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Equazioni algebriche non lineari</a></li>
 <li class="toctree-l2"><a class="reference internal" href="approximation.html">Approssimazione di funzioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="derivatives.html">Derivate di funzioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integrals.html">Integrali</a></li>
@@ -433,7 +433,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problemi non lineari</h1>
+    <h1>Equazioni algebriche non lineari</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -443,8 +443,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-bisezione">Metodo di bisezione</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-newton">Metodo di Newton</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equazioni-non-lineari">Equazioni non lineari</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-bisezione">Metodo di bisezione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-newton">Metodo di Newton</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemi-di-equazioni-non-lineari">Sistemi di equazioni non lineari</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio">Esempio</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -456,152 +463,291 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="problemi-non-lineari">
-<h1>Problemi non lineari<a class="headerlink" href="#problemi-non-lineari" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="equazioni-algebriche-non-lineari">
+<h1>Equazioni algebriche non lineari<a class="headerlink" href="#equazioni-algebriche-non-lineari" title="Permalink to this heading">#</a></h1>
+<p>Questa sezione si occupa della soluzione delle equazioni algebriche non lineari, distinguendo le equazioni non lineari con una sola incognita <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span></p>
+<div class="math notranslate nohighlight">
+\[f(x) = 0 \ ,\]</div>
+<p>e i sistemi di equazioni non lineari con un numero di incognite pari al numero di equazione,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{f}(\mathbf{x}) = \mathbf{0} \ .\]</div>
+<div class="section" id="equazioni-non-lineari">
+<h2>Equazioni non lineari<a class="headerlink" href="#equazioni-non-lineari" title="Permalink to this heading">#</a></h2>
+<p>Vengono presentati i metodi di bisezione e di Newton per la soluzione di un’equazione non lineare,</p>
+<div class="math notranslate nohighlight">
+\[f(x) = 0 \ ,\]</div>
+<p>e applicati alla soluzione del problema con <span class="math notranslate nohighlight">\(f(x) = e^x + x\)</span>, la cui derivata è nota e immediata da calcolare <span class="math notranslate nohighlight">\(f'(x) = e^x + 1\)</span>. L’espressione della derivata verrà utilizzata nel metodo di Newton.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Import libaries &quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Example. f(x) = e^x + x</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Function f and its derivative</span>
+<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span>
+<span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="metodo-di-bisezione">
-<h2>Metodo di bisezione<a class="headerlink" href="#metodo-di-bisezione" title="Permalink to this heading">#</a></h2>
+<h3>Metodo di bisezione<a class="headerlink" href="#metodo-di-bisezione" title="Permalink to this heading">#</a></h3>
 <p>Il metodo di bisezione per la ricerca degli zeri di una funzione continua <span class="math notranslate nohighlight">\(F(x)\)</span> si basa sul teorema dei valori intermedi per le funzioni continue.</p>
 <p>Dati due numeri reali <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> tali che <span class="math notranslate nohighlight">\(f(a) \, f(b) &lt; 0\)</span>, allora esiste un punto <span class="math notranslate nohighlight">\(c \in (a,b)\)</span> tale che <span class="math notranslate nohighlight">\(f(c) = 0\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Example of bisection method</span>
-
-<span class="sd">Find the solution of the problem f(x) = 0</span>
-<span class="sd">with f(x) = e^x - x</span>
-
+<span class="sd">Define bisection_method_scalar() function to solve nonlinear scalar equations with bisection method</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="k">def</span> <span class="nf">bisection_method_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_niter</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Function implementing the bisection method for scalar equations &quot;&quot;&quot;</span>
 
-<span class="c1"># Function f and its derivative</span>
-<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span>
-<span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">niter</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="c1"># Parameters of the bi-section method</span>
-<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-6</span>
-<span class="n">max_niter</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="ow">not</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bisection algorithm can&#39;t start, f(a)f(b)&gt;= 0&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mf">.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+        <span class="n">fx</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">while</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">niter</span> <span class="o">&lt;</span> <span class="n">max_niter</span> <span class="p">):</span>
+        
+            <span class="k">if</span> <span class="p">(</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="p">):</span>  <span class="c1"># new range [a,c]</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="n">x</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># new range [a,b]</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">x</span>
+        
+            <span class="c1"># Update solution and residual</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="mf">.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+            <span class="n">fx</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+            <span class="c1"># Update n.iter</span>
+            <span class="n">niter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fx</span><span class="p">),</span> <span class="n">niter</span><span class="p">,</span> <span class="n">max_niter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Use bisection_method_scalar() function to solve the example &quot;&quot;&quot;</span>
 
 <span class="c1"># Find 2 values so that $f(a) f(b) &lt; 0$</span>
 <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">0.</span>
-<span class="n">niter</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="k">if</span> <span class="p">(</span> <span class="ow">not</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bisection algorithm can&#39;t start, f(a)f(b)&gt;= 0&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mf">.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
-    <span class="n">fx</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">while</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">niter</span> <span class="o">&lt;</span> <span class="n">max_niter</span> <span class="p">):</span>
-        
-        <span class="k">if</span> <span class="p">(</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="p">):</span>  <span class="c1"># new range [a,c]</span>
-            <span class="n">b</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="k">else</span><span class="p">:</span>  <span class="c1"># new range [a,b]</span>
-            <span class="n">a</span> <span class="o">=</span> <span class="n">x</span>
-        
-        <span class="c1"># Update solution and residual</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="mf">.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
-        <span class="n">fx</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">niter</span><span class="p">,</span> <span class="n">max_niter</span> <span class="o">=</span> <span class="n">bisection_method_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,)</span>
 
-        <span class="c1"># Update n.iter</span>
-        <span class="n">niter</span> <span class="o">+=</span> <span class="mi">1</span>            
-        
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bisection method summary&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bisection method summary: &quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="p">(</span> <span class="n">niter</span> <span class="o">&lt;</span> <span class="n">max_niter</span> <span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;solution, x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;res  : </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;niter: </span><span class="si">{</span><span class="n">niter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;etime: </span><span class="si">{</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Convergence reached&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sol, x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;max n.iter reached without convergence&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;res: </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;residual     : </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n. iterations: </span><span class="si">{</span><span class="n">niter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;elapsed time : </span><span class="si">{</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bisection method summary
-solution, x = -0.567143440246582
-res  : -2.348157265297246e-07
-niter: 20
-etime: 0.0008566379547119141
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bisection method summary: 
+Convergence reached
+Sol, x = -0.567143440246582
+residual     : -2.348157265297246e-07
+n. iterations: 20
+elapsed time : 0.0005495548248291016
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="metodo-di-newton">
-<h2>Metodo di Newton<a class="headerlink" href="#metodo-di-newton" title="Permalink to this heading">#</a></h2>
+<h3>Metodo di Newton<a class="headerlink" href="#metodo-di-newton" title="Permalink to this heading">#</a></h3>
 <p>Per trovare la soluzione del problema non lineare</p>
 <div class="math notranslate nohighlight">
-\[F(x) = 0 \ ,\]</div>
-<p>il metodo di Newton sfrutta l’espansione in serie troncata al primo grado della funzione <span class="math notranslate nohighlight">\(F(x)\)</span>, per scrivere</p>
+\[f(x) = 0 \ ,\]</div>
+<p>il metodo di Newton sfrutta l’espansione in serie troncata al primo grado della funzione <span class="math notranslate nohighlight">\(f(x)\)</span>, per scrivere</p>
 <div class="math notranslate nohighlight">
-\[0 = F(x^n + \Delta x) \approx F(x^n) + F'(x^n) \Delta x \]</div>
+\[0 = f(x^n + \Delta x) \approx f(x^n) + f'(x^n) \Delta x \]</div>
 <p>e ottenere l’incremento della soluzione <span class="math notranslate nohighlight">\(\Delta x\)</span> come soluzione del sistema lineare</p>
 <div class="math notranslate nohighlight">
-\[F'(x^n) \Delta x = -F(x^n)\]</div>
+\[f'(x^n) \Delta x = -f(x^n)\]</div>
 <p>e aggiornare la soluzione <span class="math notranslate nohighlight">\(x^{n+1} = x^{n} + \Delta x\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Example of Newton method</span>
-
-<span class="sd">Find the solution of the problem f(x) = 0</span>
-<span class="sd">with f(x) = e^x - x</span>
-
+<span class="sd">Define newton_method_scalar() function to solve nonlinear scalar equations with Newton&#39;s method</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="c1"># import numpy as np (already imported?)</span>
+<span class="k">def</span> <span class="nf">newton_method_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">.0</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_niter</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Function implementing Newton&#39;s method for scalar equations &quot;&quot;&quot;</span>
+    
+    <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">niter</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># Newton algorithm</span>
+    <span class="k">while</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">niter</span> <span class="o">&lt;</span> <span class="n">max_niter</span> <span class="p">):</span>
+        <span class="c1"># Solve linear approximation step, and update solution</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="o">-</span> <span class="n">res</span> <span class="o">/</span> <span class="n">df</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">dx</span>
+    
+        <span class="c1">#&gt; Evaluate new residual and n. of iter</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">niter</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="c1"># # Function f and its derivative (already defined?)</span>
-<span class="c1"># f  = lambda x: np.exp(x) + x</span>
-<span class="c1"># df = lambda x: np.exp(x) + 1</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">niter</span><span class="p">,</span> <span class="n">max_niter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Use newton_method_scalar() function to solve the example &quot;&quot;&quot;</span>
+
+<span class="c1"># import numpy as np   # already imported</span>
 
 <span class="c1"># Parameters of the Newton method, for stopping criteria</span>
-<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-6</span>          <span class="c1"># tolerance on the residual |f(x)| &lt; tol</span>
-<span class="n">max_niter</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># max n. of iterations      niter &gt; max_niter</span>
+<span class="c1"># tol = 1e-6          # tolerance on the residual |f(x)| &lt; tol</span>
+<span class="c1"># max_niter = 10      # max n. of iterations      niter &gt; max_niter</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span>
 
 <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">niter</span><span class="p">,</span> <span class="n">max_niter</span> <span class="o">=</span> <span class="n">newton_method_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x0</span><span class="p">)</span>
 
-<span class="c1"># Initial guess, residual and number of iterations</span>
-<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">niter</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="c1"># Newton algorithm</span>
-<span class="k">while</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">niter</span> <span class="o">&lt;</span> <span class="n">max_niter</span> <span class="p">):</span>
-    <span class="c1"># Solve linear approximation step, and update solution</span>
-    <span class="n">dx</span> <span class="o">=</span> <span class="o">-</span> <span class="n">res</span> <span class="o">/</span> <span class="n">df</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">+=</span> <span class="n">dx</span>
-
-    <span class="c1">#&gt; Evaluate new residual and n. of iter</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">niter</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Newton method summary&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Newton&#39;s method summary: &quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="p">(</span> <span class="n">niter</span> <span class="o">&lt;</span> <span class="n">max_niter</span> <span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;solution, x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;res  : </span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;niter: </span><span class="si">{</span><span class="n">niter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;etime: </span><span class="si">{</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Convergence reached&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sol, x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;max n.iter reached without convergence&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;res: </span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;etime: </span><span class="si">{</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;residual     : </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n. iterations: </span><span class="si">{</span><span class="n">niter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;elapsed time : </span><span class="si">{</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Newton method summary
-solution, x = -0.567143285989123
-res  : 6.927808993140161e-09
-niter: 3
-etime: 0.0005071163177490234
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Newton&#39;s method summary: 
+Convergence reached
+Sol, x = -0.567143285989123
+residual     : 6.927808993140161e-09
+n. iterations: 3
+elapsed time : 0.00041985511779785156
 </pre></div>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="sistemi-di-equazioni-non-lineari">
+<h2>Sistemi di equazioni non lineari<a class="headerlink" href="#sistemi-di-equazioni-non-lineari" title="Permalink to this heading">#</a></h2>
+<div class="section" id="esempio">
+<h3>Esempio<a class="headerlink" href="#esempio" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+    x_1   - x_2 = 0 \\
+  - x_1^2 + x_2 = -1
+\end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{f}(\mathbf{x}) = \begin{bmatrix} x_1 - x_2 \\ -x_1^2 + x_2 - 1 \end{bmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{f}'(\mathbf{x}) = \begin{bmatrix} 1 &amp; - 1 \\ - 2 x_1 &amp; 1\end{bmatrix}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Example. f(x) = e^x + x</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Function f and its derivative</span>
+<span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Define newton_method_scalar() function to solve nonlinear systems of equations with Newton&#39;s method</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">newton_method_system</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">.0</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_niter</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Function implementing Newton&#39;s method for systems of equations &quot;&quot;&quot;</span>
+    
+    <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">niter</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># Newton algorithm</span>
+    <span class="k">while</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">niter</span> <span class="o">&lt;</span> <span class="n">max_niter</span> <span class="p">):</span>
+        <span class="c1"># Solve linear approximation step, and update solution</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">df</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">res</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">dx</span>
+    
+        <span class="c1">#&gt; Evaluate new residual and n. of iter</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">niter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">niter</span><span class="p">,</span> <span class="n">max_niter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Use newton_method_scalar() function to solve the example &quot;&quot;&quot;</span>
+
+<span class="c1"># import numpy as np   # already imported</span>
+
+<span class="c1"># Parameters of the Newton method, for stopping criteria</span>
+<span class="c1"># tol = 1e-6          # tolerance on the residual |f(x)| &lt; tol</span>
+<span class="c1"># max_niter = 10      # max n. of iterations      niter &gt; max_niter</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="o">-</span><span class="mf">1.</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">])</span>
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">niter</span><span class="p">,</span> <span class="n">max_niter</span> <span class="o">=</span> <span class="n">newton_method_system</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Newton&#39;s method summary: &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span> <span class="n">niter</span> <span class="o">&lt;</span> <span class="n">max_niter</span> <span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Convergence reached&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sol, x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;max n.iter reached without convergence&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;residual     : </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n. iterations: </span><span class="si">{</span><span class="n">niter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;elapsed time : </span><span class="si">{</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">t1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Newton&#39;s method summary: 
+Convergence reached
+Sol, x = [-0.61803399 -0.61803399]
+residual     : [ 0.00000000e+00 -2.10942375e-13]
+n. iterations: 4
+elapsed time : 0.0006754398345947266
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>todo</strong> L’algoritmo di Newton trova solo una soluzione del problema. Cercare le altre soluzioni cambiando il tentativo iniziale.</p></li>
+<li><p><strong>todo</strong> … altro?</p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -669,8 +815,15 @@ etime: 0.0005071163177490234
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-bisezione">Metodo di bisezione</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-newton">Metodo di Newton</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equazioni-non-lineari">Equazioni non lineari</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-bisezione">Metodo di bisezione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-newton">Metodo di Newton</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemi-di-equazioni-non-lineari">Sistemi di equazioni non lineari</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio">Esempio</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
