@@ -950,7 +950,17 @@ Dopo aver riscritto i sistemi lineari con il formalismo matriciale, si può prov
 \subsection{Matrici sparse}
 \label{\detokenize{ch/numerics/linear:matrici-sparse}}
 \sphinxAtStartPar
-Una matrice sparsa ha un elevato numero di elementi nulli.
+Una matrice sparsa ha un elevato numero di elementi nulli. Una matrice sparsa viene definita in maniera efficiente salvando in memoria solo gli elementi non nulli (\sphinxstylestrong{limiti di memoria}); gli algoritmi per le matrici sparse risultano spesso efficienti perché evitano un molte operazioni che darebbero risultati parziali nulli (\sphinxstylestrong{velocità}).
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{todo} dire due parole sui formati
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{todo} fare esempio di calcolo del prodotto matrice vettore per matrici sparse
+
+\end{itemize}
 
 
 \subsubsection{Esempio 1 \sphinxhyphen{} Matrice di rigidezza di elementi finiti}
@@ -1016,10 +1026,60 @@ Sol, x: [2.5 4.  4.5 4.  2.5]
 \sphinxstepscope
 
 
-\section{Problemi non lineari}
-\label{\detokenize{ch/numerics/nonlinear:problemi-non-lineari}}\label{\detokenize{ch/numerics/nonlinear::doc}}
+\section{Equazioni algebriche non lineari}
+\label{\detokenize{ch/numerics/nonlinear:equazioni-algebriche-non-lineari}}\label{\detokenize{ch/numerics/nonlinear::doc}}
+\sphinxAtStartPar
+Questa sezione si occupa della soluzione delle equazioni algebriche non lineari, distinguendo le equazioni non lineari con una sola incognita \(x \in \mathbb{R}\)
+\begin{equation*}
+\begin{split}f(x) = 0 \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+e i sistemi di equazioni non lineari con un numero di incognite pari al numero di equazione,
+\begin{equation*}
+\begin{split}\mathbf{f}(\mathbf{x}) = \mathbf{0} \ .\end{split}
+\end{equation*}
 
-\subsection{Metodo di bisezione}
+\subsection{Equazioni non lineari}
+\label{\detokenize{ch/numerics/nonlinear:equazioni-non-lineari}}
+\sphinxAtStartPar
+Vengono presentati i metodi di bisezione e di Newton per la soluzione di un’equazione non lineare,
+\begin{equation*}
+\begin{split}f(x) = 0 \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+e applicati alla soluzione del problema con \(f(x) = e^x + x\), la cui derivata è nota e immediata da calcolare \(f'(x) = e^x + 1\). L’espressione della derivata verrà utilizzata nel metodo di Newton.
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Import libaries \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{from} \PYG{n+nn}{time} \PYG{k+kn}{import} \PYG{n}{time}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{Example. f(x) = e\PYGZca{}x + x}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Function f and its derivative}
+\PYG{n}{f}  \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{+} \PYG{n}{x}
+\PYG{n}{df} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mi}{1}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+
+\subsubsection{Metodo di bisezione}
 \label{\detokenize{ch/numerics/nonlinear:metodo-di-bisezione}}
 \sphinxAtStartPar
 Il metodo di bisezione per la ricerca degli zeri di una funzione continua \(F(x)\) si basa sul teorema dei valori intermedi per le funzioni continue.
@@ -1032,58 +1092,61 @@ Dati due numeri reali \(a\), \(b\) tali che \(f(a) \, f(b) < 0\), allora esiste 
 \begin{sphinxuseclass}{cell_input}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\PYG{l+s+sd}{Example of bisection method}
-
-\PYG{l+s+sd}{Find the solution of the problem f(x) = 0}
-\PYG{l+s+sd}{with f(x) = e\PYGZca{}x \PYGZhy{} x}
-
+\PYG{l+s+sd}{Define bisection\PYGZus{}method\PYGZus{}scalar() function to solve nonlinear scalar equations with bisection method}
 \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
 
-\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
-\PYG{k+kn}{from} \PYG{n+nn}{time} \PYG{k+kn}{import} \PYG{n}{time}
+\PYG{k}{def} \PYG{n+nf}{bisection\PYGZus{}method\PYGZus{}scalar}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{tol}\PYG{o}{=}\PYG{l+m+mf}{1e\PYGZhy{}6}\PYG{p}{,} \PYG{n}{max\PYGZus{}niter}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Function implementing the bisection method for scalar equations \PYGZdq{}\PYGZdq{}\PYGZdq{}}
 
-\PYG{c+c1}{\PYGZsh{} Function f and its derivative}
-\PYG{n}{f}  \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{+} \PYG{n}{x}
-\PYG{n}{df} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mi}{1}
+    \PYG{n}{niter} \PYG{o}{=} \PYG{l+m+mi}{0}
 
-\PYG{c+c1}{\PYGZsh{} Parameters of the bi\PYGZhy{}section method}
-\PYG{n}{tol} \PYG{o}{=} \PYG{l+m+mf}{1e\PYGZhy{}6}
-\PYG{n}{max\PYGZus{}niter} \PYG{o}{=} \PYG{l+m+mi}{100}
+    \PYG{k}{if} \PYG{p}{(} \PYG{o+ow}{not} \PYG{n}{f}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)} \PYG{o}{*} \PYG{n}{f}\PYG{p}{(}\PYG{n}{b}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)}\PYG{p}{:}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Bisection algorithm can}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{t start, f(a)f(b)\PYGZgt{}= 0}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{x} \PYG{o}{=} \PYG{l+m+mf}{.5} \PYG{o}{*} \PYG{p}{(}\PYG{n}{a}\PYG{o}{+}\PYG{n}{b}\PYG{p}{)}
+        \PYG{n}{fx} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+        \PYG{k}{while} \PYG{p}{(} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{fx}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{tol} \PYG{o+ow}{and} \PYG{n}{niter} \PYG{o}{\PYGZlt{}} \PYG{n}{max\PYGZus{}niter} \PYG{p}{)}\PYG{p}{:}
+        
+            \PYG{k}{if} \PYG{p}{(} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{*} \PYG{n}{f}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{)}\PYG{p}{:}  \PYG{c+c1}{\PYGZsh{} new range [a,c]}
+                \PYG{n}{b} \PYG{o}{=} \PYG{n}{x}
+            \PYG{k}{else}\PYG{p}{:}  \PYG{c+c1}{\PYGZsh{} new range [a,b]}
+                \PYG{n}{a} \PYG{o}{=} \PYG{n}{x}
+        
+            \PYG{c+c1}{\PYGZsh{} Update solution and residual}
+            \PYG{n}{x} \PYG{o}{=} \PYG{l+m+mf}{.5} \PYG{o}{*} \PYG{p}{(}\PYG{n}{a}\PYG{o}{+}\PYG{n}{b}\PYG{p}{)}
+            \PYG{n}{fx} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
 
-\PYG{n}{t1} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)}
+            \PYG{c+c1}{\PYGZsh{} Update n.iter}
+            \PYG{n}{niter} \PYG{o}{+}\PYG{o}{=} \PYG{l+m+mi}{1}
+
+    \PYG{k}{return} \PYG{n}{x}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{fx}\PYG{p}{)}\PYG{p}{,} \PYG{n}{niter}\PYG{p}{,} \PYG{n}{max\PYGZus{}niter}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Use bisection\PYGZus{}method\PYGZus{}scalar() function to solve the example \PYGZdq{}\PYGZdq{}\PYGZdq{}}
 
 \PYG{c+c1}{\PYGZsh{} Find 2 values so that \PYGZdl{}f(a) f(b) \PYGZlt{} 0\PYGZdl{}}
 \PYG{n}{a}\PYG{p}{,} \PYG{n}{b} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{2.}\PYG{p}{,} \PYG{l+m+mf}{0.}
-\PYG{n}{niter} \PYG{o}{=} \PYG{l+m+mi}{0}
 
-\PYG{k}{if} \PYG{p}{(} \PYG{o+ow}{not} \PYG{n}{f}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)} \PYG{o}{*} \PYG{n}{f}\PYG{p}{(}\PYG{n}{b}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0} \PYG{p}{)}\PYG{p}{:}
-    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Bisection algorithm can}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{t start, f(a)f(b)\PYGZgt{}= 0}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-\PYG{k}{else}\PYG{p}{:}
-    \PYG{n}{x} \PYG{o}{=} \PYG{l+m+mf}{.5} \PYG{o}{*} \PYG{p}{(}\PYG{n}{a}\PYG{o}{+}\PYG{n}{b}\PYG{p}{)}
-    \PYG{n}{fx} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
-    \PYG{k}{while} \PYG{p}{(} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{fx}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{tol} \PYG{o+ow}{and} \PYG{n}{niter} \PYG{o}{\PYGZlt{}} \PYG{n}{max\PYGZus{}niter} \PYG{p}{)}\PYG{p}{:}
-        
-        \PYG{k}{if} \PYG{p}{(} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{*} \PYG{n}{f}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)} \PYG{o}{\PYGZlt{}}\PYG{o}{=} \PYG{l+m+mi}{0} \PYG{p}{)}\PYG{p}{:}  \PYG{c+c1}{\PYGZsh{} new range [a,c]}
-            \PYG{n}{b} \PYG{o}{=} \PYG{n}{x}
-        \PYG{k}{else}\PYG{p}{:}  \PYG{c+c1}{\PYGZsh{} new range [a,b]}
-            \PYG{n}{a} \PYG{o}{=} \PYG{n}{x}
-        
-        \PYG{c+c1}{\PYGZsh{} Update solution and residual}
-        \PYG{n}{x} \PYG{o}{=} \PYG{l+m+mf}{.5} \PYG{o}{*} \PYG{p}{(}\PYG{n}{a}\PYG{o}{+}\PYG{n}{b}\PYG{p}{)}
-        \PYG{n}{fx} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{t1} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{x}\PYG{p}{,} \PYG{n}{res}\PYG{p}{,} \PYG{n}{niter}\PYG{p}{,} \PYG{n}{max\PYGZus{}niter} \PYG{o}{=} \PYG{n}{bisection\PYGZus{}method\PYGZus{}scalar}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,}\PYG{p}{)}
 
-        \PYG{c+c1}{\PYGZsh{} Update n.iter}
-        \PYG{n}{niter} \PYG{o}{+}\PYG{o}{=} \PYG{l+m+mi}{1}            
-        
-\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Bisection method summary}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Bisection method summary: }\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
 \PYG{k}{if} \PYG{p}{(} \PYG{n}{niter} \PYG{o}{\PYGZlt{}} \PYG{n}{max\PYGZus{}niter} \PYG{p}{)}\PYG{p}{:}
-    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{solution, x = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{res  : }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{niter: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{niter}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{etime: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{time}\PYG{p}{(}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{n}{t1}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Convergence reached}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Sol, x = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
 \PYG{k}{else}\PYG{p}{:}
     \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max n.iter reached without convergence}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{res: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{residual     : }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{n. iterations: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{niter}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{elapsed time : }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{time}\PYG{p}{(}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{n}{t1}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimInput}
@@ -1091,33 +1154,34 @@ Dati due numeri reali \(a\), \(b\) tali che \(f(a) \, f(b) < 0\), allora esiste 
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-Bisection method summary
-solution, x = \PYGZhy{}0.567143440246582
-res  : \PYGZhy{}2.348157265297246e\PYGZhy{}07
-niter: 20
-etime: 0.0008826255798339844
+Bisection method summary: 
+Convergence reached
+Sol, x = \PYGZhy{}0.567143440246582
+residual     : \PYGZhy{}2.348157265297246e\PYGZhy{}07
+n. iterations: 20
+elapsed time : 0.0005495548248291016
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
 
-\subsection{Metodo di Newton}
+\subsubsection{Metodo di Newton}
 \label{\detokenize{ch/numerics/nonlinear:metodo-di-newton}}
 \sphinxAtStartPar
 Per trovare la soluzione del problema non lineare
 \begin{equation*}
-\begin{split}F(x) = 0 \ ,\end{split}
+\begin{split}f(x) = 0 \ ,\end{split}
 \end{equation*}
 \sphinxAtStartPar
-il metodo di Newton sfrutta l’espansione in serie troncata al primo grado della funzione \(F(x)\), per scrivere
+il metodo di Newton sfrutta l’espansione in serie troncata al primo grado della funzione \(f(x)\), per scrivere
 \begin{equation*}
-\begin{split}0 = F(x^n + \Delta x) \approx F(x^n) + F'(x^n) \Delta x \end{split}
+\begin{split}0 = f(x^n + \Delta x) \approx f(x^n) + f'(x^n) \Delta x \end{split}
 \end{equation*}
 \sphinxAtStartPar
 e ottenere l’incremento della soluzione \(\Delta x\) come soluzione del sistema lineare
 \begin{equation*}
-\begin{split}F'(x^n) \Delta x = -F(x^n)\end{split}
+\begin{split}f'(x^n) \Delta x = -f(x^n)\end{split}
 \end{equation*}
 \sphinxAtStartPar
 e aggiornare la soluzione \(x^{n+1} = x^{n} + \Delta x\).
@@ -1127,50 +1191,57 @@ e aggiornare la soluzione \(x^{n+1} = x^{n} + \Delta x\).
 \begin{sphinxuseclass}{cell_input}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\PYG{l+s+sd}{Example of Newton method}
-
-\PYG{l+s+sd}{Find the solution of the problem f(x) = 0}
-\PYG{l+s+sd}{with f(x) = e\PYGZca{}x \PYGZhy{} x}
-
+\PYG{l+s+sd}{Define newton\PYGZus{}method\PYGZus{}scalar() function to solve nonlinear scalar equations with Newton\PYGZsq{}s method}
 \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
 
-\PYG{c+c1}{\PYGZsh{} import numpy as np (already imported?)}
+\PYG{k}{def} \PYG{n+nf}{newton\PYGZus{}method\PYGZus{}scalar}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{df}\PYG{p}{,} \PYG{n}{x}\PYG{o}{=}\PYG{l+m+mf}{.0}\PYG{p}{,} \PYG{n}{tol}\PYG{o}{=}\PYG{l+m+mf}{1e\PYGZhy{}6}\PYG{p}{,} \PYG{n}{max\PYGZus{}niter}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Function implementing Newton\PYGZsq{}s method for scalar equations \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    
+    \PYG{n}{res} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+    \PYG{n}{niter} \PYG{o}{=} \PYG{l+m+mi}{0}
+    
+    \PYG{c+c1}{\PYGZsh{} Newton algorithm}
+    \PYG{k}{while} \PYG{p}{(} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{res}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{tol} \PYG{o+ow}{and} \PYG{n}{niter} \PYG{o}{\PYGZlt{}} \PYG{n}{max\PYGZus{}niter} \PYG{p}{)}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} Solve linear approximation step, and update solution}
+        \PYG{n}{dx} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{n}{res} \PYG{o}{/} \PYG{n}{df}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+        \PYG{n}{x} \PYG{o}{+}\PYG{o}{=} \PYG{n}{dx}
+    
+        \PYG{c+c1}{\PYGZsh{}\PYGZgt{} Evaluate new residual and n. of iter}
+        \PYG{n}{res} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+        \PYG{n}{niter} \PYG{o}{+}\PYG{o}{=} \PYG{l+m+mi}{1}
 
-\PYG{c+c1}{\PYGZsh{} \PYGZsh{} Function f and its derivative (already defined?)}
-\PYG{c+c1}{\PYGZsh{} f  = lambda x: np.exp(x) + x}
-\PYG{c+c1}{\PYGZsh{} df = lambda x: np.exp(x) + 1}
+    \PYG{k}{return} \PYG{n}{x}\PYG{p}{,} \PYG{n}{res}\PYG{p}{,} \PYG{n}{niter}\PYG{p}{,} \PYG{n}{max\PYGZus{}niter}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Use newton\PYGZus{}method\PYGZus{}scalar() function to solve the example \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} import numpy as np   \PYGZsh{} already imported}
 
 \PYG{c+c1}{\PYGZsh{} Parameters of the Newton method, for stopping criteria}
-\PYG{n}{tol} \PYG{o}{=} \PYG{l+m+mf}{1e\PYGZhy{}6}          \PYG{c+c1}{\PYGZsh{} tolerance on the residual |f(x)| \PYGZlt{} tol}
-\PYG{n}{max\PYGZus{}niter} \PYG{o}{=} \PYG{l+m+mi}{10}      \PYG{c+c1}{\PYGZsh{} max n. of iterations      niter \PYGZgt{} max\PYGZus{}niter}
+\PYG{c+c1}{\PYGZsh{} tol = 1e\PYGZhy{}6          \PYGZsh{} tolerance on the residual |f(x)| \PYGZlt{} tol}
+\PYG{c+c1}{\PYGZsh{} max\PYGZus{}niter = 10      \PYGZsh{} max n. of iterations      niter \PYGZgt{} max\PYGZus{}niter}
+\PYG{n}{x0} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.}
 
 \PYG{n}{t1} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{x}\PYG{p}{,} \PYG{n}{res}\PYG{p}{,} \PYG{n}{niter}\PYG{p}{,} \PYG{n}{max\PYGZus{}niter} \PYG{o}{=} \PYG{n}{newton\PYGZus{}method\PYGZus{}scalar}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{df}\PYG{p}{,} \PYG{n}{x}\PYG{o}{=}\PYG{n}{x0}\PYG{p}{)}
 
-\PYG{c+c1}{\PYGZsh{} Initial guess, residual and number of iterations}
-\PYG{n}{x} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.}
-\PYG{n}{res} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
-\PYG{n}{niter} \PYG{o}{=} \PYG{l+m+mi}{0}
-
-\PYG{c+c1}{\PYGZsh{} Newton algorithm}
-\PYG{k}{while} \PYG{p}{(} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{res}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{tol} \PYG{o+ow}{and} \PYG{n}{niter} \PYG{o}{\PYGZlt{}} \PYG{n}{max\PYGZus{}niter} \PYG{p}{)}\PYG{p}{:}
-    \PYG{c+c1}{\PYGZsh{} Solve linear approximation step, and update solution}
-    \PYG{n}{dx} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{n}{res} \PYG{o}{/} \PYG{n}{df}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
-    \PYG{n}{x} \PYG{o}{+}\PYG{o}{=} \PYG{n}{dx}
-
-    \PYG{c+c1}{\PYGZsh{}\PYGZgt{} Evaluate new residual and n. of iter}
-    \PYG{n}{res} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
-    \PYG{n}{niter} \PYG{o}{+}\PYG{o}{=} \PYG{l+m+mi}{1}
-
-\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Newton method summary}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Newton}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{s method summary: }\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
 \PYG{k}{if} \PYG{p}{(} \PYG{n}{niter} \PYG{o}{\PYGZlt{}} \PYG{n}{max\PYGZus{}niter} \PYG{p}{)}\PYG{p}{:}
-    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{solution, x = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{res  : }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{res}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{niter: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{niter}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{etime: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{time}\PYG{p}{(}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{n}{t1}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Convergence reached}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Sol, x = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
 \PYG{k}{else}\PYG{p}{:}
     \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max n.iter reached without convergence}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{res: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{res}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{etime: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{time}\PYG{p}{(}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{n}{t1}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{residual     : }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{n. iterations: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{niter}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{elapsed time : }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{time}\PYG{p}{(}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{n}{t1}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimInput}
@@ -1178,16 +1249,132 @@ e aggiornare la soluzione \(x^{n+1} = x^{n} + \Delta x\).
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-Newton method summary
-solution, x = \PYGZhy{}0.567143285989123
-res  : 6.927808993140161e\PYGZhy{}09
-niter: 3
-etime: 0.0010170936584472656
+Newton\PYGZsq{}s method summary: 
+Convergence reached
+Sol, x = \PYGZhy{}0.567143285989123
+residual     : 6.927808993140161e\PYGZhy{}09
+n. iterations: 3
+elapsed time : 0.00041985511779785156
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
+
+\subsection{Sistemi di equazioni non lineari}
+\label{\detokenize{ch/numerics/nonlinear:sistemi-di-equazioni-non-lineari}}
+
+\subsubsection{Esempio}
+\label{\detokenize{ch/numerics/nonlinear:esempio}}\begin{equation*}
+\begin{split}\begin{cases}
+    x_1   - x_2 = 0 \\
+  - x_1^2 + x_2 = -1
+\end{cases}\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\mathbf{f}(\mathbf{x}) = \begin{bmatrix} x_1 - x_2 \\ -x_1^2 + x_2 - 1 \end{bmatrix}\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\mathbf{f}'(\mathbf{x}) = \begin{bmatrix} 1 & - 1 \\ - 2 x_1 & 1\end{bmatrix}\end{split}
+\end{equation*}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{Example. f(x) = e\PYGZca{}x + x}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Function f and its derivative}
+\PYG{n}{f}  \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{p}{[} \PYG{n}{x}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{x}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{x}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{df} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{p}{[}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{]}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{Define newton\PYGZus{}method\PYGZus{}scalar() function to solve nonlinear systems of equations with Newton\PYGZsq{}s method}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{k}{def} \PYG{n+nf}{newton\PYGZus{}method\PYGZus{}system}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{df}\PYG{p}{,} \PYG{n}{x}\PYG{o}{=}\PYG{l+m+mf}{.0}\PYG{p}{,} \PYG{n}{tol}\PYG{o}{=}\PYG{l+m+mf}{1e\PYGZhy{}6}\PYG{p}{,} \PYG{n}{max\PYGZus{}niter}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Function implementing Newton\PYGZsq{}s method for systems of equations \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    
+    \PYG{n}{res} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+    \PYG{n}{niter} \PYG{o}{=} \PYG{l+m+mi}{0}
+    
+    \PYG{c+c1}{\PYGZsh{} Newton algorithm}
+    \PYG{k}{while} \PYG{p}{(} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{norm}\PYG{p}{(}\PYG{n}{res}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{tol} \PYG{o+ow}{and} \PYG{n}{niter} \PYG{o}{\PYGZlt{}} \PYG{n}{max\PYGZus{}niter} \PYG{p}{)}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} Solve linear approximation step, and update solution}
+        \PYG{n}{dx} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{df}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{,} \PYG{n}{res}\PYG{p}{)}
+        \PYG{n}{x} \PYG{o}{+}\PYG{o}{=} \PYG{n}{dx}
+    
+        \PYG{c+c1}{\PYGZsh{}\PYGZgt{} Evaluate new residual and n. of iter}
+        \PYG{n}{res} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+        \PYG{n}{niter} \PYG{o}{+}\PYG{o}{=} \PYG{l+m+mi}{1}
+
+    \PYG{k}{return} \PYG{n}{x}\PYG{p}{,} \PYG{n}{res}\PYG{p}{,} \PYG{n}{niter}\PYG{p}{,} \PYG{n}{max\PYGZus{}niter}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Use newton\PYGZus{}method\PYGZus{}scalar() function to solve the example \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} import numpy as np   \PYGZsh{} already imported}
+
+\PYG{c+c1}{\PYGZsh{} Parameters of the Newton method, for stopping criteria}
+\PYG{c+c1}{\PYGZsh{} tol = 1e\PYGZhy{}6          \PYGZsh{} tolerance on the residual |f(x)| \PYGZlt{} tol}
+\PYG{c+c1}{\PYGZsh{} max\PYGZus{}niter = 10      \PYGZsh{} max n. of iterations      niter \PYGZgt{} max\PYGZus{}niter}
+\PYG{n}{x0} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{p}{[} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.} \PYG{p}{,} \PYG{l+m+mi}{1} \PYG{p}{]}\PYG{p}{)}
+
+\PYG{n}{t1} \PYG{o}{=} \PYG{n}{time}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{x}\PYG{p}{,} \PYG{n}{res}\PYG{p}{,} \PYG{n}{niter}\PYG{p}{,} \PYG{n}{max\PYGZus{}niter} \PYG{o}{=} \PYG{n}{newton\PYGZus{}method\PYGZus{}system}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{df}\PYG{p}{,} \PYG{n}{x}\PYG{o}{=}\PYG{n}{x0}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Newton}\PYG{l+s+s2}{\PYGZsq{}}\PYG{l+s+s2}{s method summary: }\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{niter} \PYG{o}{\PYGZlt{}} \PYG{n}{max\PYGZus{}niter} \PYG{p}{)}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Convergence reached}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Sol, x = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{else}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{max n.iter reached without convergence}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{residual     : }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{n. iterations: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{niter}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{elapsed time : }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{time}\PYG{p}{(}\PYG{p}{)}\PYG{o}{\PYGZhy{}}\PYG{n}{t1}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Newton\PYGZsq{}s method summary: 
+Convergence reached
+Sol, x = [\PYGZhy{}0.61803399 \PYGZhy{}0.61803399]
+residual     : [ 0.00000000e+00 \PYGZhy{}2.10942375e\PYGZhy{}13]
+n. iterations: 4
+elapsed time : 0.0006754398345947266
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{todo} L’algoritmo di Newton trova solo una soluzione del problema. Cercare le altre soluzioni cambiando il tentativo iniziale.
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{todo} … altro?
+
+\end{itemize}
+
 \sphinxstepscope
 
 

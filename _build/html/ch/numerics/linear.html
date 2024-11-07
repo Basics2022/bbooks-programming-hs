@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/numerics/linear';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Problemi non lineari" href="nonlinear.html" />
+    <link rel="next" title="Equazioni algebriche non lineari" href="nonlinear.html" />
     <link rel="prev" title="Introduzione al calcolo scientifico" href="../numerics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo scientifico</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Sistemi lineari</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nonlinear.html">Problemi non lineari</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nonlinear.html">Equazioni algebriche non lineari</a></li>
 <li class="toctree-l2"><a class="reference internal" href="approximation.html">Approssimazione di funzioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="derivatives.html">Derivate di funzioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integrals.html">Integrali</a></li>
@@ -616,7 +616,11 @@ Proof : Ax = [ 0. -1.  1.]
 </div>
 <div class="section" id="matrici-sparse">
 <h2>Matrici sparse<a class="headerlink" href="#matrici-sparse" title="Permalink to this heading">#</a></h2>
-<p>Una matrice sparsa ha un elevato numero di elementi nulli.</p>
+<p>Una matrice sparsa ha un elevato numero di elementi nulli. Una matrice sparsa viene definita in maniera efficiente salvando in memoria solo gli elementi non nulli (<strong>limiti di memoria</strong>); gli algoritmi per le matrici sparse risultano spesso efficienti perché evitano un molte operazioni che darebbero risultati parziali nulli (<strong>velocità</strong>).</p>
+<ul class="simple">
+<li><p><strong>todo</strong> dire due parole sui formati</p></li>
+<li><p><strong>todo</strong> fare esempio di calcolo del prodotto matrice vettore per matrici sparse</p></li>
+</ul>
 <div class="section" id="esempio-1-matrice-di-rigidezza-di-elementi-finiti">
 <h3>Esempio 1 - Matrice di rigidezza di elementi finiti<a class="headerlink" href="#esempio-1-matrice-di-rigidezza-di-elementi-finiti" title="Permalink to this heading">#</a></h3>
 <p>Il sistema lineare</p>
@@ -715,7 +719,7 @@ Proof : Ax = [ 0. -1.  1.]
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problemi non lineari</p>
+        <p class="prev-next-title">Equazioni algebriche non lineari</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
