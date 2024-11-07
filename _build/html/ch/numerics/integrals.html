@@ -453,7 +453,10 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrazione-di-gauss">Integrazione di Gauss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrazione-di-gauss">Integrazione di Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-1-integrazione-di-gauss">Esempio 1 - integrazione di Gauss.</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -586,13 +589,16 @@ Per calcolare l'integrale in maniera analitica
 </div>
 <div class="section" id="integrazione-di-gauss">
 <h2>Integrazione di Gauss<a class="headerlink" href="#integrazione-di-gauss" title="Permalink to this heading">#</a></h2>
-<p>L’integrazione di Gauss permette di calcolare in <strong>maniera esatta</strong> l’integrale di una <strong>funzione polinomiale</strong> <span class="math notranslate nohighlight">\(p^(n)(x)\)</span> su un intervallo <span class="math notranslate nohighlight">\([a,b]\)</span>, come somma pesata della funzione valuatata in alcuni punti dell’intervallo,</p>
+<p>L’integrazione di Gauss permette di calcolare in <strong>maniera esatta</strong> l’integrale di una <strong>funzione polinomiale</strong> <span class="math notranslate nohighlight">\(p_n(x)\)</span> su un intervallo <span class="math notranslate nohighlight">\([a,b]\)</span>, come somma pesata della funzione valuatata in alcuni punti dell’intervallo,</p>
 <div class="math notranslate nohighlight">
-\[\int_a^b p^{(n)}(x) dx = \sum_{g} w_g f(x_g) \ .\]</div>
-<p>Per motivi di generalizzazione dell’algoritmo, nella definizione dei <strong>pesi</strong> <span class="math notranslate nohighlight">\(w_i\)</span> e dei <strong>nodi di Gauss</strong> <span class="math notranslate nohighlight">\(x_i\)</span>, l’integrale viene riportato all’integrale su un intervallo di riferimento, tramite una trasformazione di coordinate.</p>
-<p>Per domini 1D, l’intervallo di riferimento per la quadratura di Gauss è l’intervallo <span class="math notranslate nohighlight">\(\xi = [-1, 1]\)</span> e il cambio di variabili è</p>
+\[\int_a^b p^{(n)}(x) dx = \sum_{g} w_g f(x_g) \ ,\]</div>
+<p>per un numero di nodi di Gauss, <span class="math notranslate nohighlight">\(n_{Gauss}\)</span> che soddisfa la relazione</p>
 <div class="math notranslate nohighlight">
-\[x = \frac{a+b}{2} + \frac{b-a}{2}(\xi - 1) \ ,\]</div>
+\[n &lt; 2 n_{Gauss} - 1 \ .\]</div>
+<p>Per motivi di generalizzazione dell’algoritmo, nella definizione dei <strong>pesi</strong> <span class="math notranslate nohighlight">\(w_i\)</span> e dei <strong>nodi di Gauss</strong> <span class="math notranslate nohighlight">\(x_i\)</span>, l’integrale viene riportato all’integrale su un intervallo di riferimento, tramite una trasformazione di coordinate.
+Per domini 1D, l’intervallo di riferimento per la quadratura di Gauss è l’intervallo <span class="math notranslate nohighlight">\(\xi = [-1, 1]\)</span> e il cambio di variabili è</p>
+<div class="math notranslate nohighlight">
+\[x = \frac{a+b}{2} + \frac{b-a}{2} \, \xi \ ,\]</div>
 <p>così che l’integrale originale può essere scritto come</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -601,8 +607,9 @@ Per calcolare l'integrale in maniera analitica
 \end{aligned}\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;  &quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Gauss integration &quot;&quot;&quot;</span>
 
+<span class="c1"># Dict of Gauss weights and nodes on the reference interval [-1,1] for 1D integration</span>
 <span class="n">gauss_nw</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;nodes&#39;</span>  <span class="p">:</span> <span class="p">[</span> <span class="mf">0.</span> <span class="p">],</span>
                  <span class="s1">&#39;weights&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="mf">2.</span> <span class="p">]},</span> 
              <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;nodes&#39;</span>  <span class="p">:</span> <span class="p">[</span> <span class="o">-</span><span class="mf">1.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">3.</span><span class="p">),</span> <span class="mf">1.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">3.</span><span class="p">)</span> <span class="p">],</span> 
@@ -641,9 +648,24 @@ Per calcolare l'integrale in maniera analitica
 </div>
 </div>
 </div>
+<div class="section" id="esempio-1-integrazione-di-gauss">
+<h3>Esempio 1 - integrazione di Gauss.<a class="headerlink" href="#esempio-1-integrazione-di-gauss" title="Permalink to this heading">#</a></h3>
+<p>Si valuta l’integrale</p>
+<div class="math notranslate nohighlight">
+\[\int_{x = 0}^{1} x^2 \, dx = \frac{1}{3} \ ,\]</div>
+<p>con il metodo di integrazione di Gauss.
+Si chiede di:</p>
+<ul class="simple">
+<li><p>osservare che l’integrazione è esatta, a meno degli arrotondamenti dovuti all’aritmetica finita,
+poiché la funzione integranda è di grado 2, e il numero di nodi di Gauss è <span class="math notranslate nohighlight">\(n_{Gauss} = 3\)</span>; questo è vero indipendentemente dal numero di sotto-intervalli;</p></li>
+<li><p>cambiare le funzioni e il numero di nodi usati nelle funzioni per l’integrazione di Gauss per verificare che l’integrazione è esatta per funzioni polinomiali di grado <span class="math notranslate nohighlight">\(2 n_{Gauss} - 1\)</span>.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Evaluate integrals using Gauss integration &quot;&quot;&quot;</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span>
 
 <span class="c1"># Gauss nodes, and n.of elements</span>
 <span class="n">n_gauss</span> <span class="o">=</span> <span class="mi">3</span>
@@ -663,6 +685,7 @@ Per calcolare l'integrale in maniera analitica
 - using one elem: 0.33333333333333337
 - using 10 elems: 0.33333333333333337
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -742,7 +765,10 @@ Per calcolare l'integrale in maniera analitica
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrazione-di-gauss">Integrazione di Gauss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrazione-di-gauss">Integrazione di Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-1-integrazione-di-gauss">Esempio 1 - integrazione di Gauss.</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
