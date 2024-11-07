@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/programming/flow_control';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Funzioni" href="functions.html" />
-    <link rel="prev" title="Tipi" href="types.html" />
+    <link rel="prev" title="Variabili, tipi e funzioni elementari built-in" href="types.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,14 +166,14 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Introduzione alla programmazione e al calcolo numerico
+                    Introduzione alla programmazione e al calcolo scientifico
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione alla programmazione</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../programming.html">Basi di programmazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="types.html">Tipi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming.html">Introduzione alla programmazione - in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types.html">Variabili, tipi e funzioni elementari built-in</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Controllo del flusso</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Funzioni</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oo.html">Classi</a></li>
@@ -179,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione al calcolo numerico</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo numerico</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo scientifico</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../numerics/linear.html">Sistemi lineari</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../numerics/nonlinear.html">Problemi non lineari</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../numerics/approximation.html">Approssimazione di funzioni</a></li>
@@ -191,12 +193,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../numerics/optimization.html">Ottimizzazione</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ai.html">Introduzione ai metodi in AI</a></li>
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione ai metodi in AI</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supporto tecnico</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ai.html">Introduzione ai metodi in AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Supporto tecnico</a></li>
 </ul>
 
     </div>
@@ -441,8 +444,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternativa">Alternativa</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-then-e-if-then-else">if-then e if-then-else</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch">switch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#texttt-if-texttt-then-statement"><span class="math notranslate nohighlight">\(\texttt{if}\)</span>-<span class="math notranslate nohighlight">\(\texttt{then}\)</span> statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#texttt-if-texttt-then-texttt-else-statement"><span class="math notranslate nohighlight">\(\texttt{if}\)</span>-<span class="math notranslate nohighlight">\(\texttt{then}\)</span>-<span class="math notranslate nohighlight">\(\texttt{else}\)</span> statement</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterazione">Iterazione</a><ul class="nav section-nav flex-column">
@@ -467,18 +470,22 @@ document.write(`
 <p>Nei paradigmi di <em>programmazione imperativa</em> (<strong>todo</strong> fare riferimento ai paradigmi di programmazione. Ha senso questa distinzione?), vengono usate delle strutture di controllo del flusso di esecuzione di un programma.</p>
 <p>Si possono distinguere due categorie delle strutture di controllo:</p>
 <ul class="simple">
-<li><p>alternativa: if-then, if-then-else</p></li>
+<li><p>condizionale ed alternativa: if, if-then, if-then-else</p></li>
 <li><p>iterazione: for, while, …</p></li>
 </ul>
 <div class="section" id="alternativa">
 <h2>Alternativa<a class="headerlink" href="#alternativa" title="Permalink to this heading">#</a></h2>
-<div class="section" id="if-then-e-if-then-else">
-<h3>if-then e if-then-else<a class="headerlink" href="#if-then-e-if-then-else" title="Permalink to this heading">#</a></h3>
+<div class="section" id="texttt-if-texttt-then-statement">
+<h3><span class="math notranslate nohighlight">\(\texttt{if}\)</span>-<span class="math notranslate nohighlight">\(\texttt{then}\)</span> statement<a class="headerlink" href="#texttt-if-texttt-then-statement" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Test if-then &quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; if-then example &quot;&quot;&quot;</span>
+<span class="c1"># Try this script changing the user input</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="mf">2.1</span>
+<span class="c1"># User input</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>        <span class="c1"># a is initialize as an integer</span>
+<span class="c1"># a = 2.1      # if a is initialized as a real, a % 2 perform automatic casting, int(a) % 2</span>
+               <span class="c1"># uncomment previous line and try!</span>
 
 <span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;odd&#39;</span>
 <span class="k">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">):</span>   <span class="c1"># automatic casting into an int -&gt; a % 2 = floor(a) % 2</span>
@@ -489,22 +496,27 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User input (2.1) is an odd number
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User input (2) is an even number
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="texttt-if-texttt-then-texttt-else-statement">
+<h3><span class="math notranslate nohighlight">\(\texttt{if}\)</span>-<span class="math notranslate nohighlight">\(\texttt{then}\)</span>-<span class="math notranslate nohighlight">\(\texttt{else}\)</span> statement<a class="headerlink" href="#texttt-if-texttt-then-texttt-else-statement" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Test if-then-else &quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; if-then-else example&quot;&quot;&quot;</span>
+<span class="c1"># Try this script changing the user input</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="mf">15.7</span>
+<span class="c1"># User input</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">15</span>
 
-<span class="k">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">):</span>
+<span class="k">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">):</span>     <span class="c1"># First condition</span>
     <span class="n">reminder</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">elif</span> <span class="p">(</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">):</span>
+<span class="k">elif</span> <span class="p">(</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">):</span>   <span class="c1"># Other condition</span>
     <span class="n">reminder</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="k">else</span><span class="p">:</span>
+<span class="k">else</span><span class="p">:</span>                  <span class="c1"># All the other conditions</span>
     <span class="n">reminder</span> <span class="o">=</span> <span class="mi">0</span>
     
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;User input (</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">). </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> % 3 = </span><span class="si">{</span><span class="n">reminder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -512,26 +524,130 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User input (15.7). 15.7 % 3 = 0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User input (15). 15 % 3 = 0
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="switch">
-<h3>switch<a class="headerlink" href="#switch" title="Permalink to this heading">#</a></h3>
-</div>
+<!--
+### switch
+
+""" switch example 
+
+Equivalent to the if-then-else example
+"""
+# Try this script changing the user input
+
+a = 15
+
+match a % 3:
+    case 1:
+        reminder = 1
+    case 2:
+        reminder = 2
+    case _:
+        reminder = 0
+    
+print(f"User input ({a}). {a} % 3 = {reminder}")
+--></div>
 </div>
 <div class="section" id="iterazione">
 <h2>Iterazione<a class="headerlink" href="#iterazione" title="Permalink to this heading">#</a></h2>
 <div class="section" id="for-loop">
 <h3>for loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; for loop examples</span>
+
+<span class="sd">Loops over:</span>
+<span class="sd">- elements of a list</span>
+<span class="sd">- elements in range</span>
+<span class="sd">- keys, values of a dict</span>
+<span class="sd">- ...</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Loop over elements of a list</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">4.</span> <span class="p">,</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Loop over elements of the list: seq = </span><span class="si">{seq}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;element </span><span class="si">{</span><span class="n">el</span><span class="si">}</span><span class="s2"> has type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">el</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Loop over elements of a tuple</span>
+<span class="c1"># ...</span>
+
+<span class="c1"># Loop over elements of a range</span>
+<span class="n">n_el</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">range_el</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Loop over elements of the list, seq = </span><span class="si">{seq}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;range(</span><span class="si">{</span><span class="n">n_el</span><span class="si">}</span><span class="s2">) has type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">range_el</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;range(</span><span class="si">{</span><span class="n">n_el</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">range_el</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">range_el</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1"># Loop over keys, values of a dict</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;c1&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;c2&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Loop over elements of the dict, d = </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">k</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loop over elements of the list: seq = {seq}
+element a has type &lt;class &#39;str&#39;&gt;
+element 3 has type &lt;class &#39;int&#39;&gt;
+element 4.0 has type &lt;class &#39;float&#39;&gt;
+element {&#39;key&#39;: &#39;value&#39;} has type &lt;class &#39;dict&#39;&gt;
+
+Loop over elements of the list, seq = {seq}
+range(5) has type: &lt;class &#39;range&#39;&gt;
+range(5): range(0, 5)
+0
+1
+2
+3
+4
+
+Loop over elements of the dict, d = {&#39;a&#39;: 1.0, &#39;b&#39;: 6, &#39;c&#39;: {&#39;c1&#39;: 1, &#39;c2&#39;: True}}
+a 1.0
+b 6
+c {&#39;c1&#39;: 1, &#39;c2&#39;: True}
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="while-loop">
 <h3>while loop<a class="headerlink" href="#while-loop" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; while loop example &quot;&quot;&quot;</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">while</span> <span class="p">(</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="p">):</span>
+    <span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&gt;&gt; in while loop, a: </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;after while loop, a: </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt;&gt; in while loop, a: 4
+&gt;&gt; in while loop, a: 5
+after while loop, a: 5
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="altri-cicli">
 <h3>altri cicli<a class="headerlink" href="#altri-cicli" title="Permalink to this heading">#</a></h3>
+<p><strong>todo</strong></p>
 </div>
 </div>
 </div>
@@ -572,7 +688,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tipi</p>
+        <p class="prev-next-title">Variabili, tipi e funzioni elementari built-in</p>
       </div>
     </a>
     <a class="right-next"
@@ -600,8 +716,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternativa">Alternativa</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-then-e-if-then-else">if-then e if-then-else</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch">switch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#texttt-if-texttt-then-statement"><span class="math notranslate nohighlight">\(\texttt{if}\)</span>-<span class="math notranslate nohighlight">\(\texttt{then}\)</span> statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#texttt-if-texttt-then-texttt-else-statement"><span class="math notranslate nohighlight">\(\texttt{if}\)</span>-<span class="math notranslate nohighlight">\(\texttt{then}\)</span>-<span class="math notranslate nohighlight">\(\texttt{else}\)</span> statement</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterazione">Iterazione</a><ul class="nav section-nav flex-column">

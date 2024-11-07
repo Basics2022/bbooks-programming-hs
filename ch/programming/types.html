@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tipi &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>Variabili, tipi e funzioni elementari built-in &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/programming/types';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Controllo del flusso" href="flow_control.html" />
-    <link rel="prev" title="Basi di programmazione" href="../programming.html" />
+    <link rel="prev" title="Introduzione alla programmazione - in Python" href="../programming.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,14 +166,14 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Introduzione alla programmazione e al calcolo numerico
+                    Introduzione alla programmazione e al calcolo scientifico
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione alla programmazione</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../programming.html">Basi di programmazione</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tipi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming.html">Introduzione alla programmazione - in Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Variabili, tipi e funzioni elementari built-in</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flow_control.html">Controllo del flusso</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Funzioni</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oo.html">Classi</a></li>
@@ -179,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione al calcolo numerico</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo numerico</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo scientifico</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../numerics/linear.html">Sistemi lineari</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../numerics/nonlinear.html">Problemi non lineari</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../numerics/approximation.html">Approssimazione di funzioni</a></li>
@@ -191,12 +193,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../numerics/optimization.html">Ottimizzazione</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ai.html">Introduzione ai metodi in AI</a></li>
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione ai metodi in AI</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supporto tecnico</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ai.html">Introduzione ai metodi in AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Supporto tecnico</a></li>
 </ul>
 
     </div>
@@ -417,7 +420,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -428,11 +433,27 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tipi</h1>
+    <h1>Variabili, tipi e funzioni elementari built-in</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commenti">Commenti</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipi-built-in">Tipi built-in</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeri">Numeri</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleani-logici">Booleani - logici</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stringhe">Stringhe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#liste-tuple-e-insiemi">Liste, tuple e insiemi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dizionari">Dizionari</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -442,8 +463,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="tipi">
-<h1>Tipi<a class="headerlink" href="#tipi" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="variabili-tipi-e-funzioni-elementari-built-in">
+<h1>Variabili, tipi e funzioni elementari built-in<a class="headerlink" href="#variabili-tipi-e-funzioni-elementari-built-in" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>tipi</p></li>
 <li><p>variabili</p>
@@ -453,6 +474,108 @@ document.write(`
 </ul>
 </li>
 </ul>
+<div class="section" id="commenti">
+<h2>Commenti<a class="headerlink" href="#commenti" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I commenti permettono di aggiungere brevi descrizione al codice</span>
+
+<span class="c1"># In Python, è possibile aggiungerre commenti al codice con il carattere #: tutto quello</span>
+<span class="c1"># che viene dopo il carattere # su una riga è considerato un commento, e non codice da</span>
+<span class="c1"># eseguire</span>
+
+<span class="c1"># E&#39; buona regola aggiungere qualche commento al codice, e sarebbe bene iniziare a farlo</span>
+<span class="c1"># in lingua inglese:</span>
+<span class="c1"># - il codice non è auto-esplicativo!</span>
+<span class="c1"># - il codice potrebbe essere usato da altri in giro per il mondo, ed è più probabile che</span>
+<span class="c1">#   si conosca l&#39;inglese invece dell&#39;italiano</span>
+
+<span class="c1"># So let&#39;s switch to English for scripts, both for comments and &quot;for variable names&quot;</span>
+
+<span class="c1"># Comments are not documentation! **todo** Add some paragraph about documentation!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tipi-built-in">
+<h2>Tipi built-in<a class="headerlink" href="#tipi-built-in" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>numero: intero, reale, complesso</p></li>
+<li><p>booleano</p></li>
+<li><p>stringa</p></li>
+<li><p>bytes</p></li>
+<li><p>lista</p></li>
+<li><p>tupla</p></li>
+<li><p>insieme</p></li>
+<li><p>dizionario, <span class="math notranslate nohighlight">\(\texttt{dict}\)</span></p></li>
+</ul>
+<div class="section" id="numeri">
+<h3>Numeri<a class="headerlink" href="#numeri" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Numbers</span>
+
+<span class="sd">in Python, variables are not delcared. Thus, a number variable is not defined</span>
+<span class="sd">as an integer, a real or a complex variable, but it&#39;s type is inferred by its</span>
+<span class="sd">initialization</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Numbers</span>
+<span class="n">a_int</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">a_real</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">a_complex</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">+</span> <span class="mf">0.</span><span class="n">j</span>
+
+<span class="c1"># Strings</span>
+<span class="n">a_str</span> <span class="o">=</span> <span class="s1">&#39;1.0&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;type(a_int)    : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a_int</span><span class="w">    </span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;type(a_real)   : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a_real</span><span class="w">   </span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;type(a_complex): </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a_complex</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;type(a_str    ): </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a_str</span><span class="w">    </span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>type(a_int)    : &lt;class &#39;int&#39;&gt;
+type(a_real)   : &lt;class &#39;float&#39;&gt;
+type(a_complex): &lt;class &#39;complex&#39;&gt;
+type(a_str    ): &lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="booleani-logici">
+<h3>Booleani - logici<a class="headerlink" href="#booleani-logici" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="stringhe">
+<h3>Stringhe<a class="headerlink" href="#stringhe" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Strings</span>
+
+<span class="sd">strings are character </span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\nStrings\n\nstrings are character \n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="liste-tuple-e-insiemi">
+<h3>Liste, tuple e insiemi<a class="headerlink" href="#liste-tuple-e-insiemi" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="dizionari">
+<h3>Dizionari<a class="headerlink" href="#dizionari" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -491,7 +614,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Basi di programmazione</p>
+        <p class="prev-next-title">Introduzione alla programmazione - in Python</p>
       </div>
     </a>
     <a class="right-next"
@@ -509,6 +632,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commenti">Commenti</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipi-built-in">Tipi built-in</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeri">Numeri</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleani-logici">Booleani - logici</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stringhe">Stringhe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#liste-tuple-e-insiemi">Liste, tuple e insiemi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dizionari">Dizionari</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
