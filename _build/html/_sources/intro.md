@@ -1,7 +1,7 @@
 (book:programming-hs)=
 # Introduzione alla programmazione e al calcolo scientifico
 
-Questo libro fa parte del materiale pensato per [le scuole superiori](https://basics2022.github.io/bbooks-hs). E' disponibile la [versione in .pdf](https://www.github.com/Basics2022/bbooks-programming-hs/blob/master/_build/latex/book.pdf)
+Questo libro fa parte del materiale pensato per [le scuole superiori](https://basics2022.github.io/bbooks-hs). E' disponibile la [versione in .pdf](https://www.github.com/Basics2022/bbooks-programming-hs/blob/master/_build/latex/book.pdf) scaricabile.
 
 **Obiettivi generali.** Questo lavoro punta ad essere un'opera di *formazione alla* **tirchieria**, **prigrizia** *e* **onestà**, almeno in ambito informatico. I più benvolenti potranno riassumere questo obiettivo come il desiderio di *non buttare nel WC soldi, tempo, e pazienza*.
 
