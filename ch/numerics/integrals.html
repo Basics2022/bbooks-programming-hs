@@ -613,8 +613,9 @@ Per calcolare l'integrale in maniera analitica
 
 <span class="k">def</span> <span class="nf">gauss_int_1</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">gauss_nw</span><span class="o">=</span><span class="n">gauss_nw</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
-<span class="sd">    Integral over the reference element, [-1,1]</span>
-<span class="sd">    n: number of Gauss nodes</span>
+<span class="sd">    Integral of the function f(x) </span>
+<span class="sd">    over a physical domain, x \in [a, b], </span>
+<span class="sd">    using n number of Gauss nodes</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Cap n.nodes to the max n.nodes stored in gauss_nw dict</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">gauss_nw</span><span class="o">.</span><span class="n">keys</span><span class="p">()))])</span>
@@ -627,44 +628,40 @@ Per calcolare l'integrale in maniera analitica
 
 
 <span class="k">def</span> <span class="nf">gauss_int_n</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n_gauss</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n_elems</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;  &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Integral of the function f(x) </span>
+<span class="sd">    over a physical domain, x \in [a, b], (uniformly) splitted in n_elems</span>
+<span class="sd">    using n number of Gauss nodes per each elem</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Partition of the interval [a,b]</span>
     <span class="n">xv</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span> <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_elems</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_elems</span><span class="p">;</span>  <span class="n">xv</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
 
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span> <span class="n">gauss_int_ref</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n_gauss</span><span class="p">,</span> <span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_elems</span><span class="p">)</span> <span class="p">])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span> <span class="n">gauss_int_1</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n_gauss</span><span class="p">,</span> <span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_elems</span><span class="p">)</span> <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Evaluate integrals using Gauss integration &quot;&quot;&quot;</span>
 
+<span class="c1"># Gauss nodes, and n.of elements</span>
 <span class="n">n_gauss</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">n_elems</span> <span class="o">=</span> <span class="mi">10</span>
 
 <span class="n">val_1</span> <span class="o">=</span> <span class="n">gauss_int_1</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n_gauss</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span>
 <span class="n">val_n</span> <span class="o">=</span> <span class="n">gauss_int_n</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n_gauss</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">n_elems</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">val_1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">val_n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Value of the integral, x \in [</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">] using Gauss integration methods with </span><span class="si">{</span><span class="n">n_gauss</span><span class="si">}</span><span class="s2"> nodes per elem&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- using one elem: </span><span class="si">{</span><span class="n">val_1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- using </span><span class="si">{</span><span class="n">n_elems</span><span class="si">}</span><span class="s2"> elems: </span><span class="si">{</span><span class="n">val_n</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">37</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="n">n_elems</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span> <span class="n">val_1</span> <span class="o">=</span> <span class="n">gauss_int_1</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n_gauss</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">37</span> <span class="n">val_n</span> <span class="o">=</span> <span class="n">gauss_int_n</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n_gauss</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">n_elems</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="nb">print</span><span class="p">(</span><span class="n">val_1</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="nb">print</span><span class="p">(</span><span class="n">val_n</span><span class="p">)</span>
-
-<span class="nn">Cell In[5], line 31,</span> in <span class="ni">gauss_int_n</span><span class="nt">(f, n_gauss, a, b, n_elems)</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="c1"># Partition of the interval [a,b]</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="n">xv</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span> <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_elems</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_elems</span><span class="p">;</span>  <span class="n">xv</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
-<span class="nn">---&gt; 31 return np.sum([ gauss_int_ref(f, n_gauss, xv[i], xv[i+1]) for i</span> in <span class="ni">np.arange</span><span class="nt">(n_elems) ])</span>
-
-<span class="nn">Cell In[5], line 31,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="c1"># Partition of the interval [a,b]</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="n">xv</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span> <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_elems</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_elems</span><span class="p">;</span>  <span class="n">xv</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
-<span class="nn">---&gt; 31 return np.sum([ gauss_int_ref(f, n_gauss, xv[i], xv[i+1]) for i</span> in <span class="ni">np.arange</span><span class="nt">(n_elems) ])</span>
-
-<span class="ne">NameError</span>: name &#39;gauss_int_ref&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Value of the integral, x \in [0.0, 1.0] using Gauss integration methods with 3 nodes per elem
+- using one elem: 0.33333333333333337
+- using 10 elems: 0.33333333333333337
 </pre></div>
 </div>
 </div>
