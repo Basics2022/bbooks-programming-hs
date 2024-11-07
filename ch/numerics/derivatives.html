@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo scientifico</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="linear.html">Sistemi lineari</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nonlinear.html">Problemi non lineari</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nonlinear.html">Equazioni algebriche non lineari</a></li>
 <li class="toctree-l2"><a class="reference internal" href="approximation.html">Approssimazione di funzioni</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Derivate di funzioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="integrals.html">Integrali</a></li>
@@ -468,23 +468,123 @@ document.write(`
 <h3>Derivata prima<a class="headerlink" href="#derivata-prima" title="Permalink to this heading">#</a></h3>
 <p>Usando le espansioni</p>
 <div class="math notranslate nohighlight">
-\[f(x + \Delta x) = f(x) + f'(x) \Delta x + f''(x) \frac{\Delta x^2}{2} + f'''(x) \frac{\Delta x^3}{3!} + o(x^3)\]</div>
+\[\begin{split}\begin{aligned}
+  f(x + h) &amp; = f(x) + f'(x) \, h + f''(x) \frac{h^2}{2} + f'''(x) \frac{h^3}{3!} + o(h^3) \\
+  f(x - h) &amp; = f(x) - f'(x) \, h + f''(x) \frac{h^2}{2} - f'''(x) \frac{h^3}{3!} + o(h^3)
+\end{aligned}\end{split}\]</div>
+<p>si possono ricavare:</p>
+<ul>
+<li><p>gli schemi del <strong>primo ordine</strong></p>
 <div class="math notranslate nohighlight">
-\[f(x - \Delta x) = f(x) - f'(x) \Delta x + f''(x) \frac{\Delta x^2}{2} - f'''(x) \frac{\Delta x^3}{3!} + o(x^3)\]</div>
-<p>si possono ricavare gli schemi del primo ordine</p>
+\[\begin{split}\begin{aligned}
+    f'(x) &amp; = \frac{f(x+h) - f(x)}{h} + O(h) \\
+    f'(x) &amp; = \frac{f(x) - f(x-h)}{h} + O(h) \\
+  \end{aligned}\end{split}\]</div>
+</li>
+<li><p>lo schema <strong>centrato del secondo ordine</strong></p>
 <div class="math notranslate nohighlight">
-\[f'(x) = \frac{f(x+\Delta x) - f(x)}{\Delta x} + o(\Delta x)\]</div>
+\[f'(x) = \dfrac{f(x+h) - f(x-h)}{2 h} + O(h^2) \]</div>
+</li>
+<li><p>lo schema non centrato del secondo ordine:</p>
 <div class="math notranslate nohighlight">
-\[f'(x) = \frac{f(x+\Delta x) - f(x)}{\Delta x} + o(\Delta x)\]</div>
-<p>e lo schema del secondo ordine usando le differenze centrate</p>
+\[f'(x) = \frac{-3 \, f(x) + 4 \, f(x+h) - f(x+2h)}{2 \, h} + O(h^2) \ .\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Dimostrazione<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Usando le espansioni in serie,</p>
 <div class="math notranslate nohighlight">
-\[f'(x) = \dfrac{f(x+\Delta x) - f(x-\Delta x)}{2 \Delta x} + o(\Delta x^2) \]</div>
+\[\begin{split}\begin{aligned}
+  f(x + h) &amp; = f(x) + f'(x) \, h + f''(x) \frac{h^2}{2} + f'''(x) \frac{h^3}{3!} + o(h^3) \\
+  f(x + 2h) &amp; = f(x) + f'(x) \, 2 h + 2 f''(x) \, h^2 + f'''(x) \frac{4}{3} h^3 + o(h^3) \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">si cerca una coppia di coefficienti della combinazione lineare <span class="math notranslate nohighlight">\(a_1 f(x+h) + a_2 f(x+2h)\)</span> che annullano il termine di secondo grado.</p>
+<p class="sd-card-text">In particolare è facile dimostrare che una di queste scelte è <span class="math notranslate nohighlight">\(\alpha_1 = 4\)</span>, <span class="math notranslate nohighlight">\(\alpha_2 = -1\)</span>, e la combinazione lineare per questi valori diventa,</p>
+<div class="math notranslate nohighlight">
+\[4 f(x+h) - f(x+2h) = 3 f(x) + 2 \, h f'(x) + O(h^3) \ .\]</div>
+<p class="sd-card-text">A questo punto è semplice isolare <span class="math notranslate nohighlight">\(f'(x)\)</span> per trovare lo schema numerico desiderato,</p>
+<div class="math notranslate nohighlight">
+\[f'(x) = \frac{-3 \, f(x) + 4 \, f(x+h) - f(x+2h)}{2 \, h} + O(h^2) \ .\]</div>
+</div>
+</details></li>
+<li><p>…</p></li>
+<li><p>schemi di ordine superiore…</p></li>
+</ul>
 </div>
 <div class="section" id="derivata-seconda">
 <h3>Derivata seconda<a class="headerlink" href="#derivata-seconda" title="Permalink to this heading">#</a></h3>
 <p>Usando le stesse espansioni in serie, si può ottenere uno schema del secondo ordine per la derivata seconda</p>
 <div class="math notranslate nohighlight">
-\[f''(x) = \frac{f(x+\Delta x) - 2 f(x) + f(x-\Delta x)}{\Delta x^2} + o(\Delta x^2)\]</div>
+\[f''(x) = \frac{f(x+h) - 2 f(x) + f(x-h)}{h^2} + O(h^2)\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Dimostrazione<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Usando le espansioni in serie</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  f(x + h) &amp; = f(x) + f'(x) \, h + f''(x) \frac{h^2}{2} + f'''(x) \frac{h^3}{3!} + f^{iv}(x) \frac{h^4}{4!} + O(h^5) \\ f(x - h) &amp; = f(x) - f'(x) \, h + f''(x) \frac{h^2}{2} - f'''(x) \frac{h^3}{3!} + f^{iv}(x) \frac{h^4}{4!} + O(h^5) \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">si può notare che nella somma che compare al numeratore dello schema numerico si annullano sia il termine di primo grado sia il termine di terzo grado,</p>
+<div class="math notranslate nohighlight">
+\[
+ f(x+h) - 2 f(x) + f(x-h) = f''(x) \, h^2 + O(h^4) \ ,
+\]</div>
+<p class="sd-card-text">e quindi lo schema numerico proposto è del secondo ordine,</p>
+<div class="math notranslate nohighlight">
+\[f'(x) = \frac{ f(x+h) - 2 f(x) + f(x-h) }{h^2} + O(h^2) \ .\]</div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Numerical schemes for derivatives &quot;&quot;&quot;</span>
+
+<span class="n">df_first_order_left</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
+<span class="n">df_first_order_right</span>   <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
+<span class="n">df_second_order_center</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">h</span> <span class="p">)</span>
+<span class="n">df_second_order_left</span>   <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span> <span class="p">(</span>  <span class="mi">3</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">h</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">h</span> <span class="p">)</span>
+<span class="n">df_second_order_right</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">h</span> <span class="p">)</span>
+
+<span class="n">df_fun_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;1_left&#39;</span>  <span class="p">:</span> <span class="n">df_first_order_left</span><span class="p">,</span>
+    <span class="s1">&#39;1_right&#39;</span> <span class="p">:</span> <span class="n">df_first_order_right</span><span class="p">,</span>
+    <span class="s1">&#39;2_center&#39;</span><span class="p">:</span> <span class="n">df_second_order_center</span><span class="p">,</span>
+    <span class="s1">&#39;2_left&#39;</span>  <span class="p">:</span> <span class="n">df_second_order_left</span><span class="p">,</span>
+    <span class="s1">&#39;2_right&#39;</span> <span class="p">:</span> <span class="n">df_second_order_right</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Example &quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">.01</span>
+
+<span class="k">for</span> <span class="n">df_label</span><span class="p">,</span> <span class="n">df_fun</span> <span class="ow">in</span> <span class="n">df_fun_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scheme: </span><span class="si">{</span><span class="n">df_label</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">, value: </span><span class="si">{</span><span class="n">df_fun</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">h</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scheme: 1_left    , value: -1.4788256893130014
+Scheme: 1_right   , value: -1.4641117378933477
+Scheme: 2_center  , value: -1.4714687136031745
+Scheme: 2_left    , value: -1.4716195509633268
+Scheme: 2_right   , value: -1.4716121945026028
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>

@@ -449,7 +449,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemi-di-equazioni-non-lineari">Sistemi di equazioni non lineari</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio">Esempio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Metodo di Newton</a></li>
 </ul>
 </li>
 </ul>
@@ -568,7 +568,7 @@ Convergence reached
 Sol, x = -0.567143440246582
 residual     : -2.348157265297246e-07
 n. iterations: 20
-elapsed time : 0.0005495548248291016
+elapsed time : 0.0006248950958251953
 </pre></div>
 </div>
 </div>
@@ -646,7 +646,7 @@ Convergence reached
 Sol, x = -0.567143285989123
 residual     : 6.927808993140161e-09
 n. iterations: 3
-elapsed time : 0.00041985511779785156
+elapsed time : 0.0005154609680175781
 </pre></div>
 </div>
 </div>
@@ -655,21 +655,42 @@ elapsed time : 0.00041985511779785156
 </div>
 <div class="section" id="sistemi-di-equazioni-non-lineari">
 <h2>Sistemi di equazioni non lineari<a class="headerlink" href="#sistemi-di-equazioni-non-lineari" title="Permalink to this heading">#</a></h2>
-<div class="section" id="esempio">
-<h3>Esempio<a class="headerlink" href="#esempio" title="Permalink to this heading">#</a></h3>
+<div class="section" id="id1">
+<h3>Metodo di Newton<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Il metodo di Newton sfrutta l’espansione lineare della funzione <span class="math notranslate nohighlight">\(\mathbf{f}(\mathbf{x})\)</span> nell’intorno di un valore <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{0} = \mathbf{f}(\mathbf{x} + \mathbf{h}) \simeq \mathbf{f}(\mathbf{x}) + \mathbf{f}'(\mathbf{x}) \, \mathbf{h}\]</div>
+<p>per costruire un metodo iterativo composto da due passi a ogni iterazione:</p>
+<ul>
+<li><p>ricerca dell’incremento:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{f}'(\mathbf{x}^{n}) \, \mathbf{h}^{(n)} = - \mathbf{f}(\mathbf{x}^{(n)})\]</div>
+</li>
+<li><p>aggiornamento della soluzione</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}^{(n+1)} = \mathbf{x}^{(n)} + \mathbf{h}^{(n)} \ .\]</div>
+</li>
+</ul>
+<p><strong>Esempio.</strong> Il metodo di Newton viene applicato al sistema non lineare</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
-    x_1   - x_2 = 0 \\
-  - x_1^2 + x_2 = -1
+    x_0   - x_1 = 0 \\
+  - x_0^2 + x_1 = -1
 \end{cases}\end{split}\]</div>
+<p>che può essere scritto con il formalismo matriciale come</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathbf{f}(\mathbf{x}) = \begin{bmatrix} x_1 - x_2 \\ -x_1^2 + x_2 - 1 \end{bmatrix}\end{split}\]</div>
+\[\begin{split}\mathbf{0} = \mathbf{f}(\mathbf{x}) = \begin{bmatrix} x_0 - x_1 \\ -x_0^2 + x_1 - 1 \end{bmatrix} \ .\end{split}\]</div>
+<p>La derivata della funzione <span class="math notranslate nohighlight">\(\mathbf{f}(\mathbf{x})\)</span>, rispetto alla variabile indipendente <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathbf{f}'(\mathbf{x}) = \begin{bmatrix} 1 &amp; - 1 \\ - 2 x_1 &amp; 1\end{bmatrix}\end{split}\]</div>
+\[\begin{split}\mathbf{f}'(\mathbf{x}) = \begin{bmatrix} 1 &amp; - 1 \\ - 2 x_0 &amp; 1\end{bmatrix}\end{split}\]</div>
+<p>può essere rappresentata come una matrice che ha come elemento alla riga <span class="math notranslate nohighlight">\(i\)</span> e alla colonna <span class="math notranslate nohighlight">\(j\)</span> la derivata della funzione <span class="math notranslate nohighlight">\(f_i(\mathbf{x})\)</span> rispetto alla variabile <span class="math notranslate nohighlight">\(x_j\)</span>, <span class="math notranslate nohighlight">\(\left[ \mathbf{f}' \right]_{ij} = \frac{\partial f_i}{\partial x_j}\)</span>, così che l’approssimazione al primo ordine dell’incremento della funzione può essere scritto come</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{f}(\mathbf{x}+\mathbf{h}) - \mathbf{f}(\mathbf{x}) = \mathbf{f}'(\mathbf{x}) \, \mathbf{h} + o(||\mathbf{h}||) \ .\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Example. f(x) = e^x + x</span>
+<span class="sd">Example. f(x) = np.array([  x[0]    - x[1]</span>
+<span class="sd">                           -x[0]**2 + x[1] - 1 ])</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="c1"># Function f and its derivative</span>
@@ -739,7 +760,7 @@ Convergence reached
 Sol, x = [-0.61803399 -0.61803399]
 residual     : [ 0.00000000e+00 -2.10942375e-13]
 n. iterations: 4
-elapsed time : 0.0006754398345947266
+elapsed time : 0.0007855892181396484
 </pre></div>
 </div>
 </div>
@@ -821,7 +842,7 @@ elapsed time : 0.0006754398345947266
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemi-di-equazioni-non-lineari">Sistemi di equazioni non lineari</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio">Esempio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Metodo di Newton</a></li>
 </ul>
 </li>
 </ul>
