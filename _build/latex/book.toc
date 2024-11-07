@@ -21,7 +21,7 @@
 \contentsline {section}{\numberline {4.1}Default value of function arguments}{15}{section.4.1}%
 \contentsline {chapter}{\numberline {5}Classi}{17}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Librerie}{19}{chapter.6}%
-\contentsline {part}{II\hspace {1em}Introduzione al calcolo numerico}{21}{part.2}%
+\contentsline {part}{II\hspace {1em}Introduzione al calcolo scientifico}{21}{part.2}%
 \contentsline {chapter}{\numberline {7}Introduzione al calcolo scientifico}{23}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Sistemi lineari}{24}{section.7.1}%
 \contentsline {subsection}{\numberline {7.1.1}Sistemi lineari quadrati con matrici piene}{24}{subsection.7.1.1}%
@@ -34,29 +34,36 @@
 \contentsline {subsubsection}{Metodo di bisezione}{28}{subsubsection*.6}%
 \contentsline {subsubsection}{Metodo di Newton}{29}{subsubsection*.7}%
 \contentsline {subsection}{\numberline {7.2.2}Sistemi di equazioni non lineari}{31}{subsection.7.2.2}%
-\contentsline {subsubsection}{Esempio}{31}{subsubsection*.8}%
-\contentsline {section}{\numberline {7.3}Approssimazione di funzioni}{32}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Interpolazione}{32}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Regressione}{32}{subsection.7.3.2}%
-\contentsline {section}{\numberline {7.4}Derivate di funzioni}{32}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Differenze finite}{32}{subsection.7.4.1}%
-\contentsline {subsubsection}{Derivata prima}{32}{subsubsection*.9}%
-\contentsline {subsubsection}{Derivata seconda}{33}{subsubsection*.10}%
-\contentsline {section}{\numberline {7.5}Integrali}{33}{section.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}Integrazione di Newton\sphinxhyphen {}Cotes}{33}{subsection.7.5.1}%
-\contentsline {subsection}{\numberline {7.5.2}Integrazione di Gauss}{33}{subsection.7.5.2}%
-\contentsline {section}{\numberline {7.6}Equazioni differenziali ordinarie}{34}{section.7.6}%
-\contentsline {subsection}{\numberline {7.6.1}Problemi di Cauchy ai valori iniziali}{34}{subsection.7.6.1}%
-\contentsline {subsubsection}{Approccio a un problema di Cauchy di ordine \(n\)}{34}{subsubsection*.11}%
-\contentsline {subsubsection}{Caratteristiche (cenni)}{34}{subsubsection*.12}%
-\contentsline {subsubsection}{Schemi numerici}{34}{subsubsection*.13}%
-\contentsline {paragraph}{Schemi numerici a un passo}{34}{paragraph*.14}%
-\contentsline {paragraph}{Schemi numerici multi\sphinxhyphen {}step}{34}{paragraph*.15}%
-\contentsline {subsection}{\numberline {7.6.2}Problemi al contorno}{34}{subsection.7.6.2}%
-\contentsline {subsubsection}{Differenze finite}{34}{subsubsection*.16}%
-\contentsline {subsubsection}{Elementi finiti}{35}{subsubsection*.17}%
-\contentsline {subsubsection}{Volumi finiti}{35}{subsubsection*.18}%
-\contentsline {section}{\numberline {7.7}Ottimizzazione}{35}{section.7.7}%
-\contentsline {section}{\numberline {7.8}Introduzione ai metodi in AI}{35}{section.7.8}%
-\contentsline {part}{III\hspace {1em}Supporto tecnico}{37}{part.3}%
-\contentsline {chapter}{\numberline {8}Supporto tecnico}{39}{chapter.8}%
+\contentsline {subsubsection}{Metodo di Newton}{31}{subsubsection*.8}%
+\contentsline {section}{\numberline {7.3}Approssimazione di funzioni}{33}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Interpolazione}{33}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Regressione}{33}{subsection.7.3.2}%
+\contentsline {section}{\numberline {7.4}Derivate di funzioni}{33}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Differenze finite}{33}{subsection.7.4.1}%
+\contentsline {subsubsection}{Derivata prima}{33}{subsubsection*.9}%
+\contentsline {subsubsection}{Derivata seconda}{34}{subsubsection*.10}%
+\contentsline {section}{\numberline {7.5}Integrali}{35}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Integrazione di Newton\sphinxhyphen {}Cotes}{35}{subsection.7.5.1}%
+\contentsline {subsubsection}{Metodo di integrazione del punto medio}{35}{subsubsection*.11}%
+\contentsline {subsubsection}{Metodo di integrazione del trapezio}{36}{subsubsection*.12}%
+\contentsline {subsubsection}{Esempi}{36}{subsubsection*.13}%
+\contentsline {paragraph}{Esempio 1.}{36}{paragraph*.14}%
+\contentsline {paragraph}{Esempio 2. Necessità della continuità della funzione.}{37}{paragraph*.15}%
+\contentsline {subsection}{\numberline {7.5.2}Integrazione di Gauss}{37}{subsection.7.5.2}%
+\contentsline {subsubsection}{Esempio 1 \sphinxhyphen {} integrazione di Gauss.}{38}{subsubsection*.16}%
+\contentsline {section}{\numberline {7.6}Equazioni differenziali ordinarie}{39}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Problemi di Cauchy ai valori iniziali}{39}{subsection.7.6.1}%
+\contentsline {subsubsection}{Approccio a un problema di Cauchy di ordine \(n\)}{39}{subsubsection*.17}%
+\contentsline {subsubsection}{Caratteristiche (cenni)}{40}{subsubsection*.18}%
+\contentsline {subsubsection}{Schemi numerici}{40}{subsubsection*.19}%
+\contentsline {paragraph}{Schemi numerici a un passo}{40}{paragraph*.20}%
+\contentsline {paragraph}{Schemi numerici multi\sphinxhyphen {}step}{40}{paragraph*.21}%
+\contentsline {subsection}{\numberline {7.6.2}Problemi al contorno}{40}{subsection.7.6.2}%
+\contentsline {subsubsection}{Differenze finite}{40}{subsubsection*.22}%
+\contentsline {subsubsection}{Elementi finiti}{40}{subsubsection*.23}%
+\contentsline {subsubsection}{Volumi finiti}{40}{subsubsection*.24}%
+\contentsline {section}{\numberline {7.7}Ottimizzazione}{40}{section.7.7}%
+\contentsline {part}{III\hspace {1em}Introduzione ai metodi in statistica e AI}{41}{part.3}%
+\contentsline {chapter}{\numberline {8}Introduzione ai metodi in AI}{43}{chapter.8}%
+\contentsline {part}{IV\hspace {1em}Supporto tecnico}{45}{part.4}%
+\contentsline {chapter}{\numberline {9}Supporto tecnico}{47}{chapter.9}%

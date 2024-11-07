@@ -102,7 +102,7 @@
 
 
 \sphinxAtStartPar
-Questo libro fa parte del materiale pensato per \sphinxhref{https://basics2022.github.io/bbooks-hs}{le scuole superiori}
+Questo libro fa parte del materiale pensato per \sphinxhref{https://basics2022.github.io/bbooks-hs}{le scuole superiori}. E’ disponibile la \sphinxhref{https://www.github.com/Basics2022/bbooks-programming-hs/blob/master/\_build/latex/book.pdf}{versione in .pdf} scaricabile.
 
 \sphinxAtStartPar
 \sphinxstylestrong{Obiettivi generali.} Questo lavoro punta ad essere un’opera di \sphinxstyleemphasis{formazione alla} \sphinxstylestrong{tirchieria}, \sphinxstylestrong{prigrizia} \sphinxstyleemphasis{e} \sphinxstylestrong{onestà}, almeno in ambito informatico. I più benvolenti potranno riassumere questo obiettivo come il desiderio di \sphinxstyleemphasis{non buttare nel WC soldi, tempo, e pazienza}.
@@ -655,7 +655,7 @@ scrivere una libreria
 \sphinxstepscope
 
 
-\part{Introduzione al calcolo numerico}
+\part{Introduzione al calcolo scientifico}
 
 \sphinxstepscope
 
@@ -1159,7 +1159,7 @@ Convergence reached
 Sol, x = \PYGZhy{}0.567143440246582
 residual     : \PYGZhy{}2.348157265297246e\PYGZhy{}07
 n. iterations: 20
-elapsed time : 0.0005495548248291016
+elapsed time : 0.0006248950958251953
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1254,7 +1254,7 @@ Convergence reached
 Sol, x = \PYGZhy{}0.567143285989123
 residual     : 6.927808993140161e\PYGZhy{}09
 n. iterations: 3
-elapsed time : 0.00041985511779785156
+elapsed time : 0.0005154609680175781
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1264,23 +1264,60 @@ elapsed time : 0.00041985511779785156
 \subsection{Sistemi di equazioni non lineari}
 \label{\detokenize{ch/numerics/nonlinear:sistemi-di-equazioni-non-lineari}}
 
-\subsubsection{Esempio}
-\label{\detokenize{ch/numerics/nonlinear:esempio}}\begin{equation*}
+\subsubsection{Metodo di Newton}
+\label{\detokenize{ch/numerics/nonlinear:id1}}
+\sphinxAtStartPar
+Il metodo di Newton sfrutta l’espansione lineare della funzione \(\mathbf{f}(\mathbf{x})\) nell’intorno di un valore \(\mathbf{x}\),
+\begin{equation*}
+\begin{split}\mathbf{0} = \mathbf{f}(\mathbf{x} + \mathbf{h}) \simeq \mathbf{f}(\mathbf{x}) + \mathbf{f}'(\mathbf{x}) \, \mathbf{h}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+per costruire un metodo iterativo composto da due passi a ogni iterazione:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+ricerca dell’incremento:
+\begin{equation*}
+\begin{split}\mathbf{f}'(\mathbf{x}^{n}) \, \mathbf{h}^{(n)} = - \mathbf{f}(\mathbf{x}^{(n)})\end{split}
+\end{equation*}
+\item {} 
+\sphinxAtStartPar
+aggiornamento della soluzione
+\begin{equation*}
+\begin{split}\mathbf{x}^{(n+1)} = \mathbf{x}^{(n)} + \mathbf{h}^{(n)} \ .\end{split}
+\end{equation*}
+\end{itemize}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Esempio.} Il metodo di Newton viene applicato al sistema non lineare
+\begin{equation*}
 \begin{split}\begin{cases}
-    x_1   - x_2 = 0 \\
-  - x_1^2 + x_2 = -1
+    x_0   - x_1 = 0 \\
+  - x_0^2 + x_1 = -1
 \end{cases}\end{split}
-\end{equation*}\begin{equation*}
-\begin{split}\mathbf{f}(\mathbf{x}) = \begin{bmatrix} x_1 - x_2 \\ -x_1^2 + x_2 - 1 \end{bmatrix}\end{split}
-\end{equation*}\begin{equation*}
-\begin{split}\mathbf{f}'(\mathbf{x}) = \begin{bmatrix} 1 & - 1 \\ - 2 x_1 & 1\end{bmatrix}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+che può essere scritto con il formalismo matriciale come
+\begin{equation*}
+\begin{split}\mathbf{0} = \mathbf{f}(\mathbf{x}) = \begin{bmatrix} x_0 - x_1 \\ -x_0^2 + x_1 - 1 \end{bmatrix} \ .\end{split}
+\end{equation*}
+\sphinxAtStartPar
+La derivata della funzione \(\mathbf{f}(\mathbf{x})\), rispetto alla variabile indipendente \(\mathbf{x}\),
+\begin{equation*}
+\begin{split}\mathbf{f}'(\mathbf{x}) = \begin{bmatrix} 1 & - 1 \\ - 2 x_0 & 1\end{bmatrix}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+può essere rappresentata come una matrice che ha come elemento alla riga \(i\) e alla colonna \(j\) la derivata della funzione \(f_i(\mathbf{x})\) rispetto alla variabile \(x_j\), \(\left[ \mathbf{f}' \right]_{ij} = \frac{\partial f_i}{\partial x_j}\), così che l’approssimazione al primo ordine dell’incremento della funzione può essere scritto come
+\begin{equation*}
+\begin{split}\mathbf{f}(\mathbf{x}+\mathbf{h}) - \mathbf{f}(\mathbf{x}) = \mathbf{f}'(\mathbf{x}) \, \mathbf{h} + o(||\mathbf{h}||) \ .\end{split}
 \end{equation*}
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
 \begin{sphinxuseclass}{cell_input}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\PYG{l+s+sd}{Example. f(x) = e\PYGZca{}x + x}
+\PYG{l+s+sd}{Example. f(x) = np.array([  x[0]    \PYGZhy{} x[1]}
+\PYG{l+s+sd}{                           \PYGZhy{}x[0]**2 + x[1] \PYGZhy{} 1 ])}
 \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
 
 \PYG{c+c1}{\PYGZsh{} Function f and its derivative}
@@ -1359,7 +1396,7 @@ Convergence reached
 Sol, x = [\PYGZhy{}0.61803399 \PYGZhy{}0.61803399]
 residual     : [ 0.00000000e+00 \PYGZhy{}2.10942375e\PYGZhy{}13]
 n. iterations: 4
-elapsed time : 0.0006754398345947266
+elapsed time : 0.0007855892181396484
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1403,38 +1440,172 @@ Il calcolo della derivata di una funzione \(f(x)\) derivabile in un punto \(x_0\
 \sphinxAtStartPar
 Usando le espansioni
 \begin{equation*}
-\begin{split}f(x + \Delta x) = f(x) + f'(x) \Delta x + f''(x) \frac{\Delta x^2}{2} + f'''(x) \frac{\Delta x^3}{3!} + o(x^3)\end{split}
-\end{equation*}\begin{equation*}
-\begin{split}f(x - \Delta x) = f(x) - f'(x) \Delta x + f''(x) \frac{\Delta x^2}{2} - f'''(x) \frac{\Delta x^3}{3!} + o(x^3)\end{split}
+\begin{split}\begin{aligned}
+  f(x + h) & = f(x) + f'(x) \, h + f''(x) \frac{h^2}{2} + f'''(x) \frac{h^3}{3!} + o(h^3) \\
+  f(x - h) & = f(x) - f'(x) \, h + f''(x) \frac{h^2}{2} - f'''(x) \frac{h^3}{3!} + o(h^3)
+\end{aligned}\end{split}
 \end{equation*}
 \sphinxAtStartPar
-si possono ricavare gli schemi del primo ordine
+si possono ricavare:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+gli schemi del \sphinxstylestrong{primo ordine}
 \begin{equation*}
-\begin{split}f'(x) = \frac{f(x+\Delta x) - f(x)}{\Delta x} + o(\Delta x)\end{split}
-\end{equation*}\begin{equation*}
-\begin{split}f'(x) = \frac{f(x+\Delta x) - f(x)}{\Delta x} + o(\Delta x)\end{split}
+\begin{split}\begin{aligned}
+    f'(x) & = \frac{f(x+h) - f(x)}{h} + O(h) \\
+    f'(x) & = \frac{f(x) - f(x-h)}{h} + O(h) \\
+  \end{aligned}\end{split}
+\end{equation*}
+\item {} 
+\sphinxAtStartPar
+lo schema \sphinxstylestrong{centrato del secondo ordine}
+\begin{equation*}
+\begin{split}f'(x) = \dfrac{f(x+h) - f(x-h)}{2 h} + O(h^2) \end{split}
+\end{equation*}
+\item {} 
+\sphinxAtStartPar
+lo schema non centrato del secondo ordine:
+\begin{equation*}
+\begin{split}f'(x) = \frac{-3 \, f(x) + 4 \, f(x+h) - f(x+2h)}{2 \, h} + O(h^2) \ .\end{split}
+\end{equation*}\subsubsection*{Dimostrazione}
+
+\sphinxAtStartPar
+Usando le espansioni in serie,
+\begin{equation*}
+\begin{split}\begin{aligned}
+  f(x + h) & = f(x) + f'(x) \, h + f''(x) \frac{h^2}{2} + f'''(x) \frac{h^3}{3!} + o(h^3) \\
+  f(x + 2h) & = f(x) + f'(x) \, 2 h + 2 f''(x) \, h^2 + f'''(x) \frac{4}{3} h^3 + o(h^3) \\
+\end{aligned}\end{split}
 \end{equation*}
 \sphinxAtStartPar
-e lo schema del secondo ordine usando le differenze centrate
+si cerca una coppia di coefficienti della combinazione lineare \(a_1 f(x+h) + a_2 f(x+2h)\) che annullano il termine di secondo grado.
+
+\sphinxAtStartPar
+In particolare è facile dimostrare che una di queste scelte è \(\alpha_1 = 4\), \(\alpha_2 = -1\), e la combinazione lineare per questi valori diventa,
 \begin{equation*}
-\begin{split}f'(x) = \dfrac{f(x+\Delta x) - f(x-\Delta x)}{2 \Delta x} + o(\Delta x^2) \end{split}
+\begin{split}4 f(x+h) - f(x+2h) = 3 f(x) + 2 \, h f'(x) + O(h^3) \ .\end{split}
 \end{equation*}
+\sphinxAtStartPar
+A questo punto è semplice isolare \(f'(x)\) per trovare lo schema numerico desiderato,
+\begin{equation*}
+\begin{split}f'(x) = \frac{-3 \, f(x) + 4 \, f(x+h) - f(x+2h)}{2 \, h} + O(h^2) \ .\end{split}
+\end{equation*}
+\item {} 
+\sphinxAtStartPar
+…
+
+\item {} 
+\sphinxAtStartPar
+schemi di ordine superiore…
+
+\end{itemize}
+
 
 \subsubsection{Derivata seconda}
 \label{\detokenize{ch/numerics/derivatives:derivata-seconda}}
 \sphinxAtStartPar
 Usando le stesse espansioni in serie, si può ottenere uno schema del secondo ordine per la derivata seconda
 \begin{equation*}
-\begin{split}f''(x) = \frac{f(x+\Delta x) - 2 f(x) + f(x-\Delta x)}{\Delta x^2} + o(\Delta x^2)\end{split}
+\begin{split}f''(x) = \frac{f(x+h) - 2 f(x) + f(x-h)}{h^2} + O(h^2)\end{split}
+\end{equation*}\subsubsection*{Dimostrazione}
+
+\sphinxAtStartPar
+Usando le espansioni in serie
+\begin{equation*}
+\begin{split}\begin{aligned}
+  f(x + h) & = f(x) + f'(x) \, h + f''(x) \frac{h^2}{2} + f'''(x) \frac{h^3}{3!} + f^{iv}(x) \frac{h^4}{4!} + O(h^5) \\ f(x - h) & = f(x) - f'(x) \, h + f''(x) \frac{h^2}{2} - f'''(x) \frac{h^3}{3!} + f^{iv}(x) \frac{h^4}{4!} + O(h^5) \\
+\end{aligned}\end{split}
 \end{equation*}
+\sphinxAtStartPar
+si può notare che nella somma che compare al numeratore dello schema numerico si annullano sia il termine di primo grado sia il termine di terzo grado,
+\begin{equation*}
+\begin{split}
+ f(x+h) - 2 f(x) + f(x-h) = f''(x) \, h^2 + O(h^4) \ ,
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+e quindi lo schema numerico proposto è del secondo ordine,
+\begin{equation*}
+\begin{split}f'(x) = \frac{ f(x+h) - 2 f(x) + f(x-h) }{h^2} + O(h^2) \ .\end{split}
+\end{equation*}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Numerical schemes for derivatives \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{n}{df\PYGZus{}first\PYGZus{}order\PYGZus{}left}    \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{f}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{h}\PYG{p}{:} \PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{h}\PYG{p}{)}\PYG{p}{)} \PYG{o}{/} \PYG{n}{h}
+\PYG{n}{df\PYGZus{}first\PYGZus{}order\PYGZus{}right}   \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{f}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{h}\PYG{p}{:} \PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{o}{+}\PYG{n}{h}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{)} \PYG{o}{/} \PYG{n}{h}
+\PYG{n}{df\PYGZus{}second\PYGZus{}order\PYGZus{}center} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{f}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{h}\PYG{p}{:} \PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{o}{+}\PYG{n}{h}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{h}\PYG{p}{)}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mf}{2.} \PYG{o}{*} \PYG{n}{h} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}second\PYGZus{}order\PYGZus{}left}   \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{f}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{h}\PYG{p}{:} \PYG{p}{(}  \PYG{l+m+mi}{3}\PYG{o}{*}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{h}\PYG{p}{)} \PYG{o}{+} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{h}\PYG{p}{)}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mf}{2.} \PYG{o}{*} \PYG{n}{h} \PYG{p}{)}
+\PYG{n}{df\PYGZus{}second\PYGZus{}order\PYGZus{}right}  \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{f}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{h}\PYG{p}{:} \PYG{p}{(}\PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{3}\PYG{o}{*}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{o}{+}\PYG{n}{h}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{o}{+}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{h}\PYG{p}{)}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(} \PYG{l+m+mf}{2.} \PYG{o}{*} \PYG{n}{h} \PYG{p}{)}
+
+\PYG{n}{df\PYGZus{}fun\PYGZus{}dict} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{1\PYGZus{}left}\PYG{l+s+s1}{\PYGZsq{}}  \PYG{p}{:} \PYG{n}{df\PYGZus{}first\PYGZus{}order\PYGZus{}left}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{1\PYGZus{}right}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{n}{df\PYGZus{}first\PYGZus{}order\PYGZus{}right}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{2\PYGZus{}center}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{n}{df\PYGZus{}second\PYGZus{}order\PYGZus{}center}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{2\PYGZus{}left}\PYG{l+s+s1}{\PYGZsq{}}  \PYG{p}{:} \PYG{n}{df\PYGZus{}second\PYGZus{}order\PYGZus{}left}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{2\PYGZus{}right}\PYG{l+s+s1}{\PYGZsq{}} \PYG{p}{:} \PYG{n}{df\PYGZus{}second\PYGZus{}order\PYGZus{}right}
+\PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Example \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{n}{f} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{l+m+mf}{2.} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}} \PYG{n}{x}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{)}
+
+\PYG{n}{x}\PYG{p}{,} \PYG{n}{h} \PYG{o}{=} \PYG{l+m+mf}{1.}\PYG{p}{,} \PYG{l+m+mf}{.01}
+
+\PYG{k}{for} \PYG{n}{df\PYGZus{}label}\PYG{p}{,} \PYG{n}{df\PYGZus{}fun} \PYG{o+ow}{in} \PYG{n}{df\PYGZus{}fun\PYGZus{}dict}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Scheme: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{df\PYGZus{}label}\PYG{o}{.}\PYG{n}{ljust}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{, value: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{df\PYGZus{}fun}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,}\PYG{n}{x}\PYG{p}{,}\PYG{n}{h}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}} \PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Scheme: 1\PYGZus{}left    , value: \PYGZhy{}1.4788256893130014
+Scheme: 1\PYGZus{}right   , value: \PYGZhy{}1.4641117378933477
+Scheme: 2\PYGZus{}center  , value: \PYGZhy{}1.4714687136031745
+Scheme: 2\PYGZus{}left    , value: \PYGZhy{}1.4716195509633268
+Scheme: 2\PYGZus{}right   , value: \PYGZhy{}1.4716121945026028
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
 \sphinxstepscope
 
 
 \section{Integrali}
 \label{\detokenize{ch/numerics/integrals:integrali}}\label{\detokenize{ch/numerics/integrals::doc}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Import libraries \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
 
 \subsection{Integrazione di Newton\sphinxhyphen{}Cotes}
-\label{\detokenize{ch/numerics/integrals:integrazione-di-newton-cotes}}\begin{itemize}
+\label{\detokenize{ch/numerics/integrals:integrazione-di-newton-cotes}}
+\sphinxAtStartPar
+Valutazioni di integrali definiti di funzioni \(f: [a,b] \in \mathbb{R} \rightarrow \mathbb{R}\), continue sull’intervallo. Si veda l’{\hyperref[\detokenize{ch/numerics/integrals:integrals-examples-continuity}]{\sphinxcrossref{\DUrole{std,std-ref}{esempio}}}} per intuire la necessità della continuità della funzione.
+\begin{itemize}
 \item {} 
 \sphinxAtStartPar
 Formula del punto medio
@@ -1446,20 +1617,140 @@ Formula del trapezio
 \end{itemize}
 
 
+\subsubsection{Metodo di integrazione del punto medio}
+\label{\detokenize{ch/numerics/integrals:metodo-di-integrazione-del-punto-medio}}
+\sphinxAtStartPar
+Il metodo di integrazione del punto medio ricorda la definizione dell’integrale di Riemann (\sphinxstylestrong{todo} aggiungere link). Data la funzione \(f:[a,b] \in \mathbb{R} \rightarrow \mathbb{R}\), e una partizione \(P = \{ a = x_0 < x_1 < \dots < x_n = b \}\) dell’intervallo \([a,b]\), l’integrale viene calcolato come la somma dell’area dei rettangoli elementari di lati \(\Delta x_k := x_k - x_{k-1}\) e \(f(\xi_k)\), con \(\xi_k \in [x_{k-1}, x_k]\),
+\begin{equation*}
+\begin{split}\int_{x=a}^{b} f(x) dx \simeq \sum_{k=1:n} f(\xi_k) \, \Delta x_k \ . \end{split}
+\end{equation*}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Mid\PYGZhy{}point method \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{k}{def} \PYG{n+nf}{integral\PYGZus{}rect}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    Inputs:}
+\PYG{l+s+sd}{    \PYGZhy{} f: function}
+\PYG{l+s+sd}{    \PYGZhy{} a, b: extreme points of the range}
+\PYG{l+s+sd}{    \PYGZhy{} n: n. of intervals of the range}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} Partition of the range [a,b]}
+    \PYG{c+c1}{\PYGZsh{} uniform partition here; refined algorithms may use non\PYGZhy{}uniform partitions}
+    \PYG{n}{xv} \PYG{o}{=} \PYG{n}{a} \PYG{o}{+} \PYG{p}{(} \PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{a} \PYG{p}{)} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{/} \PYG{n}{n}\PYG{p}{;}  \PYG{n}{xv}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{b}
+    \PYG{n}{xc} \PYG{o}{=} \PYG{l+m+mf}{.5} \PYG{o}{*} \PYG{p}{(} \PYG{n}{xv}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{p}{]} \PYG{o}{+} \PYG{n}{xv}\PYG{p}{[}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{p}{)}
+    \PYG{n}{dx} \PYG{o}{=} \PYG{n}{xv}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{xv}\PYG{p}{[}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(} \PYG{n}{dx} \PYG{o}{*} \PYG{n}{f}\PYG{p}{(}\PYG{n}{xc}\PYG{p}{)} \PYG{p}{)}
+    
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+
+\subsubsection{Metodo di integrazione del trapezio}
+\label{\detokenize{ch/numerics/integrals:metodo-di-integrazione-del-trapezio}}
+\sphinxAtStartPar
+Data la funzione \(f:[a,b] \in \mathbb{R} \rightarrow \mathbb{R}\), e una partizione \(P = \{ a = x_0 < x_1 < \dots < x_n = b \}\) dell’intervallo \([a,b]\), l’integrale viene calcolato come la somma dell’area dei trapezi rettangoli elementari con basi \(f(x_{k-1})\), \(f(x_k)\) e altezza \(\Delta x_k := x_k - x_{k-1}\),
+\begin{equation*}
+\begin{split}\int_{x=a}^{b} f(x) dx \simeq \sum_{k=1:n} \frac{1}{2} \left( f(x_{k-1}) + f(x_k) \right) \, \Delta x_k \ . \end{split}
+\end{equation*}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Trapezoid method \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{k}{def} \PYG{n+nf}{integral\PYGZus{}trapz}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    Inputs:}
+\PYG{l+s+sd}{    \PYGZhy{} f: function}
+\PYG{l+s+sd}{    \PYGZhy{} a, b: extreme points of the range}
+\PYG{l+s+sd}{    \PYGZhy{} n: n. of intervals of the range}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} Partition of the range [a,b]}
+    \PYG{c+c1}{\PYGZsh{} uniform partition here; refined algorithms may use non\PYGZhy{}uniform partitions}
+    \PYG{n}{xv} \PYG{o}{=} \PYG{n}{a} \PYG{o}{+} \PYG{p}{(} \PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{a} \PYG{p}{)} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{n}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{/} \PYG{n}{n}\PYG{p}{;}  \PYG{n}{xv}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{b}
+    \PYG{n}{dx} \PYG{o}{=} \PYG{n}{xv}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{xv}\PYG{p}{[}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(} \PYG{l+m+mf}{.5} \PYG{o}{*} \PYG{n}{dx} \PYG{o}{*} \PYG{p}{(} \PYG{n}{f}\PYG{p}{(}\PYG{n}{xv}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{p}{]}\PYG{p}{)} \PYG{o}{+} \PYG{n}{f}\PYG{p}{(}\PYG{n}{xv}\PYG{p}{[}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)} \PYG{p}{)} \PYG{p}{)}
+    
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+
+\subsubsection{Esempi}
+\label{\detokenize{ch/numerics/integrals:esempi}}
+
+\paragraph{Esempio 1.}
+\label{\detokenize{ch/numerics/integrals:esempio-1}}
+\sphinxAtStartPar
+Si valuta l’integrale
+\begin{equation*}
+\begin{split}\int_{x = 0}^{1} x^2 \, dx = \frac{1}{3} \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+con i metodi del punto medio e del trapezio. La funzione \(f(x) = x^2\) è continua ovunque e quindi è continua nell’intervallo \([0,1]\).
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{f} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{x}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}
+
+\PYG{n}{a}\PYG{p}{,} \PYG{n}{b} \PYG{o}{=} \PYG{l+m+mf}{0.}\PYG{p}{,} \PYG{l+m+mf}{1.}
+\PYG{n}{n} \PYG{o}{=} \PYG{l+m+mi}{10}
+
+\PYG{c+c1}{\PYGZsh{} Evaluate integral with the rect and trapz methods}
+\PYG{n}{val\PYGZus{}rect}  \PYG{o}{=} \PYG{n}{integral\PYGZus{}rect}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+\PYG{n}{val\PYGZus{}trapz} \PYG{o}{=} \PYG{n}{integral\PYGZus{}trapz}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Value of the integral, x }\PYG{l+s+s2}{\PYGZbs{}}\PYG{l+s+s2}{in [}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{a}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{b}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{] with }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{n}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ intervals}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZhy{} mid\PYGZhy{}point method: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{val\PYGZus{}rect}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZhy{} trapezoid method: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{val\PYGZus{}trapz}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Value of the integral, x \PYGZbs{}in [0.0, 1.0] with 10 intervals
+\PYGZhy{} mid\PYGZhy{}point method: 0.3325
+\PYGZhy{} trapezoid method: 0.33499999999999996
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+
+\paragraph{Esempio 2. Necessità della continuità della funzione.}
+\label{\detokenize{ch/numerics/integrals:esempio-2-necessita-della-continuita-della-funzione}}\label{\detokenize{ch/numerics/integrals:integrals-examples-continuity}}
+
+
+
 \subsection{Integrazione di Gauss}
 \label{\detokenize{ch/numerics/integrals:integrazione-di-gauss}}
 \sphinxAtStartPar
-L’integrazione di Gauss permette di calcolare in maniera esatta l’integrale di una funzione polinomiale \(p^(n)(x)\) su un intervallo \([a,b]\), come somma pesata della funzione valuatata in alcuni punti dell’intervallo,
+L’integrazione di Gauss permette di calcolare in \sphinxstylestrong{maniera esatta} l’integrale di una \sphinxstylestrong{funzione polinomiale} \(p_n(x)\) su un intervallo \([a,b]\), come somma pesata della funzione valuatata in alcuni punti dell’intervallo,
 \begin{equation*}
-\begin{split}\int_a^b p^{(n)}(x) dx = \sum_{g} w_g f(x_g) \ .\end{split}
+\begin{split}\int_a^b p^{(n)}(x) dx = \sum_{g} w_g f(x_g) \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+per un numero di nodi di Gauss, \(n_{Gauss}\) che soddisfa la relazione
+\begin{equation*}
+\begin{split}n < 2 n_{Gauss} - 1 \ .\end{split}
 \end{equation*}
 \sphinxAtStartPar
 Per motivi di generalizzazione dell’algoritmo, nella definizione dei \sphinxstylestrong{pesi} \(w_i\) e dei \sphinxstylestrong{nodi di Gauss} \(x_i\), l’integrale viene riportato all’integrale su un intervallo di riferimento, tramite una trasformazione di coordinate.
-
-\sphinxAtStartPar
 Per domini 1D, l’intervallo di riferimento per la quadratura di Gauss è l’intervallo \(\xi = [-1, 1]\) e il cambio di variabili è
 \begin{equation*}
-\begin{split}x = \frac{a+b}{2} + \frac{b-a}{2}(\xi - 1) \ ,\end{split}
+\begin{split}x = \frac{a+b}{2} + \frac{b-a}{2} \, \xi \ ,\end{split}
 \end{equation*}
 \sphinxAtStartPar
 così che l’integrale originale può essere scritto come
@@ -1469,6 +1760,109 @@ così che l’integrale originale può essere scritto come
  & = \dfrac{b-a}{2} \int_{\xi=-1}^{1} p^{(n)}(x(\xi)) d \xi = \dfrac{b-a}{2} \sum_{g} w_g \, p^{(n)}\left(x(\xi_g)\right)
 \end{aligned}\end{split}
 \end{equation*}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Gauss integration \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Dict of Gauss weights and nodes on the reference interval [\PYGZhy{}1,1] for 1D integration}
+\PYG{n}{gauss\PYGZus{}nw} \PYG{o}{=} \PYG{p}{\PYGZob{}} \PYG{l+m+mi}{1}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{nodes}\PYG{l+s+s1}{\PYGZsq{}}  \PYG{p}{:} \PYG{p}{[} \PYG{l+m+mf}{0.} \PYG{p}{]}\PYG{p}{,}
+                 \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{weights}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{p}{[} \PYG{l+m+mf}{2.} \PYG{p}{]}\PYG{p}{\PYGZcb{}}\PYG{p}{,} 
+             \PYG{l+m+mi}{2}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{nodes}\PYG{l+s+s1}{\PYGZsq{}}  \PYG{p}{:} \PYG{p}{[} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.}\PYG{o}{/}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mf}{3.}\PYG{p}{)}\PYG{p}{,} \PYG{l+m+mf}{1.}\PYG{o}{/}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mf}{3.}\PYG{p}{)} \PYG{p}{]}\PYG{p}{,} 
+                 \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{weights}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{p}{[} \PYG{l+m+mf}{1.}\PYG{p}{,} \PYG{l+m+mf}{1.}\PYG{p}{]}\PYG{p}{\PYGZcb{}}\PYG{p}{,}
+             \PYG{l+m+mi}{3}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{nodes}\PYG{l+s+s1}{\PYGZsq{}}  \PYG{p}{:} \PYG{p}{[} \PYG{l+m+mf}{0.}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mf}{3.}\PYG{o}{/}\PYG{l+m+mf}{5.}\PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mf}{3.}\PYG{o}{/}\PYG{l+m+mf}{5.}\PYG{p}{)} \PYG{p}{]}\PYG{p}{,} 
+                 \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{weights}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{p}{[} \PYG{l+m+mf}{8.}\PYG{o}{/}\PYG{l+m+mf}{9.}\PYG{p}{,} \PYG{l+m+mf}{5.}\PYG{o}{/}\PYG{l+m+mf}{9.}\PYG{p}{,} \PYG{l+m+mf}{5.}\PYG{o}{/}\PYG{l+m+mf}{9.} \PYG{p}{]}\PYG{p}{\PYGZcb{}}\PYG{p}{,}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k}{def} \PYG{n+nf}{gauss\PYGZus{}int\PYGZus{}1}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{n}\PYG{p}{,} \PYG{n}{a}\PYG{o}{=}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{b}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{gauss\PYGZus{}nw}\PYG{o}{=}\PYG{n}{gauss\PYGZus{}nw}\PYG{p}{)}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} }
+\PYG{l+s+sd}{    Integral of the function f(x) }
+\PYG{l+s+sd}{    over a physical domain, x \PYGZbs{}in [a, b], }
+\PYG{l+s+sd}{    using n number of Gauss nodes}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} Cap n.nodes to the max n.nodes stored in gauss\PYGZus{}nw dict}
+    \PYG{n}{n} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{min}\PYG{p}{(}\PYG{p}{[}\PYG{n}{n}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{max}\PYG{p}{(}\PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{gauss\PYGZus{}nw}\PYG{o}{.}\PYG{n}{keys}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} Gauss nodes (from reference to actual domain) and weights}
+    \PYG{n}{xg} \PYG{o}{=} \PYG{l+m+mf}{.5} \PYG{o}{*} \PYG{p}{(} \PYG{n}{a} \PYG{o}{+} \PYG{n}{b} \PYG{o}{+} \PYG{p}{(} \PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{a} \PYG{p}{)} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{gauss\PYGZus{}nw}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{nodes}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{)} \PYG{p}{)}
+    \PYG{n}{wg} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{gauss\PYGZus{}nw}\PYG{p}{[}\PYG{n}{n}\PYG{p}{]}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{weights}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{)}
+    
+    \PYG{k}{return} \PYG{l+m+mf}{.5} \PYG{o}{*} \PYG{p}{(}\PYG{n}{b}\PYG{o}{\PYGZhy{}}\PYG{n}{a}\PYG{p}{)} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(} \PYG{n}{wg} \PYG{o}{*} \PYG{n}{f}\PYG{p}{(}\PYG{n}{xg}\PYG{p}{)} \PYG{p}{)} 
+
+
+\PYG{k}{def} \PYG{n+nf}{gauss\PYGZus{}int\PYGZus{}n}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{n\PYGZus{}gauss}\PYG{p}{,} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{n\PYGZus{}elems}\PYG{p}{)}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} }
+\PYG{l+s+sd}{    Integral of the function f(x) }
+\PYG{l+s+sd}{    over a physical domain, x \PYGZbs{}in [a, b], (uniformly) splitted in n\PYGZus{}elems}
+\PYG{l+s+sd}{    using n number of Gauss nodes per each elem}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} Partition of the interval [a,b]}
+    \PYG{n}{xv} \PYG{o}{=} \PYG{n}{a} \PYG{o}{+} \PYG{p}{(} \PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{a} \PYG{p}{)} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{n\PYGZus{}elems}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{/} \PYG{n}{n\PYGZus{}elems}\PYG{p}{;}  \PYG{n}{xv}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{b}
+
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{p}{[} \PYG{n}{gauss\PYGZus{}int\PYGZus{}1}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{n\PYGZus{}gauss}\PYG{p}{,} \PYG{n}{xv}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{,} \PYG{n}{xv}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{n\PYGZus{}elems}\PYG{p}{)} \PYG{p}{]}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+
+\subsubsection{Esempio 1 \sphinxhyphen{} integrazione di Gauss.}
+\label{\detokenize{ch/numerics/integrals:esempio-1-integrazione-di-gauss}}
+\sphinxAtStartPar
+Si valuta l’integrale
+\begin{equation*}
+\begin{split}\int_{x = 0}^{1} x^2 \, dx = \frac{1}{3} \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+con il metodo di integrazione di Gauss.
+Si chiede di:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+osservare che l’integrazione è esatta, a meno degli arrotondamenti dovuti all’aritmetica finita,
+poiché la funzione integranda è di grado 2, e il numero di nodi di Gauss è \(n_{Gauss} = 3\); questo è vero indipendentemente dal numero di sotto\sphinxhyphen{}intervalli;
+
+\item {} 
+\sphinxAtStartPar
+cambiare le funzioni e il numero di nodi usati nelle funzioni per l’integrazione di Gauss per verificare che l’integrazione è esatta per funzioni polinomiali di grado \(2 n_{Gauss} - 1\).
+
+\end{itemize}
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Evaluate integrals using Gauss integration \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{n}{f} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{n}{x}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}
+\PYG{n}{a}\PYG{p}{,} \PYG{n}{b} \PYG{o}{=} \PYG{l+m+mf}{0.}\PYG{p}{,} \PYG{l+m+mf}{1.}
+
+\PYG{c+c1}{\PYGZsh{} Gauss nodes, and n.of elements}
+\PYG{n}{n\PYGZus{}gauss} \PYG{o}{=} \PYG{l+m+mi}{3}
+\PYG{n}{n\PYGZus{}elems} \PYG{o}{=} \PYG{l+m+mi}{10}
+
+\PYG{n}{val\PYGZus{}1} \PYG{o}{=} \PYG{n}{gauss\PYGZus{}int\PYGZus{}1}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{n\PYGZus{}gauss}\PYG{p}{,} \PYG{l+m+mf}{0.}\PYG{p}{,} \PYG{l+m+mf}{1.}\PYG{p}{)}
+\PYG{n}{val\PYGZus{}n} \PYG{o}{=} \PYG{n}{gauss\PYGZus{}int\PYGZus{}n}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,} \PYG{n}{n\PYGZus{}gauss}\PYG{p}{,} \PYG{l+m+mf}{0.}\PYG{p}{,} \PYG{l+m+mf}{1.}\PYG{p}{,} \PYG{n}{n\PYGZus{}elems}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Value of the integral, x }\PYG{l+s+s2}{\PYGZbs{}}\PYG{l+s+s2}{in [}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{a}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{, }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{b}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{] using Gauss integration methods with }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{n\PYGZus{}gauss}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ nodes per elem}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZhy{} using one elem: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{val\PYGZus{}1}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZhy{} using }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{n\PYGZus{}elems}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ elems: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{val\PYGZus{}n}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Value of the integral, x \PYGZbs{}in [0.0, 1.0] using Gauss integration methods with 3 nodes per elem
+\PYGZhy{} using one elem: 0.33333333333333337
+\PYGZhy{} using 10 elems: 0.33333333333333337
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
 \sphinxstepscope
 
 
@@ -1573,8 +1967,25 @@ Le tecniche di ottimizzazione sono alla base di molti metodi di interesse, dall�
 \sphinxstepscope
 
 
-\section{Introduzione ai metodi in AI}
-\label{\detokenize{ch/ai:introduzione-ai-metodi-in-ai}}\label{\detokenize{ch/ai:book-ai-hs}}\label{\detokenize{ch/ai::doc}}\begin{itemize}
+\part{Introduzione ai metodi in statistica e  AI}
+
+\sphinxstepscope
+
+
+\chapter{Introduzione ai metodi in AI}
+\label{\detokenize{ch/ai:introduzione-ai-metodi-in-ai}}\label{\detokenize{ch/ai:book-ai-hs}}\label{\detokenize{ch/ai::doc}}
+\sphinxAtStartPar
+In questa sezione si descriveranno alcuni metodi utilizzati nelle applicazioni di \sphinxstylestrong{machine learning}.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Approccio.} Alla completezza e al rigore dello sviluppo teorico dei metodi, viene preferita una descrizione dei metodi tramite esempi e applicazioni.
+
+\sphinxAtStartPar
+Benché questo possa essere un approccio ad alto rischio di creazione di utenti acritici di strumenti che non comprendono, la speranza è di mitigare questo rischio con continui moniti a prestare attenzione e un supporto del lettore da parte di gente con un minimo di esperienza.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Argomenti.} In questa sezione verranno presentati alcuni metodi e applicazioni del \sphinxstylestrong{machine learning}, che possono essere classificate in tre grandi classi di apprendimento:
+\begin{itemize}
 \item {} 
 \sphinxAtStartPar
 SL, supervised learning: regression and classification
@@ -1588,6 +1999,12 @@ UL, unsupervised learning: clustering
 ML, machine learning: control
 
 \end{itemize}
+
+\sphinxAtStartPar
+Dopo aver presentato le tecniche classiche, verranno introdotte le reti neurali, gli algoritmi fondamentali che hanno permesso un uso pratico ed efficiente di reti profonde, e alcune architetture fondamentali di reti neurali.
+
+\sphinxAtStartPar
+Le applicazioni verranno affrontate inizialmente con approcci classici, affidandoci alla libreria \sphinxhref{https://scikit-learn.org}{sci\sphinxhyphen{}kit}, e successivamente con tecniche “deep” grazie alla libreria \sphinxhref{https://pytorch.org}{PyTorch}.
 
 \sphinxstepscope
 
