@@ -1,47 +1,59 @@
 \selectlanguage *{english}
 \contentsline {part}{I\hspace {1em}Introduzione alla programmazione}{3}{part.1}%
 \contentsline {chapter}{\numberline {1}Introduzione alla programmazione \sphinxhyphen {} in Python}{5}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Tipi}{7}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Controllo del flusso}{9}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Alternativa}{9}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}if\sphinxhyphen {}then e if\sphinxhyphen {}then\sphinxhyphen {}else}{9}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}switch}{10}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Iterazione}{10}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}for loop}{10}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}while loop}{10}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}altri cicli}{10}{subsection.3.2.3}%
-\contentsline {chapter}{\numberline {4}Funzioni}{11}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Default value of function arguments}{11}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Classi}{13}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Librerie}{15}{chapter.6}%
-\contentsline {part}{II\hspace {1em}Introduzione al calcolo numerico}{17}{part.2}%
-\contentsline {chapter}{\numberline {7}Introduzione al calcolo scientifico}{19}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Sistemi lineari}{19}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Problemi non lineari}{19}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Metodo di bisezione}{19}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Metodo di Newton}{21}{subsection.7.2.2}%
-\contentsline {section}{\numberline {7.3}Approssimazione di funzioni}{22}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Interpolazione}{22}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Regressione}{22}{subsection.7.3.2}%
-\contentsline {section}{\numberline {7.4}Derivate di funzioni}{22}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Differenze finite}{22}{subsection.7.4.1}%
-\contentsline {subsubsection}{Derivata prima}{22}{subsubsection*.3}%
-\contentsline {subsubsection}{Derivata seconda}{23}{subsubsection*.4}%
-\contentsline {section}{\numberline {7.5}Integrali}{23}{section.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}Integrazione di Newton\sphinxhyphen {}Cotes}{23}{subsection.7.5.1}%
-\contentsline {subsection}{\numberline {7.5.2}Integrazione di Gauss}{23}{subsection.7.5.2}%
-\contentsline {section}{\numberline {7.6}Equazioni differenziali ordinarie}{23}{section.7.6}%
-\contentsline {subsection}{\numberline {7.6.1}Problemi di Cauchy ai valori iniziali}{23}{subsection.7.6.1}%
-\contentsline {subsubsection}{Approccio a un problema di Cauchy di ordine \(n\)}{23}{subsubsection*.5}%
-\contentsline {subsubsection}{Caratteristiche (cenni)}{24}{subsubsection*.6}%
-\contentsline {subsubsection}{Schemi numerici}{24}{subsubsection*.7}%
-\contentsline {paragraph}{Schemi numerici a un passo}{24}{paragraph*.8}%
-\contentsline {paragraph}{Schemi numerici multi\sphinxhyphen {}step}{24}{paragraph*.9}%
-\contentsline {subsection}{\numberline {7.6.2}Problemi al contorno}{24}{subsection.7.6.2}%
-\contentsline {subsubsection}{Differenze finite}{24}{subsubsection*.10}%
-\contentsline {subsubsection}{Elementi finiti}{24}{subsubsection*.11}%
-\contentsline {subsubsection}{Volumi finiti}{24}{subsubsection*.12}%
-\contentsline {section}{\numberline {7.7}Ottimizzazione}{24}{section.7.7}%
-\contentsline {section}{\numberline {7.8}Introduzione ai metodi in AI}{25}{section.7.8}%
-\contentsline {part}{III\hspace {1em}Supporto tecnico}{27}{part.3}%
-\contentsline {chapter}{\numberline {8}Supporto tecnico}{29}{chapter.8}%
+\contentsline {chapter}{\numberline {2}Variabili, tipi e funzioni elementari built\sphinxhyphen {}in}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Commenti}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Tipi built\sphinxhyphen {}in}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Numeri}{8}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Booleani \sphinxhyphen {} logici}{8}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Stringhe}{8}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Liste, tuple e insiemi}{9}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Dizionari}{9}{subsection.2.2.5}%
+\contentsline {chapter}{\numberline {3}Controllo del flusso}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Alternativa}{11}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}\(\texttt {if}\)\sphinxhyphen {}\(\texttt {then}\) statement}{11}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}\(\texttt {if}\)\sphinxhyphen {}\(\texttt {then}\)\sphinxhyphen {}\(\texttt {else}\) statement}{12}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Iterazione}{12}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}for loop}{12}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}while loop}{13}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}altri cicli}{14}{subsection.3.2.3}%
+\contentsline {chapter}{\numberline {4}Funzioni}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Default value of function arguments}{15}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Classi}{17}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Librerie}{19}{chapter.6}%
+\contentsline {part}{II\hspace {1em}Introduzione al calcolo numerico}{21}{part.2}%
+\contentsline {chapter}{\numberline {7}Introduzione al calcolo scientifico}{23}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Sistemi lineari}{24}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Sistemi lineari quadrati con matrici piene}{24}{subsection.7.1.1}%
+\contentsline {subsubsection}{Esempio 1. Sistema quadrato determinato}{24}{subsubsection*.3}%
+\contentsline {subsubsection}{Esempio 2. Sistemi quadrati non determinati}{25}{subsubsection*.4}%
+\contentsline {subsection}{\numberline {7.1.2}Matrici sparse}{26}{subsection.7.1.2}%
+\contentsline {subsubsection}{Esempio 1 \sphinxhyphen {} Matrice di rigidezza di elementi finiti}{26}{subsubsection*.5}%
+\contentsline {section}{\numberline {7.2}Problemi non lineari}{27}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Metodo di bisezione}{27}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Metodo di Newton}{29}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}Approssimazione di funzioni}{30}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Interpolazione}{30}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Regressione}{30}{subsection.7.3.2}%
+\contentsline {section}{\numberline {7.4}Derivate di funzioni}{30}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Differenze finite}{30}{subsection.7.4.1}%
+\contentsline {subsubsection}{Derivata prima}{30}{subsubsection*.6}%
+\contentsline {subsubsection}{Derivata seconda}{31}{subsubsection*.7}%
+\contentsline {section}{\numberline {7.5}Integrali}{31}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Integrazione di Newton\sphinxhyphen {}Cotes}{31}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Integrazione di Gauss}{31}{subsection.7.5.2}%
+\contentsline {section}{\numberline {7.6}Equazioni differenziali ordinarie}{31}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Problemi di Cauchy ai valori iniziali}{31}{subsection.7.6.1}%
+\contentsline {subsubsection}{Approccio a un problema di Cauchy di ordine \(n\)}{31}{subsubsection*.8}%
+\contentsline {subsubsection}{Caratteristiche (cenni)}{32}{subsubsection*.9}%
+\contentsline {subsubsection}{Schemi numerici}{32}{subsubsection*.10}%
+\contentsline {paragraph}{Schemi numerici a un passo}{32}{paragraph*.11}%
+\contentsline {paragraph}{Schemi numerici multi\sphinxhyphen {}step}{32}{paragraph*.12}%
+\contentsline {subsection}{\numberline {7.6.2}Problemi al contorno}{32}{subsection.7.6.2}%
+\contentsline {subsubsection}{Differenze finite}{32}{subsubsection*.13}%
+\contentsline {subsubsection}{Elementi finiti}{32}{subsubsection*.14}%
+\contentsline {subsubsection}{Volumi finiti}{32}{subsubsection*.15}%
+\contentsline {section}{\numberline {7.7}Ottimizzazione}{32}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Introduzione ai metodi in AI}{33}{section.7.8}%
+\contentsline {part}{III\hspace {1em}Supporto tecnico}{35}{part.3}%
+\contentsline {chapter}{\numberline {8}Supporto tecnico}{37}{chapter.8}%

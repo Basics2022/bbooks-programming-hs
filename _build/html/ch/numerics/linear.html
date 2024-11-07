@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/numerics/linear';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Problemi non lineari" href="nonlinear.html" />
-    <link rel="prev" title="Introduzione al calcolo numerico" href="../numerics.html" />
+    <link rel="prev" title="Introduzione al calcolo scientifico" href="../numerics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,14 +166,14 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Introduzione alla programmazione e al calcolo numerico
+                    Introduzione alla programmazione e al calcolo scientifico
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione alla programmazione</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../programming.html">Basi di programmazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../programming/types.html">Tipi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming.html">Introduzione alla programmazione - in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/types.html">Variabili, tipi e funzioni elementari built-in</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/flow_control.html">Controllo del flusso</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/functions.html">Funzioni</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/oo.html">Classi</a></li>
@@ -179,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione al calcolo numerico</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo numerico</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo scientifico</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Sistemi lineari</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nonlinear.html">Problemi non lineari</a></li>
 <li class="toctree-l2"><a class="reference internal" href="approximation.html">Approssimazione di funzioni</a></li>
@@ -191,12 +193,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="optimization.html">Ottimizzazione</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ai.html">Introduzione ai metodi in AI</a></li>
 </ul>
 </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione ai metodi in AI</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supporto tecnico</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ai.html">Introduzione ai metodi in AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Supporto tecnico</a></li>
 </ul>
 
     </div>
@@ -417,7 +420,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -433,6 +438,22 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemi-lineari-quadrati-con-matrici-piene">Sistemi lineari quadrati con matrici piene</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-1-sistema-quadrato-determinato">Esempio 1. Sistema quadrato determinato</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-2-sistemi-quadrati-non-determinati">Esempio 2. Sistemi quadrati non determinati</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrici-sparse">Matrici sparse</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-1-matrice-di-rigidezza-di-elementi-finiti">Esempio 1 - Matrice di rigidezza di elementi finiti</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -444,17 +465,210 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="sistemi-lineari">
 <h1>Sistemi lineari<a class="headerlink" href="#sistemi-lineari" title="Permalink to this heading">#</a></h1>
-<p>La soluzione di sistemi lineari è un problema che compare in molte altre applicazioni di calcolo numerico …</p>
-<p>Esistono due grandi classi di metodi/algoritmi per la soluzione di sistemi lineari:</p>
+<p>La soluzione di sistemi lineari è un problema che compare in molte altre applicazioni di calcolo numerico.</p>
+<!--
+**todo** 
+- Riferimento alla sezione di matematica sull'**algebra lineare** per dare le basi: cos'è un sistema lineare? Come può essere scritto usando il formalismo matriciale? Caratteristiche principali di una matrice (rango, nucleo, spettro, ...)
+- Riferimento ai problemi numerici: condizionamento?
+-->
+<p><strong>Formalismo matriciale.</strong> Con il formalismo matriciale, un sistema di equazioni lineari può essere scritto come</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{A} \mathbf{x} = \mathbf{b}\]</div>
+<p><strong>Classificazione.</strong> In generale, i sistemi di equazioni lineari possono essere classificati:</p>
 <ul class="simple">
-<li><p>i metodi diretti, che si basano su una fattorizzazione della matrice</p></li>
-<li><p>i metodi indiretti, che si basano sul calcolo di prodotti matrice-vettore</p></li>
+<li><p>in base al numero di incognite <span class="math notranslate nohighlight">\(n_u\)</span> ed equazioni indipendenti <span class="math notranslate nohighlight">\(n_e\)</span>: <span class="math notranslate nohighlight">\(n_e = n_u\)</span> sistemi determinati con un’unica soluzione; <span class="math notranslate nohighlight">\(n_e &gt; n_u\)</span> sistemi sovradeterminati: con nessuna soluzione in generale; <span class="math notranslate nohighlight">\(n_e &lt; n_u\)</span> sistemi indeterminati, con infinite soluzioni in generale</p></li>
+<li><p>in base alla “struttura” del sistema:</p>
+<ul>
+<li><p>diagonale, tridiagonale, …</p></li>
 </ul>
-<p><strong>todo</strong></p>
+</li>
+<li><p>in base al numero di coefficienti non-nulli della matrice <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>: sistemi con matrice <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> piena o <strong>sparsa</strong>; questa distinzione non è netta, ma il più delle volte risulta chiara dalla particolare applicazione/metodo.</p></li>
+</ul>
+<p><strong>Algoritmi.</strong> Esistono due grandi classi di metodi/algoritmi per la soluzione di sistemi lineari:</p>
 <ul class="simple">
-<li><p>Riferimento alla sezione di matematica sull’<strong>algebra lineare</strong> per dare le basi: cos’è un sistema lineare? Come può essere scritto usando il formalismo matriciale? Caratteristiche principali di una matrice (rango, nucleo, spettro, …)</p></li>
-<li><p>Riferimento ai problemi numerici: condizionamento?</p></li>
+<li><p>i <strong>metodi diretti</strong>, che si basano su una fattorizzazione della matrice</p></li>
+<li><p>i <strong>metodi indiretti</strong>, che si basano sul calcolo di prodotti matrice-vettore</p></li>
 </ul>
+<div class="section" id="sistemi-lineari-quadrati-con-matrici-piene">
+<h2>Sistemi lineari quadrati con matrici piene<a class="headerlink" href="#sistemi-lineari-quadrati-con-matrici-piene" title="Permalink to this heading">#</a></h2>
+<p>In questa sezione si discute la soluzione di sistemi lineari quadrati con matrici piene con le funzoni disponibili nella libreria NumPy.</p>
+<div class="section" id="esempio-1-sistema-quadrato-determinato">
+<h3>Esempio 1. Sistema quadrato determinato<a class="headerlink" href="#esempio-1-sistema-quadrato-determinato" title="Permalink to this heading">#</a></h3>
+<p>Il sistema lineare</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  x_1 + 2 \, x_2 = 0 \\
+  x_1 + x_3 = -1 \\
+  x_1 + x_2 + x_3 = 1 \\
+\end{cases}\end{split}\]</div>
+<p>può essere riscritto con il formalismo matriciale nella forma <span class="math notranslate nohighlight">\(\mathbf{A} \mathbf{x} = \mathbf{b}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\underbrace{\begin{bmatrix} 1 &amp; 2 &amp; 0 \\ 1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 1 \end{bmatrix}}_{\mathbf{A}}
+\underbrace{\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}}_{\mathbf{x}} =
+\underbrace{\begin{bmatrix} 0 \\ -1 \\ 1 \end{bmatrix}}_{\mathbf{b}}
+\end{split}\]</div>
+<p>e risolto grazie alla funzione <span class="math notranslate nohighlight">\(\texttt{solve(A, b)}\)</span> della libreria <span class="math notranslate nohighlight">\(\texttt{numpy.linalg}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Linear systems with full square non-singular matrices</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">2.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">])</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sol, x: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Proof : Ax = </span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">@</span><span class="w"> </span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>   <span class="c1"># Check that Ax = b</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;         b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sol, x: [-4.  2.  3.]
+Proof : Ax = [ 0. -1.  1.]
+         b = [ 0. -1.  1.]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="esempio-2-sistemi-quadrati-non-determinati">
+<h3>Esempio 2. Sistemi quadrati non determinati<a class="headerlink" href="#esempio-2-sistemi-quadrati-non-determinati" title="Permalink to this heading">#</a></h3>
+<p>I sistemi lineari</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  x_1 + 2 \, x_2 = 1 \\
+  x_1 + x_3 = -1 \\
+  2 x_1 + 2 \, x_2 + x_3 = 1 \\
+\end{cases}
+\qquad , \qquad
+\begin{cases}
+  x_1 + 2 \, x_2 = 0 \\
+  x_1 + x_3 = -1 \\
+  2 x_1 + 2 \, x_2 + x_3 = 1 \\
+\end{cases}\end{split}\]</div>
+<p>sono due sistemi quadrati non determinati. Il primo sistema non ha soluzioni, mentre il secondo ne ha infinite della forma</p>
+<div class="math notranslate nohighlight">
+\[(x_1, x_2, x_3) = (-2, 1, 1) + \alpha (2, -1, -2) \ , \quad \alpha \in \mathbb{R} \ .\]</div>
+<p>Dopo aver riscritto i sistemi lineari con il formalismo matriciale, si può provare a risolverli usando la funzione <span class="math notranslate nohighlight">\(\texttt{solve(A, b)}\)</span> della libreria <span class="math notranslate nohighlight">\(\texttt{numpy.linalg}\)</span>. In entrambi i casi, la funzione <span class="math notranslate nohighlight">\(\texttt{solve(A,b)}\)</span> resitiuisce un errore, segnalando che la matrice del sistema lineare è singolare, definizione equivalente di sistemi non determinati.</p>
+<ul class="simple">
+<li><p><strong>todo</strong> <em>dare interpretazione geometrica, fare grafico?</em></p></li>
+<li><p><strong>todo</strong> <em>spiegare motivo?</em></p>
+<ul>
+<li><p><em>Esistono algoritmi che trovano almeno una soluzione nel caso in cui ne esistano infinite?</em>: discutere gli algoritmi implementati nella funzione <span class="math notranslate nohighlight">\(numpy.linalg.solve()\)</span> e rimandare alla documentazione della libreria; discutere altri algoritmi che rendono possibile trovare una soluzione</p></li>
+<li><p><em>Esistono algoritmi che trovano una soluzione approssimata nel caso in cui non ne esistano?</em>: <strong>minimi quadrati</strong>, minimizzano l’errore, dare un’interpretazione geometrica</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Linear systems with full square singular matrices</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">2.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.</span><span class="p">,</span><span class="mf">2.</span><span class="p">,</span><span class="mf">1.</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">])</span>
+<span class="c1"># b = np.array([0.,-1.,1.])</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sol, x: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Proof : Ax = </span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">@</span><span class="w"> </span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>   <span class="c1"># Check that Ax = b</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;         b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">LinAlgError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># b = np.array([0.,-1.,1.])</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sol, x: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Proof : Ax = </span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">@</span><span class="w"> </span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>   <span class="c1"># Check that Ax = b</span>
+
+<span class="nn">File &lt;__array_function__ internals&gt;:200,</span> in <span class="ni">solve</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">File ~/.local/lib/python3.8/site-packages/numpy/linalg/linalg.py:386,</span> in <span class="ni">solve</span><span class="nt">(a, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;DD-&gt;D&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;dd-&gt;d&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span> <span class="n">extobj</span> <span class="o">=</span> <span class="n">get_linalg_error_extobj</span><span class="p">(</span><span class="n">_raise_linalgerror_singular</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">386</span> <span class="n">r</span> <span class="o">=</span> <span class="n">gufunc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span> <span class="n">extobj</span><span class="o">=</span><span class="n">extobj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span> <span class="k">return</span> <span class="n">wrap</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="nn">File ~/.local/lib/python3.8/site-packages/numpy/linalg/linalg.py:89,</span> in <span class="ni">_raise_linalgerror_singular</span><span class="nt">(err, flag)</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="k">def</span> <span class="nf">_raise_linalgerror_singular</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">flag</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">89</span>     <span class="k">raise</span> <span class="n">LinAlgError</span><span class="p">(</span><span class="s2">&quot;Singular matrix&quot;</span><span class="p">)</span>
+
+<span class="ne">LinAlgError</span>: Singular matrix
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="matrici-sparse">
+<h2>Matrici sparse<a class="headerlink" href="#matrici-sparse" title="Permalink to this heading">#</a></h2>
+<p>Una matrice sparsa ha un elevato numero di elementi nulli.</p>
+<div class="section" id="esempio-1-matrice-di-rigidezza-di-elementi-finiti">
+<h3>Esempio 1 - Matrice di rigidezza di elementi finiti<a class="headerlink" href="#esempio-1-matrice-di-rigidezza-di-elementi-finiti" title="Permalink to this heading">#</a></h3>
+<p>Il sistema lineare</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\ -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; -1  &amp; 2 \end{bmatrix} \begin{bmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{bmatrix} \ ,\end{split}\]</div>
+<p>è descritto da una matrice, <span class="math notranslate nohighlight">\(N=5\)</span>, <span class="math notranslate nohighlight">\(N \times N = 25\)</span>, che ha <span class="math notranslate nohighlight">\(N+(N-1)+(N-1) = 13\)</span> elementi non nulli. Il rapporto tra il numero di elementi non nulli e il numero di elementi totali è <span class="math notranslate nohighlight">\(\frac{3N-2}{N^2} \sim \frac{3}{N}\)</span>. Al crescere della dimensione del problema, la matrice <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> diventa sempre più sparsa e diventa sempre più conveniente definirla come matrice sparsa, ed usare gli algoritmi pensati per questo tipo di matrici.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Linear systems with square non-singular matrices, in sparse format</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
+
+<span class="c1"># Printout level: the higher the number, the more verbose the script</span>
+<span class="n">printout_level</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">n_nodes</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">i_nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Build sparse stiffness matrix, I: row indices, J: col indices, E: matrix elems</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">i_nodes</span><span class="o">+</span><span class="n">i_nodes</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">i_nodes</span><span class="p">[</span> <span class="mi">1</span><span class="p">:])</span>
+<span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">i_nodes</span><span class="o">+</span><span class="n">i_nodes</span><span class="p">[</span> <span class="mi">1</span><span class="p">:]</span><span class="o">+</span><span class="n">i_nodes</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">n_nodes</span><span class="o">*</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">n_nodes</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">n_nodes</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">coo_array</span><span class="p">((</span><span class="n">E</span><span class="p">,</span> <span class="p">(</span><span class="n">I</span><span class="p">,</span><span class="n">J</span><span class="p">)))</span><span class="o">.</span><span class="n">tocsr</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="n">printout_level</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="p">):</span>  <span class="c1"># print matrix in sparse format</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; I: </span><span class="si">{</span><span class="n">I</span><span class="si">}</span><span class="se">\n</span><span class="s2"> J: </span><span class="si">{</span><span class="n">J</span><span class="si">}</span><span class="se">\n</span><span class="s2"> E: </span><span class="si">{</span><span class="n">E</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; A:</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="p">(</span> <span class="n">printout_level</span> <span class="o">&gt;</span> <span class="mi">60</span> <span class="p">):</span>  <span class="c1"># convert and primt matrix in full format</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; A.todense(): </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># RHS</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Solve linear system</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">spsolve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sol, x: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sol, x: [2.5 4.  4.5 4.  2.5]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -493,7 +707,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduzione al calcolo numerico</p>
+        <p class="prev-next-title">Introduzione al calcolo scientifico</p>
       </div>
     </a>
     <a class="right-next"
@@ -511,6 +725,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemi-lineari-quadrati-con-matrici-piene">Sistemi lineari quadrati con matrici piene</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-1-sistema-quadrato-determinato">Esempio 1. Sistema quadrato determinato</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-2-sistemi-quadrati-non-determinati">Esempio 2. Sistemi quadrati non determinati</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrici-sparse">Matrici sparse</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-1-matrice-di-rigidezza-di-elementi-finiti">Esempio 1 - Matrice di rigidezza di elementi finiti</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -124,6 +124,12 @@ Oltre alle nozioni minime, l’obiettivo principale di questo libro è la formaz
 
 \end{itemize}
 
+\sphinxAtStartPar
+Questo stesso libro è scritto seguendo questi criteri: oltre al dispositivo elettronico usato per consultare il materiale (online o offline, una volta scaricato), non è necessaria la spesa per nessun altro dispositivo o infrastruttura informatica; i sorgenti del materiale è sviluppato localmente, ospitato e disponibile su \sphinxhref{https://github.com}{Github} all’indirizzo \sphinxurl{https://github.com/Basics2022/bbooks-programming-hs}.
+
+\sphinxAtStartPar
+\sphinxstylestrong{necessità di una connessione internet, se non si porta il progetto su un sistema locale, con tutti gli strumenti necessari \sphinxhyphen{} non tanti, e standard, ma comunque devono esserci “per funzionare”}
+
 
 
 \sphinxAtStartPar
@@ -159,7 +165,7 @@ Verranno posta attenzione sulla sintassi “particolare” di Python quando si d
 \chapter{Introduzione alla programmazione \sphinxhyphen{} in Python}
 \label{\detokenize{ch/programming:introduzione-alla-programmazione-in-python}}\label{\detokenize{ch/programming:book-programming-intro-hs}}\label{\detokenize{ch/programming::doc}}
 \sphinxAtStartPar
-L’introduzione alla programmazione in Python userà le risorse messe a disposizione da \sphinxhref{https://www.google.com}{Google} con il progetto \sphinxhref{https://jupyter.org}{Jupyter} per lo sviluppo di codice open\sphinxhyphen{}source, con open\sphinxhyphen{}standard e servizi interattivi utilizzabili su diversi dispositivi usando diversi linguaggi di programmazione, come \DUrole{xref,myst}{Python}, \sphinxhref{https://julialang.org}{Julia} o \sphinxhref{https://www.r-project.org}{R}
+L’introduzione alla programmazione in Python userà le risorse messe a disposizione da \sphinxhref{https://www.google.com}{Google} con il progetto \sphinxhref{https://jupyter.org}{Jupyter} per lo sviluppo di codice open\sphinxhyphen{}source, con open\sphinxhyphen{}standard e servizi interattivi utilizzabili su diversi dispositivi usando diversi linguaggi di programmazione, come \sphinxhref{https://python.org}{Python}, \sphinxhref{https://julialang.org}{Julia} o \sphinxhref{https://www.r-project.org}{R}
 
 \sphinxAtStartPar
 Oltre al dispositivo elettronico utilizzato per consultare al materiale, non è necessario nessun altro dispositivo informatico: un account Google personale permette l’accesso libero ai servizi base di cloud computing di \sphinxhref{https://colab.research.google.com}{Colab}
@@ -167,8 +173,8 @@ Oltre al dispositivo elettronico utilizzato per consultare al materiale, non è 
 \sphinxstepscope
 
 
-\chapter{Tipi}
-\label{\detokenize{ch/programming/types:tipi}}\label{\detokenize{ch/programming/types::doc}}\begin{itemize}
+\chapter{Variabili, tipi e funzioni elementari built\sphinxhyphen{}in}
+\label{\detokenize{ch/programming/types:variabili-tipi-e-funzioni-elementari-built-in}}\label{\detokenize{ch/programming/types::doc}}\begin{itemize}
 \item {} 
 \sphinxAtStartPar
 tipi
@@ -189,6 +195,147 @@ by\sphinxhyphen{}reference o by\sphinxhyphen{}value
 
 \end{itemize}
 
+
+\section{Commenti}
+\label{\detokenize{ch/programming/types:commenti}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} I commenti permettono di aggiungere brevi descrizione al codice}
+
+\PYG{c+c1}{\PYGZsh{} In Python, è possibile aggiungerre commenti al codice con il carattere \PYGZsh{}: tutto quello}
+\PYG{c+c1}{\PYGZsh{} che viene dopo il carattere \PYGZsh{} su una riga è considerato un commento, e non codice da}
+\PYG{c+c1}{\PYGZsh{} eseguire}
+
+\PYG{c+c1}{\PYGZsh{} E\PYGZsq{} buona regola aggiungere qualche commento al codice, e sarebbe bene iniziare a farlo}
+\PYG{c+c1}{\PYGZsh{} in lingua inglese:}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{} il codice non è auto\PYGZhy{}esplicativo!}
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{} il codice potrebbe essere usato da altri in giro per il mondo, ed è più probabile che}
+\PYG{c+c1}{\PYGZsh{}   si conosca l\PYGZsq{}inglese invece dell\PYGZsq{}italiano}
+
+\PYG{c+c1}{\PYGZsh{} So let\PYGZsq{}s switch to English for scripts, both for comments and \PYGZdq{}for variable names\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Comments are not documentation! **todo** Add some paragraph about documentation!}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+
+\section{Tipi built\sphinxhyphen{}in}
+\label{\detokenize{ch/programming/types:tipi-built-in}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+numero: intero, reale, complesso
+
+\item {} 
+\sphinxAtStartPar
+booleano
+
+\item {} 
+\sphinxAtStartPar
+stringa
+
+\item {} 
+\sphinxAtStartPar
+bytes
+
+\item {} 
+\sphinxAtStartPar
+lista
+
+\item {} 
+\sphinxAtStartPar
+tupla
+
+\item {} 
+\sphinxAtStartPar
+insieme
+
+\item {} 
+\sphinxAtStartPar
+dizionario, \(\texttt{dict}\)
+
+\end{itemize}
+
+
+\subsection{Numeri}
+\label{\detokenize{ch/programming/types:numeri}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{Numbers}
+
+\PYG{l+s+sd}{in Python, variables are not delcared. Thus, a number variable is not defined}
+\PYG{l+s+sd}{as an integer, a real or a complex variable, but it\PYGZsq{}s type is inferred by its}
+\PYG{l+s+sd}{initialization}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Numbers}
+\PYG{n}{a\PYGZus{}int} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{n}{a\PYGZus{}real} \PYG{o}{=} \PYG{l+m+mf}{1.}
+\PYG{n}{a\PYGZus{}complex} \PYG{o}{=} \PYG{l+m+mf}{1.}\PYG{o}{+} \PYG{l+m+mf}{0.}\PYG{n}{j}
+
+\PYG{c+c1}{\PYGZsh{} Strings}
+\PYG{n}{a\PYGZus{}str} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{1.0}\PYG{l+s+s1}{\PYGZsq{}}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{type(a\PYGZus{}int)    : }\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{a\PYGZus{}int}\PYG{+w}{    }\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{type(a\PYGZus{}real)   : }\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{a\PYGZus{}real}\PYG{+w}{   }\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{type(a\PYGZus{}complex): }\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{a\PYGZus{}complex}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{type(a\PYGZus{}str    ): }\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{a\PYGZus{}str}\PYG{+w}{    }\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+type(a\PYGZus{}int)    : \PYGZlt{}class \PYGZsq{}int\PYGZsq{}\PYGZgt{}
+type(a\PYGZus{}real)   : \PYGZlt{}class \PYGZsq{}float\PYGZsq{}\PYGZgt{}
+type(a\PYGZus{}complex): \PYGZlt{}class \PYGZsq{}complex\PYGZsq{}\PYGZgt{}
+type(a\PYGZus{}str    ): \PYGZlt{}class \PYGZsq{}str\PYGZsq{}\PYGZgt{}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+
+\subsection{Booleani \sphinxhyphen{} logici}
+\label{\detokenize{ch/programming/types:booleani-logici}}
+
+\subsection{Stringhe}
+\label{\detokenize{ch/programming/types:stringhe}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{Strings}
+
+\PYG{l+s+sd}{strings are character }
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZsq{}\PYGZbs{}nStrings\PYGZbs{}n\PYGZbs{}nstrings are character \PYGZbs{}n\PYGZsq{}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+
+\subsection{Liste, tuple e insiemi}
+\label{\detokenize{ch/programming/types:liste-tuple-e-insiemi}}
+
+\subsection{Dizionari}
+\label{\detokenize{ch/programming/types:dizionari}}
 \sphinxstepscope
 
 
@@ -202,7 +349,7 @@ Si possono distinguere due categorie delle strutture di controllo:
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-alternativa: if\sphinxhyphen{}then, if\sphinxhyphen{}then\sphinxhyphen{}else
+condizionale ed alternativa: if, if\sphinxhyphen{}then, if\sphinxhyphen{}then\sphinxhyphen{}else
 
 \item {} 
 \sphinxAtStartPar
@@ -214,15 +361,19 @@ iterazione: for, while, …
 \section{Alternativa}
 \label{\detokenize{ch/programming/flow_control:alternativa}}
 
-\subsection{if\sphinxhyphen{}then e if\sphinxhyphen{}then\sphinxhyphen{}else}
-\label{\detokenize{ch/programming/flow_control:if-then-e-if-then-else}}
+\subsection{\protect\(\texttt{if}\protect\)\sphinxhyphen{}\protect\(\texttt{then}\protect\) statement}
+\label{\detokenize{ch/programming/flow_control:texttt-if-texttt-then-statement}}
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
 \begin{sphinxuseclass}{cell_input}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Test if\PYGZhy{}then \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} if\PYGZhy{}then example \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{c+c1}{\PYGZsh{} Try this script changing the user input}
 
-\PYG{n}{a} \PYG{o}{=} \PYG{l+m+mf}{2.1}
+\PYG{c+c1}{\PYGZsh{} User input}
+\PYG{n}{a} \PYG{o}{=} \PYG{l+m+mi}{2}        \PYG{c+c1}{\PYGZsh{} a is initialize as an integer}
+\PYG{c+c1}{\PYGZsh{} a = 2.1      \PYGZsh{} if a is initialized as a real, a \PYGZpc{} 2 perform automatic casting, int(a) \PYGZpc{} 2}
+               \PYG{c+c1}{\PYGZsh{} uncomment previous line and try!}
 
 \PYG{n}{word} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{odd}\PYG{l+s+s1}{\PYGZsq{}}
 \PYG{k}{if} \PYG{p}{(} \PYG{n}{a} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{2} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{)}\PYG{p}{:}   \PYG{c+c1}{\PYGZsh{} automatic casting into an int \PYGZhy{}\PYGZgt{} a \PYGZpc{} 2 = floor(a) \PYGZpc{} 2}
@@ -236,25 +387,30 @@ iterazione: for, while, …
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-User input (2.1) is an odd number
+User input (2) is an even number
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
+
+\subsection{\protect\(\texttt{if}\protect\)\sphinxhyphen{}\protect\(\texttt{then}\protect\)\sphinxhyphen{}\protect\(\texttt{else}\protect\) statement}
+\label{\detokenize{ch/programming/flow_control:texttt-if-texttt-then-texttt-else-statement}}
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
 \begin{sphinxuseclass}{cell_input}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Test if\PYGZhy{}then\PYGZhy{}else \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} if\PYGZhy{}then\PYGZhy{}else example\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{c+c1}{\PYGZsh{} Try this script changing the user input}
 
-\PYG{n}{a} \PYG{o}{=} \PYG{l+m+mf}{15.7}
+\PYG{c+c1}{\PYGZsh{} User input}
+\PYG{n}{a} \PYG{o}{=} \PYG{l+m+mi}{15}
 
-\PYG{k}{if} \PYG{p}{(} \PYG{n}{a} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{3} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{p}{)}\PYG{p}{:}
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{a} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{3} \PYG{o}{==} \PYG{l+m+mi}{1} \PYG{p}{)}\PYG{p}{:}     \PYG{c+c1}{\PYGZsh{} First condition}
     \PYG{n}{reminder} \PYG{o}{=} \PYG{l+m+mi}{1}
-\PYG{k}{elif} \PYG{p}{(} \PYG{n}{a} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{3} \PYG{o}{==} \PYG{l+m+mi}{2} \PYG{p}{)}\PYG{p}{:}
+\PYG{k}{elif} \PYG{p}{(} \PYG{n}{a} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{3} \PYG{o}{==} \PYG{l+m+mi}{2} \PYG{p}{)}\PYG{p}{:}   \PYG{c+c1}{\PYGZsh{} Other condition}
     \PYG{n}{reminder} \PYG{o}{=} \PYG{l+m+mi}{2}
-\PYG{k}{else}\PYG{p}{:}
+\PYG{k}{else}\PYG{p}{:}                  \PYG{c+c1}{\PYGZsh{} All the other conditions}
     \PYG{n}{reminder} \PYG{o}{=} \PYG{l+m+mi}{0}
     
 \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{User input (}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{a}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{). }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{a}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ \PYGZpc{} 3 = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{reminder}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
@@ -265,27 +421,127 @@ User input (2.1) is an odd number
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-User input (15.7). 15.7 \PYGZpc{} 3 = 0
+User input (15). 15 \PYGZpc{} 3 = 0
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
 
-\subsection{switch}
-\label{\detokenize{ch/programming/flow_control:switch}}
+
 
 \section{Iterazione}
 \label{\detokenize{ch/programming/flow_control:iterazione}}
 
 \subsection{for loop}
 \label{\detokenize{ch/programming/flow_control:for-loop}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} for loop examples}
+
+\PYG{l+s+sd}{Loops over:}
+\PYG{l+s+sd}{\PYGZhy{} elements of a list}
+\PYG{l+s+sd}{\PYGZhy{} elements in range}
+\PYG{l+s+sd}{\PYGZhy{} keys, values of a dict}
+\PYG{l+s+sd}{\PYGZhy{} ...}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Loop over elements of a list}
+\PYG{n}{seq} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{a}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mf}{4.} \PYG{p}{,} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{key}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{value}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{\PYGZcb{}}\PYG{p}{]}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{Loop over elements of the list: seq = }\PYG{l+s+si}{\PYGZob{}seq\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{el} \PYG{o+ow}{in} \PYG{n}{seq}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{element }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{el}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ has type }\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{el}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Loop over elements of a tuple}
+\PYG{c+c1}{\PYGZsh{} ...}
+
+\PYG{c+c1}{\PYGZsh{} Loop over elements of a range}
+\PYG{n}{n\PYGZus{}el} \PYG{o}{=} \PYG{l+m+mi}{5}
+\PYG{n}{range\PYGZus{}el} \PYG{o}{=} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{Loop over elements of the list, seq = }\PYG{l+s+si}{\PYGZob{}seq\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{range(}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{n\PYGZus{}el}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{) has type: }\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{type}\PYG{p}{(}\PYG{n}{range\PYGZus{}el}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{range(}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{n\PYGZus{}el}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{): }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{range\PYGZus{}el}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{range\PYGZus{}el}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Loop over keys, values of a dict}
+\PYG{n}{d} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{a}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mf}{1.}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{b}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{6}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{c}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{c1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{c2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{k+kc}{True}\PYG{p}{\PYGZcb{}}\PYG{p}{\PYGZcb{}}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{Loop over elements of the dict, d = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{d}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{k}{for} \PYG{n}{i}\PYG{p}{,}\PYG{n}{k} \PYG{o+ow}{in} \PYG{n}{d}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,} \PYG{n}{k}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Loop over elements of the list: seq = \PYGZob{}seq\PYGZcb{}
+element a has type \PYGZlt{}class \PYGZsq{}str\PYGZsq{}\PYGZgt{}
+element 3 has type \PYGZlt{}class \PYGZsq{}int\PYGZsq{}\PYGZgt{}
+element 4.0 has type \PYGZlt{}class \PYGZsq{}float\PYGZsq{}\PYGZgt{}
+element \PYGZob{}\PYGZsq{}key\PYGZsq{}: \PYGZsq{}value\PYGZsq{}\PYGZcb{} has type \PYGZlt{}class \PYGZsq{}dict\PYGZsq{}\PYGZgt{}
+
+Loop over elements of the list, seq = \PYGZob{}seq\PYGZcb{}
+range(5) has type: \PYGZlt{}class \PYGZsq{}range\PYGZsq{}\PYGZgt{}
+range(5): range(0, 5)
+0
+1
+2
+3
+4
+
+Loop over elements of the dict, d = \PYGZob{}\PYGZsq{}a\PYGZsq{}: 1.0, \PYGZsq{}b\PYGZsq{}: 6, \PYGZsq{}c\PYGZsq{}: \PYGZob{}\PYGZsq{}c1\PYGZsq{}: 1, \PYGZsq{}c2\PYGZsq{}: True\PYGZcb{}\PYGZcb{}
+a 1.0
+b 6
+c \PYGZob{}\PYGZsq{}c1\PYGZsq{}: 1, \PYGZsq{}c2\PYGZsq{}: True\PYGZcb{}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
 
 \subsection{while loop}
 \label{\detokenize{ch/programming/flow_control:while-loop}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} while loop example \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{n}{a} \PYG{o}{=} \PYG{l+m+mi}{3}
+
+\PYG{k}{while} \PYG{p}{(} \PYG{n}{a} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{5} \PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{a} \PYG{o}{+}\PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZgt{}\PYGZgt{} in while loop, a: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{a}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{after while loop, a: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{a}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZgt{}\PYGZgt{} in while loop, a: 4
+\PYGZgt{}\PYGZgt{} in while loop, a: 5
+after while loop, a: 5
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
 
 \subsection{altri cicli}
 \label{\detokenize{ch/programming/flow_control:altri-cicli}}
+\sphinxAtStartPar
+\sphinxstylestrong{todo}
+
 \sphinxstepscope
 
 
@@ -405,7 +661,36 @@ scrivere una libreria
 
 
 \chapter{Introduzione al calcolo scientifico}
-\label{\detokenize{ch/numerics:introduzione-al-calcolo-scientifico}}\label{\detokenize{ch/numerics:book-numerics-hs}}\label{\detokenize{ch/numerics::doc}}\begin{itemize}
+\label{\detokenize{ch/numerics:introduzione-al-calcolo-scientifico}}\label{\detokenize{ch/numerics:book-numerics-hs}}\label{\detokenize{ch/numerics::doc}}
+\sphinxAtStartPar
+In questa introduzione al calcolo numerico, vengono presentati alcuni algoritmi. Dove sensato, viene implementata la versione elementare di alcuni di questi algoritmi. Per usi non didattici, e quando possibile, si raccomanda l’uso di algoritmi implementati in librerie disponibili, per questioni di tempo ed efficienza: è lavoro già fatto, da persone che lo sanno fare meglio di noi, controllato, migliorato nel corso degli anni, ottimizzato per ogni sistema e spesso in linguaggi di programmazione diversi da Python, come C o Fortran.
+
+\sphinxAtStartPar
+In questa introduzione viene fatto affidamento e uso di alcune librerie disponibili per Python:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+librerie con algoritmi e strumenti matematici per il calcolo numerico: \sphinxhref{https://numpy.org}{NumPy}, \sphinxhref{https://scipy.org}{SciPy},…
+
+\item {} 
+\sphinxAtStartPar
+librerie per la creazione di grafici: \sphinxhref{https://matplotlib.org}{Matplotlib}, \sphinxhref{https://plotly.com}{Plotly},…
+
+\item {} 
+\sphinxAtStartPar
+librerie per l’analisi dati e la statistica: \sphinxhref{https::/pandas.pydata.org}{pandas},…
+
+\item {} 
+\sphinxAtStartPar
+librerie per il machine learning: \sphinxhref{https://scikit-learn.org}{sci\sphinxhyphen{}kit}, \sphinxhref{https://pytorch.org}{PyTorch},…
+
+\item {} 
+\sphinxAtStartPar
+…
+
+\end{itemize}
+\subsubsection*{Introduzione al calcolo numerico}
+\begin{itemize}
 \item {} 
 \sphinxAtStartPar
 Equazioni lineari
@@ -445,6 +730,8 @@ problema ai valori al contorno
 Ottimizzazione, vincolata e non
 
 \end{itemize}
+\subsubsection*{Metodi per la statistica}
+\subsubsection*{Introduzione al machine learning}
 
 \sphinxstepscope
 
@@ -452,34 +739,280 @@ Ottimizzazione, vincolata e non
 \section{Sistemi lineari}
 \label{\detokenize{ch/numerics/linear:sistemi-lineari}}\label{\detokenize{ch/numerics/linear::doc}}
 \sphinxAtStartPar
-La soluzione di sistemi lineari è un problema che compare in molte altre applicazioni di calcolo numerico …
+La soluzione di sistemi lineari è un problema che compare in molte altre applicazioni di calcolo numerico.
+
+
 
 \sphinxAtStartPar
-Esistono due grandi classi di metodi/algoritmi per la soluzione di sistemi lineari:
+\sphinxstylestrong{Formalismo matriciale.} Con il formalismo matriciale, un sistema di equazioni lineari può essere scritto come
+\begin{equation*}
+\begin{split}\mathbf{A} \mathbf{x} = \mathbf{b}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+\sphinxstylestrong{Classificazione.} In generale, i sistemi di equazioni lineari possono essere classificati:
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-i metodi diretti, che si basano su una fattorizzazione della matrice
+in base al numero di incognite \(n_u\) ed equazioni indipendenti \(n_e\): \(n_e = n_u\) sistemi determinati con un’unica soluzione; \(n_e > n_u\) sistemi sovradeterminati: con nessuna soluzione in generale; \(n_e < n_u\) sistemi indeterminati, con infinite soluzioni in generale
 
 \item {} 
 \sphinxAtStartPar
-i metodi indiretti, che si basano sul calcolo di prodotti matrice\sphinxhyphen{}vettore
+in base alla “struttura” del sistema:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+diagonale, tridiagonale, …
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+in base al numero di coefficienti non\sphinxhyphen{}nulli della matrice \(\mathbf{A}\): sistemi con matrice \(\mathbf{A}\) piena o \sphinxstylestrong{sparsa}; questa distinzione non è netta, ma il più delle volte risulta chiara dalla particolare applicazione/metodo.
 
 \end{itemize}
 
 \sphinxAtStartPar
-\sphinxstylestrong{todo}
+\sphinxstylestrong{Algoritmi.} Esistono due grandi classi di metodi/algoritmi per la soluzione di sistemi lineari:
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-Riferimento alla sezione di matematica sull’\sphinxstylestrong{algebra lineare} per dare le basi: cos’è un sistema lineare? Come può essere scritto usando il formalismo matriciale? Caratteristiche principali di una matrice (rango, nucleo, spettro, …)
+i \sphinxstylestrong{metodi diretti}, che si basano su una fattorizzazione della matrice
 
 \item {} 
 \sphinxAtStartPar
-Riferimento ai problemi numerici: condizionamento?
+i \sphinxstylestrong{metodi indiretti}, che si basano sul calcolo di prodotti matrice\sphinxhyphen{}vettore
 
 \end{itemize}
 
+
+\subsection{Sistemi lineari quadrati con matrici piene}
+\label{\detokenize{ch/numerics/linear:sistemi-lineari-quadrati-con-matrici-piene}}
+\sphinxAtStartPar
+In questa sezione si discute la soluzione di sistemi lineari quadrati con matrici piene con le funzoni disponibili nella libreria NumPy.
+
+
+\subsubsection{Esempio 1. Sistema quadrato determinato}
+\label{\detokenize{ch/numerics/linear:esempio-1-sistema-quadrato-determinato}}
+\sphinxAtStartPar
+Il sistema lineare
+\begin{equation*}
+\begin{split}\begin{cases}
+  x_1 + 2 \, x_2 = 0 \\
+  x_1 + x_3 = -1 \\
+  x_1 + x_2 + x_3 = 1 \\
+\end{cases}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+può essere riscritto con il formalismo matriciale nella forma \(\mathbf{A} \mathbf{x} = \mathbf{b}\),
+\begin{equation*}
+\begin{split}
+\underbrace{\begin{bmatrix} 1 & 2 & 0 \\ 1 & 0 & 1 \\ 1 & 1 & 1 \end{bmatrix}}_{\mathbf{A}}
+\underbrace{\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}}_{\mathbf{x}} =
+\underbrace{\begin{bmatrix} 0 \\ -1 \\ 1 \end{bmatrix}}_{\mathbf{b}}
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+e risolto grazie alla funzione \(\texttt{solve(A, b)}\) della libreria \(\texttt{numpy.linalg}\).
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{Linear systems with full square non\PYGZhy{}singular matrices}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{n}{A} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{p}{[}\PYG{p}{[}\PYG{l+m+mf}{1.}\PYG{p}{,}\PYG{l+m+mf}{2.}\PYG{p}{,}\PYG{l+m+mf}{0.}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mf}{1.}\PYG{p}{,}\PYG{l+m+mf}{0.}\PYG{p}{,}\PYG{l+m+mf}{1.}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mf}{1.}\PYG{p}{,}\PYG{l+m+mf}{1.}\PYG{p}{,}\PYG{l+m+mf}{1.}\PYG{p}{]}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{b} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mf}{0.}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.}\PYG{p}{,}\PYG{l+m+mf}{1.}\PYG{p}{]}\PYG{p}{)}
+
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{b}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Sol, x: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Proof : Ax = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{A}\PYG{+w}{ }\PYG{o}{@}\PYG{+w}{ }\PYG{n}{x}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} Check that Ax = b}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{         b = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{b}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Sol, x: [\PYGZhy{}4.  2.  3.]
+Proof : Ax = [ 0. \PYGZhy{}1.  1.]
+         b = [ 0. \PYGZhy{}1.  1.]
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+
+\subsubsection{Esempio 2. Sistemi quadrati non determinati}
+\label{\detokenize{ch/numerics/linear:esempio-2-sistemi-quadrati-non-determinati}}
+\sphinxAtStartPar
+I sistemi lineari
+\begin{equation*}
+\begin{split}\begin{cases}
+  x_1 + 2 \, x_2 = 1 \\
+  x_1 + x_3 = -1 \\
+  2 x_1 + 2 \, x_2 + x_3 = 1 \\
+\end{cases}
+\qquad , \qquad
+\begin{cases}
+  x_1 + 2 \, x_2 = 0 \\
+  x_1 + x_3 = -1 \\
+  2 x_1 + 2 \, x_2 + x_3 = 1 \\
+\end{cases}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+sono due sistemi quadrati non determinati. Il primo sistema non ha soluzioni, mentre il secondo ne ha infinite della forma
+\begin{equation*}
+\begin{split}(x_1, x_2, x_3) = (-2, 1, 1) + \alpha (2, -1, -2) \ , \quad \alpha \in \mathbb{R} \ .\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Dopo aver riscritto i sistemi lineari con il formalismo matriciale, si può provare a risolverli usando la funzione \(\texttt{solve(A, b)}\) della libreria \(\texttt{numpy.linalg}\). In entrambi i casi, la funzione \(\texttt{solve(A,b)}\) resitiuisce un errore, segnalando che la matrice del sistema lineare è singolare, definizione equivalente di sistemi non determinati.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{todo} \sphinxstyleemphasis{dare interpretazione geometrica, fare grafico?}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{todo} \sphinxstyleemphasis{spiegare motivo?}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstyleemphasis{Esistono algoritmi che trovano almeno una soluzione nel caso in cui ne esistano infinite?}: discutere gli algoritmi implementati nella funzione \(numpy.linalg.solve()\) e rimandare alla documentazione della libreria; discutere altri algoritmi che rendono possibile trovare una soluzione
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstyleemphasis{Esistono algoritmi che trovano una soluzione approssimata nel caso in cui non ne esistano?}: \sphinxstylestrong{minimi quadrati}, minimizzano l’errore, dare un’interpretazione geometrica
+
+\end{itemize}
+
+\end{itemize}
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{Linear systems with full square singular matrices}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{n}{A} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{p}{[}\PYG{p}{[}\PYG{l+m+mf}{1.}\PYG{p}{,}\PYG{l+m+mf}{2.}\PYG{p}{,}\PYG{l+m+mf}{0.}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mf}{1.}\PYG{p}{,}\PYG{l+m+mf}{0.}\PYG{p}{,}\PYG{l+m+mf}{1.}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mf}{2.}\PYG{p}{,}\PYG{l+m+mf}{2.}\PYG{p}{,}\PYG{l+m+mf}{1.}\PYG{p}{]}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{b} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mf}{1.}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.}\PYG{p}{,}\PYG{l+m+mf}{1.}\PYG{p}{]}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} b = np.array([0.,\PYGZhy{}1.,1.])}
+
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{b}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Sol, x: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Proof : Ax = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{A}\PYG{+w}{ }\PYG{o}{@}\PYG{+w}{ }\PYG{n}{x}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} Check that Ax = b}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{         b = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{b}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{g+gt}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+ne}{LinAlgError}\PYG{g+gWhitespace}{                               }Traceback (most recent call last)
+\PYG{n}{Cell} \PYG{n}{In}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{,} \PYG{n}{line} \PYG{l+m+mi}{11}
+\PYG{g+gWhitespace}{      }\PYG{l+m+mi}{8} \PYG{n}{b} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mf}{1.}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.}\PYG{p}{,}\PYG{l+m+mf}{1.}\PYG{p}{]}\PYG{p}{)}
+\PYG{g+gWhitespace}{      }\PYG{l+m+mi}{9} \PYG{c+c1}{\PYGZsh{} b = np.array([0.,\PYGZhy{}1.,1.])}
+\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{11} \PYG{n}{x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{b}\PYG{p}{)}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{13} \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Sol, x: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{14} \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Proof : Ax = }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{A}\PYG{+w}{ }\PYG{o}{@}\PYG{+w}{ }\PYG{n}{x}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} Check that Ax = b}
+
+\PYG{n+nn}{File \PYGZlt{}\PYGZus{}\PYGZus{}array\PYGZus{}function\PYGZus{}\PYGZus{} internals\PYGZgt{}:200,} in \PYG{n+ni}{solve}\PYG{n+nt}{(*args, **kwargs)}
+
+\PYG{n+nn}{File \PYGZti{}/.local/lib/python3.8/site\PYGZhy{}packages/numpy/linalg/linalg.py:386,} in \PYG{n+ni}{solve}\PYG{n+nt}{(a, b)}
+\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{384} \PYG{n}{signature} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{DD\PYGZhy{}\PYGZgt{}D}\PYG{l+s+s1}{\PYGZsq{}} \PYG{k}{if} \PYG{n}{isComplexType}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{k}{else} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{dd\PYGZhy{}\PYGZgt{}d}\PYG{l+s+s1}{\PYGZsq{}}
+\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{385} \PYG{n}{extobj} \PYG{o}{=} \PYG{n}{get\PYGZus{}linalg\PYGZus{}error\PYGZus{}extobj}\PYG{p}{(}\PYG{n}{\PYGZus{}raise\PYGZus{}linalgerror\PYGZus{}singular}\PYG{p}{)}
+\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{386} \PYG{n}{r} \PYG{o}{=} \PYG{n}{gufunc}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{signature}\PYG{o}{=}\PYG{n}{signature}\PYG{p}{,} \PYG{n}{extobj}\PYG{o}{=}\PYG{n}{extobj}\PYG{p}{)}
+\PYG{g+gWhitespace}{    }\PYG{l+m+mi}{388} \PYG{k}{return} \PYG{n}{wrap}\PYG{p}{(}\PYG{n}{r}\PYG{o}{.}\PYG{n}{astype}\PYG{p}{(}\PYG{n}{result\PYGZus{}t}\PYG{p}{,} \PYG{n}{copy}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{)}\PYG{p}{)}
+
+\PYG{n+nn}{File \PYGZti{}/.local/lib/python3.8/site\PYGZhy{}packages/numpy/linalg/linalg.py:89,} in \PYG{n+ni}{\PYGZus{}raise\PYGZus{}linalgerror\PYGZus{}singular}\PYG{n+nt}{(err, flag)}
+\PYG{g+gWhitespace}{     }\PYG{l+m+mi}{88} \PYG{k}{def} \PYG{n+nf}{\PYGZus{}raise\PYGZus{}linalgerror\PYGZus{}singular}\PYG{p}{(}\PYG{n}{err}\PYG{p}{,} \PYG{n}{flag}\PYG{p}{)}\PYG{p}{:}
+\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{89}     \PYG{k}{raise} \PYG{n}{LinAlgError}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Singular matrix}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n+ne}{LinAlgError}: Singular matrix
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+
+\subsection{Matrici sparse}
+\label{\detokenize{ch/numerics/linear:matrici-sparse}}
+\sphinxAtStartPar
+Una matrice sparsa ha un elevato numero di elementi nulli.
+
+
+\subsubsection{Esempio 1 \sphinxhyphen{} Matrice di rigidezza di elementi finiti}
+\label{\detokenize{ch/numerics/linear:esempio-1-matrice-di-rigidezza-di-elementi-finiti}}
+\sphinxAtStartPar
+Il sistema lineare
+\begin{equation*}
+\begin{split}\begin{bmatrix} 2 & -1 & 0 & 0 & 0 \\ -1 & 2 & -1 & 0 & 0 \\ 0 & -1 & 2 & -1 & 0 \\ 0 & 0 & -1 & 2 & -1 \\ 0 & 0 & 0 & -1  & 2 \end{bmatrix} \begin{bmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{bmatrix} \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+è descritto da una matrice, \(N=5\), \(N \times N = 25\), che ha \(N+(N-1)+(N-1) = 13\) elementi non nulli. Il rapporto tra il numero di elementi non nulli e il numero di elementi totali è \(\frac{3N-2}{N^2} \sim \frac{3}{N}\). Al crescere della dimensione del problema, la matrice \(\mathbf{A}\) diventa sempre più sparsa e diventa sempre più conveniente definirla come matrice sparsa, ed usare gli algoritmi pensati per questo tipo di matrici.
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{Linear systems with square non\PYGZhy{}singular matrices, in sparse format}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+\PYG{k+kn}{from} \PYG{n+nn}{scipy} \PYG{k+kn}{import} \PYG{n}{sparse}
+
+\PYG{c+c1}{\PYGZsh{} Printout level: the higher the number, the more verbose the script}
+\PYG{n}{printout\PYGZus{}level} \PYG{o}{=} \PYG{l+m+mi}{1}
+
+\PYG{n}{n\PYGZus{}nodes} \PYG{o}{=} \PYG{l+m+mi}{5}
+\PYG{n}{i\PYGZus{}nodes} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{)}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Build sparse stiffness matrix, I: row indices, J: col indices, E: matrix elems}
+\PYG{n}{I} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{i\PYGZus{}nodes}\PYG{o}{+}\PYG{n}{i\PYGZus{}nodes}\PYG{p}{[}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{n}{i\PYGZus{}nodes}\PYG{p}{[} \PYG{l+m+mi}{1}\PYG{p}{:}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{J} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{i\PYGZus{}nodes}\PYG{o}{+}\PYG{n}{i\PYGZus{}nodes}\PYG{p}{[} \PYG{l+m+mi}{1}\PYG{p}{:}\PYG{p}{]}\PYG{o}{+}\PYG{n}{i\PYGZus{}nodes}\PYG{p}{[}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{E} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{n\PYGZus{}nodes}\PYG{o}{*}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{o}{+}\PYG{p}{(}\PYG{n}{n\PYGZus{}nodes}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{*}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{p}{(}\PYG{n}{n\PYGZus{}nodes}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{o}{*}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
+
+\PYG{n}{A} \PYG{o}{=} \PYG{n}{sparse}\PYG{o}{.}\PYG{n}{coo\PYGZus{}array}\PYG{p}{(}\PYG{p}{(}\PYG{n}{E}\PYG{p}{,} \PYG{p}{(}\PYG{n}{I}\PYG{p}{,}\PYG{n}{J}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{o}{.}\PYG{n}{tocsr}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{printout\PYGZus{}level} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{50} \PYG{p}{)}\PYG{p}{:}  \PYG{c+c1}{\PYGZsh{} print matrix in sparse format}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ I: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{I}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{ J: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{J}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{ E: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{E}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ A:}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{ }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{A}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+    
+\PYG{k}{if} \PYG{p}{(} \PYG{n}{printout\PYGZus{}level} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{60} \PYG{p}{)}\PYG{p}{:}  \PYG{c+c1}{\PYGZsh{} convert and primt matrix in full format}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ A.todense(): }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{A}\PYG{o}{.}\PYG{n}{todense}\PYG{p}{(}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} RHS}
+\PYG{n}{b} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{o}{*}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Solve linear system}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{sparse}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{spsolve}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{b}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Sol, x: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{x}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Sol, x: [2.5 4.  4.5 4.  2.5]
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
 \sphinxstepscope
 
 
@@ -562,7 +1095,7 @@ Bisection method summary
 solution, x = \PYGZhy{}0.567143440246582
 res  : \PYGZhy{}2.348157265297246e\PYGZhy{}07
 niter: 20
-etime: 0.0008769035339355469
+etime: 0.0008826255798339844
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -649,7 +1182,7 @@ Newton method summary
 solution, x = \PYGZhy{}0.567143285989123
 res  : 6.927808993140161e\PYGZhy{}09
 niter: 3
-etime: 0.0005042552947998047
+etime: 0.0010170936584472656
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -878,7 +1411,21 @@ ML, machine learning: control
 
 
 \chapter{Supporto tecnico}
-\label{\detokenize{ch/support:supporto-tecnico}}\label{\detokenize{ch/support:programming-hs-support-hs}}\label{\detokenize{ch/support::doc}}
+\label{\detokenize{ch/support:supporto-tecnico}}\label{\detokenize{ch/support:programming-hs-support-hs}}\label{\detokenize{ch/support::doc}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+git
+
+\item {} 
+\sphinxAtStartPar
+Servizi Google
+
+\item {} 
+\sphinxAtStartPar
+TeX
+
+\end{itemize}
+
 
 
 

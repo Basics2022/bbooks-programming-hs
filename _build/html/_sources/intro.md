@@ -10,6 +10,10 @@ Oltre alle nozioni minime, l'obiettivo principale di questo libro è la formazio
 - **ordine**: i moderni strumenti informatici permettono di lavorare in maniera ordinata, risparmiando tempo, soldi e pazienza
 - **trasparenza** e **onestà**: anche se spesso in maniera non lineare, la conoscenza procede seguendo il metodo scientifico: i risultati mostrati e le tesi proposte devono essere supportate da dati e logica; i dati e le analisi svolte per poter produrre risultati devono essere disponibili, controllabili e soggetti a critica. Tutto il resto, almeno qui, almeno nell'ambito della conoscenza che procede con il metodo scientifico, sarà considerata confusione nella migliore delle ipotesi o direttamente *merda*.
 
+Questo stesso libro è scritto seguendo questi criteri: oltre al dispositivo elettronico usato per consultare il materiale (online o offline, una volta scaricato), non è necessaria la spesa per nessun altro dispositivo o infrastruttura informatica; i sorgenti del materiale è sviluppato localmente, ospitato e disponibile su [Github](https://github.com) all'indirizzo [https://github.com/Basics2022/bbooks-programming-hs](https://github.com/Basics2022/bbooks-programming-hs).
+
+**necessità di una connessione internet, se non si porta il progetto su un sistema locale, con tutti gli strumenti necessari - non tanti, e standard, ma comunque devono esserci "per funzionare"**
+
 <!--
 - Nozioni
 - Valutazione e suggerimento risorse, che persegue per quanto possibile l'indipendenza e la libertà in termini di
