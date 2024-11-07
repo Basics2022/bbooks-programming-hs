@@ -181,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="numerics.html">Introduzione al calcolo scientifico</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="numerics/linear.html">Sistemi lineari</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numerics/nonlinear.html">Problemi non lineari</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numerics/nonlinear.html">Equazioni algebriche non lineari</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numerics/approximation.html">Approssimazione di funzioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numerics/derivatives.html">Derivate di funzioni</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numerics/integrals.html">Integrali</a></li>
@@ -414,11 +414,17 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="introduzione-ai-metodi-in-ai">
 <span id="book-ai-hs"></span><h1>Introduzione ai metodi in AI<a class="headerlink" href="#introduzione-ai-metodi-in-ai" title="Permalink to this heading">#</a></h1>
+<p>In questa sezione si descriveranno alcuni metodi utilizzati nelle applicazioni di <strong>machine learning</strong>.</p>
+<p><strong>Approccio.</strong> Alla completezza e al rigore dello sviluppo teorico dei metodi, viene preferita una descrizione dei metodi tramite esempi e applicazioni.</p>
+<p>Benché questo possa essere un approccio ad alto rischio di creazione di utenti acritici di strumenti che non comprendono, la speranza è di mitigare questo rischio con continui moniti a prestare attenzione e un supporto del lettore da parte di gente con un minimo di esperienza.</p>
+<p><strong>Argomenti.</strong> In questa sezione verranno presentati alcuni metodi e applicazioni del <strong>machine learning</strong>, che possono essere classificate in tre grandi classi di apprendimento:</p>
 <ul class="simple">
 <li><p>SL, supervised learning: regression and classification</p></li>
 <li><p>UL, unsupervised learning: clustering</p></li>
 <li><p>ML, machine learning: control</p></li>
 </ul>
+<p>Dopo aver presentato le tecniche classiche, verranno introdotte le reti neurali, gli algoritmi fondamentali che hanno permesso un uso pratico ed efficiente di reti profonde, e alcune architetture fondamentali di reti neurali.</p>
+<p>Le applicazioni verranno affrontate inizialmente con approcci classici, affidandoci alla libreria <a class="reference external" href="https://scikit-learn.org">sci-kit</a>, e successivamente con tecniche “deep” grazie alla libreria <a class="reference external" href="https://pytorch.org">PyTorch</a>.</p>
 </div>
 
     <script type="text/x-thebe-config">
