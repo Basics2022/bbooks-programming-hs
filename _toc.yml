@@ -26,6 +26,10 @@ parts:
       - file: ch/numerics/ode-cauchy
       - file: ch/numerics/ode-boundary
     - file: ch/numerics/optimization
-- caption: Introduzione ai metodi in AI
+    - file: ch/ai
+- caption: Supporto tecnico
   chapters:
-  - file: ch/ai
+  - file: ch/support
+# - caption: Introduzione ai metodi in AI
+#   chapters:
+#   - file: ch/ai

@@ -1,5 +1,5 @@
 (book:numerics-hs)=
-# Introduzione al calcolo numerico
+# Introduzione al calcolo scientifico
 
 - Equazioni lineari
 - Equazioni non lineari
