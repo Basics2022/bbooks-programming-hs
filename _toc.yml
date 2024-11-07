@@ -12,7 +12,7 @@ parts:
   - file: ch/programming/functions
   - file: ch/programming/oo
   - file: ch/programming/libraries
-- caption: Introduzione al calcolo numerico
+- caption: Introduzione al calcolo scientifico
   chapters:
   - file: ch/numerics
     sections:
@@ -26,10 +26,9 @@ parts:
       - file: ch/numerics/ode-cauchy
       - file: ch/numerics/ode-boundary
     - file: ch/numerics/optimization
-    - file: ch/ai
+- caption: Introduzione ai metodi in statistica e  AI
+  chapters:
+  - file: ch/ai
 - caption: Supporto tecnico
   chapters:
   - file: ch/support
-# - caption: Introduzione ai metodi in AI
-#   chapters:
-#   - file: ch/ai
