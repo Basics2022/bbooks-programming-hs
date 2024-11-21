@@ -26,6 +26,15 @@ parts:
       - file: ch/numerics/ode-cauchy
       - file: ch/numerics/ode-boundary
     - file: ch/numerics/optimization
+- caption: Statistica
+  chapters:
+  - file: ch/statistics
+  - file: ch/statistics/sampling
+  - file: ch/statistics/hp-test
+    sections:
+    - file: ch/statistics/test-fisher
+    - file: ch/statistics/t-test
+    - file: ch/statistics/anova
 - caption: Introduzione ai metodi in statistica e  AI
   chapters:
   - file: ch/ai

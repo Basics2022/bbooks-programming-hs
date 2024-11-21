@@ -1,0 +1,3 @@
+# Test di verifica delle ipotesi
+
+...
