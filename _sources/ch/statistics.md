@@ -1,5 +1,17 @@
 (book:statistics-hs)=
 # Metodi per la statistica
 
-Esempi
+````{only} html
 
+```{dropdown} Variabili casuali
+```
+```{dropdown} Inferenza
+- stima
+- verifica ipotesi
+- campionamento
+```
+
+```{dropdown} Processi casuali
+```
+
+````
