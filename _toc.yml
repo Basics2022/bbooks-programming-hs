@@ -15,20 +15,21 @@ parts:
 - caption: Introduzione al calcolo scientifico
   chapters:
   - file: ch/numerics
+  - file: ch/numerics/linear
+  - file: ch/numerics/nonlinear
+  - file: ch/numerics/approximation
+  - file: ch/numerics/derivatives
+  - file: ch/numerics/integrals
+  - file: ch/numerics/ode
     sections:
-    - file: ch/numerics/linear
-    - file: ch/numerics/nonlinear
-    - file: ch/numerics/approximation
-    - file: ch/numerics/derivatives
-    - file: ch/numerics/integrals
-    - file: ch/numerics/ode
-      sections:
-      - file: ch/numerics/ode-cauchy
-      - file: ch/numerics/ode-boundary
-    - file: ch/numerics/optimization
+    - file: ch/numerics/ode-cauchy
+    - file: ch/numerics/ode-boundary
+  - file: ch/numerics/optimization
 - caption: Statistica
   chapters:
   - file: ch/statistics
+  - file: ch/statistics/random_variables
+  - file: ch/statistics/iid
   - file: ch/statistics/sampling
   - file: ch/statistics/hp-test
     sections:

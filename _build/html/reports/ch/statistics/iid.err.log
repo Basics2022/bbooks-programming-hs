@@ -1,0 +1,95 @@
+Traceback (most recent call last):
+  File "/home/davide/.local/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/davide/.local/lib/python3.8/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/davide/.local/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/davide/.local/lib/python3.8/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/davide/.local/lib/python3.8/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/davide/.local/lib/python3.8/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+plot_height = 4
+
+#> Distribuition within the samples
+fig, axs = plt.subplots(1, n_gen, figsize=(plot_height*n_gen, plot_height))
+fig.tight_layout(pad=5)
+ir = 0
+for rk, r in samples['gen'].items():
+
+  #> Loop over sample size
+  for sk, s in r.items():
+
+    for i in s['pdf'][::10]:
+      axs[ir].plot(i['x'], i['f'], alpha=0.1, linewidth=.5, color='black')
+
+  axs[ir].grid()
+  axs[ir].set_xlim(s['xlim'])
+  axs[ir].set_xlabel('x')
+  if ( ir == 0 ):  axs[ir].set_ylabel('f(x)')
+  axs[ir].set_title(rk)
+  ir += 1
+
+fig.suptitle('Distribution of elements in a samples', fontsize=16)
+
+#> Distribution of the sample average
+fig, axs = plt.subplots(1, n_gen, figsize=(plot_height*n_gen, plot_height))
+fig.tight_layout(pad=5)
+ir = 0
+for rk, r in samples['gen'].items():
+  for sk, s in r.items():
+    # axs[ir].hist(s['sample_avgs'], alpha=0.3, density=True)
+    # print('sample_avgs:', s['sample_avgs'])
+    f, x = sample_to_pdf(s['sample_avgs'], bins=20)
+    axs[ir].plot(x, f, label=sk)
+
+  axs[ir].grid()
+  axs[ir].set_xlabel('x')
+  if ( ir == 0 ):  axs[ir].set_ylabel('$f_{\overline{x}}(x)$')
+  axs[ir].set_title(rk)
+  axs[ir].legend()
+  ir += 1
+
+fig.suptitle('Distribution of sample average', fontsize=16)
+
+
+#> Distribution of the sample average (normalized over sample_sigma)
+fig, axs = plt.subplots(1, n_gen, figsize=(plot_height*n_gen, plot_height))
+fig.tight_layout(pad=5)
+ir = 0
+for rk, r in samples['gen'].items():
+  for sk, s in r.items():
+    # axs[ir].hist((s['sample_avgs']-s['sample_avg_avg'])/s['sample_avg_std'], alpha=0.3, density=True)
+    f, x = sample_to_pdf(s['sample_avgs'], bins=20)
+    axs[ir].plot((x-s['sample_avg_avg'])/s['sample_avg_std'], f*s['sample_avg_std'], label=sk)
+
+  axs[ir].grid()
+  axs[ir].set_xlabel('x')
+  if ( ir == 0 ):  axs[ir].set_ylabel('$\sigma_{\overline{x}} \cdot f_{\overline{x}}(\dfrac{x-\mu}{\sigma_{\overline{x}}})$')
+  axs[ir].set_title(rk)
+  axs[ir].legend()
+
+  ir += 1
+
+fig.suptitle('Distribution of sample average, scaled', fontsize=16)
+
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[6], line 4[0m
+[1;32m      1[0m plot_height [38;5;241m=[39m [38;5;241m4[39m
+[1;32m      3[0m [38;5;66;03m#> Distribuition within the samples[39;00m
+[0;32m----> 4[0m fig, axs [38;5;241m=[39m plt[38;5;241m.[39msubplots([38;5;241m1[39m, [43mn_gen[49m, figsize[38;5;241m=[39m(plot_height[38;5;241m*[39mn_gen, plot_height))
+[1;32m      5[0m fig[38;5;241m.[39mtight_layout(pad[38;5;241m=[39m[38;5;241m5[39m)
+[1;32m      6[0m ir [38;5;241m=[39m [38;5;241m0[39m
+
+[0;31mNameError[0m: name 'n_gen' is not defined
+

@@ -70,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
     <link rel="next" title="Test di verifica delle ipotesi" href="hp-test.html" />
-    <link rel="prev" title="Metodi per la statistica" href="../statistics.html" />
+    <link rel="prev" title="Variabili casuali indipendenti e identicamente distribuite, iid." href="iid.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -175,26 +175,26 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione al calcolo scientifico</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo scientifico</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../numerics/linear.html">Sistemi lineari</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../numerics/nonlinear.html">Equazioni algebriche non lineari</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../numerics/approximation.html">Approssimazione di funzioni</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../numerics/derivatives.html">Derivate di funzioni</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../numerics/integrals.html">Integrali</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../numerics/ode.html">Equazioni differenziali ordinarie</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../numerics/ode-cauchy.html">Problemi di Cauchy ai valori iniziali</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../numerics/ode-boundary.html">Problemi al contorno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics.html">Introduzione al calcolo scientifico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/linear.html">Sistemi lineari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/nonlinear.html">Equazioni algebriche non lineari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/approximation.html">Approssimazione di funzioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/derivatives.html">Derivate di funzioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/integrals.html">Integrali</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../numerics/ode.html">Equazioni differenziali ordinarie</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/ode-cauchy.html">Problemi di Cauchy ai valori iniziali</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/ode-boundary.html">Problemi al contorno</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../numerics/optimization.html">Ottimizzazione</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/optimization.html">Ottimizzazione</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistica</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../statistics.html">Metodi per la statistica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_variables.html">Variabili casuali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iid.html">Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Campionamento</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="hp-test.html">Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="hp-test.html">Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="test-fisher.html">Test di verifica d’ipotesi - Fisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="t-test.html"><span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="anova.html">ANOVA - Analysis of variance</a></li>
@@ -455,7 +455,6 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="campionamento">
 <h1>Campionamento<a class="headerlink" href="#campionamento" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://genomicsclass.github.io/book/pages/clt_and_t-distribution.html">https://genomicsclass.github.io/book/pages/clt_and_t-distribution.html</a></p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -489,12 +488,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../statistics.html"
+       href="iid.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title">Metodi per la statistica</p>
+        <p class="prev-next-title">Variabili casuali indipendenti e identicamente distribuite, iid.</p>
       </div>
     </a>
     <a class="right-next"

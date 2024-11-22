@@ -177,26 +177,26 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione al calcolo scientifico</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../numerics.html">Introduzione al calcolo scientifico</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../numerics/linear.html">Sistemi lineari</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../numerics/nonlinear.html">Equazioni algebriche non lineari</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../numerics/approximation.html">Approssimazione di funzioni</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../numerics/derivatives.html">Derivate di funzioni</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../numerics/integrals.html">Integrali</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../numerics/ode.html">Equazioni differenziali ordinarie</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../numerics/ode-cauchy.html">Problemi di Cauchy ai valori iniziali</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../numerics/ode-boundary.html">Problemi al contorno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics.html">Introduzione al calcolo scientifico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/linear.html">Sistemi lineari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/nonlinear.html">Equazioni algebriche non lineari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/approximation.html">Approssimazione di funzioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/derivatives.html">Derivate di funzioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/integrals.html">Integrali</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../numerics/ode.html">Equazioni differenziali ordinarie</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/ode-cauchy.html">Problemi di Cauchy ai valori iniziali</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/ode-boundary.html">Problemi al contorno</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../numerics/optimization.html">Ottimizzazione</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/optimization.html">Ottimizzazione</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistica</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../statistics.html">Metodi per la statistica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_variables.html">Variabili casuali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iid.html">Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sampling.html">Campionamento</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="hp-test.html">Test di verifica delle ipotesi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="hp-test.html">Test di verifica delle ipotesi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="test-fisher.html">Test di verifica d’ipotesi - Fisher</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#"><span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="anova.html">ANOVA - Analysis of variance</a></li>
@@ -468,6 +468,7 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="t-test">
 <h1><span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#t-test" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://genomicsclass.github.io/book/pages/clt_and_t-distribution.html">https://genomicsclass.github.io/book/pages/clt_and_t-distribution.html</a></p>
 <p>Un <span class="math notranslate nohighlight">\(t\)</span>-test è un test di verifica delle ipotesi nel quale la <strong>statistica test</strong> ha una distribuzione <strong><span class="math notranslate nohighlight">\(\mathbf{t}\)</span> di Student</strong> sotto l’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[p(x|\text{H}_0) \sim t_{\nu}\]</div>
@@ -540,7 +541,7 @@ document.write(`
 &gt; Fail to reject the null hypothesis, H0: no significant difference in means between the classes.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6d0daf3520&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fec7fdfa520&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/b447209d18774c554d77059adc27f1afcb900a0a10e8e9db17f5ca0f6304b8c4.png" src="../../_images/b447209d18774c554d77059adc27f1afcb900a0a10e8e9db17f5ca0f6304b8c4.png" />
@@ -626,7 +627,7 @@ s-sample t-test
 Reject the null hypothesis: The means of the two classes are significantly different.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6d0da0ea00&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fec7fd14a00&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/ad9e0a740f0f409ab9699cc4cac6809aff9c408ab244bacfcd1a9c9e8e4c1ab3.png" src="../../_images/ad9e0a740f0f409ab9699cc4cac6809aff9c408ab244bacfcd1a9c9e8e4c1ab3.png" />

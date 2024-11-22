@@ -40,6 +40,7 @@ html:
   use_repository_button: true
   use_issues_button: true
   use_edit_page_button: true
+  use_toggle_button: true
 
 # sphinx extensions
 sphinx:
@@ -54,12 +55,13 @@ sphinx:
       use_repository_button: True
       use_edit_page_button: True
       use_issues_button: True
+      use_toggle_button: true
       launch_buttons:
         colab_url: "https://colab.research.google.com"    # colab
     html_favicon: favicon.svg
   extra_extensions:
     - sphinx_proof
     - sphinx_exercise
-    # - sphinx_togglebutton   # to be installed
+    - sphinx_togglebutton   # to be installed
 
 

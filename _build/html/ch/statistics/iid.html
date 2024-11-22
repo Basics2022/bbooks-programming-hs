@@ -1,0 +1,1067 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variabili casuali indipendenti e identicamente distribuite, iid. &#8212; Introduzione alla programmazione per le scuole superiori</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/statistics/iid';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../search.html" />
+    <link rel="next" title="Campionamento" href="sampling.html" />
+    <link rel="prev" title="Variabili casuali" href="random_variables.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="Introduzione alla programmazione per le scuole superiori - Home"/>
+    <script>document.write(`<img src="../../_static/logo-dark.svg" class="logo__image only-dark" alt="Introduzione alla programmazione per le scuole superiori - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione alla programmazione</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../programming.html">Introduzione alla programmazione - in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/types.html">Variabili, tipi e funzioni elementari built-in</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/flow_control.html">Controllo del flusso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/functions.html">Funzioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/oo.html">Classi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/libraries.html">Librerie</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione al calcolo scientifico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../numerics.html">Introduzione al calcolo scientifico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/linear.html">Sistemi lineari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/nonlinear.html">Equazioni algebriche non lineari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/approximation.html">Approssimazione di funzioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/derivatives.html">Derivate di funzioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/integrals.html">Integrali</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../numerics/ode.html">Equazioni differenziali ordinarie</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/ode-cauchy.html">Problemi di Cauchy ai valori iniziali</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/ode-boundary.html">Problemi al contorno</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/optimization.html">Ottimizzazione</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../statistics.html">Metodi per la statistica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_variables.html">Variabili casuali</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sampling.html">Campionamento</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="hp-test.html">Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="test-fisher.html">Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="t-test.html"><span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anova.html">ANOVA - Analysis of variance</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione ai metodi in statistica e  AI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ai.html">Introduzione ai metodi in AI</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supporto tecnico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Supporto tecnico</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-programming-hs/blob/master/ch/statistics/iid.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repository di origine"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/statistics/iid.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/statistics/iid.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Apri un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/ch/statistics/iid.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Variabili casuali indipendenti e identicamente distribuite, iid.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremi-sulle-variabili-casuali-i-i-d">Teoremi sulle variabili casuali i.i.d.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergenza-in-statistica-todo">Convergenza in statistica, <strong>todo</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-teoremi-dei-grandi-numeri-e-del-limite-centrale">Esempio: teoremi dei grandi numeri e del limite centrale</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#librerie-e-funzioni">Librerie e funzioni</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensione-campione">Dimensione campione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione-delle-variabili-casuali">Definizione delle variabili casuali</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stima-della-distribuzione-di-probabilita-della-media-campionaria">Stima della distribuzione di probabilità della media campionaria</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafici">Grafici</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deviazione-standard-della-media-campionaria">Deviazione standard della media campionaria</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-di-probabilita">Distribuzione di probabilità</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="variabili-casuali-indipendenti-e-identicamente-distribuite-iid">
+<h1>Variabili casuali indipendenti e identicamente distribuite, iid.<a class="headerlink" href="#variabili-casuali-indipendenti-e-identicamente-distribuite-iid" title="Permalink to this heading">#</a></h1>
+<p>Due variabili stochastiche <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> sono</p>
+<ul>
+<li><p>statisticamente indipendenti se la loro probabilità congiunta è uguale al prodotto delle probabilità marginali,</p>
+<div class="math notranslate nohighlight">
+\[p_{XY}(x,y) = p_X(x) \, p_Y(y) \ ,\]</div>
+</li>
+<li><p>identicamente distribuite se hanno la stessa densità di probabilità,</p>
+<div class="math notranslate nohighlight">
+\[p_X(x) = p_Y(x)\]</div>
+</li>
+</ul>
+<div class="section" id="teoremi-sulle-variabili-casuali-i-i-d">
+<h2>Teoremi sulle variabili casuali i.i.d.<a class="headerlink" href="#teoremi-sulle-variabili-casuali-i-i-d" title="Permalink to this heading">#</a></h2>
+<p>Dato un insieme di <span class="math notranslate nohighlight">\(N\)</span> variabili casuali iid <span class="math notranslate nohighlight">\(\{ X_n \}_{n=1:N}\)</span>, con valore atteso <span class="math notranslate nohighlight">\(E[X_n] = \mu\)</span> e varianza <span class="math notranslate nohighlight">\(E[(X_n - \mu)^2] = \sigma\)</span>, allora la sua media campionaria</p>
+<div class="math notranslate nohighlight">
+\[\bar{X}_N = \frac{1}{N} \sum_{n=1}^N X_n \ \]</div>
+<ul>
+<li><p>per il <strong>teorema dei grandi numeri</strong>, converge al valore atteso <span class="math notranslate nohighlight">\(\mu\)</span> della distribuzione di probabilità.</p></li>
+<li><p>per il <strong>teorema del limite centrale</strong>, è una variabile casuale che converge in distribuzione a una variabile casuale gaussiana con valore atteso <span class="math notranslate nohighlight">\(\mu\)</span> e varianza <span class="math notranslate nohighlight">\(\frac{\sigma^2}{n}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\bar{X}_N \rightarrow \mathscr{N}\left(\mu, \frac{\sigma^2}{N} \right) \qquad , \qquad \text{as $N \rightarrow \infty$}\]</div>
+</li>
+</ul>
+<div class="section" id="convergenza-in-statistica-todo">
+<h3>Convergenza in statistica, <strong>todo</strong><a class="headerlink" href="#convergenza-in-statistica-todo" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p><strong>quasi certamente</strong>. Esempio: teorema dei grandi numeri in forma forte. Il limite della media campionaria è diverso da una variabile casuale <span class="math notranslate nohighlight">\(\mu\)</span> (<strong>todo</strong> <em>controllare</em>!) solo nel caso di eventi di probabilità nulla,</p>
+<div class="math notranslate nohighlight">
+\[P\left( \lim_{N \rightarrow \infty} \bar{X}_N = \mu \right) = 1 \ .\]</div>
+</li>
+<li><p><strong>in probabilità</strong>. Esempio: teorema dei grandi numeri in forma debole. Per ogni valore di <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[P\left( \left|\lim_{N \rightarrow \infty} \bar{X}_N - \mu \right| &lt; \varepsilon \right) = 1 \ .\]</div>
+</li>
+<li><p><strong>convergenza in distribuzione</strong>. Esempio: teorema del limite centrale…</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="esempio-teoremi-dei-grandi-numeri-e-del-limite-centrale">
+<h2>Esempio: teoremi dei grandi numeri e del limite centrale<a class="headerlink" href="#esempio-teoremi-dei-grandi-numeri-e-del-limite-centrale" title="Permalink to this heading">#</a></h2>
+<div class="section" id="librerie-e-funzioni">
+<h3>Librerie e funzioni<a class="headerlink" href="#librerie-e-funzioni" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1">#&gt; -----------------------------------------------------------------------------</span>
+<span class="c1">#&gt; Set-up logging at the begin of the script</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">logging</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">handlers</span><span class="p">[:]:</span>  <span class="n">logging</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">removeHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1">#&gt; -----------------------------------------------------------------------------</span>
+
+<span class="k">def</span> <span class="nf">sample_to_pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;  &quot;&quot;&quot;</span>
+  <span class="n">hist</span><span class="p">,</span> <span class="n">bin_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">bin_cen</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span> <span class="n">bin_edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">bin_edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="p">)</span>
+  <span class="k">return</span> <span class="n">hist</span><span class="p">,</span> <span class="n">bin_cen</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="section" id="dimensione-campione">
+<h3>Dimensione campione<a class="headerlink" href="#dimensione-campione" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Population</span>
+<span class="n">sample_size_max</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">n_samples</span>       <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">n_sample_size</span>   <span class="o">=</span> <span class="mi">5</span>           <span class="c1"># For convergence</span>
+
+<span class="n">population_size</span> <span class="o">=</span> <span class="n">sample_size_max</span> <span class="o">*</span> <span class="n">n_samples</span>
+<span class="n">sample_size_v</span> <span class="o">=</span> <span class="n">sample_size_max</span> <span class="o">//</span> <span class="p">(</span> <span class="mi">2</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_sample_size</span><span class="p">)</span> <span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="section" id="definizione-delle-variabili-casuali">
+<h3>Definizione delle variabili casuali<a class="headerlink" href="#definizione-delle-variabili-casuali" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; List of random number generators for the population</span>
+<span class="c1"># numpy random number generators with parameters</span>
+<span class="n">rgen_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bernoulli (discrete)&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;generator&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span><span class="o">.</span><span class="n">choice</span><span class="p">,</span> <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">{},</span>   <span class="c1"># Bernoulli (discrete distribution)</span>
+      <span class="s1">&#39;population_params&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;avg&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;sigma&#39;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">},</span>
+      <span class="s1">&#39;write_params&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:[</span><span class="n">mu</span><span class="o">-</span><span class="n">sigma</span><span class="p">,</span> <span class="n">mu</span><span class="o">+</span><span class="n">sigma</span><span class="p">],</span> <span class="s1">&#39;p&#39;</span><span class="p">:[</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.5</span><span class="p">],</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">n</span><span class="p">},</span>
+      <span class="s1">&#39;sample_avg&#39;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s1">&#39;sample_avg_stat&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;avg&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">},</span>
+      <span class="s1">&#39;histograms&#39;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s1">&#39;xlimit&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Normal&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;generator&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span><span class="o">.</span><span class="n">normal</span><span class="p">,</span> <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">{},</span>   <span class="c1"># normal distribution</span>
+      <span class="s1">&#39;population_params&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;avg&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;sigma&#39;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">},</span> \
+      <span class="s1">&#39;write_params&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;loc&#39;</span><span class="p">:</span> <span class="n">mu</span><span class="p">,</span> <span class="s1">&#39;scale&#39;</span><span class="p">:</span> <span class="n">sigma</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">n</span><span class="p">},</span>
+      <span class="s1">&#39;sample_avg&#39;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s1">&#39;sample_avg_stat&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;avg&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">},</span>
+      <span class="s1">&#39;histograms&#39;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s1">&#39;xlimit&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Uniform&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;generator&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span><span class="o">.</span><span class="n">uniform</span><span class="p">,</span> <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">{},</span>   <span class="c1"># uniform distribution</span>
+      <span class="s1">&#39;population_params&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;avg&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;sigma&#39;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">},</span> \
+      <span class="s1">&#39;write_params&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;low&#39;</span><span class="p">:</span> <span class="n">mu</span><span class="o">-</span><span class="n">sigma</span><span class="p">,</span> <span class="s1">&#39;high&#39;</span><span class="p">:</span> <span class="n">mu</span><span class="o">+</span><span class="n">sigma</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">n</span><span class="p">},</span>
+      <span class="s1">&#39;sample_avg&#39;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s1">&#39;sample_avg_stat&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;avg&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">},</span>
+      <span class="s1">&#39;histograms&#39;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s1">&#39;xlimit&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Log-normal&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;generator&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span><span class="o">.</span><span class="n">lognormal</span><span class="p">,</span> <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">{},</span>  <span class="c1"># lognormal distribution</span>
+      <span class="s1">&#39;population_params&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;avg&#39;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span> <span class="s1">&#39;sigma&#39;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">},</span> \
+      <span class="s1">&#39;write_params&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;mean&#39;</span><span class="p">:</span> <span class="n">mu</span><span class="p">,</span> <span class="s1">&#39;sigma&#39;</span><span class="p">:</span> <span class="n">sigma</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">n</span><span class="p">},</span>
+      <span class="s1">&#39;sample_avg&#39;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s1">&#39;sample_avg_stat&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;avg&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">},</span>
+      <span class="s1">&#39;histograms&#39;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s1">&#39;xlimit&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">15.</span><span class="p">]</span>
+    <span class="p">},</span>
+<span class="p">]</span>
+
+<span class="n">n_gen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rgen_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</div>
+</div>
+<div class="section" id="stima-della-distribuzione-di-probabilita-della-media-campionaria">
+<h2>Stima della distribuzione di probabilità della media campionaria<a class="headerlink" href="#stima-della-distribuzione-di-probabilita-della-media-campionaria" title="Permalink to this heading">#</a></h2>
+<p>Per tutte le popolazioni definite sopra, vengono</p>
+<ul class="simple">
+<li><p>estratti <span class="math notranslate nohighlight">\(N_s\)</span> campioni,</p></li>
+<li><p>valuata la media campionaria <span class="math notranslate nohighlight">\(\{\overline{X}_s\}_{s = 1:N_s}\)</span>,</p></li>
+<li><p>stimata la densità di probabilità <span class="math notranslate nohighlight">\(f_{\overline{X}}(x)\)</span>,</p></li>
+<li><p>calcolate le statistiche: media <span class="math notranslate nohighlight">\(\mu_{\overline{x}}\)</span>, e variazione standard <span class="math notranslate nohighlight">\(\sigma_{\overline{x}}^2\)</span></p></li>
+</ul>
+<div class="cell tag_hide-input tag_hide-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;gen&#39;</span><span class="p">:</span> <span class="p">{}</span> <span class="p">}</span>
+
+<span class="c1">#&gt; Generate populations with different probability distribution and draw samples from them</span>
+<span class="k">for</span> <span class="n">rgen</span> <span class="ow">in</span> <span class="n">rgen_list</span><span class="p">:</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="n">rgen</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+
+  <span class="n">samples</span><span class="p">[</span><span class="s1">&#39;gen&#39;</span><span class="p">][</span><span class="n">rgen</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+
+  <span class="n">pop_params</span> <span class="o">=</span> <span class="n">rgen</span><span class="p">[</span><span class="s1">&#39;population_params&#39;</span><span class="p">]</span>
+  <span class="n">gen_params</span> <span class="o">=</span> <span class="n">rgen</span><span class="p">[</span><span class="s1">&#39;write_params&#39;</span><span class="p">](</span><span class="n">pop_params</span><span class="p">[</span><span class="s1">&#39;avg&#39;</span><span class="p">],</span> <span class="n">pop_params</span><span class="p">[</span><span class="s1">&#39;sigma&#39;</span><span class="p">],</span> <span class="n">population_size</span><span class="p">)</span>
+  <span class="n">pop</span> <span class="o">=</span> <span class="n">rgen</span><span class="p">[</span><span class="s1">&#39;generator&#39;</span><span class="p">](</span><span class="o">**</span><span class="n">gen_params</span><span class="p">)</span>
+
+  <span class="c1">#&gt; Loop over sample size</span>
+  <span class="k">for</span> <span class="n">sample_size</span> <span class="ow">in</span> <span class="n">sample_size_v</span><span class="p">:</span>
+
+    <span class="n">samples</span><span class="p">[</span><span class="s1">&#39;gen&#39;</span><span class="p">][</span><span class="n">rgen</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]][</span><span class="nb">str</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)]</span> <span class="o">=</span> <span class="p">{</span>
+         <span class="s1">&#39;pdf&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;sample_avgs&#39;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="n">rgen</span><span class="p">[</span><span class="s1">&#39;xlimit&#39;</span><span class="p">],</span>
+         <span class="s1">&#39;sigma_pop_num&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">pop</span><span class="p">),</span> <span class="s1">&#39;sigma_pop&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;sigma2_ratio&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+    <span class="c1">#&gt; Take samples and evaluate average</span>
+    <span class="n">i_e</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i_s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+      <span class="n">sam</span> <span class="o">=</span> <span class="n">pop</span><span class="p">[</span><span class="n">i_e</span><span class="p">:</span><span class="n">i_e</span><span class="o">+</span><span class="n">sample_size</span><span class="p">]</span>
+      <span class="n">f</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sample_to_pdf</span><span class="p">(</span><span class="n">sam</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+      <span class="n">samples</span><span class="p">[</span><span class="s1">&#39;gen&#39;</span><span class="p">][</span><span class="n">rgen</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]][</span><span class="nb">str</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)][</span><span class="s1">&#39;pdf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="n">f</span><span class="p">})</span>
+      <span class="n">samples</span><span class="p">[</span><span class="s1">&#39;gen&#39;</span><span class="p">][</span><span class="n">rgen</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]][</span><span class="nb">str</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)][</span><span class="s1">&#39;sample_avgs&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sam</span><span class="p">))</span>
+
+      <span class="n">i_e</span> <span class="o">=</span> <span class="n">i_e</span> <span class="o">+</span> <span class="n">sample_size</span>
+
+
+<span class="c1">#&gt; Statistics of the sample average</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Distribution:sample_size - sigma2_ratio = sigma2_pop/sigma2_sample_avg - sample_mean: avg, std dev&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rk</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">[</span><span class="s1">&#39;gen&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+  <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">rk</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+  <span class="c1">#&gt; Loop over sample size</span>
+  <span class="k">for</span> <span class="n">sk</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">s</span><span class="p">[</span><span class="s1">&#39;sample_avg_avg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;sample_avgs&#39;</span><span class="p">])</span>
+    <span class="n">s</span><span class="p">[</span><span class="s1">&#39;sample_avg_std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;sample_avgs&#39;</span><span class="p">])</span>
+    <span class="n">s</span><span class="p">[</span><span class="s1">&#39;sigma2_ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;sigma_pop_num&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;sample_avg_std&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">rk</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">sk</span><span class="si">}</span><span class="s2"> - sigma2_ratio: </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;sigma2_ratio&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> - sample_mean: avg, std: </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;sample_avg_avg&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;sample_avg_std&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># logging.info(f&quot;Central limit theorem, avg, std {population[&#39;avg&#39;]}, {population[&#39;sigma&#39;]/np.sqrt(samples[&#39;size&#39;])}&quot;)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bernoulli (discrete)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Normal
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Uniform
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Log-normal
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Distribution:sample_size - sigma2_ratio = sigma2_pop/sigma2_sample_avg - sample_mean: avg, std dev
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):125 - sigma2_ratio: 125.771354014048 - sample_mean: avg, std: 0.0013248000000000001, 0.08916802176206445
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):250 - sigma2_ratio: 251.9336409812593 - sample_mean: avg, std: 0.0010400000000000001, 0.06300237455842439
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):500 - sigma2_ratio: 504.1145560277331 - sample_mean: avg, std: 6.239999999999997e-05, 0.0445384789394519
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):1000 - sigma2_ratio: 1018.583798784612 - sample_mean: avg, std: -0.0004515999999999999, 0.03133297396418029
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):2000 - sigma2_ratio: 2052.2823012816093 - sample_mean: avg, std: -2.000000000000002e-05, 0.022074020929590512
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:125 - sigma2_ratio: 121.66174144159821 - sample_mean: avg, std: -0.0009550826176480697, 0.09066926179579637
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:250 - sigma2_ratio: 245.43937873353687 - sample_mean: avg, std: -0.0004472658542510515, 0.06383589807668685
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:500 - sigma2_ratio: 499.92715072971055 - sample_mean: avg, std: 5.0261911004053775e-05, 0.04472843802366926
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:1000 - sigma2_ratio: 1028.14373643267 - sample_mean: avg, std: 0.0005889787052951274, 0.03118962671738359
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:2000 - sigma2_ratio: 2065.35471145631 - sample_mean: avg, std: 0.0001789191102697827, 0.022005932134519426
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:125 - sigma2_ratio: 124.10265575477806 - sample_mean: avg, std: 8.935966022236554e-05, 0.05182486349101701
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:250 - sigma2_ratio: 252.86782033646963 - sample_mean: avg, std: -0.0001762882119190168, 0.036306294152148595
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:500 - sigma2_ratio: 497.82204862755054 - sample_mean: avg, std: -0.0001681402350707881, 0.025875672194638134
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:1000 - sigma2_ratio: 1018.5782159669401 - sample_mean: avg, std: 0.00011702209239965807, 0.01808970616538961
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:2000 - sigma2_ratio: 2004.0520310150416 - sample_mean: avg, std: 9.058576951774274e-05, 0.012896569652669849
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:125 - sigma2_ratio: 119.75734412811994 - sample_mean: avg, std: 4.478469284366374, 0.5374631104630095
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:250 - sigma2_ratio: 247.01798015893326 - sample_mean: avg, std: 4.484172554953861, 0.37422729127428894
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:500 - sigma2_ratio: 487.04002363290897 - sample_mean: avg, std: 4.486060023465835, 0.26651239575994046
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:1000 - sigma2_ratio: 998.8204926274212 - sample_mean: avg, std: 4.485214488024005, 0.18610413262031414
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:2000 - sigma2_ratio: 2009.584302799723 - sample_mean: avg, std: 4.483950721926072, 0.13120386369941386
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="section" id="grafici">
+<h3>Grafici<a class="headerlink" href="#grafici" title="Permalink to this heading">#</a></h3>
+<div class="section" id="deviazione-standard-della-media-campionaria">
+<h4>Deviazione standard della media campionaria<a class="headerlink" href="#deviazione-standard-della-media-campionaria" title="Permalink to this heading">#</a></h4>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+
+
+<span class="c1">#&gt; Std dev of sample means for different probability distributions</span>
+<span class="k">for</span> <span class="n">rk</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">[</span><span class="s1">&#39;gen&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+  <span class="n">sample_size_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="nb">int</span><span class="p">(</span><span class="n">sk</span><span class="p">)</span> <span class="k">for</span> <span class="n">sk</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">])</span>
+  <span class="n">std_dev_vector</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;sample_avg_std&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">sk</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">])</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sample_size_vector</span><span class="p">,</span> <span class="n">std_dev_vector</span><span class="p">,</span> <span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">rk</span><span class="p">)</span>
+
+<span class="c1">#&gt; Lines with -0.5 slope in the log plot, to check the trend of sample_avg_sigma ~ 1/sqrt(sample_size)</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="mf">2.0</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sample_size_vector</span><span class="p">,</span> <span class="n">e</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sample_size_vector</span><span class="p">),</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;\sigma_{\overline</span><span class="si">{x}</span><span class="s1">_N}&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Sample size&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">);</span>  <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">);</span>  <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/83f281547478ce65e4ff032bbc8424366d476159014ef2b25d7a3da39f039ad1.png" src="../../_images/83f281547478ce65e4ff032bbc8424366d476159014ef2b25d7a3da39f039ad1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="distribuzione-di-probabilita">
+<h4>Distribuzione di probabilità<a class="headerlink" href="#distribuzione-di-probabilita" title="Permalink to this heading">#</a></h4>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_height</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="c1">#&gt; Distribuition within the samples</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_gen</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">plot_height</span><span class="o">*</span><span class="n">n_gen</span><span class="p">,</span> <span class="n">plot_height</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ir</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">rk</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">[</span><span class="s1">&#39;gen&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+  <span class="c1">#&gt; Loop over sample size</span>
+  <span class="k">for</span> <span class="n">sk</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;pdf&#39;</span><span class="p">][::</span><span class="mi">10</span><span class="p">]:</span>
+      <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">i</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;xlim&#39;</span><span class="p">])</span>
+  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">ir</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">):</span>  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span>
+  <span class="n">ir</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Distribution of elements in a samples&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="c1">#&gt; Distribution of the sample average</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_gen</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">plot_height</span><span class="o">*</span><span class="n">n_gen</span><span class="p">,</span> <span class="n">plot_height</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ir</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">rk</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">[</span><span class="s1">&#39;gen&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+  <span class="k">for</span> <span class="n">sk</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1"># axs[ir].hist(s[&#39;sample_avgs&#39;], alpha=0.3, density=True)</span>
+    <span class="c1"># print(&#39;sample_avgs:&#39;, s[&#39;sample_avgs&#39;])</span>
+    <span class="n">f</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sample_to_pdf</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;sample_avgs&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">sk</span><span class="p">)</span>
+
+  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">ir</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">):</span>  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$f_{\overline</span><span class="si">{x}</span><span class="s1">}(x)$&#39;</span><span class="p">)</span>
+  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span>
+  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+  <span class="n">ir</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Distribution of sample average&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+
+<span class="c1">#&gt; Distribution of the sample average (normalized over sample_sigma)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_gen</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">plot_height</span><span class="o">*</span><span class="n">n_gen</span><span class="p">,</span> <span class="n">plot_height</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ir</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">rk</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">[</span><span class="s1">&#39;gen&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+  <span class="k">for</span> <span class="n">sk</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1"># axs[ir].hist((s[&#39;sample_avgs&#39;]-s[&#39;sample_avg_avg&#39;])/s[&#39;sample_avg_std&#39;], alpha=0.3, density=True)</span>
+    <span class="n">f</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sample_to_pdf</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;sample_avgs&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;sample_avg_avg&#39;</span><span class="p">])</span><span class="o">/</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;sample_avg_std&#39;</span><span class="p">],</span> <span class="n">f</span><span class="o">*</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;sample_avg_std&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">sk</span><span class="p">)</span>
+
+  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">ir</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">):</span>  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$\sigma_{\overline</span><span class="si">{x}</span><span class="s1">} \cdot f_{\overline</span><span class="si">{x}</span><span class="s1">}(\dfrac{x-\mu}{\sigma_{\overline</span><span class="si">{x}</span><span class="s1">}})$&#39;</span><span class="p">)</span>
+  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span>
+  <span class="n">axs</span><span class="p">[</span><span class="n">ir</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+  <span class="n">ir</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Distribution of sample average, scaled&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Distribution of sample average, scaled&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/3db17447eb4be1361d121ae975ea823708beddc1130effcc00777d29628573c8.png" src="../../_images/3db17447eb4be1361d121ae975ea823708beddc1130effcc00777d29628573c8.png" />
+<img alt="../../_images/191dcfd36a1478b842def82659722f72fd98196e4600ebcece85e3d8afb6cbf7.png" src="../../_images/191dcfd36a1478b842def82659722f72fd98196e4600ebcece85e3d8afb6cbf7.png" />
+<img alt="../../_images/ec300c0f2a495be887fd271bfcb4fb9e9fbbbb0ae8d304484d5ce112a42089c5.png" src="../../_images/ec300c0f2a495be887fd271bfcb4fb9e9fbbbb0ae8d304484d5ce112a42089c5.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ch/statistics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="random_variables.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">precedente</p>
+        <p class="prev-next-title">Variabili casuali</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sampling.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">successivo</p>
+        <p class="prev-next-title">Campionamento</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teoremi-sulle-variabili-casuali-i-i-d">Teoremi sulle variabili casuali i.i.d.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergenza-in-statistica-todo">Convergenza in statistica, <strong>todo</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-teoremi-dei-grandi-numeri-e-del-limite-centrale">Esempio: teoremi dei grandi numeri e del limite centrale</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#librerie-e-funzioni">Librerie e funzioni</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensione-campione">Dimensione campione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione-delle-variabili-casuali">Definizione delle variabili casuali</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stima-della-distribuzione-di-probabilita-della-media-campionaria">Stima della distribuzione di probabilità della media campionaria</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafici">Grafici</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deviazione-standard-della-media-campionaria">Deviazione standard della media campionaria</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-di-probabilita">Distribuzione di probabilità</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
