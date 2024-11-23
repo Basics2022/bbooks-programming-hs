@@ -1,2 +1,2 @@
-(statistics-hs:estimate)=
+(statistics-hs:inference:estimate)=
 # Stima

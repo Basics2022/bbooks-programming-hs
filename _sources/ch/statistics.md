@@ -20,9 +20,10 @@ I contenuti seguono l'ordine logico di un approccio alla statistica: dopo aver i
 ```
 ````
 ````{dropdown} [Statistica inferenziale](statistics-hs:inference)
-- stima
-- verifica ipotesi
-- *campionamento*
+- [stima](statistics-hs:inference:estimate)
+- [verifica ipotesi](statistics-hs:inference:hp-test)
+- *campionamento*...
+- ...
 ````
 
 `````
