@@ -8,7 +8,7 @@ logo: logo.svg
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: off # auto # off
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -55,13 +55,12 @@ sphinx:
       use_repository_button: True
       use_edit_page_button: True
       use_issues_button: True
-      use_toggle_button: true
       launch_buttons:
         colab_url: "https://colab.research.google.com"    # colab
     html_favicon: favicon.svg
   extra_extensions:
     - sphinx_proof
     - sphinx_exercise
-    - sphinx_togglebutton   # to be installed
+      # - sphinx_togglebutton   # to be installed
 
 

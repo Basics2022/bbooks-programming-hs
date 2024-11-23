@@ -5,6 +5,7 @@ format: jb-book
 root: intro
 parts:
 - caption: Introduzione alla programmazione
+  numbered: True
   chapters:
   - file: ch/programming
   - file: ch/programming/types
@@ -13,6 +14,7 @@ parts:
   - file: ch/programming/oo
   - file: ch/programming/libraries
 - caption: Introduzione al calcolo scientifico
+  numbered: True
   chapters:
   - file: ch/numerics
   - file: ch/numerics/linear
@@ -26,17 +28,29 @@ parts:
     - file: ch/numerics/ode-boundary
   - file: ch/numerics/optimization
 - caption: Statistica
+  numbered: True
   chapters:
   - file: ch/statistics
-  - file: ch/statistics/random_variables
-  - file: ch/statistics/iid
-  - file: ch/statistics/sampling
-  - file: ch/statistics/hp-test
+  - file: ch/statistics/descriptive
+  - file: ch/statistics/probability
     sections:
-    - file: ch/statistics/test-fisher
-    - file: ch/statistics/t-test
-    - file: ch/statistics/anova
+    - file: ch/statistics/random_variables
+      sections:
+      - file: ch/statistics/rv_pdf_transformations
+      - file: ch/statistics/rv_pdf_examples
+      - file: ch/statistics/iid
+      - file: ch/statistics/sampling
+    - file: ch/statistics/random_processes
+  - file: ch/statistics/inference
+    sections:
+    - file: ch/statistics/estimate
+    - file: ch/statistics/hp-test
+      sections:
+      - file: ch/statistics/test-fisher
+      - file: ch/statistics/t-test
+      - file: ch/statistics/anova
 - caption: Introduzione ai metodi in statistica e  AI
+  numbered: True
   chapters:
   - file: ch/ai
 - caption: Supporto tecnico
