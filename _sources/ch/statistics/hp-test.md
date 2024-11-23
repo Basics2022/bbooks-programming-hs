@@ -1,4 +1,4 @@
-(statistics-hs:inference:hp-test)
+(statistics-hs:inference:hp-test)=
 # Test di verifica delle ipotesi
 
 ...
