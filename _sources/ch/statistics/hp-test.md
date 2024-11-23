@@ -9,6 +9,6 @@ Più in particolare, viene scelta come **statistica test** $x$ un parametro disp
 
 $$p(x|\text{H}_0) \ .$$
 
-In base alle caratteristiche del fenomeno indagato vengono scelte le caratteristiche del test; in base all'evidenza richiesta contro l'ipotesi $\text{H}_0$ viene scelto il **livello di significatività** del test che, insieme alle caratteristiche del test, determina le *regioni di rifiuto* e, per differenza, *di accettazione* dell'ipotesi.
+In base alle caratteristiche del fenomeno indagato vengono scelte le caratteristiche del test; in base all'evidenza richiesta contro l'ipotesi $\text{H}_0$ viene scelto il **livello di significatività**, $\alpha$, del test che - insieme alle caratteristiche del test - determina le **regioni di rifiuto** e, per differenza, **di accettazione** dell'ipotesi.
 
 Una volta raccolti i dati, si calcola la statistica scelta con i dati disponibili, si verifica se il suo valore appartiene alle regioni di rifiuto o di accettazione dell'ipotesi, per concludere rispettivamente se l'ipotesi $\text{H}_{0}$ è stata falsificata o non è stata falsificata e quindi va ritenuta ancora valida.
