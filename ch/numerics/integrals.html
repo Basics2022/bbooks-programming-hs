@@ -194,26 +194,31 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../statistics.html">15. Metodi per la statistica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../statistics/descriptive.html">16. Statistica descrittiva</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/random_variables.html">17. Variabili casuali</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../statistics/rv_pdf_transformations.html">17.3. Trasformazione di probabilità di densità</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../statistics/rv_pdf_examples.html">17.4. Esempi di funzioni densità di probabilità</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/probability.html">17. Introduzione alla probabilità</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../statistics/random_variables.html">17.1. Variabili casuali</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/rv_pdf_transformations.html">17.1.3. Trasformazione di probabilità di densità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/rv_pdf_examples.html">17.1.4. Esempi di funzioni densità di probabilità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/iid.html">17.1.5. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/sampling.html">17.1.6. Campionamento</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/iid.html">18. Variabili casuali indipendenti e identicamente distribuite, iid.</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../statistics/random_processes.html">18.4. Processi casuali</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/random_processes.html">17.2. Processi casuali</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../statistics/sampling.html">19. Campionamento</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/hp-test.html">20. Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../statistics/test-fisher.html">20.1. Test di verifica d’ipotesi - Fisher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../statistics/t-test.html">20.2. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../statistics/anova.html">20.3. ANOVA - Analysis of variance</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/inference.html">18. Statistica inferenziale</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/estimate.html">18.1. Stima</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../statistics/hp-test.html">18.2. Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/test-fisher.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/t-test.html">18.2.2. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/anova.html">18.2.3. ANOVA - Analysis of variance</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione ai metodi in statistica e  AI</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ai.html">21. Introduzione ai metodi in AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai.html">19. Introduzione ai metodi in AI</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supporto tecnico</span></p>
 <ul class="nav bd-sidenav">
@@ -662,12 +667,6 @@ Per domini 1D, l’intervallo di riferimento per la quadratura di Gauss è l’i
     <span class="n">xv</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span> <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_elems</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_elems</span><span class="p">;</span>  <span class="n">xv</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
 
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span> <span class="n">gauss_int_1</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n_gauss</span><span class="p">,</span> <span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_elems</span><span class="p">)</span> <span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.33333333333333337
-0.33333333333333337
 </pre></div>
 </div>
 </div>
