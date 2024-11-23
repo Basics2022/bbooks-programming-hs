@@ -28,6 +28,9 @@ I contenuti seguono l'ordine logico di un approccio alla statistica: dopo aver i
 
 `````
 
+La statistica è applicabile in **diversi (tutti?) gli ambiti**: dalla scienze naturali, alle scienze sociali,...
+Secondo uno studio, i 12 metodi statistici (cos'è un metodo statistico?) più usati sono: ANOVA, $\chi^2$-test, $t$-test, regressione lineare, coefficiente di correlazione di Pearson, Mann-Whitney U-test, Kruskal-Wallis test, Shannon's diversity index, Turkey's range test, cluster analysis, Spearman's rank correlation coefficient, and PCA.
+
 La statistica è uno strumento fondamentale del **metodo scientifico**, e si occupa dell'intero processo di:
 - progetto dell'esperimento
 - svolgimento esperimento e raccolta dati

@@ -466,9 +466,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata">18.2.1.1. Esempio: moneta truccata</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione-variabile-casuale-supposta-incognita">18.2.1.1.1. Definizione variabile casuale - supposta incognita</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-fisher">18.2.1.1.2. Test di Fisher</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.1.1. Esempio: moneta truccata o no?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#librerie">18.2.1.1.1. Librerie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulazione-ipotesi-nulla">18.2.1.1.2. Formulazione ipotesi nulla</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione-variabile-casuale-supposta-incognita">18.2.1.1.3. Definizione variabile casuale - supposta incognita</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-fisher">18.2.1.1.4. Test di Fisher</a></li>
 </ul>
 </li>
 </ul>
@@ -484,6 +486,20 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="test-di-verifica-d-ipotesi-fisher">
 <h1><span class="section-number">18.2.1. </span>Test di verifica d’ipotesi - Fisher<a class="headerlink" href="#test-di-verifica-d-ipotesi-fisher" title="Permalink to this heading">#</a></h1>
+<p>Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsificabilità di Popper, e può essere riassunto nei seguenti passaggi:</p>
+<ol class="arabic simple">
+<li><p>formulazione di un’ipotesi falsificabile, definita <strong>ipotesi nulla</strong> <span class="math notranslate nohighlight">\(\text{H}_0\)</span>, da verificare e che viene ritenuta vera fino a prova contraria</p></li>
+<li><p>scelta di una variabile esplicativa, o <strong>statistica test</strong>, <span class="math notranslate nohighlight">\(x\)</span>, un parametro disponibile, rilevante per il fenomeno indagato e di cui è nota - o approssimabile, sotto ipotesi ragionevoli sul fenomeno - la distribuzione di probabilità,
+$<span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span>$</p></li>
+<li><p>scelta del <strong>test statistico</strong> (es. una coda o due code,…), in base anche alle caratteristiche del fenomeno indagato</p></li>
+<li><p>scelta del <strong>livello di significatività</strong>, <span class="math notranslate nohighlight">\(\alpha\)</span>, del test; il valore del livello di significatività traduce «il livello di evidenza richiesto» per falsificare l’ipotesi e - insieme alle caratteristiche del fenomeno e del test - determina le <em>regioni di rifiuto e di accettazione dell’ipotesi</em>, gli intervalli di valori della statistica test <span class="math notranslate nohighlight">\(x\)</span> che determinano se l’ipotesi è stata falsificata o meno;</p></li>
+<li><p>raccolta dati e <strong>calcolo statistica test sul campione</strong></p></li>
+<li><p><strong>confronto</strong> del valore calcolato della statistica test con gli intervalli di rifiuto e accettazione della variabile soggetta all’ipotesi nulla, e <strong>verdetto sull’ipotesi</strong></p></li>
+</ol>
+<div class="section" id="esempio-moneta-truccata-o-no">
+<h2><span class="section-number">18.2.1.1. </span>Esempio: moneta truccata o no?<a class="headerlink" href="#esempio-moneta-truccata-o-no" title="Permalink to this heading">#</a></h2>
+<div class="section" id="librerie">
+<h3><span class="section-number">18.2.1.1.1. </span>Librerie<a class="headerlink" href="#librerie" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import libraries</span>
@@ -494,10 +510,13 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="esempio-moneta-truccata">
-<h2><span class="section-number">18.2.1.1. </span>Esempio: moneta truccata<a class="headerlink" href="#esempio-moneta-truccata" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="formulazione-ipotesi-nulla">
+<h3><span class="section-number">18.2.1.1.2. </span>Formulazione ipotesi nulla<a class="headerlink" href="#formulazione-ipotesi-nulla" title="Permalink to this heading">#</a></h3>
+<p>Si formula qui l’ipotesi nulla, <span class="math notranslate nohighlight">\(\text{H}_0\)</span>: «la moneta non è truccata», intendendo che non è truccato nemmeno il lancio della moneta o qualsiasi effetto agente sulla moneta non ha un effetto sulla statistica del lancio.</p>
+</div>
 <div class="section" id="definizione-variabile-casuale-supposta-incognita">
-<h3><span class="section-number">18.2.1.1.1. </span>Definizione variabile casuale - supposta incognita<a class="headerlink" href="#definizione-variabile-casuale-supposta-incognita" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.2.1.1.3. </span>Definizione variabile casuale - supposta incognita<a class="headerlink" href="#definizione-variabile-casuale-supposta-incognita" title="Permalink to this heading">#</a></h3>
 <p>Lancio della moneta</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}p(X) = \begin{cases} p &amp; , \ X = 0:\text{Head} \\ 1-p &amp; , \ X = 1:\text{Tail} \end{cases}\end{split}\]</div>
@@ -538,14 +557,14 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n.tosses: 20
-n.tails : 7
+n.tails : 10
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="test-di-fisher">
-<h3><span class="section-number">18.2.1.1.2. </span>Test di Fisher<a class="headerlink" href="#test-di-fisher" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.2.1.1.4. </span>Test di Fisher<a class="headerlink" href="#test-di-fisher" title="Permalink to this heading">#</a></h3>
 <p>Le scelte di:</p>
 <ul class="simple">
 <li><p><strong>Ipotesi nulla</strong>, <strong>H0</strong>: la moneta non è truccata. L”<strong>ipotesi alternativa</strong>, <strong>H1</strong>, è la negazione di H0: la moneta è truccata.</p></li>
@@ -706,9 +725,11 @@ H0 accepted
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata">18.2.1.1. Esempio: moneta truccata</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione-variabile-casuale-supposta-incognita">18.2.1.1.1. Definizione variabile casuale - supposta incognita</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-fisher">18.2.1.1.2. Test di Fisher</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.1.1. Esempio: moneta truccata o no?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#librerie">18.2.1.1.1. Librerie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulazione-ipotesi-nulla">18.2.1.1.2. Formulazione ipotesi nulla</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione-variabile-casuale-supposta-incognita">18.2.1.1.3. Definizione variabile casuale - supposta incognita</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-fisher">18.2.1.1.4. Test di Fisher</a></li>
 </ul>
 </li>
 </ul>
