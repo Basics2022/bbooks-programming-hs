@@ -468,7 +468,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.1.1. Esempio: moneta truccata o no?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulazione-ipotesi-nulla-e-import-librerie">18.2.1.1.1. Formulazione ipotesi nulla e import librerie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione-variabile-casuale-supposta-incognita">18.2.1.1.2. Definizione variabile casuale - supposta incognita</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scelta-statistica-test">18.2.1.1.2. Scelta statistica test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-fisher">18.2.1.1.3. Test di Fisher</a></li>
 </ul>
 </li>
@@ -517,11 +517,16 @@ $<span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span>$</p></li>
 </details>
 </div>
 </div>
-<div class="section" id="definizione-variabile-casuale-supposta-incognita">
-<h3><span class="section-number">18.2.1.1.2. </span>Definizione variabile casuale - supposta incognita<a class="headerlink" href="#definizione-variabile-casuale-supposta-incognita" title="Permalink to this heading">#</a></h3>
-<p>Lancio della moneta</p>
+<div class="section" id="scelta-statistica-test">
+<h3><span class="section-number">18.2.1.1.2. </span>Scelta statistica test<a class="headerlink" href="#scelta-statistica-test" title="Permalink to this heading">#</a></h3>
+<p>Il lancio della moneta viene modellato come una variabile casuale <span class="math notranslate nohighlight">\(X\)</span> di Bernoulli, con due possibili uscite testa, <span class="math notranslate nohighlight">\(X=0\)</span>, o croce, <span class="math notranslate nohighlight">\(X=1\)</span>. La forma generale della distribuzione di probabilità di una variabile casuale di Bernoulli <span class="math notranslate nohighlight">\(B(p)\)</span> è</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}p(X) = \begin{cases} p &amp; , \ X = 0:\text{Head} \\ 1-p &amp; , \ X = 1:\text{Tail} \end{cases}\end{split}\]</div>
+\[\begin{split}p(X) = \begin{cases} p &amp; , \quad X = H:\text{Head} \\ 1-p &amp; , \quad X = T:\text{Tail} \end{cases} \ ,\end{split}\]</div>
+<p>essendo <span class="math notranslate nohighlight">\(p \in [0,1]\)</span> la probabilità associata al valore <span class="math notranslate nohighlight">\(X=H\)</span> e <span class="math notranslate nohighlight">\(1-p\)</span> quella associata al valore <span class="math notranslate nohighlight">\(X=T\)</span>.</p>
+<p>Per la verifica dell’ipotesi si organizza una campagna sperimentale di <span class="math notranslate nohighlight">\(n\)</span> lanci e si sceglie come <strong>statistica test</strong> <span class="math notranslate nohighlight">\(x\)</span> il numero di volte che il risultato del lancio è testa, <span class="math notranslate nohighlight">\(X=H\)</span>.
+Per una variabile casuale con distribuzione di probabilità di Bernoulli <span class="math notranslate nohighlight">\(B(p)\)</span>, il numero <span class="math notranslate nohighlight">\(x\)</span> di risultati <span class="math notranslate nohighlight">\(X=H\)</span> in <span class="math notranslate nohighlight">\(n\)</span> ripetizioni indipendenti dell’evento è a sua volta una variabile casuale, con distribuzione di probabilità binomiale <span class="math notranslate nohighlight">\(\mathscr{B}(n,p)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}p_n(x) = \left( \begin{matrix} n \\ x \end{matrix}  \right) \, p^x \, (1-p)^{n-x}\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize numpy default random number generator</span>
@@ -559,7 +564,7 @@ $<span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span>$</p></li>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n.tosses: 20
-n.tails : 9
+n.tails : 7
 </pre></div>
 </div>
 </div>
@@ -638,7 +643,7 @@ n.tails : 9
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample x: 8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample x: 11
 H0 accepted
 </pre></div>
 </div>
@@ -657,7 +662,7 @@ H0 accepted
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 1 artists&gt;
 </pre></div>
 </div>
-<img alt="../../_images/ecc9b1196258c806b646bf5a83773f1de242fccf5286661071405d94b3862a65.png" src="../../_images/ecc9b1196258c806b646bf5a83773f1de242fccf5286661071405d94b3862a65.png" />
+<img alt="../../_images/1b2bc7a4c5f894a8ec54fbf7a53772ebcb003c0680e5d1c06c72611b3cfb0303.png" src="../../_images/1b2bc7a4c5f894a8ec54fbf7a53772ebcb003c0680e5d1c06c72611b3cfb0303.png" />
 </div>
 </div>
 </div>
@@ -729,7 +734,7 @@ H0 accepted
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.1.1. Esempio: moneta truccata o no?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulazione-ipotesi-nulla-e-import-librerie">18.2.1.1.1. Formulazione ipotesi nulla e import librerie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione-variabile-casuale-supposta-incognita">18.2.1.1.2. Definizione variabile casuale - supposta incognita</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scelta-statistica-test">18.2.1.1.2. Scelta statistica test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-fisher">18.2.1.1.3. Test di Fisher</a></li>
 </ul>
 </li>
