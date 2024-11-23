@@ -468,7 +468,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.1.1. Esempio: moneta truccata o no?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#librerie">18.2.1.1.1. Librerie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulazione-ipotesi-nulla">18.2.1.1.2. Formulazione ipotesi nulla</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulazione-ipotesi-nulla-e-import-librerie">18.2.1.1.2. Formulazione ipotesi nulla e import librerie</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione-variabile-casuale-supposta-incognita">18.2.1.1.3. Definizione variabile casuale - supposta incognita</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-fisher">18.2.1.1.4. Test di Fisher</a></li>
 </ul>
@@ -500,6 +500,10 @@ $<span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span>$</p></li>
 <h2><span class="section-number">18.2.1.1. </span>Esempio: moneta truccata o no?<a class="headerlink" href="#esempio-moneta-truccata-o-no" title="Permalink to this heading">#</a></h2>
 <div class="section" id="librerie">
 <h3><span class="section-number">18.2.1.1.1. </span>Librerie<a class="headerlink" href="#librerie" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="formulazione-ipotesi-nulla-e-import-librerie">
+<h3><span class="section-number">18.2.1.1.2. </span>Formulazione ipotesi nulla e import librerie<a class="headerlink" href="#formulazione-ipotesi-nulla-e-import-librerie" title="Permalink to this heading">#</a></h3>
+<p>Si formula qui l’ipotesi nulla, <span class="math notranslate nohighlight">\(\text{H}_0\)</span>: «la moneta non è truccata», intendendo che non è truccato nemmeno il lancio della moneta o qualsiasi effetto agente sulla moneta non ha un effetto sulla statistica del lancio.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import libraries</span>
@@ -510,10 +514,6 @@ $<span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span>$</p></li>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="formulazione-ipotesi-nulla">
-<h3><span class="section-number">18.2.1.1.2. </span>Formulazione ipotesi nulla<a class="headerlink" href="#formulazione-ipotesi-nulla" title="Permalink to this heading">#</a></h3>
-<p>Si formula qui l’ipotesi nulla, <span class="math notranslate nohighlight">\(\text{H}_0\)</span>: «la moneta non è truccata», intendendo che non è truccato nemmeno il lancio della moneta o qualsiasi effetto agente sulla moneta non ha un effetto sulla statistica del lancio.</p>
 </div>
 <div class="section" id="definizione-variabile-casuale-supposta-incognita">
 <h3><span class="section-number">18.2.1.1.3. </span>Definizione variabile casuale - supposta incognita<a class="headerlink" href="#definizione-variabile-casuale-supposta-incognita" title="Permalink to this heading">#</a></h3>
@@ -557,7 +557,7 @@ $<span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span>$</p></li>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n.tosses: 20
-n.tails : 10
+n.tails : 11
 </pre></div>
 </div>
 </div>
@@ -636,7 +636,7 @@ n.tails : 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample x: 8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample x: 12
 H0 accepted
 </pre></div>
 </div>
@@ -655,7 +655,7 @@ H0 accepted
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 1 artists&gt;
 </pre></div>
 </div>
-<img alt="../../_images/ecc9b1196258c806b646bf5a83773f1de242fccf5286661071405d94b3862a65.png" src="../../_images/ecc9b1196258c806b646bf5a83773f1de242fccf5286661071405d94b3862a65.png" />
+<img alt="../../_images/6dd5e7386ce23fafd033845f8b061f8efa908f6f5bfbb196a1e391704c76c4da.png" src="../../_images/6dd5e7386ce23fafd033845f8b061f8efa908f6f5bfbb196a1e391704c76c4da.png" />
 </div>
 </div>
 </div>
@@ -727,7 +727,7 @@ H0 accepted
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.1.1. Esempio: moneta truccata o no?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#librerie">18.2.1.1.1. Librerie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulazione-ipotesi-nulla">18.2.1.1.2. Formulazione ipotesi nulla</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulazione-ipotesi-nulla-e-import-librerie">18.2.1.1.2. Formulazione ipotesi nulla e import librerie</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione-variabile-casuale-supposta-incognita">18.2.1.1.3. Definizione variabile casuale - supposta incognita</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-fisher">18.2.1.1.4. Test di Fisher</a></li>
 </ul>
