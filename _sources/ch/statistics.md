@@ -19,7 +19,7 @@ I contenuti seguono l'ordine logico di un approccio alla statistica: dopo aver i
 ```{dropdown} [Teoria della probabilità: processi casuali](statistics-hs:random-processes)
 ```
 ````
-````{dropdown} Statistica inferenziale
+````{dropdown} [Statistica inferenziale](statistics-hs:inference)
 - stima
 - verifica ipotesi
 - *campionamento*
