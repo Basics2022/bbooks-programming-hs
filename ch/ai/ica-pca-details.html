@@ -498,14 +498,14 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="ica-e-pca-dettagli">
 <h1><span class="section-number">21.1.4. </span>ICA e PCA - dettagli<a class="headerlink" href="#ica-e-pca-dettagli" title="Permalink to this heading">#</a></h1>
-<p>Prendendo spunto da quanto fatto da <a class="reference external" href="https://github.com/akcarsten/Independent_Component_Analysis">A.K.Carsten</a> si discutono alcuni dettagli dell’algoritmo ICA, applicandolo a un problema di riconoscimento delle componenti indipendenti di segnali in tempo.</p>
+<p>Prendendo spunto da quanto fatto da <a class="reference external" href="https://github.com/akcarsten/Independent_Component_Analysis">A.K.Carsten</a> si discutono alcuni dettagli dell’algoritmo ICA,<a class="footnote-reference brackets" href="#hyvarinen-ica" id="id1">1</a> applicandolo a un problema di riconoscimento delle componenti indipendenti di segnali in tempo.</p>
 <p>In particolare, si vuole discutere <strong>todo</strong>:</p>
 <ul class="simple">
 <li><p>i dettagli dell’algoritmo, prestando attenzione a</p>
 <ul>
 <li><p>la relazione «non-gaussianità» <span class="math notranslate nohighlight">\(\sim\)</span> «indipendenza»</p></li>
-<li><p>la misura di non gaussianità tramite neg-entropia</p></li>
-<li><p>l’espres</p></li>
+<li><p>la misura di non gaussianità tramite neg-entropia, e le sue approssimazioni</p></li>
+<li><p>l’espressione dell’iterazione di Newton nell’ottimizzazione della neg-entropia, che dà vita a un problema di punto fisso</p></li>
 </ul>
 </li>
 <li><p>la necessità della non-gaussianità dei segnali</p></li>
@@ -708,8 +708,8 @@ in modo da avere i nuovi segnali a media nulla;</p></li>
 </div>
 <div class="section" id="fastica">
 <h3><span class="section-number">21.1.4.3.2. </span>FastICA<a class="headerlink" href="#fastica" title="Permalink to this heading">#</a></h3>
-<p>Viene qui illustrato l’algoritmo FastICA[^hyvarinen-ica]</p>
-<p>[^hyvarinen-ica] A.Hyvarinen, E.Oja *Independent component analysis: algorithms and applications»</p>
+<p>Viene qui illustrato l’algoritmo FastICA<a class="footnote-reference brackets" href="#hyvarinen-ica" id="id2">1</a></p>
+<p><a class="footnote-reference brackets" href="#hyvarinen-ica" id="id3">1</a> A.Hyvarinen, E.Oja *Independent component analysis: algorithms and applications»</p>
 <p><strong>todo</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -842,6 +842,12 @@ I segnali indipendenti principali sono definiti a meno di un fattore moltiplicat
 </div>
 </div>
 </div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="hyvarinen-ica"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>)</span></dt>
+<dd><p>A.Hyvarinen, E.Oja *Independent component analysis: algorithms and applications»</p>
+</dd>
+</dl>
 </div>
 </div>
 
