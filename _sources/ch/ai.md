@@ -1,7 +1,16 @@
 (book:ai-hs)=
 # Introduzione ai metodi in AI
 
-In questa sezione si descriveranno alcuni metodi utilizzati nelle applicazioni di **machine learning**. 
+In questa sezione si descriveranno alcuni metodi utilizzati nelle applicazioni di **machine learning**. I contenuti sono organizzati in 3 sezioni, seguendo una delle più comuni classificazioni in machine learning.
+
+````{only} html
+```{dropdown} [Supervised Learning](ai:sl)
+```
+```{dropdown} [Unsupervised Learning](ai:ul)
+```
+```{dropdown} [Reinforcement Learning](ai:rl)
+```
+````
 
 **Approccio.** Alla completezza e al rigore dello sviluppo teorico dei metodi, viene preferita una descrizione dei metodi tramite esempi e applicazioni.
 

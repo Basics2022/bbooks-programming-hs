@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>18.2. Test di verifica delle ipotesi &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>22. Reinforcement Learning &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -65,14 +65,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/statistics/hp-test';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/ai/ml';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="18.2.1. Test di verifica d’ipotesi - Fisher" href="test-fisher.html" />
-    <link rel="prev" title="18.1. Stima" href="estimate.html" />
+    <link rel="next" title="Supporto tecnico" href="../support.html" />
+    <link rel="prev" title="21. Unsupervised Learning" href="ul.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -191,39 +189,39 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../numerics/optimization.html">14. Ottimizzazione</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistica</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../statistics.html">15. Metodi per la statistica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="descriptive.html">16. Statistica descrittiva</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="probability.html">17. Introduzione alla probabilità</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="random_variables.html">17.1. Variabili casuali</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="rv_pdf_transformations.html">17.1.3. Trasformazione di probabilità di densità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rv_pdf_examples.html">17.1.4. Esempi di funzioni densità di probabilità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.5. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.6. Campionamento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics/descriptive.html">16. Statistica descrittiva</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/probability.html">17. Introduzione alla probabilità</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../statistics/random_variables.html">17.1. Variabili casuali</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/rv_pdf_transformations.html">17.1.3. Trasformazione di probabilità di densità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/rv_pdf_examples.html">17.1.4. Esempi di funzioni densità di probabilità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/iid.html">17.1.5. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/sampling.html">17.1.6. Campionamento</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="random_processes.html">17.2. Processi casuali</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/random_processes.html">17.2. Processi casuali</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="inference.html">18. Statistica inferenziale</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="estimate.html">18.1. Stima</a></li>
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">18.2. Test di verifica delle ipotesi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="test-fisher.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
-<li class="toctree-l3"><a class="reference internal" href="t-test.html">18.2.2. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l3"><a class="reference internal" href="anova.html">18.2.3. ANOVA - Analysis of variance</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/inference.html">18. Statistica inferenziale</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/estimate.html">18.1. Stima</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../statistics/hp-test.html">18.2. Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/test-fisher.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/t-test.html">18.2.2. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/anova.html">18.2.3. ANOVA - Analysis of variance</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione ai metodi in statistica e  AI</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../ai.html">19. Introduzione ai metodi in AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ai/sl.html">20. Supervised Learning</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ai/ul.html">21. Unsupervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="sl.html">20. Supervised Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ul.html">21. Unsupervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ai/ml.html">22. Reinforcement Learning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">22. Reinforcement Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supporto tecnico</span></p>
 <ul class="nav bd-sidenav">
@@ -299,7 +297,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/statistics/hp-test.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/ai/ml.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,7 +314,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/statistics/hp-test.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/ai/ml.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -346,7 +344,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/statistics/hp-test.md" target="_blank"
+      <li><a href="../../_sources/ch/ai/ml.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -428,7 +426,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Test di verifica delle ipotesi</h1>
+    <h1>Reinforcement Learning</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -442,23 +440,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="test-di-verifica-delle-ipotesi">
-<span id="statistics-hs-inference-hp-test"></span><h1><span class="section-number">18.2. </span>Test di verifica delle ipotesi<a class="headerlink" href="#test-di-verifica-delle-ipotesi" title="Permalink to this heading">#</a></h1>
-<p><strong>Popper.</strong> Filosofia della sicenza e principio di falsificabilità.</p>
-<p><strong>Fisher.</strong> Viene formulata un’ipotesi falsificabile, chiamata <strong>ipotesi nulla</strong>, <span class="math notranslate nohighlight">\(\text{H}_{0}\)</span>, che viene ritenuta vera fino a prova contraria. Il test di verifica delle ipotesi ha l’obiettivo di verificare se i dati smentiscono l’ipotesi.</p>
-<p>Più in particolare, viene scelta come <strong>statistica test</strong> <span class="math notranslate nohighlight">\(x\)</span> un parametro disponibile, rilavante per il fenomeno indagato e di cui è nota la distribuzione di probabilità sotto l’ipotesi nulla,</p>
-<div class="math notranslate nohighlight">
-\[p(x|\text{H}_0) \ .\]</div>
-<p>In base alle caratteristiche del fenomeno indagato vengono scelte le caratteristiche del test; in base all’evidenza richiesta contro l’ipotesi <span class="math notranslate nohighlight">\(\text{H}_0\)</span> viene scelto il <strong>livello di significatività</strong>, <span class="math notranslate nohighlight">\(\alpha\)</span>, del test che - insieme alle caratteristiche del test - determina le <strong>regioni di rifiuto</strong> e, per differenza, <strong>di accettazione</strong> dell’ipotesi.</p>
-<p>Una volta raccolti i dati, si calcola la statistica scelta con i dati disponibili, si verifica se il suo valore appartiene alle regioni di rifiuto o di accettazione dell’ipotesi, per concludere rispettivamente se l’ipotesi <span class="math notranslate nohighlight">\(\text{H}_{0}\)</span> è stata falsificata o non è stata falsificata e quindi va ritenuta ancora valida.</p>
-<p>A partire dalla formulazione generale del test di verifica delle ipotesi secondo Fisher, vengono poi definiti diversi test:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(Z\)</span>-test: test di Fisher sulla media del campione</p></li>
-<li><p><span class="math notranslate nohighlight">\(t\)</span>-test: test di Fisher sulla media del campione di una popolazone con media e varianza sconosciuti che, sotto opportune ipotesi, è una variabile casuale che segue una distribuzione di probabilità <span class="math notranslate nohighlight">\(t\)</span>-Student</p></li>
-<li><p><span class="math notranslate nohighlight">\(ANOVA\)</span></p></li>
-</ul>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="reinforcement-learning">
+<span id="ai-rl"></span><h1><span class="section-number">22. </span>Reinforcement Learning<a class="headerlink" href="#reinforcement-learning" title="Permalink to this heading">#</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -474,7 +457,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./ch/statistics"
+            path: "./ch/ai"
         },
         predefinedOutput: true
     }
@@ -492,20 +475,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="estimate.html"
+       href="ul.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">18.1. </span>Stima</p>
+        <p class="prev-next-title"><span class="section-number">21. </span>Unsupervised Learning</p>
       </div>
     </a>
     <a class="right-next"
-       href="test-fisher.html"
+       href="../support.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">18.2.1. </span>Test di verifica d’ipotesi - Fisher</p>
+        <p class="prev-next-title">Supporto tecnico</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
