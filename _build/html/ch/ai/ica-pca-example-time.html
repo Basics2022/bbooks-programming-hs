@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>21.1. ICA e PCA &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>21.1.3. ICA e PCA: segnali in tempo &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -65,12 +65,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/ai/ica-pca';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/ai/ica-pca-example-time';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="21.1.2. FastICA on 2D point clouds" href="ica-pca-example-2d.html" />
-    <link rel="prev" title="21. Unsupervised Learning" href="ul.html" />
+    <link rel="next" title="21.1.4. ICA e PCA - dettagli" href="ica-pca-details.html" />
+    <link rel="prev" title="21.1.2. FastICA on 2D point clouds" href="ica-pca-example-2d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -219,9 +219,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ai.html">19. Introduzione ai metodi in AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sl.html">20. Supervised Learning</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ul.html">21. Unsupervised Learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">21.1. ICA e PCA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="ica-pca.html">21.1. ICA e PCA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="ica-pca-example-2d.html">21.1.2. FastICA on 2D point clouds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ica-pca-example-time.html">21.1.3. ICA e PCA: segnali in tempo</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">21.1.3. ICA e PCA: segnali in tempo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ica-pca-details.html">21.1.4. ICA e PCA - dettagli</a></li>
 </ul>
 </li>
@@ -286,7 +286,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-programming-hs/blob/master/ch/ai/ica-pca.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-programming-hs/blob/master/ch/ai/ica-pca-example-time.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,7 +334,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/ai/ica-pca.ipynb" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/ai/ica-pca-example-time.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -351,7 +351,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/ai/ica-pca.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/ai/ica-pca-example-time.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -381,7 +381,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/ai/ica-pca.ipynb" target="_blank"
+      <li><a href="../../_sources/ch/ai/ica-pca-example-time.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -452,9 +452,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -465,19 +463,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ICA e PCA</h1>
+    <h1>ICA e PCA: segnali in tempo</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contenuti </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#riferimenti">21.1.1. Riferimenti</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -487,22 +477,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="ica-e-pca">
-<span id="ai-ul-ica-pca"></span><h1><span class="section-number">21.1. </span>ICA e PCA<a class="headerlink" href="#ica-e-pca" title="Permalink to this heading">#</a></h1>
-<div class="section" id="riferimenti">
-<h2><span class="section-number">21.1.1. </span>Riferimenti<a class="headerlink" href="#riferimenti" title="Permalink to this heading">#</a></h2>
-<p><strong>scikit</strong></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://scikit-learn.org/dev/modules/generated/sklearn.decomposition.FastICA.html">https://scikit-learn.org/dev/modules/generated/sklearn.decomposition.FastICA.html</a></p></li>
-</ul>
-<p><strong>Carten Klein</strong></p>
-<ul class="simple">
-<li><p><a class="github reference external" href="https://github.com/akcarsten/">akcarsten/</a></p></li>
-<li><p><a class="github reference external" href="https://github.com/akcarsten/Independent_Component_Analysis">akcarsten/Independent_Component_Analysis</a></p></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="ica-e-pca-segnali-in-tempo">
+<span id="ai-ul-ica-pca-example-time"></span><h1><span class="section-number">21.1.3. </span>ICA e PCA: segnali in tempo<a class="headerlink" href="#ica-e-pca-segnali-in-tempo" title="Permalink to this heading">#</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -536,20 +512,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ul.html"
+       href="ica-pca-example-2d.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">21. </span>Unsupervised Learning</p>
+        <p class="prev-next-title"><span class="section-number">21.1.2. </span>FastICA on 2D point clouds</p>
       </div>
     </a>
     <a class="right-next"
-       href="ica-pca-example-2d.html"
+       href="ica-pca-details.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">21.1.2. </span>FastICA on 2D point clouds</p>
+        <p class="prev-next-title"><span class="section-number">21.1.4. </span>ICA e PCA - dettagli</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -559,20 +535,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contenuti
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#riferimenti">21.1.1. Riferimenti</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

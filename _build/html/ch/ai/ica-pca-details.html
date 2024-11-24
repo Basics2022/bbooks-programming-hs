@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>21.1.3. ICA e PCA - dettagli &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>21.1.4. ICA e PCA - dettagli &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -65,12 +65,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/ai/ica-pca-details';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
     <link rel="next" title="22. Reinforcement Learning" href="ml.html" />
-    <link rel="prev" title="21.1.2. ICA e PCA - Esempi" href="ica-pca-examples.html" />
+    <link rel="prev" title="21.1.3. ICA e PCA: segnali in tempo" href="ica-pca-example-time.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -220,8 +222,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="sl.html">20. Supervised Learning</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ul.html">21. Unsupervised Learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="ica-pca.html">21.1. ICA e PCA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="ica-pca-examples.html">21.1.2. ICA e PCA - Esempi</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">21.1.3. ICA e PCA - dettagli</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ica-pca-example-2d.html">21.1.2. FastICA on 2D point clouds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ica-pca-example-time.html">21.1.3. ICA e PCA: segnali in tempo</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">21.1.4. ICA e PCA - dettagli</a></li>
 </ul>
 </li>
 </ul>
@@ -451,7 +454,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -467,6 +472,27 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerie-e-funzioni-utili">21.1.4.1. Librerie e funzioni utili</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generazione-segnale">21.1.4.2. Generazione segnale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmo">21.1.4.3. Algoritmo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">21.1.4.3.1. Pre-processing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria">21.1.4.3.1.1. Teoria</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fastica">21.1.4.3.2. FastICA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applicazione-del-metodo-al-segnale">21.1.4.4. Applicazione del metodo al segnale</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstructing-signals">21.1.4.4.1. Reconstructing signals</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -477,7 +503,327 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="ica-e-pca-dettagli">
-<h1><span class="section-number">21.1.3. </span>ICA e PCA - dettagli<a class="headerlink" href="#ica-e-pca-dettagli" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">21.1.4. </span>ICA e PCA - dettagli<a class="headerlink" href="#ica-e-pca-dettagli" title="Permalink to this heading">#</a></h1>
+<div class="section" id="librerie-e-funzioni-utili">
+<h2><span class="section-number">21.1.4.1. </span>Librerie e funzioni utili<a class="headerlink" href="#librerie-e-funzioni-utili" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="generazione-segnale">
+<h2><span class="section-number">21.1.4.2. </span>Generazione segnale<a class="headerlink" href="#generazione-segnale" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set a seed for the random number generator for reproducibility</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span>
+
+<span class="c1"># Number of samples</span>
+<span class="n">ns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">noise_ampl</span> <span class="o">=</span> <span class="mf">.2</span>
+<span class="n">noise_avg</span>  <span class="o">=</span> <span class="mf">.0</span>
+
+<span class="c1"># Source matrix</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ns</span> <span class="o">*</span> <span class="mi">1</span><span class="p">),</span>
+              <span class="n">signal</span><span class="o">.</span><span class="n">sawtooth</span><span class="p">(</span><span class="n">ns</span> <span class="o">*</span> <span class="mf">1.9</span><span class="p">),</span>
+              <span class="n">noise_ampl</span><span class="o">*</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ns</span><span class="p">))</span> <span class="o">-</span> <span class="mf">.5</span><span class="p">)</span> <span class="o">+</span> <span class="n">noise_avg</span> <span class="p">])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c1"># Mixing matrix</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># Mixed signal matrix</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot sources &amp; signals</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">ns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ns</span><span class="p">[</span><span class="mi">200</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Independent sources&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Mixed signals&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">ns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">ns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Sample number&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">ns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ns</span><span class="p">[</span><span class="mi">200</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/066f769d68e43fcfa0c61aaca24d1391e00b14bc8a75b06c1c33acac94aac47d.png" src="../../_images/066f769d68e43fcfa0c61aaca24d1391e00b14bc8a75b06c1c33acac94aac47d.png" />
+<img alt="../../_images/c5f272e5088b8e02ec2338e519c85c971f5249f9b4fa257974a6e924801db8e5.png" src="../../_images/c5f272e5088b8e02ec2338e519c85c971f5249f9b4fa257974a6e924801db8e5.png" />
+</div>
+</div>
+</div>
+<div class="section" id="algoritmo">
+<h2><span class="section-number">21.1.4.3. </span>Algoritmo<a class="headerlink" href="#algoritmo" title="Permalink to this heading">#</a></h2>
+<div class="section" id="pre-processing">
+<h3><span class="section-number">21.1.4.3.1. </span>Pre-processing<a class="headerlink" href="#pre-processing" title="Permalink to this heading">#</a></h3>
+<p>L’osservazione <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> vengono depurate dalla media e viene usata una trasformazione per combinare le osservazioni originali e ottenere un nuovo segnale <span class="math notranslate nohighlight">\(\mathbf{X}_w\)</span> con componenti non correlate. Il procedimento viene illustrato per i dati organizzati nella matrice,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{X} = \begin{bmatrix} \mathbf{x}_1 | \mathbf{x}_2 | \dots | \mathbf{x}_{s} \end{bmatrix} \ ,\]</div>
+<p>in cui la colonna <span class="math notranslate nohighlight">\(j\)</span>-esima contiene le <span class="math notranslate nohighlight">\(n_x\)</span> osservazioni relative all’indice <span class="math notranslate nohighlight">\(j\)</span> (istante di tempo, paziente,…), mentre la riga <span class="math notranslate nohighlight">\(i\)</span>-esima contiene l’osservazione della quantità identificata dall’indice <span class="math notranslate nohighlight">\(i\)</span> per ogni valore di <span class="math notranslate nohighlight">\(j\)</span> (istante di tempo, paziente,…).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">center</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Remove average value &quot;&quot;&quot;</span>
+    <span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">centered</span> <span class="o">=</span>  <span class="n">x</span> <span class="o">-</span> <span class="n">mean</span>
+    
+    <span class="k">return</span> <span class="n">centered</span><span class="p">,</span> <span class="n">mean</span>
+
+
+<span class="k">def</span> <span class="nf">covariance</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Evaluate signal covariance, with unbiased estimator &quot;&quot;&quot;</span>
+    <span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">mean</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">T</span><span class="p">))</span><span class="o">/</span><span class="n">n</span>
+
+
+<span class="k">def</span> <span class="nf">whiten</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Whiten signal x: find the lnear transformation provinding a trasformed uncorrelated signal</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+     <span class="c1"># Calculate the covariance matrix</span>
+    <span class="n">coVarM</span> <span class="o">=</span> <span class="n">covariance</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+    <span class="c1"># Single value decoposition</span>
+    <span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">coVarM</span><span class="p">)</span>
+
+    <span class="c1"># Calculate diagonal matrix of eigenvalues</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
+
+    <span class="c1"># Calculate whitening matrix</span>
+    <span class="n">whiteM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">U</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+
+    <span class="c1"># Project onto whitening matrix</span>
+    <span class="n">Xw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">whiteM</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Xw</span><span class="p">,</span> <span class="n">whiteM</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="teoria">
+<h4><span class="section-number">21.1.4.3.1.1. </span>Teoria<a class="headerlink" href="#teoria" title="Permalink to this heading">#</a></h4>
+<p>Vengono svolte due operazioni:</p>
+<ul>
+<li><p>rimozione della media dalle osservazioni di ogni quantità, quindi rimozione del valore medio di ogni riga,
+$<span class="math notranslate nohighlight">\(X_{ij} \quad \leftarrow \quad X_{ij} - \frac{1}{n_s} \sum_{j = 1}^{n_s} X_{ij} \ ,\)</span>$
+in modo da avere i nuovi segnali a media nulla;</p></li>
+<li><p>ricerca di una trasformazione di coordinate (combinazione delle osservazioni) che renda la nuove componenti non correlate. Una stima senza bias della correlazione è</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{R}} = \frac{1}{n_s - 1} \mathbf{X} \, \mathbf{X}^* \ .\]</div>
+<p>In generale, questa è una matrice piena di dimensioni <span class="math notranslate nohighlight">\((n_x, n_x)\)</span>. Si vuole cercare la trasformazione di coordinate <span class="math notranslate nohighlight">\(\mathbf{X}_w = \mathbf{W}_w \mathbf{X}\)</span>, che garantisce che la nuove osservazioni siano non correlate con varianza unitaria (come <em>white noise</em>, e da qui il nome <em>whitening</em>), cioè</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{I} = \hat{\mathbf{R}}_w = \frac{1}{n_s - 1} \mathbf{X}_w \, \mathbf{X}_w^* = \frac{1}{n_s - 1} \mathbf{W}_w \, \mathbf{X} \, \mathbf{X}^*  \, \mathbf{W}_w^* = \mathbf{W}_w \, \hat{\mathbf{R}} \, \mathbf{W}_w^*\]</div>
+<p>E” possibile trovare la matrice desiderata <span class="math notranslate nohighlight">\(\mathbf{W}_w\)</span> usando una tecnica di scomposizione della matrice di correlazione <span class="math notranslate nohighlight">\(\hat{\mathbf{R}}\)</span>, simmetrica (semi)definita positiva, come ad esempio la</p>
+<ul class="simple">
+<li><p>scomposizione agli autovalori, <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} = \mathbf{E} \, \symbf{\Lambda} \, \mathbf{E}^{-1}\)</span>, con <span class="math notranslate nohighlight">\(\symbf{\Lambda}\)</span> diagonale; sfruttando le proprietà delle matrici sdp, si può scrivere  <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} = \mathbf{E} \, \symbf{\Lambda} \, \mathbf{E}^*\)</span>, con la matrice <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> ortogonale tale che <span class="math notranslate nohighlight">\(\mathbf{E} \, \mathbf{E}^* = \mathbf{I}\)</span>.</p></li>
+<li><p>la SVD, <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} = \mathbf{U} \symbf{\Sigma} \mathbf{V}^*\)</span>, con <span class="math notranslate nohighlight">\(\symbf{\Sigma}\)</span> diagonale; nel caso di matrice di partenza sdp, si può scrivere si può scrivere <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} = \mathbf{U} \symbf{\Sigma} \mathbf{U}^*\)</span>, con la matrice <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> ortogonale tale che <span class="math notranslate nohighlight">\(\mathbf{U} \, \mathbf{U}^* = \mathbf{I}\)</span>.</p></li>
+</ul>
+<p>Sfruttando quindi la proprietà delle scomposizioni presentate sopra, osservando l’analogia del risultato delle due scomposizioni nel caso di matrice sdp, e definendo <span class="math notranslate nohighlight">\(\symbf{\Sigma}^{1/2}\)</span> la matrice diagonale con elementi le radici quadrate di <span class="math notranslate nohighlight">\(\symbf{\Sigma}\)</span>, si può scrivere</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+     \mathbf{I}
+     &amp; = \mathbf{W}_w \, \hat{\mathbf{R}} \, \mathbf{W}_w^* = \\
+     &amp; = \mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* \, \mathbf{W}_w^* = \\
+     &amp; = \mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* \, \mathbf{W}_w^* = \\
+     &amp; = (\mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* ) \, (\mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* )^* \ ,
+  \end{aligned}\end{split}\]</div>
+<p>e quindi (<strong>todo</strong> <em>gisutificare la comparsa di <span class="math notranslate nohighlight">\(\mathbf{U}^* \mathbf{U}\)</span> per ottenere una matrice quadrata, giustificare la scelta di <span class="math notranslate nohighlight">\(\mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* = \mathbf{I}\)</span></em>)</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* = \mathbf{I}
+  \qquad \rightarrow \qquad 
+  \mathbf{W}_w =  \mathbf{U}^* \symbf{\Sigma}^{-\frac{1}{2}} \mathbf{U}
+  \]</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="fastica">
+<h3><span class="section-number">21.1.4.3.2. </span>FastICA<a class="headerlink" href="#fastica" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fastIca</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span>  <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">5000</span><span class="p">):</span>
+    <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">signals</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="c1"># Initialize random weights</span>
+    <span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">[</span><span class="n">c</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">w</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">lim</span> <span class="o">=</span> <span class="mi">100</span>
+            <span class="k">while</span> <span class="p">((</span><span class="n">lim</span> <span class="o">&gt;</span> <span class="n">thresh</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">iterations</span><span class="p">)):</span>
+
+                <span class="c1"># Dot product of weight and signal</span>
+                <span class="n">ws</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">signals</span><span class="p">)</span>
+
+                <span class="c1"># Pass w*s into contrast function g</span>
+                <span class="n">wg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">ws</span> <span class="o">*</span> <span class="n">alpha</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+
+                <span class="c1"># Pass w*s into g prime</span>
+                <span class="n">wg_</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">ws</span><span class="p">)))</span> <span class="o">*</span> <span class="n">alpha</span>
+
+                <span class="c1"># Update weights</span>
+                <span class="n">wNew</span> <span class="o">=</span> <span class="p">(</span><span class="n">signals</span> <span class="o">*</span> <span class="n">wg</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">wg_</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="n">w</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+
+                <span class="c1"># Decorrelate weights              </span>
+                <span class="n">wNew</span> <span class="o">=</span> <span class="n">wNew</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">wNew</span><span class="p">,</span> <span class="n">W</span><span class="p">[:</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="n">W</span><span class="p">[:</span><span class="n">c</span><span class="p">])</span>
+                <span class="n">wNew</span> <span class="o">=</span> <span class="n">wNew</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">wNew</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+                <span class="c1"># Calculate limit condition</span>
+                <span class="n">lim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">wNew</span> <span class="o">*</span> <span class="n">w</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+                <span class="c1"># Update weights</span>
+                <span class="n">w</span> <span class="o">=</span> <span class="n">wNew</span>
+
+                <span class="c1"># Update counter</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="n">W</span><span class="p">[</span><span class="n">c</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">T</span>
+    <span class="k">return</span> <span class="n">W</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="applicazione-del-metodo-al-segnale">
+<h2><span class="section-number">21.1.4.4. </span>Applicazione del metodo al segnale<a class="headerlink" href="#applicazione-del-metodo-al-segnale" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Preprocessing</span>
+<span class="c1"># Center signals</span>
+<span class="n">Xc</span><span class="p">,</span> <span class="n">meanX</span> <span class="o">=</span> <span class="n">center</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Whiten mixed signals</span>
+<span class="n">Xw</span><span class="p">,</span> <span class="n">whiteM</span> <span class="o">=</span> <span class="n">whiten</span><span class="p">(</span><span class="n">Xc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; FastICA</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">fastIca</span><span class="p">(</span><span class="n">Xw</span><span class="p">,</span>  <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="reconstructing-signals">
+<h3><span class="section-number">21.1.4.4.1. </span>Reconstructing signals<a class="headerlink" href="#reconstructing-signals" title="Permalink to this heading">#</a></h3>
+<p><strong>Signal generation.</strong>
+$<span class="math notranslate nohighlight">\(\mathbf{X} = \mathbf{A} \mathbf{S}\)</span>$</p>
+<p><strong>Preprocessing.</strong>
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+  \mathbf{X}^{(1)} \quad &amp; \leftarrow \quad \mathbf{X} - \mathbf{X}_{mean} \\
+  \mathbf{X}^{(2)} \quad &amp; \leftarrow \quad \mathbf{W}_w \mathbf{X}^{(1)}
+\end{aligned}\)</span>$</p>
+<p><strong>FastICA.</strong>
+$<span class="math notranslate nohighlight">\(\mathbf{S} = \mathbf{W} \mathbf{X}^{(2)}\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{X} = \mathbf{X}^{(1)} + \mathbf{X}_{mean} = \mathbf{W}_w^{-1} \mathbf{X}^{(2)} + \mathbf{X}_{mean}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+
+<span class="c1">#Un-mix signals using</span>
+<span class="n">unMixed</span> <span class="o">=</span> <span class="n">Xw</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+
+<span class="c1"># Subtract mean (why?) unMixed = (unMixed.T - meanX).T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.08650524  0.99547832 -0.03923974]
+ [-0.33362694  0.06605975  0.94038778]
+ [ 0.93872781 -0.06825704  0.3378329 ]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot input signals (not mixed)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Source signals&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">unMixed</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Recovered signals&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Sample number&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Recovered signals&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4904fe3f79b15d8ee45182f643419947abcc54e5d7de0d97b6cdbd7ab23c6069.png" src="../../_images/4904fe3f79b15d8ee45182f643419947abcc54e5d7de0d97b6cdbd7ab23c6069.png" />
+<img alt="../../_images/713f1af160243126ea8b1b190cfc4215205f57653135f235c2aabe7f92f9e800.png" src="../../_images/713f1af160243126ea8b1b190cfc4215205f57653135f235c2aabe7f92f9e800.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">W</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.5 1.  0.5]
+ [1.  0.5 0.8]
+ [0.2 0.4 1. ]]
+[[ 0.08650524 -0.33362694  0.93872781]
+ [ 0.99547832  0.06605975 -0.06825704]
+ [-0.03923974  0.94038778  0.3378329 ]]
+[[ 0.08650524 -0.33362694  0.93872781]
+ [ 0.99547832  0.06605975 -0.06825704]
+ [-0.03923974  0.94038778  0.3378329 ]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -511,12 +857,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ica-pca-examples.html"
+       href="ica-pca-example-time.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">21.1.2. </span>ICA e PCA - Esempi</p>
+        <p class="prev-next-title"><span class="section-number">21.1.3. </span>ICA e PCA: segnali in tempo</p>
       </div>
     </a>
     <a class="right-next"
@@ -534,6 +880,33 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerie-e-funzioni-utili">21.1.4.1. Librerie e funzioni utili</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generazione-segnale">21.1.4.2. Generazione segnale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmo">21.1.4.3. Algoritmo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">21.1.4.3.1. Pre-processing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria">21.1.4.3.1.1. Teoria</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fastica">21.1.4.3.2. FastICA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applicazione-del-metodo-al-segnale">21.1.4.4. Applicazione del metodo al segnale</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstructing-signals">21.1.4.4.1. Reconstructing signals</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
