@@ -500,7 +500,12 @@ document.write(`
 <h1><span class="section-number">21.1.4. </span>ICA e PCA - dettagli<a class="headerlink" href="#ica-e-pca-dettagli" title="Permalink to this heading">#</a></h1>
 <div class="section" id="librerie-e-funzioni-utili">
 <h2><span class="section-number">21.1.4.1. </span>Librerie e funzioni utili<a class="headerlink" href="#librerie-e-funzioni-utili" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
@@ -509,10 +514,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </div>
 <div class="section" id="generazione-segnale">
 <h2><span class="section-number">21.1.4.2. </span>Generazione segnale<a class="headerlink" href="#generazione-segnale" title="Permalink to this heading">#</a></h2>
+<p>Viene generato un campione test con 200 campioni di 3 osservazioni, come risultato del mix di 3 segnali indipendenti, da ricostruire con l’algoritmo ICA.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -592,11 +599,52 @@ document.write(`
 <h2><span class="section-number">21.1.4.3. </span>Algoritmo<a class="headerlink" href="#algoritmo" title="Permalink to this heading">#</a></h2>
 <div class="section" id="pre-processing">
 <h3><span class="section-number">21.1.4.3.1. </span>Pre-processing<a class="headerlink" href="#pre-processing" title="Permalink to this heading">#</a></h3>
-<p>L’osservazione <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> vengono depurate dalla media e viene usata una trasformazione per combinare le osservazioni originali e ottenere un nuovo segnale <span class="math notranslate nohighlight">\(\mathbf{X}_w\)</span> con componenti non correlate. Il procedimento viene illustrato per i dati organizzati nella matrice,</p>
+<p>L’osservazione <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> vengono <strong>depurate dalla media</strong> e viene usata una trasformazione per combinare le osservazioni originali e ottenere un nuovo segnale <span class="math notranslate nohighlight">\(\mathbf{X}_w\)</span> con <strong>componenti non correlate</strong>. Il procedimento viene illustrato per i dati organizzati nella matrice,</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{X} = \begin{bmatrix} \mathbf{x}_1 | \mathbf{x}_2 | \dots | \mathbf{x}_{s} \end{bmatrix} \ ,\]</div>
 <p>in cui la colonna <span class="math notranslate nohighlight">\(j\)</span>-esima contiene le <span class="math notranslate nohighlight">\(n_x\)</span> osservazioni relative all’indice <span class="math notranslate nohighlight">\(j\)</span> (istante di tempo, paziente,…), mentre la riga <span class="math notranslate nohighlight">\(i\)</span>-esima contiene l’osservazione della quantità identificata dall’indice <span class="math notranslate nohighlight">\(i\)</span> per ogni valore di <span class="math notranslate nohighlight">\(j\)</span> (istante di tempo, paziente,…).</p>
-<div class="cell tag_hide-input docutils container">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Teoria<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Vengono svolte due operazioni:</p>
+<ul>
+<li><p class="sd-card-text">rimozione della media dalle osservazioni di ogni quantità, quindi rimozione del valore medio di ogni riga,
+$<span class="math notranslate nohighlight">\(X_{ij} \quad \leftarrow \quad X_{ij} - \frac{1}{n_s} \sum_{j = 1}^{n_s} X_{ij} \ ,\)</span>$
+in modo da avere i nuovi segnali a media nulla;</p></li>
+<li><p class="sd-card-text">ricerca di una trasformazione di coordinate (combinazione delle osservazioni) che renda la nuove componenti non correlate. Una stima senza bias della correlazione è</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{R}} = \frac{1}{n_s - 1} \mathbf{X} \, \mathbf{X}^* \ .\]</div>
+<p class="sd-card-text">In generale, questa è una matrice piena di dimensioni <span class="math notranslate nohighlight">\((n_x, n_x)\)</span>. Si vuole cercare la trasformazione di coordinate <span class="math notranslate nohighlight">\(\mathbf{X}_w = \mathbf{W}_w \mathbf{X}\)</span>, che garantisce che la nuove osservazioni siano non correlate con varianza unitaria (come <em>white noise</em>, e da qui il nome <em>whitening</em>), cioè</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{I} = \hat{\mathbf{R}}_w = \frac{1}{n_s - 1} \mathbf{X}_w \, \mathbf{X}_w^* = \frac{1}{n_s - 1} \mathbf{W}_w \, \mathbf{X} \, \mathbf{X}^*  \, \mathbf{W}_w^* = \mathbf{W}_w \, \hat{\mathbf{R}} \, \mathbf{W}_w^*\]</div>
+<p class="sd-card-text">E” possibile trovare la matrice desiderata <span class="math notranslate nohighlight">\(\mathbf{W}_w\)</span> usando una tecnica di scomposizione della matrice di correlazione <span class="math notranslate nohighlight">\(\hat{\mathbf{R}}\)</span>, simmetrica (semi)definita positiva, come ad esempio la</p>
+<ul class="simple">
+<li><p class="sd-card-text">scomposizione agli autovalori, <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} = \mathbf{E} \, \symbf{\Lambda} \, \mathbf{E}^{-1}\)</span>, con <span class="math notranslate nohighlight">\(\symbf{\Lambda}\)</span> diagonale; sfruttando le proprietà delle matrici sdp, si può scrivere  <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} = \mathbf{E} \, \symbf{\Lambda} \, \mathbf{E}^*\)</span>, con la matrice <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> ortogonale tale che <span class="math notranslate nohighlight">\(\mathbf{E} \, \mathbf{E}^* = \mathbf{I}\)</span>.</p></li>
+<li><p class="sd-card-text">la SVD, <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} = \mathbf{U} \symbf{\Sigma} \mathbf{V}^*\)</span>, con <span class="math notranslate nohighlight">\(\symbf{\Sigma}\)</span> diagonale; nel caso di matrice di partenza sdp, si può scrivere si può scrivere <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} = \mathbf{U} \symbf{\Sigma} \mathbf{U}^*\)</span>, con la matrice <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> ortogonale tale che <span class="math notranslate nohighlight">\(\mathbf{U} \, \mathbf{U}^* = \mathbf{I}\)</span>.</p></li>
+</ul>
+<p class="sd-card-text">Sfruttando quindi la proprietà delle scomposizioni presentate sopra, osservando l’analogia del risultato delle due scomposizioni nel caso di matrice sdp, e definendo <span class="math notranslate nohighlight">\(\symbf{\Sigma}^{1/2}\)</span> la matrice diagonale con elementi le radici quadrate di <span class="math notranslate nohighlight">\(\symbf{\Sigma}\)</span>, si può scrivere</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+     \mathbf{I}
+     &amp; = \mathbf{W}_w \, \hat{\mathbf{R}} \, \mathbf{W}_w^* = \\
+     &amp; = \mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* \, \mathbf{W}_w^* = \\
+     &amp; = \mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* \, \mathbf{W}_w^* = \\
+     &amp; = (\mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* ) \, (\mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* )^* \ ,
+  \end{aligned}\end{split}\]</div>
+<p class="sd-card-text">e quindi (<strong>todo</strong> <em>gisutificare la comparsa di <span class="math notranslate nohighlight">\(\mathbf{U}^* \mathbf{U}\)</span> per ottenere una matrice quadrata, giustificare la scelta di <span class="math notranslate nohighlight">\(\mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* = \mathbf{I}\)</span></em>)</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* = \mathbf{I}
+  \qquad \rightarrow \qquad 
+  \mathbf{W}_w =  \mathbf{U}^* \symbf{\Sigma}^{-\frac{1}{2}} \mathbf{U}
+  \]</div>
+</li>
+</ul>
+</div>
+</details><div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
 <span class="collapsed">Show code cell source</span>
@@ -645,50 +693,11 @@ document.write(`
 </div>
 </details>
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Teoria<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Vengono svolte due operazioni:</p>
-<ul>
-<li><p class="sd-card-text">rimozione della media dalle osservazioni di ogni quantità, quindi rimozione del valore medio di ogni riga,
-$<span class="math notranslate nohighlight">\(X_{ij} \quad \leftarrow \quad X_{ij} - \frac{1}{n_s} \sum_{j = 1}^{n_s} X_{ij} \ ,\)</span>$
-in modo da avere i nuovi segnali a media nulla;</p></li>
-<li><p class="sd-card-text">ricerca di una trasformazione di coordinate (combinazione delle osservazioni) che renda la nuove componenti non correlate. Una stima senza bias della correlazione è</p>
-<div class="math notranslate nohighlight">
-\[\hat{\mathbf{R}} = \frac{1}{n_s - 1} \mathbf{X} \, \mathbf{X}^* \ .\]</div>
-<p class="sd-card-text">In generale, questa è una matrice piena di dimensioni <span class="math notranslate nohighlight">\((n_x, n_x)\)</span>. Si vuole cercare la trasformazione di coordinate <span class="math notranslate nohighlight">\(\mathbf{X}_w = \mathbf{W}_w \mathbf{X}\)</span>, che garantisce che la nuove osservazioni siano non correlate con varianza unitaria (come <em>white noise</em>, e da qui il nome <em>whitening</em>), cioè</p>
-<div class="math notranslate nohighlight">
-\[\mathbf{I} = \hat{\mathbf{R}}_w = \frac{1}{n_s - 1} \mathbf{X}_w \, \mathbf{X}_w^* = \frac{1}{n_s - 1} \mathbf{W}_w \, \mathbf{X} \, \mathbf{X}^*  \, \mathbf{W}_w^* = \mathbf{W}_w \, \hat{\mathbf{R}} \, \mathbf{W}_w^*\]</div>
-<p class="sd-card-text">E” possibile trovare la matrice desiderata <span class="math notranslate nohighlight">\(\mathbf{W}_w\)</span> usando una tecnica di scomposizione della matrice di correlazione <span class="math notranslate nohighlight">\(\hat{\mathbf{R}}\)</span>, simmetrica (semi)definita positiva, come ad esempio la</p>
-<ul class="simple">
-<li><p class="sd-card-text">scomposizione agli autovalori, <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} = \mathbf{E} \, \symbf{\Lambda} \, \mathbf{E}^{-1}\)</span>, con <span class="math notranslate nohighlight">\(\symbf{\Lambda}\)</span> diagonale; sfruttando le proprietà delle matrici sdp, si può scrivere  <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} = \mathbf{E} \, \symbf{\Lambda} \, \mathbf{E}^*\)</span>, con la matrice <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> ortogonale tale che <span class="math notranslate nohighlight">\(\mathbf{E} \, \mathbf{E}^* = \mathbf{I}\)</span>.</p></li>
-<li><p class="sd-card-text">la SVD, <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} = \mathbf{U} \symbf{\Sigma} \mathbf{V}^*\)</span>, con <span class="math notranslate nohighlight">\(\symbf{\Sigma}\)</span> diagonale; nel caso di matrice di partenza sdp, si può scrivere si può scrivere <span class="math notranslate nohighlight">\(\hat{\mathbf{R}} = \mathbf{U} \symbf{\Sigma} \mathbf{U}^*\)</span>, con la matrice <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> ortogonale tale che <span class="math notranslate nohighlight">\(\mathbf{U} \, \mathbf{U}^* = \mathbf{I}\)</span>.</p></li>
-</ul>
-<p class="sd-card-text">Sfruttando quindi la proprietà delle scomposizioni presentate sopra, osservando l’analogia del risultato delle due scomposizioni nel caso di matrice sdp, e definendo <span class="math notranslate nohighlight">\(\symbf{\Sigma}^{1/2}\)</span> la matrice diagonale con elementi le radici quadrate di <span class="math notranslate nohighlight">\(\symbf{\Sigma}\)</span>, si può scrivere</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-     \mathbf{I}
-     &amp; = \mathbf{W}_w \, \hat{\mathbf{R}} \, \mathbf{W}_w^* = \\
-     &amp; = \mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* \, \mathbf{W}_w^* = \\
-     &amp; = \mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* \, \mathbf{W}_w^* = \\
-     &amp; = (\mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* ) \, (\mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* )^* \ ,
-  \end{aligned}\end{split}\]</div>
-<p class="sd-card-text">e quindi (<strong>todo</strong> <em>gisutificare la comparsa di <span class="math notranslate nohighlight">\(\mathbf{U}^* \mathbf{U}\)</span> per ottenere una matrice quadrata, giustificare la scelta di <span class="math notranslate nohighlight">\(\mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* = \mathbf{I}\)</span></em>)</p>
-<div class="math notranslate nohighlight">
-\[\mathbf{W}_w \, \mathbf{U} \symbf{\Sigma}^{\frac{1}{2}} \mathbf{U}^* = \mathbf{I}
-  \qquad \rightarrow \qquad 
-  \mathbf{W}_w =  \mathbf{U}^* \symbf{\Sigma}^{-\frac{1}{2}} \mathbf{U}
-  \]</div>
-</li>
-</ul>
 </div>
-</details></div>
 <div class="section" id="fastica">
 <h3><span class="section-number">21.1.4.3.2. </span>FastICA<a class="headerlink" href="#fastica" title="Permalink to this heading">#</a></h3>
+<p>Viene qui illustrato l’algoritmo FastICA</p>
+<p><strong>todo</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fastIca</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span>  <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">5000</span><span class="p">):</span>
@@ -740,6 +749,8 @@ in modo da avere i nuovi segnali a media nulla;</p></li>
 </div>
 <div class="section" id="applicazione-del-metodo-al-segnale">
 <h2><span class="section-number">21.1.4.4. </span>Applicazione del metodo al segnale<a class="headerlink" href="#applicazione-del-metodo-al-segnale" title="Permalink to this heading">#</a></h2>
+<p>Il metodo viene applicato al problema considerato. In questo caso (segnali non gaussiani,…) il metodo riesce a ricostruire bene (<strong>todo</strong> <em>è un bene «a occhio», qualitativo. Quantificare!</em>) i 3 segnali indipendenti di partenza <strong>a meno di un fattore moltiplicativo</strong>, arbitrarietà propria del metodo.</p>
+<p><strong>todo</strong> Dire qualcosa sulle componenti principali indipendenti, discutendo le componenti della matrice <span class="math notranslate nohighlight">\(\mathbf{W}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Preprocessing</span>
