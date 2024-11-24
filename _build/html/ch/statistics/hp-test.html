@@ -65,6 +65,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/statistics/hp-test';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
@@ -217,6 +219,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione ai metodi in statistica e  AI</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../ai.html">19. Introduzione ai metodi in AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/sl.html">20. Supervised Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ai/ul.html">21. Unsupervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/ml.html">22. Reinforcement Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supporto tecnico</span></p>
 <ul class="nav bd-sidenav">
@@ -436,8 +443,20 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="test-di-verifica-delle-ipotesi">
-<h1><span class="section-number">18.2. </span>Test di verifica delle ipotesi<a class="headerlink" href="#test-di-verifica-delle-ipotesi" title="Permalink to this heading">#</a></h1>
-<p>…</p>
+<span id="statistics-hs-inference-hp-test"></span><h1><span class="section-number">18.2. </span>Test di verifica delle ipotesi<a class="headerlink" href="#test-di-verifica-delle-ipotesi" title="Permalink to this heading">#</a></h1>
+<p><strong>Popper.</strong> Filosofia della sicenza e principio di falsificabilità.</p>
+<p><strong>Fisher.</strong> Viene formulata un’ipotesi falsificabile, chiamata <strong>ipotesi nulla</strong>, <span class="math notranslate nohighlight">\(\text{H}_{0}\)</span>, che viene ritenuta vera fino a prova contraria. Il test di verifica delle ipotesi ha l’obiettivo di verificare se i dati smentiscono l’ipotesi.</p>
+<p>Più in particolare, viene scelta come <strong>statistica test</strong> <span class="math notranslate nohighlight">\(x\)</span> un parametro disponibile, rilavante per il fenomeno indagato e di cui è nota la distribuzione di probabilità sotto l’ipotesi nulla,</p>
+<div class="math notranslate nohighlight">
+\[p(x|\text{H}_0) \ .\]</div>
+<p>In base alle caratteristiche del fenomeno indagato vengono scelte le caratteristiche del test; in base all’evidenza richiesta contro l’ipotesi <span class="math notranslate nohighlight">\(\text{H}_0\)</span> viene scelto il <strong>livello di significatività</strong>, <span class="math notranslate nohighlight">\(\alpha\)</span>, del test che - insieme alle caratteristiche del test - determina le <strong>regioni di rifiuto</strong> e, per differenza, <strong>di accettazione</strong> dell’ipotesi.</p>
+<p>Una volta raccolti i dati, si calcola la statistica scelta con i dati disponibili, si verifica se il suo valore appartiene alle regioni di rifiuto o di accettazione dell’ipotesi, per concludere rispettivamente se l’ipotesi <span class="math notranslate nohighlight">\(\text{H}_{0}\)</span> è stata falsificata o non è stata falsificata e quindi va ritenuta ancora valida.</p>
+<p>A partire dalla formulazione generale del test di verifica delle ipotesi secondo Fisher, vengono poi definiti diversi test:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Z\)</span>-test: test di Fisher sulla media del campione</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span>-test: test di Fisher sulla media del campione di una popolazone con media e varianza sconosciuti che, sotto opportune ipotesi, è una variabile casuale che segue una distribuzione di probabilità <span class="math notranslate nohighlight">\(t\)</span>-Student</p></li>
+<li><p><span class="math notranslate nohighlight">\(ANOVA\)</span></p></li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 </div>

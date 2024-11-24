@@ -1,7 +1,13 @@
 (book:statistics-hs)=
 # Metodi per la statistica
 
-La statistica si occupa dello studio dei fenomeni in condizioni di incertezza o di non determinismo, determinate da una conoscenza incompleta del modello. *Questo può essere dovuto sia all'impossibilità di costruire un modello deterministico, sia alla scarsa praticabilità di un modello deterministico di dimensioni enormi, vedi termodinamica classica vs. meccanica statistica* **todo** *fare riferimento, con esempio*.
+La statistica si occupa dello studio dei fenomeni in condizioni di incertezza o di non determinismo, determinate da una conoscenza incompleta del modello. 
+
+I contenuti seguono l'ordine logico di un approccio alla statistica: dopo aver introdotto la statistica descrittiva e la rappresnetazione dei dati, vengono fornite delle basi di teoria della probabilità necessarie alla deduzione e alle conclusioni tipiche di un'analisi statistica inferenziale.
+
+<!--
+*Questo può essere dovuto sia all'impossibilità di costruire un modello deterministico, sia alla scarsa praticabilità di un modello deterministico di dimensioni enormi, vedi termodinamica classica vs. meccanica statistica* **todo** *fare riferimento, con esempio*.
+-->
 
 `````{only} html
 
@@ -13,13 +19,17 @@ La statistica si occupa dello studio dei fenomeni in condizioni di incertezza o 
 ```{dropdown} [Teoria della probabilità: processi casuali](statistics-hs:random-processes)
 ```
 ````
-````{dropdown} Statistica inferenziale
-- stima
-- verifica ipotesi
-- *campionamento*
+````{dropdown} [Statistica inferenziale](statistics-hs:inference)
+- [Stima](statistics-hs:inference:estimate)
+- [Verifica ipotesi](statistics-hs:inference:hp-test)
+- *campionamento*...
+- ...
 ````
 
 `````
+
+La statistica è applicabile in **diversi (tutti?) gli ambiti**: dalla scienze naturali, alle scienze sociali,...
+Secondo uno studio, i 12 metodi statistici (cos'è un metodo statistico?) più usati sono: ANOVA, $\chi^2$-test, $t$-test, regressione lineare, coefficiente di correlazione di Pearson, Mann-Whitney U-test, Kruskal-Wallis test, Shannon's diversity index, Turkey's range test, cluster analysis, Spearman's rank correlation coefficient, and PCA.
 
 La statistica è uno strumento fondamentale del **metodo scientifico**, e si occupa dell'intero processo di:
 - progetto dell'esperimento

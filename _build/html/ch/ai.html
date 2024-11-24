@@ -69,8 +69,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../genindex.html" />
     <link rel="search" title="Cerca" href="../search.html" />
-    <link rel="next" title="Supporto tecnico" href="support.html" />
-    <link rel="prev" title="18.3. ANOVA - Analysis of variance" href="statistics/anova.html" />
+    <link rel="next" title="20. Supervised Learning" href="ai/sl.html" />
+    <link rel="prev" title="18.2.3. ANOVA - Analysis of variance" href="statistics/anova.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -203,16 +203,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="statistics/random_processes.html">17.2. Processi casuali</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="statistics/hp-test.html">18. Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="statistics/test-fisher.html">18.1. Test di verifica d’ipotesi - Fisher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics/t-test.html">18.2. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics/anova.html">18.3. ANOVA - Analysis of variance</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="statistics/inference.html">18. Statistica inferenziale</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="statistics/estimate.html">18.1. Stima</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="statistics/hp-test.html">18.2. Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="statistics/test-fisher.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics/t-test.html">18.2.2. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics/anova.html">18.2.3. ANOVA - Analysis of variance</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione ai metodi in statistica e  AI</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">19. Introduzione ai metodi in AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ai/sl.html">20. Supervised Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ai/ul.html">21. Unsupervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ai/ml.html">22. Reinforcement Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supporto tecnico</span></p>
 <ul class="nav bd-sidenav">
@@ -433,8 +442,32 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="introduzione-ai-metodi-in-ai">
 <span id="book-ai-hs"></span><h1><span class="section-number">19. </span>Introduzione ai metodi in AI<a class="headerlink" href="#introduzione-ai-metodi-in-ai" title="Permalink to this heading">#</a></h1>
-<p>In questa sezione si descriveranno alcuni metodi utilizzati nelle applicazioni di <strong>machine learning</strong>.</p>
-<p><strong>Approccio.</strong> Alla completezza e al rigore dello sviluppo teorico dei metodi, viene preferita una descrizione dei metodi tramite esempi e applicazioni.</p>
+<p>In questa sezione si descriveranno alcuni metodi utilizzati nelle applicazioni di <strong>machine learning</strong>. I contenuti sono organizzati in 3 sezioni, seguendo una delle più comuni classificazioni in machine learning.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<a class="reference internal" href="ai/sl.html#ai-sl"><span class="std std-ref">Supervised Learning</span></a><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<a class="reference internal" href="ai/ul.html#ai-ul"><span class="std std-ref">Unsupervised Learning</span></a><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<a class="reference internal" href="ai/ml.html#ai-rl"><span class="std std-ref">Reinforcement Learning</span></a><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details><p><strong>Approccio.</strong> Alla completezza e al rigore dello sviluppo teorico dei metodi, viene preferita una descrizione dei metodi tramite esempi e applicazioni.</p>
 <p>Benché questo possa essere un approccio ad alto rischio di creazione di utenti acritici di strumenti che non comprendono, la speranza è di mitigare questo rischio con continui moniti a prestare attenzione e un supporto del lettore da parte di gente con un minimo di esperienza.</p>
 <p><strong>Argomenti.</strong> In questa sezione verranno presentati alcuni metodi e applicazioni del <strong>machine learning</strong>, che possono essere classificate in tre grandi classi di apprendimento:</p>
 <ul class="simple">
@@ -482,15 +515,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">18.3. </span>ANOVA - Analysis of variance</p>
+        <p class="prev-next-title"><span class="section-number">18.2.3. </span>ANOVA - Analysis of variance</p>
       </div>
     </a>
     <a class="right-next"
-       href="support.html"
+       href="ai/sl.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title">Supporto tecnico</p>
+        <p class="prev-next-title"><span class="section-number">20. </span>Supervised Learning</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

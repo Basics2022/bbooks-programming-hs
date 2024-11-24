@@ -53,6 +53,15 @@ parts:
   numbered: True
   chapters:
   - file: ch/ai
+  - file: ch/ai/sl
+  - file: ch/ai/ul
+    sections:
+    - file: ch/ai/ica-pca
+      sections:
+      - file: ch/ai/ica-pca-example-2d
+      - file: ch/ai/ica-pca-example-time
+      - file: ch/ai/ica-pca-details
+  - file: ch/ai/ml
 - caption: Supporto tecnico
   chapters:
   - file: ch/support
