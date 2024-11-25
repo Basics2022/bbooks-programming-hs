@@ -455,7 +455,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -471,6 +473,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-compressione-di-immagini">21.1.2.1. Esempio: compressione di immagini</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -482,6 +492,8 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="pca">
 <span id="ia-ul-pca"></span><h1><span class="section-number">21.1.2. </span>PCA<a class="headerlink" href="#pca" title="Permalink to this heading">#</a></h1>
+<div class="section" id="esempio-compressione-di-immagini">
+<h2><span class="section-number">21.1.2.1. </span>Esempio: compressione di immagini<a class="headerlink" href="#esempio-compressione-di-immagini" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -490,8 +502,8 @@ document.write(`
 <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">color</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
-<span class="c1">#image = data.astronaut()</span>
+<span class="c1">#image = data.camera()</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">astronaut</span><span class="p">()</span>
 <span class="n">image</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">rgb2gray</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
 <span class="c1"># Display the image</span>
@@ -548,47 +560,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1">#image = data.astronaut()</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">image</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">rgb2gray</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># Display the image</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/.local/lib/python3.8/site-packages/skimage/_shared/utils.py:338,</span> in <span class="ni">channel_as_last_axis.__call__.&lt;locals&gt;.fixed_func</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">335</span> <span class="n">channel_axis</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;channel_axis&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="k">if</span> <span class="n">channel_axis</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">338</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span> <span class="c1"># TODO: convert scalars to a tuple in anticipation of eventually</span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span> <span class="c1">#       supporting a tuple of channel axes. Right now, only an</span>
-<span class="g g-Whitespace">    </span><span class="mi">342</span> <span class="c1">#       integer or a single-element tuple is supported, though.</span>
-<span class="g g-Whitespace">    </span><span class="mi">343</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">channel_axis</span><span class="p">):</span>
-
-<span class="nn">File ~/.local/lib/python3.8/site-packages/skimage/color/colorconv.py:875,</span> in <span class="ni">rgb2gray</span><span class="nt">(rgb, channel_axis)</span>
-<span class="g g-Whitespace">    </span><span class="mi">834</span> <span class="nd">@channel_as_last_axis</span><span class="p">(</span><span class="n">multichannel_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">835</span> <span class="k">def</span> <span class="nf">rgb2gray</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">channel_axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">836</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Compute luminance of an RGB image.</span>
-<span class="g g-Whitespace">    </span><span class="mi">837</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">838</span><span class="sd">     Parameters</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">873</span><span class="sd">     &gt;&gt;&gt; img_gray = rgb2gray(img)</span>
-<span class="g g-Whitespace">    </span><span class="mi">874</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">875</span>     <span class="n">rgb</span> <span class="o">=</span> <span class="n">_prepare_colorarray</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">876</span>     <span class="n">coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.2125</span><span class="p">,</span> <span class="mf">0.7154</span><span class="p">,</span> <span class="mf">0.0721</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">rgb</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">877</span>     <span class="k">return</span> <span class="n">rgb</span> <span class="o">@</span> <span class="n">coeffs</span>
-
-<span class="nn">File ~/.local/lib/python3.8/site-packages/skimage/color/colorconv.py:140,</span> in <span class="ni">_prepare_colorarray</span><span class="nt">(arr, force_copy, channel_axis)</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span> <span class="k">if</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">channel_axis</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span>     <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;the input array must have size 3 along `channel_axis`, &#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span>            <span class="sa">f</span><span class="s1">&#39;got </span><span class="si">{</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">140</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span> <span class="n">float_dtype</span> <span class="o">=</span> <span class="n">_supported_float_type</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="k">if</span> <span class="n">float_dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">:</span>
-
-<span class="ne">ValueError</span>: the input array must have size 3 along `channel_axis`, got (512, 512)
-</pre></div>
+<img alt="../../_images/d15539d1970035394b1f718ad297932c613ca3b0921d5661e4564c59114a0002.png" src="../../_images/d15539d1970035394b1f718ad297932c613ca3b0921d5661e4564c59114a0002.png" />
+<img alt="../../_images/0cc5ae4b9fbcc7a1a77ed852cb9b96ed4cd69487c01e55c7f21826fd2adf7945.png" src="../../_images/0cc5ae4b9fbcc7a1a77ed852cb9b96ed4cd69487c01e55c7f21826fd2adf7945.png" />
+<img alt="../../_images/03a4dab6dd1bb18de4a735abfab94873b9195316c3f15f0cd36ad6e74b39521f.png" src="../../_images/03a4dab6dd1bb18de4a735abfab94873b9195316c3f15f0cd36ad6e74b39521f.png" />
 </div>
 </div>
 </div>
@@ -648,6 +622,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-compressione-di-immagini">21.1.2.1. Esempio: compressione di immagini</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
