@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>21.1. ICA e PCA &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>21.1.2. PCA &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -65,12 +65,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/ai/ica-pca';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/ai/pca';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="21.1.2. PCA" href="pca.html" />
-    <link rel="prev" title="21. Unsupervised Learning" href="ul.html" />
+    <link rel="next" title="21.1.3. FastICA on 2D point clouds" href="ica-pca-example-2d.html" />
+    <link rel="prev" title="21.1. ICA e PCA" href="ica-pca.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -221,8 +221,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ai.html">19. Introduzione ai metodi in AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sl.html">20. Supervised Learning</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ul.html">21. Unsupervised Learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">21.1. ICA e PCA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="pca.html">21.1.2. PCA</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="ica-pca.html">21.1. ICA e PCA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">21.1.2. PCA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ica-pca-example-2d.html">21.1.3. FastICA on 2D point clouds</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ica-pca-example-time.html">21.1.4. ICA e PCA: segnali in tempo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ica-pca-details.html">21.1.5. ICA e PCA - dettagli</a></li>
@@ -289,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-programming-hs/blob/master/ch/ai/ica-pca.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-programming-hs/blob/master/ch/ai/pca.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -337,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/ai/ica-pca.ipynb" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/ai/pca.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -354,7 +354,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/ai/ica-pca.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/ai/pca.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -384,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/ai/ica-pca.ipynb" target="_blank"
+      <li><a href="../../_sources/ch/ai/pca.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -455,9 +455,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -468,19 +466,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ICA e PCA</h1>
+    <h1>PCA</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contenuti </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#riferimenti">21.1.1. Riferimenti</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -490,21 +480,117 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="ica-e-pca">
-<span id="ai-ul-ica-pca"></span><h1><span class="section-number">21.1. </span>ICA e PCA<a class="headerlink" href="#ica-e-pca" title="Permalink to this heading">#</a></h1>
-<div class="section" id="riferimenti">
-<h2><span class="section-number">21.1.1. </span>Riferimenti<a class="headerlink" href="#riferimenti" title="Permalink to this heading">#</a></h2>
-<p><strong>scikit</strong></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://scikit-learn.org/dev/modules/generated/sklearn.decomposition.FastICA.html">https://scikit-learn.org/dev/modules/generated/sklearn.decomposition.FastICA.html</a></p></li>
-</ul>
-<p><strong>Carten Klein</strong></p>
-<ul class="simple">
-<li><p><a class="github reference external" href="https://github.com/akcarsten/">akcarsten/</a></p></li>
-<li><p><a class="github reference external" href="https://github.com/akcarsten/Independent_Component_Analysis">akcarsten/Independent_Component_Analysis</a></p></li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="pca">
+<span id="ia-ul-pca"></span><h1><span class="section-number">21.1.2. </span>PCA<a class="headerlink" href="#pca" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">color</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
+<span class="c1">#image = data.astronaut()</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">rgb2gray</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+<span class="c1"># Display the image</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+<span class="c1">#&gt; Preprocessing</span>
+<span class="n">image_avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">image</span> <span class="o">-</span> <span class="n">image_avg</span>
+
+<span class="c1">#&gt; Compute SVD</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vh</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1">#&gt; Show singular values and energy error</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Singular values&quot;</span><span class="p">)</span>
+
+<span class="n">energy_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">energy_error</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Energy error [%]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1e-5</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">storage</span> <span class="o">=</span> <span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">image</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">image</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="n">original_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">image</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">image</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">storage</span><span class="o">/</span><span class="n">original_data</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;compressed image&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;original_data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Storage [%]&quot;</span><span class="p">)</span>
+<span class="c1"># plt.ylim(1e-5,1)</span>
+
+
+<span class="c1">#</span>
+<span class="n">n_svd</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">sigmaVh_svd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n_svd</span><span class="p">])</span> <span class="o">@</span>  <span class="n">Vh</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n_svd</span><span class="p">,:]</span>
+<span class="n">A_svd</span> <span class="o">=</span> <span class="n">U</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="n">n_svd</span><span class="p">]</span> <span class="o">@</span> <span class="n">sigmaVh_svd</span> <span class="o">+</span> <span class="n">image_avg</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">A_svd</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Compressed image&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="o">-</span><span class="n">A_svd</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Difference&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">camera</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1">#image = data.astronaut()</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">image</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">rgb2gray</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># Display the image</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.8/site-packages/skimage/_shared/utils.py:338,</span> in <span class="ni">channel_as_last_axis.__call__.&lt;locals&gt;.fixed_func</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span> <span class="n">channel_axis</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;channel_axis&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="k">if</span> <span class="n">channel_axis</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">338</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span> <span class="c1"># TODO: convert scalars to a tuple in anticipation of eventually</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span> <span class="c1">#       supporting a tuple of channel axes. Right now, only an</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span> <span class="c1">#       integer or a single-element tuple is supported, though.</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">channel_axis</span><span class="p">):</span>
+
+<span class="nn">File ~/.local/lib/python3.8/site-packages/skimage/color/colorconv.py:875,</span> in <span class="ni">rgb2gray</span><span class="nt">(rgb, channel_axis)</span>
+<span class="g g-Whitespace">    </span><span class="mi">834</span> <span class="nd">@channel_as_last_axis</span><span class="p">(</span><span class="n">multichannel_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">835</span> <span class="k">def</span> <span class="nf">rgb2gray</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">channel_axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">836</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Compute luminance of an RGB image.</span>
+<span class="g g-Whitespace">    </span><span class="mi">837</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">838</span><span class="sd">     Parameters</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">873</span><span class="sd">     &gt;&gt;&gt; img_gray = rgb2gray(img)</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">875</span>     <span class="n">rgb</span> <span class="o">=</span> <span class="n">_prepare_colorarray</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>     <span class="n">coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.2125</span><span class="p">,</span> <span class="mf">0.7154</span><span class="p">,</span> <span class="mf">0.0721</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">rgb</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>     <span class="k">return</span> <span class="n">rgb</span> <span class="o">@</span> <span class="n">coeffs</span>
+
+<span class="nn">File ~/.local/lib/python3.8/site-packages/skimage/color/colorconv.py:140,</span> in <span class="ni">_prepare_colorarray</span><span class="nt">(arr, force_copy, channel_axis)</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span> <span class="k">if</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">channel_axis</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span>     <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;the input array must have size 3 along `channel_axis`, &#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>            <span class="sa">f</span><span class="s1">&#39;got </span><span class="si">{</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">140</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span> <span class="n">float_dtype</span> <span class="o">=</span> <span class="n">_supported_float_type</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="k">if</span> <span class="n">float_dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">:</span>
+
+<span class="ne">ValueError</span>: the input array must have size 3 along `channel_axis`, got (512, 512)
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -539,20 +625,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ul.html"
+       href="ica-pca.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">21. </span>Unsupervised Learning</p>
+        <p class="prev-next-title"><span class="section-number">21.1. </span>ICA e PCA</p>
       </div>
     </a>
     <a class="right-next"
-       href="pca.html"
+       href="ica-pca-example-2d.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">21.1.2. </span>PCA</p>
+        <p class="prev-next-title"><span class="section-number">21.1.3. </span>FastICA on 2D point clouds</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -562,20 +648,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contenuti
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#riferimenti">21.1.1. Riferimenti</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
