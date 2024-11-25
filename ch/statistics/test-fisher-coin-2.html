@@ -479,7 +479,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.2.1. Import librerie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie-e-funzioni-utili">18.2.2.1. Import librerie e funzioni utili</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.2.1.1. Import librerie</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-per-lo-svolgimento-di-un-esperimento">18.2.2.2. Funzione per lo svolgimento di un esperimento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-che-restituisce-la-pdf-p-x-text-h-0">18.2.2.2.1. Funzione che restituisce la pdf <span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzioni-per-la-ricerca-degli-intervalli-di-accettazione-dell-ipotesi">18.2.2.2.2. Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esperimento">18.2.2.3. Esperimento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#livelli-di-accettazione">18.2.2.3.1. Livelli di accettazione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svolgimento-esperimento">18.2.2.3.2. Svolgimento esperimento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafici">18.2.2.3.3. Grafici</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -495,8 +509,11 @@ document.write(`
 <h1><span class="section-number">18.2.2. </span>Moneta truccata<a class="headerlink" href="#moneta-truccata" title="Permalink to this heading">#</a></h1>
 <p>Si vuole valutare se una moneta è truccata. L’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span> da falsificare è «la moneta non è truccata». Si sceglie come statistica test la percentuale di risultati «testa» sul numero di lanci.</p>
 <p>L’esperimento viene condotto per un numero incrementale di esperimenti.</p>
+<div class="section" id="import-librerie-e-funzioni-utili">
+<h2><span class="section-number">18.2.2.1. </span>Import librerie e funzioni utili<a class="headerlink" href="#import-librerie-e-funzioni-utili" title="Permalink to this heading">#</a></h2>
 <div class="section" id="import-librerie">
-<h2><span class="section-number">18.2.2.1. </span>Import librerie<a class="headerlink" href="#import-librerie" title="Permalink to this heading">#</a></h2>
+<h3><span class="section-number">18.2.2.1.1. </span>Import librerie<a class="headerlink" href="#import-librerie" title="Permalink to this heading">#</a></h3>
+<p>Reset delle variabili e import librerie.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -515,6 +532,11 @@ document.write(`
 </div>
 </details>
 </div>
+</div>
+</div>
+<div class="section" id="funzione-per-lo-svolgimento-di-un-esperimento">
+<h2><span class="section-number">18.2.2.2. </span>Funzione per lo svolgimento di un esperimento<a class="headerlink" href="#funzione-per-lo-svolgimento-di-un-esperimento" title="Permalink to this heading">#</a></h2>
+<p>La funzione per lo svolgimento di un esperimento qui definita prende come argomenti un generatore di numeri casuali e i suoi parametri, e restituisce i campioni prodotti secondo la distribuzione data. Vengono definiti dei parametri di default, corrispondenti a una distribuzione di Bernoulli uniforme</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -523,39 +545,28 @@ document.write(`
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Random process of interest, unknown execpt for the sample.</span>
-<span class="c1"># p_head = .55</span>
-<span class="c1"># p_tail = 1. - p_head</span>
+<span class="n">p_head_default</span> <span class="o">=</span> <span class="mf">.5</span>
+<span class="n">p_tail_default</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">p_head_default</span>
 
 <span class="c1"># Coin flip as a Bernoulli probability with outcomes: a = [0, 1] with prob p = [p_head, p_tail]</span>
 <span class="n">flip_rng_default</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">choice</span>
-<span class="n">flip_params_default</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p_head</span><span class="p">,</span> <span class="n">p_tail</span><span class="p">],</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>   <span class="c1"># default params</span>
+<span class="n">flip_params_default</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p_head_default</span><span class="p">,</span> <span class="n">p_tail_default</span><span class="p">],</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>   <span class="c1"># default params</span>
 
-<span class="k">def</span> <span class="nf">run_experiment</span><span class="p">(</span><span class="n">rng</span><span class="o">=</span><span class="n">flip_rng</span><span class="p">,</span> <span class="n">rng_params</span><span class="o">=</span><span class="n">flip_params</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">run_experiment</span><span class="p">(</span><span class="n">rng</span><span class="o">=</span><span class="n">flip_rng_default</span><span class="p">,</span> <span class="n">rng_params</span><span class="o">=</span><span class="n">flip_params_default</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">rng</span><span class="p">(</span><span class="o">**</span><span class="n">rng_params</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#&gt; Random process of interest, unknown execpt for the sample.</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># p_head = .55</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># p_tail = 1. - p_head</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Coin flip as a Bernoulli probability with outcomes: a = [0, 1] with prob p = [p_head, p_tail]</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">flip_rng_default</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">choice</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">flip_params_default</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p_head</span><span class="p">,</span> <span class="n">p_tail</span><span class="p">],</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>   <span class="c1"># default params</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">def</span> <span class="nf">run_experiment</span><span class="p">(</span><span class="n">rng</span><span class="o">=</span><span class="n">flip_rng</span><span class="p">,</span> <span class="n">rng_params</span><span class="o">=</span><span class="n">flip_params</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="k">return</span> <span class="n">rng</span><span class="p">(</span><span class="o">**</span><span class="n">rng_params</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;p_head&#39; is not defined
-</pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
+<div class="section" id="funzione-che-restituisce-la-pdf-p-x-text-h-0">
+<h3><span class="section-number">18.2.2.2.1. </span>Funzione che restituisce la pdf <span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span><a class="headerlink" href="#funzione-che-restituisce-la-pdf-p-x-text-h-0" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ! Approach for low-dimensional problems, with no memory or performance issues</span>
 
@@ -569,12 +580,6 @@ document.write(`
 <span class="c1"># # H0 hypotesis implies that the outcome of flip_n is a r.v. with Binomial pdf</span>
 <span class="c1"># x_H0_fv = sp.stats.binom.pmf(ixv, n_flips, p_head)</span>
 
-<span class="c1">#&gt; Test characteristics: symmetric</span>
-<span class="n">test_type</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span>  <span class="c1"># &#39;symmetric&#39;, &#39;right&#39;, &#39;left&#39;, &#39;value&#39;</span>
-
-<span class="c1">#&gt; Significance level, alpha = .05 (&quot;default&quot;)</span>
-<span class="n">alpha</span> <span class="o">=</span> <span class="mf">.05</span>
-<span class="n">alpha_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">.3</span><span class="p">,</span> <span class="mf">.05</span><span class="p">,</span> <span class="mf">.003</span> <span class="p">])</span>
 
 <span class="k">def</span> <span class="nf">px_H0</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">p_params</span><span class="p">,):</span>
     <span class="k">return</span> <span class="n">p</span><span class="p">(</span><span class="o">**</span><span class="n">p_params</span><span class="p">)</span>
@@ -582,8 +587,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+</div>
+<div class="section" id="funzioni-per-la-ricerca-degli-intervalli-di-accettazione-dell-ipotesi">
+<h3><span class="section-number">18.2.2.2.2. </span>Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi<a class="headerlink" href="#funzioni-per-la-ricerca-degli-intervalli-di-accettazione-dell-ipotesi" title="Permalink to this heading">#</a></h3>
+<p>Vengono qui definite due funzoni per la ricerca degli intervalli di accettazione, dato il livello di significatività del test richiesto. La prima funzione ricerca un unico intervallo di accettazione riferito a un unico livello di significatività; la seconda funzione ricerca tanti intervalli di accettazione quanti sono i livelli di significatività cercati: ad esempio, si possono cercare simultaneamente i livellidi significatività associati a <span class="math notranslate nohighlight">\(\sigma\)</span>, <span class="math notranslate nohighlight">\(2 \sigma\)</span>, <span class="math notranslate nohighlight">\(3 \sigma\)</span>…</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Acceptance and rejection regions, for discrete pdf</span>
 <span class="c1"># Starting from the value of the test statistics x_max = max(x_H0_fv), expand </span>
@@ -653,13 +668,41 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[74. 68. 62.] [87. 92. 99.]
+</details>
+</div>
+</div>
+</div>
+<div class="section" id="esperimento">
+<h2><span class="section-number">18.2.2.3. </span>Esperimento<a class="headerlink" href="#esperimento" title="Permalink to this heading">#</a></h2>
+<div class="section" id="livelli-di-accettazione">
+<h3><span class="section-number">18.2.2.3.1. </span>Livelli di accettazione<a class="headerlink" href="#livelli-di-accettazione" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Test characteristics: symmetric</span>
+<span class="n">test_type</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span>  <span class="c1"># &#39;symmetric&#39;, &#39;right&#39;, &#39;left&#39;, &#39;value&#39;</span>
+
+<span class="c1">#&gt; Significance level, alpha = .05 (&quot;default&quot;)</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">.05</span>
+<span class="n">alpha_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">.3</span><span class="p">,</span> <span class="mf">.05</span><span class="p">,</span> <span class="mf">.003</span> <span class="p">])</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+</div>
+<div class="section" id="svolgimento-esperimento">
+<h3><span class="section-number">18.2.2.3.2. </span>Svolgimento esperimento<a class="headerlink" href="#svolgimento-esperimento" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Run experiments, with incremental number of samples</span>
 <span class="n">n_flips_1</span> <span class="o">=</span> <span class="mi">20</span>
@@ -707,6 +750,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/davide/.local/lib/python3.8/site-packages/scipy/stats/_discrete_distns.py:77: RuntimeWarning: divide by zero encountered in _binom_pdf
   return _boost._binom_pdf(x, n, p)
@@ -714,7 +758,15 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+</div>
+<div class="section" id="grafici">
+<h3><span class="section-number">18.2.2.3.3. </span>Grafici<a class="headerlink" href="#grafici" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Convert list to numpy arrays, to perform some algebra below</span>
 <span class="n">n_flipsv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">n_flipsv</span><span class="p">)</span>
@@ -760,11 +812,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fbdb02a5ac0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f471465b730&gt;
 </pre></div>
 </div>
-<img alt="../../_images/08140d29fb521f7ab85edc72d6636c08b3dda36238cd234d4fea2af6eb9d3b25.png" src="../../_images/08140d29fb521f7ab85edc72d6636c08b3dda36238cd234d4fea2af6eb9d3b25.png" />
+<img alt="../../_images/83534e9dcb9eb806d042eb7895897410686ea7bb980f17fd0972f5eb51a1cd24.png" src="../../_images/83534e9dcb9eb806d042eb7895897410686ea7bb980f17fd0972f5eb51a1cd24.png" />
+</div>
 </div>
 </div>
 </div>
@@ -833,7 +887,21 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.2.1. Import librerie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie-e-funzioni-utili">18.2.2.1. Import librerie e funzioni utili</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.2.1.1. Import librerie</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-per-lo-svolgimento-di-un-esperimento">18.2.2.2. Funzione per lo svolgimento di un esperimento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-che-restituisce-la-pdf-p-x-text-h-0">18.2.2.2.1. Funzione che restituisce la pdf <span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzioni-per-la-ricerca-degli-intervalli-di-accettazione-dell-ipotesi">18.2.2.2.2. Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esperimento">18.2.2.3. Esperimento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#livelli-di-accettazione">18.2.2.3.1. Livelli di accettazione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svolgimento-esperimento">18.2.2.3.2. Svolgimento esperimento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafici">18.2.2.3.3. Grafici</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
