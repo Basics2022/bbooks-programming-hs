@@ -627,7 +627,7 @@ document.write(`
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Image reconstruction</span>
-<span class="n">n_svd</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">n_svd</span> <span class="o">=</span> <span class="mi">400</span>
 <span class="n">sigmaVh_svd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n_svd</span><span class="p">])</span> <span class="o">@</span>  <span class="n">Vh</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n_svd</span><span class="p">,:]</span>
 <span class="n">A_svd</span> <span class="o">=</span> <span class="n">U</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="n">n_svd</span><span class="p">]</span> <span class="o">@</span> <span class="n">sigmaVh_svd</span> <span class="o">+</span> <span class="n">image_avg</span>
 
@@ -653,12 +653,12 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Image reconstruction with 100 singular values:
-&gt; Energy error [% original]: 0.1647581016503445
-&gt; Storage      [% original]: 0.3870964050292969
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Image reconstruction with 400 singular values:
+&gt; Energy error [% original]: 0.004614573033051227
+&gt; Storage      [% original]: 1.5601158142089844
 </pre></div>
 </div>
-<img alt="../../_images/f13f70c80b4dea160b1518e19e0e9bcfcbbb4dd7aaf247870e153c2052f08e9f.png" src="../../_images/f13f70c80b4dea160b1518e19e0e9bcfcbbb4dd7aaf247870e153c2052f08e9f.png" />
+<img alt="../../_images/77bbb8722c56c0218102c4ee1aedaec9d94a47eaa5875d36bb4fa58f76d0a62a.png" src="../../_images/77bbb8722c56c0218102c4ee1aedaec9d94a47eaa5875d36bb4fa58f76d0a62a.png" />
 </div>
 </div>
 </div>
