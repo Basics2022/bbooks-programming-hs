@@ -456,7 +456,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -472,6 +474,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.2.1. Import librerie</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -484,28 +494,63 @@ document.write(`
   <div class="tex2jax_ignore mathjax_ignore section" id="moneta-truccata">
 <h1><span class="section-number">18.2.2. </span>Moneta truccata<a class="headerlink" href="#moneta-truccata" title="Permalink to this heading">#</a></h1>
 <p>Si vuole valutare se una moneta è truccata. L’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span> da falsificare è «la moneta non è truccata». Si sceglie come statistica test la percentuale di risultati «testa» sul numero di lanci.</p>
-<div class="cell docutils container">
+<p>L’esperimento viene condotto per un numero incrementale di esperimenti.</p>
+<div class="section" id="import-librerie">
+<h2><span class="section-number">18.2.2.1. </span>Import librerie<a class="headerlink" href="#import-librerie" title="Permalink to this heading">#</a></h2>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reset</span> -f
+
+<span class="c1"># Import libraries</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Random process of interest, unknown execpt for the sample.</span>
-<span class="n">p_head</span> <span class="o">=</span> <span class="mf">.55</span>
-<span class="n">p_tail</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">p_head</span>
+<span class="c1"># p_head = .55</span>
+<span class="c1"># p_tail = 1. - p_head</span>
 
 <span class="c1"># Coin flip as a Bernoulli probability with outcomes: a = [0, 1] with prob p = [p_head, p_tail]</span>
-<span class="n">flip_rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">choice</span>
-<span class="n">flip_params</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p_head</span><span class="p">,</span> <span class="n">p_tail</span><span class="p">],</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>   <span class="c1"># default params</span>
+<span class="n">flip_rng_default</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">choice</span>
+<span class="n">flip_params_default</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p_head</span><span class="p">,</span> <span class="n">p_tail</span><span class="p">],</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>   <span class="c1"># default params</span>
 
 <span class="k">def</span> <span class="nf">run_experiment</span><span class="p">(</span><span class="n">rng</span><span class="o">=</span><span class="n">flip_rng</span><span class="p">,</span> <span class="n">rng_params</span><span class="o">=</span><span class="n">flip_params</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">rng</span><span class="p">(</span><span class="o">**</span><span class="n">rng_params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#&gt; Random process of interest, unknown execpt for the sample.</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># p_head = .55</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># p_tail = 1. - p_head</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Coin flip as a Bernoulli probability with outcomes: a = [0, 1] with prob p = [p_head, p_tail]</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">flip_rng_default</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">choice</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">flip_params_default</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p_head</span><span class="p">,</span> <span class="n">p_tail</span><span class="p">],</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>   <span class="c1"># default params</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">def</span> <span class="nf">run_experiment</span><span class="p">(</span><span class="n">rng</span><span class="o">=</span><span class="n">flip_rng</span><span class="p">,</span> <span class="n">rng_params</span><span class="o">=</span><span class="n">flip_params</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="k">return</span> <span class="n">rng</span><span class="p">(</span><span class="o">**</span><span class="n">rng_params</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;p_head&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -608,25 +653,35 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[74. 68. 62.] [87. 92. 99.]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Run experiments, with incremental number of samples</span>
 <span class="n">n_flips_1</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">n_flips_max</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">n_flips_max</span> <span class="o">=</span> <span class="mi">5000</span>
 
 <span class="n">n_flips</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">H0_true</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">ov</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">xlv</span><span class="p">,</span> <span class="n">xrv</span><span class="p">,</span> <span class="n">xs_v</span><span class="p">,</span> <span class="n">n_flipsv</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="n">ov_fair</span><span class="p">,</span> <span class="n">ov_rigg</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="n">xlv</span><span class="p">,</span> <span class="n">xrv</span><span class="p">,</span> <span class="n">xsv_fair</span><span class="p">,</span> <span class="n">xsv_rigg</span><span class="p">,</span> <span class="n">n_flipsv</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
 
-<span class="n">flip_params</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">n_flips_1</span>
+<span class="n">flip_rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span><span class="o">.</span><span class="n">choice</span>
+<span class="n">flip_params_fair</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">.5</span> <span class="p">,</span> <span class="mf">.5</span> <span class="p">],</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">n_flips_1</span> <span class="p">}</span>   <span class="c1"># default params</span>
+<span class="n">flip_params_rigg</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">.45</span><span class="p">,</span> <span class="mf">.55</span><span class="p">],</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">n_flips_1</span> <span class="p">}</span>   <span class="c1"># default params</span>
 
 <span class="k">while</span> <span class="p">(</span> <span class="n">n_flips</span> <span class="o">&lt;</span> <span class="n">n_flips_max</span> <span class="ow">and</span> <span class="n">H0_true</span> <span class="p">):</span>
-    <span class="c1">#&gt; Run a new experiment and collect</span>
+    
+    <span class="c1">#&gt; Run a new experiment and collect new n_flips_1 samples</span>
     <span class="n">n_flips</span> <span class="o">+=</span> <span class="n">n_flips_1</span>
-    <span class="n">ov_1</span> <span class="o">=</span> <span class="n">run_experiment</span><span class="p">(</span><span class="n">rng</span><span class="o">=</span><span class="n">flip_rng</span><span class="p">,</span> <span class="n">rng_params</span><span class="o">=</span><span class="n">flip_params</span><span class="p">)</span>
-    <span class="n">ov</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ov_1</span><span class="p">)</span>
+    <span class="n">ov_fair_1</span> <span class="o">=</span> <span class="n">run_experiment</span><span class="p">(</span><span class="n">rng</span><span class="o">=</span><span class="n">flip_rng</span><span class="p">,</span> <span class="n">rng_params</span><span class="o">=</span><span class="n">flip_params_fair</span><span class="p">)</span>
+    <span class="n">ov_rigg_1</span> <span class="o">=</span> <span class="n">run_experiment</span><span class="p">(</span><span class="n">rng</span><span class="o">=</span><span class="n">flip_rng</span><span class="p">,</span> <span class="n">rng_params</span><span class="o">=</span><span class="n">flip_params_rigg</span><span class="p">)</span>
+    <span class="n">ov_fair</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ov_fair_1</span><span class="p">)</span>
+    <span class="n">ov_rigg</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ov_rigg_1</span><span class="p">)</span>
     
     <span class="c1">#&gt; Find distribution function</span>
     <span class="n">x_H0_fv</span> <span class="o">=</span> <span class="n">px_H0</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;k&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n_flips</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="n">n_flips</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="mf">.5</span><span class="p">})</span>  <span class="c1"># H0: fair coin</span>
@@ -636,7 +691,8 @@ document.write(`
     <span class="c1"># print(n_flips, ixl, ixr)</span>
 
     <span class="c1">#&gt; Evaluate test statistics on the sample</span>
-    <span class="n">ix_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ov</span><span class="p">)</span>
+    <span class="n">ixs_fair</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ov_fair</span><span class="p">)</span>
+    <span class="n">ixs_rigg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ov_rigg</span><span class="p">)</span>
 
     <span class="c1">#&gt; Check if H0 is not false. If commented, let the while run until n_flips = n_flips_max</span>
     <span class="c1"># if ( ixl[-1] &gt; ix_s or ixr[-1] &lt; ix_s ):</span>
@@ -646,7 +702,14 @@ document.write(`
     <span class="n">n_flipsv</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">n_flips</span> <span class="p">]</span>
     <span class="n">xlv</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">ixl</span><span class="o">/</span><span class="n">n_flips</span> <span class="p">]</span>
     <span class="n">xrv</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">ixr</span><span class="o">/</span><span class="n">n_flips</span> <span class="p">]</span>
-    <span class="n">xs_v</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">ix_s</span><span class="o">/</span><span class="n">n_flips</span> <span class="p">]</span>
+    <span class="n">xsv_fair</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">ixs_fair</span><span class="o">/</span><span class="n">n_flips</span> <span class="p">]</span>
+    <span class="n">xsv_rigg</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">ixs_rigg</span><span class="o">/</span><span class="n">n_flips</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/davide/.local/lib/python3.8/site-packages/scipy/stats/_discrete_distns.py:77: RuntimeWarning: divide by zero encountered in _binom_pdf
+  return _boost._binom_pdf(x, n, p)
 </pre></div>
 </div>
 </div>
@@ -657,7 +720,8 @@ document.write(`
 <span class="n">n_flipsv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">n_flipsv</span><span class="p">)</span>
 <span class="n">xlv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xlv</span><span class="p">)</span>
 <span class="n">xrv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xrv</span><span class="p">)</span>
-<span class="n">xs_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xs_v</span><span class="p">)</span>
+<span class="n">xsv_fair</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xsv_fair</span><span class="p">)</span>
+<span class="n">xsv_rigg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xsv_rigg</span><span class="p">)</span>
 
 <span class="c1">#&gt; </span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -668,11 +732,13 @@ document.write(`
     <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">n_flipsv</span><span class="p">,</span> 
                      <span class="n">xlv</span><span class="p">[:,</span><span class="n">ial</span><span class="p">],</span> 
                      <span class="n">xrv</span><span class="p">[:,</span><span class="n">ial</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">.1</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_flipsv</span><span class="p">,</span> <span class="n">xs_v</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_flipsv</span><span class="p">,</span> <span class="n">xsv_fair</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">tab10</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fair&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_flipsv</span><span class="p">,</span> <span class="n">xsv_rigg</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">tab10</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;rigged&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_flips</span><span class="p">)</span>
 <span class="c1">#plt.ylim(-5, 5)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Avg outcome, $\hat</span><span class="si">{X}</span><span class="s2">_s(n_s)$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$n_s$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
 <span class="c1">#&gt; For scaling results</span>
 <span class="n">bernoulli_avg</span><span class="p">,</span> <span class="n">bernoulli_var</span> <span class="o">=</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.25</span>
@@ -684,19 +750,22 @@ document.write(`
     <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">n_flipsv</span><span class="p">,</span> 
                      <span class="p">(</span><span class="n">xlv</span><span class="p">[:,</span><span class="n">ial</span><span class="p">]</span><span class="o">-</span><span class="n">bernoulli_avg</span><span class="p">)</span> <span class="o">*</span> <span class="n">n_flipsv</span><span class="o">**</span><span class="mf">.5</span><span class="o">/</span><span class="n">bernoulli_var</span><span class="o">**</span><span class="mf">.5</span><span class="p">,</span> 
                      <span class="p">(</span><span class="n">xrv</span><span class="p">[:,</span><span class="n">ial</span><span class="p">]</span><span class="o">-</span><span class="n">bernoulli_avg</span><span class="p">)</span> <span class="o">*</span> <span class="n">n_flipsv</span><span class="o">**</span><span class="mf">.5</span><span class="o">/</span><span class="n">bernoulli_var</span><span class="o">**</span><span class="mf">.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">.1</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_flipsv</span><span class="p">,</span> <span class="p">(</span><span class="n">xs_v</span><span class="o">-</span><span class="n">bernoulli_avg</span><span class="p">)</span> <span class="o">*</span> <span class="n">n_flipsv</span><span class="o">**</span><span class="mf">.5</span><span class="o">/</span><span class="n">bernoulli_var</span><span class="o">**</span><span class="mf">.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_flipsv</span><span class="p">,</span> <span class="p">(</span><span class="n">xsv_fair</span><span class="o">-</span><span class="n">bernoulli_avg</span><span class="p">)</span> <span class="o">*</span> <span class="n">n_flipsv</span><span class="o">**</span><span class="mf">.5</span><span class="o">/</span><span class="n">bernoulli_var</span><span class="o">**</span><span class="mf">.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">tab10</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fair&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_flipsv</span><span class="p">,</span> <span class="p">(</span><span class="n">xsv_rigg</span><span class="o">-</span><span class="n">bernoulli_avg</span><span class="p">)</span> <span class="o">*</span> <span class="n">n_flipsv</span><span class="o">**</span><span class="mf">.5</span><span class="o">/</span><span class="n">bernoulli_var</span><span class="o">**</span><span class="mf">.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">tab10</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;rigged&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_flips</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scaled avg outcome, $\dfrac{\hat</span><span class="si">{X}</span><span class="s2">_s - \overline</span><span class="si">{X}</span><span class="s2">}{\sigma/\sqrt</span><span class="si">{n}</span><span class="s2">}$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$n_s$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$n_s$&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fbdb02a5ac0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/b7f20ff943af655c4426b777fea55bc3e6025d9b1ba4628f9b09db6483874fd0.png" src="../../_images/b7f20ff943af655c4426b777fea55bc3e6025d9b1ba4628f9b09db6483874fd0.png" />
+<img alt="../../_images/08140d29fb521f7ab85edc72d6636c08b3dda36238cd234d4fea2af6eb9d3b25.png" src="../../_images/08140d29fb521f7ab85edc72d6636c08b3dda36238cd234d4fea2af6eb9d3b25.png" />
+</div>
 </div>
 </div>
 </div>
@@ -755,6 +824,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.2.1. Import librerie</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
