@@ -479,7 +479,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.1.1. Esempio: moneta truccata o no?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.1.1. Esempio: moneta truccata o no?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.1.1.1. Import librerie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campione-generato-dal-processo-casuale">18.2.1.1.2. Campione generato dal processo casuale</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -513,9 +517,12 @@ $<span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span>$</p></li>
 Per una variabile casuale con distribuzione di probabilità di Bernoulli <span class="math notranslate nohighlight">\(B(p)\)</span>, il numero <span class="math notranslate nohighlight">\(x\)</span> di risultati <span class="math notranslate nohighlight">\(X=H\)</span> in <span class="math notranslate nohighlight">\(n\)</span> ripetizioni indipendenti dell’evento è a sua volta una variabile casuale, con distribuzione di probabilità binomiale <span class="math notranslate nohighlight">\(\mathscr{B}(n,p)\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}p_n(x) = \left( \begin{matrix} n \\ x \end{matrix}  \right) \, p^x \, (1-p)^{n-x}\end{split}\]</div>
+<div class="section" id="import-librerie">
+<h3><span class="section-number">18.2.1.1.1. </span>Import librerie<a class="headerlink" href="#import-librerie" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import libraries</span>
+<span class="o">%</span><span class="k">reset</span> -f
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
 
@@ -524,6 +531,10 @@ Per una variabile casuale con distribuzione di probabilità di Bernoulli <span c
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="campione-generato-dal-processo-casuale">
+<h3><span class="section-number">18.2.1.1.2. </span>Campione generato dal processo casuale<a class="headerlink" href="#campione-generato-dal-processo-casuale" title="Permalink to this heading">#</a></h3>
+<p>Viene lanciata una moneta <span class="math notranslate nohighlight">\(n_{flips}\)</span> volte. Dati</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Random process of interest, unknown execpt for the sample.</span>
@@ -532,11 +543,25 @@ Per una variabile casuale con distribuzione di probabilità di Bernoulli <span c
 
 <span class="c1"># Coin flip as a Bernoulli probability with outcomes: a = [0, 1] with prob p = [p_head, p_tail]</span>
 <span class="n">flip_rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">choice</span>
-<span class="n">n_flips</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">n_flips</span> <span class="o">=</span> <span class="mi">30</span>
 <span class="n">flip_params</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p_head</span><span class="p">,</span> <span class="n">p_tail</span><span class="p">],</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">n_flips</span> <span class="p">}</span>
 
 <span class="c1">#&gt; Running coin flip experiment</span>
 <span class="n">ov</span> <span class="o">=</span> <span class="n">flip_rng</span><span class="p">(</span><span class="o">**</span><span class="n">flip_params</span><span class="p">)</span>
+
+<span class="n">coin_dict</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;head&#39;</span><span class="p">,</span> <span class="s1">&#39;tail&#39;</span><span class="p">]</span>
+<span class="c1"># print([ coin_dict[o] for o in ov])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&gt; Experiment&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n.samples: </span><span class="si">{</span><span class="n">n_flips</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;heads:tails </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ov</span><span class="p">)</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">n_flips</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ov</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; Experiment
+n.samples: 30
+heads:tails 17:13
 </pre></div>
 </div>
 </div>
@@ -597,8 +622,8 @@ Per una variabile casuale con distribuzione di probabilità di Bernoulli <span c
 <span class="n">ixl</span><span class="p">,</span> <span class="n">ixr</span> <span class="o">=</span> <span class="n">find_acceptance_region</span><span class="p">(</span><span class="n">x_H0_fv</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,)</span>
 
 <span class="c1">#&gt; Evaluate test statistics on the samples</span>
-<span class="n">ix_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ov</span><span class="p">)</span>
-<span class="n">x_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ov</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_flips</span>
+<span class="n">ixs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ov</span><span class="p">)</span>
+<span class="n">xs</span>  <span class="o">=</span> <span class="n">ixs</span> <span class="o">/</span> <span class="n">n_flips</span>
 </pre></div>
 </div>
 </div>
@@ -606,12 +631,11 @@ Per una variabile casuale con distribuzione di probabilità di Bernoulli <span c
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compare test statistics on the samples with the acceptance region</span>
-<span class="k">if</span> <span class="p">(</span> <span class="n">xl</span> <span class="o">&lt;=</span> <span class="n">x_s</span> <span class="o">&lt;=</span> <span class="n">xr</span> <span class="p">):</span>
+<span class="k">if</span> <span class="p">(</span> <span class="n">ixl</span> <span class="o">&lt;=</span> <span class="n">ixs</span> <span class="o">&lt;=</span> <span class="n">ixr</span> <span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;H0 accepted&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;H0 rejected&quot;</span><span class="p">)</span>
 
-    
 <span class="n">ix_acc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">ixl</span><span class="p">,</span> <span class="n">ixr</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">x_acc</span> <span class="o">=</span> <span class="n">xv</span><span class="p">[</span><span class="n">ix_acc</span><span class="p">]</span>
 
@@ -621,21 +645,26 @@ Per una variabile casuale con distribuzione di probabilità di Bernoulli <span c
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x_acc</span><span class="p">,</span> <span class="n">x_H0_fv</span><span class="p">[</span><span class="n">ix_acc</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="n">dx_bar</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>  <span class="n">x_s</span><span class="p">,</span> <span class="n">x_H0_fv</span><span class="p">[</span><span class="n">ix_s</span><span class="p">]</span>  <span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">dx_bar</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">xv</span><span class="p">)</span>
+<span class="c1"># print(xv)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H0 accepted
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Compare test statistics on the samples with the acceptance region</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">if</span> <span class="p">(</span> <span class="n">xl</span> <span class="o">&lt;=</span> <span class="n">x_s</span> <span class="o">&lt;=</span> <span class="n">xr</span> <span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;H0 accepted&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">else</span><span class="p">:</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>   <span class="n">xv</span><span class="p">,</span> <span class="n">x_H0_fv</span>        <span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">dx_bar</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x_acc</span><span class="p">,</span> <span class="n">x_H0_fv</span><span class="p">[</span><span class="n">ix_acc</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="n">dx_bar</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>  <span class="n">x_s</span><span class="p">,</span> <span class="n">x_H0_fv</span><span class="p">[</span><span class="n">ix_s</span><span class="p">]</span>  <span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">dx_bar</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># print(xv)</span>
 
-<span class="ne">NameError</span>: name &#39;xl&#39; is not defined
+<span class="ne">NameError</span>: name &#39;x_s&#39; is not defined
 </pre></div>
+</div>
+<img alt="../../_images/5bb0fc77c87dacfd35707d014426c32f2d73168ecd264e3c57baee114ef863c7.png" src="../../_images/5bb0fc77c87dacfd35707d014426c32f2d73168ecd264e3c57baee114ef863c7.png" />
 </div>
 </div>
 </div>
@@ -705,7 +734,11 @@ Per una variabile casuale con distribuzione di probabilità di Bernoulli <span c
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.1.1. Esempio: moneta truccata o no?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.1.1. Esempio: moneta truccata o no?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.1.1.1. Import librerie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campione-generato-dal-processo-casuale">18.2.1.1.2. Campione generato dal processo casuale</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
