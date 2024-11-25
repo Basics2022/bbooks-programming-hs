@@ -644,7 +644,7 @@ heads:tails 17:13
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>   <span class="n">xv</span><span class="p">,</span> <span class="n">x_H0_fv</span>        <span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">dx_bar</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x_acc</span><span class="p">,</span> <span class="n">x_H0_fv</span><span class="p">[</span><span class="n">ix_acc</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="n">dx_bar</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>  <span class="n">x_s</span><span class="p">,</span> <span class="n">x_H0_fv</span><span class="p">[</span><span class="n">ix_s</span><span class="p">]</span>  <span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">dx_bar</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>   <span class="n">xs</span><span class="p">,</span> <span class="n">x_H0_fv</span><span class="p">[</span><span class="n">ixs</span><span class="p">]</span>   <span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">dx_bar</span><span class="p">)</span>
 
 <span class="c1"># print(xv)</span>
 </pre></div>
@@ -654,18 +654,10 @@ heads:tails 17:13
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H0 accepted
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>   <span class="n">xv</span><span class="p">,</span> <span class="n">x_H0_fv</span>        <span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">dx_bar</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x_acc</span><span class="p">,</span> <span class="n">x_H0_fv</span><span class="p">[</span><span class="n">ix_acc</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="n">dx_bar</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>  <span class="n">x_s</span><span class="p">,</span> <span class="n">x_H0_fv</span><span class="p">[</span><span class="n">ix_s</span><span class="p">]</span>  <span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">dx_bar</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># print(xv)</span>
-
-<span class="ne">NameError</span>: name &#39;x_s&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 1 artists&gt;
 </pre></div>
 </div>
-<img alt="../../_images/5bb0fc77c87dacfd35707d014426c32f2d73168ecd264e3c57baee114ef863c7.png" src="../../_images/5bb0fc77c87dacfd35707d014426c32f2d73168ecd264e3c57baee114ef863c7.png" />
+<img alt="../../_images/011f32f8b4551cb3cc9cbbf6a5356b4616fc8f3233b4e14cca59515734a02b27.png" src="../../_images/011f32f8b4551cb3cc9cbbf6a5356b4616fc8f3233b4e14cca59515734a02b27.png" />
 </div>
 </div>
 </div>
