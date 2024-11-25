@@ -1,0 +1,49 @@
+Traceback (most recent call last):
+  File "/home/davide/.local/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/davide/.local/lib/python3.8/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/davide/.local/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/davide/.local/lib/python3.8/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/davide/.local/lib/python3.8/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/davide/.local/lib/python3.8/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Compare test statistics on the samples with the acceptance region
+if ( ixl <= ixs <= ixr ):
+    print("H0 accepted")
+else:
+    print("H0 rejected")
+
+ix_acc = np.arange(ixl, ixr+1)
+x_acc = xv[ix_acc]
+
+dx_bar = (xv[1] - xv[0])*.90
+plt.figure()
+plt.bar(   xv, x_H0_fv        , width=dx_bar)
+plt.bar(x_acc, x_H0_fv[ix_acc], width=dx_bar)
+plt.bar(  x_s, x_H0_fv[ix_s]  , width=dx_bar)
+
+# print(xv)
+------------------
+
+----- stdout -----
+H0 accepted
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[6], line 14[0m
+[1;32m     12[0m plt[38;5;241m.[39mbar(   xv, x_H0_fv        , width[38;5;241m=[39mdx_bar)
+[1;32m     13[0m plt[38;5;241m.[39mbar(x_acc, x_H0_fv[ix_acc], width[38;5;241m=[39mdx_bar)
+[0;32m---> 14[0m plt[38;5;241m.[39mbar(  [43mx_s[49m, x_H0_fv[ix_s]  , width[38;5;241m=[39mdx_bar)
+[1;32m     16[0m [38;5;66;03m# print(xv)[39;00m
+
+[0;31mNameError[0m: name 'x_s' is not defined
+

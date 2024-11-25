@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>21.1. ICA e PCA &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>21.2. ICA e PCA &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -69,8 +69,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="21.1.2. FastICA on 2D point clouds" href="ica-pca-example-2d.html" />
-    <link rel="prev" title="21. Unsupervised Learning" href="ul.html" />
+    <link rel="next" title="21.2.2. FastICA on 2D point clouds" href="ica-pca-example-2d.html" />
+    <link rel="prev" title="21.1. PCA" href="pca.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -206,9 +206,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/inference.html">18. Statistica inferenziale</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../statistics/estimate.html">18.1. Stima</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../statistics/hp-test.html">18.2. Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/test-fisher.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/t-test.html">18.2.2. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/anova.html">18.2.3. ANOVA - Analysis of variance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/test-fisher-coin-1.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/test-fisher-coin-2.html">18.2.2. Moneta truccata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/test-fisher-rabbit.html">18.2.3. Gambler rabbit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/t-test.html">18.2.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/anova.html">18.2.5. ANOVA - Analysis of variance</a></li>
 </ul>
 </li>
 </ul>
@@ -219,10 +221,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ai.html">19. Introduzione ai metodi in AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sl.html">20. Supervised Learning</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ul.html">21. Unsupervised Learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">21.1. ICA e PCA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="ica-pca-example-2d.html">21.1.2. FastICA on 2D point clouds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ica-pca-example-time.html">21.1.3. ICA e PCA: segnali in tempo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ica-pca-details.html">21.1.4. ICA e PCA - dettagli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pca.html">21.1. PCA</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">21.2. ICA e PCA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ica-pca-example-2d.html">21.2.2. FastICA on 2D point clouds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ica-pca-example-time.html">21.2.3. ICA e PCA: segnali in tempo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ica-pca-details.html">21.2.4. ICA e PCA - dettagli</a></li>
 </ul>
 </li>
 </ul>
@@ -475,7 +478,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#riferimenti">21.1.1. Riferimenti</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#riferimenti">21.2.1. Riferimenti</a></li>
 </ul>
             </nav>
         </div>
@@ -488,9 +491,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="ica-e-pca">
-<span id="ai-ul-ica-pca"></span><h1><span class="section-number">21.1. </span>ICA e PCA<a class="headerlink" href="#ica-e-pca" title="Permalink to this heading">#</a></h1>
+<span id="ai-ul-ica-pca"></span><h1><span class="section-number">21.2. </span>ICA e PCA<a class="headerlink" href="#ica-e-pca" title="Permalink to this heading">#</a></h1>
 <div class="section" id="riferimenti">
-<h2><span class="section-number">21.1.1. </span>Riferimenti<a class="headerlink" href="#riferimenti" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">21.2.1. </span>Riferimenti<a class="headerlink" href="#riferimenti" title="Permalink to this heading">#</a></h2>
 <p><strong>scikit</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://scikit-learn.org/dev/modules/generated/sklearn.decomposition.FastICA.html">https://scikit-learn.org/dev/modules/generated/sklearn.decomposition.FastICA.html</a></p></li>
@@ -536,12 +539,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ul.html"
+       href="pca.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">21. </span>Unsupervised Learning</p>
+        <p class="prev-next-title"><span class="section-number">21.1. </span>PCA</p>
       </div>
     </a>
     <a class="right-next"
@@ -549,7 +552,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">21.1.2. </span>FastICA on 2D point clouds</p>
+        <p class="prev-next-title"><span class="section-number">21.2.2. </span>FastICA on 2D point clouds</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -568,7 +571,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#riferimenti">21.1.1. Riferimenti</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#riferimenti">21.2.1. Riferimenti</a></li>
 </ul>
   </nav></div>
 

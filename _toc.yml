@@ -58,6 +58,7 @@ parts:
   - file: ch/ai/sl
   - file: ch/ai/ul
     sections:
+    - file: ch/ai/pca
     - file: ch/ai/ica-pca
       sections:
       - file: ch/ai/ica-pca-example-2d
