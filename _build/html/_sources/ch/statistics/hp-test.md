@@ -1,11 +1,17 @@
 (statistics-hs:inference:hp-test)=
 # Test di verifica delle ipotesi
 
-**Popper.** Filosofia della sicenza e principio di falsificabilità.
+**Popper.** Filosofia della scienza e principio di falsificabilità.
 
 **Fisher.** Viene formulata un'ipotesi falsificabile, chiamata **ipotesi nulla**, $\text{H}_{0}$, che viene ritenuta vera fino a prova contraria. Il test di verifica delle ipotesi ha l'obiettivo di verificare se i dati smentiscono l'ipotesi.
 
-Più in particolare, viene scelta come **statistica test** $x$ un parametro disponibile, rilavante per il fenomeno indagato e di cui è nota la distribuzione di probabilità sotto l'ipotesi nulla,
+Vengono presentati alcuni esempi:
+- moneta truccata
+- moneta truccata, revisited
+- coniglio ludopatico e bosone di Higgs
+- ...
+
+Più in particolare, viene scelta come **statistica test** $x$ un parametro disponibile, rilavante per il fenomeno indagato e di cui è nota la distribuzione di probabilità - o una sua ragionevole approssimazione/attesa - sotto l'ipotesi nulla,
 
 $$p(x|\text{H}_0) \ .$$
 

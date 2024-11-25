@@ -50,7 +50,115 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 97,
+   "execution_count": null,
+   "id": "e6d2ede9-d689-4f1f-b493-72261f8bf74e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# import libraries\n",
+    "import numpy as np\n",
+    "import scipy as sp\n",
+    "\n",
+    "import matplotlib.pyplot as plt\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 173,
+   "id": "cd3d393b-e80e-4634-81f6-0856f97cf6bd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#> Random process of interest, unknown execpt for the sample.\n",
+    "p_head = .5\n",
+    "p_tail = 1. - p_head\n",
+    "\n",
+    "# Coin flip as a Bernoulli probability with outcomes: a = [0, 1] with prob p = [\n",
+    "flip_rng = np.random.default_rng(42).choice\n",
+    "flip_params = { 'a': [0,1], 'p': [p_head, p_tail], 'size': 1 }\n",
+    "n_flips = 20\n",
+    "  \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 174,
+   "id": "08c0be2b-4112-4261-8bcf-9f855a24ea8d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# ! Approach for low-dimensional problems, with no memory or performance issues\n",
+    "\n",
+    "#> Null hypotesis, H0: the coin is fair\n",
+    "# The outcome of a single flip is a r.v. distributed like a Bernoulli variable with p_head = .5\n",
+    "# Every flip is statistically independent from the other\n",
+    "xv = np.arange(n_flips+1)\n",
+    "\n",
+    "#> Test statistics: average n.of heads in flip_n samples\n",
+    "# H0 hypotesis implies that the outcome of flip_n is a r.v. with Binomial pdf\n",
+    "x_H0_fv = sp.stats.binom.pmf(xv, n_flips, p_head)\n",
+    "\n",
+    "#> Test characteristics: symmetric\n",
+    "test_type = 'value'  # 'symmetric', 'right', 'left', 'value'\n",
+    "\n",
+    "#> Significance level, alpha = .05 (\"default\")\n",
+    "alpha = .05\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 175,
+   "id": "d914da77-65d5-4d89-8ff3-3e72c8d21117",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Acceptance region, x in [6, 14]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#> Acceptance and rejection regions, for discrete pdf\n",
+    "# Starting from the value of the test statistics x_max = max(x_H0_fv), expand \n",
+    "\n",
+    "def find_acceptance_region(p, alpha, test_type='value'):\n",
+    "    \"\"\" Find acceptance region for a discrete pdf, supposed to be unimodal \"\"\"\n",
+    "    x_max = np.argmax(p)\n",
+    "    nx = len(p)\n",
+    "    threshold = 1. - alpha\n",
+    "\n",
+    "    # Initialization\n",
+    "    p_acc, xl, xr = p[x_max], x_max, x_max\n",
+    "    \n",
+    "    # if ( test_type == 'value' ):\n",
+    "    while ( p_acc < threshold ):\n",
+    "        if ( p[xl-1] >= p[xr+1] ):\n",
+    "            xl -= 1;  p_acc += p[xl]\n",
+    "        else:\n",
+    "            xr += 1;  p_acc += p[xr]\n",
+    "\n",
+    "    # else:\n",
+    "    return xl, xr\n",
+    "\n",
+    "xl, xr = find_acceptance_region(x_H0_fv, alpha,)\n",
+    "print(f\"Acceptance region, x in [{xl}, {xr}]\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6de99c43-d497-4bf5-8b04-9a620e3c1b31",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#> Run experiment\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 160,
    "id": "e63510bc-3808-42f3-a63d-1e8461e4bd1c",
    "metadata": {
     "editable": true,
@@ -64,25 +172,45 @@
     "# import libraries\n",
     "import numpy as np\n",
     "import scipy as sp\n",
+    "from functools import partial\n",
+    "\n",
     "import matplotlib.pyplot as plt\n",
     "\n",
     "#> Define random number generator for coin toss\n",
-    "toss_rng = np.random.default_rng().choice                 # Bernoulli distribution\n",
-    "rng_params_fair  = {'a':[0,1], 'p':[.5,.5],'size':1}      # Params of a fair coin, 1 toss\n",
+    "toss_rng = np.random.default_rng(42).choice                   # Bernoulli distribution\n",
+    "toss_rng_params_default  = {                                  # Params of a fair coin, 1 toss\n",
+    "    'a':[0,1], 'p':[.5,.5], 'size':1 } \n",
+    "toss_params_default = {'o': ['head', 'tail'], 'v':[0, 1]}\n",
+    "# o: outcomes; a: indices associated with outcomes; p: probabilities; v: values\n",
     "\n",
     "#> Function for running coin toss experiments\n",
-    "def toss_experiment(rng=toss_rng, rng_params=rng_params_default, verbose=False):\n",
+    "def toss_experiment(rng=toss_rng, rng_params=toss_rng_params_default, \n",
+    "                    toss_params=toss_params_default, verbose=False):\n",
     "    \"\"\"  \"\"\"\n",
+    "    x = toss_rng(**rng_params)\n",
     "    if verbose:\n",
-    "        x = toss_rng(**rng_params)\n",
-    "        return np.sum(x), x\n",
+    "        return np.sum([ toss_params['v'][xx] for xx in x]), x\n",
     "    else:\n",
-    "        return np.sum(toss_rng(**rng_params)) \n"
+    "        return np.sum([ toss_params['v'][xx] for xx in x])\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "34d61c5f-eaaa-480f-9bae-1f446561861d",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": ""
+    },
+    "tags": []
+   },
+   "source": [
+    "#### Esempi di esperimento"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 96,
+   "execution_count": 161,
    "id": "2ec4ce78-44ad-400e-b8bd-3b6c2b9cc3cd",
    "metadata": {
     "editable": true,
@@ -99,16 +227,17 @@
       "\n",
       "Run an experiment with details: verbose=True\n",
       "n_tosses: 10\n",
-      "sum(output), output list: (3, array([1, 1, 0, 0, 0, 0, 0, 0, 1, 0]))\n",
+      "sum(output), output list: (6, array([1, 0, 1, 1, 0, 1, 1, 1, 0, 0]))\n",
       "\n",
       "Run an experiment with details: verbose=False\n",
       "n_tosses: 1000\n",
-      "sum(output): 482\n"
+      "sum(output): 494\n"
      ]
     }
    ],
    "source": [
     "#> Experiment, with details\n",
+    "rng_params = toss_rng_params_default.copy()\n",
     "rng_params['size'] = 10\n",
     "print(\"\\nRun an experiment with details: verbose=True\")\n",
     "print(f\"n_tosses: {rng_params['size']}\")\n",
@@ -138,8 +267,25 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 1,
-   "id": "75483a21-ae27-4a65-a082-d5d42be6686d",
+   "execution_count": 162,
+   "id": "a1226d24-c388-41a6-be8d-9e539df59316",
+   "metadata": {
+    "editable": true,
+    "slideshow": {
+     "slide_type": ""
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "kv = np.arange(20)\n",
+    "f = sp.stats.binom.pmf(kv, n_tosses, .5)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 164,
+   "id": "8a6ee927-8594-47bc-929a-a59aac1167e9",
    "metadata": {
     "editable": true,
     "slideshow": {
@@ -151,7 +297,22 @@
    },
    "outputs": [],
    "source": [
-    "h0_"
+    "#> Define random number generator for coin toss\n",
+    "class H0_hypothesis:\n",
+    "    def __init__(self, n_tosses=20):\n",
+    "        \"\"\"  \"\"\"\n",
+    "        self.n_tosses = n_tosses\n",
+    "        self.toss_rng = np.random.default_rng().choice\n",
+    "        self.toss_rng_params = toss_rng_params_fair\n",
+    "        self.teststat_pdf_fun = lambda xv: \\\n",
+    "            sp.stats.binom.pmf(xv, self.n_tosses, self.toss_rng_params['p'][0])\n",
+    "        \n",
+    "h0 = H0_hypothesis()\n",
+    "# print(h0.teststat_pdf_fun(np.arange(10)))\n",
+    "\n",
+    "h0.n_tosses = 10\n",
+    "# print(h0.teststat_pdf_fun(np.arange(10)))\n",
+    "\n"
    ]
   },
   {

@@ -46,7 +46,9 @@ parts:
     - file: ch/statistics/estimate
     - file: ch/statistics/hp-test
       sections:
-      - file: ch/statistics/test-fisher
+      - file: ch/statistics/test-fisher-coin-1
+      - file: ch/statistics/test-fisher-coin-2
+      - file: ch/statistics/test-fisher-rabbit
       - file: ch/statistics/t-test
       - file: ch/statistics/anova
 - caption: Introduzione ai metodi in statistica e  AI
