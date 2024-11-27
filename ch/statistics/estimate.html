@@ -489,11 +489,11 @@ Dimostrazione per la media<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Dato un campione di <span class="math notranslate nohighlight">\(n\)</span> variabili indipendenti <span class="math notranslate nohighlight">\(\{ X_n \}_n{1:N}\)</span> osservate in una popolazione con media <span class="math notranslate nohighlight">\(\mu = E[X]\)</span>, e varianza <span class="math notranslate nohighlight">\(\sigma^2 = E\left[ (X-\mu)^2 \right]\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
+\[\begin{aligned}
   E[\overline{X}] 
-  &amp; = E\left[ \frac{1}{N} \sum_{n=1}^N X_n \right] =  \\
-  &amp; = \frac{1}{N} E\left[ \sum_{n=1}^N X_n \right] = \frac{1}{N} \, N \, \mu = \mu \ .
-\end{aligned}\end{split}\]</div>
+  &amp; = E\left[ \frac{1}{N} \sum_{n=1}^N X_n \right]
+    = \frac{1}{N} \sum_{n=1}^N E\left[ X_n \right] = \frac{1}{N} \, N \, \mu = \mu \ .
+\end{aligned}\]</div>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">

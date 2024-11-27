@@ -21,8 +21,8 @@ Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in u
 
 $$\begin{aligned}
   E[\overline{X}] 
-  & = E\left[ \frac{1}{N} \sum_{n=1}^N X_n \right] =  \\
-  & = \frac{1}{N} E\left[ \sum_{n=1}^N X_n \right] = \frac{1}{N} \, N \, \mu = \mu \ .
+  & = E\left[ \frac{1}{N} \sum_{n=1}^N X_n \right]
+    = \frac{1}{N} \sum_{n=1}^N E\left[ X_n \right] = \frac{1}{N} \, N \, \mu = \mu \ .
 \end{aligned}$$
 
 ```
