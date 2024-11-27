@@ -464,7 +464,10 @@ document.write(`
 <ul>
 <li><p>Maximum Likelihood Method (MLE). Date <span class="math notranslate nohighlight">\(N\)</span> osservazioni di un campione <span class="math notranslate nohighlight">\(\mathbf{x} = \{ x_n \}_{n=1:N}\)</span>, e ipotizzata una funzione di probabilità della grandezza osservata relativa alla popolazione, <span class="math notranslate nohighlight">\(p(x| \symbf{\theta})\)</span> che dipende dai parametri <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span>, si vuole determinare il valore dei parametri che rende massima la probabilità condizionata di aver osservato il campione,</p>
 <div class="math notranslate nohighlight">
-\[f(\mathbf{x}|\symbf{\theta})\]</div>
+\[\max_{\symbf{\theta}} \, f(\mathbf{x}|\symbf{\theta}) \ .\]</div>
+<p>Se è possibile supporre che le osservazioni siano tra di loro statisticamente indipendenti si può scrivere,</p>
+<div class="math notranslate nohighlight">
+\[f(\mathbf{x}|\symbf{\theta}) = \prod_{n=1}^N p(x_n|\symbf{\theta}) \ .\]</div>
 </li>
 </ul>
 </li>
