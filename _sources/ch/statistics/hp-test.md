@@ -24,8 +24,12 @@ Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsific
     \end{aligned}$$
 
     All'aumentare del livello di significatività del test richiesto, si riduce la regione di falsificazione e quindi diventano più stringenti i requisiti sul test per scartare l'ipotesi di partenza.
-```{dropdown}
+```
 
+Alcuni usi frequenti dei test di verifica delle ipotesi riguardano:
+- le proprietà di campioni singoli o coppie di campioni
+- la correlazione tra campioni diversi
+- l'*indipendenza* dei campioni, intesa come verifica se i campioni disponibili provengono dalla stessa popolazione o da popolazioni con distribuzioni con proprietà in comune
 
 
 
