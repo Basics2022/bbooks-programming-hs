@@ -33,9 +33,20 @@ Usando questo approccio, è possibile distinguere diversi test a seconda dei dat
 - la correlazione tra campioni diversi
 - l'*indipendenza* dei campioni, intesa come verifica se i campioni disponibili provengono dalla stessa popolazione o da popolazioni con distribuzioni con proprietà in comune
 
-**Algoritmi.**
-- $t$-test
-- ...
+**Algoritmi - esempi.**
+- proprietà di campioni singoli o coppie di campioni
+  - $\chi^2$-test
+  - $t$-test
+  - wilcoxon
+- correlazione tra campioni diversi
+  - regressione lineare
+  - correlazione di Pearson
+  - correlazione di Spearman
+- indipendenza di campioni
+  - $t$-test per camppioni indipendenti e Welch $t$-test
+  - ANOVA
+  - Tukey test
+  - Kruskal-Wallis H-test
 
 
 <!--
