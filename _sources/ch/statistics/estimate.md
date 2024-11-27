@@ -49,9 +49,7 @@ $$\begin{aligned}
   & = E\left[ \sum_{n=1}^N \left( X_n - \frac{1}{N} \sum_{m=1}^N X_m \right)^2 \right] = \\
   & = E\left[ \sum_{n=1}^N X_n^2 + \sum_{m=1}^N \left( - \frac{2}{N} X_n X_m 
  - \frac{2}{N^2} \sum_{p \ne m} X_m X_p + \frac{X_m^2}{N^2} \right) \right] = \\
-  & = \sum_{n=1}^N E[X_n^2] + \sum_{n,m=1}^N \left( -\frac{2}{N} X_n \X_m + \frac{X_m^2}{N^2} \right)
-  & = N \, E[X^2] - 2 \, E[(X-\mu)^2] + E[(X-\mu)^2] = \\
-  & = (N-1) E[(X-\mu)^2]
+  & = \sum_{n=1}^N E[X_n^2] + \sum_{n,m=1}^N \left( -\frac{2}{N} X_n X_m + \frac{X_m^2}{N^2} \right) - \frac{2}{N^2} \sum_{n,m=1}^N \sum_{p\ne m} E [ X_m X_p ] = \\
 \end{aligned}$$
 
 <!--
