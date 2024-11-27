@@ -37,6 +37,7 @@ $$\begin{aligned}
   (N-1) E[S^2] 
   & = E\left[ \sum_{n=1}^N ( X_n - \overline{X} )^2 \right] = \\
   & = E\left[ \sum_{n=1}^N \left( X_n - \frac{1}{N} \sum_{m=1}^N X_m \right)^2 \right] = \\
+  & = \sum_{m,n=1}^N E\left[ X^2_n - \frac{2}{N} X_n X_m + \frac{X_m^2}{N^2}  \right] = \\
 \end{aligned}$$
 
 e quindi il bias di questo stimatore è nullo, $B(\hat{\sigma^2}) = E[\hat{\sigma^2}] - \sigma^2 = 0$.
