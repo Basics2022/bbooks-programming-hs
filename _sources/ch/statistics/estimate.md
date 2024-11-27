@@ -35,10 +35,11 @@ Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in u
 
 $$\begin{aligned}
   (N-1) E[S^2] 
-  & = E\left[ \sum_{n=1}^N ( X_n - \overline{X} )^2 \right]
+  & = E\left[ \sum_{n=1}^N ( X_n - \overline{X} )^2 \right] = \\
+  & = E\left[ \sum_{n=1}^N \left( X_n - \frac{1}{N} \sum_{m=1}^N X_m \right)^2 \right] = \\
 \end{aligned}$$
 
-e quindi il bias di questo stimatore è nullo, $B(\hat{\sigma^2}) = E[\hat{sigma^2}] - \sigma^2 = 0$.
+e quindi il bias di questo stimatore è nullo, $B(\hat{\sigma^2}) = E[\hat{\sigma^2}] - \sigma^2 = 0$.
 
 ```
 

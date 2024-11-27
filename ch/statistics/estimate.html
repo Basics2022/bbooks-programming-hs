@@ -505,11 +505,12 @@ Dimostrazione per la varianza<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Dato un campione di <span class="math notranslate nohighlight">\(n\)</span> variabili indipendenti <span class="math notranslate nohighlight">\(\{ X_n \}_n{1:N}\)</span> osservate in una popolazione con media <span class="math notranslate nohighlight">\(\mu = E[X]\)</span>, e varianza <span class="math notranslate nohighlight">\(\sigma^2 = E\left[ (X-\mu)^2 \right]\)</span>, allora la varianza campionaria corretta <span class="math notranslate nohighlight">\(S^2\)</span> è uno stimatore senza bias <span class="math notranslate nohighlight">\(\hat{\sigma^2}\)</span> della varianza <span class="math notranslate nohighlight">\(\sigma^2 = E[(X-\mu)^2]\)</span> della popolazione. Il valore atteso della varianza campionaria corretta convide con la varianza della popolazione,</p>
 <div class="math notranslate nohighlight">
-\[\begin{aligned}
+\[\begin{split}\begin{aligned}
   (N-1) E[S^2] 
-  &amp; = E\left[ \sum_{n=1}^N ( X_n - \overline{X} )^2 \right]
-\end{aligned}\]</div>
-<p class="sd-card-text">e quindi il bias di questo stimatore è nullo, <span class="math notranslate nohighlight">\(B(\hat{\sigma^2}) = E[\hat{sigma^2}] - \sigma^2 = 0\)</span>.</p>
+  &amp; = E\left[ \sum_{n=1}^N ( X_n - \overline{X} )^2 \right] = \\
+  &amp; = E\left[ \sum_{n=1}^N \left( X_n - \frac{1}{N} \sum_{m=1}^N X_m \right)^2 \right] = \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">e quindi il bias di questo stimatore è nullo, <span class="math notranslate nohighlight">\(B(\hat{\sigma^2}) = E[\hat{\sigma^2}] - \sigma^2 = 0\)</span>.</p>
 </div>
 </details></div>
 </div>
