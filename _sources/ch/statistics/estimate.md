@@ -2,25 +2,25 @@
 # Stima
 
 ## Stimatori 
-Uno stimatore $\hat{\theta}(\mathbf{x})$ è una statistica, funzione dei dati del campione osservato $\mathbf{x} = \{ x_n \}_{n=1:N}$, che è usata per dedurre il valore di un parametro della distribuzione di probabilità, $p(x|\theta)$ della popolazione.
+Uno stimatore $\hat{\theta}(\mathbf{x})$ è una statistica, funzione dei dati del campione osservato $\mathbf{x} = \{ x_n \}_{n=1:N}$, che viene usata per dedurre il valore di un parametro della distribuzione di probabilità della popolazione, $p(x|\theta)$, funzione del parametro.
 
 **Bias**. Il bias di uno stimatore è la differenza tra il valore atteso dello stimatore $E[ \hat{\theta} ]$ e il valore del parametro $\theta$,
 
 $$B(\hat{\theta}) := E[ \hat{\theta} ] - \theta \ .$$
 
 ### Media e varianza campionaria senza bias
-Dato un campione $\mathbf{x} = \{ x_n \}_{n=1:N}$, la media campionaria $\bar{X}$ e la varianza campionaria corretta $S^2$,
+Dato un campione $\mathbf{X} = \{ X_n \}_{n=1:N}$ osservato da una popolazione, la media campionaria $\bar{X}$ e la varianza campionaria corretta $S^2$,
 
-$$\overline{X} := \frac{1}{N} \sum_{n = 1}^{N} X_n \qquad , \qquad S^2 := \frac{1}{n-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ ,$$
+$$\bar{X} := \frac{1}{N} \sum_{n = 1}^{N} X_n \qquad , \qquad S^2 := \frac{1}{n-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ ,$$
 
 sono stimatori senza bias della media, $\hat{\mu}$, e della varianza della popolazione, $\hat{\sigma^2}$.
 
 ```{dropdown} Dimostrazione per la media
 
-Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in una popolazione con media $\mu = E[X]$, e varianza $\sigma^2 = E\left[ (X-\mu)^2 \right]$, allora la media campionaria $\overline{X}$ è uno stimatore senza bias $\hat{\mu}$ della media $\mu = E[X]$ della popolazione. Il valore atteso della media campionaria coincide con la media della popolazione,
+Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in una popolazione con media $\mu = E[X]$, e varianza $\sigma^2 = E\left[ (X-\mu)^2 \right]$, allora la media campionaria $\bar{X}$ è uno stimatore senza bias $\hat{\mu}$ della media $\mu = E[X]$ della popolazione. Il valore atteso della media campionaria coincide con la media della popolazione,
 
 $$\begin{aligned}
-  E[\overline{X}] 
+  E[\bar{X}] 
   & = E\left[ \frac{1}{N} \sum_{n=1}^N X_n \right]
     = \frac{1}{N} \sum_{n=1}^N E\left[ X_n \right] = \frac{1}{N} \, N \, \mu = \mu \ .
 \end{aligned}$$
@@ -44,7 +44,7 @@ Il valore atteso della varianza campionaria corretta convide con la varianza del
 
 $$\begin{aligned}
   (N-1) E[S^2] 
-  & = E\left[ \sum_{n=1}^N ( X_n - \overline{X} )^2 \right] = \\
+  & = E\left[ \sum_{n=1}^N ( X_n - \bar{X} )^2 \right] = \\
   & = E\left[ \sum_{n=1}^N \left( X_n - \frac{1}{N} \sum_{m=1}^N X_m \right)^2 \right] = \\
   & = E\left[ \sum_{n=1}^N X_n^2 + \sum_{m=1}^N \left( - \frac{2}{N} X_n X_m + \frac{2}{N^2} \sum_{p \ne m} X_m X_p + \frac{X_m^2}{N^2} \right) \right] = \\
   & = \sum_{n=1}^N E[X_n^2] + \sum_{n,m=1}^N \left( -\frac{2}{N} E[X_n X_m] + \frac{1}{N^2}E[X_m^2] \right) - \frac{2}{N^2} \sum_{n,m=1}^N \sum_{p > m} E [ X_m X_p ] = \\
@@ -59,8 +59,8 @@ e quindi, dividendo per il fattore $N-1$ entrambi i termini, segue la dimostrazi
 <!--
 $$\begin{aligned}
   (N-1) E[S^2] 
-  & = E\left[ \sum_{n=1}^N ( X_n - \overline{X} )^2 \right] = \\
-  & = E\left[ \sum_{n=1}^N ( X_n - \mu - \overline{X} + \mu )^2 \right] = \\
+  & = E\left[ \sum_{n=1}^N ( X_n - \bar{X} )^2 \right] = \\
+  & = E\left[ \sum_{n=1}^N ( X_n - \mu - \bar{X} + \mu )^2 \right] = \\
   & = E\left[ \sum_{n=1}^N \left( ( X_n- \mu ) - \frac{1}{N} \sum_{m=1}^N ( X_m - \mu) \right)^2 \right] = \\
   & = \sum_{n=1}^N E\left[ (X_n - \mu)^2 - \frac{2}{N} (X_n-\mu)( X_m -\mu) \right. \\
   & \qquad \left. - \frac{2}{N^2} \sum_{m=1:N, p \ne m} (X_m - \mu)(X_p - \mu) + \sum_{m=1}^N \frac{(X_m^2-\mu)}{N^2}  \right] = \\

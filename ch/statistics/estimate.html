@@ -470,15 +470,15 @@ document.write(`
 <span id="statistics-hs-inference-estimate"></span><h1><span class="section-number">18.1. </span>Stima<a class="headerlink" href="#stima" title="Permalink to this heading">#</a></h1>
 <div class="section" id="stimatori">
 <h2><span class="section-number">18.1.1. </span>Stimatori<a class="headerlink" href="#stimatori" title="Permalink to this heading">#</a></h2>
-<p>Uno stimatore <span class="math notranslate nohighlight">\(\hat{\theta}(\mathbf{x})\)</span> è una statistica, funzione dei dati del campione osservato <span class="math notranslate nohighlight">\(\mathbf{x} = \{ x_n \}_{n=1:N}\)</span>, che è usata per dedurre il valore di un parametro della distribuzione di probabilità, <span class="math notranslate nohighlight">\(p(x|\theta)\)</span> della popolazione.</p>
+<p>Uno stimatore <span class="math notranslate nohighlight">\(\hat{\theta}(\mathbf{x})\)</span> è una statistica, funzione dei dati del campione osservato <span class="math notranslate nohighlight">\(\mathbf{x} = \{ x_n \}_{n=1:N}\)</span>, che viene usata per dedurre il valore di un parametro della distribuzione di probabilità della popolazione, <span class="math notranslate nohighlight">\(p(x|\theta)\)</span>, funzione del parametro.</p>
 <p><strong>Bias</strong>. Il bias di uno stimatore è la differenza tra il valore atteso dello stimatore <span class="math notranslate nohighlight">\(E[ \hat{\theta} ]\)</span> e il valore del parametro <span class="math notranslate nohighlight">\(\theta\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[B(\hat{\theta}) := E[ \hat{\theta} ] - \theta \ .\]</div>
 <div class="section" id="media-e-varianza-campionaria-senza-bias">
 <h3><span class="section-number">18.1.1.1. </span>Media e varianza campionaria senza bias<a class="headerlink" href="#media-e-varianza-campionaria-senza-bias" title="Permalink to this heading">#</a></h3>
-<p>Dato un campione <span class="math notranslate nohighlight">\(\mathbf{x} = \{ x_n \}_{n=1:N}\)</span>, la media campionaria <span class="math notranslate nohighlight">\(\bar{X}\)</span> e la varianza campionaria corretta <span class="math notranslate nohighlight">\(S^2\)</span>,</p>
+<p>Dato un campione <span class="math notranslate nohighlight">\(\mathbf{X} = \{ X_n \}_{n=1:N}\)</span> osservato da una popolazione, la media campionaria <span class="math notranslate nohighlight">\(\bar{X}\)</span> e la varianza campionaria corretta <span class="math notranslate nohighlight">\(S^2\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\overline{X} := \frac{1}{N} \sum_{n = 1}^{N} X_n \qquad , \qquad S^2 := \frac{1}{n-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ ,\]</div>
+\[\bar{X} := \frac{1}{N} \sum_{n = 1}^{N} X_n \qquad , \qquad S^2 := \frac{1}{n-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ ,\]</div>
 <p>sono stimatori senza bias della media, <span class="math notranslate nohighlight">\(\hat{\mu}\)</span>, e della varianza della popolazione, <span class="math notranslate nohighlight">\(\hat{\sigma^2}\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -487,10 +487,10 @@ Dimostrazione per la media<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Dato un campione di <span class="math notranslate nohighlight">\(n\)</span> variabili indipendenti <span class="math notranslate nohighlight">\(\{ X_n \}_n{1:N}\)</span> osservate in una popolazione con media <span class="math notranslate nohighlight">\(\mu = E[X]\)</span>, e varianza <span class="math notranslate nohighlight">\(\sigma^2 = E\left[ (X-\mu)^2 \right]\)</span>, allora la media campionaria <span class="math notranslate nohighlight">\(\overline{X}\)</span> è uno stimatore senza bias <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> della media <span class="math notranslate nohighlight">\(\mu = E[X]\)</span> della popolazione. Il valore atteso della media campionaria coincide con la media della popolazione,</p>
+<p class="sd-card-text">Dato un campione di <span class="math notranslate nohighlight">\(n\)</span> variabili indipendenti <span class="math notranslate nohighlight">\(\{ X_n \}_n{1:N}\)</span> osservate in una popolazione con media <span class="math notranslate nohighlight">\(\mu = E[X]\)</span>, e varianza <span class="math notranslate nohighlight">\(\sigma^2 = E\left[ (X-\mu)^2 \right]\)</span>, allora la media campionaria <span class="math notranslate nohighlight">\(\bar{X}\)</span> è uno stimatore senza bias <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> della media <span class="math notranslate nohighlight">\(\mu = E[X]\)</span> della popolazione. Il valore atteso della media campionaria coincide con la media della popolazione,</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-  E[\overline{X}] 
+  E[\bar{X}] 
   &amp; = E\left[ \frac{1}{N} \sum_{n=1}^N X_n \right]
     = \frac{1}{N} \sum_{n=1}^N E\left[ X_n \right] = \frac{1}{N} \, N \, \mu = \mu \ .
 \end{aligned}\]</div>
@@ -513,7 +513,7 @@ Dimostrazione per la varianza<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   (N-1) E[S^2] 
-  &amp; = E\left[ \sum_{n=1}^N ( X_n - \overline{X} )^2 \right] = \\
+  &amp; = E\left[ \sum_{n=1}^N ( X_n - \bar{X} )^2 \right] = \\
   &amp; = E\left[ \sum_{n=1}^N \left( X_n - \frac{1}{N} \sum_{m=1}^N X_m \right)^2 \right] = \\
   &amp; = E\left[ \sum_{n=1}^N X_n^2 + \sum_{m=1}^N \left( - \frac{2}{N} X_n X_m + \frac{2}{N^2} \sum_{p \ne m} X_m X_p + \frac{X_m^2}{N^2} \right) \right] = \\
   &amp; = \sum_{n=1}^N E[X_n^2] + \sum_{n,m=1}^N \left( -\frac{2}{N} E[X_n X_m] + \frac{1}{N^2}E[X_m^2] \right) - \frac{2}{N^2} \sum_{n,m=1}^N \sum_{p &gt; m} E [ X_m X_p ] = \\
@@ -526,8 +526,8 @@ Dimostrazione per la varianza<div class="sd-summary-down docutils">
 <!--
 $$\begin{aligned}
   (N-1) E[S^2] 
-  & = E\left[ \sum_{n=1}^N ( X_n - \overline{X} )^2 \right] = \\
-  & = E\left[ \sum_{n=1}^N ( X_n - \mu - \overline{X} + \mu )^2 \right] = \\
+  & = E\left[ \sum_{n=1}^N ( X_n - \bar{X} )^2 \right] = \\
+  & = E\left[ \sum_{n=1}^N ( X_n - \mu - \bar{X} + \mu )^2 \right] = \\
   & = E\left[ \sum_{n=1}^N \left( ( X_n- \mu ) - \frac{1}{N} \sum_{m=1}^N ( X_m - \mu) \right)^2 \right] = \\
   & = \sum_{n=1}^N E\left[ (X_n - \mu)^2 - \frac{2}{N} (X_n-\mu)( X_m -\mu) \right. \\
   & \qquad \left. - \frac{2}{N^2} \sum_{m=1:N, p \ne m} (X_m - \mu)(X_p - \mu) + \sum_{m=1}^N \frac{(X_m^2-\mu)}{N^2}  \right] = \\
