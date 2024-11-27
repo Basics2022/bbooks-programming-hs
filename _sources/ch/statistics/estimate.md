@@ -31,9 +31,17 @@ e quindi il bias di questo stimatore è nullo, $B(\hat{\mu}) = E[\hat{\mu}] - \m
 ```{dropdown} Dimostrazione per la varianza
 :open:
 
-Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in una popolazione con media $\mu = E[X]$, e varianza $\sigma^2 = E\left[ (X-\mu)^2 \right]$, allora la varianza campionaria corretta $S^2$ è uno stimatore senza bias $\hat{\sigma^2}$ della varianza $\sigma^2 = E[(X-\mu)^2]$ della popolazione. Il valore atteso della varianza campionaria corretta convide con la varianza della popolazione,
+Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in una popolazione con media $\mu = E[X]$, e varianza $\sigma^2 = E\left[ (X-\mu)^2 \right]$, allora la varianza campionaria corretta $S^2$ è uno stimatore senza bias $\hat{\sigma^2}$ della varianza $\sigma^2 = E[(X-\mu)^2]$ della popolazione. Per dimostrare questa affermazione, si usa la proprietà della covarianza
 
-$$\sigma_{ij}^2 = E[(X_i-\mu_i)(X_j-\mu_j)] = E[X_i X_j] - \mu_i E[X_j] - \mu_j E[X_i] + \mu_i \mu_j = E[X_i X_j] - \mu_i \mu_j $$
+$$E[(X_i-\mu_i)(X_j-\mu_j)] = E[X_i X_j] - \mu_i E[X_j] - \mu_j E[X_i] + \mu_i \mu_j = E[X_i X_j] - \mu_i \mu_j \ ,$$
+
+che, nel caso di variabili indipendenti non correlate, si riduce a
+
+$$\sigma \delta_{ij} = E[X_i X_j] - \mu_i \mu_j$$
+
+
+Il valore atteso della varianza campionaria corretta convide con la varianza della popolazione,
+
 
 $$\begin{aligned}
   (N-1) E[S^2] 
