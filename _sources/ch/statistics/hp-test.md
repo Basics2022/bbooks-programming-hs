@@ -5,6 +5,7 @@
 
 **Fisher.** Viene formulata un'ipotesi falsificabile, chiamata **ipotesi nulla**, $\text{H}_{0}$, che viene ritenuta vera fino a prova contraria. Il test di verifica delle ipotesi ha l'obiettivo di verificare se i dati smentiscono l'ipotesi.
 
+
 Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsificabilità di Popper, e può essere riassunto nei seguenti passaggi:
 1. formulazione di un’ipotesi falsificabile, definita **ipotesi nulla**, $\text{H}_0$, da verificare e che viene ritenuta vera fino a prova contraria
 2. scelta di una **statistica test**, $x$, o variabile esplicativa, un parametro disponibile rilevante per il fenomeno indagato e di cui è nota - o approssimabile, sotto ipotesi ragionevoli sul fenomeno - la distribuzione di probabilità condizionata alla validità dell'ipotesi nulla,
@@ -17,12 +18,14 @@ Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsific
 5. raccolta dati e calcolo statistica test sul campione, $x_s$
 6. confronto del valore calcolato della statistica test con gli intervalli di rifiuto e accettazione della variabile soggetta all’ipotesi nulla, e verdetto sull’ipotesi,
 
-  $$\begin{aligned}
-    x_s \in A_r(\alpha) \qquad & \rightarrow \qquad \text{ il test falsifica $\text{H}_0$, che deve essere scartata} \\
-    x_s \in A_a(\alpha) \qquad & \rightarrow \qquad \text{ il test non falsifica $\text{H}_0$} \\
-  \end{aligned}$$
+    $$\begin{aligned}
+      x_s \in A_r(\alpha) \qquad & \rightarrow \qquad \text{ il test falsifica $\text{H}_0$, che deve essere scartata} \\
+      x_s \in A_a(\alpha) \qquad & \rightarrow \qquad \text{ il test non falsifica $\text{H}_0$} \\
+    \end{aligned}$$
 
-  All'aumentare del livello di significatività del test richiesto, si riduce la regione di falsificazione e quindi diventano più stringenti i requisiti sul test per scartare l'ipotesi di partenza.
+    All'aumentare del livello di significatività del test richiesto, si riduce la regione di falsificazione e quindi diventano più stringenti i requisiti sul test per scartare l'ipotesi di partenza.
+
+
 
 
 <!--
