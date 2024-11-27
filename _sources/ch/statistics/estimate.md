@@ -36,6 +36,17 @@ Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in u
 $$\begin{aligned}
   (N-1) E[S^2] 
   & = E\left[ \sum_{n=1}^N ( X_n - \overline{X} )^2 \right] = \\
+  & = E\left[ \sum_{n=1}^N \left( X_n - \frac{1}{N} \sum_{m=1}^N X_m \right)^2 \right] = \\
+  & = \sum_{n=1}^N E\left[ (X_n - \mu)^2 - \frac{2}{N} (X_n-\mu)( X_m -\mu) \right. \\
+  & \qquad \left. - \frac{2}{N^2} \sum_{m=1:N, p \ne m} (X_m - \mu)(X_p - \mu) + \sum_{m=1}^N \frac{(X_m^2-\mu)}{N^2}  \right] = \\
+  & = N^2 \, E[(X-\mu)^2] - 2 \, E[(X-\mu)^2] + E[(X-\mu)^2] = \\
+  & = (N-1) E[(X-\mu)^2]
+\end{aligned}$$
+
+<!--
+$$\begin{aligned}
+  (N-1) E[S^2] 
+  & = E\left[ \sum_{n=1}^N ( X_n - \overline{X} )^2 \right] = \\
   & = E\left[ \sum_{n=1}^N ( X_n - \mu - \overline{X} + \mu )^2 \right] = \\
   & = E\left[ \sum_{n=1}^N \left( ( X_n- \mu ) - \frac{1}{N} \sum_{m=1}^N ( X_m - \mu) \right)^2 \right] = \\
   & = \sum_{n=1}^N E\left[ (X_n - \mu)^2 - \frac{2}{N} (X_n-\mu)( X_m -\mu) \right. \\
@@ -43,6 +54,7 @@ $$\begin{aligned}
   & = N^2 \, E[(X-\mu)^2] - 2 \, E[(X-\mu)^2] + E[(X-\mu)^2] = \\
   & = (N-1) E[(X-\mu)^2]
 \end{aligned}$$
+-->
 
 e quindi il bias di questo stimatore è nullo, $B(\hat{\sigma^2}) = E[\hat{\sigma^2}] - \sigma^2 = 0$.
 
