@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>18. Statistica inferenziale &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>&lt;no title&gt; &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -65,14 +65,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/statistics/inference';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/statistics/correlation_test';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="18.1. Stima" href="estimate.html" />
-    <link rel="prev" title="17.2. Processi casuali" href="random_processes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -191,7 +187,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../numerics/optimization.html">14. Ottimizzazione</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistica</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../statistics.html">15. Metodi per la statistica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="descriptive.html">16. Statistica descrittiva</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="probability.html">17. Introduzione alla probabilità</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -207,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="random_processes.html">17.2. Processi casuali</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">18. Statistica inferenziale</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inference.html">18. Statistica inferenziale</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="estimate.html">18.1. Stima</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hp-test.html">18.2. Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="test-fisher-coin-1.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
@@ -285,6 +281,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-programming-hs/blob/master/ch/statistics/correlation_test.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -310,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/statistics/inference.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/statistics/correlation_test.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -327,7 +354,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/statistics/inference.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/statistics/correlation_test.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/statistics/inference.md" target="_blank"
+      <li><a href="../../_sources/ch/statistics/correlation_test.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -367,7 +394,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -428,7 +455,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -439,11 +468,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Statistica inferenziale</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -453,47 +490,50 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="statistica-inferenziale">
-<span id="statistics-hs-inference"></span><h1><span class="section-number">18. </span>Statistica inferenziale<a class="headerlink" href="#statistica-inferenziale" title="Permalink to this heading">#</a></h1>
-<p>La statistica inferenziale si occupa di stabilire le caratteristiche di una popolazione dall’osservazione di un suo campione, usando gli strumenti del calcolo delle probabilità.</p>
-<!-- La statistica inferenziale usa gli strumenti del calcolo delle probabilità, per svolgere il compito inverso -->
-<p><strong>(almeno) Due approcci.</strong></p>
-<ul class="simple">
-<li><p>frequentista, classica</p></li>
-<li><p>bayesiana</p></li>
-</ul>
-<p><strong>Esempi di applicazioni.</strong></p>
-<ul class="simple">
-<li><p><strong>verifica ipotesi</strong></p>
-<ul>
-<li><p>…</p></li>
-<li><p>correlazione tra due variabili: Pearson (correlazione lineare, approssimazione lineare), Spearman (correlazione, tra due variabili con relazione monotona);</p></li>
-<li><p>Wilcoxon: campioni non indipendenti;</p></li>
-<li><p>Mann-Withney: campioni indipendenti;</p></li>
-</ul>
-</li>
-<li><p><strong>stima (puntuale)</strong>.</p>
-<ul>
-<li><p>MLE (minimi quadrati,…)</p></li>
-<li><p>Metodo dei momenti</p></li>
-</ul>
-</li>
-</ul>
-<p><strong>Approcci.</strong></p>
-<ul>
-<li><p>Maximum Likelihood Method (MLE). Date <span class="math notranslate nohighlight">\(N\)</span> osservazioni di un campione <span class="math notranslate nohighlight">\(\mathbf{x} = \{ x_n \}_{n=1:N}\)</span>, e ipotizzata una funzione di probabilità della grandezza osservata relativa alla popolazione, <span class="math notranslate nohighlight">\(p(x| \symbf{\theta})\)</span> che dipende dai parametri <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span>, si vuole determinare il valore dei parametri che rende massima la probabilità condizionata di aver osservato il campione,</p>
-<div class="math notranslate nohighlight">
-\[\max_{\symbf{\theta}} \, f(\mathbf{x}|\symbf{\theta}) \ .\]</div>
-<p>Se è possibile supporre che le osservazioni siano tra di loro statisticamente indipendenti si può scrivere,</p>
-<div class="math notranslate nohighlight">
-\[f(\mathbf{x}|\symbf{\theta}) = \prod_{n=1}^N p(x_n|\symbf{\theta}) \ .\]</div>
-</li>
-<li><p>Maximum a posteriori (MAP). I parametri <span class="math notranslate nohighlight">\(\theta\)</span> vengono trattati come variabili casuali con distribuzioni a priori <span class="math notranslate nohighlight">\(g(\theta)\)</span>, … <strong>todo</strong></p>
-<div class="math notranslate nohighlight">
-\[f_{\theta|X}(\theta|x) = \frac{f_{X|\theta}(x|\theta) f_{\theta}(\theta) }{f_X(x)} \ ,\]</div>
-</li>
-</ul>
-<div class="toctree-wrapper compound">
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">spearmanr</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Generate synthetic data</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Continuous variable (normally distributed)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Linear relationship with noise</span>
+
+<span class="c1"># Compute Pearson correlation and test hypothesis</span>
+<span class="n">pearson_corr</span><span class="p">,</span> <span class="n">pearson_p</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pearson Correlation: </span><span class="si">{</span><span class="n">pearson_corr</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, p-value: </span><span class="si">{</span><span class="n">pearson_p</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Rank the data for Spearman correlation</span>
+<span class="n">x_ranked</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
+<span class="n">y_ranked</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
+
+<span class="c1"># Compute Spearman correlation and test hypothesis</span>
+<span class="n">spearman_corr</span><span class="p">,</span> <span class="n">spearman_p</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Spearman Correlation: </span><span class="si">{</span><span class="n">spearman_corr</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, p-value: </span><span class="si">{</span><span class="n">spearman_p</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot Pearson correlation (scatter plot with regression line)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pearson Correlation</span><span class="se">\n</span><span class="s2">r = </span><span class="si">{</span><span class="n">pearson_corr</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, p = </span><span class="si">{</span><span class="n">pearson_p</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pearson Correlation: 0.81, p-value: 0.0000
+Spearman Correlation: 0.79, p-value: 0.0000
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Y&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/d8298f2cd91e36ae1ad3eabe6acb20befd3ca6946528ab849454212d59171592.png" src="../../_images/d8298f2cd91e36ae1ad3eabe6acb20befd3ca6946528ab849454212d59171592.png" />
 </div>
 </div>
 
@@ -527,30 +567,26 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="random_processes.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">17.2. </span>Processi casuali</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="estimate.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">18.1. </span>Stima</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
