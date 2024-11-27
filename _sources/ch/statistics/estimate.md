@@ -37,7 +37,7 @@ $$E[(X_i-\mu_i)(X_j-\mu_j)] = E[X_i X_j] - \mu_i E[X_j] - \mu_j E[X_i] + \mu_i \
 
 che, nel caso di variabili indipendenti non correlate, si riduce a
 
-$$ E[X_i X_j] = \sigma \delta_{ij} + \mu_i \mu_j$$
+$$ E[X_i X_j] = \sigma^2 \delta_{ij} + \mu_i \mu_j$$
 
 
 Il valore atteso della varianza campionaria corretta convide con la varianza della popolazione,
