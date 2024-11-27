@@ -3,7 +3,7 @@
 
 **Popper.** Filosofia della scienza e principio di falsificabilità.
 
-**Fisher.** Viene formulata un'ipotesi falsificabile, chiamata **ipotesi nulla**, $\text{H}_{0}$, che viene ritenuta vera fino a prova contraria. Il test di verifica delle ipotesi ha l'obiettivo di verificare se i dati smentiscono l'ipotesi.
+**Fisher.** Viene formulata un'ipotesi falsificabile, chiamata **ipotesi nulla**, $\text{H}_{0}$, che viene ritenuta vera fino a prova contraria. Il test di verifica delle ipotesi ha l'obiettivo di verificare se i dati disponibili, riassunti in una variabile test, possono smentire l'ipotesi con una probabilità desiderata.
 
 ```{dropdown} Test di verifica di Fisher
 Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsificabilità di Popper, e può essere riassunto nei seguenti passaggi:
@@ -26,11 +26,15 @@ Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsific
     All'aumentare del livello di significatività del test richiesto, si riduce la regione di falsificazione e quindi diventano più stringenti i requisiti sul test per scartare l'ipotesi di partenza.
 ```
 
+Usando questo approccio, è possibile distinguere diversi test a seconda dei dati disponibili (numero di campioni, dimensione dei campioni, distribuzione attesa delle osservazioni,...), della variabile test utilizzata, e dell'obiettivo del test. Una classificazione rigida dettagliata rischierebbe di risultare poco pratica e imperfetta.
+
 Alcuni usi frequenti dei test di verifica delle ipotesi riguardano:
 - le proprietà di campioni singoli o coppie di campioni
 - la correlazione tra campioni diversi
 - l'*indipendenza* dei campioni, intesa come verifica se i campioni disponibili provengono dalla stessa popolazione o da popolazioni con distribuzioni con proprietà in comune
 
+
+- **
 
 
 <!--
