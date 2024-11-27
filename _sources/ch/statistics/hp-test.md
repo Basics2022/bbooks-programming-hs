@@ -28,13 +28,14 @@ Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsific
 
 Usando questo approccio, è possibile distinguere diversi test a seconda dei dati disponibili (numero di campioni, dimensione dei campioni, distribuzione attesa delle osservazioni,...), della variabile test utilizzata, e dell'obiettivo del test. Una classificazione rigida dettagliata rischierebbe di risultare poco pratica e imperfetta.
 
-Alcuni usi frequenti dei test di verifica delle ipotesi riguardano:
+**Usi frequenti.**
 - le proprietà di campioni singoli o coppie di campioni
 - la correlazione tra campioni diversi
 - l'*indipendenza* dei campioni, intesa come verifica se i campioni disponibili provengono dalla stessa popolazione o da popolazioni con distribuzioni con proprietà in comune
 
-
-- **
+**Algoritmi.**
+- $t$-test
+- ...
 
 
 <!--
