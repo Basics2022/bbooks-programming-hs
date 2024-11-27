@@ -15,3 +15,7 @@ La statistica inferenziale si occupa di stabilire le caratteristiche di una popo
 
     $$f(\mathbf{x}|\symbf{\theta}) = \prod_{n=1}^N p(x_n|\symbf{\theta}) \ .$$
 
+  - Maximum a posteriori (MAP). I parametri $\theta$ vengono trattati come variabili casuali con distribuzioni a priori $g(\theta)$. Usando il teorema di Bayes,
+
+    $$f(\theta|x) = \frac{f(x|\theta) g(\theta) }{f(x)}$$
+
