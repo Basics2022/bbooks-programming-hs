@@ -9,11 +9,22 @@ La statistica inferenziale si occupa di stabilire le caratteristiche di una popo
 - bayesiana
 
 **Esempi di applicazioni.**
-- **verifica ipotesi**
+- **verifica ipotesi**. Classificazione seguendo la documentazione di $\texttt{scipy.stats}$
+  - test su campioni singoli o coppie di campioni: $t$-test, Wilcoxon
+  - correlazione: LS, Pearson $r$-test, Spearman $r$-test,
+  - indipendenza: verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskal, Tukey
+  - ri-campionamento e metodi MC: per valutare $p$-value e intervalli di confidenza test di validità di ipotesi
+  - ipotesi multiple
+
+<!--
   - ...
   - correlazione tra due variabili: Pearson (correlazione lineare, approssimazione lineare), Spearman (correlazione, tra due variabili con relazione monotona);
   - Wilcoxon: campioni non indipendenti;
-  - Mann-Withney: campioni indipendenti;
+  - Mann-Withney: campioni indipendenti; vengono dalla stessa popolazione?
+  - Kruskas-Wallis: campioni indipendenti; vengono dalla stessa popolazione?
+  - Tukey range method:
+-->
+
 - **stima (puntuale)**.
   - MLE (minimi quadrati,...)
   - Metodo dei momenti
