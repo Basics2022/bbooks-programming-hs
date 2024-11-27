@@ -471,16 +471,16 @@ document.write(`
 <div class="section" id="stimatori">
 <h2><span class="section-number">18.1.1. </span>Stimatori<a class="headerlink" href="#stimatori" title="Permalink to this heading">#</a></h2>
 <p>Uno stimatore <span class="math notranslate nohighlight">\(\hat{\theta}(\mathbf{x})\)</span> è una statistica, funzione dei dati del campione osservato, che è usata per dedurre il valore di un parametro della distribuzione di probabilità, <span class="math notranslate nohighlight">\(p(x|\theta)\)</span> della popolazione.</p>
-<p><strong>Bias</strong>. Il bias di uno stimatore è la differenza tra il valore atteso dello stimatore <span class="math notranslate nohighlight">\(E\left[ \hat{\theta} \right]\)</span> e il valore del parametro <span class="math notranslate nohighlight">\(\theta\)</span>,</p>
+<p><strong>Bias</strong>. Il bias di uno stimatore è la differenza tra il valore atteso dello stimatore <span class="math notranslate nohighlight">\(E[ \hat{\theta} ]\)</span> e il valore del parametro <span class="math notranslate nohighlight">\(\theta\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[B(\hat{\theta}) := E\left[ \hat{\theta} \right] - \theta \ .\]</div>
+\[B(\hat{\theta}) := E[ \hat{\theta} ] - \theta \ .\]</div>
 <div class="section" id="media-e-varianza-campionaria-senza-bias">
 <h3><span class="section-number">18.1.1.1. </span>Media e varianza campionaria senza bias<a class="headerlink" href="#media-e-varianza-campionaria-senza-bias" title="Permalink to this heading">#</a></h3>
 <p>Dato un campione <span class="math notranslate nohighlight">\(\mathbf{x} = \{ x_n \}_{n=1:N}\)</span>, la media campionaria <span class="math notranslate nohighlight">\(\bar{X}\)</span> e la varianza campionaria corretta <span class="math notranslate nohighlight">\(S^2\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\bar{X} := \frac{1}{N} \sum_{n = 1}^{N} X_n \qquad , \qquad S^2 := \frac{1}{n-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ ,\]</div>
 <p>sono stimatori senza bias della media e della varianza della popolazione.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 Dimostrazione per la media<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -493,7 +493,7 @@ Dimostrazione per la media<div class="sd-summary-down docutils">
   E[\bar{X}] &amp; = E\left[ \frac{1}{N} \sum_{n=1}^N X_n \right] \\
 \end{aligned}\end{split}\]</div>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 Dimostrazione per la varianza<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
