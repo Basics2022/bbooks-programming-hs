@@ -33,7 +33,7 @@ e quindi il bias di questo stimatore è nullo, $B(\hat{\mu}) = E[\hat{\mu}] - \m
 
 Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in una popolazione con media $\mu = E[X]$, e varianza $\sigma^2 = E\left[ (X-\mu)^2 \right]$, allora la varianza campionaria corretta $S^2$ è uno stimatore senza bias $\hat{\sigma^2}$ della varianza $\sigma^2 = E[(X-\mu)^2]$ della popolazione. Il valore atteso della varianza campionaria corretta convide con la varianza della popolazione,
 
-$$E[(X_i-\mu_i)(X_j-\mu_j)] = E[X_i X_j] - \mu_i E[X_j] - \mu_j E[X_i] + \mu_i \mu_j = E[X_i X_j] - \mu_i \mu_j $$
+$$\sigma_{ij}^2 = E[(X_i-\mu_i)(X_j-\mu_j)] = E[X_i X_j] - \mu_i E[X_j] - \mu_j E[X_i] + \mu_i \mu_j = E[X_i X_j] - \mu_i \mu_j $$
 
 $$\begin{aligned}
   (N-1) E[S^2] 
@@ -41,7 +41,7 @@ $$\begin{aligned}
   & = E\left[ \sum_{n=1}^N \left( X_n - \frac{1}{N} \sum_{m=1}^N X_m \right)^2 \right] = \\
   & = \sum_{n=1}^N E\left[ X_n^2 + \sum_{m=1}^N \left( - \frac{2}{N} X_n X_m 
  - \frac{2}{N^2} \sum_{p \ne m} X_m X_p + \sum_{m=1}^N \frac{X_m^2}{N^2} \right) \right] = \\
-  & = N^2 \, E[(X-\mu)^2] - 2 \, E[(X-\mu)^2] + E[(X-\mu)^2] = \\
+  & = N^2 \, E[X^2] - 2 \, E[(X-\mu)^2] + E[(X-\mu)^2] = \\
   & = (N-1) E[(X-\mu)^2]
 \end{aligned}$$
 
