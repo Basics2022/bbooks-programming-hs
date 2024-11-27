@@ -25,7 +25,7 @@ $$\begin{aligned}
     = \frac{1}{N} \sum_{n=1}^N E\left[ X_n \right] = \frac{1}{N} \, N \, \mu = \mu \ .
 \end{aligned}$$
 
-e quindi il bias di questo stimatore è nullo, $B(\hat{mu}) = E[\hat{mu}] - \mu = 0$.
+e quindi il bias di questo stimatore è nullo, $B(\hat{\mu}) = E[\hat{\mu}] - \mu = 0$.
 
 ```
 ```{dropdown} Dimostrazione per la varianza
@@ -38,6 +38,7 @@ $$\begin{aligned}
   & = E\left[ \sum_{n=1}^N ( X_n - \overline{X} )^2 \right] = \\
   & = E\left[ \sum_{n=1}^N \left( X_n - \frac{1}{N} \sum_{m=1}^N X_m \right)^2 \right] = \\
   & = \sum_{m,n=1}^N E\left[ X^2_n - \frac{2}{N} X_n X_m + \frac{X_m^2}{N^2}  \right] = \\
+  & = N^2 \, E[X^2] - 2 \, E[X^2] + E[X^2] = (N-1) E[X^]
 \end{aligned}$$
 
 e quindi il bias di questo stimatore è nullo, $B(\hat{\sigma^2}) = E[\hat{\sigma^2}] - \sigma^2 = 0$.
