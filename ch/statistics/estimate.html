@@ -479,7 +479,7 @@ document.write(`
 <p>Dato un campione <span class="math notranslate nohighlight">\(\mathbf{x} = \{ x_n \}_{n=1:N}\)</span>, la media campionaria <span class="math notranslate nohighlight">\(\bar{X}\)</span> e la varianza campionaria corretta <span class="math notranslate nohighlight">\(S^2\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\overline{X} := \frac{1}{N} \sum_{n = 1}^{N} X_n \qquad , \qquad S^2 := \frac{1}{n-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ ,\]</div>
-<p>sono stimatori senza bias della media, <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> e della varianza della popolazione, <span class="math notranslate nohighlight">\(\hat{\sigma^2}\)</span>.</p>
+<p>sono stimatori senza bias della media, <span class="math notranslate nohighlight">\(\hat{\mu}\)</span>, e della varianza della popolazione, <span class="math notranslate nohighlight">\(\hat{\sigma^2}\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 Dimostrazione per la media<div class="sd-summary-down docutils">
@@ -490,7 +490,9 @@ Dimostrazione per la media<div class="sd-summary-down docutils">
 <p class="sd-card-text">Dato un campione di <span class="math notranslate nohighlight">\(n\)</span> variabili indipendenti <span class="math notranslate nohighlight">\(\{ X_n \}_n{1:N}\)</span> osservate in una popolazione con media <span class="math notranslate nohighlight">\(\mu = E[X]\)</span>, e varianza <span class="math notranslate nohighlight">\(\sigma^2 = E\left[ (X-\mu)^2 \right]\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-  E[\overline{X}] &amp; = E\left[ \frac{1}{N} \sum_{n=1}^N X_n \right] \\
+  E[\overline{X}] 
+  &amp; = E\left[ \frac{1}{N} \sum_{n=1}^N X_n \right] =  \\
+  &amp; = \frac{1}{N} E\left[ \sum_{n=1}^N X_n \right] = \frac{1}{N} \, N \, \mu = \mu \ .
 \end{aligned}\end{split}\]</div>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
