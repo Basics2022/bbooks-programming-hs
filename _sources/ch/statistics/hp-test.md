@@ -5,11 +5,24 @@
 
 **Fisher.** Viene formulata un'ipotesi falsificabile, chiamata **ipotesi nulla**, $\text{H}_{0}$, che viene ritenuta vera fino a prova contraria. Il test di verifica delle ipotesi ha l'obiettivo di verificare se i dati smentiscono l'ipotesi.
 
-Vengono presentati alcuni esempi:
-- moneta truccata
-- moneta truccata, revisited
-- coniglio ludopatico e bosone di Higgs
-- ...
+Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsificabilità di Popper, e può essere riassunto nei seguenti passaggi:
+1. formulazione di un’ipotesi falsificabile, definita ipotesi nulla, $\text{H}_0$, da verificare e che viene ritenuta vera fino a prova contraria
+2. scelta di una statistica test, $x$, o variabile esplicativa, un parametro disponibile rilevante per il fenomeno indagato e di cui è nota - o approssimabile, sotto ipotesi ragionevoli sul fenomeno - la distribuzione di probabilità condizionata alla validità dell'ipotesi nulla,
+
+  $$p(x|\text{H}_0) \ .$$
+
+scelta del test statistico (es. una coda o due code,…), in base anche alle caratteristiche del fenomeno indagato
+
+scelta del livello di significatività,
+, del test; il valore del livello di significatività traduce «il livello di evidenza richiesto» per falsificare l’ipotesi e - insieme alle caratteristiche del fenomeno e del test - determina le regioni di rifiuto e di accettazione dell’ipotesi, gli intervalli di valori della statistica test
+
+che determinano se l’ipotesi è stata falsificata o meno;
+
+raccolta dati e calcolo statistica test sul campione
+
+confronto del valore calcolato della statistica test con gli intervalli di rifiuto e accettazione della variabile soggetta all’ipotesi nulla, e verdetto sull’ipotesi
+
+
 
 Più in particolare, viene scelta come **statistica test** $x$ un parametro disponibile, rilavante per il fenomeno indagato e di cui è nota la distribuzione di probabilità - o una sua ragionevole approssimazione/attesa - sotto l'ipotesi nulla,
 

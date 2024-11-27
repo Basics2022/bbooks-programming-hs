@@ -9,11 +9,11 @@ Uno stimatore $\hat{\theta}(\mathbf{x})$ è una statistica, funzione dei dati de
 $$B(\hat{\theta}) := E[ \hat{\theta} ] - \theta \ .$$
 
 ### Media e varianza campionaria senza bias
-Dato un campione $\mathbf{X} = \{ X_n \}_{n=1:N}$ di $N$ osservazioni indipendenti da una popolazione, la media campionaria $\bar{X}$ e la varianza campionaria corretta $S^2$,
+Dato un campione $\mathbf{x} = \{ x_n \}_{n=1:N}$ di $N$ osservazioni indipendenti estratto da una popolazione, la media campionaria $\bar{X}$ e la varianza campionaria corretta $S^2$,
 
-$$\bar{X} := \frac{1}{N} \sum_{n = 1}^{N} X_n \qquad , \qquad S^2 := \frac{1}{n-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ ,$$
+$$\bar{X} := \frac{1}{N} \sum_{n = 1}^{N} X_n \qquad , \qquad S^2 := \frac{1}{N-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ ,$$
 
-sono stimatori senza bias della media, $\hat{\mu}$, e della varianza della popolazione, $\hat{\sigma^2}$. Le singole osservazioni possono essere dei dati generati in maniera indipendente con uguale distribuzione di probabilità.
+sono stimatori senza bias della media, $\hat{\mu}$, e della varianza della variabile osservata della popolazione, $\hat{\sigma^2}$. Le singole osservazioni possono essere dei dati generati in maniera indipendente con uguale distribuzione di probabilità.
 
 **todo** **oss.** Dalle dimostrazioni, sembra che l'identica distribuzione non sia strettamente necessaria, ma che siano richieste: indipendenza (e non correlazione) delle variabili che producono l'ossservazione; variabili con stesso valore di media e di varianza, indipendentemente dalla "forma" della distribuzione di probabilità.
 
