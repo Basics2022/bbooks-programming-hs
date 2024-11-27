@@ -33,7 +33,7 @@ e quindi il bias di questo stimatore è nullo, $B(\hat{\mu}) = E[\hat{\mu}] - \m
 
 Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in una popolazione con media $\mu = E[X]$, e varianza $\sigma^2 = E\left[ (X-\mu)^2 \right]$, allora la varianza campionaria corretta $S^2$ è uno stimatore senza bias $\hat{\sigma^2}$ della varianza $\sigma^2 = E[(X-\mu)^2]$ della popolazione. Il valore atteso della varianza campionaria corretta convide con la varianza della popolazione,
 
-$$E[X^2] = E[(X-\mu)^2 + 2\mu X - \mu^2]$$
+$$E[X^2] = E[(X-\mu)^2 + 2\mu X - \mu^2] = \sigma^2 - \mu^2$$
 
 $$\begin{aligned}
   (N-1) E[S^2] 
