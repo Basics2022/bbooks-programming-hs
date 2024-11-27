@@ -464,16 +464,22 @@ document.write(`
 </ul>
 <p><strong>Esempi di applicazioni.</strong></p>
 <ul class="simple">
+<li><p><strong>stima</strong></p>
+<ul>
+<li><p>media, varianza, intervalli di confidenza</p></li>
+</ul>
+</li>
 <li><p><strong>verifica ipotesi</strong>. Classificazione seguendo la documentazione di <span class="math notranslate nohighlight">\(\texttt{scipy.stats}\)</span></p>
 <ul>
 <li><p>test su campioni singoli o coppie di campioni: <span class="math notranslate nohighlight">\(t\)</span>-test, Wilcoxon</p></li>
 <li><p>correlazione: LS, Pearson <span class="math notranslate nohighlight">\(r\)</span>-test, Spearman <span class="math notranslate nohighlight">\(r\)</span>-test,</p></li>
 <li><p>indipendenza: verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskal, Tukey</p></li>
 <li><p>ri-campionamento e metodi MC: per valutare <span class="math notranslate nohighlight">\(p\)</span>-value e intervalli di confidenza test di validità di ipotesi</p></li>
-<li><p>ipotesi multiple</p></li>
+<li><p><em>ipotesi multiple</em></p></li>
 </ul>
 </li>
 </ul>
+<p><strong>Contenuti.</strong></p>
 <!--
   - ...
   - correlazione tra due variabili: Pearson (correlazione lineare, approssimazione lineare), Spearman (correlazione, tra due variabili con relazione monotona);
@@ -482,28 +488,25 @@ document.write(`
   - Kruskas-Wallis: campioni indipendenti; vengono dalla stessa popolazione?
   - Tukey range method:
 -->
-<ul class="simple">
-<li><p><strong>stima (puntuale)</strong>.</p>
-<ul>
-<li><p>MLE (minimi quadrati,…)</p></li>
-<li><p>Metodo dei momenti</p></li>
-</ul>
-</li>
-</ul>
-<p><strong>Approcci.</strong></p>
-<ul>
-<li><p>Maximum Likelihood Method (MLE). Date <span class="math notranslate nohighlight">\(N\)</span> osservazioni di un campione <span class="math notranslate nohighlight">\(\mathbf{x} = \{ x_n \}_{n=1:N}\)</span>, e ipotizzata una funzione di probabilità della grandezza osservata relativa alla popolazione, <span class="math notranslate nohighlight">\(p(x| \symbf{\theta})\)</span> che dipende dai parametri <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span>, si vuole determinare il valore dei parametri che rende massima la probabilità condizionata di aver osservato il campione,</p>
-<div class="math notranslate nohighlight">
-\[\max_{\symbf{\theta}} \, f(\mathbf{x}|\symbf{\theta}) \ .\]</div>
-<p>Se è possibile supporre che le osservazioni siano tra di loro statisticamente indipendenti si può scrivere,</p>
-<div class="math notranslate nohighlight">
-\[f(\mathbf{x}|\symbf{\theta}) = \prod_{n=1}^N p(x_n|\symbf{\theta}) \ .\]</div>
-</li>
-<li><p>Maximum a posteriori (MAP). I parametri <span class="math notranslate nohighlight">\(\theta\)</span> vengono trattati come variabili casuali con distribuzioni a priori <span class="math notranslate nohighlight">\(g(\theta)\)</span>, … <strong>todo</strong></p>
-<div class="math notranslate nohighlight">
-\[f_{\theta|X}(\theta|x) = \frac{f_{X|\theta}(x|\theta) f_{\theta}(\theta) }{f_X(x)} \ ,\]</div>
-</li>
-</ul>
+<!--
+- **stima (puntuale)**.
+  - **Metodi.**
+    - MLE (minimi quadrati,...)
+    - Metodo dei momenti
+
+  - **Approcci.**
+    - Maximum Likelihood Method (MLE). Date $N$ osservazioni di un campione $\mathbf{x} = \{ x_n \}_{n=1:N}$, e ipotizzata una funzione di probabilità della grandezza osservata relativa alla popolazione, $p(x| \symbf{\theta})$ che dipende dai parametri $\mathbf{\theta}$, si vuole determinare il valore dei parametri che rende massima la probabilità condizionata di aver osservato il campione,
+    
+      $$\max_{\symbf{\theta}} \, f(\mathbf{x}|\symbf{\theta}) \ .$$
+   
+      Se è possibile supporre che le osservazioni siano tra di loro statisticamente indipendenti si può scrivere,
+   
+      $$f(\mathbf{x}|\symbf{\theta}) = \prod_{n=1}^N p(x_n|\symbf{\theta}) \ .$$
+   
+    - Maximum a posteriori (MAP). I parametri $\theta$ vengono trattati come variabili casuali con distribuzioni a priori $g(\theta)$, ... **todo**
+  
+    $$f_{\theta|X}(\theta|x) = \frac{f_{X|\theta}(x|\theta) f_{\theta}(\theta) }{f_X(x)} \ ,$$
+-->
 <div class="toctree-wrapper compound">
 </div>
 </div>
