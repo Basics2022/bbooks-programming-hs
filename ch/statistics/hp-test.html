@@ -459,17 +459,22 @@ document.write(`
 <p><strong>Fisher.</strong> Viene formulata un’ipotesi falsificabile, chiamata <strong>ipotesi nulla</strong>, <span class="math notranslate nohighlight">\(\text{H}_{0}\)</span>, che viene ritenuta vera fino a prova contraria. Il test di verifica delle ipotesi ha l’obiettivo di verificare se i dati smentiscono l’ipotesi.</p>
 <p>Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsificabilità di Popper, e può essere riassunto nei seguenti passaggi:</p>
 <ol class="arabic simple">
-<li><p>formulazione di un’ipotesi falsificabile, definita ipotesi nulla, <span class="math notranslate nohighlight">\(\text{H}_0\)</span>, da verificare e che viene ritenuta vera fino a prova contraria</p></li>
-<li><p>scelta di una statistica test, <span class="math notranslate nohighlight">\(x\)</span>, o variabile esplicativa, un parametro disponibile rilevante per il fenomeno indagato e di cui è nota - o approssimabile, sotto ipotesi ragionevoli sul fenomeno - la distribuzione di probabilità condizionata alla validità dell’ipotesi nulla,</p></li>
+<li><p>formulazione di un’ipotesi falsificabile, definita <strong>ipotesi nulla</strong>, <span class="math notranslate nohighlight">\(\text{H}_0\)</span>, da verificare e che viene ritenuta vera fino a prova contraria</p></li>
+<li><p>scelta di una <strong>statistica test</strong>, <span class="math notranslate nohighlight">\(x\)</span>, o variabile esplicativa, un parametro disponibile rilevante per il fenomeno indagato e di cui è nota - o approssimabile, sotto ipotesi ragionevoli sul fenomeno - la distribuzione di probabilità condizionata alla validità dell’ipotesi nulla,</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[p(x|\text{H}_0) \ .\]</div>
-<p>scelta del test statistico (es. una coda o due code,…), in base anche alle caratteristiche del fenomeno indagato</p>
-<p>scelta del livello di significatività,
-, del test; il valore del livello di significatività traduce «il livello di evidenza richiesto» per falsificare l’ipotesi e - insieme alle caratteristiche del fenomeno e del test - determina le regioni di rifiuto e di accettazione dell’ipotesi, gli intervalli di valori della statistica test</p>
-<p>che determinano se l’ipotesi è stata falsificata o meno;</p>
-<p>raccolta dati e calcolo statistica test sul campione</p>
-<p>confronto del valore calcolato della statistica test con gli intervalli di rifiuto e accettazione della variabile soggetta all’ipotesi nulla, e verdetto sull’ipotesi</p>
+<ol class="arabic simple" start="3">
+<li><p>scelta del test statistico (es. una coda o due code,…), in base anche alle caratteristiche del fenomeno indagato</p></li>
+<li><p>scelta del livello di <strong>significatività</strong>, <span class="math notranslate nohighlight">\(\alpha\)</span>, del test; il valore del livello di significatività traduce «il livello di evidenza richiesto» per falsificare l’ipotesi e - insieme alle caratteristiche del fenomeno e del test - determina le <em>regioni di rifiuto</em>, <span class="math notranslate nohighlight">\(A_r(\alpha)\)</span>, e di <em>accettazione dell’ipotesi</em>, <span class="math notranslate nohighlight">\(A_a(\alpha)\)</span>, gli intervalli di valori della statistica test che determinano se l’ipotesi è stata falsificata o meno;</p></li>
+<li><p>raccolta dati e calcolo statistica test sul campione, <span class="math notranslate nohighlight">\(x_s\)</span></p></li>
+<li><p>confronto del valore calcolato della statistica test con gli intervalli di rifiuto e accettazione della variabile soggetta all’ipotesi nulla, e verdetto sull’ipotesi,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    x_s \in A_r(\alpha) \qquad &amp; \rightarrow \qquad $\text{ il test falsifica $\text{H}_0$, che deve essere scartata}$ \\
+    x_s \in A_a(\alpha) \qquad &amp; \rightarrow \qquad $\text{ il test non falsifica $\text{H}_0$}$ \\
+  \end{aligned}\end{split}\]</div>
 <p>Più in particolare, viene scelta come <strong>statistica test</strong> <span class="math notranslate nohighlight">\(x\)</span> un parametro disponibile, rilavante per il fenomeno indagato e di cui è nota la distribuzione di probabilità - o una sua ragionevole approssimazione/attesa - sotto l’ipotesi nulla,</p>
 <div class="math notranslate nohighlight">
 \[p(x|\text{H}_0) \ .\]</div>
