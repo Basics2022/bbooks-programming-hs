@@ -452,8 +452,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stimatori">18.1.1. Stimatori</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#media">18.1.1.1. Media</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varianza">18.1.1.2. Varianza</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#media-e-varianza-campionaria-senza-bias">18.1.1.1. Media e varianza campionaria senza bias</a></li>
 </ul>
 </li>
 </ul>
@@ -475,13 +474,34 @@ document.write(`
 <p><strong>Bias</strong>. Il bias di uno stimatore è la differenza tra il valore atteso dello stimatore <span class="math notranslate nohighlight">\(E\left[ \hat{\theta} \right]\)</span> e il valore del parametro <span class="math notranslate nohighlight">\(\theta\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[B(\hat{\theta}) := E\left[ \hat{\theta} \right] - \theta \ .\]</div>
-<div class="section" id="media">
-<h3><span class="section-number">18.1.1.1. </span>Media<a class="headerlink" href="#media" title="Permalink to this heading">#</a></h3>
-<p>Dato un campione <span class="math notranslate nohighlight">\(\mathbf{x} = \{ x_n \}_{n=1:N}\)</span></p>
+<div class="section" id="media-e-varianza-campionaria-senza-bias">
+<h3><span class="section-number">18.1.1.1. </span>Media e varianza campionaria senza bias<a class="headerlink" href="#media-e-varianza-campionaria-senza-bias" title="Permalink to this heading">#</a></h3>
+<p>Dato un campione <span class="math notranslate nohighlight">\(\mathbf{x} = \{ x_n \}_{n=1:N}\)</span>, la media campionaria <span class="math notranslate nohighlight">\(\bar{X}\)</span> e la varianza campionaria corretta <span class="math notranslate nohighlight">\(S^2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\bar{X} := \frac{1}{N} \sum_{n = 1}^{N} X_n \qquad , \qquad S^2 := \frac{1}{n-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ ,\]</div>
+<p>sono stimatori senza bias della media e della varianza della popolazione.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Dimostrazione per la media<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Dato un campione di <span class="math notranslate nohighlight">\(n\)</span> variabili indipendenti <span class="math notranslate nohighlight">\(\{ X_n \}_n{1:N}\)</span> osservate in una popolazione con media <span class="math notranslate nohighlight">\(\mu = E[X]\)</span>, e varianza <span class="math notranslate nohighlight">\(\sigma^2 = E\left[ (X-\mu)^2 \right]\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  E[\bar{X}] &amp; = E\left[ \frac{1}{N} \sum_{n=1}^N X_n \right] \\
+\end{aligned}\end{split}\]</div>
 </div>
-<div class="section" id="varianza">
-<h3><span class="section-number">18.1.1.2. </span>Varianza<a class="headerlink" href="#varianza" title="Permalink to this heading">#</a></h3>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Dimostrazione per la varianza<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 </div>
+</details></div>
 </div>
 </div>
 
@@ -549,8 +569,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stimatori">18.1.1. Stimatori</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#media">18.1.1.1. Media</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varianza">18.1.1.2. Varianza</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#media-e-varianza-campionaria-senza-bias">18.1.1.1. Media e varianza campionaria senza bias</a></li>
 </ul>
 </li>
 </ul>
