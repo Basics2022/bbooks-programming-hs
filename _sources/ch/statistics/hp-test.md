@@ -18,12 +18,14 @@ Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsific
 6. confronto del valore calcolato della statistica test con gli intervalli di rifiuto e accettazione della variabile soggetta all’ipotesi nulla, e verdetto sull’ipotesi,
 
   $$\begin{aligned}
-    x_s \in A_r(\alpha) \qquad & \rightarrow \qquad $\text{ il test falsifica $\text{H}_0$, che deve essere scartata}$ \\
-    x_s \in A_a(\alpha) \qquad & \rightarrow \qquad $\text{ il test non falsifica $\text{H}_0$}$ \\
+    x_s \in A_r(\alpha) \qquad & \rightarrow \qquad \text{ il test falsifica $\text{H}_0$, che deve essere scartata} \\
+    x_s \in A_a(\alpha) \qquad & \rightarrow \qquad \text{ il test non falsifica $\text{H}_0$} \\
   \end{aligned}$$
 
+  All'aumentare del livello di significatività del test richiesto, si riduce la regione di falsificazione e quindi diventano più stringenti i requisiti sul test per scartare l'ipotesi di partenza.
 
 
+<!--
 Più in particolare, viene scelta come **statistica test** $x$ un parametro disponibile, rilavante per il fenomeno indagato e di cui è nota la distribuzione di probabilità - o una sua ragionevole approssimazione/attesa - sotto l'ipotesi nulla,
 
 $$p(x|\text{H}_0) \ .$$
@@ -36,3 +38,4 @@ A partire dalla formulazione generale del test di verifica delle ipotesi secondo
 - $Z$-test: test di Fisher sulla media del campione
 - $t$-test: test di Fisher sulla media del campione di una popolazone con media e varianza sconosciuti che, sotto opportune ipotesi, è una variabile casuale che segue una distribuzione di probabilità $t$-Student
 - $ANOVA$
+-->

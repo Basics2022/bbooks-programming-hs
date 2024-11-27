@@ -472,20 +472,24 @@ document.write(`
 </ol>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-    x_s \in A_r(\alpha) \qquad &amp; \rightarrow \qquad $\text{ il test falsifica $\text{H}_0$, che deve essere scartata}$ \\
-    x_s \in A_a(\alpha) \qquad &amp; \rightarrow \qquad $\text{ il test non falsifica $\text{H}_0$}$ \\
+    x_s \in A_r(\alpha) \qquad &amp; \rightarrow \qquad \text{ il test falsifica $\text{H}_0$, che deve essere scartata} \\
+    x_s \in A_a(\alpha) \qquad &amp; \rightarrow \qquad \text{ il test non falsifica $\text{H}_0$} \\
   \end{aligned}\end{split}\]</div>
-<p>Più in particolare, viene scelta come <strong>statistica test</strong> <span class="math notranslate nohighlight">\(x\)</span> un parametro disponibile, rilavante per il fenomeno indagato e di cui è nota la distribuzione di probabilità - o una sua ragionevole approssimazione/attesa - sotto l’ipotesi nulla,</p>
-<div class="math notranslate nohighlight">
-\[p(x|\text{H}_0) \ .\]</div>
-<p>In base alle caratteristiche del fenomeno indagato vengono scelte le caratteristiche del test; in base all’evidenza richiesta contro l’ipotesi <span class="math notranslate nohighlight">\(\text{H}_0\)</span> viene scelto il <strong>livello di significatività</strong>, <span class="math notranslate nohighlight">\(\alpha\)</span>, del test che - insieme alle caratteristiche del test - determina le <strong>regioni di rifiuto</strong> e, per differenza, <strong>di accettazione</strong> dell’ipotesi.</p>
-<p>Una volta raccolti i dati, si calcola la statistica scelta con i dati disponibili, si verifica se il suo valore appartiene alle regioni di rifiuto o di accettazione dell’ipotesi, per concludere rispettivamente se l’ipotesi <span class="math notranslate nohighlight">\(\text{H}_{0}\)</span> è stata falsificata o non è stata falsificata e quindi va ritenuta ancora valida.</p>
-<p>A partire dalla formulazione generale del test di verifica delle ipotesi secondo Fisher, vengono poi definiti diversi test:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(Z\)</span>-test: test di Fisher sulla media del campione</p></li>
-<li><p><span class="math notranslate nohighlight">\(t\)</span>-test: test di Fisher sulla media del campione di una popolazone con media e varianza sconosciuti che, sotto opportune ipotesi, è una variabile casuale che segue una distribuzione di probabilità <span class="math notranslate nohighlight">\(t\)</span>-Student</p></li>
-<li><p><span class="math notranslate nohighlight">\(ANOVA\)</span></p></li>
-</ul>
+<p>All’aumentare del livello di significatività del test richiesto, si riduce la regione di falsificazione e quindi diventano più stringenti i requisiti sul test per scartare l’ipotesi di partenza.</p>
+<!--
+Più in particolare, viene scelta come **statistica test** $x$ un parametro disponibile, rilavante per il fenomeno indagato e di cui è nota la distribuzione di probabilità - o una sua ragionevole approssimazione/attesa - sotto l'ipotesi nulla,
+
+$$p(x|\text{H}_0) \ .$$
+
+In base alle caratteristiche del fenomeno indagato vengono scelte le caratteristiche del test; in base all'evidenza richiesta contro l'ipotesi $\text{H}_0$ viene scelto il **livello di significatività**, $\alpha$, del test che - insieme alle caratteristiche del test - determina le **regioni di rifiuto** e, per differenza, **di accettazione** dell'ipotesi.
+
+Una volta raccolti i dati, si calcola la statistica scelta con i dati disponibili, si verifica se il suo valore appartiene alle regioni di rifiuto o di accettazione dell'ipotesi, per concludere rispettivamente se l'ipotesi $\text{H}_{0}$ è stata falsificata o non è stata falsificata e quindi va ritenuta ancora valida.
+
+A partire dalla formulazione generale del test di verifica delle ipotesi secondo Fisher, vengono poi definiti diversi test:
+- $Z$-test: test di Fisher sulla media del campione
+- $t$-test: test di Fisher sulla media del campione di una popolazone con media e varianza sconosciuti che, sotto opportune ipotesi, è una variabile casuale che segue una distribuzione di probabilità $t$-Student
+- $ANOVA$
+-->
 <div class="toctree-wrapper compound">
 </div>
 </div>
