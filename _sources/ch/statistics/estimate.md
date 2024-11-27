@@ -55,6 +55,8 @@ $$\begin{aligned}
   & = \sigma^2 (N-1) \ . 
 \end{aligned}$$
 
+e quindi, dividendo per il fattore $N-1$ entrambi i termini, segue la dimostrazione che la varianza campionaria corretta per la varianza della popolazione è uno stimatore con bias nullo, $B(\hat{\sigma^2}) = E[\hat{\sigma^2}] - \sigma^2 = 0$.
+
 <!--
 $$\begin{aligned}
   (N-1) E[S^2] 
@@ -67,8 +69,6 @@ $$\begin{aligned}
   & = (N-1) E[(X-\mu)^2] \\
 \end{aligned}$$
 -->
-
-e quindi il bias di questo stimatore è nullo, $B(\hat{\sigma^2}) = E[\hat{\sigma^2}] - \sigma^2 = 0$.
 
 ```
 
