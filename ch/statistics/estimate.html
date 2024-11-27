@@ -471,10 +471,13 @@ document.write(`
 <span id="statistics-hs-inference-estimate"></span><h1><span class="section-number">18.1. </span>Stima<a class="headerlink" href="#stima" title="Permalink to this heading">#</a></h1>
 <div class="section" id="stimatori">
 <h2><span class="section-number">18.1.1. </span>Stimatori<a class="headerlink" href="#stimatori" title="Permalink to this heading">#</a></h2>
-<p>Uno stimatore <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> è una statistica, funzione dei dati del campione osservato, che è usata per dedurre il valore di un parametro della distribuzione di probabilità, <span class="math notranslate nohighlight">\(p(x|\theta)\)</span> della popolazione.</p>
+<p>Uno stimatore <span class="math notranslate nohighlight">\(\hat{\theta}(\mathbf{x})\)</span> è una statistica, funzione dei dati del campione osservato, che è usata per dedurre il valore di un parametro della distribuzione di probabilità, <span class="math notranslate nohighlight">\(p(x|\theta)\)</span> della popolazione.</p>
+<p><strong>Bias</strong>. Il bias di uno stimatore è la differenza tra il valore atteso dello stimatore <span class="math notranslate nohighlight">\(E\left[ \hat{\theta} \right]\)</span> e il valore del parametro <span class="math notranslate nohighlight">\(\theta\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[B(\hat{\theta}) := E\left[ \hat{\theta} \right] - \theta \ .\]</div>
 <div class="section" id="media">
 <h3><span class="section-number">18.1.1.1. </span>Media<a class="headerlink" href="#media" title="Permalink to this heading">#</a></h3>
-<p>Dato un campione <span class="math notranslate nohighlight">\(\{ x_m \}\)</span></p>
+<p>Dato un campione <span class="math notranslate nohighlight">\(\mathbf{x} = \{ x_n \}_{n=1:N}\)</span></p>
 </div>
 <div class="section" id="varianza">
 <h3><span class="section-number">18.1.1.2. </span>Varianza<a class="headerlink" href="#varianza" title="Permalink to this heading">#</a></h3>
