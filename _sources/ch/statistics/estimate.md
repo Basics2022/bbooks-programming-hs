@@ -51,6 +51,7 @@ $$\begin{aligned}
  - \frac{2}{N^2} \sum_{p \ne m} X_m X_p + \frac{X_m^2}{N^2} \right) \right] = \\
   & = \sum_{n=1}^N E[X_n^2] + \sum_{n,m=1}^N \left( -\frac{2}{N} E[X_n X_m] + \frac{1}{N^2}E[X_m^2] \right) - \frac{2}{N^2} \sum_{n,m=1}^N \sum_{p\ne m} E [ X_m X_p ] = \\
   & = \sum_{n=1}^N ( \sigma^2 + \mu^2 ) + \sum_{n,m=1}^N \left( -\frac{2}{N} \left( \sigma^2 \delta_{nm} + \mu^2 \right) + \frac{1}{N^2} \left( \sigma^2 + \mu^2 \right) \right) - \frac{2}{N^2} \sum_{n,m=1}^N \sum_{p\ne m} \left( \sigma^2 \delta_{mp} + \mu^2 \right) = \\
+  & = N (\sigma^2 + \mu^2) - \frac{2}{N} \left( N \sigma^2 + N^2 \mu^2 \right) + \frac{1}{N^2} N^2 (\sigma^2 + \mu^2) - \frac{2}{N^2} N^2 (N-1) \mu^2 = \\
 \end{aligned}$$
 
 <!--
