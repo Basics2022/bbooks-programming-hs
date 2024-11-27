@@ -508,7 +508,8 @@ Dimostrazione per la varianza<div class="sd-summary-down docutils">
 \[\begin{split}\begin{aligned}
   (N-1) E[S^2] 
   &amp; = E\left[ \sum_{n=1}^N ( X_n - \overline{X} )^2 \right] = \\
-  &amp; = E\left[ \sum_{n=1}^N \left( X_n - \frac{1}{N} \sum_{m=1}^N X_m \right)^2 \right] = \\
+  &amp; = E\left[ \sum_{n=1}^N ( X_n - \mu - \overline{X} + \mu )^2 \right] = \\
+  &amp; = E\left[ \sum_{n=1}^N \left( ( X_n- \mu ) - \frac{1}{N} \sum_{m=1}^N ( X_m - \mu) \right)^2 \right] = \\
   &amp; = \sum_{m,n=1}^N E\left[ X^2_n - \frac{2}{N} X_n X_m + \frac{X_m^2}{N^2}  \right] = \\
   &amp; = N^2 \, E[X^2] - 2 \, E[X^2] + E[X^2] = (N-1) E[X^2]
 \end{aligned}\end{split}\]</div>
