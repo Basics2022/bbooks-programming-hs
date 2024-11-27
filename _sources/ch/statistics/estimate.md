@@ -39,7 +39,8 @@ $$\begin{aligned}
   & = E\left[ \sum_{n=1}^N ( X_n - \mu - \overline{X} + \mu )^2 \right] = \\
   & = E\left[ \sum_{n=1}^N \left( ( X_n- \mu ) - \frac{1}{N} \sum_{m=1}^N ( X_m - \mu) \right)^2 \right] = \\
   & = \sum_{n=1}^N E\left[ (X_n - \mu)^2 - \frac{2}{N} (X_n-\mu)( X_m -\mu) - \frac{2}{N^2} \sum_{p \ne m} (X_m - \mu)(X_p - \mu) + \frac{(X_m^2-\mu)}{N^2}  \right] = \\
-  & = N^2 \, E[(X-\mu)^2] - 2 \, E[(X-\mu)^2] + E[(X-\mu)^2] = (N-1) E[(X-\mu)^2]
+  & = N^2 \, E[(X-\mu)^2] - 2 \, E[(X-\mu)^2] + E[(X-\mu)^2] = \\
+  & =(N-1) E[(X-\mu)^2]
 \end{aligned}$$
 
 e quindi il bias di questo stimatore è nullo, $B(\hat{\sigma^2}) = E[\hat{\sigma^2}] - \sigma^2 = 0$.
