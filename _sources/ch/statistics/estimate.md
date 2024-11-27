@@ -35,7 +35,7 @@ Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in u
 
 $$E[(X_i-\mu_i)(X_j-\mu_j)] = E[X_i X_j] - \mu_i E[X_j] - \mu_j E[X_i] + \mu_i \mu_j = E[X_i X_j] - \mu_i \mu_j \ ,$$
 
-che, nel caso di variabili indipendenti non correlate, si riduce a
+che, nel caso di variabili indipendenti non correlate con uguale varianza, si riduce a
 
 $$ E[X_i X_j] = \sigma^2 \delta_{ij} + \mu_i \mu_j$$
 
