@@ -70,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Indice" href="../genindex.html" />
     <link rel="search" title="Cerca" href="../search.html" />
     <link rel="next" title="20. Supervised Learning" href="ai/sl.html" />
-    <link rel="prev" title="18.2.3. ANOVA - Analysis of variance" href="statistics/anova.html" />
+    <link rel="prev" title="18.2.5. ANOVA - Analysis of variance" href="statistics/anova.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -198,6 +198,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="statistics/rv_pdf_examples.html">17.1.4. Esempi di funzioni densità di probabilità</a></li>
 <li class="toctree-l3"><a class="reference internal" href="statistics/iid.html">17.1.5. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="statistics/sampling.html">17.1.6. Campionamento</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="statistics/random_processes.html">17.2. Processi casuali</a></li>
@@ -206,9 +208,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="statistics/inference.html">18. Statistica inferenziale</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="statistics/estimate.html">18.1. Stima</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="statistics/hp-test.html">18.2. Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="statistics/test-fisher.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
-<li class="toctree-l3"><a class="reference internal" href="statistics/t-test.html">18.2.2. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l3"><a class="reference internal" href="statistics/anova.html">18.2.3. ANOVA - Analysis of variance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics/test-fisher-coin-1.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics/test-fisher-coin-2.html">18.2.2. Moneta truccata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics/test-fisher-rabbit.html">18.2.3. Gambler rabbit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics/t-test.html">18.2.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics/anova.html">18.2.5. ANOVA - Analysis of variance</a></li>
 </ul>
 </li>
 </ul>
@@ -218,7 +222,14 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">19. Introduzione ai metodi in AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ai/sl.html">20. Supervised Learning</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="ai/ul.html">21. Unsupervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="ai/ul.html">21. Unsupervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ai/pca.html">21.1. PCA</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ai/ica-pca.html">21.2. ICA e PCA</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ai/ica-pca-example-2d.html">21.2.2. FastICA on 2D point clouds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ai/ica-pca-example-time.html">21.2.3. ICA e PCA: segnali in tempo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ai/ica-pca-details.html">21.2.4. ICA e PCA - dettagli</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ai/ml.html">22. Reinforcement Learning</a></li>
@@ -515,7 +526,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">18.2.3. </span>ANOVA - Analysis of variance</p>
+        <p class="prev-next-title"><span class="section-number">18.2.5. </span>ANOVA - Analysis of variance</p>
       </div>
     </a>
     <a class="right-next"
