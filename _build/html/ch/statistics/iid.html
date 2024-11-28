@@ -200,6 +200,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="rv_pdf_examples.html">17.1.4. Esempi di funzioni densità di probabilità</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">17.1.5. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.6. Campionamento</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="random_processes.html">17.2. Processi casuali</a></li>
@@ -208,9 +210,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="inference.html">18. Statistica inferenziale</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="estimate.html">18.1. Stima</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hp-test.html">18.2. Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="test-fisher.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
-<li class="toctree-l3"><a class="reference internal" href="t-test.html">18.2.2. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l3"><a class="reference internal" href="anova.html">18.2.3. ANOVA - Analysis of variance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test-fisher-coin-1.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test-fisher-coin-2.html">18.2.2. Moneta truccata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test-fisher-rabbit.html">18.2.3. Gambler rabbit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="t-test.html">18.2.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="anova.html">18.2.5. ANOVA - Analysis of variance</a></li>
 </ul>
 </li>
 </ul>
@@ -219,6 +223,18 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione ai metodi in statistica e  AI</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../ai.html">19. Introduzione ai metodi in AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/sl.html">20. Supervised Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ai/ul.html">21. Unsupervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ai/pca.html">21.1. PCA</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ai/ica-pca.html">21.2. ICA e PCA</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ai/ica-pca-example-2d.html">21.2.2. FastICA on 2D point clouds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ai/ica-pca-example-time.html">21.2.3. ICA e PCA: segnali in tempo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ai/ica-pca-details.html">21.2.4. ICA e PCA - dettagli</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/ml.html">22. Reinforcement Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supporto tecnico</span></p>
 <ul class="nav bd-sidenav">
@@ -742,73 +758,73 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):125 - sigma2_ratio: 126.88945795187668 - sample_mean: avg, std: 0.0015455999999999996, 0.08877429312948654
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):125 - sigma2_ratio: 130.59370686165462 - sample_mean: avg, std: 0.0025664, 0.087506210014147
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):250 - sigma2_ratio: 251.08486108487403 - sample_mean: avg, std: 0.00020319999999999982, 0.0631087720508013
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):250 - sigma2_ratio: 254.31992135082243 - sample_mean: avg, std: 0.0010624000000000002, 0.0627061026235884
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):500 - sigma2_ratio: 499.27760236895404 - sample_mean: avg, std: -0.0002696000000000002, 0.044753700582633386
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):500 - sigma2_ratio: 504.2397452891502 - sample_mean: avg, std: 0.0005631999999999997, 0.044532949663816344
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):1000 - sigma2_ratio: 1027.143297846138 - sample_mean: avg, std: -0.00036720000000000004, 0.031202146787681136
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):1000 - sigma2_ratio: 1004.4932607688248 - sample_mean: avg, std: -0.00011120000000000006, 0.031551970375239644
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):2000 - sigma2_ratio: 2066.0983802345195 - sample_mean: avg, std: -0.00016660000000000007, 0.022000091918898883
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Bernoulli (discrete):2000 - sigma2_ratio: 1989.0869463333743 - sample_mean: avg, std: -6.140000000000002e-05, 0.02242193635795089
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:125 - sigma2_ratio: 126.52554713420797 - sample_mean: avg, std: -9.979493510892362e-05, 0.08892946859039302
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:125 - sigma2_ratio: 126.72205075846146 - sample_mean: avg, std: 0.0010141993153203969, 0.08888043850766203
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:250 - sigma2_ratio: 252.8497005452709 - sample_mean: avg, std: -0.00037116468872258997, 0.06290766817821979
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:250 - sigma2_ratio: 254.99038432120744 - sample_mean: avg, std: -0.00038989223617583244, 0.06265711339597826
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:500 - sigma2_ratio: 504.59698278960116 - sample_mean: avg, std: -0.0002211488132824933, 0.044531003752254196
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:500 - sigma2_ratio: 502.6156994282069 - sample_mean: avg, std: -0.00017644253233437806, 0.04462870242473246
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:1000 - sigma2_ratio: 992.1639160609418 - sample_mean: avg, std: -0.00010823393764169154, 0.031757265147427195
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:1000 - sigma2_ratio: 1009.0190854680961 - sample_mean: avg, std: -0.0002189472972028363, 0.031497972131472075
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:2000 - sigma2_ratio: 2011.852810368294 - sample_mean: avg, std: 0.0001275308425222764, 0.022301635178583506
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Normal:2000 - sigma2_ratio: 2004.8398430487964 - sample_mean: avg, std: -0.0002990051357350295, 0.022345621722797804
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:125 - sigma2_ratio: 126.72452291593385 - sample_mean: avg, std: 0.0008441488707038704, 0.05128514929902874
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:125 - sigma2_ratio: 126.34449494256326 - sample_mean: avg, std: -0.0007759805787668476, 0.05136376579090629
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:250 - sigma2_ratio: 250.73076553025274 - sample_mean: avg, std: 0.0007686675542183714, 0.03646012416153966
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:250 - sigma2_ratio: 246.99299015515234 - sample_mean: avg, std: -0.00016994836053754473, 0.03673607093058705
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:500 - sigma2_ratio: 509.8018117943206 - sample_mean: avg, std: 0.00046402524307016064, 0.025569443104199147
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:500 - sigma2_ratio: 498.33363426207166 - sample_mean: avg, std: 1.903247125463381e-05, 0.02586276292139923
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:1000 - sigma2_ratio: 1011.8321445284603 - sample_mean: avg, std: 0.0003932139582962636, 0.018149627684229314
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:1000 - sigma2_ratio: 990.6165967551389 - sample_mean: avg, std: -0.00013880836487885248, 0.018343500627591304
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:2000 - sigma2_ratio: 2036.09094600806 - sample_mean: avg, std: 0.00011441056556009376, 0.012794501520416331
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Uniform:2000 - sigma2_ratio: 1994.3456176947218 - sample_mean: avg, std: -0.00012834329352823172, 0.012928103110407934
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:125 - sigma2_ratio: 130.35203545591077 - sample_mean: avg, std: 4.483054429563561, 0.5157019171741432
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:125 - sigma2_ratio: 122.38845093350199 - sample_mean: avg, std: 4.480292954298604, 0.5323644677519014
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:250 - sigma2_ratio: 258.55920326584453 - sample_mean: avg, std: 4.485639114614323, 0.36616569498745405
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:250 - sigma2_ratio: 247.08332741352825 - sample_mean: avg, std: 4.483669757609754, 0.3746774531605284
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:500 - sigma2_ratio: 505.96870216752325 - sample_mean: avg, std: 4.4878502043542134, 0.2617555072056899
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:500 - sigma2_ratio: 492.286002425949 - sample_mean: avg, std: 4.481281287037342, 0.26544254735342315
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:1000 - sigma2_ratio: 1001.2722272862424 - sample_mean: avg, std: 4.481969359698977, 0.1860722329676259
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:1000 - sigma2_ratio: 1030.1400692918698 - sample_mean: avg, std: 4.481702576322404, 0.18349791756253456
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:2000 - sigma2_ratio: 1965.826521324212 - sample_mean: avg, std: 4.481302143201379, 0.1327960201372112
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:root:Log-normal:2000 - sigma2_ratio: 1977.596169779167 - sample_mean: avg, std: 4.480349148957554, 0.1324373475022875
 </pre></div>
 </div>
 </div>
@@ -848,7 +864,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/ae7d7b4ed5cec82c5931c6f9e3fd34d516466ee72ae2a2ba275ccc4ed12e537b.png" src="../../_images/ae7d7b4ed5cec82c5931c6f9e3fd34d516466ee72ae2a2ba275ccc4ed12e537b.png" />
+<img alt="../../_images/51a938f4a1042a13471b24f33efa7275b1ae506a2368d204674443cef16732cd.png" src="../../_images/51a938f4a1042a13471b24f33efa7275b1ae506a2368d204674443cef16732cd.png" />
 </div>
 </div>
 </div>
@@ -932,9 +948,9 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Distribution of sample average, scaled&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/a716cb6f6ce86e9f2376dae43c28d4d537aa9502c0e0061cf53c4d318072d007.png" src="../../_images/a716cb6f6ce86e9f2376dae43c28d4d537aa9502c0e0061cf53c4d318072d007.png" />
-<img alt="../../_images/dd88b1de15e453156314b79d615c1e9c051be1954e0934badd9c02d533a0a888.png" src="../../_images/dd88b1de15e453156314b79d615c1e9c051be1954e0934badd9c02d533a0a888.png" />
-<img alt="../../_images/8a988383ebcb53d739449ccffe8a9ee0b0ee16493aef6820f2e7925dd56a4ea9.png" src="../../_images/8a988383ebcb53d739449ccffe8a9ee0b0ee16493aef6820f2e7925dd56a4ea9.png" />
+<img alt="../../_images/023c2794fe5e36bbd06d726d129162cf935b8593858a4c23fda4aec67173b61f.png" src="../../_images/023c2794fe5e36bbd06d726d129162cf935b8593858a4c23fda4aec67173b61f.png" />
+<img alt="../../_images/75026052291780bdecdeddbbd4a9238cacb01813f949c7eb37dec6063feed5d7.png" src="../../_images/75026052291780bdecdeddbbd4a9238cacb01813f949c7eb37dec6063feed5d7.png" />
+<img alt="../../_images/c0e391839c3386f2f3964b37d8ee8cd6c3dccfd95990435804343f5fa02ad965.png" src="../../_images/c0e391839c3386f2f3964b37d8ee8cd6c3dccfd95990435804343f5fa02ad965.png" />
 </div>
 </div>
 </div>

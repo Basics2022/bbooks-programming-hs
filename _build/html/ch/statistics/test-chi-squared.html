@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10. Approssimazione di funzioni &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>\(\chi^2\)-test &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -65,12 +65,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/numerics/approximation';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/statistics/test-chi-squared';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="11. Derivate di funzioni" href="derivatives.html" />
-    <link rel="prev" title="9. Equazioni algebriche non lineari" href="nonlinear.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -174,45 +174,45 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../programming/libraries.html">6. Librerie</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione al calcolo scientifico</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../numerics.html">7. Introduzione al calcolo scientifico</a></li>
-<li class="toctree-l1"><a class="reference internal" href="linear.html">8. Sistemi lineari</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nonlinear.html">9. Equazioni algebriche non lineari</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Approssimazione di funzioni</a></li>
-<li class="toctree-l1"><a class="reference internal" href="derivatives.html">11. Derivate di funzioni</a></li>
-<li class="toctree-l1"><a class="reference internal" href="integrals.html">12. Integrali</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="ode.html">13. Equazioni differenziali ordinarie</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="ode-cauchy.html">13.1. Problemi di Cauchy ai valori iniziali</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ode-boundary.html">13.2. Problemi al contorno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/linear.html">8. Sistemi lineari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/nonlinear.html">9. Equazioni algebriche non lineari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/approximation.html">10. Approssimazione di funzioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/derivatives.html">11. Derivate di funzioni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/integrals.html">12. Integrali</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../numerics/ode.html">13. Equazioni differenziali ordinarie</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/ode-cauchy.html">13.1. Problemi di Cauchy ai valori iniziali</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/ode-boundary.html">13.2. Problemi al contorno</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="optimization.html">14. Ottimizzazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numerics/optimization.html">14. Ottimizzazione</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistica</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../statistics.html">15. Metodi per la statistica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../statistics/descriptive.html">16. Statistica descrittiva</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/probability.html">17. Introduzione alla probabilità</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../statistics/random_variables.html">17.1. Variabili casuali</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/rv_pdf_transformations.html">17.1.3. Trasformazione di probabilità di densità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/rv_pdf_examples.html">17.1.4. Esempi di funzioni densità di probabilità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/iid.html">17.1.5. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/sampling.html">17.1.6. Campionamento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptive.html">16. Statistica descrittiva</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="probability.html">17. Introduzione alla probabilità</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="random_variables.html">17.1. Variabili casuali</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="rv_pdf_transformations.html">17.1.3. Trasformazione di probabilità di densità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rv_pdf_examples.html">17.1.4. Esempi di funzioni densità di probabilità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.5. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.6. Campionamento</a></li>
 
 
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../statistics/random_processes.html">17.2. Processi casuali</a></li>
+<li class="toctree-l2"><a class="reference internal" href="random_processes.html">17.2. Processi casuali</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/inference.html">18. Statistica inferenziale</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../statistics/estimate.html">18.1. Stima</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../statistics/hp-test.html">18.2. Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/test-fisher-coin-1.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/test-fisher-coin-2.html">18.2.2. Moneta truccata</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/test-fisher-rabbit.html">18.2.3. Gambler rabbit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/t-test.html">18.2.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/anova.html">18.2.5. ANOVA - Analysis of variance</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inference.html">18. Statistica inferenziale</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="estimate.html">18.1. Stima</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="hp-test.html">18.2. Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="test-fisher-coin-1.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test-fisher-coin-2.html">18.2.2. Moneta truccata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test-fisher-rabbit.html">18.2.3. Gambler rabbit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="t-test.html">18.2.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="anova.html">18.2.5. ANOVA - Analysis of variance</a></li>
 </ul>
 </li>
 </ul>
@@ -291,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-programming-hs/blob/master/ch/numerics/approximation.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-programming-hs/blob/master/ch/statistics/test-chi-squared.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -339,7 +339,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/numerics/approximation.ipynb" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/statistics/test-chi-squared.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -356,7 +356,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/numerics/approximation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/statistics/test-chi-squared.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +386,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/numerics/approximation.ipynb" target="_blank"
+      <li><a href="../../_sources/ch/statistics/test-chi-squared.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -457,9 +457,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -470,20 +468,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Approssimazione di funzioni</h1>
+    <h1>\chi^2-test</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contenuti </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolazione">10.1. Interpolazione</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressione">10.2. Regressione</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -493,13 +482,81 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="approssimazione-di-funzioni">
-<h1><span class="section-number">10. </span>Approssimazione di funzioni<a class="headerlink" href="#approssimazione-di-funzioni" title="Permalink to this heading">#</a></h1>
-<div class="section" id="interpolazione">
-<h2><span class="section-number">10.1. </span>Interpolazione<a class="headerlink" href="#interpolazione" title="Permalink to this heading">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="chi-2-test">
+<h1><span class="math notranslate nohighlight">\(\chi^2\)</span>-test<a class="headerlink" href="#chi-2-test" title="Permalink to this heading">#</a></h1>
+<p>I test statistici <span class="math notranslate nohighlight">\(\chi^2\)</span> coinvolgono una distribuzione di probabilità <span class="math notranslate nohighlight">\(\chi^2\)</span>. Il test chi può essere usato per verificare che le frequenze dell’osservazione di un fenomeno non si discostino troppo dalle frequenze attese</p>
+<ul class="simple">
+<li><p>in altre parole, può essere usato per confrontare la distribuzione di probabilità ricavabile dal campione con una distribuzione di probabilità attesa.</p></li>
+<li><p>…</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reset</span> -f
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
 </div>
-<div class="section" id="regressione">
-<h2><span class="section-number">10.2. </span>Regressione<a class="headerlink" href="#regressione" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="c1">#&gt; Comparison between expected distribution under H0 and sample</span>
+<span class="c1"># N. of expected and registered events</span>
+<span class="n">f_h0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span> <span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">f_s</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="n">n_o</span><span class="p">,</span> <span class="n">n_s</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">f_h0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">f_s</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Scaling</span>
+<span class="n">sum_factor</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="k">if</span> <span class="p">(</span> <span class="kc">True</span> <span class="p">):</span>
+    <span class="n">f_h0</span> <span class="o">=</span> <span class="n">f_h0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">f_h0</span><span class="p">)</span> <span class="o">*</span> <span class="n">sum_factor</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_s</span><span class="p">):</span>
+         <span class="n">f_s</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">f_s</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">f_s</span><span class="p">[</span><span class="n">i</span><span class="p">,:])</span> <span class="o">*</span> <span class="n">sum_factor</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">chisquare</span><span class="p">(</span><span class="n">f_s</span><span class="p">,</span> <span class="n">f_exp</span><span class="o">=</span><span class="n">f_h0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Chi^2-test. scipy.stats.chisquare&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; statistics: </span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">statistic</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; pvalue    : </span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">pvalue</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># w/o using scipy function</span>
+<span class="n">err</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span> <span class="p">(</span><span class="n">f_h0</span><span class="p">[</span><span class="n">i_o</span><span class="p">]</span> <span class="o">-</span> <span class="n">f_s</span><span class="p">[</span><span class="n">i_s</span><span class="p">,</span><span class="n">i_o</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">f_h0</span><span class="p">[</span><span class="n">i_o</span><span class="p">]</span> <span class="k">for</span> <span class="n">i_o</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_o</span><span class="p">)</span> <span class="p">]</span> <span class="k">for</span> <span class="n">i_s</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_s</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">chi2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">err</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># ...</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Chi^2-test, self-implemented&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; chi2      : </span><span class="si">{</span><span class="n">chi2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f_h0</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Expected&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i_s</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_s</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f_s</span><span class="p">[</span><span class="n">i_s</span><span class="p">,:],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Obs</span><span class="si">{</span><span class="n">i_s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chi^2-test. scipy.stats.chisquare
+Power_divergenceResult(statistic=array([0.18693428, 0.00899006]), pvalue=array([0.99924809, 0.99999959]))
+ statistics: [0.18693428 0.00899006]
+ pvalue    : [0.99924809 0.99999959]
+
+Chi^2-test, self-implemented
+ chi2      : [0.18693428 0.00899006]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f23e04315e0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/67830640914d4b1502e0bea9ba391d12ddb6d80d00c25d25bcbae880497bfe84.png" src="../../_images/67830640914d4b1502e0bea9ba391d12ddb6d80d00c25d25bcbae880497bfe84.png" />
+</div>
 </div>
 </div>
 
@@ -516,7 +573,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./ch/numerics"
+            path: "./ch/statistics"
         },
         predefinedOutput: true
     }
@@ -533,45 +590,12 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="nonlinear.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Equazioni algebriche non lineari</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="derivatives.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Derivate di funzioni</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contenuti
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolazione">10.1. Interpolazione</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressione">10.2. Regressione</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
