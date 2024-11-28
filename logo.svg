@@ -46,13 +46,26 @@
      inkscape:window-height="1016"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="1.125"
-     inkscape:cx="478.47293"
-     inkscape:cy="-0.58772759"
+     inkscape:zoom="2.8305829"
+     inkscape:cx="194.57245"
+     inkscape:cy="41.125424"
      inkscape:window-x="72"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="svg2"
+     inkscape:snap-page="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="false"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:snap-text-baseline="true" />
   <flowRoot
      xml:space="preserve"
      id="flowRoot817"
@@ -78,4 +91,15 @@
        x="10.444445"
        y="56.666672"
        style="font-size:53.33335495px">basics</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:2.66666651px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.40000001"
+     x="151.87492"
+     y="16.20834"
+     id="text817-3"><tspan
+       sodipodi:role="line"
+       id="tspan815-6"
+       x="151.87492"
+       y="16.20834"
+       style="font-size:21.3333416px;stroke-width:0.40000001">programming-hs</tspan></text>
 </svg>
