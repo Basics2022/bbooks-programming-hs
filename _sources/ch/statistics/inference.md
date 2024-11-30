@@ -28,11 +28,11 @@ La verifica delle ipotesi è un'attività intimamente connessa al metodo sperime
   - **valori puntuali**, come ad esempio la media o la varianza di una popolazione
   - **intervalli**, come ad esempio gli intervalli di confidenza
 - [**verifica ipotesi**](statistics-hs:inference:hp-test). La verifica delle ipotesi è un'attività intimamente connessa al metodo sperimentale e alla formazione della conoscenza nella storia umana secondo criteri logici. Nonostante sia poco sensata una classificazione rigida delle attività che coinvolgono la verifica delle ipotesi (seguendo la documentazione di $\text{scipy.stats}$), si possono distinguere
-- test su **campioni singoli** o **coppie di campioni**: $t$-test, Wilcoxon,...
-- test di **correlazione**: LS, Pearson $r$-test, Spearman $r$-test,
-- test di **indipendenza**, verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskal, Tukey
-- **ri-campionamento** e metodi MC: per valutare $p$-value e intervalli di confidenza test di validità di ipotesi
-- *ipotesi multiple*
+  - test su **campioni singoli** o **coppie di campioni**: $t$-test, Wilcoxon,...
+  - test di **correlazione**: LS, Pearson $r$-test, Spearman $r$-test,
+  - test di **indipendenza**, verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskal, Tukey
+  - **ri-campionamento** e metodi MC: per valutare $p$-value e intervalli di confidenza test di validità di ipotesi
+  - *ipotesi multiple*
 ````
 
 <!--
