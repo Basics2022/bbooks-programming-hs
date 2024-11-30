@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="18.2.2. Test di correlazione" href="hp-test-correlation.html" />
+    <link rel="next" title="18.2.4. Test di correlazione" href="hp-test-correlation.html" />
     <link rel="prev" title="18.2. Test di verifica delle ipotesi" href="hp-test.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
@@ -214,14 +214,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="estimate.html">18.1. Stima</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="hp-test.html">18.2. Test di verifica delle ipotesi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">18.2.1. Test su campioni singoli o coppie di campioni</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hp-test-correlation.html">18.2.2. Test di correlazione</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hp-test-independence.html">18.2.3. Test di indipendenza</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="hp-test-examples.html">18.2.4. Esempi</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-1.html">18.2.4.1. Test di verifica d’ipotesi - Fisher</a></li>
-<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-2.html">18.2.4.2. Moneta truccata</a></li>
-<li class="toctree-l4"><a class="reference internal" href="test-fisher-rabbit.html">18.2.4.3. Gambler rabbit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="t-test.html">18.2.4.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.4.5. ANOVA - Analysis of variance</a></li>
+
+
+<li class="toctree-l3"><a class="reference internal" href="hp-test-correlation.html">18.2.4. Test di correlazione</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hp-test-independence.html">18.2.5. Test di indipendenza</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="hp-test-examples.html">18.2.6. Esempi</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-1.html">18.2.6.1. Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-2.html">18.2.6.2. Moneta truccata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-rabbit.html">18.2.6.3. Gambler rabbit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="t-test.html">18.2.6.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.6.5. ANOVA - Analysis of variance</a></li>
 </ul>
 </li>
 </ul>
@@ -468,7 +470,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -484,6 +488,23 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">18.2.1. Test su campioni singoli o coppie di campioni</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#student-t-test">18.2.1.1. Student <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#z-test">18.2.2. <span class="math notranslate nohighlight">\(Z\)</span>-test</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-2-test">18.2.2.1. <span class="math notranslate nohighlight">\(\chi^2\)</span>-test</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wilcoxon">18.2.3. Wilcoxon</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -504,6 +525,46 @@ document.write(`
 <li><p>Wilcoxon</p></li>
 <li><p>…</p></li>
 </ul>
+<div class="section" id="student-t-test">
+<h2><span class="section-number">18.2.1.1. </span>Student <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#student-t-test" title="Permalink to this heading">#</a></h2>
+<p>I <span class="math notranslate nohighlight">\(t\)</span>-test sono dei test statistici di posizione in cui la statistica test segue una distribuzione <span class="math notranslate nohighlight">\(t\)</span> di Student sotto l’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[p(t|\text{H}_0) \sim t_{\nu} \ ,\]</div>
+<p>dove il numero di gradi di libertà <span class="math notranslate nohighlight">\(\nu\)</span> della distribuzione <span class="math notranslate nohighlight">\(t_{\nu}\)</span> dipende dal metodo considerato.</p>
+<p><strong>Ipotesi.</strong> …</p>
+<p><strong>Test a un campione.</strong> E” un test di posizione/stima della media della popolazione della quale è noto un campione di <span class="math notranslate nohighlight">\(n\)</span> osservazioni.</p>
+<ul>
+<li><p>l’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span> dichiara che la popolazione ha media <span class="math notranslate nohighlight">\(\mu_0\)</span>;</p></li>
+<li><p>la statistica test <span class="math notranslate nohighlight">\(t\)</span> è costruita con la media e la varianza campionaria <span class="math notranslate nohighlight">\(\overline{x}\)</span>, <span class="math notranslate nohighlight">\(S^2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{\overline{x} - \mu_0}{\frac{S}{\sqrt{n}}} \ ,\]</div>
+</li>
+<li><p>il numero di gradi di libertà è <span class="math notranslate nohighlight">\(n-1\)</span> <strong>todo</strong></p></li>
+<li><p><strong>oss.</strong> se … <span class="math notranslate nohighlight">\(t\)</span> segue una distribuzione <span class="math notranslate nohighlight">\(t_{n-1}\)</span> di Student <strong>todo</strong> <em>inserire nelle ipotesi</em>, <em>riferimenti a definizione della distribuzione <span class="math notranslate nohighlight">\(t\)</span> e al campionamento e i teoremi relativi</em></p></li>
+<li><p>una volta definito il livello di significatività del test, <span class="math notranslate nohighlight">\(\alpha\)</span>, si controlla se la statistica test <span class="math notranslate nohighlight">\(t\)</span> valutata con il campione a disposizione cade nella regione di rifiuto dell’ipotesi della distribuzione <span class="math notranslate nohighlight">\(t_{n-1}\)</span> o meno, per determinare se si deve considerare <span class="math notranslate nohighlight">\(\text{H}_0\)</span> falsificata dal test o meno</p></li>
+</ul>
+<p><strong>Test a coppie di campioni.</strong></p>
+<ul class="simple">
+<li><p><strong>Indipendenti</strong> …<strong>todo</strong></p></li>
+<li><p><strong>Dipendenti</strong> …<strong>todo</strong></p></li>
+</ul>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="z-test">
+<h1><span class="section-number">18.2.2. </span><span class="math notranslate nohighlight">\(Z\)</span>-test<a class="headerlink" href="#z-test" title="Permalink to this heading">#</a></h1>
+<p>Test identico al <span class="math notranslate nohighlight">\(t\)</span>-test in cui la statistica test <span class="math notranslate nohighlight">\(z\)</span> segue una distribuzione gaussiana sotto l’ipotesi nulla. Per il legame esistente tra la distribuzione <span class="math notranslate nohighlight">\(t_{\nu}\)</span> e <span class="math notranslate nohighlight">\(\mathscr{N}\)</span>, si può interpretare lo <span class="math notranslate nohighlight">\(Z\)</span>-test come limite del <span class="math notranslate nohighlight">\(t\)</span>-test per un numero di campioni sufficientemente grande.</p>
+<div class="section" id="chi-2-test">
+<h2><span class="section-number">18.2.2.1. </span><span class="math notranslate nohighlight">\(\chi^2\)</span>-test<a class="headerlink" href="#chi-2-test" title="Permalink to this heading">#</a></h2>
+<p>Il test <span class="math notranslate nohighlight">\(\chi^2\)</span> viene utilizzato per confrontare le frequenze osservate <span class="math notranslate nohighlight">\(o_k\)</span> e attese <span class="math notranslate nohighlight">\(e_k\)</span> di un insieme di possibili eventi, <span class="math notranslate nohighlight">\(\{ E_k \}_{k=1:K}\)</span>. L’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span> afferma che il fenomeno osservato segue la distribuzione di probabilità descritta dalle frequenze attese. La statistica test è</p>
+<div class="math notranslate nohighlight">
+\[X^2 = \sum_{k=1}^{K} \frac{(o_k - e_k)^2}{e_k}\]</div>
+<p>Nel caso in cui le frequenze attese sono «sufficientemente grandi» e quelle osservate <span class="math notranslate nohighlight">\(o_k\)</span> abbiano una distribuzione gaussiana, allora <span class="math notranslate nohighlight">\(X^2\)</span> segue una distribuzione <span class="math notranslate nohighlight">\(\chi^2_{K-1}\)</span>.</p>
+<p>… <strong>todo</strong></p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="wilcoxon">
+<h1><span class="section-number">18.2.3. </span>Wilcoxon<a class="headerlink" href="#wilcoxon" title="Permalink to this heading">#</a></h1>
+<p>…<strong>todo</strong></p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -550,7 +611,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">18.2.2. </span>Test di correlazione</p>
+        <p class="prev-next-title"><span class="section-number">18.2.4. </span>Test di correlazione</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -560,6 +621,29 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">18.2.1. Test su campioni singoli o coppie di campioni</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#student-t-test">18.2.1.1. Student <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#z-test">18.2.2. <span class="math notranslate nohighlight">\(Z\)</span>-test</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-2-test">18.2.2.1. <span class="math notranslate nohighlight">\(\chi^2\)</span>-test</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#wilcoxon">18.2.3. Wilcoxon</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

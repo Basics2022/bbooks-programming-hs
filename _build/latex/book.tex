@@ -3198,16 +3198,323 @@ l”\sphinxstyleemphasis{indipendenza} dei campioni, intesa come verifica se i c
 
 \subsection{Test su campioni singoli o coppie di campioni}
 \label{\detokenize{ch/statistics/hp-test-single:test-su-campioni-singoli-o-coppie-di-campioni}}\label{\detokenize{ch/statistics/hp-test-single::doc}}
+\sphinxAtStartPar
+\sphinxstylestrong{Test più comuni}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\(t\)\sphinxhyphen{}test
+
+\item {} 
+\sphinxAtStartPar
+\(\chi^2\)\sphinxhyphen{}test
+
+\item {} 
+\sphinxAtStartPar
+\(Z\)\sphinxhyphen{}test
+
+\item {} 
+\sphinxAtStartPar
+Wilcoxon
+
+\item {} 
+\sphinxAtStartPar
+…
+
+\end{itemize}
+
+
+\subsubsection{Student \protect\(t\protect\)\sphinxhyphen{}test}
+\label{\detokenize{ch/statistics/hp-test-single:student-t-test}}
+\sphinxAtStartPar
+I \(t\)\sphinxhyphen{}test sono dei test statistici di posizione in cui la statistica test segue una distribuzione \(t\) di Student sotto l’ipotesi nulla \(\text{H}_0\),
+\begin{equation*}
+\begin{split}p(t|\text{H}_0) \sim t_{\nu} \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+dove il numero di gradi di libertà \(\nu\) della distribuzione \(t_{\nu}\) dipende dal metodo considerato.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Ipotesi.} …
+
+\sphinxAtStartPar
+\sphinxstylestrong{Test a un campione.} E” un test di posizione/stima della media della popolazione della quale è noto un campione di \(n\) osservazioni.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+l’ipotesi nulla \(\text{H}_0\) dichiara che la popolazione ha media \(\mu_0\);
+
+\item {} 
+\sphinxAtStartPar
+la statistica test \(t\) è costruita con la media e la varianza campionaria \(\overline{x}\), \(S^2\),
+\begin{equation*}
+\begin{split}t = \frac{\overline{x} - \mu_0}{\frac{S}{\sqrt{n}}} \ ,\end{split}
+\end{equation*}
+\item {} 
+\sphinxAtStartPar
+il numero di gradi di libertà è \(n-1\) \sphinxstylestrong{todo}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{oss.} se … \(t\) segue una distribuzione \(t_{n-1}\) di Student \sphinxstylestrong{todo} \sphinxstyleemphasis{inserire nelle ipotesi}, \sphinxstyleemphasis{riferimenti a definizione della distribuzione \(t\) e al campionamento e i teoremi relativi}
+
+\item {} 
+\sphinxAtStartPar
+una volta definito il livello di significatività del test, \(\alpha\), si controlla se la statistica test \(t\) valutata con il campione a disposizione cade nella regione di rifiuto dell’ipotesi della distribuzione \(t_{n-1}\) o meno, per determinare se si deve considerare \(\text{H}_0\) falsificata dal test o meno
+
+\end{itemize}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Test a coppie di campioni.}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Indipendenti} …\sphinxstylestrong{todo}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Dipendenti} …\sphinxstylestrong{todo}
+
+\end{itemize}
+
+
+\subsection{\protect\(Z\protect\)\sphinxhyphen{}test}
+\label{\detokenize{ch/statistics/hp-test-single:z-test}}
+\sphinxAtStartPar
+Test identico al \(t\)\sphinxhyphen{}test in cui la statistica test \(z\) segue una distribuzione gaussiana sotto l’ipotesi nulla. Per il legame esistente tra la distribuzione \(t_{\nu}\) e \(\mathscr{N}\), si può interpretare lo \(Z\)\sphinxhyphen{}test come limite del \(t\)\sphinxhyphen{}test per un numero di campioni sufficientemente grande.
+
+
+\subsubsection{\protect\(\chi^2\protect\)\sphinxhyphen{}test}
+\label{\detokenize{ch/statistics/hp-test-single:chi-2-test}}
+\sphinxAtStartPar
+Il test \(\chi^2\) viene utilizzato per confrontare le frequenze osservate \(o_k\) e attese \(e_k\) di un insieme di possibili eventi, \(\{ E_k \}_{k=1:K}\). L’ipotesi nulla \(\text{H}_0\) afferma che il fenomeno osservato segue la distribuzione di probabilità descritta dalle frequenze attese. La statistica test è
+\begin{equation*}
+\begin{split}X^2 = \sum_{k=1}^{K} \frac{(o_k - e_k)^2}{e_k}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Nel caso in cui le frequenze attese sono «sufficientemente grandi» e quelle osservate \(o_k\) abbiano una distribuzione gaussiana, allora \(X^2\) segue una distribuzione \(\chi^2_{K-1}\).
+
+\sphinxAtStartPar
+… \sphinxstylestrong{todo}
+
+
+\subsection{Wilcoxon}
+\label{\detokenize{ch/statistics/hp-test-single:wilcoxon}}
+\sphinxAtStartPar
+…\sphinxstylestrong{todo}
+
 \sphinxstepscope
 
 
 \subsection{Test di correlazione}
 \label{\detokenize{ch/statistics/hp-test-correlation:test-di-correlazione}}\label{\detokenize{ch/statistics/hp-test-correlation::doc}}
+\sphinxAtStartPar
+\sphinxstylestrong{Test più comuni}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+regressione lineare
+
+\item {} 
+\sphinxAtStartPar
+correlazione di Pearson
+
+\item {} 
+\sphinxAtStartPar
+correlazione di Spearman
+
+\end{itemize}
+
+
+\subsubsection{Regressione lineare}
+\label{\detokenize{ch/statistics/hp-test-correlation:regressione-lineare}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+regressione lineare
+
+\item {} 
+\sphinxAtStartPar
+regressione lineare generalizzata
+
+\item {} 
+\sphinxAtStartPar
+…
+
+\end{itemize}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Regressione e SL.} Una delle applicazioni fondamentali in ML, in particolare in SL, è la regressione o l’approssimazione di funzioni; scelta del modello…
+
+
+\subsubsection{Correlazione di Pearson}
+\label{\detokenize{ch/statistics/hp-test-correlation:correlazione-di-pearson}}
+\sphinxAtStartPar
+Il \sphinxstylestrong{coefficiente di correlazione} tra due variabili casuali \(X\), \(Y\) è definito come il rapporto tra la loro covarianza e il prodotto delle loro deviazioni standard,
+\begin{equation*}
+\begin{split}\rho_{XY} = \frac{\mathbb{E}[(X-\mathbb{E}[X])(Y-\mathbb{E}(Y))]}{\sqrt{\mathbb{E}[(X-\mathbb{E}[X])^2]}\sqrt{\mathbb{E}[(Y-\mathbb{E}[Y])^2]}} = \frac{\sigma^2_{XY}}{\sigma_X \, \sigma_Y} \ .\end{split}
+\end{equation*}
+\sphinxAtStartPar
+\sphinxstylestrong{Coefficiente di correlazione per campioni.} Usando le statistiche campionarie per i campioni a disposizione delle due popolazioni,
+\begin{equation*}
+\begin{split}\begin{aligned}
+  r_{xy} 
+  & = \frac{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{ \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2}\sqrt{ \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})^2}} = \\
+  & = \frac{1}{n-1} \sum_{i=1}^n \left( \frac{x_i - \bar{x}}{S_x} \right) \left( \frac{y_i - \bar{y}}{S_y} \right) = \\
+  & = \frac{ \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{ \sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2}\sqrt{ \sum_{i=1}^{n} (y_i - \bar{y})^2}} \ .
+\end{aligned}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+\sphinxstylestrong{Coefficiente di correlazione in statistica inferenziale.} I metodi di statistica basati sul coefficiente di correlazione di Pearson hanno due obiettivi:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+valutare l’ipotesi nulla \(\text{H}_0\) che afferma che l’assenza di correlazione tra le due popolazioni, \(\rho = 0\), sulla base del valore del coefficiente \(r\) calcolato sui campioni
+
+\item {} 
+\sphinxAtStartPar
+fornire un intervallo di confidenza che contenga \(\rho\)
+
+\end{enumerate}
+
+\sphinxAtStartPar
+Alcuni metodi per ottenere questi due obiettivi sono:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+permutazione
+
+\item {} 
+\sphinxAtStartPar
+bootstrap
+
+\item {} 
+\sphinxAtStartPar
+errore standard, assumendo una relazione lineare tra \(x\) e \(y\), con l’aggiunta di un errore gaussiano \(\varepsilon\), \(y = a x + b + \varepsilon\), \(\sigma_r = \sqrt{\frac{1-r^2}{n-2}}\)
+
+\item {} 
+\sphinxAtStartPar
+\(t\)\sphinxhyphen{}test sulla variabile \(t = \frac{r}{\sigma_r}\)
+
+\item {} 
+\sphinxAtStartPar
+…
+
+\end{itemize}
+
+
+\subsubsection{Correlazione di Spearman}
+\label{\detokenize{ch/statistics/hp-test-correlation:correlazione-di-spearman}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+per ranghi
+
+\item {} 
+\sphinxAtStartPar
+per relazioni non lineari ma monotone
+… \sphinxstylestrong{todo}
+
+\end{itemize}
+
 \sphinxstepscope
 
 
 \subsection{Test di indipendenza}
 \label{\detokenize{ch/statistics/hp-test-independence:test-di-indipendenza}}\label{\detokenize{ch/statistics/hp-test-independence::doc}}
+\sphinxAtStartPar
+\sphinxstylestrong{Test più comuni}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\(t\)\sphinxhyphen{}test per campionoi indipendenti e Welch \(t\)\sphinxhyphen{}test
+
+\item {} 
+\sphinxAtStartPar
+ANOVA
+
+\item {} 
+\sphinxAtStartPar
+Tukey test
+
+\item {} 
+\sphinxAtStartPar
+Mann\sphinxhyphen{}Whitney \(U\)\sphinxhyphen{}test
+
+\item {} 
+\sphinxAtStartPar
+Kruskal\sphinxhyphen{}Wallis \(H\)\sphinxhyphen{}test
+
+\end{itemize}
+
+
+\subsubsection{\protect\(t\protect\)\sphinxhyphen{}test e Welch \protect\(t\protect\)\sphinxhyphen{}test}
+\label{\detokenize{ch/statistics/hp-test-independence:t-test-e-welch-t-test}}
+\sphinxAtStartPar
+Il \(t\)\sphinxhyphen{}test di Welch è un test di posizione per stimare se due popolazioni di cui sono noti due campioni hanno la stessa media. E” una modifica del \(t\)\sphinxhyphen{}test, e si dimostra un criterio più affidabile quando i due campioni hanno varianza diversa e dimensione diversa.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Ipotesi.} Il test assume che la media dei campioni abbia una distribuzione normale.
+
+\sphinxAtStartPar
+…\sphinxstylestrong{todo}
+
+
+\subsubsection{ANOVA (Analysis of variance)}
+\label{\detokenize{ch/statistics/hp-test-independence:anova-analysis-of-variance}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+…insieme di metodi statistici…
+
+\item {} 
+\sphinxAtStartPar
+differenza tra due o più campioni
+
+\item {} 
+\sphinxAtStartPar
+i metodi più semplici valutano se le medie di 2 o più popolazioni hanno valori uguali
+
+\item {} 
+\sphinxAtStartPar
+3 classi: fixed\sphinxhyphen{}effect, random\sphinxhyphen{}effect, mixed\sphinxhyphen{}effect
+
+\item {} 
+\sphinxAtStartPar
+\(F\)\sphinxhyphen{}test
+
+\item {} 
+\sphinxAtStartPar
+single/multiple factors
+
+\item {} 
+\sphinxAtStartPar
+caso particolare di regressione lineare generalizzata
+
+\end{itemize}
+
+\sphinxAtStartPar
+…\sphinxstylestrong{todo}
+
+
+\subsubsection{Tukey test}
+\label{\detokenize{ch/statistics/hp-test-independence:tukey-test}}
+\sphinxAtStartPar
+…\sphinxstylestrong{todo}
+
+
+\subsubsection{Kruskal\sphinxhyphen{}Wallis \protect\(H\protect\)\sphinxhyphen{}test}
+\label{\detokenize{ch/statistics/hp-test-independence:kruskal-wallis-h-test}}
+\sphinxAtStartPar
+…\sphinxstylestrong{todo}
+
+
+\subsubsection{Mann\sphinxhyphen{}Whitney \protect\(U\protect\)\sphinxhyphen{}test}
+\label{\detokenize{ch/statistics/hp-test-independence:mann-whitney-u-test}}
+\sphinxAtStartPar
+Il test di Mann\sphinxhyphen{}Whitney è un test statistico non parametrico usato per verificare se le popolazioni \(X\), \(Y\) delle quali sono disponibili due campioni \(\{X_n\}_{n=1:n_x}\), \(\{Y_m\}_{m=1:n_y}\), sono identiche.
+
+\sphinxAtStartPar
+… \sphinxstylestrong{todo}
+
 \sphinxstepscope
 
 

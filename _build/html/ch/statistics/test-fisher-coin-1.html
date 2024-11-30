@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>18.2.4.1. Test di verifica d’ipotesi - Fisher &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>18.2.6.1. Test di verifica d’ipotesi - Fisher &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="18.2.4.2. Moneta truccata" href="test-fisher-coin-2.html" />
-    <link rel="prev" title="18.2.4. Esempi" href="hp-test-examples.html" />
+    <link rel="next" title="18.2.6.2. Moneta truccata" href="test-fisher-coin-2.html" />
+    <link rel="prev" title="18.2.6. Esempi" href="hp-test-examples.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -214,14 +214,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="estimate.html">18.1. Stima</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="hp-test.html">18.2. Test di verifica delle ipotesi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="hp-test-single.html">18.2.1. Test su campioni singoli o coppie di campioni</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hp-test-correlation.html">18.2.2. Test di correlazione</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hp-test-independence.html">18.2.3. Test di indipendenza</a></li>
-<li class="toctree-l3 current active has-children"><a class="reference internal" href="hp-test-examples.html">18.2.4. Esempi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l4 current active"><a class="current reference internal" href="#">18.2.4.1. Test di verifica d’ipotesi - Fisher</a></li>
-<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-2.html">18.2.4.2. Moneta truccata</a></li>
-<li class="toctree-l4"><a class="reference internal" href="test-fisher-rabbit.html">18.2.4.3. Gambler rabbit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="t-test.html">18.2.4.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.4.5. ANOVA - Analysis of variance</a></li>
+
+
+<li class="toctree-l3"><a class="reference internal" href="hp-test-correlation.html">18.2.4. Test di correlazione</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hp-test-independence.html">18.2.5. Test di indipendenza</a></li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="hp-test-examples.html">18.2.6. Esempi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">18.2.6.1. Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-2.html">18.2.6.2. Moneta truccata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-rabbit.html">18.2.6.3. Gambler rabbit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="t-test.html">18.2.6.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.6.5. ANOVA - Analysis of variance</a></li>
 </ul>
 </li>
 </ul>
@@ -491,9 +493,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.4.1.1. Esempio: moneta truccata o no?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.4.1.1.1. Import librerie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campione-generato-dal-processo-casuale">18.2.4.1.1.2. Campione generato dal processo casuale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.6.1.1. Esempio: moneta truccata o no?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.6.1.1.1. Import librerie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campione-generato-dal-processo-casuale">18.2.6.1.1.2. Campione generato dal processo casuale</a></li>
 </ul>
 </li>
 </ul>
@@ -508,7 +510,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="test-di-verifica-d-ipotesi-fisher">
-<h1><span class="section-number">18.2.4.1. </span>Test di verifica d’ipotesi - Fisher<a class="headerlink" href="#test-di-verifica-d-ipotesi-fisher" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">18.2.6.1. </span>Test di verifica d’ipotesi - Fisher<a class="headerlink" href="#test-di-verifica-d-ipotesi-fisher" title="Permalink to this heading">#</a></h1>
 <p>Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsificabilità di Popper, e può essere riassunto nei seguenti passaggi:</p>
 <ol class="arabic simple">
 <li><p>formulazione di un’ipotesi falsificabile, definita <strong>ipotesi nulla</strong> <span class="math notranslate nohighlight">\(\text{H}_0\)</span>, da verificare e che viene ritenuta vera fino a prova contraria</p></li>
@@ -520,7 +522,7 @@ $<span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span>$</p></li>
 <li><p><strong>confronto</strong> del valore calcolato della statistica test con gli intervalli di rifiuto e accettazione della variabile soggetta all’ipotesi nulla, e <strong>verdetto sull’ipotesi</strong></p></li>
 </ol>
 <div class="section" id="esempio-moneta-truccata-o-no">
-<h2><span class="section-number">18.2.4.1.1. </span>Esempio: moneta truccata o no?<a class="headerlink" href="#esempio-moneta-truccata-o-no" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.2.6.1.1. </span>Esempio: moneta truccata o no?<a class="headerlink" href="#esempio-moneta-truccata-o-no" title="Permalink to this heading">#</a></h2>
 <p>Dati i risultati di <span class="math notranslate nohighlight">\(n\)</span> lanci di una moneta, si vuole stabilire con una certa probabilità se la moneta è truccata o meno.</p>
 <p>Il lancio di una moneta viene modellato come una variabile casuale <span class="math notranslate nohighlight">\(X\)</span> di Bernoulli, con due possibili uscite testa, <span class="math notranslate nohighlight">\(X=0\)</span>, o croce, <span class="math notranslate nohighlight">\(X=1\)</span>. La forma generale della distribuzione di probabilità di una variabile casuale di Bernoulli <span class="math notranslate nohighlight">\(B(p)\)</span> è</p>
 <div class="math notranslate nohighlight">
@@ -531,7 +533,7 @@ Per una variabile casuale con distribuzione di probabilità di Bernoulli <span c
 <div class="math notranslate nohighlight">
 \[\begin{split}p_n(x) = \left( \begin{matrix} n \\ x \end{matrix}  \right) \, p^x \, (1-p)^{n-x}\end{split}\]</div>
 <div class="section" id="import-librerie">
-<h3><span class="section-number">18.2.4.1.1.1. </span>Import librerie<a class="headerlink" href="#import-librerie" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.2.6.1.1.1. </span>Import librerie<a class="headerlink" href="#import-librerie" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import libraries</span>
@@ -546,7 +548,7 @@ Per una variabile casuale con distribuzione di probabilità di Bernoulli <span c
 </div>
 </div>
 <div class="section" id="campione-generato-dal-processo-casuale">
-<h3><span class="section-number">18.2.4.1.1.2. </span>Campione generato dal processo casuale<a class="headerlink" href="#campione-generato-dal-processo-casuale" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.2.6.1.1.2. </span>Campione generato dal processo casuale<a class="headerlink" href="#campione-generato-dal-processo-casuale" title="Permalink to this heading">#</a></h3>
 <p>Viene lanciata una moneta <span class="math notranslate nohighlight">\(n_{flips}\)</span> volte. Dati</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -712,7 +714,7 @@ heads:tails 17:13
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">18.2.4. </span>Esempi</p>
+        <p class="prev-next-title"><span class="section-number">18.2.6. </span>Esempi</p>
       </div>
     </a>
     <a class="right-next"
@@ -720,7 +722,7 @@ heads:tails 17:13
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">18.2.4.2. </span>Moneta truccata</p>
+        <p class="prev-next-title"><span class="section-number">18.2.6.2. </span>Moneta truccata</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -739,9 +741,9 @@ heads:tails 17:13
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.4.1.1. Esempio: moneta truccata o no?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.4.1.1.1. Import librerie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campione-generato-dal-processo-casuale">18.2.4.1.1.2. Campione generato dal processo casuale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-moneta-truccata-o-no">18.2.6.1.1. Esempio: moneta truccata o no?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.6.1.1.1. Import librerie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campione-generato-dal-processo-casuale">18.2.6.1.1.2. Campione generato dal processo casuale</a></li>
 </ul>
 </li>
 </ul>

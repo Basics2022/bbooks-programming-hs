@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>18.2.2. Test di correlazione &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>18.2.4. Test di correlazione &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -65,11 +65,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/statistics/hp-test-correlation';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="18.2.3. Test di indipendenza" href="hp-test-independence.html" />
+    <link rel="next" title="18.2.5. Test di indipendenza" href="hp-test-independence.html" />
     <link rel="prev" title="18.2.1. Test su campioni singoli o coppie di campioni" href="hp-test-single.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
@@ -212,14 +214,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="estimate.html">18.1. Stima</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="hp-test.html">18.2. Test di verifica delle ipotesi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="hp-test-single.html">18.2.1. Test su campioni singoli o coppie di campioni</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">18.2.2. Test di correlazione</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hp-test-independence.html">18.2.3. Test di indipendenza</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="hp-test-examples.html">18.2.4. Esempi</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-1.html">18.2.4.1. Test di verifica d’ipotesi - Fisher</a></li>
-<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-2.html">18.2.4.2. Moneta truccata</a></li>
-<li class="toctree-l4"><a class="reference internal" href="test-fisher-rabbit.html">18.2.4.3. Gambler rabbit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="t-test.html">18.2.4.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.4.5. ANOVA - Analysis of variance</a></li>
+
+
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">18.2.4. Test di correlazione</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hp-test-independence.html">18.2.5. Test di indipendenza</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="hp-test-examples.html">18.2.6. Esempi</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-1.html">18.2.6.1. Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-2.html">18.2.6.2. Moneta truccata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-rabbit.html">18.2.6.3. Gambler rabbit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="t-test.html">18.2.6.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.6.5. ANOVA - Analysis of variance</a></li>
 </ul>
 </li>
 </ul>
@@ -466,7 +470,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -482,6 +488,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressione-lineare">18.2.4.1. Regressione lineare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione-di-pearson">18.2.4.2. Correlazione di Pearson</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione-di-spearman">18.2.4.3. Correlazione di Spearman</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -492,13 +508,57 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="test-di-correlazione">
-<h1><span class="section-number">18.2.2. </span>Test di correlazione<a class="headerlink" href="#test-di-correlazione" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">18.2.4. </span>Test di correlazione<a class="headerlink" href="#test-di-correlazione" title="Permalink to this heading">#</a></h1>
 <p><strong>Test più comuni</strong></p>
 <ul class="simple">
 <li><p>regressione lineare</p></li>
 <li><p>correlazione di Pearson</p></li>
 <li><p>correlazione di Spearman</p></li>
 </ul>
+<div class="section" id="regressione-lineare">
+<h2><span class="section-number">18.2.4.1. </span>Regressione lineare<a class="headerlink" href="#regressione-lineare" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>regressione lineare</p></li>
+<li><p>regressione lineare generalizzata</p></li>
+<li><p>…</p></li>
+</ul>
+<p><strong>Regressione e SL.</strong> Una delle applicazioni fondamentali in ML, in particolare in SL, è la regressione o l’approssimazione di funzioni; scelta del modello…</p>
+</div>
+<div class="section" id="correlazione-di-pearson">
+<h2><span class="section-number">18.2.4.2. </span>Correlazione di Pearson<a class="headerlink" href="#correlazione-di-pearson" title="Permalink to this heading">#</a></h2>
+<p>Il <strong>coefficiente di correlazione</strong> tra due variabili casuali <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> è definito come il rapporto tra la loro covarianza e il prodotto delle loro deviazioni standard,</p>
+<div class="math notranslate nohighlight">
+\[\rho_{XY} = \frac{\mathbb{E}[(X-\mathbb{E}[X])(Y-\mathbb{E}(Y))]}{\sqrt{\mathbb{E}[(X-\mathbb{E}[X])^2]}\sqrt{\mathbb{E}[(Y-\mathbb{E}[Y])^2]}} = \frac{\sigma^2_{XY}}{\sigma_X \, \sigma_Y} \ .\]</div>
+<p><strong>Coefficiente di correlazione per campioni.</strong> Usando le statistiche campionarie per i campioni a disposizione delle due popolazioni,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  r_{xy} 
+  &amp; = \frac{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{ \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2}\sqrt{ \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})^2}} = \\
+  &amp; = \frac{1}{n-1} \sum_{i=1}^n \left( \frac{x_i - \bar{x}}{S_x} \right) \left( \frac{y_i - \bar{y}}{S_y} \right) = \\
+  &amp; = \frac{ \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{ \sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2}\sqrt{ \sum_{i=1}^{n} (y_i - \bar{y})^2}} \ .
+\end{aligned}\end{split}\]</div>
+<p><strong>Coefficiente di correlazione in statistica inferenziale.</strong> I metodi di statistica basati sul coefficiente di correlazione di Pearson hanno due obiettivi:</p>
+<ol class="arabic simple">
+<li><p>valutare l’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span> che afferma che l’assenza di correlazione tra le due popolazioni, <span class="math notranslate nohighlight">\(\rho = 0\)</span>, sulla base del valore del coefficiente <span class="math notranslate nohighlight">\(r\)</span> calcolato sui campioni</p></li>
+<li><p>fornire un intervallo di confidenza che contenga <span class="math notranslate nohighlight">\(\rho\)</span></p></li>
+</ol>
+<p>Alcuni metodi per ottenere questi due obiettivi sono:</p>
+<ul class="simple">
+<li><p>permutazione</p></li>
+<li><p>bootstrap</p></li>
+<li><p>errore standard, assumendo una relazione lineare tra <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, con l’aggiunta di un errore gaussiano <span class="math notranslate nohighlight">\(\varepsilon\)</span>, <span class="math notranslate nohighlight">\(y = a x + b + \varepsilon\)</span>, <span class="math notranslate nohighlight">\(\sigma_r = \sqrt{\frac{1-r^2}{n-2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span>-test sulla variabile <span class="math notranslate nohighlight">\(t = \frac{r}{\sigma_r}\)</span></p></li>
+<li><p>…</p></li>
+</ul>
+</div>
+<div class="section" id="correlazione-di-spearman">
+<h2><span class="section-number">18.2.4.3. </span>Correlazione di Spearman<a class="headerlink" href="#correlazione-di-spearman" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>per ranghi</p></li>
+<li><p>per relazioni non lineari ma monotone
+… <strong>todo</strong></p></li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -545,7 +605,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">18.2.3. </span>Test di indipendenza</p>
+        <p class="prev-next-title"><span class="section-number">18.2.5. </span>Test di indipendenza</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -555,6 +615,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressione-lineare">18.2.4.1. Regressione lineare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione-di-pearson">18.2.4.2. Correlazione di Pearson</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione-di-spearman">18.2.4.3. Correlazione di Spearman</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>18.2.4.2. Moneta truccata &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>18.2.6.2. Moneta truccata &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="18.2.4.3. Gambler rabbit" href="test-fisher-rabbit.html" />
-    <link rel="prev" title="18.2.4.1. Test di verifica d’ipotesi - Fisher" href="test-fisher-coin-1.html" />
+    <link rel="next" title="18.2.6.3. Gambler rabbit" href="test-fisher-rabbit.html" />
+    <link rel="prev" title="18.2.6.1. Test di verifica d’ipotesi - Fisher" href="test-fisher-coin-1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -214,14 +214,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="estimate.html">18.1. Stima</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="hp-test.html">18.2. Test di verifica delle ipotesi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="hp-test-single.html">18.2.1. Test su campioni singoli o coppie di campioni</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hp-test-correlation.html">18.2.2. Test di correlazione</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hp-test-independence.html">18.2.3. Test di indipendenza</a></li>
-<li class="toctree-l3 current active has-children"><a class="reference internal" href="hp-test-examples.html">18.2.4. Esempi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-1.html">18.2.4.1. Test di verifica d’ipotesi - Fisher</a></li>
-<li class="toctree-l4 current active"><a class="current reference internal" href="#">18.2.4.2. Moneta truccata</a></li>
-<li class="toctree-l4"><a class="reference internal" href="test-fisher-rabbit.html">18.2.4.3. Gambler rabbit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="t-test.html">18.2.4.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.4.5. ANOVA - Analysis of variance</a></li>
+
+
+<li class="toctree-l3"><a class="reference internal" href="hp-test-correlation.html">18.2.4. Test di correlazione</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hp-test-independence.html">18.2.5. Test di indipendenza</a></li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="hp-test-examples.html">18.2.6. Esempi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-1.html">18.2.6.1. Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">18.2.6.2. Moneta truccata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-rabbit.html">18.2.6.3. Gambler rabbit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="t-test.html">18.2.6.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.6.5. ANOVA - Analysis of variance</a></li>
 </ul>
 </li>
 </ul>
@@ -491,19 +493,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie-e-funzioni-utili">18.2.4.2.1. Import librerie e funzioni utili</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.4.2.1.1. Import librerie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie-e-funzioni-utili">18.2.6.2.1. Import librerie e funzioni utili</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.6.2.1.1. Import librerie</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-per-lo-svolgimento-di-un-esperimento">18.2.4.2.2. Funzione per lo svolgimento di un esperimento</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-che-restituisce-la-pdf-p-x-text-h-0">18.2.4.2.2.1. Funzione che restituisce la pdf <span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzioni-per-la-ricerca-degli-intervalli-di-accettazione-dell-ipotesi">18.2.4.2.2.2. Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-per-lo-svolgimento-di-un-esperimento">18.2.6.2.2. Funzione per lo svolgimento di un esperimento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-che-restituisce-la-pdf-p-x-text-h-0">18.2.6.2.2.1. Funzione che restituisce la pdf <span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzioni-per-la-ricerca-degli-intervalli-di-accettazione-dell-ipotesi">18.2.6.2.2.2. Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esperimento">18.2.4.2.3. Esperimento</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#livelli-di-accettazione">18.2.4.2.3.1. Livelli di accettazione</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svolgimento-esperimento">18.2.4.2.3.2. Svolgimento esperimento</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafici">18.2.4.2.3.3. Grafici</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esperimento">18.2.6.2.3. Esperimento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#livelli-di-accettazione">18.2.6.2.3.1. Livelli di accettazione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svolgimento-esperimento">18.2.6.2.3.2. Svolgimento esperimento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafici">18.2.6.2.3.3. Grafici</a></li>
 </ul>
 </li>
 </ul>
@@ -518,13 +520,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="moneta-truccata">
-<h1><span class="section-number">18.2.4.2. </span>Moneta truccata<a class="headerlink" href="#moneta-truccata" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">18.2.6.2. </span>Moneta truccata<a class="headerlink" href="#moneta-truccata" title="Permalink to this heading">#</a></h1>
 <p>Si vuole valutare se una moneta è truccata. L’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span> da falsificare è «la moneta non è truccata». Si sceglie come statistica test la percentuale di risultati «testa» sul numero di lanci.</p>
 <p>L’esperimento viene condotto per un numero incrementale di esperimenti.</p>
 <div class="section" id="import-librerie-e-funzioni-utili">
-<h2><span class="section-number">18.2.4.2.1. </span>Import librerie e funzioni utili<a class="headerlink" href="#import-librerie-e-funzioni-utili" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.2.6.2.1. </span>Import librerie e funzioni utili<a class="headerlink" href="#import-librerie-e-funzioni-utili" title="Permalink to this heading">#</a></h2>
 <div class="section" id="import-librerie">
-<h3><span class="section-number">18.2.4.2.1.1. </span>Import librerie<a class="headerlink" href="#import-librerie" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.2.6.2.1.1. </span>Import librerie<a class="headerlink" href="#import-librerie" title="Permalink to this heading">#</a></h3>
 <p>Reset delle variabili e import librerie.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -547,7 +549,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="funzione-per-lo-svolgimento-di-un-esperimento">
-<h2><span class="section-number">18.2.4.2.2. </span>Funzione per lo svolgimento di un esperimento<a class="headerlink" href="#funzione-per-lo-svolgimento-di-un-esperimento" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.2.6.2.2. </span>Funzione per lo svolgimento di un esperimento<a class="headerlink" href="#funzione-per-lo-svolgimento-di-un-esperimento" title="Permalink to this heading">#</a></h2>
 <p>La funzione per lo svolgimento di un esperimento qui definita prende come argomenti un generatore di numeri casuali e i suoi parametri, e restituisce i campioni prodotti secondo la distribuzione data. Vengono definiti dei parametri di default, corrispondenti a una distribuzione di Bernoulli uniforme</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -572,7 +574,7 @@ document.write(`
 </details>
 </div>
 <div class="section" id="funzione-che-restituisce-la-pdf-p-x-text-h-0">
-<h3><span class="section-number">18.2.4.2.2.1. </span>Funzione che restituisce la pdf <span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span><a class="headerlink" href="#funzione-che-restituisce-la-pdf-p-x-text-h-0" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.2.6.2.2.1. </span>Funzione che restituisce la pdf <span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span><a class="headerlink" href="#funzione-che-restituisce-la-pdf-p-x-text-h-0" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -603,7 +605,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="funzioni-per-la-ricerca-degli-intervalli-di-accettazione-dell-ipotesi">
-<h3><span class="section-number">18.2.4.2.2.2. </span>Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi<a class="headerlink" href="#funzioni-per-la-ricerca-degli-intervalli-di-accettazione-dell-ipotesi" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.2.6.2.2.2. </span>Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi<a class="headerlink" href="#funzioni-per-la-ricerca-degli-intervalli-di-accettazione-dell-ipotesi" title="Permalink to this heading">#</a></h3>
 <p>Vengono qui definite due funzoni per la ricerca degli intervalli di accettazione, dato il livello di significatività del test richiesto. La prima funzione ricerca un unico intervallo di accettazione riferito a un unico livello di significatività; la seconda funzione ricerca tanti intervalli di accettazione quanti sono i livelli di significatività cercati: ad esempio, si possono cercare simultaneamente i livellidi significatività associati a <span class="math notranslate nohighlight">\(\sigma\)</span>, <span class="math notranslate nohighlight">\(2 \sigma\)</span>, <span class="math notranslate nohighlight">\(3 \sigma\)</span>…</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -685,9 +687,9 @@ document.write(`
 </div>
 </div>
 <div class="section" id="esperimento">
-<h2><span class="section-number">18.2.4.2.3. </span>Esperimento<a class="headerlink" href="#esperimento" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.2.6.2.3. </span>Esperimento<a class="headerlink" href="#esperimento" title="Permalink to this heading">#</a></h2>
 <div class="section" id="livelli-di-accettazione">
-<h3><span class="section-number">18.2.4.2.3.1. </span>Livelli di accettazione<a class="headerlink" href="#livelli-di-accettazione" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.2.6.2.3.1. </span>Livelli di accettazione<a class="headerlink" href="#livelli-di-accettazione" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -708,7 +710,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="svolgimento-esperimento">
-<h3><span class="section-number">18.2.4.2.3.2. </span>Svolgimento esperimento<a class="headerlink" href="#svolgimento-esperimento" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.2.6.2.3.2. </span>Svolgimento esperimento<a class="headerlink" href="#svolgimento-esperimento" title="Permalink to this heading">#</a></h3>
 <p>L’esperimento viene svolto usando due monete, la cui natura è a priori incognita, che possono essere modellate con variabili casuali di Bernoulli: una moneta non truccata produce testa o croce con la probaiblità uniforme <span class="math notranslate nohighlight">\(0.5\)</span>; una moneta truccata che produce testa o croce con probabilità <span class="math notranslate nohighlight">\(0.45 - 0.55\)</span></p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -773,7 +775,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="grafici">
-<h3><span class="section-number">18.2.4.2.3.3. </span>Grafici<a class="headerlink" href="#grafici" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.2.6.2.3.3. </span>Grafici<a class="headerlink" href="#grafici" title="Permalink to this heading">#</a></h3>
 <p>Il valore medio delle volte che è uscita croce viene usata come statistica test. Il valore della statistica test per gli esperimenti condotti con le due monete viene confrontato con la funzione di distribuzione <span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span> per una moneta non truccata. Viene mostrato l’andamento delle statistiche test e degli intervalli di accettazione in funzione del numero di lanci della moneta. Vengono mostrati i dati raccolti e successivamente depurati della media attesa e scalati per la varianza della media campionaria <span class="math notranslate nohighlight">\(\frac{\sigma}{\sqrt{n_s}}\)</span>, per mettere in evidenza i livelli di significatività <span class="math notranslate nohighlight">\([0.3, 0.05, 0.003]\)</span></p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -874,7 +876,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">18.2.4.1. </span>Test di verifica d’ipotesi - Fisher</p>
+        <p class="prev-next-title"><span class="section-number">18.2.6.1. </span>Test di verifica d’ipotesi - Fisher</p>
       </div>
     </a>
     <a class="right-next"
@@ -882,7 +884,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">18.2.4.3. </span>Gambler rabbit</p>
+        <p class="prev-next-title"><span class="section-number">18.2.6.3. </span>Gambler rabbit</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -901,19 +903,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie-e-funzioni-utili">18.2.4.2.1. Import librerie e funzioni utili</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.4.2.1.1. Import librerie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie-e-funzioni-utili">18.2.6.2.1. Import librerie e funzioni utili</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">18.2.6.2.1.1. Import librerie</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-per-lo-svolgimento-di-un-esperimento">18.2.4.2.2. Funzione per lo svolgimento di un esperimento</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-che-restituisce-la-pdf-p-x-text-h-0">18.2.4.2.2.1. Funzione che restituisce la pdf <span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzioni-per-la-ricerca-degli-intervalli-di-accettazione-dell-ipotesi">18.2.4.2.2.2. Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-per-lo-svolgimento-di-un-esperimento">18.2.6.2.2. Funzione per lo svolgimento di un esperimento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-che-restituisce-la-pdf-p-x-text-h-0">18.2.6.2.2.1. Funzione che restituisce la pdf <span class="math notranslate nohighlight">\(p(x|\text{H}_0)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzioni-per-la-ricerca-degli-intervalli-di-accettazione-dell-ipotesi">18.2.6.2.2.2. Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esperimento">18.2.4.2.3. Esperimento</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#livelli-di-accettazione">18.2.4.2.3.1. Livelli di accettazione</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svolgimento-esperimento">18.2.4.2.3.2. Svolgimento esperimento</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafici">18.2.4.2.3.3. Grafici</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esperimento">18.2.6.2.3. Esperimento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#livelli-di-accettazione">18.2.6.2.3.1. Livelli di accettazione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svolgimento-esperimento">18.2.6.2.3.2. Svolgimento esperimento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafici">18.2.6.2.3.3. Grafici</a></li>
 </ul>
 </li>
 </ul>
