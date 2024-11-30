@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>17.1.3. Trasformazione di probabilità di densità &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>17.1.4. Trasformazione di probabilità di densità &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="17.1.4. Esempi di funzioni densità di probabilità" href="rv_pdf_examples.html" />
+    <link rel="next" title="17.1.5. Esempi di funzioni densità di probabilità" href="rv_pdf_examples.html" />
     <link rel="prev" title="17.1. Variabili casuali" href="random_variables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
@@ -196,10 +196,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="descriptive.html">16. Statistica descrittiva</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="probability.html">17. Introduzione alla probabilità</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="random_variables.html">17.1. Variabili casuali</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">17.1.3. Trasformazione di probabilità di densità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rv_pdf_examples.html">17.1.4. Esempi di funzioni densità di probabilità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.5. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.6. Campionamento</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">17.1.4. Trasformazione di probabilità di densità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rv_pdf_examples.html">17.1.5. Esempi di funzioni densità di probabilità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.6. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.7. Campionamento</a></li>
 
 
 </ul>
@@ -482,18 +482,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabile-singola">17.1.3.1. Variabile singola</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-di-variabile">17.1.3.1.1. Cambio di variabile</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traslazione">17.1.3.1.1.1. Traslazione</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scalatura">17.1.3.1.1.2. Scalatura</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabile-singola">17.1.4.1. Variabile singola</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-di-variabile">17.1.4.1.1. Cambio di variabile</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traslazione">17.1.4.1.1.1. Traslazione</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scalatura">17.1.4.1.1.2. Scalatura</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-variabile">17.1.3.2. Multi-variabile</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinazione-di-variabili">17.1.3.2.1. Combinazione di variabili</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somma">17.1.3.2.1.1. Somma</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prodotto">17.1.3.2.1.2. Prodotto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-variabile">17.1.4.2. Multi-variabile</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinazione-di-variabili">17.1.4.2.1. Combinazione di variabili</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somma">17.1.4.2.1.1. Somma</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prodotto">17.1.4.2.1.2. Prodotto</a></li>
 </ul>
 </li>
 </ul>
@@ -510,25 +510,25 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="trasformazione-di-probabilita-di-densita">
-<h1><span class="section-number">17.1.3. </span>Trasformazione di probabilità di densità<a class="headerlink" href="#trasformazione-di-probabilita-di-densita" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">17.1.4. </span>Trasformazione di probabilità di densità<a class="headerlink" href="#trasformazione-di-probabilita-di-densita" title="Permalink to this heading">#</a></h1>
 <div class="section" id="variabile-singola">
-<h2><span class="section-number">17.1.3.1. </span>Variabile singola<a class="headerlink" href="#variabile-singola" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.1.4.1. </span>Variabile singola<a class="headerlink" href="#variabile-singola" title="Permalink to this heading">#</a></h2>
 <div class="section" id="cambio-di-variabile">
-<h3><span class="section-number">17.1.3.1.1. </span>Cambio di variabile<a class="headerlink" href="#cambio-di-variabile" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.4.1.1. </span>Cambio di variabile<a class="headerlink" href="#cambio-di-variabile" title="Permalink to this heading">#</a></h3>
 <div class="section" id="traslazione">
-<h4><span class="section-number">17.1.3.1.1.1. </span>Traslazione<a class="headerlink" href="#traslazione" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">17.1.4.1.1.1. </span>Traslazione<a class="headerlink" href="#traslazione" title="Permalink to this heading">#</a></h4>
 </div>
 <div class="section" id="scalatura">
-<h4><span class="section-number">17.1.3.1.1.2. </span>Scalatura<a class="headerlink" href="#scalatura" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">17.1.4.1.1.2. </span>Scalatura<a class="headerlink" href="#scalatura" title="Permalink to this heading">#</a></h4>
 </div>
 </div>
 </div>
 <div class="section" id="multi-variabile">
-<h2><span class="section-number">17.1.3.2. </span>Multi-variabile<a class="headerlink" href="#multi-variabile" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.1.4.2. </span>Multi-variabile<a class="headerlink" href="#multi-variabile" title="Permalink to this heading">#</a></h2>
 <div class="section" id="combinazione-di-variabili">
-<h3><span class="section-number">17.1.3.2.1. </span>Combinazione di variabili<a class="headerlink" href="#combinazione-di-variabili" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.4.2.1. </span>Combinazione di variabili<a class="headerlink" href="#combinazione-di-variabili" title="Permalink to this heading">#</a></h3>
 <div class="section" id="somma">
-<h4><span class="section-number">17.1.3.2.1.1. </span>Somma<a class="headerlink" href="#somma" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">17.1.4.2.1.1. </span>Somma<a class="headerlink" href="#somma" title="Permalink to this heading">#</a></h4>
 <p>Date due variabili casuali <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, con probabilità congiunta <span class="math notranslate nohighlight">\(p_{XY}(x,y)\)</span>, la loro somma <span class="math notranslate nohighlight">\(Z = X + Y\)</span> è una variabile casuale dipendente con distribuzione di probabilità</p>
 <div class="math notranslate nohighlight">
 \[p(z) = \int_y p_{XY}(z-y,y) \, dy = \int_{x} p_{XY}(x, z-x) \, dx \ .\]</div>
@@ -565,7 +565,7 @@ document.write(`
 \end{aligned}\end{split}\]</div>
 </div>
 <div class="section" id="prodotto">
-<h4><span class="section-number">17.1.3.2.1.2. </span>Prodotto<a class="headerlink" href="#prodotto" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">17.1.4.2.1.2. </span>Prodotto<a class="headerlink" href="#prodotto" title="Permalink to this heading">#</a></h4>
 <p>Date due variabili casuali <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> con probabilità congiunta <span class="math notranslate nohighlight">\(p_{XY}(x,y)\)</span>, il loro prodotto <span class="math notranslate nohighlight">\(Z = X \cdot Y\)</span> è una variabile casuale dipendente con distribuzione di probabilità</p>
 <div class="math notranslate nohighlight">
 \[p(z) = \int_{y} p_{XY} \left(\frac{z}{y}, y \right) \, dy = \int_{x} p_{XY} \left(x, \frac{z}{x} \right) \, dx\]</div>
@@ -646,7 +646,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">17.1.4. </span>Esempi di funzioni densità di probabilità</p>
+        <p class="prev-next-title"><span class="section-number">17.1.5. </span>Esempi di funzioni densità di probabilità</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -665,18 +665,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabile-singola">17.1.3.1. Variabile singola</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-di-variabile">17.1.3.1.1. Cambio di variabile</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traslazione">17.1.3.1.1.1. Traslazione</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scalatura">17.1.3.1.1.2. Scalatura</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabile-singola">17.1.4.1. Variabile singola</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-di-variabile">17.1.4.1.1. Cambio di variabile</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traslazione">17.1.4.1.1.1. Traslazione</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scalatura">17.1.4.1.1.2. Scalatura</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-variabile">17.1.3.2. Multi-variabile</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinazione-di-variabili">17.1.3.2.1. Combinazione di variabili</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somma">17.1.3.2.1.1. Somma</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prodotto">17.1.3.2.1.2. Prodotto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-variabile">17.1.4.2. Multi-variabile</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinazione-di-variabili">17.1.4.2.1. Combinazione di variabili</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somma">17.1.4.2.1.1. Somma</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prodotto">17.1.4.2.1.2. Prodotto</a></li>
 </ul>
 </li>
 </ul>
