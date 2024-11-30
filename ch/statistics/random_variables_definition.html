@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>17.1.4. Definizione di variabile casuale &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>17.1.1. Definizione di variabile casuale &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="17.1.5. Variabili casuali discrete" href="random_variables_discrete.html" />
+    <link rel="next" title="17.1.2. Variabili casuali discrete" href="random_variables_discrete.html" />
     <link rel="prev" title="17.1. Variabili casuali" href="random_variables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
@@ -196,13 +196,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="descriptive.html">16. Statistica descrittiva</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="probability.html">17. Introduzione alla probabilità</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="random_variables.html">17.1. Variabili casuali</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">17.1.4. Definizione di variabile casuale</a></li>
-<li class="toctree-l3"><a class="reference internal" href="random_variables_discrete.html">17.1.5. Variabili casuali discrete</a></li>
-<li class="toctree-l3"><a class="reference internal" href="random_variables_continuous.html">17.1.6. Variabili casuali continue</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rv_pdf_transformations.html">17.1.7. Trasformazione di probabilità di densità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rv_pdf_examples.html">17.1.8. Esempi di funzioni densità di probabilità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.9. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.10. Campionamento</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">17.1.1. Definizione di variabile casuale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="random_variables_discrete.html">17.1.2. Variabili casuali discrete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="random_variables_continuous.html">17.1.3. Variabili casuali continue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rv_pdf_transformations.html">17.1.4. Trasformazione di probabilità di densità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rv_pdf_examples.html">17.1.5. Esempi di funzioni densità di probabilità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.6. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.7. Campionamento</a></li>
 
 
 </ul>
@@ -485,9 +485,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione">17.1.4.1. Definizione</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-1-lancio-dado-non-truccato-con-variabile-casuale-corrispondente-al-valore-della-faccia">17.1.4.1.1. Esempio 1. Lancio dado non truccato, con variabile casuale corrispondente al valore della faccia</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-2-lancio-dado-non-truccato-con-variabile-casuale-diverso-dal-valore-della-faccia">17.1.4.1.2. Esempio 2. Lancio dado non truccato, con variabile casuale diverso dal valore della faccia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione">17.1.1.1. Definizione</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-1-lancio-dado-non-truccato-con-variabile-casuale-corrispondente-al-valore-della-faccia">17.1.1.1.1. Esempio 1. Lancio dado non truccato, con variabile casuale corrispondente al valore della faccia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-2-lancio-dado-non-truccato-con-variabile-casuale-diverso-dal-valore-della-faccia">17.1.1.1.2. Esempio 2. Lancio dado non truccato, con variabile casuale diverso dal valore della faccia</a></li>
 </ul>
 </li>
 </ul>
@@ -502,12 +502,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="definizione-di-variabile-casuale">
-<span id="statistics-hs-random-variables-def"></span><h1><span class="section-number">17.1.4. </span>Definizione di variabile casuale<a class="headerlink" href="#definizione-di-variabile-casuale" title="Permalink to this heading">#</a></h1>
+<span id="statistics-hs-random-variables-def"></span><h1><span class="section-number">17.1.1. </span>Definizione di variabile casuale<a class="headerlink" href="#definizione-di-variabile-casuale" title="Permalink to this heading">#</a></h1>
 <p>Qualitativamente, una variabile casuale è una grandezza che può assumere valori diversi come risultato di un fenomeno aleatorio, un fenomeno che non è possibile descrivere accuratamente con delle equazioni deterministiche. todo fare esempi: lancio del dado e estrema dipendenza dalle condizioni iniziali, soprattutto con urto; aggiungere simulazione, già presente sul drive</p>
 <p>Una definizione più rigorosa prevede i concetti di spazio di probabilità e
 -algebra. Senza pretendere di fornire una descrizione dettagliata e rigorosa di questi oggetti matematici, non si vuole rinunciare a dare la definizione rigorosa di variabile casuale, fornendo un’interpretazione degli oggetti matematici coinvolti.</p>
 <div class="section" id="definizione">
-<h2><span class="section-number">17.1.4.1. </span>Definizione<a class="headerlink" href="#definizione" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.1.1.1. </span>Definizione<a class="headerlink" href="#definizione" title="Permalink to this heading">#</a></h2>
 <p>Dato uno <em>spazio di probabilità</em> <span class="math notranslate nohighlight">\((\Omega, \mathcal{F}, \nu)\)</span> e uno <em>spazio misurabile</em> <span class="math notranslate nohighlight">\((E, \mathcal{E})\)</span>, una <strong>variabile aleatoria</strong> è una funzione misurabile <span class="math notranslate nohighlight">\(X: \Omega \rightarrow E\)</span>.</p>
 <p>Ora, cerchiamo di interpretare questa definizione criptica. Iniziamo dalle cose semplici:</p>
 <ul class="simple">
@@ -532,7 +532,7 @@ document.write(`
 </ul>
 <p>Spieghiamoci peggio con due esempi.</p>
 <div class="section" id="esempio-1-lancio-dado-non-truccato-con-variabile-casuale-corrispondente-al-valore-della-faccia">
-<h3><span class="section-number">17.1.4.1.1. </span>Esempio 1. Lancio dado non truccato, con variabile casuale corrispondente al valore della faccia<a class="headerlink" href="#esempio-1-lancio-dado-non-truccato-con-variabile-casuale-corrispondente-al-valore-della-faccia" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.1.1.1. </span>Esempio 1. Lancio dado non truccato, con variabile casuale corrispondente al valore della faccia<a class="headerlink" href="#esempio-1-lancio-dado-non-truccato-con-variabile-casuale-corrispondente-al-valore-della-faccia" title="Permalink to this heading">#</a></h3>
 <p>Viene lanciato un dato a 6 facce non truccato. Questo corrisponde a un insieme degli eventi costituito da i 6 eventi distinti <span class="math notranslate nohighlight">\(E = \{ \text{faccia 1}, \dots, \text{faccia 6} \}\)</span>, e ognuno di questi 6 eventi ha una misura di probabilità uguale a <span class="math notranslate nohighlight">\(\nu(\text{faccia 1}) = \dots = \nu(\text{faccia 6}) = \frac{1}{6}\)</span>. Si sceglie come variabile casuale la variabile casuale (la funzione) che associa al numero letto sulla faccia lo stesso numero, <span class="math notranslate nohighlight">\(X: \Omega \rightarrow E\)</span>, <span class="math notranslate nohighlight">\(X(\text{faccia n}) = n\)</span>. Si vogliono ora analizzare le probabilità associate ai seguenti eventi:</p>
 <ul>
 <li><p><span class="math notranslate nohighlight">\(\Omega_1\)</span>: eventi che portano a risultato 3:</p>
@@ -555,7 +555,7 @@ document.write(`
 </ul>
 </div>
 <div class="section" id="esempio-2-lancio-dado-non-truccato-con-variabile-casuale-diverso-dal-valore-della-faccia">
-<h3><span class="section-number">17.1.4.1.2. </span>Esempio 2. Lancio dado non truccato, con variabile casuale diverso dal valore della faccia<a class="headerlink" href="#esempio-2-lancio-dado-non-truccato-con-variabile-casuale-diverso-dal-valore-della-faccia" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.1.1.2. </span>Esempio 2. Lancio dado non truccato, con variabile casuale diverso dal valore della faccia<a class="headerlink" href="#esempio-2-lancio-dado-non-truccato-con-variabile-casuale-diverso-dal-valore-della-faccia" title="Permalink to this heading">#</a></h3>
 <p>Si studino ora i casi in cui la variabile casuale associa all’evento:</p>
 <ol class="arabic simple">
 <li><p>il valore della faccia diviso 2 e aumentato di 1</p></li>
@@ -609,7 +609,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">17.1.5. </span>Variabili casuali discrete</p>
+        <p class="prev-next-title"><span class="section-number">17.1.2. </span>Variabili casuali discrete</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -628,9 +628,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione">17.1.4.1. Definizione</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-1-lancio-dado-non-truccato-con-variabile-casuale-corrispondente-al-valore-della-faccia">17.1.4.1.1. Esempio 1. Lancio dado non truccato, con variabile casuale corrispondente al valore della faccia</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-2-lancio-dado-non-truccato-con-variabile-casuale-diverso-dal-valore-della-faccia">17.1.4.1.2. Esempio 2. Lancio dado non truccato, con variabile casuale diverso dal valore della faccia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione">17.1.1.1. Definizione</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-1-lancio-dado-non-truccato-con-variabile-casuale-corrispondente-al-valore-della-faccia">17.1.1.1.1. Esempio 1. Lancio dado non truccato, con variabile casuale corrispondente al valore della faccia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-2-lancio-dado-non-truccato-con-variabile-casuale-diverso-dal-valore-della-faccia">17.1.1.1.2. Esempio 2. Lancio dado non truccato, con variabile casuale diverso dal valore della faccia</a></li>
 </ul>
 </li>
 </ul>
