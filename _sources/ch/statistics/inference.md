@@ -3,12 +3,9 @@
 
 La statistica inferenziale si occupa di stabilire le caratteristiche di una popolazione dall'osservazione di un suo campione, usando gli strumenti del calcolo delle probabilità. 
 <!-- La statistica inferenziale usa gli strumenti del calcolo delle probabilità, per svolgere il compito inverso -->
+Esistono (almeno) due approcci alla statistica inferenziale: l'apporccio classico **frequentista**, e l'approccio **bayesiano**. Del secondo, ci si limita a dire che usa delle *conoscenze pregresse* sul fenomeno e che è stato reso praticabile dai recenti sviluppi nelle capacità di calcolo a disposizione. **todo** *aggiungere sezione sull'approccio bayesiano?*
 
-**(almeno) Due approcci.**
-- frequentista, classica
-- bayesiana
-
-**Esempi di applicazioni.**
+Tra le applicazioni della statistica inferenziale si possono distinguere due applicazioni principali:
 - **stima**
   - media, varianza, intervalli di confidenza
 - **verifica ipotesi**. Classificazione seguendo la documentazione di $\texttt{scipy.stats}$
@@ -18,7 +15,6 @@ La statistica inferenziale si occupa di stabilire le caratteristiche di una popo
   - ri-campionamento e metodi MC: per valutare $p$-value e intervalli di confidenza test di validità di ipotesi
   - *ipotesi multiple*
 
-**Contenuti.**
 
 <!--
   - ...
