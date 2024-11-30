@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>17.1.5. Esempi di funzioni densità di probabilità &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>17.1.8. Esempi di funzioni densità di probabilità &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="17.1.6. Variabili casuali indipendenti e identicamente distribuite, iid." href="iid.html" />
-    <link rel="prev" title="17.1.4. Trasformazione di probabilità di densità" href="rv_pdf_transformations.html" />
+    <link rel="next" title="17.1.9. Variabili casuali indipendenti e identicamente distribuite, iid." href="iid.html" />
+    <link rel="prev" title="17.1.7. Trasformazione di probabilità di densità" href="rv_pdf_transformations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -196,10 +196,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="descriptive.html">16. Statistica descrittiva</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="probability.html">17. Introduzione alla probabilità</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="random_variables.html">17.1. Variabili casuali</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="rv_pdf_transformations.html">17.1.4. Trasformazione di probabilità di densità</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">17.1.5. Esempi di funzioni densità di probabilità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.6. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.7. Campionamento</a></li>
+<li class="toctree-l3"><a class="reference internal" href="random_variables_definition.html">17.1.4. Definizione di variabile casuale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="random_variables_discrete.html">17.1.5. Variabili casuali discrete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="random_variables_continuous.html">17.1.6. Variabili casuali continue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rv_pdf_transformations.html">17.1.7. Trasformazione di probabilità di densità</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">17.1.8. Esempi di funzioni densità di probabilità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.9. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.10. Campionamento</a></li>
 
 
 </ul>
@@ -482,12 +485,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-discrete">17.1.5.1. Variabili casuali discrete</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-continue">17.1.5.2. Variabili casuali continue</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-gaussiana-o-normale-mathscr-n">17.1.5.2.1. Distribuzione gaussiana o normale, <span class="math notranslate nohighlight">\(\mathscr{N}\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-chi-quadrato-chi-2">17.1.5.2.2. Distribuzione chi-quadrato, <span class="math notranslate nohighlight">\(\chi^2\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-t-student">17.1.5.2.3. Distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#distrubuzione-gaussiana-come-limite-della-distribuzione-t-student">17.1.5.2.3.1. Distrubuzione gaussiana come limite della distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-discrete">17.1.8.1. Variabili casuali discrete</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-continue">17.1.8.2. Variabili casuali continue</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-gaussiana-o-normale-mathscr-n">17.1.8.2.1. Distribuzione gaussiana o normale, <span class="math notranslate nohighlight">\(\mathscr{N}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-chi-quadrato-chi-2">17.1.8.2.2. Distribuzione chi-quadrato, <span class="math notranslate nohighlight">\(\chi^2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-t-student">17.1.8.2.3. Distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#distrubuzione-gaussiana-come-limite-della-distribuzione-t-student">17.1.8.2.3.1. Distrubuzione gaussiana come limite della distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a></li>
 </ul>
 </li>
 </ul>
@@ -504,20 +507,20 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="esempi-di-funzioni-densita-di-probabilita">
-<h1><span class="section-number">17.1.5. </span>Esempi di funzioni densità di probabilità<a class="headerlink" href="#esempi-di-funzioni-densita-di-probabilita" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">17.1.8. </span>Esempi di funzioni densità di probabilità<a class="headerlink" href="#esempi-di-funzioni-densita-di-probabilita" title="Permalink to this heading">#</a></h1>
 <div class="section" id="variabili-casuali-discrete">
-<h2><span class="section-number">17.1.5.1. </span>Variabili casuali discrete<a class="headerlink" href="#variabili-casuali-discrete" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.1.8.1. </span>Variabili casuali discrete<a class="headerlink" href="#variabili-casuali-discrete" title="Permalink to this heading">#</a></h2>
 </div>
 <div class="section" id="variabili-casuali-continue">
-<h2><span class="section-number">17.1.5.2. </span>Variabili casuali continue<a class="headerlink" href="#variabili-casuali-continue" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.1.8.2. </span>Variabili casuali continue<a class="headerlink" href="#variabili-casuali-continue" title="Permalink to this heading">#</a></h2>
 <div class="section" id="distribuzione-gaussiana-o-normale-mathscr-n">
-<h3><span class="section-number">17.1.5.2.1. </span>Distribuzione gaussiana o normale, <span class="math notranslate nohighlight">\(\mathscr{N}\)</span><a class="headerlink" href="#distribuzione-gaussiana-o-normale-mathscr-n" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.8.2.1. </span>Distribuzione gaussiana o normale, <span class="math notranslate nohighlight">\(\mathscr{N}\)</span><a class="headerlink" href="#distribuzione-gaussiana-o-normale-mathscr-n" title="Permalink to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\mathscr{N}(\mu, \sigma^2)\)</span></p>
 <div class="math notranslate nohighlight">
 \[f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \ \sim \ e^{-\frac{(x-\mu)^2}{2\sigma^2}}\]</div>
 </div>
 <div class="section" id="distribuzione-chi-quadrato-chi-2">
-<h3><span class="section-number">17.1.5.2.2. </span>Distribuzione chi-quadrato, <span class="math notranslate nohighlight">\(\chi^2\)</span><a class="headerlink" href="#distribuzione-chi-quadrato-chi-2" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.8.2.2. </span>Distribuzione chi-quadrato, <span class="math notranslate nohighlight">\(\chi^2\)</span><a class="headerlink" href="#distribuzione-chi-quadrato-chi-2" title="Permalink to this heading">#</a></h3>
 <p>Date <span class="math notranslate nohighlight">\(n\)</span> variabili casuali <span class="math notranslate nohighlight">\(X_k\)</span> indipendenti con distribuzione normale <span class="math notranslate nohighlight">\(\mathscr{N}(0,1)\)</span>, la somma dei loro quadrati,</p>
 <div class="math notranslate nohighlight">
 \[\chi_n^2 = \sum_{k=1}^{n} X^2_k \ ,\]</div>
@@ -526,7 +529,7 @@ document.write(`
 \[f(x) = \frac{1}{2^{\frac{n}{2}} \Gamma\left(\frac{n}{2}\right)} \, x^{\frac{n}{2}-1} \, e^{-\frac{x}{2}} \ \sim \ x^{\frac{n}{2}-1} \, e^{-\frac{n}{2}}\]</div>
 </div>
 <div class="section" id="distribuzione-t-student">
-<h3><span class="section-number">17.1.5.2.3. </span>Distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student<a class="headerlink" href="#distribuzione-t-student" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.8.2.3. </span>Distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student<a class="headerlink" href="#distribuzione-t-student" title="Permalink to this heading">#</a></h3>
 <p>La <span class="math notranslate nohighlight">\(t\)</span> di Student è la distribuzione di probabilità che governa il rapporto tra due variabili casuali indipendenti,</p>
 <div class="math notranslate nohighlight">
 \[t_{\nu} = \frac{Z}{\sqrt{\frac{K}{\nu}}} \ ,\]</div>
@@ -534,7 +537,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[f(x) = \frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{n \, \pi} \, \Gamma\left(\frac{n}{2}\right)} \left( 1 + \frac{x^2}{n} \right)^{-\frac{n + 1}{2}} \ \sim \ \left( 1 + \frac{x^2}{n} \right)^{-\frac{n + 1}{2}} \ .\]</div>
 <div class="section" id="distrubuzione-gaussiana-come-limite-della-distribuzione-t-student">
-<h4><span class="section-number">17.1.5.2.3.1. </span>Distrubuzione gaussiana come limite della distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student<a class="headerlink" href="#distrubuzione-gaussiana-come-limite-della-distribuzione-t-student" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">17.1.8.2.3.1. </span>Distrubuzione gaussiana come limite della distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student<a class="headerlink" href="#distrubuzione-gaussiana-come-limite-della-distribuzione-t-student" title="Permalink to this heading">#</a></h4>
 <p>Ricordandosi la definizione di <span class="math notranslate nohighlight">\(e^x\)</span> come limite della successione <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty} \left( 1 + \frac{x}{n} \right)^n =: e^x\)</span>, e usando l’approssimazione asintotica per <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span> della funzione Gamma <span class="math notranslate nohighlight">\(\Gamma(n+\alpha) \sim \Gamma(n)n^{\alpha}\)</span>, si può dimostrare che</p>
 <div class="math notranslate nohighlight">
 \[\left( 1 + \frac{x^2}{n} \right)^{-\frac{n+1}{2}} = \left( 1 + \frac{x^2}{n} \right)^{-\frac{1}{2}} \left[ \left( 1 + \frac{x^2}{n} \right)^n \right]^{-\frac{1}{2}} \quad \rightarrow \quad 1 \cdot e^{-\frac{x^2}{2}}\]</div>
@@ -585,7 +588,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">17.1.4. </span>Trasformazione di probabilità di densità</p>
+        <p class="prev-next-title"><span class="section-number">17.1.7. </span>Trasformazione di probabilità di densità</p>
       </div>
     </a>
     <a class="right-next"
@@ -593,7 +596,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">17.1.6. </span>Variabili casuali indipendenti e identicamente distribuite, iid.</p>
+        <p class="prev-next-title"><span class="section-number">17.1.9. </span>Variabili casuali indipendenti e identicamente distribuite, iid.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -612,12 +615,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-discrete">17.1.5.1. Variabili casuali discrete</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-continue">17.1.5.2. Variabili casuali continue</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-gaussiana-o-normale-mathscr-n">17.1.5.2.1. Distribuzione gaussiana o normale, <span class="math notranslate nohighlight">\(\mathscr{N}\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-chi-quadrato-chi-2">17.1.5.2.2. Distribuzione chi-quadrato, <span class="math notranslate nohighlight">\(\chi^2\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-t-student">17.1.5.2.3. Distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#distrubuzione-gaussiana-come-limite-della-distribuzione-t-student">17.1.5.2.3.1. Distrubuzione gaussiana come limite della distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-discrete">17.1.8.1. Variabili casuali discrete</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-continue">17.1.8.2. Variabili casuali continue</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-gaussiana-o-normale-mathscr-n">17.1.8.2.1. Distribuzione gaussiana o normale, <span class="math notranslate nohighlight">\(\mathscr{N}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-chi-quadrato-chi-2">17.1.8.2.2. Distribuzione chi-quadrato, <span class="math notranslate nohighlight">\(\chi^2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-t-student">17.1.8.2.3. Distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#distrubuzione-gaussiana-come-limite-della-distribuzione-t-student">17.1.8.2.3.1. Distrubuzione gaussiana come limite della distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a></li>
 </ul>
 </li>
 </ul>
