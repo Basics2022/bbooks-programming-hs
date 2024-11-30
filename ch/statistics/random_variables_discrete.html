@@ -505,14 +505,30 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="variabili-casuali-discrete">
 <span id="statistics-hs-random-variables-discrete"></span><h1><span class="section-number">17.1.2. </span>Variabili casuali discrete<a class="headerlink" href="#variabili-casuali-discrete" title="Permalink to this heading">#</a></h1>
-<p>…</p>
-<p><strong>Valore medio</strong></p>
+<p><strong>Funzione di probabilità</strong>.
+La funzione di probabilità, <span class="math notranslate nohighlight">\(p_X(x)\)</span>, o funzione di massa, o <em>densità di probabilità</em> con un abuso per analogia con le variabili continue, è la funzione che associa la probabilità al valore <span class="math notranslate nohighlight">\(x\)</span> della variabile casuale <span class="math notranslate nohighlight">\(X\)</span>. Data al variabile casuale <span class="math notranslate nohighlight">\(X: \Omega \rightarrow E\)</span>, la proababilità del valore discreto <span class="math notranslate nohighlight">\(x \in E\)</span> è data dalla somma delle probabilità degli eventi disgiunti <span class="math notranslate nohighlight">\(\Omega_x := \{ \omega \in \Omega \, | \, X(\omega) = x \}\)</span> che producono il valore <span class="math notranslate nohighlight">\(x\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\mu_X = E[X] = \sum_k p(x_k) x_k\]</div>
-<p><strong>Varianza</strong></p>
+\[p_X(x) = \sum_{\omega_i \in \Omega_x} \nu(\omega_i) \ .\]</div>
+<p><strong>Proprietà.</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p_X \ge 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sum_{x_k \in E} p_X(x_k) = 1\)</span></p></li>
+</ul>
+<p>E da queste due proprietà segue che la probabilità del singolo valore è non superiore a 1, <span class="math notranslate nohighlight">\(p(x_k) \le 1\)</span>.</p>
+<p><strong>Valore medio.</strong> Il valore medio di una variabile casuale è la media dei valori possibili <span class="math notranslate nohighlight">\(x_k \in E\)</span> pesata della probabilità <span class="math notranslate nohighlight">\(p(x_k)\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\sigma^2_X = E[(X-\mu_X)^2] = \sum_k p(x_k) (x_k - \mu_X)^2\]</div>
-<p><strong>media, moda.</strong></p>
+\[\begin{split}\begin{aligned}
+ \mu_X = \text{E}[X] 
+  &amp; := \sum_{x_k \in E} p(x_k) x_k = \\
+  &amp; = \sum_{x_k \in E} \sum_{\omega_i \in \Omega_x} \nu(\omega_i) X(\omega_i) = \\
+  &amp; = \sum_{\omega_i \in \Omega} \nu(\omega_i) X(\omega_i) \ .
+\end{aligned}\end{split}\]</div>
+<p>equivalente alla media dei valori della variabile <span class="math notranslate nohighlight">\(X(\omega_i)\)</span> pesata sulle probabilità degli eventi <span class="math notranslate nohighlight">\(\omega_i \in \Omega\)</span>. La media di una varaibile casuale <span class="math notranslate nohighlight">\(X\)</span> viene comunemente indicata con <span class="math notranslate nohighlight">\(\mu_X\)</span>, e così verrà fatto in seguito per motivi di sintesi.</p>
+<p><strong>Varianza.</strong> La varianza è una misura della dispersione dei valori di una varaibile casuale attorno al suo valore medio, ed è definita come la media pesata degli scarti quadratici,</p>
+<div class="math notranslate nohighlight">
+\[\sigma^2_X = E[(X-\mu_X)^2] = \sum_k p(x_k) (x_k - \mu_X)^2 \ .\]</div>
+<p>Analogamente a quanto fatto per il valore medio, anche questa media può essere riferita sia ai valori sia agli eventi.</p>
+<!-- **media, moda.** -->
 <div class="section" id="variabili-casuali-multi-dimensionali">
 <h2><span class="section-number">17.1.2.1. </span>Variabili casuali multi-dimensionali<a class="headerlink" href="#variabili-casuali-multi-dimensionali" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
