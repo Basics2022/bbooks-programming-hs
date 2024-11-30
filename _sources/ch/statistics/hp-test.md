@@ -36,11 +36,11 @@ Usando questo approccio, è possibile distinguere diversi test a seconda dei dat
 ```
 ```{dropdown} Test di correlazione
 - ...
-- Algoritmi: regressione lineare, correlazione di Pearson, correlazione di Spearman
+- Algoritmi: regressione lineare, correlazione di Pearson, correlazione di Spearman,...
 ```
 ```{dropdown} Test di indipendenza
 - ....
-- Algoritmi: $t$-test per campioni indipendenti e Welch $t$-test, ANOVA, Tukey test, Kruskal-Wallis H-test
+- Algoritmi: $t$-test per campioni indipendenti e Welch $t$-test, ANOVA, Tukey test, Kruskal-Wallis H-test, Mann-Whitney U-test,...
 ```
 ````
 
