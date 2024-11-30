@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>18.2.3. Test di indipendenza &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>18.2.4. Test di indipendenza &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="18.2.4. Esempi" href="hp-test-examples.html" />
-    <link rel="prev" title="18.2.2. Test di correlazione" href="hp-test-correlation.html" />
+    <link rel="next" title="18.2.5. Esempi" href="hp-test-examples.html" />
+    <link rel="prev" title="18.2.3. Test di correlazione" href="hp-test-correlation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -214,14 +214,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="estimate.html">18.1. Stima</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="hp-test.html">18.2. Test di verifica delle ipotesi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="hp-test-single.html">18.2.1. Test su campioni singoli o coppie di campioni</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hp-test-correlation.html">18.2.2. Test di correlazione</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">18.2.3. Test di indipendenza</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="hp-test-examples.html">18.2.4. Esempi</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-1.html">18.2.4.1. Test di verifica d’ipotesi - Fisher</a></li>
-<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-2.html">18.2.4.2. Moneta truccata</a></li>
-<li class="toctree-l4"><a class="reference internal" href="test-fisher-rabbit.html">18.2.4.3. Gambler rabbit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="t-test.html">18.2.4.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.4.5. ANOVA - Analysis of variance</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="hp-test-correlation.html">18.2.3. Test di correlazione</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">18.2.4. Test di indipendenza</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="hp-test-examples.html">18.2.5. Esempi</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-1.html">18.2.5.1. Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-2.html">18.2.5.2. Moneta truccata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-rabbit.html">18.2.5.3. Gambler rabbit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="t-test.html">18.2.5.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.5.5. ANOVA - Analysis of variance</a></li>
 </ul>
 </li>
 </ul>
@@ -491,11 +492,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#t-test-e-welch-t-test">18.2.3.1. <span class="math notranslate nohighlight">\(t\)</span>-test e Welch <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anova-analysis-of-variance">18.2.3.2. ANOVA (Analysis of variance)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tukey-test">18.2.3.3. Tukey test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kruskal-wallis-h-test">18.2.3.4. Kruskal-Wallis <span class="math notranslate nohighlight">\(H\)</span>-test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mann-whitney-u-test">18.2.3.5. Mann-Whitney <span class="math notranslate nohighlight">\(U\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#t-test-e-welch-t-test">18.2.4.1. <span class="math notranslate nohighlight">\(t\)</span>-test e Welch <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anova-analysis-of-variance">18.2.4.2. ANOVA (Analysis of variance)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tukey-test">18.2.4.3. Tukey test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kruskal-wallis-h-test">18.2.4.4. Kruskal-Wallis <span class="math notranslate nohighlight">\(H\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mann-whitney-u-test">18.2.4.5. Mann-Whitney <span class="math notranslate nohighlight">\(U\)</span>-test</a></li>
 </ul>
             </nav>
         </div>
@@ -508,7 +509,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="test-di-indipendenza">
-<h1><span class="section-number">18.2.3. </span>Test di indipendenza<a class="headerlink" href="#test-di-indipendenza" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">18.2.4. </span>Test di indipendenza<a class="headerlink" href="#test-di-indipendenza" title="Permalink to this heading">#</a></h1>
 <p><strong>Test più comuni</strong></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(t\)</span>-test per campionoi indipendenti e Welch <span class="math notranslate nohighlight">\(t\)</span>-test</p></li>
@@ -518,13 +519,13 @@ document.write(`
 <li><p>Kruskal-Wallis <span class="math notranslate nohighlight">\(H\)</span>-test</p></li>
 </ul>
 <div class="section" id="t-test-e-welch-t-test">
-<h2><span class="section-number">18.2.3.1. </span><span class="math notranslate nohighlight">\(t\)</span>-test e Welch <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#t-test-e-welch-t-test" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.2.4.1. </span><span class="math notranslate nohighlight">\(t\)</span>-test e Welch <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#t-test-e-welch-t-test" title="Permalink to this heading">#</a></h2>
 <p>Il <span class="math notranslate nohighlight">\(t\)</span>-test di Welch è un test di posizione per stimare se due popolazioni di cui sono noti due campioni hanno la stessa media. E” una modifica del <span class="math notranslate nohighlight">\(t\)</span>-test, e si dimostra un criterio più affidabile quando i due campioni hanno varianza diversa e dimensione diversa.</p>
 <p><strong>Ipotesi.</strong> Il test assume che la media dei campioni abbia una distribuzione normale.</p>
 <p>…<strong>todo</strong></p>
 </div>
 <div class="section" id="anova-analysis-of-variance">
-<h2><span class="section-number">18.2.3.2. </span>ANOVA (Analysis of variance)<a class="headerlink" href="#anova-analysis-of-variance" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.2.4.2. </span>ANOVA (Analysis of variance)<a class="headerlink" href="#anova-analysis-of-variance" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>…insieme di metodi statistici…</p></li>
 <li><p>differenza tra due o più campioni</p></li>
@@ -537,15 +538,15 @@ document.write(`
 <p>…<strong>todo</strong></p>
 </div>
 <div class="section" id="tukey-test">
-<h2><span class="section-number">18.2.3.3. </span>Tukey test<a class="headerlink" href="#tukey-test" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.2.4.3. </span>Tukey test<a class="headerlink" href="#tukey-test" title="Permalink to this heading">#</a></h2>
 <p>…<strong>todo</strong></p>
 </div>
 <div class="section" id="kruskal-wallis-h-test">
-<h2><span class="section-number">18.2.3.4. </span>Kruskal-Wallis <span class="math notranslate nohighlight">\(H\)</span>-test<a class="headerlink" href="#kruskal-wallis-h-test" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.2.4.4. </span>Kruskal-Wallis <span class="math notranslate nohighlight">\(H\)</span>-test<a class="headerlink" href="#kruskal-wallis-h-test" title="Permalink to this heading">#</a></h2>
 <p>…<strong>todo</strong></p>
 </div>
 <div class="section" id="mann-whitney-u-test">
-<h2><span class="section-number">18.2.3.5. </span>Mann-Whitney <span class="math notranslate nohighlight">\(U\)</span>-test<a class="headerlink" href="#mann-whitney-u-test" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.2.4.5. </span>Mann-Whitney <span class="math notranslate nohighlight">\(U\)</span>-test<a class="headerlink" href="#mann-whitney-u-test" title="Permalink to this heading">#</a></h2>
 <p>Il test di Mann-Whitney è un test statistico non parametrico usato per verificare se le popolazioni <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> delle quali sono disponibili due campioni <span class="math notranslate nohighlight">\(\{X_n\}_{n=1:n_x}\)</span>, <span class="math notranslate nohighlight">\(\{Y_m\}_{m=1:n_y}\)</span>, sono identiche.</p>
 <p>… <strong>todo</strong></p>
 </div>
@@ -587,7 +588,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">18.2.2. </span>Test di correlazione</p>
+        <p class="prev-next-title"><span class="section-number">18.2.3. </span>Test di correlazione</p>
       </div>
     </a>
     <a class="right-next"
@@ -595,7 +596,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">18.2.4. </span>Esempi</p>
+        <p class="prev-next-title"><span class="section-number">18.2.5. </span>Esempi</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -614,11 +615,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#t-test-e-welch-t-test">18.2.3.1. <span class="math notranslate nohighlight">\(t\)</span>-test e Welch <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anova-analysis-of-variance">18.2.3.2. ANOVA (Analysis of variance)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tukey-test">18.2.3.3. Tukey test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kruskal-wallis-h-test">18.2.3.4. Kruskal-Wallis <span class="math notranslate nohighlight">\(H\)</span>-test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mann-whitney-u-test">18.2.3.5. Mann-Whitney <span class="math notranslate nohighlight">\(U\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#t-test-e-welch-t-test">18.2.4.1. <span class="math notranslate nohighlight">\(t\)</span>-test e Welch <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anova-analysis-of-variance">18.2.4.2. ANOVA (Analysis of variance)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tukey-test">18.2.4.3. Tukey test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kruskal-wallis-h-test">18.2.4.4. Kruskal-Wallis <span class="math notranslate nohighlight">\(H\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mann-whitney-u-test">18.2.4.5. Mann-Whitney <span class="math notranslate nohighlight">\(U\)</span>-test</a></li>
 </ul>
   </nav></div>
 
