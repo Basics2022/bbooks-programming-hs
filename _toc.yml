@@ -36,6 +36,9 @@ parts:
     sections:
     - file: ch/statistics/random_variables
       sections:
+      - file: ch/statistics/random_variables_definition
+      - file: ch/statistics/random_variables_discrete
+      - file: ch/statistics/random_variables_continuous
       - file: ch/statistics/rv_pdf_transformations
       - file: ch/statistics/rv_pdf_examples
       - file: ch/statistics/iid
