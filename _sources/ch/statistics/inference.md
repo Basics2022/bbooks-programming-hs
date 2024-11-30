@@ -7,12 +7,12 @@ Esistono (almeno) due approcci alla statistica inferenziale: l'apporccio classic
 
 Tra le applicazioni della statistica inferenziale si possono distinguere due applicazioni principali:
 ````{only} html
-```{dropdown} Stima
+```{dropdown} [Stima](statistics-hs:inference:estimate)
 Stima di parametri di una popolazione, noto un campione di essa:
 - **valori puntuali**, come ad esempio la media o la varianza di una popolazione
 - **intervalli**, come ad esempio gli intervalli di confidenza
 ```
-```{dropdown} Verifica ipotesi
+```{dropdown} [Verifica ipotesi](statistics-hs:inference:hp-test)
 La verifica delle ipotesi è un'attività intimamente connessa al metodo sperimentale e alla formazione della conoscenza nella storia umana secondo criteri logici. Nonostante sia poco sensata una classificazione rigida delle attività che coinvolgono la verifica delle ipotesi (seguendo la documentazione di $\text{scipy.stats}$), si possono distinguere
 - test su **campioni singoli** o **coppie di campioni**: $t$-test, Wilcoxon,...
 - test di **correlazione**: LS, Pearson $r$-test, Spearman $r$-test,
