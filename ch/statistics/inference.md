@@ -3,22 +3,39 @@
 
 La statistica inferenziale si occupa di stabilire le caratteristiche di una popolazione dall'osservazione di un suo campione, usando gli strumenti del calcolo delle probabilità. 
 <!-- La statistica inferenziale usa gli strumenti del calcolo delle probabilità, per svolgere il compito inverso -->
+Esistono (almeno) due approcci alla statistica inferenziale: l'apporccio classico **frequentista**, e l'approccio **bayesiano**. Del secondo, ci si limita a dire che usa delle *conoscenze pregresse* sul fenomeno e che è stato reso praticabile dai recenti sviluppi nelle capacità di calcolo a disposizione. **todo** *aggiungere sezione sull'approccio bayesiano?*
 
-**(almeno) Due approcci.**
-- frequentista, classica
-- bayesiana
+Tra le applicazioni della statistica inferenziale si possono distinguere due applicazioni principali:
+````{only} html
+```{dropdown} [Stima](statistics-hs:inference:estimate)
+Stima di parametri di una popolazione, noto un campione di essa:
+- **valori puntuali**, come ad esempio la media o la varianza di una popolazione
+- **intervalli**, come ad esempio gli intervalli di confidenza
+```
+```{dropdown} [Verifica ipotesi](statistics-hs:inference:hp-test)
+La verifica delle ipotesi è un'attività intimamente connessa al metodo sperimentale e alla formazione della conoscenza nella storia umana secondo criteri logici. Nonostante sia poco sensata una classificazione rigida delle attività che coinvolgono la verifica delle ipotesi (seguendo la documentazione di $\texttt{scipy.stats}$), si possono distinguere
+- test su **campioni singoli** o **coppie di campioni**: $t$-test, $\chi^2$-test, $Z$-test, Wilcoxon,...
+- test di **correlazione**: regressione lineare e generalizzata, Pearson $r$-test, Spearman $r$-test,...
+- test di **indipendenza**, verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Tukey, Kruskal-Wallis H-test, Mann-Whitney U-test,...
+- **ri-campionamento** e metodi MC: per valutare $p$-value e intervalli di confidenza test di validità di ipotesi
+- *ipotesi multiple*
 
-**Esempi di applicazioni.**
-- **stima**
-  - media, varianza, intervalli di confidenza
-- **verifica ipotesi**. Classificazione seguendo la documentazione di $\texttt{scipy.stats}$
-  - test su campioni singoli o coppie di campioni: $t$-test, Wilcoxon
-  - correlazione: LS, Pearson $r$-test, Spearman $r$-test,
-  - indipendenza: verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskal, Tukey
-  - ri-campionamento e metodi MC: per valutare $p$-value e intervalli di confidenza test di validità di ipotesi
+```
+````
+
+**todo** *Scelta modello? Serve una discuterne? Rimandato a ML?*
+
+````{only} latex
+- [**stima**](statistics-hs:inference:estimate) di parametri di una popolazione, noto un campione di essa:
+  - **valori puntuali**, come ad esempio la media o la varianza di una popolazione
+  - **intervalli**, come ad esempio gli intervalli di confidenza
+- [**verifica ipotesi**](statistics-hs:inference:hp-test). La verifica delle ipotesi è un'attività intimamente connessa al metodo sperimentale e alla formazione della conoscenza nella storia umana secondo criteri logici. Nonostante sia poco sensata una classificazione rigida delle attività che coinvolgono la verifica delle ipotesi (seguendo la documentazione di $\texttt{scipy.stats}$), si possono distinguere
+  - test su **campioni singoli** o **coppie di campioni**: $t$-test, Wilcoxon,...
+  - test di **correlazione**: LS, Pearson $r$-test, Spearman $r$-test,
+  - test di **indipendenza**, verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskali-Wallis, Tukey
+  - **ri-campionamento** e metodi MC: per valutare $p$-value e intervalli di confidenza test di validità di ipotesi
   - *ipotesi multiple*
-
-**Contenuti.**
+````
 
 <!--
   - ...

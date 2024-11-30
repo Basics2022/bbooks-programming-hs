@@ -120,54 +120,58 @@
 \contentsline {subsection}{\numberline {18.1.1}Stimatori}{74}{subsection.18.1.1}%
 \contentsline {subsubsection}{Media e varianza campionaria senza bias}{74}{subsubsection*.39}%
 \contentsline {section}{\numberline {18.2}Test di verifica delle ipotesi}{75}{section.18.2}%
-\contentsline {subsection}{\numberline {18.2.1}Test di verifica d’ipotesi \sphinxhyphen {} Fisher}{76}{subsection.18.2.1}%
-\contentsline {subsubsection}{Esempio: moneta truccata o no?}{77}{subsubsection*.40}%
-\contentsline {paragraph}{Import librerie}{77}{paragraph*.41}%
-\contentsline {paragraph}{Campione generato dal processo casuale}{77}{paragraph*.42}%
-\contentsline {subsection}{\numberline {18.2.2}Moneta truccata}{80}{subsection.18.2.2}%
-\contentsline {subsubsection}{Import librerie e funzioni utili}{80}{subsubsection*.43}%
-\contentsline {paragraph}{Import librerie}{80}{paragraph*.44}%
-\contentsline {subsubsection}{Funzione per lo svolgimento di un esperimento}{80}{subsubsection*.45}%
-\contentsline {paragraph}{Funzione che restituisce la pdf \(p(x|\text {H}_0)\)}{81}{paragraph*.46}%
-\contentsline {paragraph}{Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi}{81}{paragraph*.47}%
-\contentsline {subsubsection}{Esperimento}{81}{subsubsection*.48}%
-\contentsline {paragraph}{Livelli di accettazione}{81}{paragraph*.49}%
-\contentsline {paragraph}{Svolgimento esperimento}{81}{paragraph*.50}%
-\contentsline {paragraph}{Grafici}{81}{paragraph*.51}%
-\contentsline {subsection}{\numberline {18.2.3}Gambler rabbit}{82}{subsection.18.2.3}%
-\contentsline {subsection}{\numberline {18.2.4}\(t\)\sphinxhyphen {}test}{82}{subsection.18.2.4}%
-\contentsline {subsubsection}{\(t\)\sphinxhyphen {}test per un campione}{82}{subsubsection*.52}%
-\contentsline {subsubsection}{\(t\)\sphinxhyphen {}test per due campioni}{84}{subsubsection*.53}%
-\contentsline {paragraph}{\(t\)\sphinxhyphen {}test per due variabili indipendenti, con varianza simile e stesso numero di osservazioni}{84}{paragraph*.54}%
-\contentsline {subsection}{\numberline {18.2.5}ANOVA \sphinxhyphen {} Analysis of variance}{87}{subsection.18.2.5}%
-\contentsline {subsubsection}{Metodo}{87}{subsubsection*.55}%
-\contentsline {subsubsection}{Esempio}{87}{subsubsection*.56}%
+\contentsline {subsection}{\numberline {18.2.1}Test su campioni singoli o coppie di campioni}{76}{subsection.18.2.1}%
+\contentsline {subsection}{\numberline {18.2.2}Test di correlazione}{76}{subsection.18.2.2}%
+\contentsline {subsection}{\numberline {18.2.3}Test di indipendenza}{76}{subsection.18.2.3}%
+\contentsline {subsection}{\numberline {18.2.4}Esempi}{76}{subsection.18.2.4}%
+\contentsline {subsubsection}{Test di verifica d’ipotesi \sphinxhyphen {} Fisher}{76}{subsubsection*.40}%
+\contentsline {paragraph}{Esempio: moneta truccata o no?}{77}{paragraph*.41}%
+\contentsline {subparagraph}{Import librerie}{77}{subparagraph*.42}%
+\contentsline {subparagraph}{Campione generato dal processo casuale}{77}{subparagraph*.43}%
+\contentsline {subsubsection}{Moneta truccata}{80}{subsubsection*.44}%
+\contentsline {paragraph}{Import librerie e funzioni utili}{80}{paragraph*.45}%
+\contentsline {subparagraph}{Import librerie}{80}{subparagraph*.46}%
+\contentsline {paragraph}{Funzione per lo svolgimento di un esperimento}{80}{paragraph*.47}%
+\contentsline {subparagraph}{Funzione che restituisce la pdf \(p(x|\text {H}_0)\)}{80}{subparagraph*.48}%
+\contentsline {subparagraph}{Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi}{80}{subparagraph*.49}%
+\contentsline {paragraph}{Esperimento}{80}{paragraph*.50}%
+\contentsline {subparagraph}{Livelli di accettazione}{80}{subparagraph*.51}%
+\contentsline {subparagraph}{Svolgimento esperimento}{80}{subparagraph*.52}%
+\contentsline {subparagraph}{Grafici}{81}{subparagraph*.53}%
+\contentsline {subsubsection}{Gambler rabbit}{81}{subsubsection*.54}%
+\contentsline {subsubsection}{\(t\)\sphinxhyphen {}test}{81}{subsubsection*.55}%
+\contentsline {paragraph}{\(t\)\sphinxhyphen {}test per un campione}{82}{paragraph*.56}%
+\contentsline {paragraph}{\(t\)\sphinxhyphen {}test per due campioni}{84}{paragraph*.57}%
+\contentsline {subparagraph}{\(t\)\sphinxhyphen {}test per due variabili indipendenti, con varianza simile e stesso numero di osservazioni}{84}{subparagraph*.58}%
+\contentsline {subsubsection}{ANOVA \sphinxhyphen {} Analysis of variance}{86}{subsubsection*.59}%
+\contentsline {paragraph}{Metodo}{86}{paragraph*.60}%
+\contentsline {paragraph}{Esempio}{86}{paragraph*.61}%
 \contentsline {part}{IV\hspace {1em}Introduzione ai metodi in statistica e AI}{89}{part.4}%
 \contentsline {chapter}{\numberline {19}Introduzione ai metodi in AI}{91}{chapter.19}%
 \contentsline {chapter}{\numberline {20}Supervised Learning}{93}{chapter.20}%
 \contentsline {chapter}{\numberline {21}Unsupervised Learning}{95}{chapter.21}%
 \contentsline {section}{\numberline {21.1}PCA}{95}{section.21.1}%
 \contentsline {subsection}{\numberline {21.1.1}Esempio: compressione di immagini}{95}{subsection.21.1.1}%
-\contentsline {subsubsection}{Preprocessing e SVD}{96}{subsubsection*.57}%
-\contentsline {subsubsection}{Risultati della SVD}{96}{subsubsection*.58}%
-\contentsline {subsubsection}{Ricostruzione dell’immagine compressa}{97}{subsubsection*.59}%
+\contentsline {subsubsection}{Preprocessing e SVD}{96}{subsubsection*.62}%
+\contentsline {subsubsection}{Risultati della SVD}{96}{subsubsection*.63}%
+\contentsline {subsubsection}{Ricostruzione dell’immagine compressa}{97}{subsubsection*.64}%
 \contentsline {section}{\numberline {21.2}ICA e PCA}{98}{section.21.2}%
 \contentsline {subsection}{\numberline {21.2.1}Riferimenti}{98}{subsection.21.2.1}%
 \contentsline {subsection}{\numberline {21.2.2}FastICA on 2D point clouds}{98}{subsection.21.2.2}%
-\contentsline {subsubsection}{Librerie e funzioni di comodo}{98}{subsubsection*.60}%
-\contentsline {paragraph}{Import librerie}{98}{paragraph*.61}%
-\contentsline {paragraph}{Funzioni utili}{98}{paragraph*.62}%
-\contentsline {subsubsection}{Generazione campione}{99}{subsubsection*.63}%
-\contentsline {subsubsection}{ICA e PCA}{100}{subsubsection*.64}%
-\contentsline {subsubsection}{Risultati}{100}{subsubsection*.65}%
+\contentsline {subsubsection}{Librerie e funzioni di comodo}{98}{subsubsection*.65}%
+\contentsline {paragraph}{Import librerie}{98}{paragraph*.66}%
+\contentsline {paragraph}{Funzioni utili}{98}{paragraph*.67}%
+\contentsline {subsubsection}{Generazione campione}{99}{subsubsection*.68}%
+\contentsline {subsubsection}{ICA e PCA}{100}{subsubsection*.69}%
+\contentsline {subsubsection}{Risultati}{100}{subsubsection*.70}%
 \contentsline {subsection}{\numberline {21.2.3}ICA e PCA: segnali in tempo}{102}{subsection.21.2.3}%
 \contentsline {subsection}{\numberline {21.2.4}ICA e PCA \sphinxhyphen {} dettagli}{102}{subsection.21.2.4}%
-\contentsline {subsubsection}{Librerie e funzioni utili}{103}{subsubsection*.67}%
-\contentsline {subsubsection}{Generazione segnale}{103}{subsubsection*.68}%
-\contentsline {subsubsection}{Algoritmo}{103}{subsubsection*.69}%
-\contentsline {paragraph}{Pre\sphinxhyphen {}processing}{103}{paragraph*.70}%
-\contentsline {paragraph}{FastICA}{104}{paragraph*.71}%
-\contentsline {subsubsection}{Applicazione del metodo al segnale}{105}{subsubsection*.72}%
+\contentsline {subsubsection}{Librerie e funzioni utili}{103}{subsubsection*.72}%
+\contentsline {subsubsection}{Generazione segnale}{103}{subsubsection*.73}%
+\contentsline {subsubsection}{Algoritmo}{103}{subsubsection*.74}%
+\contentsline {paragraph}{Pre\sphinxhyphen {}processing}{103}{paragraph*.75}%
+\contentsline {paragraph}{FastICA}{104}{paragraph*.76}%
+\contentsline {subsubsection}{Applicazione del metodo al segnale}{105}{subsubsection*.77}%
 \contentsline {chapter}{\numberline {22}Reinforcement Learning}{107}{chapter.22}%
 \contentsline {part}{V\hspace {1em}Supporto tecnico}{109}{part.5}%
 \contentsline {chapter}{\numberline {23}Supporto tecnico}{111}{chapter.23}%

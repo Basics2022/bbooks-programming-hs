@@ -196,10 +196,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../statistics/descriptive.html">16. Statistica descrittiva</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/probability.html">17. Introduzione alla probabilità</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../statistics/random_variables.html">17.1. Variabili casuali</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/rv_pdf_transformations.html">17.1.3. Trasformazione di probabilità di densità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/rv_pdf_examples.html">17.1.4. Esempi di funzioni densità di probabilità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/iid.html">17.1.5. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../statistics/sampling.html">17.1.6. Campionamento</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/random_variables_definition.html">17.1.1. Definizione di variabile casuale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/random_variables_discrete.html">17.1.2. Variabili casuali discrete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/random_variables_continuous.html">17.1.3. Variabili casuali continue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/rv_pdf_transformations.html">17.1.4. Trasformazione di probabilità di densità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/rv_pdf_examples.html">17.1.5. Esempi di funzioni densità di probabilità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/iid.html">17.1.6. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../statistics/sampling.html">17.1.7. Campionamento</a></li>
 
 
 </ul>
@@ -683,6 +686,12 @@ Per domini 1D, l’intervallo di riferimento per la quadratura di Gauss è l’i
     <span class="n">xv</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span> <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_elems</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_elems</span><span class="p">;</span>  <span class="n">xv</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
 
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span> <span class="n">gauss_int_1</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">n_gauss</span><span class="p">,</span> <span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">xv</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_elems</span><span class="p">)</span> <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.33333333333333337
+0.33333333333333337
 </pre></div>
 </div>
 </div>

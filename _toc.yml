@@ -49,11 +49,16 @@ parts:
     - file: ch/statistics/estimate
     - file: ch/statistics/hp-test
       sections:
-      - file: ch/statistics/test-fisher-coin-1
-      - file: ch/statistics/test-fisher-coin-2
-      - file: ch/statistics/test-fisher-rabbit
-      - file: ch/statistics/t-test
-      - file: ch/statistics/anova
+      - file: ch/statistics/hp-test-single
+      - file: ch/statistics/hp-test-correlation
+      - file: ch/statistics/hp-test-independence
+      - file: ch/statistics/hp-test-examples
+        sections:
+        - file: ch/statistics/test-fisher-coin-1
+        - file: ch/statistics/test-fisher-coin-2
+        - file: ch/statistics/test-fisher-rabbit
+        - file: ch/statistics/t-test
+        - file: ch/statistics/anova
 - caption: Introduzione ai metodi in statistica e  AI
   numbered: True
   chapters:

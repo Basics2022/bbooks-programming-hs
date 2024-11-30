@@ -389,7 +389,7 @@ iterazione: for, while, …
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-User input (2) is an even number
+User input = 2 is an even number
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -423,7 +423,7 @@ User input (2) is an even number
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-User input (15). 15 \PYGZpc{} 3 = 0
+User input (15.7). 15.7 \PYGZpc{} 3 = 0
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -923,7 +923,7 @@ Dopo aver riscritto i sistemi lineari con il formalismo matriciale, si può prov
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{g+gt}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
 \PYG{n+ne}{LinAlgError}\PYG{g+gWhitespace}{                               }Traceback (most recent call last)
-\PYG{n}{Cell} \PYG{n}{In}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{,} \PYG{n}{line} \PYG{l+m+mi}{11}
+\PYG{n}{Cell} \PYG{n}{In}\PYG{p}{[}\PYG{l+m+mi}{36}\PYG{p}{]}\PYG{p}{,} \PYG{n}{line} \PYG{l+m+mi}{11}
 \PYG{g+gWhitespace}{      }\PYG{l+m+mi}{8} \PYG{n}{b} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mf}{1.}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.}\PYG{p}{,}\PYG{l+m+mf}{1.}\PYG{p}{]}\PYG{p}{)}
 \PYG{g+gWhitespace}{      }\PYG{l+m+mi}{9} \PYG{c+c1}{\PYGZsh{} b = np.array([0.,\PYGZhy{}1.,1.])}
 \PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{11} \PYG{n}{x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linalg}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{b}\PYG{p}{)}
@@ -1161,7 +1161,7 @@ Convergence reached
 Sol, x = \PYGZhy{}0.567143440246582
 residual     : \PYGZhy{}2.348157265297246e\PYGZhy{}07
 n. iterations: 20
-elapsed time : 0.0006628036499023438
+elapsed time : 0.00035262107849121094
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1256,7 +1256,7 @@ Convergence reached
 Sol, x = \PYGZhy{}0.567143285989123
 residual     : 6.927808993140161e\PYGZhy{}09
 n. iterations: 3
-elapsed time : 0.00024509429931640625
+elapsed time : 0.0003204345703125
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1398,7 +1398,7 @@ Convergence reached
 Sol, x = [\PYGZhy{}0.61803399 \PYGZhy{}0.61803399]
 residual     : [ 0.00000000e+00 \PYGZhy{}2.10942375e\PYGZhy{}13]
 n. iterations: 4
-elapsed time : 0.0009407997131347656
+elapsed time : 0.006886959075927734
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1806,6 +1806,15 @@ così che l’integrale originale può essere scritto come
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+0.33333333333333337
+0.33333333333333337
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
 
@@ -2742,7 +2751,7 @@ calcolate le statistiche: media \(\mu_{\overline{x}}\), e variazione standard \(
 \begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
 
 \begin{sphinxuseclass}{cell_output}
-\noindent\sphinxincludegraphics{{51a938f4a1042a13471b24f33efa7275b1ae506a2368d204674443cef16732cd}.png}
+\noindent\sphinxincludegraphics{{b0d4dc27f60df3b9d4239d63d8fa189b958c7bcc97cbdbb811b7855e8e064ff8}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -2759,11 +2768,11 @@ calcolate le statistiche: media \(\mu_{\overline{x}}\), e variazione standard \(
 Text(0.5, 0.98, \PYGZsq{}Distribution of sample average, scaled\PYGZsq{})
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{023c2794fe5e36bbd06d726d129162cf935b8593858a4c23fda4aec67173b61f}.png}
+\noindent\sphinxincludegraphics{{afb1e78c4deeacf31fff933d700bb08392885a35d7a732ec17f35a2bd7e02a0a}.png}
 
-\noindent\sphinxincludegraphics{{75026052291780bdecdeddbbd4a9238cacb01813f949c7eb37dec6063feed5d7}.png}
+\noindent\sphinxincludegraphics{{afb5bfd6b0d3781df84664391f708fbf9e4fe75b17f923d915d36474272d2474}.png}
 
-\noindent\sphinxincludegraphics{{c0e391839c3386f2f3964b37d8ee8cd6c3dccfd95990435804343f5fa02ad965}.png}
+\noindent\sphinxincludegraphics{{9e2fac22a176045e9080751aa74421e17dd55ca97a5ab27b2012030072fa4dcc}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -2896,7 +2905,7 @@ tende alla distribuzione normale \(\mathscr{N}(0,1)\)
 (\PYGZhy{}5.0, 5.0)
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{66147b73f2695eaa80de6c17f0544df23e593abb46dbfea8b8ad1759e93f8254}.png}
+\noindent\sphinxincludegraphics{{014e3253c131d928f6dbaf17a68c7af9ab839697c64c9649f8c37e9196064fc5}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -2974,50 +2983,47 @@ La statistica inferenziale si occupa di stabilire le caratteristiche di una popo
 
 
 \sphinxAtStartPar
-\sphinxstylestrong{(almeno) Due approcci.}
+Esistono (almeno) due approcci alla statistica inferenziale: l’apporccio classico \sphinxstylestrong{frequentista}, e l’approccio \sphinxstylestrong{bayesiano}. Del secondo, ci si limita a dire che usa delle \sphinxstyleemphasis{conoscenze pregresse} sul fenomeno e che è stato reso praticabile dai recenti sviluppi nelle capacità di calcolo a disposizione. \sphinxstylestrong{todo} \sphinxstyleemphasis{aggiungere sezione sull’approccio bayesiano?}
+
+\sphinxAtStartPar
+Tra le applicazioni della statistica inferenziale si possono distinguere due applicazioni principali:
+
+\sphinxAtStartPar
+\sphinxstylestrong{todo} \sphinxstyleemphasis{Scelta modello? Serve una discuterne? Rimandato a ML?}
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-frequentista, classica
-
-\item {} 
-\sphinxAtStartPar
-bayesiana
-
-\end{itemize}
-
-\sphinxAtStartPar
-\sphinxstylestrong{Esempi di applicazioni.}
+{\hyperref[\detokenize{ch/statistics/estimate:statistics-hs-inference-estimate}]{\sphinxcrossref{\DUrole{std,std-ref}{\sphinxstylestrong{stima}}}}} di parametri di una popolazione, noto un campione di essa:
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{stima}
-\begin{itemize}
+\sphinxstylestrong{valori puntuali}, come ad esempio la media o la varianza di una popolazione
+
 \item {} 
 \sphinxAtStartPar
-media, varianza, intervalli di confidenza
+\sphinxstylestrong{intervalli}, come ad esempio gli intervalli di confidenza
 
 \end{itemize}
 
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{verifica ipotesi}. Classificazione seguendo la documentazione di \(\texttt{scipy.stats}\)
+{\hyperref[\detokenize{ch/statistics/hp-test:statistics-hs-inference-hp-test}]{\sphinxcrossref{\DUrole{std,std-ref}{\sphinxstylestrong{verifica ipotesi}}}}}. La verifica delle ipotesi è un’attività intimamente connessa al metodo sperimentale e alla formazione della conoscenza nella storia umana secondo criteri logici. Nonostante sia poco sensata una classificazione rigida delle attività che coinvolgono la verifica delle ipotesi (seguendo la documentazione di \(\texttt{scipy.stats}\)), si possono distinguere
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-test su campioni singoli o coppie di campioni: \(t\)\sphinxhyphen{}test, Wilcoxon
+test su \sphinxstylestrong{campioni singoli} o \sphinxstylestrong{coppie di campioni}: \(t\)\sphinxhyphen{}test, Wilcoxon,…
 
 \item {} 
 \sphinxAtStartPar
-correlazione: LS, Pearson \(r\)\sphinxhyphen{}test, Spearman \(r\)\sphinxhyphen{}test,
+test di \sphinxstylestrong{correlazione}: LS, Pearson \(r\)\sphinxhyphen{}test, Spearman \(r\)\sphinxhyphen{}test,
 
 \item {} 
 \sphinxAtStartPar
-indipendenza: verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskal, Tukey
+test di \sphinxstylestrong{indipendenza}, verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskali\sphinxhyphen{}Wallis, Tukey
 
 \item {} 
 \sphinxAtStartPar
-ri\sphinxhyphen{}campionamento e metodi MC: per valutare \(p\)\sphinxhyphen{}value e intervalli di confidenza test di validità di ipotesi
+\sphinxstylestrong{ri\sphinxhyphen{}campionamento} e metodi MC: per valutare \(p\)\sphinxhyphen{}value e intervalli di confidenza test di validità di ipotesi
 
 \item {} 
 \sphinxAtStartPar
@@ -3026,9 +3032,6 @@ ri\sphinxhyphen{}campionamento e metodi MC: per valutare \(p\)\sphinxhyphen{}val
 \end{itemize}
 
 \end{itemize}
-
-\sphinxAtStartPar
-\sphinxstylestrong{Contenuti.}
 
 
 
@@ -3184,75 +3187,39 @@ l”\sphinxstyleemphasis{indipendenza} dei campioni, intesa come verifica se i c
 
 \end{itemize}
 
-\sphinxAtStartPar
-\sphinxstylestrong{Algoritmi \sphinxhyphen{} esempi.}
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-proprietà di campioni singoli o coppie di campioni
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\(\chi^2\)\sphinxhyphen{}test
 
-\item {} 
-\sphinxAtStartPar
-\(t\)\sphinxhyphen{}test
-
-\item {} 
-\sphinxAtStartPar
-wilcoxon
-
-\end{itemize}
-
-\item {} 
-\sphinxAtStartPar
-correlazione tra campioni diversi
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-regressione lineare
-
-\item {} 
-\sphinxAtStartPar
-correlazione di Pearson
-
-\item {} 
-\sphinxAtStartPar
-correlazione di Spearman
-
-\end{itemize}
-
-\item {} 
-\sphinxAtStartPar
-indipendenza di campioni
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\(t\)\sphinxhyphen{}test per camppioni indipendenti e Welch \(t\)\sphinxhyphen{}test
-
-\item {} 
-\sphinxAtStartPar
-ANOVA
-
-\item {} 
-\sphinxAtStartPar
-Tukey test
-
-\item {} 
-\sphinxAtStartPar
-Kruskal\sphinxhyphen{}Wallis H\sphinxhyphen{}test
-
-\end{itemize}
-
-\end{itemize}
 
 
 
 \sphinxstepscope
 
 
-\subsection{Test di verifica d’ipotesi \sphinxhyphen{} Fisher}
+
+
+\subsection{Test su campioni singoli o coppie di campioni}
+\label{\detokenize{ch/statistics/hp-test-single:test-su-campioni-singoli-o-coppie-di-campioni}}\label{\detokenize{ch/statistics/hp-test-single::doc}}
+\sphinxstepscope
+
+
+\subsection{Test di correlazione}
+\label{\detokenize{ch/statistics/hp-test-correlation:test-di-correlazione}}\label{\detokenize{ch/statistics/hp-test-correlation::doc}}
+\sphinxstepscope
+
+
+\subsection{Test di indipendenza}
+\label{\detokenize{ch/statistics/hp-test-independence:test-di-indipendenza}}\label{\detokenize{ch/statistics/hp-test-independence::doc}}
+\sphinxstepscope
+
+
+\subsection{Esempi}
+\label{\detokenize{ch/statistics/hp-test-examples:esempi}}\label{\detokenize{ch/statistics/hp-test-examples::doc}}
+\sphinxAtStartPar
+…
+
+\sphinxstepscope
+
+
+\subsubsection{Test di verifica d’ipotesi \sphinxhyphen{} Fisher}
 \label{\detokenize{ch/statistics/test-fisher-coin-1:test-di-verifica-d-ipotesi-fisher}}\label{\detokenize{ch/statistics/test-fisher-coin-1::doc}}
 \sphinxAtStartPar
 Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsificabilità di Popper, e può essere riassunto nei seguenti passaggi:
@@ -3286,7 +3253,7 @@ raccolta dati e \sphinxstylestrong{calcolo statistica test sul campione}
 \end{enumerate}
 
 
-\subsubsection{Esempio: moneta truccata o no?}
+\paragraph{Esempio: moneta truccata o no?}
 \label{\detokenize{ch/statistics/test-fisher-coin-1:esempio-moneta-truccata-o-no}}
 \sphinxAtStartPar
 Dati i risultati di \(n\) lanci di una moneta, si vuole stabilire con una certa probabilità se la moneta è truccata o meno.
@@ -3306,7 +3273,7 @@ Per una variabile casuale con distribuzione di probabilità di Bernoulli \(B(p)\
 \begin{split}p_n(x) = \left( \begin{matrix} n \\ x \end{matrix}  \right) \, p^x \, (1-p)^{n-x}\end{split}
 \end{equation*}
 
-\paragraph{Import librerie}
+\subparagraph{Import librerie}
 \label{\detokenize{ch/statistics/test-fisher-coin-1:import-librerie}}
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
@@ -3324,7 +3291,7 @@ Per una variabile casuale con distribuzione di probabilità di Bernoulli \(B(p)\
 
 \end{sphinxuseclass}
 
-\paragraph{Campione generato dal processo casuale}
+\subparagraph{Campione generato dal processo casuale}
 \label{\detokenize{ch/statistics/test-fisher-coin-1:campione-generato-dal-processo-casuale}}
 \sphinxAtStartPar
 Viene lanciata una moneta \(n_{flips}\) volte. Dati
@@ -3479,7 +3446,7 @@ H0 accepted
 \sphinxstepscope
 
 
-\subsection{Moneta truccata}
+\subsubsection{Moneta truccata}
 \label{\detokenize{ch/statistics/test-fisher-coin-2:moneta-truccata}}\label{\detokenize{ch/statistics/test-fisher-coin-2::doc}}
 \sphinxAtStartPar
 Si vuole valutare se una moneta è truccata. L’ipotesi nulla \(\text{H}_0\) da falsificare è «la moneta non è truccata». Si sceglie come statistica test la percentuale di risultati «testa» sul numero di lanci.
@@ -3488,10 +3455,10 @@ Si vuole valutare se una moneta è truccata. L’ipotesi nulla \(\text{H}_0\) da
 L’esperimento viene condotto per un numero incrementale di esperimenti.
 
 
-\subsubsection{Import librerie e funzioni utili}
+\paragraph{Import librerie e funzioni utili}
 \label{\detokenize{ch/statistics/test-fisher-coin-2:import-librerie-e-funzioni-utili}}
 
-\paragraph{Import librerie}
+\subparagraph{Import librerie}
 \label{\detokenize{ch/statistics/test-fisher-coin-2:import-librerie}}
 \sphinxAtStartPar
 Reset delle variabili e import librerie.
@@ -3501,7 +3468,7 @@ Reset delle variabili e import librerie.
 \end{sphinxuseclass}
 \end{sphinxuseclass}
 
-\subsubsection{Funzione per lo svolgimento di un esperimento}
+\paragraph{Funzione per lo svolgimento di un esperimento}
 \label{\detokenize{ch/statistics/test-fisher-coin-2:funzione-per-lo-svolgimento-di-un-esperimento}}
 \sphinxAtStartPar
 La funzione per lo svolgimento di un esperimento qui definita prende come argomenti un generatore di numeri casuali e i suoi parametri, e restituisce i campioni prodotti secondo la distribuzione data. Vengono definiti dei parametri di default, corrispondenti a una distribuzione di Bernoulli uniforme
@@ -3511,14 +3478,14 @@ La funzione per lo svolgimento di un esperimento qui definita prende come argome
 \end{sphinxuseclass}
 \end{sphinxuseclass}
 
-\paragraph{Funzione che restituisce la pdf \protect\(p(x|\text{H}_0)\protect\)}
+\subparagraph{Funzione che restituisce la pdf \protect\(p(x|\text{H}_0)\protect\)}
 \label{\detokenize{ch/statistics/test-fisher-coin-2:funzione-che-restituisce-la-pdf-p-x-text-h-0}}
 \begin{sphinxuseclass}{cell}
 \begin{sphinxuseclass}{tag_hide-input}
 \end{sphinxuseclass}
 \end{sphinxuseclass}
 
-\paragraph{Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi}
+\subparagraph{Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi}
 \label{\detokenize{ch/statistics/test-fisher-coin-2:funzioni-per-la-ricerca-degli-intervalli-di-accettazione-dell-ipotesi}}
 \sphinxAtStartPar
 Vengono qui definite due funzoni per la ricerca degli intervalli di accettazione, dato il livello di significatività del test richiesto. La prima funzione ricerca un unico intervallo di accettazione riferito a un unico livello di significatività; la seconda funzione ricerca tanti intervalli di accettazione quanti sono i livelli di significatività cercati: ad esempio, si possono cercare simultaneamente i livellidi significatività associati a \(\sigma\), \(2 \sigma\), \(3 \sigma\)…
@@ -3528,17 +3495,17 @@ Vengono qui definite due funzoni per la ricerca degli intervalli di accettazione
 \end{sphinxuseclass}
 \end{sphinxuseclass}
 
-\subsubsection{Esperimento}
+\paragraph{Esperimento}
 \label{\detokenize{ch/statistics/test-fisher-coin-2:esperimento}}
 
-\paragraph{Livelli di accettazione}
+\subparagraph{Livelli di accettazione}
 \label{\detokenize{ch/statistics/test-fisher-coin-2:livelli-di-accettazione}}
 \begin{sphinxuseclass}{cell}
 \begin{sphinxuseclass}{tag_hide-input}
 \end{sphinxuseclass}
 \end{sphinxuseclass}
 
-\paragraph{Svolgimento esperimento}
+\subparagraph{Svolgimento esperimento}
 \label{\detokenize{ch/statistics/test-fisher-coin-2:svolgimento-esperimento}}
 \sphinxAtStartPar
 L’esperimento viene svolto usando due monete, la cui natura è a priori incognita, che possono essere modellate con variabili casuali di Bernoulli: una moneta non truccata produce testa o croce con la probaiblità uniforme \(0.5\); una moneta truccata che produce testa o croce con probabilità \(0.45 - 0.55\)
@@ -3557,7 +3524,7 @@ L’esperimento viene svolto usando due monete, la cui natura è a priori incogn
 \end{sphinxuseclass}
 \end{sphinxuseclass}
 
-\paragraph{Grafici}
+\subparagraph{Grafici}
 \label{\detokenize{ch/statistics/test-fisher-coin-2:grafici}}
 \sphinxAtStartPar
 Il valore medio delle volte che è uscita croce viene usata come statistica test. Il valore della statistica test per gli esperimenti condotti con le due monete viene confrontato con la funzione di distribuzione \(p(x|\text{H}_0)\) per una moneta non truccata. Viene mostrato l’andamento delle statistiche test e degli intervalli di accettazione in funzione del numero di lanci della moneta. Vengono mostrati i dati raccolti e successivamente depurati della media attesa e scalati per la varianza della media campionaria \(\frac{\sigma}{\sqrt{n_s}}\), per mettere in evidenza i livelli di significatività \([0.3, 0.05, 0.003]\)
@@ -3567,10 +3534,10 @@ Il valore medio delle volte che è uscita croce viene usata come statistica test
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}matplotlib.legend.Legend at 0x7fba2b186c10\PYGZgt{}
+\PYGZlt{}matplotlib.legend.Legend at 0x7fbdaf7f3580\PYGZgt{}
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{1005395dbabdd8133dd60650fa64d2d721a4dd09a3e010b9702488f35e6d5fec}.png}
+\noindent\sphinxincludegraphics{{d66654fdf4e4203eab1107c5ee5ce8b74b25f4be80bcb665a707361d05d9d4a8}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -3579,12 +3546,12 @@ Il valore medio delle volte che è uscita croce viene usata come statistica test
 \sphinxstepscope
 
 
-\subsection{Gambler rabbit}
+\subsubsection{Gambler rabbit}
 \label{\detokenize{ch/statistics/test-fisher-rabbit:gambler-rabbit}}\label{\detokenize{ch/statistics/test-fisher-rabbit::doc}}
 \sphinxstepscope
 
 
-\subsection{\protect\(t\protect\)\sphinxhyphen{}test}
+\subsubsection{\protect\(t\protect\)\sphinxhyphen{}test}
 \label{\detokenize{ch/statistics/t-test:t-test}}\label{\detokenize{ch/statistics/t-test::doc}}
 
 
@@ -3594,7 +3561,7 @@ Un \(t\)\sphinxhyphen{}test è un test di verifica delle ipotesi nel quale la \s
 \begin{split}p(x|\text{H}_0) \sim t_{\nu}\end{split}
 \end{equation*}
 
-\subsubsection{\protect\(t\protect\)\sphinxhyphen{}test per un campione}
+\paragraph{\protect\(t\protect\)\sphinxhyphen{}test per un campione}
 \label{\detokenize{ch/statistics/t-test:t-test-per-un-campione}}
 \sphinxAtStartPar
 Il \(t\)\sphinxhyphen{}test per un campione è un test di verifica del valore di un parametro, per la media di una variabile casuale sotto un’opportuna ipotesi nulla \(\text{H}_0\). Il parametro \(t\),
@@ -3675,7 +3642,7 @@ Sample statistics:
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x7f371ba9f910\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x7f654bf43eb0\PYGZgt{}]
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{b447209d18774c554d77059adc27f1afcb900a0a10e8e9db17f5ca0f6304b8c4}.png}
@@ -3684,7 +3651,7 @@ Sample statistics:
 
 \end{sphinxuseclass}
 
-\subsubsection{\protect\(t\protect\)\sphinxhyphen{}test per due campioni}
+\paragraph{\protect\(t\protect\)\sphinxhyphen{}test per due campioni}
 \label{\detokenize{ch/statistics/t-test:t-test-per-due-campioni}}\begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -3697,7 +3664,7 @@ campioni indipendenti/campioni dipendenti (paired samples)
 \end{itemize}
 
 
-\paragraph{\protect\(t\protect\)\sphinxhyphen{}test per due variabili indipendenti, con varianza simile e stesso numero di osservazioni}
+\subparagraph{\protect\(t\protect\)\sphinxhyphen{}test per due variabili indipendenti, con varianza simile e stesso numero di osservazioni}
 \label{\detokenize{ch/statistics/t-test:t-test-per-due-variabili-indipendenti-con-varianza-simile-e-stesso-numero-di-osservazioni}}
 \sphinxAtStartPar
 Nell’ipotesi che i campioni siano ottenuti da due variabili indipendenti, i risultati ottenuti nella sezione sulla {\hyperref[\detokenize{ch/statistics::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{combinazione di variabili casuali}}}}
@@ -3796,7 +3763,7 @@ Reject the null hypothesis: The means of the two classes are significantly diffe
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x7f371b93f7f0\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x7f654bdcf460\PYGZgt{}]
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{ad9e0a740f0f409ab9699cc4cac6809aff9c408ab244bacfcd1a9c9e8e4c1ab3}.png}
@@ -3817,13 +3784,13 @@ Reject the null hypothesis: The means of the two classes are significantly diffe
 \sphinxstepscope
 
 
-\subsection{ANOVA \sphinxhyphen{} Analysis of variance}
+\subsubsection{ANOVA \sphinxhyphen{} Analysis of variance}
 \label{\detokenize{ch/statistics/anova:anova-analysis-of-variance}}\label{\detokenize{ch/statistics/anova::doc}}
 
-\subsubsection{Metodo}
+\paragraph{Metodo}
 \label{\detokenize{ch/statistics/anova:metodo}}
 
-\subsubsection{Esempio}
+\paragraph{Esempio}
 \label{\detokenize{ch/statistics/anova:esempio}}
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
@@ -4004,12 +3971,12 @@ I valori singolari rappresentano il contenuto energetico dei singoli modi. La so
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-Image reconstruction with 100 singular values:
-\PYGZgt{} Energy error [\PYGZpc{} original]: 0.1647581016503445
-\PYGZgt{} Storage      [\PYGZpc{} original]: 0.3870964050292969
+Image reconstruction with 400 singular values:
+\PYGZgt{} Energy error [\PYGZpc{} original]: 0.004614573033051227
+\PYGZgt{} Storage      [\PYGZpc{} original]: 1.5601158142089844
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{f13f70c80b4dea160b1518e19e0e9bcfcbbb4dd7aaf247870e153c2052f08e9f}.png}
+\noindent\sphinxincludegraphics{{77bbb8722c56c0218102c4ee1aedaec9d94a47eaa5875d36bb4fa58f76d0a62a}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 

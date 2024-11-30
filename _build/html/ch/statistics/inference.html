@@ -196,10 +196,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="descriptive.html">16. Statistica descrittiva</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="probability.html">17. Introduzione alla probabilità</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="random_variables.html">17.1. Variabili casuali</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="rv_pdf_transformations.html">17.1.3. Trasformazione di probabilità di densità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rv_pdf_examples.html">17.1.4. Esempi di funzioni densità di probabilità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.5. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.6. Campionamento</a></li>
+<li class="toctree-l3"><a class="reference internal" href="random_variables_definition.html">17.1.1. Definizione di variabile casuale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="random_variables_discrete.html">17.1.2. Variabili casuali discrete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="random_variables_continuous.html">17.1.3. Variabili casuali continue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rv_pdf_transformations.html">17.1.4. Trasformazione di probabilità di densità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rv_pdf_examples.html">17.1.5. Esempi di funzioni densità di probabilità</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.6. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.7. Campionamento</a></li>
 
 
 </ul>
@@ -210,11 +213,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">18. Statistica inferenziale</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="estimate.html">18.1. Stima</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="hp-test.html">18.2. Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="test-fisher-coin-1.html">18.2.1. Test di verifica d’ipotesi - Fisher</a></li>
-<li class="toctree-l3"><a class="reference internal" href="test-fisher-coin-2.html">18.2.2. Moneta truccata</a></li>
-<li class="toctree-l3"><a class="reference internal" href="test-fisher-rabbit.html">18.2.3. Gambler rabbit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="t-test.html">18.2.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l3"><a class="reference internal" href="anova.html">18.2.5. ANOVA - Analysis of variance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hp-test-single.html">18.2.1. Test su campioni singoli o coppie di campioni</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hp-test-correlation.html">18.2.2. Test di correlazione</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hp-test-independence.html">18.2.3. Test di indipendenza</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="hp-test-examples.html">18.2.4. Esempi</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-1.html">18.2.4.1. Test di verifica d’ipotesi - Fisher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-2.html">18.2.4.2. Moneta truccata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-fisher-rabbit.html">18.2.4.3. Gambler rabbit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="t-test.html">18.2.4.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.4.5. ANOVA - Analysis of variance</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -224,9 +233,9 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../ai.html">19. Introduzione ai metodi in AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ai/sl.html">20. Supervised Learning</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ai/ul.html">21. Unsupervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ai/ul.html">21. Unsupervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ai/pca.html">21.1. PCA</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../ai/ica-pca.html">21.2. ICA e PCA</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ai/ica-pca.html">21.2. ICA e PCA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../ai/ica-pca-example-2d.html">21.2.2. FastICA on 2D point clouds</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ai/ica-pca-example-time.html">21.2.3. ICA e PCA: segnali in tempo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ai/ica-pca-details.html">21.2.4. ICA e PCA - dettagli</a></li>
@@ -457,29 +466,38 @@ document.write(`
 <span id="statistics-hs-inference"></span><h1><span class="section-number">18. </span>Statistica inferenziale<a class="headerlink" href="#statistica-inferenziale" title="Permalink to this heading">#</a></h1>
 <p>La statistica inferenziale si occupa di stabilire le caratteristiche di una popolazione dall’osservazione di un suo campione, usando gli strumenti del calcolo delle probabilità.</p>
 <!-- La statistica inferenziale usa gli strumenti del calcolo delle probabilità, per svolgere il compito inverso -->
-<p><strong>(almeno) Due approcci.</strong></p>
+<p>Esistono (almeno) due approcci alla statistica inferenziale: l’apporccio classico <strong>frequentista</strong>, e l’approccio <strong>bayesiano</strong>. Del secondo, ci si limita a dire che usa delle <em>conoscenze pregresse</em> sul fenomeno e che è stato reso praticabile dai recenti sviluppi nelle capacità di calcolo a disposizione. <strong>todo</strong> <em>aggiungere sezione sull’approccio bayesiano?</em></p>
+<p>Tra le applicazioni della statistica inferenziale si possono distinguere due applicazioni principali:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<a class="reference internal" href="estimate.html#statistics-hs-inference-estimate"><span class="std std-ref">Stima</span></a><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Stima di parametri di una popolazione, noto un campione di essa:</p>
 <ul class="simple">
-<li><p>frequentista, classica</p></li>
-<li><p>bayesiana</p></li>
+<li><p class="sd-card-text"><strong>valori puntuali</strong>, come ad esempio la media o la varianza di una popolazione</p></li>
+<li><p class="sd-card-text"><strong>intervalli</strong>, come ad esempio gli intervalli di confidenza</p></li>
 </ul>
-<p><strong>Esempi di applicazioni.</strong></p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<a class="reference internal" href="hp-test.html#statistics-hs-inference-hp-test"><span class="std std-ref">Verifica ipotesi</span></a><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">La verifica delle ipotesi è un’attività intimamente connessa al metodo sperimentale e alla formazione della conoscenza nella storia umana secondo criteri logici. Nonostante sia poco sensata una classificazione rigida delle attività che coinvolgono la verifica delle ipotesi (seguendo la documentazione di <span class="math notranslate nohighlight">\(\texttt{scipy.stats}\)</span>), si possono distinguere</p>
 <ul class="simple">
-<li><p><strong>stima</strong></p>
-<ul>
-<li><p>media, varianza, intervalli di confidenza</p></li>
+<li><p class="sd-card-text">test su <strong>campioni singoli</strong> o <strong>coppie di campioni</strong>: <span class="math notranslate nohighlight">\(t\)</span>-test, <span class="math notranslate nohighlight">\(\chi^2\)</span>-test, <span class="math notranslate nohighlight">\(Z\)</span>-test, Wilcoxon,…</p></li>
+<li><p class="sd-card-text">test di <strong>correlazione</strong>: regressione lineare e generalizzata, Pearson <span class="math notranslate nohighlight">\(r\)</span>-test, Spearman <span class="math notranslate nohighlight">\(r\)</span>-test,…</p></li>
+<li><p class="sd-card-text">test di <strong>indipendenza</strong>, verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Tukey, Kruskal-Wallis H-test, Mann-Whitney U-test,…</p></li>
+<li><p class="sd-card-text"><strong>ri-campionamento</strong> e metodi MC: per valutare <span class="math notranslate nohighlight">\(p\)</span>-value e intervalli di confidenza test di validità di ipotesi</p></li>
+<li><p class="sd-card-text"><em>ipotesi multiple</em></p></li>
 </ul>
-</li>
-<li><p><strong>verifica ipotesi</strong>. Classificazione seguendo la documentazione di <span class="math notranslate nohighlight">\(\texttt{scipy.stats}\)</span></p>
-<ul>
-<li><p>test su campioni singoli o coppie di campioni: <span class="math notranslate nohighlight">\(t\)</span>-test, Wilcoxon</p></li>
-<li><p>correlazione: LS, Pearson <span class="math notranslate nohighlight">\(r\)</span>-test, Spearman <span class="math notranslate nohighlight">\(r\)</span>-test,</p></li>
-<li><p>indipendenza: verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskal, Tukey</p></li>
-<li><p>ri-campionamento e metodi MC: per valutare <span class="math notranslate nohighlight">\(p\)</span>-value e intervalli di confidenza test di validità di ipotesi</p></li>
-<li><p><em>ipotesi multiple</em></p></li>
-</ul>
-</li>
-</ul>
-<p><strong>Contenuti.</strong></p>
+</div>
+</details><p><strong>todo</strong> <em>Scelta modello? Serve una discuterne? Rimandato a ML?</em></p>
 <!--
   - ...
   - correlazione tra due variabili: Pearson (correlazione lineare, approssimazione lineare), Spearman (correlazione, tra due variabili con relazione monotona);
