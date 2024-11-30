@@ -462,23 +462,36 @@ document.write(`
 <!-- La statistica inferenziale usa gli strumenti del calcolo delle probabilità, per svolgere il compito inverso -->
 <p>Esistono (almeno) due approcci alla statistica inferenziale: l’apporccio classico <strong>frequentista</strong>, e l’approccio <strong>bayesiano</strong>. Del secondo, ci si limita a dire che usa delle <em>conoscenze pregresse</em> sul fenomeno e che è stato reso praticabile dai recenti sviluppi nelle capacità di calcolo a disposizione. <strong>todo</strong> <em>aggiungere sezione sull’approccio bayesiano?</em></p>
 <p>Tra le applicazioni della statistica inferenziale si possono distinguere due applicazioni principali:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Stima<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Stima di parametri di una popolazione, noto un campione di essa:</p>
 <ul class="simple">
-<li><p><strong>stima</strong></p>
-<ul>
-<li><p>media, varianza, intervalli di confidenza</p></li>
+<li><p class="sd-card-text"><strong>valori puntuali</strong>, come ad esempio la media o la varianza di una popolazione</p></li>
+<li><p class="sd-card-text"><strong>intervalli</strong>, come ad esempio gli intervalli di confidenza</p></li>
 </ul>
-</li>
-<li><p><strong>verifica ipotesi</strong>. Classificazione seguendo la documentazione di <span class="math notranslate nohighlight">\(\texttt{scipy.stats}\)</span></p>
-<ul>
-<li><p>test su campioni singoli o coppie di campioni: <span class="math notranslate nohighlight">\(t\)</span>-test, Wilcoxon</p></li>
-<li><p>correlazione: LS, Pearson <span class="math notranslate nohighlight">\(r\)</span>-test, Spearman <span class="math notranslate nohighlight">\(r\)</span>-test,</p></li>
-<li><p>indipendenza: verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskal, Tukey</p></li>
-<li><p>ri-campionamento e metodi MC: per valutare <span class="math notranslate nohighlight">\(p\)</span>-value e intervalli di confidenza test di validità di ipotesi</p></li>
-<li><p><em>ipotesi multiple</em></p></li>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Verifica ipotesi<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">La verifica delle ipotesi è un’attività intimamente connessa al metodo sperimentale e alla formazione della conoscenza nella storia umana secondo criteri logici. Nonostante sia poco sensata una classificazione rigida delle attività che coinvolgono la verifica delle ipotesi (seguendo la documentazione di <span class="math notranslate nohighlight">\(\text{scipy.stats}\)</span>), si possono distinguere</p>
+<ul class="simple">
+<li><p class="sd-card-text">test su <strong>campioni singoli</strong> o <strong>coppie di campioni</strong>: <span class="math notranslate nohighlight">\(t\)</span>-test, Wilcoxon,…</p></li>
+<li><p class="sd-card-text">test di <strong>correlazione</strong>: LS, Pearson <span class="math notranslate nohighlight">\(r\)</span>-test, Spearman <span class="math notranslate nohighlight">\(r\)</span>-test,</p></li>
+<li><p class="sd-card-text">test di <strong>indipendenza</strong>, verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskal, Tukey</p></li>
+<li><p class="sd-card-text"><strong>ri-campionamento</strong> e metodi MC: per valutare <span class="math notranslate nohighlight">\(p\)</span>-value e intervalli di confidenza test di validità di ipotesi</p></li>
+<li><p class="sd-card-text"><em>ipotesi multiple</em></p></li>
 </ul>
-</li>
-</ul>
-<!--
+</div>
+</details><!--
   - ...
   - correlazione tra due variabili: Pearson (correlazione lineare, approssimazione lineare), Spearman (correlazione, tra due variabili con relazione monotona);
   - Wilcoxon: campioni non indipendenti;
