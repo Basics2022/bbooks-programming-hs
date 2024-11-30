@@ -14,14 +14,16 @@ Stima di parametri di una popolazione, noto un campione di essa:
 ```
 ```{dropdown} [Verifica ipotesi](statistics-hs:inference:hp-test)
 La verifica delle ipotesi è un'attività intimamente connessa al metodo sperimentale e alla formazione della conoscenza nella storia umana secondo criteri logici. Nonostante sia poco sensata una classificazione rigida delle attività che coinvolgono la verifica delle ipotesi (seguendo la documentazione di $\texttt{scipy.stats}$), si possono distinguere
-- test su **campioni singoli** o **coppie di campioni**: $t$-test, Wilcoxon, $\chi^2$-test, $Z$-test
-- test di **correlazione**: LS, Pearson $r$-test, Spearman $r$-test,
-- test di **indipendenza**, verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskal, Tukey
+- test su **campioni singoli** o **coppie di campioni**: $t$-test, $\chi^2$-test, $Z$-test, Wilcoxon,...
+- test di **correlazione**: regressione lineare e generalizzata, Pearson $r$-test, Spearman $r$-test,...
+- test di **indipendenza**, verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskal-Wallis, Tukey,...
 - **ri-campionamento** e metodi MC: per valutare $p$-value e intervalli di confidenza test di validità di ipotesi
 - *ipotesi multiple*
 
 ```
 ````
+
+**todo** *Scelta modello? Serve una discuterne? Rimandato a ML?*
 
 ````{only} latex
 - [**stima**](statistics-hs:inference:estimate) di parametri di una popolazione, noto un campione di essa:
@@ -30,7 +32,7 @@ La verifica delle ipotesi è un'attività intimamente connessa al metodo sperime
 - [**verifica ipotesi**](statistics-hs:inference:hp-test). La verifica delle ipotesi è un'attività intimamente connessa al metodo sperimentale e alla formazione della conoscenza nella storia umana secondo criteri logici. Nonostante sia poco sensata una classificazione rigida delle attività che coinvolgono la verifica delle ipotesi (seguendo la documentazione di $\texttt{scipy.stats}$), si possono distinguere
   - test su **campioni singoli** o **coppie di campioni**: $t$-test, Wilcoxon,...
   - test di **correlazione**: LS, Pearson $r$-test, Spearman $r$-test,
-  - test di **indipendenza**, verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskal, Tukey
+  - test di **indipendenza**, verifica se i campioni provengono dalla stessa popolazione (e quindi dalla stessa distribuzione), o da popolazioni con distribuzioni con proprietà in comune: ANOVA, Kruskali-Wallis, Tukey
   - **ri-campionamento** e metodi MC: per valutare $p$-value e intervalli di confidenza test di validità di ipotesi
   - *ipotesi multiple*
 ````
