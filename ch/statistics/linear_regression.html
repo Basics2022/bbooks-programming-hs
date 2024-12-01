@@ -465,12 +465,13 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="regressione-lineare">
 <span id="statistics-hs-linear-regression"></span><h1><span class="section-number">18.2.4.5. </span>Regressione lineare<a class="headerlink" href="#regressione-lineare" title="Permalink to this heading">#</a></h1>
-<p>Nella sua forma elementare, la regressione lineare è un’approssimazione lineare</p>
+<p>Nella sua forma elementare, la regressione lineare è un’approssimazione (stimatore) lineare</p>
 <div class="math notranslate nohighlight">
-\[\hat{y}(x) = a x + b\]</div>
-<p>tra una coppia di campioni <span class="math notranslate nohighlight">\(\{ X_n \}_{n=1:N}\)</span>, <span class="math notranslate nohighlight">\(\{ Y_n \}_{n=1:N}\)</span> estratti dalle popolazioni <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, che rende minimo l’errore quadratico medio</p>
+\[\hat{y}(x|\theta) = a x + b \ ,\]</div>
+<p>tra una coppia di campioni <span class="math notranslate nohighlight">\(\{ X_n \}_{n=1:N}\)</span>, <span class="math notranslate nohighlight">\(\{ Y_n \}_{n=1:N}\)</span> estratti dalle popolazioni <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, i cui parametri <span class="math notranslate nohighlight">\(\theta = (a,b)\)</span> rendono minimo l’errore quadratico medio</p>
 <div class="math notranslate nohighlight">
-\[e:= \sum_{n=1}^{N} ( \hat{y}(X_n) - Y_n )^2 = \sum_{n=1}^N ( a \, X_n + b - Y_n )\]</div>
+\[e:= \sum_{n=1}^{N} ( \hat{y}(X_n) - Y_n )^2 = \sum_{n=1}^N ( a \, X_n + b - Y_n )^2 \ ,\]</div>
+<p>il cui valore permette di stimare la significatività dell’approssimazione lineare.</p>
 </div>
 
     <script type="text/x-thebe-config">
