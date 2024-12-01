@@ -9,5 +9,15 @@ tra una coppia di campioni $\{ X_n \}_{n=1:N}$, $\{ Y_n \}_{n=1:N}$ estratti dal
 
 $$e:= \sum_{n=1}^{N} ( \hat{y}(X_n) - Y_n )^2 = \sum_{n=1}^N ( a \, X_n + b - Y_n )^2 \ ,$$
 
-il cui valore permette di stimare la significatività dell'approssimazione lineare. 
+il cui valore permette di stimare la significatività dell'approssimazione lineare.
+
+L'algoritmo base consiste nella:
+- normalizzazione dei campioni:
+  - vengono calcolate le medie e le varianze campionarie
+
+    $$\mu_x = \frac{1}{N} \sum_{n=1}^N X_n$$
+
+  - vengono definite i campioni normalizzati
+    
+    $$x_n = \frac{X_n - \mu_x}{S_x} \qquad , \qquad y_n = \frac{Y_n - \mu_y}{S_y}$$
 
