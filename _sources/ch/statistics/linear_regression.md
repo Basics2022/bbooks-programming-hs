@@ -89,5 +89,7 @@ $$p(\theta|x) = \prod_{n=1}^N \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ -\frac{
 
 o il suo logaritmo
 
+$$\ln p(\theta|x) = - \frac{N}{2} \ln (2\pi \sigma^2) - \sum_{n=1}^N \frac{(a X_n + b - Y_n)^2}{2 \sigma^2}$$
+
 
 ```
