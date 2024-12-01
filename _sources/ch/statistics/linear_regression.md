@@ -103,7 +103,11 @@ $$\ln p(\theta|x) = - \frac{N}{2} \ln (2\pi \sigma^2) - \sum_{n=1}^N \frac{(a x_
 
 L'annullamento delle derivate parziali,
 
-$$  \ ,$$
+$$\begin{aligned}
+ 0 & = \frac{\partial p}{\partial a}        = \sum_{n=1}^N ( a x_n + b - y_n ) x_n \\
+ 0 & = \frac{\partial p}{\partial b}        = \sum_{n=1}^N ( a x_n + b - y_n ) \\
+ 0 & = \frac{\partial p}{\partial \sigma^2} = \sum_{n=1}^N -\frac{N}{2}\frac{1}{\sigma^2} + \sum_{n=1}^N \frac{( a x_n + b - y_n )^2}{2 \sigma^4} \\
+\end{aligned}$$
 
 produce il sistema lineare
 
