@@ -22,11 +22,13 @@ L'algoritmo base consiste nella:
       \mu_y = \frac{1}{N} \sum_{n=1}^N Y_n \qquad & , \qquad S^2_y = \frac{1}{N-1} (Y_n - \mu_y)^2
     \end{aligned}$$
 
-  - vengono definiti i campioni normalizzati:
+  - vengono definiti i campioni normalizzati
     
     $$x_n = \frac{X_n - \mu_x}{S_x} \qquad , \qquad y_n = \frac{Y_n - \mu_y}{S_y}$$
 
-- calcolo dei valori ottimi dei parametri $\theta = (a, b)$ del modello applicatoai dati scalati,
+    che hanno media nulla e varianza campionaria unitaria.
+
+- calcolo dei valori ottimi dei parametri $\theta = (a, b)$ del modello applicato ai dati scalati,
 
    $$y(x|\theta) = a x + b$$
 
@@ -36,8 +38,8 @@ L'algoritmo base consiste nella:
 
    L'errore quadratico è una funzione definita positiva con un unico minimo in corrispondenza delle condizioni
 
-   $$\begin{aligned}
-     0 & = \dfrac{\partial e}{\partial a} = \\
-     0 & = \dfrac{\partial e}{\partial b} = \\
-   \end{aligned}$$
+   $$\begin{cases}
+     0 & = \dfrac{\partial e}{\partial a} = \sum_{n=1}^N \\
+     0 & = \dfrac{\partial e}{\partial b} = \sum_{n=1}^N \\
+   \end{cases}$$
 ```

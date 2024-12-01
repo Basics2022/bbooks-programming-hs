@@ -490,13 +490,14 @@ Algoritmo<div class="sd-summary-down docutils">
       \mu_y = \frac{1}{N} \sum_{n=1}^N Y_n \qquad &amp; , \qquad S^2_y = \frac{1}{N-1} (Y_n - \mu_y)^2
     \end{aligned}\end{split}\]</div>
 </li>
-<li><p class="sd-card-text">vengono definiti i campioni normalizzati:</p>
+<li><p class="sd-card-text">vengono definiti i campioni normalizzati</p>
 <div class="math notranslate nohighlight">
 \[x_n = \frac{X_n - \mu_x}{S_x} \qquad , \qquad y_n = \frac{Y_n - \mu_y}{S_y}\]</div>
+<p class="sd-card-text">che hanno media nulla e varianza campionaria unitaria.</p>
 </li>
 </ul>
 </li>
-<li><p class="sd-card-text">calcolo dei valori ottimi dei parametri <span class="math notranslate nohighlight">\(\theta = (a, b)\)</span> del modello applicatoai dati scalati,</p>
+<li><p class="sd-card-text">calcolo dei valori ottimi dei parametri <span class="math notranslate nohighlight">\(\theta = (a, b)\)</span> del modello applicato ai dati scalati,</p>
 <div class="math notranslate nohighlight">
 \[y(x|\theta) = a x + b\]</div>
 <p class="sd-card-text">che rendono minimo l’errore quadratico,</p>
@@ -504,10 +505,10 @@ Algoritmo<div class="sd-summary-down docutils">
 \[e:= \sum_{n=1}^{N} ( \hat{y}(x_n) - y_n )^2 = \sum_{n=1}^N ( a \, x_n + b - y_n )^2 \ .\]</div>
 <p class="sd-card-text">L’errore quadratico è una funzione definita positiva con un unico minimo in corrispondenza delle condizioni</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-     0 &amp; = \dfrac{\partial e}{\partial a} = \\
-     0 &amp; = \dfrac{\partial e}{\partial b} = \\
-   \end{aligned}\end{split}\]</div>
+\[\begin{split}\begin{cases}
+     0 &amp; = \dfrac{\partial e}{\partial a} = \sum_{n=1}^N \\
+     0 &amp; = \dfrac{\partial e}{\partial b} = \sum_{n=1}^N \\
+   \end{cases}\end{split}\]</div>
 </li>
 </ul>
 </div>
