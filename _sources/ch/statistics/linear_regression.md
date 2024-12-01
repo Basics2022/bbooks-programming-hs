@@ -120,7 +120,9 @@ $$\begin{aligned}
 ```{dropdown} Statistiche $\ \chi^2 \ $ e $\ t \ $
 :open:
 
-Siano $y_n$ delle variabili gaussiane con varianza $\sigma^2$ e media $a x_n + b$, con $a = r = \frac{S^2_{XY}}{S_X S_Y}$ e $b = 0$,
+Siano $y_n$ delle variabili gaussiane con varianza $\sigma^2$ e media $a x_n + b$, con $b = 0$ e 
+
+$$a = r = \frac{S^2_{XY}}{S_X S_Y} = \frac{\frac{1}{N-1} \sum_{n=1}^{N} (X_n - \bar{X})(X_n - \bar{X})}{\sqrt{\frac{1}{N-1} \sum_{n=1}^{N} (X_n - \bar{X})^2} \sqrt{\frac{1}{N-1} \sum_{n=1}^{N} (X_n - \bar{X})^2}} \ ,$$
 
 $$y_n - a x_n \sim \mathscr{N}(0, \sigma^2) \ .$$
 
