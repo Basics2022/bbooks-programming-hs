@@ -37,6 +37,7 @@ L'algoritmo base consiste nella:
    L'errore quadratico è una funzione definita positiva con un unico minimo in corrispondenza delle condizioni
 
    $$\begin{aligned}
-     
+     0 & = \dfrac{\partial e}{\partial a} = \\
+     0 & = \dfrac{\partial e}{\partial b} = \\
    \end{aligned}$$
 ```
