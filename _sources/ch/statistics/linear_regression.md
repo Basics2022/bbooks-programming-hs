@@ -11,14 +11,16 @@ $$e:= \sum_{n=1}^{N} ( \hat{y}(X_n) - Y_n )^2 = \sum_{n=1}^N ( a \, X_n + b - Y_
 
 il cui valore permette di stimare la significatività dell'approssimazione lineare.
 
-```{dropdown}
+```{dropdown} Algoritmo
 :open:
 L'algoritmo base consiste nella:
 - normalizzazione dei campioni:
   - vengono calcolate le medie e le varianze campionarie
 
-    $$\mu_x = \frac{1}{N} \sum_{n=1}^N X_n \qquad , \qquad S^2_x = \frac{1}{N-1} (X_n - \mu_x)^2 $$
-    $$\mu_y = \frac{1}{N} \sum_{n=1}^N Y_n \qquad , \qquad S^2_y = \frac{1}{N-1} (Y_n - \mu_y)^2 $$
+    $$\begin{aligned}
+      \mu_x = \frac{1}{N} \sum_{n=1}^N X_n \qquad & , \qquad S^2_x = \frac{1}{N-1} (X_n - \mu_x)^2 \\
+      \mu_y = \frac{1}{N} \sum_{n=1}^N Y_n \qquad & , \qquad S^2_y = \frac{1}{N-1} (Y_n - \mu_y)^2
+    \end{aligned}$$
 
   - vengono definite i campioni normalizzati
     
