@@ -99,7 +99,7 @@ $$p(\mathbf{x},\mathbf{y}|\theta) = \prod_{n=1}^N \frac{1}{\sqrt{2 \pi \sigma^2}
 
 nel caso in cui le osservazioni siano indipendenti e quindi valga $p(\mathbf{x},\mathbf{y}|\theta) = \prod_{n=1}^N p(x_n,y_n|\theta)$, o il suo logaritmo
 
-$$\ln p(\theta|x) = - \frac{N}{2} \ln (2\pi \sigma^2) - \sum_{n=1}^N \frac{(a x_n + b - y_n)^2}{2 \sigma^2} \ .$$
+$$\ln p(\mathbf{x},\mathbf{y}|\theta) = - \frac{N}{2} \ln (2\pi \sigma^2) - \sum_{n=1}^N \frac{(a x_n + b - y_n)^2}{2 \sigma^2} \ .$$
 
 L'annullamento delle derivate parziali produce il sistema lineare
 
