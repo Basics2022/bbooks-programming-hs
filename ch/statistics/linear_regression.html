@@ -503,12 +503,15 @@ Algoritmo<div class="sd-summary-down docutils">
 <p class="sd-card-text">che rendono minimo l’errore quadratico,</p>
 <div class="math notranslate nohighlight">
 \[e:= \sum_{n=1}^{N} ( \hat{y}(x_n) - y_n )^2 = \sum_{n=1}^N ( a \, x_n + b - y_n )^2 \ .\]</div>
-<p class="sd-card-text">L’errore quadratico è una funzione definita positiva con un unico minimo in corrispondenza delle condizioni</p>
+<p class="sd-card-text">L’errore quadratico è una funzione definita positiva con un unico minimo in corrispondenza del sistema lineare formato dalle condizioni di derivate parziali nulle,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
-     0 &amp; = \dfrac{\partial e}{\partial a} = 2 \sum_{n=1}^N x_n ( a \, x_n + b - y_n ) \\
-     0 &amp; = \dfrac{\partial e}{\partial b} = 2 \sum_{n=1}^N     ( a \, x_n + b - y_n ) \\
+     0 &amp; = \dfrac{\partial e}{\partial a} = 2 \sum_{n=1}^N ( a \, x_n + b - y_n ) x_n \\
+     0 &amp; = \dfrac{\partial e}{\partial b} = 2 \sum_{n=1}^N ( a \, x_n + b - y_n )     \\
    \end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; N \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} S^2_{xy} \\ 0 \end{bmatrix} \ .
+   \end{split}\]</div>
 </li>
 </ul>
 </div>
