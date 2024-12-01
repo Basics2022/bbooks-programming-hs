@@ -81,7 +81,11 @@ di variabili gaussiane indipendenti non correlate, identicamente distribuite a m
 
 Assumendo le $X_n$, $a$, $b$ osservazioni e parametri deterministici, senza incertezza, segue che
 
-$$Y_n \sim \mathscr{N}(a X_n + b, \sigma^2)$$
+$$Y_n \sim \mathscr{N}(a X_n + b, \sigma^2) \ .$$
+
+La ricerca dei parametri ottimi $a$, $b$, $\sigma^2$ prevede che ottimizzino la distribuzione di probabilità
+
+$$p(x|\theta)$$
 
 
 ```
