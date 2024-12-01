@@ -112,7 +112,7 @@ $$\begin{cases}
 la cui soluzione, ipotizzando di aver normalizzato i campioni sulle medie e varianze campionarie,
 
 $$\begin{aligned}
-  a = r_{XY} \quad , \quad b = 0 \quad , \quad \sigma^2 = \frac{1}{N^2} \sum_{n=1}^N \left( a x_n + b - y_n  \right)^2
+  a = r_{XY} \quad , \quad b = 0 \quad , \quad \sigma^2 = \frac{1}{N} \sum_{n=1}^N \left( a x_n + b - y_n  \right)^2
 \end{aligned}$$
 
 
