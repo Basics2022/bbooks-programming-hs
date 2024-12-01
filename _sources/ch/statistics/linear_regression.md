@@ -101,15 +101,19 @@ o il suo logaritmo
 
 $$\ln p(\theta|x) = - \frac{N}{2} \ln (2\pi \sigma^2) - \sum_{n=1}^N \frac{(a x_n + b - y_n)^2}{2 \sigma^2} \ .$$
 
-L'annullamento delle derivate parziali,
+L'annullamento delle derivate parziali produce il sistema lineare
 
-$$\begin{aligned}
+$$\begin{cases}
  0 & = \frac{\partial p}{\partial a}        = \sum_{n=1}^N ( a x_n + b - y_n ) x_n \\
  0 & = \frac{\partial p}{\partial b}        = \sum_{n=1}^N ( a x_n + b - y_n ) \\
- 0 & = \frac{\partial p}{\partial \sigma^2} = \sum_{n=1}^N -\frac{N}{2}\frac{1}{\sigma^2} + \sum_{n=1}^N \frac{( a x_n + b - y_n )^2}{2 \sigma^4} \\
-\end{aligned}$$
+ 0 & = \frac{\partial p}{\partial \sigma^2} = -\frac{N}{2}\frac{1}{\sigma^2} + \sum_{n=1}^N \frac{( a x_n + b - y_n )^2}{2 \sigma^4} \\
+\end{cases}$$
 
-produce il sistema lineare
+la cui soluzione, ipotizzando di aver normalizzato i campioni sulle medie e varianze campionarie,
+
+$$\begin{aligned}
+  a = r_{XY} \quad , \quad b = 0 \quad , \quad \sigma^2 = \frac{1}{N^2} \sum_{n=1}^N \left( a x_n + b - y_n  \right)^2
+\end{aligned}$$
 
 
 ```
