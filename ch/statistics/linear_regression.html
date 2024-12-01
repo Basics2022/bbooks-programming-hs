@@ -583,7 +583,12 @@ Statistiche <span class="math notranslate nohighlight">\(\ \chi^2 \ \)</span> e 
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Siano <span class="math notranslate nohighlight">\(y_n\)</span> delle variabili gaussiane con varianza <span class="math notranslate nohighlight">\(\sigma^2\)</span> e media <span class="math notranslate nohighlight">\(a x_n + b\)</span>, con <span class="math notranslate nohighlight">\(b = 0\)</span> e</p>
 <div class="math notranslate nohighlight">
-\[a = r = \frac{S^2_{XY}}{S_X S_Y} = \frac{\frac{1}{N-1} \sum_{n=1}^{N} (X_n - \bar{X})(X_n - \bar{X})}{\sqrt{\frac{1}{N-1} \sum_{n=1}^{N} (X_n - \bar{X})^2} \sqrt{\frac{1}{N-1} \sum_{n=1}^{N} (X_n - \bar{X})^2}} \ ,\]</div>
+\[\begin{split}\begin{aligned}
+  a = r
+    &amp; = \frac{S^2_{XY}}{S_X S_Y} = \\
+    &amp; = \frac{\frac{1}{N-1} \sum_{n=1}^{N} (X_n - \bar{X})(X_n - \bar{X})}{\sqrt{\frac{1}{N-1} \sum_{n=1}^{N} (Y_n - \bar{Y})^2} \sqrt{\frac{1}{N-1} \sum_{n=1}^{N} (Y_n - \bar{Y})^2}} \\
+    &amp; = \frac{1}{N-1} \sum_{n=1}^N \left( \frac{X_n - \bar{X}}{S_X} \right)  \left(  \frac{Y_n - \bar{Y}}{S_Y} \right)
+\end{aligned}\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[y_n - a x_n \sim \mathscr{N}(0, \sigma^2) \ .\]</div>
 </div>

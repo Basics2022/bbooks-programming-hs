@@ -122,7 +122,12 @@ $$\begin{aligned}
 
 Siano $y_n$ delle variabili gaussiane con varianza $\sigma^2$ e media $a x_n + b$, con $b = 0$ e 
 
-$$a = r = \frac{S^2_{XY}}{S_X S_Y} = \frac{\frac{1}{N-1} \sum_{n=1}^{N} (X_n - \bar{X})(X_n - \bar{X})}{\sqrt{\frac{1}{N-1} \sum_{n=1}^{N} (X_n - \bar{X})^2} \sqrt{\frac{1}{N-1} \sum_{n=1}^{N} (X_n - \bar{X})^2}} \ ,$$
+$$\begin{aligned}
+  a = r
+    & = \frac{S^2_{XY}}{S_X S_Y} = \\
+    & = \frac{\frac{1}{N-1} \sum_{n=1}^{N} (X_n - \bar{X})(X_n - \bar{X})}{\sqrt{\frac{1}{N-1} \sum_{n=1}^{N} (Y_n - \bar{Y})^2} \sqrt{\frac{1}{N-1} \sum_{n=1}^{N} (Y_n - \bar{Y})^2}} \\
+    & = \frac{1}{N-1} \sum_{n=1}^N \left( \frac{X_n - \bar{X}}{S_X} \right)  \left(  \frac{Y_n - \bar{Y}}{S_Y} \right)
+\end{aligned}$$
 
 $$y_n - a x_n \sim \mathscr{N}(0, \sigma^2) \ .$$
 
