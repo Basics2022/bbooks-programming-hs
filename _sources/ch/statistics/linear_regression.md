@@ -30,7 +30,7 @@ L'algoritmo base consiste nella:
 
 - calcolo dei valori ottimi dei parametri $\theta = (a, b)$ del modello applicato ai dati scalati,
 
-   $$y(x|\theta) = a x + b$$
+   $$\hat{y}(x|\theta) = a x + b$$
 
    che rendono minimo l'errore quadratico,
 
