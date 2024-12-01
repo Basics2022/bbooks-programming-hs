@@ -55,6 +55,7 @@ L'algoritmo base consiste nella:
    $$\begin{aligned}
      \hat{Y}(X) & = \mu_Y + S_Y r^2_{XY} \frac{X - \mu_X}{S_X} = \\
                 & = r^2_{XY} \frac{S_Y}{S_X} X + \mu_Y - \mu_X r^2_{XY} \frac{S_Y}{S_X} = \\
+                & = \frac{S^2_{XY}}{S^2_X} X + \mu_Y - \mu_X \frac{S^2_{XY}}{S^2_X} 
    \end{aligned}$$
 
 
