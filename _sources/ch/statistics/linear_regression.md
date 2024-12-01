@@ -43,10 +43,16 @@ L'algoritmo base consiste nella:
      0 & = \dfrac{\partial e}{\partial b} = 2 \sum_{n=1}^N ( a \, x_n + b - y_n )     \\
    \end{cases}$$
 
+   che ha forma diagonale e, introducendo il coefficiente di correlazione dei campioni,
+
+   $$r^2_{XY} = \frac{S^2_XY}{S_X S_Y} \qquad , \qquad S^2_{XY} = \frac{1}{N-1} \sum_{n=1}^N (X_n - \mu_X)(Y_n - \mu_Y) \ ,$$
+
+   e usando il fomralismo matriciale può essere riscritto come,
+
    $$\begin{bmatrix} N-1 & 0 \\ 0 & N \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} (N-1) r^2_{XY} \\ 0 \end{bmatrix} \ ,
    $$
 
-   la cui soluzione è $a = S^2_{xy}$, $b = 0$. La forma della regressione lineare in termini delle variabili normalizzate è
+   la cui soluzione è $a = r^2_{xy}$, $b = 0$. La forma della regressione lineare in termini delle variabili normalizzate è
 
    $$\hat{y}(x) = r^2_{XY} x \ ,$$
 

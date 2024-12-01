@@ -509,10 +509,14 @@ Algoritmo<div class="sd-summary-down docutils">
      0 &amp; = \dfrac{\partial e}{\partial a} = 2 \sum_{n=1}^N ( a \, x_n + b - y_n ) x_n \\
      0 &amp; = \dfrac{\partial e}{\partial b} = 2 \sum_{n=1}^N ( a \, x_n + b - y_n )     \\
    \end{cases}\end{split}\]</div>
+<p class="sd-card-text">che ha forma diagonale e, introducendo il coefficiente di correlazione dei campioni,</p>
+<div class="math notranslate nohighlight">
+\[r^2_{XY} = \frac{S^2_XY}{S_X S_Y} \qquad , \qquad S^2_{XY} = \frac{1}{N-1} \sum_{n=1}^N (X_n - \mu_X)(Y_n - \mu_Y) \ ,\]</div>
+<p class="sd-card-text">e usando il fomralismo matriciale può essere riscritto come,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix} N-1 &amp; 0 \\ 0 &amp; N \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} (N-1) r^2_{XY} \\ 0 \end{bmatrix} \ ,
    \end{split}\]</div>
-<p class="sd-card-text">la cui soluzione è <span class="math notranslate nohighlight">\(a = S^2_{xy}\)</span>, <span class="math notranslate nohighlight">\(b = 0\)</span>. La forma della regressione lineare in termini delle variabili normalizzate è</p>
+<p class="sd-card-text">la cui soluzione è <span class="math notranslate nohighlight">\(a = r^2_{xy}\)</span>, <span class="math notranslate nohighlight">\(b = 0\)</span>. La forma della regressione lineare in termini delle variabili normalizzate è</p>
 <div class="math notranslate nohighlight">
 \[\hat{y}(x) = r^2_{XY} x \ ,\]</div>
 <p class="sd-card-text">e nelle variabili originali</p>
