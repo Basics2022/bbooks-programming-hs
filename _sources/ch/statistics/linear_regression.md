@@ -52,7 +52,10 @@ L'algoritmo base consiste nella:
 
    e nelle variabili originali
 
-   $$\hat{Y}(X) = \mu_Y + S_Y r^2_{XY} \frac{X - \mu_X}{S_X} $$
+   $$\begin{aligned}
+     \hat{Y}(X) & = \mu_Y + S_Y r^2_{XY} \frac{X - \mu_X}{S_X} = \\
+                & = r^2_{XY} \frac{S_Y}{S_X} X + \mu_Y - \mu_X r^2_{XY} \frac{S_Y}{S_X} = \\
+   \end{aligned}$$
 
 
 ```
