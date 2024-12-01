@@ -132,5 +132,6 @@ $$\begin{aligned}
 
 $$y_n - a x_n \sim \mathscr{N}(0, \sigma^2) \ .$$
 
+$$\mathbb{E}\left[ \sum_{n=1}^{N} (y_n - a x_n)^2 \right] = $$
 
 ```
