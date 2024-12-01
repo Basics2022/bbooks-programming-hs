@@ -134,7 +134,7 @@ $$y_n - a x_n \sim \mathscr{N}(0, \sigma^2) \ .$$
 
 $$\begin{aligned}
   \mathbb{E}\left[ \sum_{n=1}^{N} (y_n - a x_n)^2 \right] 
-  & = \mathbb{E}\left[ \sum_{n=1}^{N} (y_n - \frac{1}{N-1} \sum_{m=1}^N y_m x_m x_n)^2 \right] = \\
+  & = \mathbb{E}\left[ \sum_{n=1}^{N} \left(y_n - \frac{1}{N-1} \sum_{m=1}^N y_m x_m x_n \right)^2 \right] = \\
   & = \\
   & = \\
 \end{aligned}$$
