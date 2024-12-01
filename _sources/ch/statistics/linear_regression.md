@@ -135,8 +135,8 @@ $$y_n - a x_n \sim \mathscr{N}(0, \sigma^2) \ .$$
 $$\begin{aligned}
   \mathbb{E}\left[ \sum_{n=1}^{N} (y_n - a x_n)^2 \right] 
   & = \mathbb{E}\left[ \sum_{n=1}^{N} \left(y_n - \frac{1}{N-1} \sum_{m=1}^N y_m x_m x_n \right)^2 \right] = \\
-  & = \sum_{n=1}^{N} \mathbf{E}\left[ y^2_n - \frac{2}{N-1} \sum_{m=1}^{N} y_n y_m x_m x_n + \frac{2}{(N-1)^2} \sum_{m=1}^{N} \sum_{p > m} y_m y_p x_m x_p x_n^2 + \frac{1}{(N-1)^2} \sum_{m=1}^{N} y_m^2 x_m^2 x_n^2 \right] = \\
-  & = \sum_{n=1}^{N} \mathbf{E}\left[  \right] = \\
+  & = \sum_{n=1}^{N} \mathbb{E}\left[ y^2_n - \frac{2}{N-1} \sum_{m=1}^{N} y_n y_m x_m x_n + \frac{2}{(N-1)^2} \sum_{m=1}^{N} \sum_{p > m} y_m y_p x_m x_p x_n^2 + \frac{1}{(N-1)^2} \sum_{m=1}^{N} y_m^2 x_m^2 x_n^2 \right] = \\
+  & = \sum_{n=1}^{N} \mathbb{E}\left[  \right] = \\
 \end{aligned}$$
 
 ```
