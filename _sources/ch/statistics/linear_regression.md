@@ -50,26 +50,27 @@ L'algoritmo base consiste nella:
 
    e usando il fomralismo matriciale può essere riscritto come,
 
-   $$\begin{bmatrix} N-1 & 0 \\ 0 & N \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} (N-1) r^2_{XY} \\ 0 \end{bmatrix} \ ,
+   $$\begin{bmatrix} N-1 & 0 \\ 0 & N \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} (N-1) r_{XY} \\ 0 \end{bmatrix} \ ,
    $$
 
-   la cui soluzione è $a^* = r^2_{XY}$, $b^* = 0$. La forma della regressione lineare in termini delle variabili normalizzate è
+   la cui soluzione è $a^* = r_{XY}$, $b^* = 0$. La forma della regressione lineare in termini delle variabili normalizzate è
 
-   $$\hat{y}(x) = r^2_{XY} x \ .$$
+   $$\hat{y}(x) = r_{XY} x \ .$$
 
    L'errore quadratico minimo nelle variabili normalizzate vale
 
    $$\begin{aligned}
      e^* & = \sum_{n=1}^N ( a^* x_n + b^* - y_n )^2 = \\
-         & = \sum_{n=1}^N ( r^2_{XY} x_n - y_n )^2 = \\
-         & = r^4_{XY} (N-1) - 2 (N-1) r^2_{XY} r^2_{XY} + (N-1) = \\
+         & = \sum_{n=1}^N ( r_{XY} x_n - y_n )^2 = \\
+         & = r^2_{XY} (N-1) - 2 (N-1) r_{XY} r_{XY} + (N-1) = \\
+         & = (N-1) \left( 1 - r^2_{XY} \right) = \\
    \end{aligned}$$
 
    e nelle variabili originali
 
    $$\begin{aligned}
-     \hat{Y}(X) & = \mu_Y + S_Y r^2_{XY} \frac{X - \mu_X}{S_X} = \\
-                & = r^2_{XY} \frac{S_Y}{S_X} X + \mu_Y - \mu_X r^2_{XY} \frac{S_Y}{S_X} = \\
+     \hat{Y}(X) & = \mu_Y + S_Y r_{XY} \frac{X - \mu_X}{S_X} = \\
+                & = r_{XY} \frac{S_Y}{S_X} X + \mu_Y - \mu_X r_{XY} \frac{S_Y}{S_X} = \\
                 & = \frac{S^2_{XY}}{S^2_X} X + \mu_Y - \mu_X \frac{S^2_{XY}}{S^2_X} 
    \end{aligned}$$
 

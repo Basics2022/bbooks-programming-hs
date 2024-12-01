@@ -514,23 +514,24 @@ Algoritmo<div class="sd-summary-down docutils">
 \[r^2_{XY} = \frac{S^2_XY}{S_X S_Y} \qquad , \qquad S^2_{XY} = \frac{1}{N-1} \sum_{n=1}^N (X_n - \mu_X)(Y_n - \mu_Y) \ ,\]</div>
 <p class="sd-card-text">e usando il fomralismo matriciale può essere riscritto come,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{bmatrix} N-1 &amp; 0 \\ 0 &amp; N \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} (N-1) r^2_{XY} \\ 0 \end{bmatrix} \ ,
+\[\begin{split}\begin{bmatrix} N-1 &amp; 0 \\ 0 &amp; N \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} (N-1) r_{XY} \\ 0 \end{bmatrix} \ ,
    \end{split}\]</div>
-<p class="sd-card-text">la cui soluzione è <span class="math notranslate nohighlight">\(a^* = r^2_{XY}\)</span>, <span class="math notranslate nohighlight">\(b^* = 0\)</span>. La forma della regressione lineare in termini delle variabili normalizzate è</p>
+<p class="sd-card-text">la cui soluzione è <span class="math notranslate nohighlight">\(a^* = r_{XY}\)</span>, <span class="math notranslate nohighlight">\(b^* = 0\)</span>. La forma della regressione lineare in termini delle variabili normalizzate è</p>
 <div class="math notranslate nohighlight">
-\[\hat{y}(x) = r^2_{XY} x \ .\]</div>
+\[\hat{y}(x) = r_{XY} x \ .\]</div>
 <p class="sd-card-text">L’errore quadratico minimo nelle variabili normalizzate vale</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
      e^* &amp; = \sum_{n=1}^N ( a^* x_n + b^* - y_n )^2 = \\
-         &amp; = \sum_{n=1}^N ( r^2_{XY} x_n - y_n )^2 = \\
-         &amp; = r^4_{XY} (N-1) - 2 (N-1) r^2_{XY} r^2_{XY} + (N-1) = \\
+         &amp; = \sum_{n=1}^N ( r_{XY} x_n - y_n )^2 = \\
+         &amp; = r^2_{XY} (N-1) - 2 (N-1) r_{XY} r_{XY} + (N-1) = \\
+         &amp; = (N-1) \left( 1 - r^2_{XY} \right) = \\
    \end{aligned}\end{split}\]</div>
 <p class="sd-card-text">e nelle variabili originali</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-     \hat{Y}(X) &amp; = \mu_Y + S_Y r^2_{XY} \frac{X - \mu_X}{S_X} = \\
-                &amp; = r^2_{XY} \frac{S_Y}{S_X} X + \mu_Y - \mu_X r^2_{XY} \frac{S_Y}{S_X} = \\
+     \hat{Y}(X) &amp; = \mu_Y + S_Y r_{XY} \frac{X - \mu_X}{S_X} = \\
+                &amp; = r_{XY} \frac{S_Y}{S_X} X + \mu_Y - \mu_X r_{XY} \frac{S_Y}{S_X} = \\
                 &amp; = \frac{S^2_{XY}}{S^2_X} X + \mu_Y - \mu_X \frac{S^2_{XY}}{S^2_X} 
    \end{aligned}\end{split}\]</div>
 </li>
