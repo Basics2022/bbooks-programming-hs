@@ -63,10 +63,10 @@ L'algoritmo base consiste nella:
      e^* & = \sum_{n=1}^N ( a^* x_n + b^* - y_n )^2 = \\
          & = \sum_{n=1}^N ( r_{XY} x_n - y_n )^2 = \\
          & = r^2_{XY} (N-1) - 2 (N-1) r_{XY} r_{XY} + (N-1) = \\
-         & = (N-1) \left( 1 - r^2_{XY} \right) = \\
+         & = (N-1) \left( 1 - r^2_{XY} \right) \ .
    \end{aligned}$$
 
-   e nelle variabili originali
+   Il modello nelle variabili originali diventa
 
    $$\begin{aligned}
      \hat{Y}(X) & = \mu_Y + S_Y r_{XY} \frac{X - \mu_X}{S_X} = \\
@@ -79,9 +79,9 @@ L'algoritmo base consiste nella:
 ```{dropdown} Regressione lineare come MLE
 :open:
 
-La regressione lineare può essere interpretata come risultato di un metodo di Maximum Likelihood Estimation, supponendo che ogni osservazione $Y_n$ sia il risultato del modello lineare lineare $a X_n + b$ con l'aggiunta di un errore $\varepsilon_n$,
+La regressione lineare può essere interpretata come risultato di un metodo di Maximum Likelihood Estimation, supponendo che ogni osservazione $y_n$ sia il risultato del modello lineare lineare $a x_n + b$ con l'aggiunta di un errore $\varepsilon_n$,
 
-$$Y_n = a X_n + b + \varepsilon_n \ ,$$
+$$y_n = a x_n + b + \varepsilon_n \ ,$$
 
 di variabili gaussiane indipendenti non correlate, identicamente distribuite a media nulla e varianza $\sigma^2$,
 
@@ -89,17 +89,17 @@ di variabili gaussiane indipendenti non correlate, identicamente distribuite a m
 
   $$\mathbb{E}[\varepsilon_m \varepsilon_n] = \sigma^2 \delta_{mn} \ .$$
 
-Assumendo le $X_n$, $a$, $b$ osservazioni e parametri deterministici, senza incertezza, segue che
+Assumendo le $x_n$, $a$, $b$ osservazioni e parametri deterministici, senza incertezza, segue che
 
-$$Y_n \sim \mathscr{N}(a X_n + b, \sigma^2) \ .$$
+$$y_n \sim \mathscr{N}(a x_n + b, \sigma^2) \ .$$
 
 I parametri ottimi del modello $a$, $b$, $\sigma^2$ ottimizzano la probabilità,
 
-$$p(\theta|x) = \prod_{n=1}^N \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ -\frac{(a X_n + b - Y_n)^2}{2\sigma^2} \frac{}{} \right] \ ,$$
+$$p(\theta|x) = \prod_{n=1}^N \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ -\frac{(a x_n + b - Y_n)^2}{2\sigma^2} \frac{}{} \right] \ ,$$
 
 o il suo logaritmo
 
-$$\ln p(\theta|x) = - \frac{N}{2} \ln (2\pi \sigma^2) - \sum_{n=1}^N \frac{(a X_n + b - Y_n)^2}{2 \sigma^2} \ .$$
+$$\ln p(\theta|x) = - \frac{N}{2} \ln (2\pi \sigma^2) - \sum_{n=1}^N \frac{(a x_n + b - y_n)^2}{2 \sigma^2} \ .$$
 
 L'annullamento delle derivate parziali,
 
