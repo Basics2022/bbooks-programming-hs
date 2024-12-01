@@ -12,7 +12,6 @@ $$e:= \sum_{n=1}^{N} ( \hat{y}(X_n) - Y_n )^2 = \sum_{n=1}^N ( a \, X_n + b - Y_
 il cui valore permette di stimare la significatività dell'approssimazione lineare.
 
 ```{dropdown} Algoritmo
-:open:
 
 L'algoritmo base consiste nella:
 - normalizzazione dei campioni:
