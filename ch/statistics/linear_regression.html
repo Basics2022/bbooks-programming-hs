@@ -538,6 +538,8 @@ Regressione lineare come MLE<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">La regressione lineare può essere interpretata come risultato di un metodo di Maximum Likelihood Estimation, supponendo che ogni osservazione <span class="math notranslate nohighlight">\(Y_n\)</span> sia il risultato del modello lineare lineare <span class="math notranslate nohighlight">\(a X_n + b\)</span> con l’aggiunta di un errore <span class="math notranslate nohighlight">\(\varepsilon_n\)</span> di variabili gaussiane indipendenti non correlate, identicamente distribuite a media nulla e varianza <span class="math notranslate nohighlight">\(\sigma^2\)</span>,</p>
 <div class="math notranslate nohighlight">
+\[\varepsilon_n \sim \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ - \frac{\varepsilon^2}{2 \sigma^2} \right]^2\]</div>
+<div class="math notranslate nohighlight">
 \[\mathbb{E}[\varepsilon_m \varepsilon_n] = \sigma^2 \delta_{mn} \ .\]</div>
 </div>
 </details></div>
