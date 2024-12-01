@@ -67,5 +67,11 @@ L'algoritmo base consiste nella:
 ```
 
 ```{dropdown} Regressione lineare come MLE
+:open:
+
+La regressione lineare può essere interpretata come risultato di un metodo di Maximum Likelihood Estimation, supponendo che ogni osservazione $Y_n$ sia il risultato del modello lineare lineare $a X_n + b$ con l'aggiunta di un errore $\varepsilon_n$ di variabili gaussiane indipendenti non correlate, identicamente distribuite a media nulla e varianza $\sigma^2$,
+
+  $$\mathbb{E}[\varepsilon_m \varepsilon_n] = \sigma^2 \delta_{mn} \ .$$
+
 
 ```
