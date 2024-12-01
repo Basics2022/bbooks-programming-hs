@@ -221,7 +221,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-2.html">18.2.4.2. Moneta truccata</a></li>
 <li class="toctree-l4"><a class="reference internal" href="test-fisher-rabbit.html">18.2.4.3. Gambler rabbit</a></li>
 <li class="toctree-l4"><a class="reference internal" href="t-test.html">18.2.4.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.4.5. ANOVA - Analysis of variance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="linear_regression.html">18.2.4.5. Regressione lineare</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.4.6. ANOVA - Analysis of variance</a></li>
 </ul>
 </li>
 </ul>
@@ -641,7 +642,7 @@ document.write(`
 <span class="p">},</span>
 <span class="p">{</span>   <span class="c1"># Bad Correlation</span>
     <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]),</span>
-    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">])</span>
+    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">])</span>
 <span class="p">}</span>
 <span class="p">]</span>
 
@@ -721,14 +722,14 @@ document.write(`
   Regression coeffs y = -0.0604 x + 0.2410, with error 1.1254
   Pearson correlation: -0.0882, sigma: 0.3320
 &gt; Pair 3
-  Regression coeffs y = 0.2573 x + 0.6415, with error 1.0330
-  Pearson correlation: 0.3800, sigma: 0.3083
+  Regression coeffs y = 0.3824 x + 0.4404, with error 0.9296
+  Pearson correlation: 0.5614, sigma: 0.2758
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(44.222222222222214, 0.5, &#39;y&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/18c3efc84363009b9663a75e1edf8457be97cbe5cf1ac1779315164154fdf621.png" src="../../_images/18c3efc84363009b9663a75e1edf8457be97cbe5cf1ac1779315164154fdf621.png" />
+<img alt="../../_images/c0219b89b3d25a5058c0fbeefb64ea7d58c995c486dbf4899c1f7c583a3583e7.png" src="../../_images/c0219b89b3d25a5058c0fbeefb64ea7d58c995c486dbf4899c1f7c583a3583e7.png" />
 </div>
 </div>
 </div>
