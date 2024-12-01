@@ -493,9 +493,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressione-lineare">18.2.4.1. Regressione lineare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressione-lineare">18.2.4.1. Regressione lineare</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-dei-minimi-quadrati-per-una-regressione-lineare">18.2.4.1.1. Metodo dei minimi quadrati per una regressione lineare</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-ed-errore">18.2.4.1.2. Metodo ed errore</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione-di-pearson">18.2.4.2. Correlazione di Pearson</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione-di-spearman">18.2.4.3. Correlazione di Spearman</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio">18.2.4.4. Esempio</a></li>
 </ul>
             </nav>
         </div>
@@ -522,7 +527,55 @@ document.write(`
 <li><p>regressione lineare generalizzata</p></li>
 <li><p>…</p></li>
 </ul>
+<div class="section" id="metodo-dei-minimi-quadrati-per-una-regressione-lineare">
+<h3><span class="section-number">18.2.4.1.1. </span>Metodo dei minimi quadrati per una regressione lineare<a class="headerlink" href="#metodo-dei-minimi-quadrati-per-una-regressione-lineare" title="Permalink to this heading">#</a></h3>
+<p>Dati due campioni accoppiati <span class="math notranslate nohighlight">\(\{X_n\}_{n=1:N}\)</span>, <span class="math notranslate nohighlight">\(\{Y_n\}_{n=1:N}\)</span> campionati dalle popolazioni <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, si calcolano i coefficienti <span class="math notranslate nohighlight">\(\symbf{\theta} = (a, b)\)</span> dell’approssimazione lineare <span class="math notranslate nohighlight">\(y(x|\theta) = a x + b\)</span> che rendono minimo l’errore quadratico medio</p>
+<div class="math notranslate nohighlight">
+\[e(\symbf{\theta}) = \frac{1}{2 N} \sum_{n=1}^{N} (y(x_n|\symbf{\theta}) - y_n)^2 =  \frac{1}{2 N} \sum_{n=1}^{N} (a x_n + b - y_n)^2 \ .\]</div>
+<p>La funzione è quadratica in <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> e semi-definita positiva. Si cercano i valori che rendono minimo l’errore ponendo uguale a <span class="math notranslate nohighlight">\(0\)</span> le derivate parziali dell’errore rispetto ai parametri</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0 &amp; = \frac{\partial e}{\partial a} = \frac{1}{N} \sum_{n=1}^N x_n (a x_n + b - y_n) = \frac{1}{N} \sum_{n=1}^N x^2_n \, a + \frac{1}{N} \sum_{n=1}^N x_n \, b - \frac{1}{N} \sum_{n=1}^{N} x_n y_n \\
+  0 &amp; = \frac{\partial e}{\partial b} = \frac{1}{N} \sum_{n=1}^N (a x_n + b - y_n)     = \frac{1}{N} \sum_{n=1}^N x_n \, a + b - \frac{1}{N} \sum_{n=1}^{N} y_n \\
+\end{aligned}\end{split}\]</div>
+<p>Queste due equazioni formano un sistema lineare di due equazioni in due incognite, che può essere riscritto con il formalismo matriciale</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} \frac{1}{N} \sum_{n=1}^N x^2_n &amp; \frac{1}{N} \sum_{n=1}^N x_n  \\ \frac{1}{N} \sum_{n=1}^N x_n &amp; 1 \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} \frac{1}{N} \sum_{n=1}^{N} x_n y_n \\ \frac{1}{N} \sum_{n=1}^{N} y_n \end{bmatrix} \ .\end{split}\]</div>
+<p>Il valore dei coefficienti ottimi <span class="math notranslate nohighlight">\(\theta^* = (a, b)\)</span> che minimizzano l’errore quadratico medio si trova come soluzione del sistema lineare, l’errore quadratico medio minimo dovuto all’approssimazione viene calcolato in seguito, <span class="math notranslate nohighlight">\(e(\theta^*)\)</span>. La bontà dell’approssimazione lineare può essere valutata in termini dell’errore quadratico medio.</p>
 <p><strong>Regressione e SL.</strong> Una delle applicazioni fondamentali in ML, in particolare in SL, è la regressione o l’approssimazione di funzioni; scelta del modello…</p>
+</div>
+<div class="section" id="metodo-ed-errore">
+<h3><span class="section-number">18.2.4.1.2. </span>Metodo ed errore<a class="headerlink" href="#metodo-ed-errore" title="Permalink to this heading">#</a></h3>
+<p>Il sistema lineare può essere riscritto come</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} \frac{1}{N} \sum_{n=1}^N x^2_n &amp; \bar{x}  \\ \bar{x} &amp; 1 \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} \frac{1}{N} \sum_{n=1}^{N} x_n y_n \\ \bar{y} \end{bmatrix} \ ,\end{split}\]</div>
+<p>e la soluzione</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ \begin{bmatrix} a \\ b \end{bmatrix} &amp; = \frac{1}{\frac{1}{N} \sum_{n=1}^N x^2_n - \bar{x}^2} \begin{bmatrix} 1 &amp; -\bar{x}  \\ -\bar{x} &amp; \frac{1}{N} \sum_{n=1}^N x^2_n \end{bmatrix} \, \begin{bmatrix} \frac{1}{N} \sum_{n=1}^{N} x_n y_n \\ \bar{y} \end{bmatrix} = \\
+ &amp; = \frac{1}{\frac{1}{N} \sum_{n=1}^N x^2_n - \bar{x}^2} \begin{bmatrix} \frac{1}{N} \sum_{n=1}^N x_n y_n - \bar{x}\bar{y} \\ -\frac{\bar{x}}{N} \sum_{n=1}^N x_n y_n + \frac{\bar{y}}{N} \sum_{n=1}^N x_n^2 \end{bmatrix} = \\
+ &amp; = \frac{1}{R_x - \bar{x}^2} \begin{bmatrix} R_{xy} - \bar{x} \bar{y} \\ -\bar{x} R_{xy} + \bar{y} R_x \end{bmatrix}
+\end{aligned}\end{split}\]</div>
+<p>L’errore minimo diventa quindi</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  e &amp; = \frac{1}{2N} \sum_{m=1}^{N} \left( a \, x_m  + b -  y_m \right)^2 = \\
+    &amp; = \frac{1}{2 N} \sum_{m=1}^N \left( a^2 x_m^2 + b^2 + y_m^2 + 2 a b x_m - 2 b y_m - 2 a x_m y_m  \right) \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+2 e &amp; = \frac{1}{N} \left[ a^2 \sum_{m=1}^{N} x_m^2 + N b^2 + \sum_{m=1}^N y_m^2 + 2 a b \bar{x} - 2 b \bar{y} - 2 a \sum_{m=1}^{N} x_m y_m  \right] = \\
+  &amp; = a^2 R_x + b^2 + R_y + 2 a b \bar{x} - 2 b \bar{y} - 2 a R_{xy} \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+2 e &amp; = \left( \frac{R_{xy} - \bar{x} \bar{y}}{R_x - \bar{x}^2} \right)^2 R_x + \left( \frac{-\bar{x} R_{xy} + \bar{y} R_x}{R_x - \bar{x}^2} \right)^2 + R_y + 2 \left( \frac{R_{xy} - \bar{x} \bar{y}}{R_x - \bar{x}^2} \right) \left( \frac{-\bar{x} R_{xy} + \bar{y} R_x}{R_x - \bar{x}^2} \right) \bar{x} - 2 \left( \frac{-\bar{x} R_{xy} + \bar{y} R_x}{R_x - \bar{x}^2} \right) \bar{y} - 2 \left( \frac{R_{xy} - \bar{x} \bar{y}}{R_x - \bar{x}^2} \right) R_{xy} \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+2 e = \frac{1}{D^2}\left[ R_{xy}^2 R_x - 2 x y R_{xy} R_x + x^2 y^2 R_x + \dots \right]
+\]</div>
+</div>
 </div>
 <div class="section" id="correlazione-di-pearson">
 <h2><span class="section-number">18.2.4.2. </span>Correlazione di Pearson<a class="headerlink" href="#correlazione-di-pearson" title="Permalink to this heading">#</a></h2>
@@ -558,6 +611,125 @@ document.write(`
 <li><p>per relazioni non lineari ma monotone
 … <strong>todo</strong></p></li>
 </ul>
+</div>
+<div class="section" id="esempio">
+<h2><span class="section-number">18.2.4.4. </span>Esempio<a class="headerlink" href="#esempio" title="Permalink to this heading">#</a></h2>
+<p>Si valutano i metodi di correlazione per 4 coppie di campioni, 2 che mostrano una buona correlazione e 2 con correlazione scarsa</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test correlation algorithms</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1">#&gt; Data</span>
+<span class="n">pairs</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">{</span>    <span class="c1"># Good Positive Correlation</span>
+    <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]),</span>
+    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">1.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">])</span>
+<span class="p">},</span>
+<span class="p">{</span>    <span class="c1"># Good Negative Correlation</span>
+    <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]),</span>
+    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.9</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.8</span><span class="p">])</span>
+<span class="p">},</span>
+<span class="p">{</span>   <span class="c1"># Bad Correlation</span>
+    <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]),</span>
+    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">])</span>
+<span class="p">},</span>
+<span class="p">{</span>   <span class="c1"># Bad Correlation</span>
+    <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]),</span>
+    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">])</span>
+<span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pairs</span><span class="p">)):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pairs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">pairs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">tab10</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/4f7810334e4c2fa874a72d2984342ab7e882138c6a79fadbacc952c250c1f045.png" src="../../_images/4f7810334e4c2fa874a72d2984342ab7e882138c6a79fadbacc952c250c1f045.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pairs</span><span class="p">)):</span>
+    <span class="c1">#&gt; Scale and normalize data</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pairs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">pairs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pairs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;x&#39;</span><span class="p">])</span>
+    <span class="c1"># ...</span>
+    <span class="n">x_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">nSxy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_mean</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y_mean</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">nSx2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_mean</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
+    <span class="n">nSy2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y_mean</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
+    
+    <span class="c1">#&gt; LS linear system</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="p">[</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">n</span> <span class="p">]</span> <span class="p">]</span> <span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="p">])</span> <span class="o">/</span> <span class="n">n</span>
+
+    <span class="c1">#&gt; Find coefficients of the regression</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+    <span class="c1">#&gt; Find average square error</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="p">(</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span> <span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+
+    <span class="c1">#&gt; Pearson</span>
+    <span class="c1">#&gt; correlation coefficient</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">nSxy</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">nSx2</span> <span class="o">*</span> <span class="n">nSy2</span> <span class="p">)</span>
+    <span class="c1">#&gt; sigma</span>
+    <span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">n</span><span class="o">-</span><span class="mi">2</span> <span class="p">)</span> <span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&gt; Pair </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Regression coeffs y = </span><span class="si">{</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> x + </span><span class="si">{</span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, with error </span><span class="si">{</span><span class="n">e</span><span class="o">**</span><span class="mf">.5</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Pearson correlation: </span><span class="si">{</span><span class="n">r</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, sigma: </span><span class="si">{</span><span class="n">sigma</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span>          <span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">tab10</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">tab10</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+
+    
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; Pair 0
+  Regression coeffs y = 0.7673 x + 0.0527, with error 0.0831
+  Pearson correlation: 0.9977, sigma: 0.0228
+&gt; Pair 1
+  Regression coeffs y = -0.9364 x + 1.0500, with error 0.0477
+  Pearson correlation: -0.9995, sigma: 0.0107
+&gt; Pair 2
+  Regression coeffs y = -0.0604 x + 0.2410, with error 1.1254
+  Pearson correlation: -0.0882, sigma: 0.3320
+&gt; Pair 3
+  Regression coeffs y = 0.2573 x + 0.6415, with error 1.0330
+  Pearson correlation: 0.3800, sigma: 0.3083
+</pre></div>
+</div>
+<img alt="../../_images/a35212b2e4f7f894df84a555199ee6b472bfe6c0b3c89e09d329e7ae4cefef25.png" src="../../_images/a35212b2e4f7f894df84a555199ee6b472bfe6c0b3c89e09d329e7ae4cefef25.png" />
+</div>
+</div>
 </div>
 </div>
 
@@ -624,9 +796,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressione-lineare">18.2.4.1. Regressione lineare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressione-lineare">18.2.4.1. Regressione lineare</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-dei-minimi-quadrati-per-una-regressione-lineare">18.2.4.1.1. Metodo dei minimi quadrati per una regressione lineare</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-ed-errore">18.2.4.1.2. Metodo ed errore</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione-di-pearson">18.2.4.2. Correlazione di Pearson</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione-di-spearman">18.2.4.3. Correlazione di Spearman</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio">18.2.4.4. Esempio</a></li>
 </ul>
   </nav></div>
 
