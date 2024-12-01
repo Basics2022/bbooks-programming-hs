@@ -472,7 +472,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[e:= \sum_{n=1}^{N} ( \hat{y}(X_n) - Y_n )^2 = \sum_{n=1}^N ( a \, X_n + b - Y_n )^2 \ ,\]</div>
 <p>il cui valore permette di stimare la significatività dell’approssimazione lineare.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 Algoritmo<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -516,9 +516,16 @@ Algoritmo<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{bmatrix} N-1 &amp; 0 \\ 0 &amp; N \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} (N-1) r^2_{XY} \\ 0 \end{bmatrix} \ ,
    \end{split}\]</div>
-<p class="sd-card-text">la cui soluzione è <span class="math notranslate nohighlight">\(a = r^2_{xy}\)</span>, <span class="math notranslate nohighlight">\(b = 0\)</span>. La forma della regressione lineare in termini delle variabili normalizzate è</p>
+<p class="sd-card-text">la cui soluzione è <span class="math notranslate nohighlight">\(a^* = r^2_{XY}\)</span>, <span class="math notranslate nohighlight">\(b^* = 0\)</span>. La forma della regressione lineare in termini delle variabili normalizzate è</p>
 <div class="math notranslate nohighlight">
-\[\hat{y}(x) = r^2_{XY} x \ ,\]</div>
+\[\hat{y}(x) = r^2_{XY} x \ .\]</div>
+<p class="sd-card-text">L’errore quadratico minimo nelle variabili normalizzate vale</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+     e^* &amp; = \sum_{n=1}^N ( a^* x_n + b^* - y_n )^2 = \\
+         &amp; = \sum_{n=1}^N ( r^2_{XY} x_n - y_n )^2 = \\
+         &amp; = r^4_{XY} (N-1) - 2 (N-1) r^2_{XY} r^2_{XY} + (N-1) = \\
+   \end{aligned}\end{split}\]</div>
 <p class="sd-card-text">e nelle variabili originali</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -552,7 +559,11 @@ Regressione lineare come MLE<div class="sd-summary-down docutils">
 \[p(\theta|x) = \prod_{n=1}^N \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ -\frac{(a X_n + b - Y_n)^2}{2\sigma^2} \frac{}{} \right] \ ,\]</div>
 <p class="sd-card-text">o il suo logaritmo</p>
 <div class="math notranslate nohighlight">
-\[\ln p(\theta|x) = - \frac{N}{2} \ln (2\pi \sigma^2) - \sum_{n=1}^N \frac{(a X_n + b - Y_n)^2}{2 \sigma^2}\]</div>
+\[\ln p(\theta|x) = - \frac{N}{2} \ln (2\pi \sigma^2) - \sum_{n=1}^N \frac{(a X_n + b - Y_n)^2}{2 \sigma^2} \ .\]</div>
+<p class="sd-card-text">L’annullamento delle derivate parziali,</p>
+<div class="math notranslate nohighlight">
+\[  \ ,\]</div>
+<p class="sd-card-text">produce il sistema lineare</p>
 </div>
 </details></div>
 

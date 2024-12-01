@@ -12,6 +12,7 @@ $$e:= \sum_{n=1}^{N} ( \hat{y}(X_n) - Y_n )^2 = \sum_{n=1}^N ( a \, X_n + b - Y_
 il cui valore permette di stimare la significatività dell'approssimazione lineare.
 
 ```{dropdown} Algoritmo
+:open:
 
 L'algoritmo base consiste nella:
 - normalizzazione dei campioni:
@@ -52,9 +53,17 @@ L'algoritmo base consiste nella:
    $$\begin{bmatrix} N-1 & 0 \\ 0 & N \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} (N-1) r^2_{XY} \\ 0 \end{bmatrix} \ ,
    $$
 
-   la cui soluzione è $a = r^2_{xy}$, $b = 0$. La forma della regressione lineare in termini delle variabili normalizzate è
+   la cui soluzione è $a^* = r^2_{XY}$, $b^* = 0$. La forma della regressione lineare in termini delle variabili normalizzate è
 
-   $$\hat{y}(x) = r^2_{XY} x \ ,$$
+   $$\hat{y}(x) = r^2_{XY} x \ .$$
+
+   L'errore quadratico minimo nelle variabili normalizzate vale
+
+   $$\begin{aligned}
+     e^* & = \sum_{n=1}^N ( a^* x_n + b^* - y_n )^2 = \\
+         & = \sum_{n=1}^N ( r^2_{XY} x_n - y_n )^2 = \\
+         & = r^4_{XY} (N-1) - 2 (N-1) r^2_{XY} r^2_{XY} + (N-1) = \\
+   \end{aligned}$$
 
    e nelle variabili originali
 
@@ -89,7 +98,13 @@ $$p(\theta|x) = \prod_{n=1}^N \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ -\frac{
 
 o il suo logaritmo
 
-$$\ln p(\theta|x) = - \frac{N}{2} \ln (2\pi \sigma^2) - \sum_{n=1}^N \frac{(a X_n + b - Y_n)^2}{2 \sigma^2}$$
+$$\ln p(\theta|x) = - \frac{N}{2} \ln (2\pi \sigma^2) - \sum_{n=1}^N \frac{(a X_n + b - Y_n)^2}{2 \sigma^2} \ .$$
+
+L'annullamento delle derivate parziali,
+
+$$  \ ,$$
+
+produce il sistema lineare
 
 
 ```
