@@ -39,7 +39,7 @@ L'algoritmo base consiste nella:
    L'errore quadratico è una funzione definita positiva con un unico minimo in corrispondenza delle condizioni
 
    $$\begin{cases}
-     0 & = \dfrac{\partial e}{\partial a} = \sum_{n=1}^N \\
-     0 & = \dfrac{\partial e}{\partial b} = \sum_{n=1}^N \\
+     0 & = \dfrac{\partial e}{\partial a} = 2 \sum_{n=1}^N x_n ( a \, x_n + b - y_n ) \\
+     0 & = \dfrac{\partial e}{\partial b} = 2 \sum_{n=1}^N     ( a \, x_n + b - y_n ) \\
    \end{cases}$$
 ```
