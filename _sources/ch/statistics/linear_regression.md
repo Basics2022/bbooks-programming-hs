@@ -95,7 +95,7 @@ $$y_n \sim \mathscr{N}(a x_n + b, \sigma^2) \ .$$
 
 I parametri ottimi del modello $a$, $b$, $\sigma^2$ ottimizzano la probabilità,
 
-$$p(x|\theta) = \prod_{n=1}^N \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ -\frac{(a x_n + b - Y_n)^2}{2\sigma^2} \frac{}{} \right] \ ,$$
+$$p(x,y|\theta) = \prod_{n=1}^N \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ -\frac{(a x_n + b - Y_n)^2}{2\sigma^2} \frac{}{} \right] \ ,$$
 
 nel caso in cui le osservazioni siano indipendenti e quindi valga $p(\mathbf{x},\mathbf{y}|\theta) = \prod_{n=1}^N p(x_n,y_n|\theta)$, o il suo logaritmo
 
