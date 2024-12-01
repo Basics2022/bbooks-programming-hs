@@ -117,7 +117,7 @@ $$\begin{aligned}
 
 ```
 
-```{dropdown} Statistiche $\chi^2$ e $t$
+```{dropdown} Statistiche $ \chi^2 $ e $ t $
 :open:
 
 Siano $y_n$ delle variabili gaussiane con varianza $\sigma^2$ e media $a x_n + b$, con $a = r = \frac{S^2_{XY}}{S_X S_Y}$ e $b = 0$,
