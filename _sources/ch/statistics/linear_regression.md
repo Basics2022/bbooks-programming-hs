@@ -43,8 +43,16 @@ L'algoritmo base consiste nella:
      0 & = \dfrac{\partial e}{\partial b} = 2 \sum_{n=1}^N ( a \, x_n + b - y_n )     \\
    \end{cases}$$
 
-   $$\begin{bmatrix} 1 & 0 \\ 0 & N \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} S^2_{xy} \\ 0 \end{bmatrix} \ .
+   $$\begin{bmatrix} N-1 & 0 \\ 0 & N \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} (N-1) r^2_{XY} \\ 0 \end{bmatrix} \ ,
    $$
+
+   la cui soluzione è $a = S^2_{xy}$, $b = 0$. La forma della regressione lineare in termini delle variabili normalizzate è
+
+   $$\hat{y}(x) = r^2_{XY} x \ ,$$
+
+   e nelle variabili originali
+
+   $$\hat{Y}(X) = \mu_Y + S_Y r^2_{XY} \frac{X - \mu_X}{S_X} $$
 
 
 ```
