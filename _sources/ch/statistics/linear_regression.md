@@ -75,7 +75,7 @@ $$Y_n = a X_n + b + \varepsilon_n \ ,$$
 
 di variabili gaussiane indipendenti non correlate, identicamente distribuite a media nulla e varianza $\sigma^2$,
 
-  $$\varepsilon_n \sim \mathscr{N}(0, \sigma^2) \sim \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ - \frac{\varepsilon^2}{2 \sigma^2} \right]$$
+  $$\varepsilon_n \sim \mathscr{N}(0, \sigma^2) \sim \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ - \frac{x^2}{2 \sigma^2} \right]$$
 
   $$\mathbb{E}[\varepsilon_m \varepsilon_n] = \sigma^2 \delta_{mn} \ .$$
 
@@ -83,9 +83,11 @@ Assumendo le $X_n$, $a$, $b$ osservazioni e parametri deterministici, senza ince
 
 $$Y_n \sim \mathscr{N}(a X_n + b, \sigma^2) \ .$$
 
-La ricerca dei parametri ottimi $a$, $b$, $\sigma^2$ prevede che ottimizzino la distribuzione di probabilità
+I parametri ottimi del modello $a$, $b$, $\sigma^2$ ottimizzano la probabilità,
 
-$$p(x|\theta)$$
+$$p(\theta|x) = \prod_{n=1}^N \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ -\frac{(a X_n + b - Y_n)^2}{2\sigma^2} \frac{}{} \right] \ ,$$
+
+o il suo logaritmo
 
 
 ```
