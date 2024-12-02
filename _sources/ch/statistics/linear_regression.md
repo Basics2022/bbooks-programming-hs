@@ -131,6 +131,8 @@ $$\begin{aligned}
 \end{aligned}$$
 
 $$\varepsilon_n := y_n - a x_n \sim \mathscr{N}(0, \sigma^2) \ .$$
+$$0 = \mathbb{E}[\varepsilon_n} = \mathbb{E}[y_n] - \mathbb{E}[a] \, x_n$$
+
 
 $$\begin{aligned}
   \sigma^2 \delta_{mn}
