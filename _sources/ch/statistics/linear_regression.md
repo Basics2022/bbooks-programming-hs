@@ -140,7 +140,8 @@ $$0 = \mathbb{E}[\varepsilon_n] = \mathbb{E}[y_n] - \mathbb{E}[a] \, x_n$$
 $$\begin{aligned}
   \sigma^2 \delta_{mn}
   & = \mathbb{E}\left[ \varepsilon_m \varepsilon_n \right] = \\
-  & = \mathbb{E}\left[ \varepsilon_m \varepsilon_n \right] = \\
+  & = \mathbb{E}\left[ (y_m - a x_m) (y_n - a x_n) \right] = \\
+  & = \mathbb{E}\left[ y_m y_n \right] - x_m \mathbb{E} \left[ a y_n \right] - = \\
 \end{aligned}$$
 
 $$\begin{aligned}
