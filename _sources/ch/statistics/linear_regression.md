@@ -130,6 +130,9 @@ $$\begin{aligned}
     & = \frac{1}{N-1} \sum_{n=1}^N x_n \, y_n 
 \end{aligned}$$
 
+$$\mathbb{E}[a] = \frac{1}{N-1} \sum_{m=1}^{N} x_m \mathbb{E}[y_m]$$
+
+
 $$\varepsilon_n := y_n - a x_n \sim \mathscr{N}(0, \sigma^2) \ .$$
 $$0 = \mathbb{E}[\varepsilon_n] = \mathbb{E}[y_n] - \mathbb{E}[a] \, x_n$$
 
