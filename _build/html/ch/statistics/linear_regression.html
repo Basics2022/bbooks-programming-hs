@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>18.2.4.5. Regressione lineare &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -65,10 +65,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/statistics/correlation_test';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/statistics/linear_regression';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
+    <link rel="next" title="18.2.4.6. ANOVA - Analysis of variance" href="anova.html" />
+    <link rel="prev" title="18.2.4.4. \(t\)-test" href="t-test.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -187,7 +191,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../numerics/optimization.html">14. Ottimizzazione</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistica</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../statistics.html">15. Metodi per la statistica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="descriptive.html">16. Statistica descrittiva</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="probability.html">17. Introduzione alla probabilità</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -206,18 +210,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="random_processes.html">17.2. Processi casuali</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="inference.html">18. Statistica inferenziale</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="inference.html">18. Statistica inferenziale</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="estimate.html">18.1. Stima</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="hp-test.html">18.2. Test di verifica delle ipotesi</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="hp-test.html">18.2. Test di verifica delle ipotesi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="hp-test-single.html">18.2.1. Test su campioni singoli o coppie di campioni</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hp-test-correlation.html">18.2.2. Test di correlazione</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hp-test-independence.html">18.2.3. Test di indipendenza</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="hp-test-examples.html">18.2.4. Esempi</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="hp-test-examples.html">18.2.4. Esempi</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-1.html">18.2.4.1. Test di verifica d’ipotesi - Fisher</a></li>
 <li class="toctree-l4"><a class="reference internal" href="test-fisher-coin-2.html">18.2.4.2. Moneta truccata</a></li>
 <li class="toctree-l4"><a class="reference internal" href="test-fisher-rabbit.html">18.2.4.3. Gambler rabbit</a></li>
 <li class="toctree-l4"><a class="reference internal" href="t-test.html">18.2.4.4. <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toctree-l4"><a class="reference internal" href="linear_regression.html">18.2.4.5. Regressione lineare</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">18.2.4.5. Regressione lineare</a></li>
 <li class="toctree-l4"><a class="reference internal" href="anova.html">18.2.4.6. ANOVA - Analysis of variance</a></li>
 </ul>
 </li>
@@ -291,37 +295,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-programming-hs/blob/master/ch/statistics/correlation_test.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -347,7 +320,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/statistics/correlation_test.ipynb" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/statistics/linear_regression.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -364,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/statistics/correlation_test.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/statistics/linear_regression.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/statistics/correlation_test.ipynb" target="_blank"
+      <li><a href="../../_sources/ch/statistics/linear_regression.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -404,7 +377,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -465,9 +438,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -478,19 +449,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Regressione lineare</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contenuti </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -500,52 +463,165 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">spearmanr</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="c1"># Generate synthetic data</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Continuous variable (normally distributed)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Linear relationship with noise</span>
-
-<span class="c1"># Compute Pearson correlation and test hypothesis</span>
-<span class="n">pearson_corr</span><span class="p">,</span> <span class="n">pearson_p</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pearson Correlation: </span><span class="si">{</span><span class="n">pearson_corr</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, p-value: </span><span class="si">{</span><span class="n">pearson_p</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Rank the data for Spearman correlation</span>
-<span class="n">x_ranked</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
-<span class="n">y_ranked</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
-
-<span class="c1"># Compute Spearman correlation and test hypothesis</span>
-<span class="n">spearman_corr</span><span class="p">,</span> <span class="n">spearman_p</span> <span class="o">=</span> <span class="n">spearmanr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Spearman Correlation: </span><span class="si">{</span><span class="n">spearman_corr</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, p-value: </span><span class="si">{</span><span class="n">spearman_p</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Plot Pearson correlation (scatter plot with regression line)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">})</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pearson Correlation</span><span class="se">\n</span><span class="s2">r = </span><span class="si">{</span><span class="n">pearson_corr</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, p = </span><span class="si">{</span><span class="n">pearson_p</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
-</pre></div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="regressione-lineare">
+<span id="statistics-hs-linear-regression"></span><h1><span class="section-number">18.2.4.5. </span>Regressione lineare<a class="headerlink" href="#regressione-lineare" title="Permalink to this heading">#</a></h1>
+<p>Nella sua forma elementare, la regressione lineare è un’approssimazione (stimatore) lineare</p>
+<div class="math notranslate nohighlight">
+\[\hat{Y}(X|\theta) = a X + b \ ,\]</div>
+<p>tra una coppia di campioni <span class="math notranslate nohighlight">\(\{ X_n \}_{n=1:N}\)</span>, <span class="math notranslate nohighlight">\(\{ Y_n \}_{n=1:N}\)</span> estratti dalle popolazioni <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, i cui parametri <span class="math notranslate nohighlight">\(\theta = (a,b)\)</span> rendono minimo l’errore quadratico medio</p>
+<div class="math notranslate nohighlight">
+\[e:= \sum_{n=1}^{N} ( \hat{y}(X_n) - Y_n )^2 = \sum_{n=1}^N ( a \, X_n + b - Y_n )^2 \ ,\]</div>
+<p>il cui valore permette di stimare la significatività dell’approssimazione lineare.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Algoritmo<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">L’algoritmo base consiste nella:</p>
+<ul>
+<li><p class="sd-card-text">normalizzazione dei campioni:</p>
+<ul>
+<li><p class="sd-card-text">vengono calcolate le medie e le varianze campionarie</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+      \mu_x = \frac{1}{N} \sum_{n=1}^N X_n \qquad &amp; , \qquad S^2_x = \frac{1}{N-1} (X_n - \mu_x)^2 \\
+      \mu_y = \frac{1}{N} \sum_{n=1}^N Y_n \qquad &amp; , \qquad S^2_y = \frac{1}{N-1} (Y_n - \mu_y)^2
+    \end{aligned}\end{split}\]</div>
+</li>
+<li><p class="sd-card-text">vengono definiti i campioni normalizzati</p>
+<div class="math notranslate nohighlight">
+\[x_n = \frac{X_n - \mu_x}{S_x} \qquad , \qquad y_n = \frac{Y_n - \mu_y}{S_y}\]</div>
+<p class="sd-card-text">che hanno media nulla e varianza campionaria unitaria.</p>
+</li>
+</ul>
+</li>
+<li><p class="sd-card-text">calcolo dei valori ottimi dei parametri <span class="math notranslate nohighlight">\(\theta = (a, b)\)</span> del modello applicato ai dati scalati,</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}(x|\theta) = a x + b\]</div>
+<p class="sd-card-text">che rendono minimo l’errore quadratico,</p>
+<div class="math notranslate nohighlight">
+\[e:= \sum_{n=1}^{N} ( \hat{y}(x_n) - y_n )^2 = \sum_{n=1}^N ( a \, x_n + b - y_n )^2 \ .\]</div>
+<p class="sd-card-text">L’errore quadratico è una funzione definita positiva con un unico minimo in corrispondenza del sistema lineare formato dalle condizioni di derivate parziali nulle,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+     0 &amp; = \dfrac{\partial e}{\partial a} = 2 \sum_{n=1}^N ( a \, x_n + b - y_n ) x_n \\
+     0 &amp; = \dfrac{\partial e}{\partial b} = 2 \sum_{n=1}^N ( a \, x_n + b - y_n )     \\
+   \end{cases}\end{split}\]</div>
+<p class="sd-card-text">che ha forma diagonale e, introducendo il coefficiente di correlazione dei campioni,</p>
+<div class="math notranslate nohighlight">
+\[r^2_{XY} = \frac{S^2_XY}{S_X S_Y} \qquad , \qquad S^2_{XY} = \frac{1}{N-1} \sum_{n=1}^N (X_n - \mu_X)(Y_n - \mu_Y) \ ,\]</div>
+<p class="sd-card-text">e usando il fomralismo matriciale può essere riscritto come,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} N-1 &amp; 0 \\ 0 &amp; N \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} = \begin{bmatrix} (N-1) r_{XY} \\ 0 \end{bmatrix} \ ,
+   \end{split}\]</div>
+<p class="sd-card-text">la cui soluzione è <span class="math notranslate nohighlight">\(a^* = r_{XY}\)</span>, <span class="math notranslate nohighlight">\(b^* = 0\)</span>. La forma della regressione lineare in termini delle variabili normalizzate è</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}(x) = r_{XY} x \ .\]</div>
+<p class="sd-card-text">L’errore quadratico minimo nelle variabili normalizzate vale</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+     e^* &amp; = \sum_{n=1}^N ( a^* x_n + b^* - y_n )^2 = \\
+         &amp; = \sum_{n=1}^N ( r_{XY} x_n - y_n )^2 = \\
+         &amp; = r^2_{XY} (N-1) - 2 (N-1) r_{XY} r_{XY} + (N-1) = \\
+         &amp; = (N-1) \left( 1 - r^2_{XY} \right) \ .
+   \end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Il modello nelle variabili originali diventa</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+     \hat{Y}(X) &amp; = \mu_Y + S_Y r_{XY} \frac{X - \mu_X}{S_X} = \\
+                &amp; = r_{XY} \frac{S_Y}{S_X} X + \mu_Y - \mu_X r_{XY} \frac{S_Y}{S_X} = \\
+                &amp; = \frac{S^2_{XY}}{S^2_X} X + \mu_Y - \mu_X \frac{S^2_{XY}}{S^2_X} 
+   \end{aligned}\end{split}\]</div>
+</li>
+</ul>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Regressione lineare come MLE<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">La regressione lineare può essere interpretata come risultato di un metodo di Maximum Likelihood Estimation, supponendo che ogni osservazione <span class="math notranslate nohighlight">\(y_n\)</span> sia il risultato del modello lineare lineare <span class="math notranslate nohighlight">\(a x_n + b\)</span> con l’aggiunta di un errore <span class="math notranslate nohighlight">\(\varepsilon_n\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[y_n = a x_n + b + \varepsilon_n \ ,\]</div>
+<p class="sd-card-text">di variabili gaussiane indipendenti non correlate, identicamente distribuite a media nulla e varianza <span class="math notranslate nohighlight">\(\sigma^2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon_n \sim \mathscr{N}(0, \sigma^2) \sim \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ - \frac{x^2}{2 \sigma^2} \right]\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}[\varepsilon_m \varepsilon_n] = \sigma^2 \delta_{mn} \ .\]</div>
+<p class="sd-card-text">Assumendo le <span class="math notranslate nohighlight">\(x_n\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> osservazioni e parametri deterministici, senza incertezza, segue che</p>
+<div class="math notranslate nohighlight">
+\[y_n \sim \mathscr{N}(a x_n + b, \sigma^2) \ .\]</div>
+<p class="sd-card-text">I parametri ottimi del modello <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(\sigma^2\)</span> rendono massima la probabilità,</p>
+<div class="math notranslate nohighlight">
+\[p(\mathbf{x},\mathbf{y}|\theta) = \prod_{n=1}^N \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left[ -\frac{(a x_n + b - y_n)^2}{2\sigma^2} \frac{}{} \right] \ ,\]</div>
+<p class="sd-card-text">nel caso in cui le osservazioni siano indipendenti e quindi valga <span class="math notranslate nohighlight">\(p(\mathbf{x},\mathbf{y}|\theta) = \prod_{n=1}^N p(x_n,y_n|\theta)\)</span>, o il suo logaritmo</p>
+<div class="math notranslate nohighlight">
+\[\ln p(\mathbf{x},\mathbf{y}|\theta) = - \frac{N}{2} \ln (2\pi \sigma^2) - \sum_{n=1}^N \frac{(a x_n + b - y_n)^2}{2 \sigma^2} \ .\]</div>
+<p class="sd-card-text">L’annullamento delle derivate parziali produce il sistema lineare</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+ 0 &amp; = \frac{\partial p}{\partial a}        = \sum_{n=1}^N ( a x_n + b - y_n ) x_n \\
+ 0 &amp; = \frac{\partial p}{\partial b}        = \sum_{n=1}^N ( a x_n + b - y_n ) \\
+ 0 &amp; = \frac{\partial p}{\partial \sigma^2} = -\frac{N}{2}\frac{1}{\sigma^2} + \sum_{n=1}^N \frac{( a x_n + b - y_n )^2}{2 \sigma^4} \\
+\end{cases}\end{split}\]</div>
+<p class="sd-card-text">la cui soluzione, ipotizzando di aver normalizzato i campioni sulle medie e varianze campionarie,</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  a^* = r_{XY} \quad , \quad b^* = 0 \quad , \quad \sigma^{2*} = \frac{1}{N} \sum_{n=1}^N \left( a x_n + b - y_n  \right)^2 = \frac{e^*}{N} = \frac{N-1}{N} (1 - r^2_{XY})
+\end{aligned}\]</div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pearson Correlation: 0.81, p-value: 0.0000
-Spearman Correlation: 0.79, p-value: 0.0000
-</pre></div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Statistiche <span class="math notranslate nohighlight">\(\ \chi^2 \ \)</span> e <span class="math notranslate nohighlight">\(\ t \ \)</span><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Siano <span class="math notranslate nohighlight">\(y_n\)</span> delle variabili gaussiane con varianza <span class="math notranslate nohighlight">\(\sigma^2\)</span> e media <span class="math notranslate nohighlight">\(a x_n + b\)</span>, con <span class="math notranslate nohighlight">\(b = 0\)</span> e</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  a = r
+    &amp; = \frac{S^2_{XY}}{S_X S_Y} = \\
+    &amp; = \frac{\frac{1}{N-1} \sum_{n=1}^{N} (X_n - \bar{X})(Y_n - \bar{Y})}{\sqrt{\frac{1}{N-1} \sum_{n=1}^{N} (X_n - \bar{X})^2} \sqrt{\frac{1}{N-1} \sum_{n=1}^{N} (Y_n - \bar{Y})^2}} = \\
+    &amp; = \frac{1}{N-1} \sum_{n=1}^N \left( \frac{X_n - \bar{X}}{S_X} \right)  \left(  \frac{Y_n - \bar{Y}}{S_Y} \right) = \\
+    &amp; = \frac{1}{N-1} \sum_{n=1}^N x_n \, y_n 
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}[a] = \frac{1}{N-1} \sum_{m=1}^{N} x_m \mathbb{E}[y_m]\]</div>
+<div class="math notranslate nohighlight">
+\[\varepsilon_n := y_n - a x_n \sim \mathscr{N}(0, \sigma^2) \ .\]</div>
+<div class="math notranslate nohighlight">
+\[0 = \mathbb{E}[\varepsilon_n] = \mathbb{E}[y_n] - \mathbb{E}[a] \, x_n\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \sigma^2 \delta_{mn}
+  &amp; = \mathbb{E}\left[ \varepsilon_m \varepsilon_n \right] = \\
+  &amp; = \mathbb{E}\left[ (y_m - a x_m) (y_n - a x_n) \right] = \\
+  &amp; = \mathbb{E}\left[ y_m y_n \right] - x_m \mathbb{E} \left[ a y_n \right] -  y_m \mathbb{E} \left[ a x_n \right] + x_n \, x_m \mathbb{E}[ a^2 ] = \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbb{E}[y_m y_n] 
+  &amp; = \mathbb{E}[ (\bar{y}_m + \delta y_m) ( \bar{y}_n + \delta y_n )] = \\
+  &amp; = \bar{y}_m \bar{y}_n + \mathbb{E}[ \delta y_m \delta y_n ] = \\
+  &amp; = \bar{y}_m \bar{y}_n + \sigma^2 \delta_{mn} \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbb{E}\left[ \sum_{n=1}^{N} (y_n - a x_n)^2 \right] 
+  &amp; = \mathbb{E}\left[ \sum_{n=1}^{N} \left(y_n - \frac{1}{N-1} \sum_{m=1}^N y_m x_m x_n \right)^2 \right] = \\
+  &amp; = \sum_{n=1}^{N} \mathbb{E}\left[ y^2_n - \frac{2}{N-1} \sum_{m=1}^{N} y_n y_m x_m x_n + \frac{2}{(N-1)^2} \sum_{m=1}^{N} \sum_{p &gt; m} y_m y_p x_m x_p x_n^2 + \frac{1}{(N-1)^2} \sum_{m=1}^{N} y_m^2 x_m^2 x_n^2 \right] = \\
+  &amp; = \sum_{n=1}^{N} ( \bar{y}_n^2 + \sigma^2 ) - \frac{2}{N-1} \sum_{n,m=1}^N (\bar{y}_m \bar{y}_n + \sigma^2 \delta_{mn}) x_m x_n + \frac{2}{(N-1)^2} \sum_{n,m=1}^N \sum_{p&gt;m} (\bar{y}_m \bar{y}_p + \sigma^2 \delta_{mp}) x_m x_p x_n^2 + \frac{1}{(N-1)^2} \sum_{n,m=1}^N \left( \bar{y}_m^2 + \sigma^2 \right) x_m^2 x_n^2   = \\
+  &amp; = \bar{a}^2 \sum_{n=1}^N x_n^2 + N \sigma^2 - \frac{2 \bar{a}^2}{N-1} \sum_{m,n=1}^{N} x_m^2 x_n^2 - \frac{2}{N-1} \sigma^2\sum_{n=1}^{N} x_n^2 + \\
+  &amp; \quad + \frac{2}{(N-1)^2} \sum_{n,m=1}^{N} \sum_{p&gt;m} x_m^2 x_p^2 x_n^2 + \frac{\bar{a}^2}{(N-1)^2} \sum_{m,n=1}^N x_m^4 x_n^2 + \frac{1}{(N-1)^2} \sigma^2 \sum_{m,n=1}^{N} x_m^2 x_n^2 = \\
+  &amp; = \bar{a}^2 (N-1) + N \sigma^2 - 2 \bar{a}^2 (N-1) - 2 \sigma^2 + 2 \sum_{p \dots} \dots + \dots \bar{a}^2 \sum_{\dots} x_m^4 + \sigma^2
+\end{aligned}\end{split}\]</div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Y&#39;)
-</pre></div>
-</div>
-<img alt="../../_images/d8298f2cd91e36ae1ad3eabe6acb20befd3ca6946528ab849454212d59171592.png" src="../../_images/d8298f2cd91e36ae1ad3eabe6acb20befd3ca6946528ab849454212d59171592.png" />
-</div>
-</div>
+</details></div>
 
     <script type="text/x-thebe-config">
     {
@@ -577,26 +653,30 @@ Spearman Correlation: 0.79, p-value: 0.0000
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="t-test.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">precedente</p>
+        <p class="prev-next-title"><span class="section-number">18.2.4.4. </span><span class="math notranslate nohighlight">\(t\)</span>-test</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="anova.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">successivo</p>
+        <p class="prev-next-title"><span class="section-number">18.2.4.6. </span>ANOVA - Analysis of variance</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contenuti
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

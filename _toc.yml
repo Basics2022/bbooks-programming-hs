@@ -58,6 +58,7 @@ parts:
         - file: ch/statistics/test-fisher-coin-2
         - file: ch/statistics/test-fisher-rabbit
         - file: ch/statistics/t-test
+        - file: ch/statistics/linear_regression
         - file: ch/statistics/anova
 - caption: Introduzione ai metodi in statistica e  AI
   numbered: True
