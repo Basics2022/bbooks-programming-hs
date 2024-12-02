@@ -146,7 +146,7 @@ $$\begin{aligned}
 
 $$\begin{aligned}
   \mathbb{E}[y_m y_n] 
-  & =  \\
+  & = \mathbb{E}[ (\bar{y}_m + \delta y_m) ( \bar{y}_n + \delta y_n )]  \\
 \end{aligned}$$
 
 
