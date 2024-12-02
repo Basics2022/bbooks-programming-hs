@@ -130,7 +130,13 @@ $$\begin{aligned}
     & = \frac{1}{N-1} \sum_{n=1}^N x_n \, y_n 
 \end{aligned}$$
 
-$$y_n - a x_n \sim \mathscr{N}(0, \sigma^2) \ .$$
+$$\varepsilon_n := y_n - a x_n \sim \mathscr{N}(0, \sigma^2) \ .$$
+
+$$\begin{aligned}
+  \sigma^2 \delta_{mn}
+  & = \mathbb{E}\left[ \varepsilon_m \varepsilon_n \right] = \\
+  & = \mathbb{E}\left[ \varepsilon_m \varepsilon_n \right] = \\
+\end{aligned}$$
 
 $$\begin{aligned}
   \mathbb{E}\left[ \sum_{n=1}^{N} (y_n - a x_n)^2 \right] 
