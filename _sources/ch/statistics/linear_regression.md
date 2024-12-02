@@ -156,7 +156,7 @@ $$\begin{aligned}
   \mathbb{E}\left[ \sum_{n=1}^{N} (y_n - a x_n)^2 \right] 
   & = \mathbb{E}\left[ \sum_{n=1}^{N} \left(y_n - \frac{1}{N-1} \sum_{m=1}^N y_m x_m x_n \right)^2 \right] = \\
   & = \sum_{n=1}^{N} \mathbb{E}\left[ y^2_n - \frac{2}{N-1} \sum_{m=1}^{N} y_n y_m x_m x_n + \frac{2}{(N-1)^2} \sum_{m=1}^{N} \sum_{p > m} y_m y_p x_m x_p x_n^2 + \frac{1}{(N-1)^2} \sum_{m=1}^{N} y_m^2 x_m^2 x_n^2 \right] = \\
-  & = \sum_{n=1}^{N} \mathbb{E}\left[  \right] = \\
+  & = \sum_{n=1}^{N} ( \bar{y}_n^2 + \sigma^2 ) - \frac{2}{N-1} \sum_{n,m=1}^N (\bar{y}_m \bar{y}_n + \sigma^2 \delta_{mn}) x_m x_n + \frac{2}{(N-1)^2} \sum_{n,m=1}^N \sum_{p>m} (\bar{y}_m \bar{y}_p + \sigma^2 \delta_{mp}) x_m x_p x_n^2 + \frac{1}{(N-1)^2} \sum_{n,m=1}^N \left( \bar{y}_m^2 + \sigma^2 \right) x_m^2 x_n^2   = \\
 \end{aligned}$$
 
 ```
