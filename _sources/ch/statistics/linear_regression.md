@@ -148,6 +148,7 @@ $$\begin{aligned}
   \mathbb{E}[y_m y_n] 
   & = \mathbb{E}[ (\bar{y}_m + \delta y_m) ( \bar{y}_n + \delta y_n )] = \\
   & = \bar{y}_m \bar{y}_n + \mathbb{E}[ \delta y_m \delta y_n ] = \\
+  & = \bar{y}_m \bar{y}_n + \sigma^2 \delta_{mn} \\
 \end{aligned}$$
 
 
