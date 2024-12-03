@@ -8,7 +8,7 @@ logo: logo.svg
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: off # off # force # auto
+  execute_notebooks: force # off # force # auto
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -28,7 +28,7 @@ repository:
 jupyter_cache: true             # Enable jupyter-cache for caching notebook outputs
 exectue:
   cache: true                   # Allow Jupyter Book to store the outputs of executed cells
-  execute_notebooks: off        # Only execute notebooks that have changed 
+  execute_notebooks: force      # Only execute notebooks that have changed 
 
 launch_buttons:
   colab_url: "https://colab.research.google.com"    # colab
