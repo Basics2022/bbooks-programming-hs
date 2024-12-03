@@ -19,33 +19,19 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 import plotly.io as pio
 pio.renderers.default = "iframe_connected"
 
+# Example Plotly figure
 import plotly.graph_objects as go
-import numpy as np
-
-# Line chart
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
-
-fig = go.Figure()
-fig.add_trace(go.Scatter(x=x, y=y, mode='lines', name='Sine Wave'))
-fig.update_layout(title="Interactive Line Chart", xaxis_title="X-axis", yaxis_title="Y-axis")
-# fig.show()
-
-# Scatter plot with Plotly Express
-import plotly.express as px
-
-df = px.data.iris()  # Iris dataset
-fig2 = px.scatter(df, x="sepal_width", y="sepal_length", color="species", title="Scatter Plot of Iris Dataset")
-fig2.show()
+fig = go.Figure(data=go.Scatter(x=[1, 2, 3], y=[4, 5, 6]))
+fig.show()
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mIndexError[0m                                Traceback (most recent call last)
-Cell [0;32mIn[1], line 21[0m
-[1;32m     19[0m df [38;5;241m=[39m px[38;5;241m.[39mdata[38;5;241m.[39miris()  [38;5;66;03m# Iris dataset[39;00m
-[1;32m     20[0m fig2 [38;5;241m=[39m px[38;5;241m.[39mscatter(df, x[38;5;241m=[39m[38;5;124m"[39m[38;5;124msepal_width[39m[38;5;124m"[39m, y[38;5;241m=[39m[38;5;124m"[39m[38;5;124msepal_length[39m[38;5;124m"[39m, color[38;5;241m=[39m[38;5;124m"[39m[38;5;124mspecies[39m[38;5;124m"[39m, title[38;5;241m=[39m[38;5;124m"[39m[38;5;124mScatter Plot of Iris Dataset[39m[38;5;124m"[39m)
-[0;32m---> 21[0m [43mfig2[49m[38;5;241;43m.[39;49m[43mshow[49m[43m([49m[43m)[49m
+Cell [0;32mIn[1], line 7[0m
+[1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mplotly[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgraph_objects[39;00m [38;5;28;01mas[39;00m [38;5;21;01mgo[39;00m
+[1;32m      6[0m fig [38;5;241m=[39m go[38;5;241m.[39mFigure(data[38;5;241m=[39mgo[38;5;241m.[39mScatter(x[38;5;241m=[39m[[38;5;241m1[39m, [38;5;241m2[39m, [38;5;241m3[39m], y[38;5;241m=[39m[[38;5;241m4[39m, [38;5;241m5[39m, [38;5;241m6[39m]))
+[0;32m----> 7[0m [43mfig[49m[38;5;241;43m.[39;49m[43mshow[49m[43m([49m[43m)[49m
 
 File [0;32m~/.local/lib/python3.8/site-packages/plotly/basedatatypes.py:3398[0m, in [0;36mBaseFigure.show[0;34m(self, *args, **kwargs)[0m
 [1;32m   3365[0m [38;5;250m[39m[38;5;124;03m"""[39;00m
