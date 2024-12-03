@@ -30,15 +30,14 @@ y = np.sin(x)
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=x, y=y, mode='lines', name='Sine Wave'))
 fig.update_layout(title="Interactive Line Chart", xaxis_title="X-axis", yaxis_title="Y-axis")
-fig.show(rendered="notebook")
+fig.show()
 
 # Scatter plot with Plotly Express
 import plotly.express as px
 
 df = px.data.iris()  # Iris dataset
 fig2 = px.scatter(df, x="sepal_width", y="sepal_length", color="species", title="Scatter Plot of Iris Dataset")
-fig2.show(rendered="notebook")
-
+fig2.show()
 ------------------
 
 
@@ -47,7 +46,7 @@ fig2.show(rendered="notebook")
 Cell [0;32mIn[1], line 15[0m
 [1;32m     13[0m fig[38;5;241m.[39madd_trace(go[38;5;241m.[39mScatter(x[38;5;241m=[39mx, y[38;5;241m=[39my, mode[38;5;241m=[39m[38;5;124m'[39m[38;5;124mlines[39m[38;5;124m'[39m, name[38;5;241m=[39m[38;5;124m'[39m[38;5;124mSine Wave[39m[38;5;124m'[39m))
 [1;32m     14[0m fig[38;5;241m.[39mupdate_layout(title[38;5;241m=[39m[38;5;124m"[39m[38;5;124mInteractive Line Chart[39m[38;5;124m"[39m, xaxis_title[38;5;241m=[39m[38;5;124m"[39m[38;5;124mX-axis[39m[38;5;124m"[39m, yaxis_title[38;5;241m=[39m[38;5;124m"[39m[38;5;124mY-axis[39m[38;5;124m"[39m)
-[0;32m---> 15[0m [43mfig[49m[38;5;241;43m.[39;49m[43mshow[49m[43m([49m[43mrendered[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mnotebook[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[0;32m---> 15[0m [43mfig[49m[38;5;241;43m.[39;49m[43mshow[49m[43m([49m[43m)[49m
 [1;32m     17[0m [38;5;66;03m# Scatter plot with Plotly Express[39;00m
 [1;32m     18[0m [38;5;28;01mimport[39;00m [38;5;21;01mplotly[39;00m[38;5;21;01m.[39;00m[38;5;21;01mexpress[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpx[39;00m
 
