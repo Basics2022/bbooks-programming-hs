@@ -21,7 +21,7 @@ import plotly.express as px
 # pio.renderers.default = "iframe_connected"
 
 df = px.data.iris()
-fig = px.scatter(df, x='sepal_width', y='sepal_$$\text{length}$$', color="species")
+fig = px.scatter(df, x='sepal_width', y='sepal_\text{length}', color="species")
 fig.show()
 # all three of these worked
 # fig.show(renderer='iframe')
@@ -36,7 +36,7 @@ Cell [0;32mIn[4], line 7[0m
 [1;32m      3[0m [38;5;66;03m# import plotly.io as pio[39;00m
 [1;32m      4[0m [38;5;66;03m# pio.renderers.default = "iframe_connected"[39;00m
 [1;32m      6[0m df [38;5;241m=[39m px[38;5;241m.[39mdata[38;5;241m.[39miris()
-[0;32m----> 7[0m fig [38;5;241m=[39m [43mpx[49m[38;5;241;43m.[39;49m[43mscatter[49m[43m([49m[43mdf[49m[43m,[49m[43m [49m[43mx[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43msepal_width[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43my[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43msepal_$$[39;49m[38;5;130;43;01m\t[39;49;00m[38;5;124;43mext[39;49m[38;5;132;43;01m{length}[39;49;00m[38;5;124;43m$$[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mcolor[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mspecies[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[0;32m----> 7[0m fig [38;5;241m=[39m [43mpx[49m[38;5;241;43m.[39;49m[43mscatter[49m[43m([49m[43mdf[49m[43m,[49m[43m [49m[43mx[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43msepal_width[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43my[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43msepal_[39;49m[38;5;130;43;01m\t[39;49;00m[38;5;124;43mext[39;49m[38;5;132;43;01m{length}[39;49;00m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mcolor[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mspecies[39;49m[38;5;124;43m"[39;49m[43m)[49m
 [1;32m      8[0m fig[38;5;241m.[39mshow()
 [1;32m      9[0m [38;5;66;03m# all three of these worked[39;00m
 [1;32m     10[0m [38;5;66;03m# fig.show(renderer='iframe')[39;00m
@@ -86,5 +86,5 @@ File [0;32m~/.local/lib/python3.8/site-packages/plotly/express/_core.py:1207[0
 [1;32m   1218[0m         )
 [1;32m   1219[0m     )
 
-[0;31mValueError[0m: Value of 'y' is not the name of a column in 'data_frame'. Expected one of ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species', 'species_id'] but received: sepal_$$	ext{length}$$
+[0;31mValueError[0m: Value of 'y' is not the name of a column in 'data_frame'. Expected one of ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species', 'species_id'] but received: sepal_	ext{length}
 
