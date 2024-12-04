@@ -69,7 +69,7 @@
 \contentsline {section}{\numberline {16.1}Dimensione dei dati}{58}{section.16.1}%
 \contentsline {section}{\numberline {16.2}Rappresentazione grafica}{58}{section.16.2}%
 \contentsline {section}{\numberline {16.3}Variabili 1\sphinxhyphen {}dimensionali}{58}{section.16.3}%
-\contentsline {section}{\numberline {16.4}Variabili 2\sphinxhyphen {}dimensionali}{58}{section.16.4}%
+\contentsline {section}{\numberline {16.4}Variabili 2\sphinxhyphen {}dimensionali}{59}{section.16.4}%
 \contentsline {section}{\numberline {16.5}Variabili di grandi dimensioni}{59}{section.16.5}%
 \contentsline {chapter}{\numberline {17}Introduzione alla probabilità}{61}{chapter.17}%
 \contentsline {section}{\numberline {17.1}Variabili casuali}{61}{section.17.1}%

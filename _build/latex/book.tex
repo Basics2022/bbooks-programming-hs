@@ -87,7 +87,7 @@
         
 
 \title{Introduzione alla programmazione per le scuole superiori}
-\date{03 dic 2024}
+\date{04 dic 2024}
 \release{}
 \author{basics}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -2096,7 +2096,7 @@ Questo, in accordo con la \sphinxstyleemphasis{percezione umana} \sphinxstylestr
 
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{correlazione} o \sphinxstylestrong{dipendenza} \sphinxstylestrong{todo} \sphinxstyleemphasis{correlazione \(\ne\) dipendenza, fare un riferimento; è necessario dedurre una dipendenza? E” tra i compiti della statistica descrittiva?}
+\sphinxstylestrong{correlazione} o \sphinxstylestrong{dipendenza} \sphinxstylestrong{todo} \sphinxstyleemphasis{correlazione non è dipendenza, fare un riferimento; è necessario dedurre una dipendenza? E” tra i compiti della statistica descrittiva?}
 
 \end{itemize}
 
@@ -2105,11 +2105,11 @@ Oggi sono disponibili librerie e strumenti informatici gratuiti e liberi per l�
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-\(\texttt{pandas}\), e \(\texttt{geopandas}\) per dati geografici
+pandas, e geoapndas per dati geografici
 
 \item {} 
 \sphinxAtStartPar
-\sphinxhref{https://plotly.com/graphing-libraries/}{\(\texttt{plolty}\)} come libreria grafica (con \(\texttt{dash}\) come ambiente per lo sviluppo di semplici app interattive)
+\sphinxhref{https://plotly.com/graphing-libraries/}{plotly} come libreria grafica (con dash come ambiente per lo sviluppo di semplici app interattive)
 
 \item {} 
 \sphinxAtStartPar
@@ -2118,7 +2118,7 @@ Oggi sono disponibili librerie e strumenti informatici gratuiti e liberi per l�
 \end{itemize}
 
 \sphinxAtStartPar
-Per una galleria di esempi, si rimanda agli esempi e alle risorse messe a disposizione direttamente dagli sviluppatori, come ad esempio i \sphinxhref{https://plotly.com/python/basic-charts/}{grafici elementari}, o i grafici frequentemente usati in \sphinxhref{https://plotly.com/python/statistical-charts/}{statistica}, e un”\sphinxhref{https://plotly.com/python/fundamentasl/}{introduzione} con le impostazioni di base. Per un livello di dettaglio maggiore, è spesso possibile consultare i file sorgenti con l’implementazione degli strumenti resi disponibili su repository pubblici: nel caso di \(\texttt{plotly}\) è possibile consultare questi file nel \sphinxhref{https://github.com/plotly}{repository pubblico}.
+Per una galleria di esempi, si rimanda agli esempi e alle risorse messe a disposizione direttamente dagli sviluppatori, come ad esempio i \sphinxhref{https://plotly.com/python/basic-charts/}{grafici elementari}, o i grafici frequentemente usati in \sphinxhref{https://plotly.com/python/statistical-charts/}{statistica}, e un”\sphinxhref{https://plotly.com/python/fundamentasl/}{introduzione} con le impostazioni di base. Per un livello di dettaglio maggiore, è spesso possibile consultare i file sorgenti con l’implementazione degli strumenti resi disponibili su repository pubblici: nel caso di plotly è possibile consultare questi file nel \sphinxhref{https://github.com/plotly}{repository pubblico}.
 
 
 \section{Dimensione dei dati}
@@ -2149,31 +2149,42 @@ Attualmente, sono disponibili i mezzi informatici e un gran numero di librerie p
 
 \section{Variabili 1\sphinxhyphen{}dimensionali}
 \label{\detokenize{ch/statistics/descriptive:variabili-1-dimensionali}}
-
-\section{Variabili 2\sphinxhyphen{}dimensionali}
-\label{\detokenize{ch/statistics/descriptive:variabili-2-dimensionali}}
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
 \begin{sphinxuseclass}{cell_input}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{graph\PYGZus{}objects} \PYG{k}{as} \PYG{n+nn}{go}
-\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
-
-\PYG{c+c1}{\PYGZsh{} Line chart}
-\PYG{n}{x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{)}
-\PYG{n}{y} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
-
-\PYG{n}{fig} \PYG{o}{=} \PYG{n}{go}\PYG{o}{.}\PYG{n}{Figure}\PYG{p}{(}\PYG{p}{)}
-\PYG{n}{fig}\PYG{o}{.}\PYG{n}{add\PYGZus{}trace}\PYG{p}{(}\PYG{n}{go}\PYG{o}{.}\PYG{n}{Scatter}\PYG{p}{(}\PYG{n}{x}\PYG{o}{=}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{n}{y}\PYG{p}{,} \PYG{n}{mode}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{lines}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{name}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Sine Wave}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{)}
-\PYG{n}{fig}\PYG{o}{.}\PYG{n}{update\PYGZus{}layout}\PYG{p}{(}\PYG{n}{title}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Interactive Line Chart}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{xaxis\PYGZus{}title}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{X\PYGZhy{}axis}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{yaxis\PYGZus{}title}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Y\PYGZhy{}axis}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-\PYG{n}{fig}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
-
-\PYG{c+c1}{\PYGZsh{} Scatter plot with Plotly Express}
 \PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{express} \PYG{k}{as} \PYG{n+nn}{px}
+\PYG{n}{data} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{data}\PYG{o}{.}\PYG{n}{iris}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{data}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
 
-\PYG{n}{df} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{data}\PYG{o}{.}\PYG{n}{iris}\PYG{p}{(}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Iris dataset}
-\PYG{n}{fig2} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n}{x}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{sepal\PYGZus{}width}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{sepal\PYGZus{}length}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{species}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{title}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Scatter Plot of Iris Dataset}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-\PYG{n}{fig2}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+   sepal\PYGZus{}length  sepal\PYGZus{}width  petal\PYGZus{}length  petal\PYGZus{}width species  species\PYGZus{}id
+0           5.1          3.5           1.4          0.2  setosa           1
+1           4.9          3.0           1.4          0.2  setosa           1
+2           4.7          3.2           1.3          0.2  setosa           1
+3           4.6          3.1           1.5          0.2  setosa           1
+4           5.0          3.6           1.4          0.2  setosa           1
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{io} \PYG{k}{as} \PYG{n+nn}{pio}
+\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{express} \PYG{k}{as} \PYG{n+nn}{px}
+\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{offline} \PYG{k}{as} \PYG{n+nn}{py}
+
+\PYG{n}{df} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{data}\PYG{o}{.}\PYG{n}{iris}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{fig} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n}{x}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{sepal\PYGZus{}width}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{sepal\PYGZus{}length}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{species}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{size}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{sepal\PYGZus{}length}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimInput}
@@ -2183,6 +2194,65 @@ Attualmente, sono disponibili i mezzi informatici e un gran numero di librerie p
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Display Plotly chart}
+\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{graph\PYGZus{}objects} \PYG{k}{as} \PYG{n+nn}{go}
+\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{io} \PYG{k}{as} \PYG{n+nn}{pio}
+\PYG{n}{pio}\PYG{o}{.}\PYG{n}{renderers}\PYG{o}{.}\PYG{n}{default} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{iframe\PYGZus{}connected}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{n}{fig} \PYG{o}{=} \PYG{n}{go}\PYG{o}{.}\PYG{n}{Figure}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{add\PYGZus{}trace}\PYG{p}{(}\PYG{n}{go}\PYG{o}{.}\PYG{n}{Scatter}\PYG{p}{(}\PYG{n}{x}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{9}\PYG{p}{]}\PYG{p}{,} \PYG{n}{name}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{y = x\PYGZca{}2}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{\PYGZsh{} Force MathJax to re\PYGZhy{}render}
+\PYG{l+s+sd}{from IPython.display import display, Javascript}
+\PYG{l+s+sd}{display(Javascript(\PYGZdq{}MathJax.Hub.Queue([\PYGZsq{}Typeset\PYGZsq{}, MathJax.Hub]);\PYGZdq{}))}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZsq{}\PYGZbs{}n\PYGZsh{} Force MathJax to re\PYGZhy{}render\PYGZbs{}nfrom IPython.display import display, Javascript\PYGZbs{}ndisplay(Javascript(\PYGZdq{}MathJax.Hub.Queue([\PYGZbs{}\PYGZsq{}Typeset\PYGZbs{}\PYGZsq{}, MathJax.Hub]);\PYGZdq{}))\PYGZbs{}n\PYGZsq{}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{express} \PYG{k}{as} \PYG{n+nn}{px}
+
+\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{io} \PYG{k}{as} \PYG{n+nn}{pio}
+\PYG{n}{pio}\PYG{o}{.}\PYG{n}{renderers}\PYG{o}{.}\PYG{n}{default} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{iframe\PYGZus{}connected}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{n}{df} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{data}\PYG{o}{.}\PYG{n}{iris}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{fig} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n}{x}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sepal\PYGZus{}width}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sepal\PYGZus{}length}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{species}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} all three of these worked}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{n}{renderer}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{iframe}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} fig.show(renderer=\PYGZsq{}iframe\PYGZus{}connected\PYGZsq{})}
+\PYG{c+c1}{\PYGZsh{} fig.show(renderer=\PYGZsq{}colab\PYGZsq{})}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+
+\section{Variabili 2\sphinxhyphen{}dimensionali}
+\label{\detokenize{ch/statistics/descriptive:variabili-2-dimensionali}}
 
 \section{Variabili di grandi dimensioni}
 \label{\detokenize{ch/statistics/descriptive:variabili-di-grandi-dimensioni}}
