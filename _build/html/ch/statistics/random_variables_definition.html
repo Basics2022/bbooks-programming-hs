@@ -522,7 +522,8 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\Omega\)</span> ed <span class="math notranslate nohighlight">\(E\)</span> sono due <em>insiemi</em>: <span class="math notranslate nohighlight">\(\Omega\)</span> viene definito *insieme degli <strong>eventi</strong> o <em>spazio campionario</em>, <span class="math notranslate nohighlight">\(E\)</span> è l’insieme dei <strong>valori</strong> che può assumere la variabile casuale.</p></li>
 </ul>
 <p>Se l’insieme <span class="math notranslate nohighlight">\(E\)</span> dei possibili valori della variabile casuale è un insieme di elementi discreti, si definisce la variabile casuale <strong>discreta</strong>.
-Se l’insieme <span class="math notranslate nohighlight">\(E\)</span> è invece un insieme di valori continui, come ad esempio un intervallo <span class="math notranslate nohighlight">\(I \subset \mathbb{R}\)</span>, la variabile viene definita <strong>continua</strong>.</p>
+Se l’insieme <span class="math notranslate nohighlight">\(E\)</span> è invece un insieme di valori continui, come ad esempio un intervallo <span class="math notranslate nohighlight">\(I \subset \mathbb{R}\)</span>, la variabile viene definita <strong>continua</strong>.
+Le variabili casuali possono essere <strong>numeriche</strong> o <strong>categoriali</strong>: le variabili casuali numeriche hanno valori numerici, quelle categoriali possono essere identificate da etichette: ad esempio, una variabile <span class="math notranslate nohighlight">\(X\)</span> che rappresenta il mezzo preferito di locomozione con valori nell’insieme <span class="math notranslate nohighlight">\(\{ \text{piedi}, \text{bici}, \text{treno}, \text{auto}, \text{altro} \}\)</span> è una variabile categoriale. Le variabili categoriali possono essere o non essere ordinabili; se non sono numeriche, non è possibile compiere operazioni numeriche su di esse.</p>
 <p>Continuiamo con gli altri oggetti meno immediati:</p>
 <ul class="simple">
 <li><p>lo spazio di probabilità <span class="math notranslate nohighlight">\((\Omega, \mathcal{F}, \nu)\)</span> può essere pensato come formato da due parti, lo spazio misurabile <span class="math notranslate nohighlight">\((\Omega, \mathcal{F})\)</span> e la misura di probabilità <span class="math notranslate nohighlight">\(\nu\)</span>;</p></li>
@@ -544,12 +545,6 @@ Se l’insieme <span class="math notranslate nohighlight">\(E\)</span> è invece
 <p><strong>todo.</strong> L’evento è sempre osservabile? O si può osservare solo il valore assunto dalla variabile casuale?</p>
 <div class="section" id="esempio-1-lancio-dado-non-truccato-con-variabile-casuale-corrispondente-al-valore-della-faccia">
 <h3><span class="section-number">17.1.1.1.1. </span>Esempio 1. Lancio dado non truccato, con variabile casuale corrispondente al valore della faccia<a class="headerlink" href="#esempio-1-lancio-dado-non-truccato-con-variabile-casuale-corrispondente-al-valore-della-faccia" title="Permalink to this heading">#</a></h3>
-<div class="exercise admonition" id="ch/statistics/random_variables_definition-exercise-0">
-
-<p class="admonition-title"><span class="caption-number">Exercise 17.1 </span></p>
-<div class="section" id="exercise-content">
-</div>
-</div>
 <p>Viene lanciato un dato a 6 facce non truccato. Questo corrisponde a un insieme degli eventi costituito da i 6 eventi distinti <span class="math notranslate nohighlight">\(\Omega = \{ \text{faccia 1}, \dots, \text{faccia 6} \}\)</span>, e ognuno di questi 6 eventi ha una misura di probabilità uguale a <span class="math notranslate nohighlight">\(\nu(\text{faccia 1}) = \dots = \nu(\text{faccia 6}) = \frac{1}{6}\)</span>. Si sceglie come variabile casuale la funzione che associa al numero letto sulla faccia lo stesso numero, <span class="math notranslate nohighlight">\(X: \Omega \rightarrow E\)</span>, <span class="math notranslate nohighlight">\(X(\text{faccia n}) = n\)</span>. Si vogliono ora analizzare le probabilità associate ai seguenti eventi:</p>
 <ul>
 <li><p><span class="math notranslate nohighlight">\(\Omega_1\)</span>: eventi che portano a risultato 3:</p>
