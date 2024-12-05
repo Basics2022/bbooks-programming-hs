@@ -545,7 +545,7 @@ document.write(`
 <span class="c1"># Define parameters for the distributions</span>
 <span class="n">p_bernoulli</span> <span class="o">=</span> <span class="mf">0.5</span>                 <span class="c1"># Probability for Bernoulli</span>
 <span class="n">n_binomial</span><span class="p">,</span> <span class="n">p_binomial</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.5</span>  <span class="c1"># Number of trials and probability for Binomial</span>
-<span class="n">mu_poisson</span> <span class="o">=</span> <span class="mi">3</span>                    <span class="c1"># Mean for Poisson</span>
+<span class="n">n_poisson</span><span class="p">,</span> <span class="n">mu_poisson</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span>     <span class="c1"># Mean for Poisson</span>
 
 <span class="c1"># Create x values for the distributions</span>
 <span class="n">x_bernoulli</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
@@ -650,6 +650,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\sigma^2_X = E[(X-\mu_X)^2] = \sum_k p(x_k) (x_k - \mu_X)^2 \ .\]</div>
 <p>Analogamente a quanto fatto per il valore medio, anche questa media può essere riferita sia ai valori sia agli eventi.</p>
+<p>Di seguito vengono mostrati il valore medio e la varianza - rappresentata qui come un intervallo centrato attorno alla media, anche se questa rappresentazione può essere ingannevole per distribuzioni di proprietà non simmetriche - delle variabili casuali presentate in precedenza.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -664,7 +665,7 @@ document.write(`
 <span class="c1"># Define parameters for the distributions</span>
 <span class="n">p_bernoulli</span> <span class="o">=</span> <span class="mf">0.5</span>   <span class="c1"># Probability for Bernoulli</span>
 <span class="n">n_binomial</span><span class="p">,</span> <span class="n">p_binomial</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.5</span>  <span class="c1"># Trials and probability for Binomial</span>
-<span class="n">mu_poisson</span> <span class="o">=</span> <span class="mi">3</span>      <span class="c1"># Mean for Poisson</span>
+<span class="n">n_poisson</span><span class="p">,</span> <span class="n">mu_poisson</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span>      <span class="c1"># Mean for Poisson</span>
 
 <span class="c1"># Create x values and calculate PMF for each distribution</span>
 <span class="n">x_bernoulli</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
@@ -675,7 +676,7 @@ document.write(`
 <span class="n">y_binomial</span> <span class="o">=</span> <span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x_binomial</span><span class="p">,</span> <span class="n">n_binomial</span><span class="p">,</span> <span class="n">p_binomial</span><span class="p">)</span>
 <span class="n">mean_binomial</span><span class="p">,</span> <span class="n">var_binomial</span> <span class="o">=</span> <span class="n">binom</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">n_binomial</span><span class="p">,</span> <span class="n">p_binomial</span><span class="p">,</span> <span class="n">moments</span><span class="o">=</span><span class="s1">&#39;mv&#39;</span><span class="p">)</span>
 
-<span class="n">x_poisson</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Arbitrary range for Poisson</span>
+<span class="n">x_poisson</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_poisson</span><span class="p">)</span>  <span class="c1"># Arbitrary range for Poisson</span>
 <span class="n">y_poisson</span> <span class="o">=</span> <span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x_poisson</span><span class="p">,</span> <span class="n">mu_poisson</span><span class="p">)</span>
 <span class="n">mean_poisson</span><span class="p">,</span> <span class="n">var_poisson</span> <span class="o">=</span> <span class="n">poisson</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">mu_poisson</span><span class="p">,</span> <span class="n">moments</span><span class="o">=</span><span class="s1">&#39;mv&#39;</span><span class="p">)</span>
 
@@ -717,7 +718,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/74040381caa5157e7026abbb3a47f66e4f36a4b811b7949037ae3a739e474c1d.png" src="../../_images/74040381caa5157e7026abbb3a47f66e4f36a4b811b7949037ae3a739e474c1d.png" />
+<img alt="../../_images/0af9d621d9e8364d3ee3f898b294e0d3e95717f9e6e7c7ab38ad16dc3d61fd0d.png" src="../../_images/0af9d621d9e8364d3ee3f898b294e0d3e95717f9e6e7c7ab38ad16dc3d61fd0d.png" />
 </div>
 </div>
 <!-- **media, moda.** -->
