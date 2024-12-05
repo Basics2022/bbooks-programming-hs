@@ -1161,7 +1161,7 @@ Convergence reached
 Sol, x = \PYGZhy{}0.567143440246582
 residual     : \PYGZhy{}2.348157265297246e\PYGZhy{}07
 n. iterations: 20
-elapsed time : 0.0028693675994873047
+elapsed time : 0.0007159709930419922
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1256,7 +1256,7 @@ Convergence reached
 Sol, x = \PYGZhy{}0.567143285989123
 residual     : 6.927808993140161e\PYGZhy{}09
 n. iterations: 3
-elapsed time : 0.0005474090576171875
+elapsed time : 0.0005438327789306641
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1398,7 +1398,7 @@ Convergence reached
 Sol, x = [\PYGZhy{}0.61803399 \PYGZhy{}0.61803399]
 residual     : [ 0.00000000e+00 \PYGZhy{}2.10942375e\PYGZhy{}13]
 n. iterations: 4
-elapsed time : 0.0007624626159667969
+elapsed time : 0.0007107257843017578
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -2178,6 +2178,21 @@ Attualmente, sono disponibili i mezzi informatici e un gran numero di librerie p
 
 \begin{sphinxuseclass}{cell_input}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} !pip install plotly==5.10}
+\PYG{c+c1}{\PYGZsh{} !pip install plotly==5.24}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{plotly} \PYG{k}{as} \PYG{n+nn}{p}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{p}\PYG{o}{.}\PYG{n}{\PYGZus{}\PYGZus{}version\PYGZus{}\PYGZus{}}\PYG{p}{)}
+
 \PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{io} \PYG{k}{as} \PYG{n+nn}{pio}
 \PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{express} \PYG{k}{as} \PYG{n+nn}{px}
 \PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{offline} \PYG{k}{as} \PYG{n+nn}{py}
@@ -2191,6 +2206,10 @@ Attualmente, sono disponibili i mezzi informatici e un gran numero di librerie p
 \begin{sphinxVerbatimOutput}
 
 \begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+5.24.0
+\end{sphinxVerbatim}
+
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
@@ -2201,7 +2220,6 @@ Attualmente, sono disponibili i mezzi informatici e un gran numero di librerie p
 \PYG{c+c1}{\PYGZsh{} Display Plotly chart}
 \PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{graph\PYGZus{}objects} \PYG{k}{as} \PYG{n+nn}{go}
 \PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{io} \PYG{k}{as} \PYG{n+nn}{pio}
-\PYG{n}{pio}\PYG{o}{.}\PYG{n}{renderers}\PYG{o}{.}\PYG{n}{default} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{iframe\PYGZus{}connected}\PYG{l+s+s2}{\PYGZdq{}}
 
 \PYG{n}{fig} \PYG{o}{=} \PYG{n}{go}\PYG{o}{.}\PYG{n}{Figure}\PYG{p}{(}\PYG{p}{)}
 \PYG{n}{fig}\PYG{o}{.}\PYG{n}{add\PYGZus{}trace}\PYG{p}{(}\PYG{n}{go}\PYG{o}{.}\PYG{n}{Scatter}\PYG{p}{(}\PYG{n}{x}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{9}\PYG{p}{]}\PYG{p}{,} \PYG{n}{name}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{y = x\PYGZca{}2}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}
@@ -2231,14 +2249,14 @@ Attualmente, sono disponibili i mezzi informatici e un gran numero di librerie p
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{express} \PYG{k}{as} \PYG{n+nn}{px}
 
-\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{io} \PYG{k}{as} \PYG{n+nn}{pio}
-\PYG{n}{pio}\PYG{o}{.}\PYG{n}{renderers}\PYG{o}{.}\PYG{n}{default} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{iframe\PYGZus{}connected}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{c+c1}{\PYGZsh{} import plotly.io as pio}
+\PYG{c+c1}{\PYGZsh{} pio.renderers.default = \PYGZdq{}iframe\PYGZus{}connected\PYGZdq{}}
 
 \PYG{n}{df} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{data}\PYG{o}{.}\PYG{n}{iris}\PYG{p}{(}\PYG{p}{)}
 \PYG{n}{fig} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n}{x}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sepal\PYGZus{}width}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sepal\PYGZus{}length}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{species}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
 \PYG{c+c1}{\PYGZsh{} all three of these worked}
-\PYG{n}{fig}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{n}{renderer}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{iframe}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} fig.show(renderer=\PYGZsq{}iframe\PYGZsq{})}
 \PYG{c+c1}{\PYGZsh{} fig.show(renderer=\PYGZsq{}iframe\PYGZus{}connected\PYGZsq{})}
 \PYG{c+c1}{\PYGZsh{} fig.show(renderer=\PYGZsq{}colab\PYGZsq{})}
 \end{sphinxVerbatim}
@@ -2252,7 +2270,9 @@ Attualmente, sono disponibili i mezzi informatici e un gran numero di librerie p
 \end{sphinxuseclass}
 
 \section{Variabili 2\sphinxhyphen{}dimensionali}
-\label{\detokenize{ch/statistics/descriptive:variabili-2-dimensionali}}
+\label{\detokenize{ch/statistics/descriptive:variabili-2-dimensionali}}\begin{equation*}
+\begin{split}a = 1\end{split}
+\end{equation*}
 
 \section{Variabili di grandi dimensioni}
 \label{\detokenize{ch/statistics/descriptive:variabili-di-grandi-dimensioni}}
@@ -2863,7 +2883,7 @@ calcolate le statistiche: media \(\mu_{\overline{x}}\), e variazione standard \(
 \begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
 
 \begin{sphinxuseclass}{cell_output}
-\noindent\sphinxincludegraphics{{1c05ec3790f816c9da553de291e26780957b13c5eb1274bd90efddf077ba3125}.png}
+\noindent\sphinxincludegraphics{{91040efc1a240de84b037ef69384df448469163a10b2c3bea9ac76a5b9535f6e}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -2880,11 +2900,11 @@ calcolate le statistiche: media \(\mu_{\overline{x}}\), e variazione standard \(
 Text(0.5, 0.98, \PYGZsq{}Distribution of sample average, scaled\PYGZsq{})
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{178c133c1eb8ecca34f8be2df9681a37b62c5beeeb8491870acd2a87b876b888}.png}
+\noindent\sphinxincludegraphics{{5dc9a248f8a4a10abf6e28d2892dc724d6d2e9bcb2672b9dbe0a7f745187a385}.png}
 
-\noindent\sphinxincludegraphics{{fa0943caad375482f28a6b3b97e037536c72dac437d891ab10425c736a9f678f}.png}
+\noindent\sphinxincludegraphics{{afb6456f76a8eac818fbed1e107c511f2bfbe5c82d13f5eca36a8151923561be}.png}
 
-\noindent\sphinxincludegraphics{{c9a5afde8cd2c66de245f8c69c418406c4ef63963ec33ec1fd635e379aa913c5}.png}
+\noindent\sphinxincludegraphics{{b847d6b0d327565bdb6354c3d0f94f656c6d081a07c11bc04c282f1b7306ac5c}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -3017,7 +3037,7 @@ tende alla distribuzione normale \(\mathscr{N}(0,1)\)
 (\PYGZhy{}5.0, 5.0)
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{1ae9a25d58f6fccfdfde5e5005567fa51923dabc7f52423a4774d80e2244a810}.png}
+\noindent\sphinxincludegraphics{{a412c8895b0bc26818bc3fca9c3ebddd2e6519e7ff9b7c073af3fecb1e7d6048}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -4054,10 +4074,10 @@ Il valore medio delle volte che è uscita croce viene usata come statistica test
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}matplotlib.legend.Legend at 0x7f8100fdbb80\PYGZgt{}
+\PYGZlt{}matplotlib.legend.Legend at 0x7fbbde492b80\PYGZgt{}
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{c12804ee049f71143df2686bdbfe1f0ebe4a925e3d6123c96bca5a8153c7ba89}.png}
+\noindent\sphinxincludegraphics{{8c8d72668c9df4ed9ed9b8c8783f6b69e5e6d0b5299698bf4f208e42da672d4d}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -4162,7 +4182,7 @@ Sample statistics:
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x7f88357a7910\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x7f65f004a910\PYGZgt{}]
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{b447209d18774c554d77059adc27f1afcb900a0a10e8e9db17f5ca0f6304b8c4}.png}
@@ -4283,7 +4303,7 @@ Reject the null hypothesis: The means of the two classes are significantly diffe
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x7f8835644df0\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x7f65efee6dc0\PYGZgt{}]
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{ad9e0a740f0f409ab9699cc4cac6809aff9c408ab244bacfcd1a9c9e8e4c1ab3}.png}
