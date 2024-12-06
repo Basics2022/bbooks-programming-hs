@@ -35,9 +35,9 @@ La verifica delle ipotesi è un'attività intimamente connessa al metodo sperime
 
 Esistono (almeno) due approcci alla statistica inferenziale:
 - l'apporccio classico **frequentista**: ... **todo** *dire due parole* 
-- l'approccio **bayesiano**: utilizza le osservazioni per trovare una stima migliore (*a posteriori*, dopo aver osservato il campione) di modello di partenza del sistema (*a priori*, da conoscenze precedenti, da stime sensate,...)
+- l'approccio **bayesiano**: utilizza le osservazioni per trovare una stima migliore (*a posteriori*, dopo aver osservato il campione) di modello di partenza del sistema (*a priori*, da conoscenze precedenti, da stime sensate,...), grazie all'uso del [teorema di Bayes](statistics-hs:random-variables:bayes:discrete).
 
-Questo capitolo si concentra principalmente sull'approccio classico frequentista; *dell', ci si limita a dire che usa delle *conoscenze pregresse* sul fenomeno e che è stato reso praticabile dai recenti sviluppi nelle capacità di calcolo a disposizione.* **todo** *aggiungere sezione sull'approccio bayesiano?* **todo** **esempio** *con variabili discrete di dimensione limitata, senza introdurre i problemi sulle scelte di priori-posteriori*
+Questo capitolo si concentra principalmente sull'approccio classico frequentista; *dell'approccio bayesiano, ci si limita a dire che usa delle *conoscenze pregresse* sul fenomeno e che è stato reso praticabile dai recenti sviluppi nelle capacità di calcolo a disposizione.* **todo** *aggiungere sezione sull'approccio bayesiano?* **todo** **esempio** *con variabili discrete di dimensione limitata, senza introdurre i problemi sulle scelte di priori-posteriori*
 
 **todo** *Scelta modello? Serve una discuterne? Rimandato a ML?*
 
