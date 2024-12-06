@@ -527,12 +527,16 @@ document.write(`
 \[p(t|\text{H}_0) \sim t_{\nu} \ ,\]</div>
 <p>dove il numero di gradi di libertà <span class="math notranslate nohighlight">\(\nu\)</span> della distribuzione <span class="math notranslate nohighlight">\(t_{\nu}\)</span> dipende dal metodo considerato.</p>
 <p><strong>Ipotesi.</strong> …</p>
-<p><strong>Test a un campione.</strong> E” un test di posizione/stima della media della popolazione della quale è noto un campione di <span class="math notranslate nohighlight">\(n\)</span> osservazioni.</p>
+<p><strong>Test a un campione.</strong> E” un test di posizione/stima della media della popolazione della quale è noto un campione di <span class="math notranslate nohighlight">\(N\)</span> osservazioni, <span class="math notranslate nohighlight">\(\mathbf{X} = \{ X_n \}_{n=1:N}\)</span>.</p>
 <ul>
 <li><p>l’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span> dichiara che la popolazione ha media <span class="math notranslate nohighlight">\(\mu_0\)</span>;</p></li>
-<li><p>la statistica test <span class="math notranslate nohighlight">\(t\)</span> è costruita con la media e la varianza campionaria <span class="math notranslate nohighlight">\(\overline{x}\)</span>, <span class="math notranslate nohighlight">\(S^2\)</span>,</p>
+<li><p>la statistica test <span class="math notranslate nohighlight">\(t\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[t = \frac{\overline{x} - \mu_0}{\frac{S}{\sqrt{n}}} \ ,\]</div>
+\[t = \frac{\bar{X} - \mu_0}{\frac{S}{\sqrt{n}}} \ \]</div>
+<p>è costruita con la <a class="reference internal" href="estimate.html#statistics-hs-inference-estimate-sample-estimators"><span class="std std-ref">media e la varianza campionaria</span></a>,</p>
+<div class="math notranslate nohighlight">
+\[\bar{X} = \frac{1}{N} \sum_{n=1}^N X_n \qquad , \qquad S^2 = \frac{1}{N-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ .\]</div>
+<p><strong>Se</strong> i campioni sono variabili i.i.d. gaussiane, con media <span class="math notranslate nohighlight">\(\mu_0\)</span> sotto l’ipotesi nulla <span class="math notranslate nohighlight">\(H_0\)</span>, <span class="math notranslate nohighlight">\(X_n \sim \mathscr{N}(\mu_0, \sigma_X^2)\)</span>, allora <span class="math notranslate nohighlight">\(\var{X}\)</span> è una variabile gau</p>
 </li>
 <li><p>il numero di gradi di libertà è <span class="math notranslate nohighlight">\(n-1\)</span> <strong>todo</strong></p></li>
 <li><p><strong>oss.</strong> se … <span class="math notranslate nohighlight">\(t\)</span> segue una distribuzione <span class="math notranslate nohighlight">\(t_{n-1}\)</span> di Student <strong>todo</strong> <em>inserire nelle ipotesi</em>, <em>riferimenti a definizione della distribuzione <span class="math notranslate nohighlight">\(t\)</span> e al campionamento e i teoremi relativi</em></p></li>

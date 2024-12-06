@@ -3,6 +3,7 @@
 
 Una delle attività principali della statistica inferenziale è la stima di parametri o valori di una popolazione $X$ della quale è disponibile solo un campione $\mathbf{X} = \{ X_n \}_{n=1:N}$. E' possibile stimare valori puntuali, come la media o la varianza, o intervalli, come intervalli di confidenza. **todo** *come stimare gli intervalli di confidenza? Serve conoscenza o ipotesi sulla distribuzione? Gaussiana per un numero sufficiente di campioni, per teorema del limite centrale?*
 
+(statistics-hs:inference:estimate:estimators)=
 ## Stimatori 
 Uno stimatore $\hat{\theta}(\mathbf{X})$ è una statistica, funzione dei dati del campione osservato $\mathbf{X} = \{ X_n \}_{n=1:N}$, che viene usata per dedurre il valore di un parametro della distribuzione di probabilità della popolazione, $p(X|\theta)$, funzione del parametro.
 
@@ -10,6 +11,7 @@ Uno stimatore $\hat{\theta}(\mathbf{X})$ è una statistica, funzione dei dati de
 
 $$B(\hat{\theta}) := \mathbb{E}[ \hat{\theta} ] - \theta \ .$$
 
+(statistics-hs:inference:estimate:sample-estimators)=
 ### Media e varianza campionaria senza bias
 Dato un campione $\mathbf{X} = \{ X_n \}_{n=1:N}$ di $N$ osservazioni indipendenti estratto da una popolazione, $X$, la media campionaria $\bar{X}$ e la varianza campionaria corretta $S^2$,
 
