@@ -2509,7 +2509,7 @@ E da queste due proprietà segue che la probabilità del singolo valore è non s
 \subsubsection{Esempi di variabili discrete}
 \label{\detokenize{ch/statistics/random_variables_discrete:esempi-di-variabili-discrete}}
 \sphinxAtStartPar
-Si anticipano qui alcuni {\hyperref[\detokenize{ch/statistics::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{esempi di variabili casuali discrete}}}}, rapprestandone la loro distribuzione di probabilità: la distribuzione di Bernoulli, la distribuzione binomiale, e la distribuzione di Poisson. La distribuzione di \sphinxstylestrong{Bernoulli} può rappresentare la probabilità che il lancio di una moneta dia testa:\(0\) o croce:\(1\), la distribuzione \sphinxstylestrong{binomiale} può rappresentare la probabilità di ottenere \(x\) volte croce in \(n\) lanci; la distribuzione di \sphinxstylestrong{Poisson} viene usata per rappresentare eventi discreti rari, dei quali si conosce la media \(\lambda\).
+Si anticipano qui alcuni {\hyperref[\detokenize{ch/statistics/pfun_discrete_examples:statistics-hs-random-variables-discrete-examples-binomial}]{\sphinxcrossref{\DUrole{std,std-ref}{esempi di variabili casuali discrete}}}}, rapprestandone la loro distribuzione di probabilità: la distribuzione di Bernoulli, la distribuzione binomiale, e la distribuzione di Poisson. La distribuzione di {\hyperref[\detokenize{ch/statistics/pfun_discrete_examples:statistics-hs-random-variables-discrete-examples-bernoulli}]{\sphinxcrossref{\DUrole{std,std-ref}{Bernoulli}}}} può rappresentare la probabilità che il lancio di una moneta dia testa:\(0\) o croce:\(1\), la distribuzione {\hyperref[\detokenize{ch/statistics/pfun_discrete_examples:statistics-hs-random-variables-discrete-examples-binomial}]{\sphinxcrossref{\DUrole{std,std-ref}{binomiale}}}} può rappresentare la probabilità di ottenere \(x\) volte croce in \(n\) lanci; la distribuzione di {\hyperref[\detokenize{ch/statistics/pfun_discrete_examples:statistics-hs-random-variables-discrete-examples-poisson}]{\sphinxcrossref{\DUrole{std,std-ref}{Poisson}}}} viene usata per rappresentare eventi discreti rari, dei quali si conosce la media \(\lambda\).
 
 \begin{sphinxuseclass}{cell}
 \begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
@@ -2636,12 +2636,129 @@ così che la probabilità congiunta di due variabili casuali indipendenti è il 
 
 \subparagraph{Traslazione}
 \label{\detokenize{ch/statistics/rv_pdf_transformations:traslazione}}
+\sphinxAtStartPar
+Data la variabile casuale \(X\) con distribuzione di probabilità \(f_X(x)\) nota, la variabile casuale
+\begin{equation*}
+\begin{split}Y = X + a\end{split}
+\end{equation*}
+\sphinxAtStartPar
+ha funzione di probabilità
+\begin{equation*}
+\begin{split}f_Y(x+a) = f_X(x) \ .\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Tra la media e la varianza delle due variabili casuali valgono le relazioni
+\begin{equation*}
+\begin{split}\mu_Y = \mu_X + a \qquad , \qquad \sigma^2_Y = \sigma^2_X \ .\end{split}
+\end{equation*}
+\sphinxAtStartPar
+La dimostrazione è lasciata come esercizio.
+\subsubsection*{Dimostrazione.}
+
+\sphinxAtStartPar
+La probabilità che la variabile \(Y = X + a\) abbia valore \(y = x + a \in [ y_0, y_0 + dy ]\), è uguale alla probabilità che l’evento \(X\) abbia valore \(x \in [x_0, x_0 + dx]\), con \(x_0 = y_0 - a\) e \(dy = dx\),
+\begin{equation*}
+\begin{split}\begin{aligned}
+  P(Y \in [y_0, y_0 + dy]) & = P(X + a \in [y_0, y_0 + dy]) = \\
+  & = P(X \in [y_0 - a, y_0 - a + dy]) = \\
+  & = P(X \in [x_0, x_0 + dx])
+\end{aligned}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Per la definizione di densità di probabilità,
+\begin{equation*}
+\begin{split}\begin{aligned}
+  P(Y \in [y_0, y_0 + dy]) & = \int_{y=y_0}^{y_0 + dy} f_Y(y) \, dy =  & y_0 = x_0 + a \\
+  & = \int_{y=x_0+a}^{x_0 + a + dx} f_Y(y) \, dy = & x = y - a, \ dy = dx \\
+  & = \int_{x=x_0}^{x_0+dx} f_Y(x-a) \, dx \\
+  P(X \in [x_0, x_0 + dx]) & = \int_{x=x_0}^{x_0+dx} f_X(x) \, dx
+\end{aligned}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+dal confronto tra i due termini, e dall’arbitrarietà di \(x_0\) e \(dx\), si ottiene \(f_{X}(x) = f_Y(x-a)\).
+
 
 \subparagraph{Scalatura}
 \label{\detokenize{ch/statistics/rv_pdf_transformations:scalatura}}
+\sphinxAtStartPar
+Data la variabile casuale \(X\) con distribuzione di probabilità \(f_X(x)\) nota, la variabile casuale
+\begin{equation*}
+\begin{split}Y = \frac{X}{a}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+ha funzione di probabilità
+\begin{equation*}
+\begin{split}f_Y\left( \frac{x}{a} \right) = a f_X(x)\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Tra la media e la varianza delle due variabili casuali valgono le relazioni
+\begin{equation*}
+\begin{split}\mu_Y = \frac{\mu_X}{a} \qquad , \qquad \sigma^2_Y = \frac{\sigma^2_X}{a^2} \ .\end{split}
+\end{equation*}
+\sphinxAtStartPar
+La dimostrazione è lasciata come esercizio.
+\subsubsection*{Dimostrazione.}
+
+\sphinxAtStartPar
+La probabilità che la variabile \(Y = \frac{X}{a}\) abbia valore \(y = \frac{x}{a} \in [ y_0, y_0 + dy ]\), è uguale alla probabilità che l’evento \(X\) abbia valore \(x \in [x_0, x_0 + dx]\), con \(x_0 = a y_0\) e \(dy = a dx\),
+\begin{equation*}
+\begin{split}\begin{aligned}
+  P(Y \in [y_0, y_0 + dy]) & = P\left( \frac{X}{a} \in [y_0, y_0 + dy]\right) = \\
+  & = P(X \in [a y_0, a y_0 + a dy]) = \\
+  & = P(X \in [x_0, x_0 + dx])
+\end{aligned}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Per la definizione di densità di probabilità,
+\begin{equation*}
+\begin{split}\begin{aligned}
+  P(Y \in [y_0, y_0 + dy]) & = \int_{y=y_0}^{y_0 + dy} f_Y(y) \, dy =  & y_0 = \frac{x_0}{a} \\
+  & = \int_{y=a \, x_0}^{a x_0 + a dx} f_Y(y) \, dy = & y = \frac{x}{a}, \ dy = \frac{dx}{a} \\
+  & = \frac{1}{a} \int_{x=x_0}^{x_0+dx} f_Y\left( \frac{x}{a} \right) \, dx \\
+  P(X \in [x_0, x_0 + dx]) & = \int_{x=x_0}^{x_0+dx} f_X(x) \, dx
+\end{aligned}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+dal confronto tra i due termini, e dall’arbitrarietà di \(x_0\) e \(dx\), si ottiene \(f_{X}(x) = \frac{1}{a} f_Y\left(\frac{x}{a}\right)\).
+
+
+\subparagraph{Trasformazione affine}
+\label{\detokenize{ch/statistics/rv_pdf_transformations:trasformazione-affine}}
+\sphinxAtStartPar
+Combinando la traslazione e la scalatura, si ottiene la più generale trasformazione affine
+\begin{equation*}
+\begin{split}X = \frac{Y - y_0}{a} \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+usata spesso come \sphinxstylestrong{scalatura} delle variabili nel \sphinxstyleemphasis{preprocessing}. \sphinxstylestrong{todo} \sphinxstyleemphasis{riferimento a scalatura di variabili su valori significativi del problema, per bilanciare il problema e lavorare con variabili non\sphinxhyphen{}dimensionali significatie con lo stesso ordine di grandezza} \sphinxstylestrong{(!!!)}
+
+\sphinxAtStartPar
+Tra la media e la varianza delle due variabili casuali valgono le relazioni
+\begin{equation*}
+\begin{split}\mu_X = \frac{\mu_Y - y_0}{a} \qquad , \qquad \sigma^2_X = \frac{\sigma^2_Y}{a^2} \ .\end{split}
+\end{equation*}
+\sphinxAtStartPar
+La dimostrazione è lasciata come esercizio.
+
+\sphinxAtStartPar
+Le tre trasformazione discusse vengono applicate alla {\hyperref[\detokenize{ch/statistics/pfun_continuous_examples:statistics-hs-random-variables-continuous-examples-norm}]{\sphinxcrossref{\DUrole{std,std-ref}{variabile normale}}}} \(X \sim N(x; \mu=0, \sigma^2=1)\). In particolare si mostrano gli effetti delle trasformazioni: 1. \(X = Y + 1\); 2. \(X = 2 Y\); 3. \(X = 2 (Y - 1)\)
+
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{b979d130b13a7df3f58aa944dc788534c1c3dde6bf5c228f935d64593ba45e9f}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
 
 \subsubsection{Multi\sphinxhyphen{}variabile}
 \label{\detokenize{ch/statistics/rv_pdf_transformations:multi-variabile}}
+
+\paragraph{Cambio di variabili}
+\label{\detokenize{ch/statistics/rv_pdf_transformations:cambio-di-variabili}}
 
 \paragraph{Combinazione di variabili}
 \label{\detokenize{ch/statistics/rv_pdf_transformations:combinazione-di-variabili}}
@@ -2657,7 +2774,8 @@ Date due variabili casuali \(X\), \(Y\), con probabilità congiunta \(p_{XY}(x,y
 Se le due variabili sono tra di loro \sphinxstyleemphasis{statisticamente indipendenti}, la densità di probabilità congiunta è uguale al prodotto delle densità di probabilità delle singole variabili, \(p_{XY}(x,y) = p_X(x) p_Y(y)\), e quindi la densità di probabilità della somma è uguale alla \sphinxstylestrong{convoluzione} tra le densità di probabilità delle due variabili,
 \begin{equation*}
 \begin{split}p(z) = \int_y p_{X}(z-y) \, p_{Y}(y) \, dy \ .\end{split}
-\end{equation*}
+\end{equation*}\subsubsection*{Valore atteso}
+
 \sphinxAtStartPar
 Il \sphinxstylestrong{valore atteso} della somma è quindi
 \begin{equation*}
@@ -2672,7 +2790,8 @@ e, nel caso in cui le due variabili siano tra di loro \sphinxstyleemphasis{stati
   & = \int_{x,y} x \, p_X(x) \, p_Y(y) \, dx \, dy + \int_{x,y} y \, p_X(x) \, p_Y(y) \, dx \, dy = \\
   & = \int_x x \, p_X(x) \, dx + \int_y y \, p_Y(y) \, dy = E[X] + E[Y] \ .
 \end{aligned}\end{split}
-\end{equation*}
+\end{equation*}\subsubsection*{Varianza}
+
 \sphinxAtStartPar
 La \sphinxstylestrong{varianza} della somma è
 \begin{equation*}
@@ -2703,7 +2822,15 @@ Date due variabili casuali \(X\), \(Y\) con probabilità congiunta \(p_{XY}(x,y)
 \begin{split}p(z) = \int_{y} p_{XY} \left(\frac{z}{y}, y \right) \, dy = \int_{x} p_{XY} \left(x, \frac{z}{x} \right) \, dx\end{split}
 \end{equation*}
 \sphinxAtStartPar
-Se le due variabili sono \sphinxstyleemphasis{statisticamente indipendenti},…\sphinxstylestrong{todo}
+Se le due variabili sono \sphinxstyleemphasis{statisticamente indipendenti}
+\begin{equation*}
+\begin{split}p(z) = \int_x p_X(x) \, p_Y\left( \frac{z}{x} \right) \, dx\end{split}
+\end{equation*}
+\sphinxAtStartPar
+(\sphinxstylestrong{todo} \sphinxstyleemphasis{ha qualche uso questa formula? Si ritrova la convoluzione con il cambio di variabili \(z=e^v\), \(x=e^u\)})
+
+
+\subsubsection*{Valore atteso}
 
 \sphinxAtStartPar
 Il \sphinxstylestrong{valore atteso} del prodotto è
@@ -2718,7 +2845,8 @@ e, nel caso in cui le due variabili siano tra di loro \sphinxstyleemphasis{stati
   & = \int_{x,y} x y \, p_X(x) \, p_Y(y) \, dx \, dy = \\
   & = \int_{x} x \, p_X(x) \, dx \cdot \int_y y \, p_Y(y) \, dy = E[X] \cdot E[Y] \ .
 \end{aligned}\end{split}
-\end{equation*}
+\end{equation*}\subsubsection*{Varianza}
+
 \sphinxAtStartPar
 La \sphinxstylestrong{varianza} del prodotto è
 \begin{equation*}
@@ -2746,24 +2874,24 @@ In termini di correlazione, \(R_X^2 = \sigma_X^2 + E[X]^2\),
 
 
 \subsection{Esempi di funzioni di probabilità discreta}
-\label{\detokenize{ch/statistics/pfun_discrete_examples:esempi-di-funzioni-di-probabilita-discreta}}\label{\detokenize{ch/statistics/pfun_discrete_examples::doc}}
+\label{\detokenize{ch/statistics/pfun_discrete_examples:esempi-di-funzioni-di-probabilita-discreta}}\label{\detokenize{ch/statistics/pfun_discrete_examples:statistics-hs-random-variables-discrete-examples}}\label{\detokenize{ch/statistics/pfun_discrete_examples::doc}}
 
 \subsubsection{Bernoulli}
-\label{\detokenize{ch/statistics/pfun_discrete_examples:bernoulli}}
+\label{\detokenize{ch/statistics/pfun_discrete_examples:bernoulli}}\label{\detokenize{ch/statistics/pfun_discrete_examples:statistics-hs-random-variables-discrete-examples-bernoulli}}
 
 \subsubsection{Binomiale}
-\label{\detokenize{ch/statistics/pfun_discrete_examples:binomiale}}
+\label{\detokenize{ch/statistics/pfun_discrete_examples:binomiale}}\label{\detokenize{ch/statistics/pfun_discrete_examples:statistics-hs-random-variables-discrete-examples-binomial}}
 
 \subsubsection{Poisson}
-\label{\detokenize{ch/statistics/pfun_discrete_examples:poisson}}
+\label{\detokenize{ch/statistics/pfun_discrete_examples:poisson}}\label{\detokenize{ch/statistics/pfun_discrete_examples:statistics-hs-random-variables-discrete-examples-poisson}}
 \sphinxstepscope
 
 
 \subsection{Esempi di funzioni di probabilità continua}
-\label{\detokenize{ch/statistics/pfun_continuous_examples:esempi-di-funzioni-di-probabilita-continua}}\label{\detokenize{ch/statistics/pfun_continuous_examples::doc}}
+\label{\detokenize{ch/statistics/pfun_continuous_examples:esempi-di-funzioni-di-probabilita-continua}}\label{\detokenize{ch/statistics/pfun_continuous_examples:statistics-hs-random-variables-continuous-examples}}\label{\detokenize{ch/statistics/pfun_continuous_examples::doc}}
 
 \subsubsection{Distribuzione gaussiana o normale, \protect\(\mathscr{N}\protect\)}
-\label{\detokenize{ch/statistics/pfun_continuous_examples:distribuzione-gaussiana-o-normale-mathscr-n}}
+\label{\detokenize{ch/statistics/pfun_continuous_examples:distribuzione-gaussiana-o-normale-mathscr-n}}\label{\detokenize{ch/statistics/pfun_continuous_examples:statistics-hs-random-variables-continuous-examples-norm}}
 \sphinxAtStartPar
 \(\mathscr{N}(\mu, \sigma^2)\)
 \begin{equation*}
@@ -2771,7 +2899,7 @@ In termini di correlazione, \(R_X^2 = \sigma_X^2 + E[X]^2\),
 \end{equation*}
 
 \subsubsection{Distribuzione chi\sphinxhyphen{}quadrato, \protect\(\chi^2\protect\)}
-\label{\detokenize{ch/statistics/pfun_continuous_examples:distribuzione-chi-quadrato-chi-2}}
+\label{\detokenize{ch/statistics/pfun_continuous_examples:distribuzione-chi-quadrato-chi-2}}\label{\detokenize{ch/statistics/pfun_continuous_examples:statistics-hs-random-variables-continuous-examples-chi2}}
 \sphinxAtStartPar
 Date \(n\) variabili casuali \(X_k\) indipendenti con distribuzione normale \(\mathscr{N}(0,1)\), la somma dei loro quadrati,
 \begin{equation*}
@@ -2784,7 +2912,7 @@ Date \(n\) variabili casuali \(X_k\) indipendenti con distribuzione normale \(\m
 \end{equation*}
 
 \subsubsection{Distribuzione \protect\(t\protect\)\sphinxhyphen{}Student}
-\label{\detokenize{ch/statistics/pfun_continuous_examples:distribuzione-t-student}}
+\label{\detokenize{ch/statistics/pfun_continuous_examples:distribuzione-t-student}}\label{\detokenize{ch/statistics/pfun_continuous_examples:statistics-hs-random-variables-continuous-examples-t}}
 \sphinxAtStartPar
 La \(t\) di Student è la distribuzione di probabilità che governa il rapporto tra due variabili casuali indipendenti,
 \begin{equation*}
