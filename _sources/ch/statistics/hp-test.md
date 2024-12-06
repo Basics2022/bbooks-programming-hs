@@ -28,8 +28,12 @@ Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsific
 
 Usando questo approccio, è possibile distinguere diversi test a seconda dei dati disponibili (numero di campioni, dimensione dei campioni, distribuzione attesa delle osservazioni,...), della variabile test utilizzata, e dell'obiettivo del test. Una classificazione rigida dettagliata rischierebbe di risultare poco pratica e imperfetta.
 
-**Usi frequenti.**
 ````{only} html
+**Usi frequenti.**
+- Test su campioni singoli o coppie di campioni
+- Test di correlazione tra campioni diversi
+- Test di indipendenza tra campioni, intesa come verifica della possibilità che i campioni disponibili provengano dalla stessa popolazione o da popolazioni con distribuzioni simili
+<!--
 ```{dropdown} Test su campioni singoli o coppie di campioni
 - ...
 - Algoritmi: $t$-test, $\chi^2$-test, $Z$-test, Wilcoxon,...
@@ -42,12 +46,14 @@ Usando questo approccio, è possibile distinguere diversi test a seconda dei dat
 - ....
 - Algoritmi: $t$-test per campioni indipendenti e Welch $t$-test, ANOVA, Tukey test, Kruskal-Wallis H-test, Mann-Whitney U-test,...
 ```
+-->
 ````
 
 ````{only} latex
-- le proprietà di campioni singoli o coppie di campioni
-- la correlazione tra campioni diversi
-- l'*indipendenza* dei campioni, intesa come verifica se i campioni disponibili provengono dalla stessa popolazione o da popolazioni con distribuzioni con proprietà in comune
+**Usi frequenti.**
+- Test su campioni singoli o coppie di campioni
+- Test di correlazione tra campioni diversi
+- Test di indipendenza tra campioni, intesa come verifica della possibilità che i campioni disponibili provengano dalla stessa popolazione o da popolazioni con distribuzioni simili
 ````
 
 <!--
