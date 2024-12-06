@@ -1,6 +1,8 @@
 (statistics-hs:inference:estimate)=
 # Stima
 
+Una delle attività principali della statistica inferenziale è la stima di parametri o valori di una popolazione $X$ della quale è disponibile solo un campione $\mathbf{X} = \{ X_n \}_{n=1:N}$. E' possibile stimare valori puntuali, come la media o la varianza, o intervalli, come intervalli di confidenza. **todo** *come stimare gli intervalli di confidenza? Serve conoscenza o ipotesi sulla distribuzione? Gaussiana per un numero sufficiente di campioni, per teorema del limite centrale?*
+
 ## Stimatori 
 Uno stimatore $\hat{\theta}(\mathbf{X})$ è una statistica, funzione dei dati del campione osservato $\mathbf{X} = \{ X_n \}_{n=1:N}$, che viene usata per dedurre il valore di un parametro della distribuzione di probabilità della popolazione, $p(X|\theta)$, funzione del parametro.
 
@@ -17,7 +19,7 @@ sono stimatori senza bias della media, $\hat{\mu}$, e della varianza della varia
 
 **todo** **oss.** Dalle dimostrazioni, sembra che l'identica distribuzione non sia strettamente necessaria, ma che siano richieste: indipendenza (e non correlazione) delle variabili che producono l'ossservazione; variabili con stesso valore di media e di varianza, indipendentemente dalla "forma" della distribuzione di probabilità.
 
-```{dropdown} La media campionaria è stimatore senza bias della media della popolazione, $\mathbb{E}[\bar{X}] = \mu_X$
+```{dropdown} La media campionaria è stimatore senza bias della media della popolazione, $\ \mathbb{E}[\bar{X}] = \mu_X$
 
 Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in una popolazione con media $\mu = \mathbb{E}[X]$, e varianza $\sigma^2 = \mathbb{E}\left[ (X-\mu)^2 \right]$, allora la media campionaria $\bar{X}$ è uno stimatore senza bias $\hat{\mu}$ della media $\mu = \mathbb{E}[X]$ della popolazione. Il valore atteso della media campionaria coincide con la media della popolazione,
 
@@ -30,7 +32,7 @@ $$\begin{aligned}
 e quindi il bias di questo stimatore è nullo, $B(\hat{\mu}) = \mathbb{E}[\hat{\mu}] - \mu = 0$.
 
 ```
-```{dropdown} La varianza campionaria è stimatore senza bias della varianza della popolazione, $\mathbb{E}[S^2] = \sigma_X^2$
+```{dropdown} La varianza campionaria è stimatore senza bias della varianza della popolazione, $\ \mathbb{E}[S^2] = \sigma_X^2$
 
 Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in una popolazione con media $\mu = \mathbb{E}[X]$, e varianza $\sigma^2 = \mathbb{E}\left[ (X-\mu)^2 \right]$, allora la varianza campionaria corretta $S^2$ è uno stimatore senza bias $\hat{\sigma^2}$ della varianza $\sigma^2 = \mathbb{E}[(X-\mu)^2]$ della popolazione. Per dimostrare questa affermazione, si usa la proprietà della covarianza
 
