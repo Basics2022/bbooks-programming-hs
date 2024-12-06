@@ -613,7 +613,7 @@ Dimostrazione.<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \[\mu_Y = \frac{\mu_X - x_0}{a} \qquad , \qquad \sigma^2_Y = \frac{\sigma^2_X}{a^2} \ .\]</div>
 <p>La dimostrazione è lasciata come esercizio.</p>
-<p>Le tre trasformazione discusse vengono applicate alla variabile gaussiana <span class="math notranslate nohighlight">\(X \sim N(x; \mu=0, \sigma^2=1)\)</span>. In particolare si mostrano gli effetti delle trasformazioni: 1. <span class="math notranslate nohighlight">\(Y = X + 1\)</span>; 2. <span class="math notranslate nohighlight">\(Y = \frac{X}{2}\)</span>; 3. <span class="math notranslate nohighlight">\(Y = \frac{X + 1}{2}\)</span></p>
+<p>Le tre trasformazione discusse vengono applicate alla <a class="reference internal" href="pfun_continuous_examples.html#statistics-hs-random-variables-continuous-examples-norm"><span class="std std-ref">variabile normale</span></a> <span class="math notranslate nohighlight">\(X \sim N(x; \mu=0, \sigma^2=1)\)</span>. In particolare si mostrano gli effetti delle trasformazioni: 1. <span class="math notranslate nohighlight">\(Y = X + 1\)</span>; 2. <span class="math notranslate nohighlight">\(Y = \frac{X}{2}\)</span>; 3. <span class="math notranslate nohighlight">\(Y = \frac{X + 1}{2}\)</span></p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -649,13 +649,13 @@ Dimostrazione.<div class="sd-summary-down docutils">
 
 <span class="c1"># Plot</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">transl_v</span><span class="p">)):</span>
-    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0_plot</span><span class="p">,</span> <span class="n">p0_norm</span><span class="p">)</span> <span class="c1">#</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0_plot</span><span class="p">,</span> <span class="n">p0_norm</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;N(x; 0,1)&quot;</span><span class="p">)</span> <span class="c1">#</span>
     <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xv_plot</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">p0_norm</span><span class="o">*</span><span class="n">scale_v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0_plot</span><span class="p">,</span> <span class="n">pv_norm</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;pdf&quot;</span><span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-    <span class="c1"># axes[i].legend()</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
 <span class="c1"># Adjust layout</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
@@ -665,7 +665,7 @@ Dimostrazione.<div class="sd-summary-down docutils">
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/3b25788f9762d58a53e19961ee5c56ac083d55c5c84d4c52ac1a3760b72ef836.png" src="../../_images/3b25788f9762d58a53e19961ee5c56ac083d55c5c84d4c52ac1a3760b72ef836.png" />
+<img alt="../../_images/b979d130b13a7df3f58aa944dc788534c1c3dde6bf5c228f935d64593ba45e9f.png" src="../../_images/b979d130b13a7df3f58aa944dc788534c1c3dde6bf5c228f935d64593ba45e9f.png" />
 </div>
 </div>
 </div>
