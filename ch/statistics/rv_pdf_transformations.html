@@ -661,8 +661,13 @@ Varianza<div class="sd-summary-down docutils">
 <p>Date due variabili casuali <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> con probabilità congiunta <span class="math notranslate nohighlight">\(p_{XY}(x,y)\)</span>, il loro prodotto <span class="math notranslate nohighlight">\(Z = X \cdot Y\)</span> è una variabile casuale dipendente con distribuzione di probabilità</p>
 <div class="math notranslate nohighlight">
 \[p(z) = \int_{y} p_{XY} \left(\frac{z}{y}, y \right) \, dy = \int_{x} p_{XY} \left(x, \frac{z}{x} \right) \, dx\]</div>
-<p>Se le due variabili sono <em>statisticamente indipendenti</em>,…<strong>todo</strong></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<p>Se le due variabili sono <em>statisticamente indipendenti</em></p>
+<div class="math notranslate nohighlight">
+\[p(z) = \int_x p_X(x) \, p_Y\left( \frac{z}{x} \right) \, dx\]</div>
+<p>(<strong>todo</strong> <em>ha qualche uso questa formula? Si ritrova la convoluzione con il cambio di variabili <span class="math notranslate nohighlight">\(z=e^v\)</span>, <span class="math notranslate nohighlight">\(x=e^u\)</span></em>)</p>
+<!--
+$$p(e^v) = \int_u p_X(e^u) \, p_Y\left( e^{v-u} \right) e^u \, du$$
+--><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Valore atteso<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
