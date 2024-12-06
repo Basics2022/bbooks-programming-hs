@@ -4,12 +4,12 @@
 ## Stimatori 
 Uno stimatore $\hat{\theta}(\mathbf{X})$ è una statistica, funzione dei dati del campione osservato $\mathbf{X} = \{ X_n \}_{n=1:N}$, che viene usata per dedurre il valore di un parametro della distribuzione di probabilità della popolazione, $p(X|\theta)$, funzione del parametro.
 
-**Bias**. Il bias di uno stimatore è la differenza tra il valore atteso dello stimatore $E[ \hat{\theta} ]$ e il valore del parametro $\theta$,
+**Bias**. Il bias di uno stimatore è la differenza tra il valore atteso dello stimatore $\mathbb{E}[ \hat{\theta} ]$ e il valore del parametro $\theta$,
 
-$$B(\hat{\theta}) := E[ \hat{\theta} ] - \theta \ .$$
+$$B(\hat{\theta}) := \mathbb{E}[ \hat{\theta} ] - \theta \ .$$
 
 ### Media e varianza campionaria senza bias
-Dato un campione $\mathbf{x} = \{ x_n \}_{n=1:N}$ di $N$ osservazioni indipendenti estratto da una popolazione, la media campionaria $\bar{X}$ e la varianza campionaria corretta $S^2$,
+Dato un campione $\mathbf{X} = \{ X_n \}_{n=1:N}$ di $N$ osservazioni indipendenti estratto da una popolazione, $X$, la media campionaria $\bar{X}$ e la varianza campionaria corretta $S^2$,
 
 $$\bar{X} := \frac{1}{N} \sum_{n = 1}^{N} X_n \qquad , \qquad S^2 := \frac{1}{N-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ ,$$
 
@@ -19,15 +19,15 @@ sono stimatori senza bias della media, $\hat{\mu}$, e della varianza della varia
 
 ```{dropdown} Dimostrazione per la media
 
-Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in una popolazione con media $\mu = E[X]$, e varianza $\sigma^2 = E\left[ (X-\mu)^2 \right]$, allora la media campionaria $\bar{X}$ è uno stimatore senza bias $\hat{\mu}$ della media $\mu = E[X]$ della popolazione. Il valore atteso della media campionaria coincide con la media della popolazione,
+Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in una popolazione con media $\mu = \mathbb{E}[X]$, e varianza $\sigma^2 = \mathbb{E}\left[ (X-\mu)^2 \right]$, allora la media campionaria $\bar{X}$ è uno stimatore senza bias $\hat{\mu}$ della media $\mu = \mathbb{E}[X]$ della popolazione. Il valore atteso della media campionaria coincide con la media della popolazione,
 
 $$\begin{aligned}
-  E[\bar{X}] 
-  & = E\left[ \frac{1}{N} \sum_{n=1}^N X_n \right]
-    = \frac{1}{N} \sum_{n=1}^N E\left[ X_n \right] = \frac{1}{N} \, N \, \mu = \mu \ .
+  \mathbb{E}[\bar{X}] 
+  & = \mathbb{E}\left[ \frac{1}{N} \sum_{n=1}^N X_n \right]
+    = \frac{1}{N} \sum_{n=1}^N \mathbb{E} \left[ X_n \right] = \frac{1}{N} \, N \, \mu = \mu \ .
 \end{aligned}$$
 
-e quindi il bias di questo stimatore è nullo, $B(\hat{\mu}) = E[\hat{\mu}] - \mu = 0$.
+e quindi il bias di questo stimatore è nullo, $B(\hat{\mu}) = \mathbb{E}[\hat{\mu}] - \mu = 0$.
 
 ```
 ```{dropdown} Dimostrazione per la varianza
