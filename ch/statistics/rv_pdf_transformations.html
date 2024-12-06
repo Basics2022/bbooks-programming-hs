@@ -593,7 +593,71 @@ Dimostrazione.<div class="sd-summary-down docutils">
 \end{aligned}\end{split}\]</div>
 <p class="sd-card-text">dal confronto tra i due termini, e dall’arbitrarietà di <span class="math notranslate nohighlight">\(x_0\)</span> e <span class="math notranslate nohighlight">\(dx\)</span>, si ottiene <span class="math notranslate nohighlight">\(f_{X}(x) = \frac{1}{a} f_Y\left(\frac{x}{a}\right)\)</span>.</p>
 </div>
-</details></div>
+</details><div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="c1"># Define parameters for the distributions</span>
+<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span>                <span class="c1"># Property of Gaussian</span>
+<span class="n">a_transl</span><span class="p">,</span> <span class="n">a_scale</span>  <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span>
+
+<span class="n">transl_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="n">a_transl</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">a_transl</span> <span class="p">])</span>
+<span class="n">scale_v</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">a_scale</span><span class="p">,</span> <span class="n">a_scale</span> <span class="p">])</span>
+<span class="n">mu_v</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">+</span> <span class="n">transl_v</span>
+<span class="n">sigma_v</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">/</span> <span class="n">scale_v</span>
+
+<span class="c1"># Create x values for the distributions</span>
+<span class="n">x0_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">4.</span><span class="p">,</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">.05</span><span class="p">)</span>
+<span class="n">p0_norm</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x0_plot</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma</span><span class="p">)</span>
+
+<span class="n">xv_plot</span><span class="p">,</span> <span class="n">pv_norm</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">transl_v</span><span class="p">)):</span>
+    <span class="n">xv_plot</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">x0_plot</span> <span class="o">/</span> <span class="n">scale_v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">transl_v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">]</span>
+    <span class="n">pv_norm</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">mu_v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma_v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">]</span>
+    
+<span class="c1"># Create subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Plot</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">transl_v</span><span class="p">)):</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0_plot</span><span class="p">,</span> <span class="n">p0_norm</span><span class="p">)</span> <span class="c1">#</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xv_plot</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">p0_norm</span><span class="o">*</span><span class="n">scale_v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0_plot</span><span class="p">,</span> <span class="n">pv_norm</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;pdf&quot;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Adjust layout</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">21</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">transl_v</span><span class="p">)):</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="n">xv_plot</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">x0_plot</span> <span class="o">/</span> <span class="n">scale_v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">transl_v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">21</span>     <span class="n">pv_norm</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">mu_v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma_v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="c1"># Create subplots</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;x_plot&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="multi-variabile">
