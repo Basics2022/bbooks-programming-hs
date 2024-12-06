@@ -17,7 +17,7 @@ sono stimatori senza bias della media, $\hat{\mu}$, e della varianza della varia
 
 **todo** **oss.** Dalle dimostrazioni, sembra che l'identica distribuzione non sia strettamente necessaria, ma che siano richieste: indipendenza (e non correlazione) delle variabili che producono l'ossservazione; variabili con stesso valore di media e di varianza, indipendentemente dalla "forma" della distribuzione di probabilità.
 
-```{dropdown} Dimostrazione per la media
+```{dropdown} La media campionaria è stimatore senza bias della media della popolazione, $\mathbb{E}[\bar{X}] = \mu_X$
 
 Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in una popolazione con media $\mu = \mathbb{E}[X]$, e varianza $\sigma^2 = \mathbb{E}\left[ (X-\mu)^2 \right]$, allora la media campionaria $\bar{X}$ è uno stimatore senza bias $\hat{\mu}$ della media $\mu = \mathbb{E}[X]$ della popolazione. Il valore atteso della media campionaria coincide con la media della popolazione,
 
@@ -30,7 +30,7 @@ $$\begin{aligned}
 e quindi il bias di questo stimatore è nullo, $B(\hat{\mu}) = \mathbb{E}[\hat{\mu}] - \mu = 0$.
 
 ```
-```{dropdown} Dimostrazione per la varianza
+```{dropdown} La varianza campionaria è stimatore senza bias della varianza della popolazione, $\mathbb{E}[S^2] = \sigma_X^2$
 
 Dato un campione di $n$ variabili indipendenti $\{ X_n \}_n{1:N}$ osservate in una popolazione con media $\mu = \mathbb{E}[X]$, e varianza $\sigma^2 = \mathbb{E}\left[ (X-\mu)^2 \right]$, allora la varianza campionaria corretta $S^2$ è uno stimatore senza bias $\hat{\sigma^2}$ della varianza $\sigma^2 = \mathbb{E}[(X-\mu)^2]$ della popolazione. Per dimostrare questa affermazione, si usa la proprietà della covarianza
 
