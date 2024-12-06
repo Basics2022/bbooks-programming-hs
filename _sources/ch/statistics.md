@@ -25,8 +25,8 @@ La statistica inferenziale usa i dati raccolti e gli strumenti della teoria dell
 - [Verifica di ipotesi](statistics-hs:inference:hp-test)
 - ...
 ````
-````{dropdown} {Metodi in AI}()
-````
+
+Ulteriori metodi statistici sono descritti nei [metodi per la AI](book:ai-hs).
 
 `````
 
