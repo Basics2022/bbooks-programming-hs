@@ -201,9 +201,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">17.1.2. Variabili casuali discrete</a></li>
 <li class="toctree-l3"><a class="reference internal" href="random_variables_continuous.html">17.1.3. Variabili casuali continue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rv_pdf_transformations.html">17.1.4. Trasformazione di probabilità di densità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rv_pdf_examples.html">17.1.5. Esempi di funzioni densità di probabilità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.6. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.7. Campionamento</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pfun_discrete_examples.html">17.1.5. Esempi di funzioni di probabilità continua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pfun_continuous_examples.html">17.1.6. Esempi di funzioni di probabilità continua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.7. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.8. Campionamento</a></li>
 
 
 </ul>
@@ -493,11 +494,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-multi-dimensionali">17.1.2.1. Variabili casuali multi-dimensionali</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilita-congiunta-e-teorema-di-bayes">17.1.2.1.1. Probabilità congiunta e teorema di Bayes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-indipendenti">17.1.2.1.2. Variabili indipendenti</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covarianza">17.1.2.1.3. Covarianza</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione">17.1.2.1.4. Correlazione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-di-probabilita">17.1.2.1. Funzione di probabilità</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempi-di-variabili-discrete">17.1.2.2. Esempi di variabili discrete</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momenti">17.1.2.3. Momenti</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-multi-dimensionali">17.1.2.4. Variabili casuali multi-dimensionali</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilita-congiunta-e-teorema-di-bayes">17.1.2.4.1. Probabilità congiunta e teorema di Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-indipendenti">17.1.2.4.2. Variabili indipendenti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covarianza">17.1.2.4.3. Covarianza</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione">17.1.2.4.4. Correlazione</a></li>
 </ul>
 </li>
 </ul>
@@ -513,8 +517,9 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="variabili-casuali-discrete">
 <span id="statistics-hs-random-variables-discrete"></span><h1><span class="section-number">17.1.2. </span>Variabili casuali discrete<a class="headerlink" href="#variabili-casuali-discrete" title="Permalink to this heading">#</a></h1>
-<p><strong>Funzione di probabilità</strong>.
-La funzione di probabilità, <span class="math notranslate nohighlight">\(p_X(x)\)</span>, o funzione di massa, o <em>densità di probabilità</em> con un abuso per analogia con le variabili continue, è la funzione che associa la probabilità al valore <span class="math notranslate nohighlight">\(x\)</span> della variabile casuale <span class="math notranslate nohighlight">\(X\)</span>. Data al variabile casuale <span class="math notranslate nohighlight">\(X: \Omega \rightarrow E\)</span>, la proababilità del valore discreto <span class="math notranslate nohighlight">\(x \in E\)</span> è data dalla somma delle probabilità degli eventi disgiunti <span class="math notranslate nohighlight">\(\Omega_x := \{ \omega \in \Omega \, | \, X(\omega) = x \}\)</span> che producono il valore <span class="math notranslate nohighlight">\(x\)</span>,</p>
+<div class="section" id="funzione-di-probabilita">
+<h2><span class="section-number">17.1.2.1. </span>Funzione di probabilità<a class="headerlink" href="#funzione-di-probabilita" title="Permalink to this heading">#</a></h2>
+<p>La funzione di probabilità, <span class="math notranslate nohighlight">\(p_X(x)\)</span>, o funzione di massa, o <em>densità di probabilità</em> con un abuso per analogia con le variabili continue, è la funzione che associa la probabilità al valore <span class="math notranslate nohighlight">\(x\)</span> della variabile casuale <span class="math notranslate nohighlight">\(X\)</span>. Data al variabile casuale <span class="math notranslate nohighlight">\(X: \Omega \rightarrow E\)</span>, la proababilità del valore discreto <span class="math notranslate nohighlight">\(x \in E\)</span> è data dalla somma delle probabilità degli eventi disgiunti <span class="math notranslate nohighlight">\(\Omega_x := \{ \omega \in \Omega \, | \, X(\omega) = x \}\)</span> che producono il valore <span class="math notranslate nohighlight">\(x\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[p_X(x) = \sum_{\omega_i \in \Omega_x} \nu(\omega_i) \ .\]</div>
 <p><strong>Proprietà.</strong></p>
@@ -523,6 +528,116 @@ La funzione di probabilità, <span class="math notranslate nohighlight">\(p_X(x)
 <li><p><span class="math notranslate nohighlight">\(\sum_{x_k \in E} p_X(x_k) = 1\)</span></p></li>
 </ul>
 <p>E da queste due proprietà segue che la probabilità del singolo valore è non superiore a 1, <span class="math notranslate nohighlight">\(p(x_k) \le 1\)</span>.</p>
+</div>
+<div class="section" id="esempi-di-variabili-discrete">
+<h2><span class="section-number">17.1.2.2. </span>Esempi di variabili discrete<a class="headerlink" href="#esempi-di-variabili-discrete" title="Permalink to this heading">#</a></h2>
+<p>Si anticipano qui alcuni <a class="reference internal" href="../statistics.html"><span class="doc std std-doc">esempi di variabili casuali discrete</span></a>, rapprestandone la loro distribuzione di probabilità: la distribuzione di Bernoulli, la distribuzione binomiale, e la distribuzione di Poisson. La distribuzione di <strong>Bernoulli</strong> può rappresentare la probabilità che il lancio di una moneta dia testa:<span class="math notranslate nohighlight">\(0\)</span> o croce:<span class="math notranslate nohighlight">\(1\)</span>, la distribuzione <strong>binomiale</strong> può rappresentare la probabilità di ottenere <span class="math notranslate nohighlight">\(x\)</span> volte croce in <span class="math notranslate nohighlight">\(n\)</span> lanci; la distribuzione di <strong>Poisson</strong> viene usata per rappresentare eventi discreti rari, dei quali si conosce la media <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">bernoulli</span><span class="p">,</span> <span class="n">binom</span><span class="p">,</span> <span class="n">poisson</span>
+
+<span class="c1"># Define parameters for the distributions</span>
+<span class="n">p_bernoulli</span> <span class="o">=</span> <span class="mf">0.5</span>                 <span class="c1"># Probability for Bernoulli</span>
+<span class="n">n_binomial</span><span class="p">,</span> <span class="n">p_binomial</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.5</span>  <span class="c1"># Number of trials and probability for Binomial</span>
+<span class="n">n_poisson</span><span class="p">,</span> <span class="n">mu_poisson</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span>     <span class="c1"># Mean for Poisson</span>
+
+<span class="c1"># Create x values for the distributions</span>
+<span class="n">x_bernoulli</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">x_binomial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_binomial</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">x_poisson</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_binomial</span><span class="p">)</span>  <span class="c1"># Arbitrary range for Poisson</span>
+
+<span class="c1"># Calculate the probabilities</span>
+<span class="n">y_bernoulli</span> <span class="o">=</span> <span class="n">bernoulli</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x_bernoulli</span><span class="p">,</span> <span class="n">p_bernoulli</span><span class="p">)</span>
+<span class="n">y_binomial</span> <span class="o">=</span> <span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x_binomial</span><span class="p">,</span> <span class="n">n_binomial</span><span class="p">,</span> <span class="n">p_binomial</span><span class="p">)</span>
+<span class="n">y_poisson</span> <span class="o">=</span> <span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x_poisson</span><span class="p">,</span> <span class="n">mu_poisson</span><span class="p">)</span>
+
+<span class="c1"># Create subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Plot Bernoulli</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">x_bernoulli</span><span class="p">,</span> <span class="n">y_bernoulli</span><span class="p">,</span> <span class="n">basefmt</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bernoulli Distribution, $f</span><span class="se">\\</span><span class="s2">left(x; p=</span><span class="si">{</span><span class="n">p_bernoulli</span><span class="si">}</span><span class="s2"> </span><span class="se">\\</span><span class="s2">right)$&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PMF&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot Binomial</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">x_binomial</span><span class="p">,</span> <span class="n">y_binomial</span><span class="p">,</span> <span class="n">basefmt</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Binomial Distribution, $B(x; n=</span><span class="si">{</span><span class="n">n_binomial</span><span class="si">}</span><span class="s2">,p=</span><span class="si">{</span><span class="n">p_bernoulli</span><span class="si">}</span><span class="s2">)$&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PMF&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot Poisson</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">x_poisson</span><span class="p">,</span> <span class="n">y_poisson</span><span class="p">,</span> <span class="n">basefmt</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Poisson Distribution, P(x; $</span><span class="se">\\</span><span class="s2">lambda=</span><span class="si">{</span><span class="n">mu_poisson</span><span class="si">}</span><span class="s2">$)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PMF&quot;</span><span class="p">)</span>
+
+<span class="c1"># Adjust layout</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/136305ea5229770747aff0206d802d1741ac2f86b63e9a3f3e88b2377b482e71.png" src="../../_images/136305ea5229770747aff0206d802d1741ac2f86b63e9a3f3e88b2377b482e71.png" />
+</div>
+</div>
+<div class="cell tag_hide-input tag_hide-output docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Cumulative function</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Plot Bernoulli</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">x_bernoulli</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">y_bernoulli</span><span class="p">),</span> <span class="n">basefmt</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bernoulli Distribution, $f</span><span class="se">\\</span><span class="s2">left(x; p=</span><span class="si">{</span><span class="n">p_bernoulli</span><span class="si">}</span><span class="s2"> </span><span class="se">\\</span><span class="s2">right)$&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PCF&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot Binomial</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">x_binomial</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">y_binomial</span><span class="p">),</span> <span class="n">basefmt</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Binomial Distribution, $B(x; n=</span><span class="si">{</span><span class="n">n_binomial</span><span class="si">}</span><span class="s2">,p=</span><span class="si">{</span><span class="n">p_bernoulli</span><span class="si">}</span><span class="s2">)$&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PCF&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot Poisson</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">x_poisson</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">y_poisson</span><span class="p">),</span> <span class="n">basefmt</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Poisson Distribution, P(x; $</span><span class="se">\\</span><span class="s2">lambda=</span><span class="si">{</span><span class="n">mu_poisson</span><span class="si">}</span><span class="s2">$)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PCF&quot;</span><span class="p">)</span>
+
+<span class="c1"># Adjust layout</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<img alt="../../_images/5f1312c879583c1156187ed43ceb9c5d6a168c37be7bb6c94ef5a10d878d0ae4.png" src="../../_images/5f1312c879583c1156187ed43ceb9c5d6a168c37be7bb6c94ef5a10d878d0ae4.png" />
+</div>
+</details>
+</div>
+</div>
+<div class="section" id="momenti">
+<h2><span class="section-number">17.1.2.3. </span>Momenti<a class="headerlink" href="#momenti" title="Permalink to this heading">#</a></h2>
 <p><strong>Valore medio.</strong> Il valore medio di una variabile casuale è la media dei valori possibili <span class="math notranslate nohighlight">\(x_k \in E\)</span> pesata della probabilità <span class="math notranslate nohighlight">\(p(x_k)\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -536,21 +651,95 @@ La funzione di probabilità, <span class="math notranslate nohighlight">\(p_X(x)
 <div class="math notranslate nohighlight">
 \[\sigma^2_X = E[(X-\mu_X)^2] = \sum_k p(x_k) (x_k - \mu_X)^2 \ .\]</div>
 <p>Analogamente a quanto fatto per il valore medio, anche questa media può essere riferita sia ai valori sia agli eventi.</p>
+<p>La <strong>variazione standard</strong> è definita come la radice quadra della varianza. A differenza della varianza, è una grandezza <em>omogenea</em> <strong>(!)</strong> alla variabile casuale: ad esempio, la media di una misura di lunghezza può essere <span class="math notranslate nohighlight">\(2 \, m\)</span> con deviazione standard <span class="math notranslate nohighlight">\(0.1 \, m\)</span>, mentre la varianza è <span class="math notranslate nohighlight">\(0.01 \, m^2\)</span>.</p>
+<p>Di seguito vengono mostrati il valore medio e la deviazione standard - rappresentata qui come un intervallo centrato attorno alla media, anche se questa rappresentazione può essere ingannevole <strong>(!)</strong> per distribuzioni di probabilità non simmetriche - delle variabili casuali presentate in precedenza. In seguito, verrà introdotto il concetto di <em>intervallo di confidenza</em>. <strong>todo</strong> <em>riferimento?</em></p>
+<p><strong>Oss.</strong> Nonostante siano rappresentati in tutto il grafico, si deve pensare alla media come un valore sull’asse <span class="math notranslate nohighlight">\(x\)</span> dei valori della variabile casuale, e la deviazione standard come un intervallo sullo stesso asse <span class="math notranslate nohighlight">\(x\)</span>, ricordando le osservazioni fatte in precedenza sulla rappresentazione della deviazione standard.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">bernoulli</span><span class="p">,</span> <span class="n">binom</span><span class="p">,</span> <span class="n">poisson</span>
+
+<span class="c1"># Define parameters for the distributions</span>
+<span class="n">p_bernoulli</span> <span class="o">=</span> <span class="mf">0.5</span>   <span class="c1"># Probability for Bernoulli</span>
+<span class="n">n_binomial</span><span class="p">,</span> <span class="n">p_binomial</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.5</span>  <span class="c1"># Trials and probability for Binomial</span>
+<span class="n">n_poisson</span><span class="p">,</span> <span class="n">mu_poisson</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span>      <span class="c1"># Mean for Poisson</span>
+
+<span class="c1"># Create x values and calculate PMF for each distribution</span>
+<span class="n">x_bernoulli</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">y_bernoulli</span> <span class="o">=</span> <span class="n">bernoulli</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x_bernoulli</span><span class="p">,</span> <span class="n">p_bernoulli</span><span class="p">)</span>
+<span class="n">mean_bernoulli</span><span class="p">,</span> <span class="n">var_bernoulli</span> <span class="o">=</span> <span class="n">bernoulli</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">p_bernoulli</span><span class="p">,</span> <span class="n">moments</span><span class="o">=</span><span class="s1">&#39;mv&#39;</span><span class="p">)</span>
+
+<span class="n">x_binomial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_binomial</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y_binomial</span> <span class="o">=</span> <span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x_binomial</span><span class="p">,</span> <span class="n">n_binomial</span><span class="p">,</span> <span class="n">p_binomial</span><span class="p">)</span>
+<span class="n">mean_binomial</span><span class="p">,</span> <span class="n">var_binomial</span> <span class="o">=</span> <span class="n">binom</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">n_binomial</span><span class="p">,</span> <span class="n">p_binomial</span><span class="p">,</span> <span class="n">moments</span><span class="o">=</span><span class="s1">&#39;mv&#39;</span><span class="p">)</span>
+
+<span class="n">x_poisson</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_poisson</span><span class="p">)</span>  <span class="c1"># Arbitrary range for Poisson</span>
+<span class="n">y_poisson</span> <span class="o">=</span> <span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x_poisson</span><span class="p">,</span> <span class="n">mu_poisson</span><span class="p">)</span>
+<span class="n">mean_poisson</span><span class="p">,</span> <span class="n">var_poisson</span> <span class="o">=</span> <span class="n">poisson</span><span class="o">.</span><span class="n">stats</span><span class="p">(</span><span class="n">mu_poisson</span><span class="p">,</span> <span class="n">moments</span><span class="o">=</span><span class="s1">&#39;mv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Set up the subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Plot Bernoulli Distribution</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">x_bernoulli</span><span class="p">,</span> <span class="n">y_bernoulli</span><span class="p">,</span> <span class="n">basefmt</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">mean_bernoulli</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$\mu$ = </span><span class="si">{</span><span class="n">mean_bernoulli</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fill_betweenx</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_bernoulli</span><span class="p">)],</span> <span class="n">x1</span><span class="o">=</span><span class="n">mean_bernoulli</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_bernoulli</span><span class="p">),</span> <span class="n">x2</span><span class="o">=</span><span class="n">mean_bernoulli</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_bernoulli</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$\sigma = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_bernoulli</span><span class="p">)</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bernoulli Distribution, $f</span><span class="se">\\</span><span class="s2">left(x; p=</span><span class="si">{</span><span class="n">p_bernoulli</span><span class="si">}</span><span class="s2"> </span><span class="se">\\</span><span class="s2">right)$&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PMF&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Plot Binomial Distribution</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">x_binomial</span><span class="p">,</span> <span class="n">y_binomial</span><span class="p">,</span> <span class="n">basefmt</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">mean_binomial</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$\mu$ = </span><span class="si">{</span><span class="n">mean_binomial</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fill_betweenx</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_binomial</span><span class="p">)],</span> <span class="n">x1</span><span class="o">=</span><span class="n">mean_binomial</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_binomial</span><span class="p">),</span> <span class="n">x2</span><span class="o">=</span><span class="n">mean_binomial</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_binomial</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$\sigma = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_binomial</span><span class="p">)</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Binomial Distribution, $B(x; n=</span><span class="si">{</span><span class="n">n_binomial</span><span class="si">}</span><span class="s2">,p=</span><span class="si">{</span><span class="n">p_bernoulli</span><span class="si">}</span><span class="s2">)$&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PMF&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Plot Poisson Distribution</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">x_poisson</span><span class="p">,</span> <span class="n">y_poisson</span><span class="p">,</span> <span class="n">basefmt</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">mean_poisson</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$\mu$ = </span><span class="si">{</span><span class="n">mean_poisson</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">fill_betweenx</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_poisson</span><span class="p">)],</span> <span class="n">x1</span><span class="o">=</span><span class="n">mean_poisson</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_poisson</span><span class="p">),</span> <span class="n">x2</span><span class="o">=</span><span class="n">mean_poisson</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_poisson</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$\sigma = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var_poisson</span><span class="p">)</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Poisson Distribution, P(x; $</span><span class="se">\\</span><span class="s2">lambda=</span><span class="si">{</span><span class="n">mu_poisson</span><span class="si">}</span><span class="s2">$)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PMF&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Adjust layout</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/f7ed6c19b2a60b6d9381613feced82dc7fa26d4847689119ed6079dbd6baded8.png" src="../../_images/f7ed6c19b2a60b6d9381613feced82dc7fa26d4847689119ed6079dbd6baded8.png" />
+</div>
+</div>
 <!-- **media, moda.** -->
+</div>
 <div class="section" id="variabili-casuali-multi-dimensionali">
-<h2><span class="section-number">17.1.2.1. </span>Variabili casuali multi-dimensionali<a class="headerlink" href="#variabili-casuali-multi-dimensionali" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.1.2.4. </span>Variabili casuali multi-dimensionali<a class="headerlink" href="#variabili-casuali-multi-dimensionali" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Probabilità congiunta.</strong> <span class="math notranslate nohighlight">\(p(x,y)\)</span></p></li>
 <li><p><strong>Probabilità condizionale.</strong> <span class="math notranslate nohighlight">\(p(x|y)\)</span></p></li>
 <li><p><strong>Probabilità marginale.</strong> <span class="math notranslate nohighlight">\(p(x)\)</span></p></li>
 </ul>
 <div class="section" id="probabilita-congiunta-e-teorema-di-bayes">
-<h3><span class="section-number">17.1.2.1.1. </span>Probabilità congiunta e teorema di Bayes<a class="headerlink" href="#probabilita-congiunta-e-teorema-di-bayes" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.2.4.1. </span>Probabilità congiunta e teorema di Bayes<a class="headerlink" href="#probabilita-congiunta-e-teorema-di-bayes" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[p(x,y) = p(x|y)p(y) = p(y|x)p(x)\]</div>
 </div>
 <div class="section" id="variabili-indipendenti">
-<h3><span class="section-number">17.1.2.1.2. </span>Variabili indipendenti<a class="headerlink" href="#variabili-indipendenti" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.2.4.2. </span>Variabili indipendenti<a class="headerlink" href="#variabili-indipendenti" title="Permalink to this heading">#</a></h3>
 <p>Due variabili casuali sono indipendenti se la probabilità condizionale di una variabile coincide con la sua probabilità marginale,</p>
 <div class="math notranslate nohighlight">
 \[p(x|y) = p(x) \ ,\]</div>
@@ -559,12 +748,12 @@ La funzione di probabilità, <span class="math notranslate nohighlight">\(p_X(x)
 \[p(x,y) = p(x)p(y) \ .\]</div>
 </div>
 <div class="section" id="covarianza">
-<h3><span class="section-number">17.1.2.1.3. </span>Covarianza<a class="headerlink" href="#covarianza" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.2.4.3. </span>Covarianza<a class="headerlink" href="#covarianza" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\sigma^2_{ij} = E[(X_i-\mu_i)(X_j-\mu_j)] = R_{ij} - \mu_i \mu_j\]</div>
 </div>
 <div class="section" id="correlazione">
-<h3><span class="section-number">17.1.2.1.4. </span>Correlazione<a class="headerlink" href="#correlazione" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.2.4.4. </span>Correlazione<a class="headerlink" href="#correlazione" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\rho_{XY} = \frac{E[(X-\mu_X)(Y-\mu_Y)]}{E[(X-\mu_X)^2]^{1/2} \, E[(X-\mu_X)^2]^{1/2}} = \frac{\sigma_{XY}^2}{\sigma_X \, \sigma_Y}\]</div>
 </div>
@@ -634,11 +823,14 @@ La funzione di probabilità, <span class="math notranslate nohighlight">\(p_X(x)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-multi-dimensionali">17.1.2.1. Variabili casuali multi-dimensionali</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilita-congiunta-e-teorema-di-bayes">17.1.2.1.1. Probabilità congiunta e teorema di Bayes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-indipendenti">17.1.2.1.2. Variabili indipendenti</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covarianza">17.1.2.1.3. Covarianza</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione">17.1.2.1.4. Correlazione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funzione-di-probabilita">17.1.2.1. Funzione di probabilità</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempi-di-variabili-discrete">17.1.2.2. Esempi di variabili discrete</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momenti">17.1.2.3. Momenti</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-multi-dimensionali">17.1.2.4. Variabili casuali multi-dimensionali</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilita-congiunta-e-teorema-di-bayes">17.1.2.4.1. Probabilità congiunta e teorema di Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-indipendenti">17.1.2.4.2. Variabili indipendenti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covarianza">17.1.2.4.3. Covarianza</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione">17.1.2.4.4. Correlazione</a></li>
 </ul>
 </li>
 </ul>

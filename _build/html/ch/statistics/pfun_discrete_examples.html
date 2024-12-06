@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>17.1. Variabili casuali &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>17.1.5. Esempi di funzioni di probabilità discreta &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -66,12 +66,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/statistics/random_variables';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/statistics/pfun_discrete_examples';</script>
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="17.1.1. Definizione di variabile casuale" href="random_variables_definition.html" />
-    <link rel="prev" title="17. Introduzione alla probabilità" href="probability.html" />
+    <link rel="next" title="17.1.6. Esempi di funzioni di probabilità continua" href="pfun_continuous_examples.html" />
+    <link rel="prev" title="17.1.4. Trasformazione di probabilità di densità" href="rv_pdf_transformations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -194,12 +194,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../statistics.html">15. Metodi per la statistica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="descriptive.html">16. Statistica descrittiva</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="probability.html">17. Introduzione alla probabilità</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">17.1. Variabili casuali</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="random_variables.html">17.1. Variabili casuali</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="random_variables_definition.html">17.1.1. Definizione di variabile casuale</a></li>
 <li class="toctree-l3"><a class="reference internal" href="random_variables_discrete.html">17.1.2. Variabili casuali discrete</a></li>
 <li class="toctree-l3"><a class="reference internal" href="random_variables_continuous.html">17.1.3. Variabili casuali continue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rv_pdf_transformations.html">17.1.4. Trasformazione di probabilità di densità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pfun_discrete_examples.html">17.1.5. Esempi di funzioni di probabilità discreta</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">17.1.5. Esempi di funzioni di probabilità discreta</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pfun_continuous_examples.html">17.1.6. Esempi di funzioni di probabilità continua</a></li>
 <li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.7. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.8. Campionamento</a></li>
@@ -303,7 +303,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-programming-hs/blob/master/ch/statistics/random_variables.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-programming-hs/blob/master/ch/statistics/pfun_discrete_examples.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -351,7 +351,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/statistics/random_variables.ipynb" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/edit/master/ch/statistics/pfun_discrete_examples.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -368,7 +368,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/statistics/random_variables.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-programming-hs/issues/new?title=Issue%20on%20page%20%2Fch/statistics/pfun_discrete_examples.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -398,7 +398,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/statistics/random_variables.ipynb" target="_blank"
+      <li><a href="../../_sources/ch/statistics/pfun_discrete_examples.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -469,7 +469,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -480,11 +482,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Variabili casuali</h1>
+    <h1>Esempi di funzioni di probabilità discreta</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bernoulli">17.1.5.1. Bernoulli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomiale">17.1.5.2. Binomiale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson">17.1.5.3. Poisson</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -494,20 +506,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="variabili-casuali">
-<span id="statistics-hs-random-variables"></span><h1><span class="section-number">17.1. </span>Variabili casuali<a class="headerlink" href="#variabili-casuali" title="Permalink to this heading">#</a></h1>
-<p>Qualitativamente, una variabile casuale è una grandezza che può assumere valori diversi come risultato di un fenomeno aleatorio, un fenomeno che non è possibile descrivere accuratamente con delle equazioni deterministiche. <strong>todo</strong> <em>fare esempi: lancio del dado e estrema dipendenza dalle condizioni iniziali, soprattutto con urto; aggiungere simulazione, già presente sul drive</em></p>
-<p><strong>Contenuti.</strong></p>
-<ol class="arabic simple">
-<li><p>Definizione di variabile casuale</p></li>
-<li><p>Varaibili casuali discrete</p></li>
-<li><p>Variabili casuali continue</p></li>
-<li><p>Trasformazione di funzioni di probabilità</p></li>
-<li><p>Funzioni di probabilità comuni</p></li>
-<li><p>Variabili casuali indipendenti e identicamente distribuite</p></li>
-<li><p>Campionamento (<strong>todo</strong> qui o nella parte di statistica inferenziale, stima?)</p></li>
-</ol>
-<div class="toctree-wrapper compound">
+  <div class="tex2jax_ignore mathjax_ignore section" id="esempi-di-funzioni-di-probabilita-discreta">
+<h1><span class="section-number">17.1.5. </span>Esempi di funzioni di probabilità discreta<a class="headerlink" href="#esempi-di-funzioni-di-probabilita-discreta" title="Permalink to this heading">#</a></h1>
+<div class="section" id="bernoulli">
+<h2><span class="section-number">17.1.5.1. </span>Bernoulli<a class="headerlink" href="#bernoulli" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="binomiale">
+<h2><span class="section-number">17.1.5.2. </span>Binomiale<a class="headerlink" href="#binomiale" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="poisson">
+<h2><span class="section-number">17.1.5.3. </span>Poisson<a class="headerlink" href="#poisson" title="Permalink to this heading">#</a></h2>
 </div>
 </div>
 
@@ -542,20 +550,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="probability.html"
+       href="rv_pdf_transformations.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">17. </span>Introduzione alla probabilità</p>
+        <p class="prev-next-title"><span class="section-number">17.1.4. </span>Trasformazione di probabilità di densità</p>
       </div>
     </a>
     <a class="right-next"
-       href="random_variables_definition.html"
+       href="pfun_continuous_examples.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">17.1.1. </span>Definizione di variabile casuale</p>
+        <p class="prev-next-title"><span class="section-number">17.1.6. </span>Esempi di funzioni di probabilità continua</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -565,6 +573,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bernoulli">17.1.5.1. Bernoulli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomiale">17.1.5.2. Binomiale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson">17.1.5.3. Poisson</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

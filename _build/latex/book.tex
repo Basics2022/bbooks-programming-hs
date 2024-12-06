@@ -87,7 +87,7 @@
         
 
 \title{Introduzione alla programmazione per le scuole superiori}
-\date{04 dic 2024}
+\date{06 dic 2024}
 \release{}
 \author{basics}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -2366,6 +2366,7 @@ Ora, cerchiamo di interpretare questa definizione criptica. Iniziamo dalle cose 
 \sphinxAtStartPar
 Se l’insieme \(E\) dei possibili valori della variabile casuale è un insieme di elementi discreti, si definisce la variabile casuale \sphinxstylestrong{discreta}.
 Se l’insieme \(E\) è invece un insieme di valori continui, come ad esempio un intervallo \(I \subset \mathbb{R}\), la variabile viene definita \sphinxstylestrong{continua}.
+Le variabili casuali possono essere \sphinxstylestrong{numeriche} o \sphinxstylestrong{categoriali}: le variabili casuali numeriche hanno valori numerici, quelle categoriali possono essere identificate da etichette: ad esempio, una variabile \(X\) che rappresenta il mezzo preferito di locomozione con valori nell’insieme \(\{ \text{piedi}, \text{bici}, \text{treno}, \text{auto}, \text{altro} \}\) è una variabile categoriale. Le variabili categoriali possono essere o non essere ordinabili; se non sono numeriche, non è possibile compiere operazioni numeriche su di esse.
 
 \sphinxAtStartPar
 Continuiamo con gli altri oggetti meno immediati:
@@ -2418,7 +2419,7 @@ Spieghiamoci peggio con due esempi.
 \paragraph{Esempio 1. Lancio dado non truccato, con variabile casuale corrispondente al valore della faccia}
 \label{\detokenize{ch/statistics/random_variables_definition:esempio-1-lancio-dado-non-truccato-con-variabile-casuale-corrispondente-al-valore-della-faccia}}
 \sphinxAtStartPar
-Viene lanciato un dato a 6 facce non truccato. Questo corrisponde a un insieme degli eventi costituito da i 6 eventi distinti \(E = \{ \text{faccia 1}, \dots, \text{faccia 6} \}\), e ognuno di questi 6 eventi ha una misura di probabilità uguale a \(\nu(\text{faccia 1}) = \dots = \nu(\text{faccia 6}) = \frac{1}{6}\). Si sceglie come variabile casuale la variabile casuale (la funzione) che associa al numero letto sulla faccia lo stesso numero, \(X: \Omega \rightarrow E\), \(X(\text{faccia n}) = n\). Si vogliono ora analizzare le probabilità associate ai seguenti eventi:
+Viene lanciato un dato a 6 facce non truccato. Questo corrisponde a un insieme degli eventi costituito da i 6 eventi distinti \(\Omega = \{ \text{faccia 1}, \dots, \text{faccia 6} \}\), e ognuno di questi 6 eventi ha una misura di probabilità uguale a \(\nu(\text{faccia 1}) = \dots = \nu(\text{faccia 6}) = \frac{1}{6}\). Si sceglie come variabile casuale la funzione che associa al numero letto sulla faccia lo stesso numero, \(X: \Omega \rightarrow E\), \(X(\text{faccia n}) = n\). Si vogliono ora analizzare le probabilità associate ai seguenti eventi:
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -2480,8 +2481,10 @@ il massimo divisore diverso del numero sulla faccia, diverso dal numero stesso
 
 \subsection{Variabili casuali discrete}
 \label{\detokenize{ch/statistics/random_variables_discrete:variabili-casuali-discrete}}\label{\detokenize{ch/statistics/random_variables_discrete:statistics-hs-random-variables-discrete}}\label{\detokenize{ch/statistics/random_variables_discrete::doc}}
+
+\subsubsection{Funzione di probabilità}
+\label{\detokenize{ch/statistics/random_variables_discrete:funzione-di-probabilita}}
 \sphinxAtStartPar
-\sphinxstylestrong{Funzione di probabilità}.
 La funzione di probabilità, \(p_X(x)\), o funzione di massa, o \sphinxstyleemphasis{densità di probabilità} con un abuso per analogia con le variabili continue, è la funzione che associa la probabilità al valore \(x\) della variabile casuale \(X\). Data al variabile casuale \(X: \Omega \rightarrow E\), la proababilità del valore discreto \(x \in E\) è data dalla somma delle probabilità degli eventi disgiunti \(\Omega_x := \{ \omega \in \Omega \, | \, X(\omega) = x \}\) che producono il valore \(x\),
 \begin{equation*}
 \begin{split}p_X(x) = \sum_{\omega_i \in \Omega_x} \nu(\omega_i) \ .\end{split}
@@ -2502,6 +2505,31 @@ La funzione di probabilità, \(p_X(x)\), o funzione di massa, o \sphinxstyleemph
 \sphinxAtStartPar
 E da queste due proprietà segue che la probabilità del singolo valore è non superiore a 1, \(p(x_k) \le 1\).
 
+
+\subsubsection{Esempi di variabili discrete}
+\label{\detokenize{ch/statistics/random_variables_discrete:esempi-di-variabili-discrete}}
+\sphinxAtStartPar
+Si anticipano qui alcuni {\hyperref[\detokenize{ch/statistics::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{esempi di variabili casuali discrete}}}}, rapprestandone la loro distribuzione di probabilità: la distribuzione di Bernoulli, la distribuzione binomiale, e la distribuzione di Poisson. La distribuzione di \sphinxstylestrong{Bernoulli} può rappresentare la probabilità che il lancio di una moneta dia testa:\(0\) o croce:\(1\), la distribuzione \sphinxstylestrong{binomiale} può rappresentare la probabilità di ottenere \(x\) volte croce in \(n\) lanci; la distribuzione di \sphinxstylestrong{Poisson} viene usata per rappresentare eventi discreti rari, dei quali si conosce la media \(\lambda\).
+
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{136305ea5229770747aff0206d802d1741ac2f86b63e9a3f3e88b2377b482e71}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}
+\begin{sphinxuseclass}{tag_hide-output}
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+
+\subsubsection{Momenti}
+\label{\detokenize{ch/statistics/random_variables_discrete:momenti}}
 \sphinxAtStartPar
 \sphinxstylestrong{Valore medio.} Il valore medio di una variabile casuale è la media dei valori possibili \(x_k \in E\) pesata della probabilità \(p(x_k)\),
 \begin{equation*}
@@ -2523,6 +2551,25 @@ equivalente alla media dei valori della variabile \(X(\omega_i)\) pesata sulle p
 \sphinxAtStartPar
 Analogamente a quanto fatto per il valore medio, anche questa media può essere riferita sia ai valori sia agli eventi.
 
+\sphinxAtStartPar
+La \sphinxstylestrong{variazione standard} è definita come la radice quadra della varianza. A differenza della varianza, è una grandezza \sphinxstyleemphasis{omogenea} \sphinxstylestrong{(!)} alla variabile casuale: ad esempio, la media di una misura di lunghezza può essere \(2 \, m\) con deviazione standard \(0.1 \, m\), mentre la varianza è \(0.01 \, m^2\).
+
+\sphinxAtStartPar
+Di seguito vengono mostrati il valore medio e la deviazione standard \sphinxhyphen{} rappresentata qui come un intervallo centrato attorno alla media, anche se questa rappresentazione può essere ingannevole \sphinxstylestrong{(!)} per distribuzioni di probabilità non simmetriche \sphinxhyphen{} delle variabili casuali presentate in precedenza. In seguito, verrà introdotto il concetto di \sphinxstyleemphasis{intervallo di confidenza}. \sphinxstylestrong{todo} \sphinxstyleemphasis{riferimento?}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Oss.} Nonostante siano rappresentati in tutto il grafico, si deve pensare alla media come un valore sull’asse \(x\) dei valori della variabile casuale, e la deviazione standard come un intervallo sullo stesso asse \(x\), ricordando le osservazioni fatte in precedenza sulla rappresentazione della deviazione standard.
+
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{f7ed6c19b2a60b6d9381613feced82dc7fa26d4847689119ed6079dbd6baded8}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
 
 
 
@@ -2698,25 +2745,33 @@ In termini di correlazione, \(R_X^2 = \sigma_X^2 + E[X]^2\),
 \sphinxstepscope
 
 
-\subsection{Esempi di funzioni densità di probabilità}
-\label{\detokenize{ch/statistics/rv_pdf_examples:esempi-di-funzioni-densita-di-probabilita}}\label{\detokenize{ch/statistics/rv_pdf_examples::doc}}
+\subsection{Esempi di funzioni di probabilità discreta}
+\label{\detokenize{ch/statistics/pfun_discrete_examples:esempi-di-funzioni-di-probabilita-discreta}}\label{\detokenize{ch/statistics/pfun_discrete_examples::doc}}
 
-\subsubsection{Variabili casuali discrete}
-\label{\detokenize{ch/statistics/rv_pdf_examples:variabili-casuali-discrete}}
+\subsubsection{Bernoulli}
+\label{\detokenize{ch/statistics/pfun_discrete_examples:bernoulli}}
 
-\subsubsection{Variabili casuali continue}
-\label{\detokenize{ch/statistics/rv_pdf_examples:variabili-casuali-continue}}
+\subsubsection{Binomiale}
+\label{\detokenize{ch/statistics/pfun_discrete_examples:binomiale}}
 
-\paragraph{Distribuzione gaussiana o normale, \protect\(\mathscr{N}\protect\)}
-\label{\detokenize{ch/statistics/rv_pdf_examples:distribuzione-gaussiana-o-normale-mathscr-n}}
+\subsubsection{Poisson}
+\label{\detokenize{ch/statistics/pfun_discrete_examples:poisson}}
+\sphinxstepscope
+
+
+\subsection{Esempi di funzioni di probabilità continua}
+\label{\detokenize{ch/statistics/pfun_continuous_examples:esempi-di-funzioni-di-probabilita-continua}}\label{\detokenize{ch/statistics/pfun_continuous_examples::doc}}
+
+\subsubsection{Distribuzione gaussiana o normale, \protect\(\mathscr{N}\protect\)}
+\label{\detokenize{ch/statistics/pfun_continuous_examples:distribuzione-gaussiana-o-normale-mathscr-n}}
 \sphinxAtStartPar
 \(\mathscr{N}(\mu, \sigma^2)\)
 \begin{equation*}
 \begin{split}f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \ \sim \ e^{-\frac{(x-\mu)^2}{2\sigma^2}}\end{split}
 \end{equation*}
 
-\paragraph{Distribuzione chi\sphinxhyphen{}quadrato, \protect\(\chi^2\protect\)}
-\label{\detokenize{ch/statistics/rv_pdf_examples:distribuzione-chi-quadrato-chi-2}}
+\subsubsection{Distribuzione chi\sphinxhyphen{}quadrato, \protect\(\chi^2\protect\)}
+\label{\detokenize{ch/statistics/pfun_continuous_examples:distribuzione-chi-quadrato-chi-2}}
 \sphinxAtStartPar
 Date \(n\) variabili casuali \(X_k\) indipendenti con distribuzione normale \(\mathscr{N}(0,1)\), la somma dei loro quadrati,
 \begin{equation*}
@@ -2728,8 +2783,8 @@ Date \(n\) variabili casuali \(X_k\) indipendenti con distribuzione normale \(\m
 \begin{split}f(x) = \frac{1}{2^{\frac{n}{2}} \Gamma\left(\frac{n}{2}\right)} \, x^{\frac{n}{2}-1} \, e^{-\frac{x}{2}} \ \sim \ x^{\frac{n}{2}-1} \, e^{-\frac{n}{2}}\end{split}
 \end{equation*}
 
-\paragraph{Distribuzione \protect\(t\protect\)\sphinxhyphen{}Student}
-\label{\detokenize{ch/statistics/rv_pdf_examples:distribuzione-t-student}}
+\subsubsection{Distribuzione \protect\(t\protect\)\sphinxhyphen{}Student}
+\label{\detokenize{ch/statistics/pfun_continuous_examples:distribuzione-t-student}}
 \sphinxAtStartPar
 La \(t\) di Student è la distribuzione di probabilità che governa il rapporto tra due variabili casuali indipendenti,
 \begin{equation*}
@@ -2741,8 +2796,8 @@ con il numeratore con distribuzione normale, \(Z \sim \mathscr{N}(0,1)\), e il d
 \begin{split}f(x) = \frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{n \, \pi} \, \Gamma\left(\frac{n}{2}\right)} \left( 1 + \frac{x^2}{n} \right)^{-\frac{n + 1}{2}} \ \sim \ \left( 1 + \frac{x^2}{n} \right)^{-\frac{n + 1}{2}} \ .\end{split}
 \end{equation*}
 
-\subparagraph{Distrubuzione gaussiana come limite della distribuzione \protect\(t\protect\)\sphinxhyphen{}Student}
-\label{\detokenize{ch/statistics/rv_pdf_examples:distrubuzione-gaussiana-come-limite-della-distribuzione-t-student}}
+\paragraph{Distrubuzione gaussiana come limite della distribuzione \protect\(t\protect\)\sphinxhyphen{}Student}
+\label{\detokenize{ch/statistics/pfun_continuous_examples:distrubuzione-gaussiana-come-limite-della-distribuzione-t-student}}
 \sphinxAtStartPar
 Ricordandosi la definizione di \(e^x\) come limite della successione \(\lim_{n \rightarrow \infty} \left( 1 + \frac{x}{n} \right)^n =: e^x\), e usando l’approssimazione asintotica per \(n \rightarrow \infty\) della funzione Gamma \(\Gamma(n+\alpha) \sim \Gamma(n)n^{\alpha}\), si può dimostrare che
 \begin{equation*}
