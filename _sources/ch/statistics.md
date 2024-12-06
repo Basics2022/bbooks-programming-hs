@@ -10,10 +10,11 @@ I contenuti seguono l'ordine logico di un approccio alla statistica: dopo aver i
 -->
 
 `````{only} html
+**Contenuti.**
 
 ````{dropdown} [Statistica descrittiva](statistics-hs:descriptive)
 ````
-````{dropdown} Teoria della probabilità
+````{dropdown} [Teoria della probabilità](statistics-hs:probability)
 ```{dropdown} [Teoria della probabilità: variabili casuali](statistics-hs:random-variables)
 ```
 ```{dropdown} [Teoria della probabilità: processi casuali](statistics-hs:random-processes)
