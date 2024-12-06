@@ -72,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="17.1.5. Esempi di funzioni densità di probabilità" href="rv_pdf_examples.html" />
+    <link rel="next" title="17.1.5. Esempi di funzioni di probabilità discreta" href="pfun_discrete_examples.html" />
     <link rel="prev" title="17.1.3. Variabili casuali continue" href="random_variables_continuous.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
@@ -201,9 +201,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="random_variables_discrete.html">17.1.2. Variabili casuali discrete</a></li>
 <li class="toctree-l3"><a class="reference internal" href="random_variables_continuous.html">17.1.3. Variabili casuali continue</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">17.1.4. Trasformazione di probabilità di densità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rv_pdf_examples.html">17.1.5. Esempi di funzioni densità di probabilità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.6. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.7. Campionamento</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pfun_discrete_examples.html">17.1.5. Esempi di funzioni di probabilità discreta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pfun_continuous_examples.html">17.1.6. Esempi di funzioni di probabilità continua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="iid.html">17.1.7. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sampling.html">17.1.8. Campionamento</a></li>
 
 
 </ul>
@@ -497,14 +498,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-di-variabile">17.1.4.1.1. Cambio di variabile</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traslazione">17.1.4.1.1.1. Traslazione</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scalatura">17.1.4.1.1.2. Scalatura</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trasformazione-affine">17.1.4.1.1.3. Trasformazione affine</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-variabile">17.1.4.2. Multi-variabile</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinazione-di-variabili">17.1.4.2.1. Combinazione di variabili</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somma">17.1.4.2.1.1. Somma</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prodotto">17.1.4.2.1.2. Prodotto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-di-variabili">17.1.4.2.1. Cambio di variabili</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinazione-di-variabili">17.1.4.2.2. Combinazione di variabili</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somma">17.1.4.2.2.1. Somma</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prodotto">17.1.4.2.2.2. Prodotto</a></li>
 </ul>
 </li>
 </ul>
@@ -528,28 +531,172 @@ document.write(`
 <h3><span class="section-number">17.1.4.1.1. </span>Cambio di variabile<a class="headerlink" href="#cambio-di-variabile" title="Permalink to this heading">#</a></h3>
 <div class="section" id="traslazione">
 <h4><span class="section-number">17.1.4.1.1.1. </span>Traslazione<a class="headerlink" href="#traslazione" title="Permalink to this heading">#</a></h4>
+<p>Data la variabile casuale <span class="math notranslate nohighlight">\(X\)</span> con distribuzione di probabilità <span class="math notranslate nohighlight">\(f_X(x)\)</span> nota, la variabile casuale</p>
+<div class="math notranslate nohighlight">
+\[Y = X + a\]</div>
+<p>ha funzione di probabilità</p>
+<div class="math notranslate nohighlight">
+\[f_Y(x+a) = f_X(x) \ .\]</div>
+<p>Tra la media e la varianza delle due variabili casuali valgono le relazioni</p>
+<div class="math notranslate nohighlight">
+\[\mu_Y = \mu_X + a \qquad , \qquad \sigma^2_Y = \sigma^2_X \ .\]</div>
+<p>La dimostrazione è lasciata come esercizio.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Dimostrazione.<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">La probabilità che la variabile <span class="math notranslate nohighlight">\(Y = X + a\)</span> abbia valore <span class="math notranslate nohighlight">\(y = x + a \in [ y_0, y_0 + dy ]\)</span>, è uguale alla probabilità che l’evento <span class="math notranslate nohighlight">\(X\)</span> abbia valore <span class="math notranslate nohighlight">\(x \in [x_0, x_0 + dx]\)</span>, con <span class="math notranslate nohighlight">\(x_0 = y_0 - a\)</span> e <span class="math notranslate nohighlight">\(dy = dx\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  P(Y \in [y_0, y_0 + dy]) &amp; = P(X + a \in [y_0, y_0 + dy]) = \\
+  &amp; = P(X \in [y_0 - a, y_0 - a + dy]) = \\
+  &amp; = P(X \in [x_0, x_0 + dx])
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Per la definizione di densità di probabilità,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  P(Y \in [y_0, y_0 + dy]) &amp; = \int_{y=y_0}^{y_0 + dy} f_Y(y) \, dy =  &amp; y_0 = x_0 + a \\
+  &amp; = \int_{y=x_0+a}^{x_0 + a + dx} f_Y(y) \, dy = &amp; x = y - a, \ dy = dx \\
+  &amp; = \int_{x=x_0}^{x_0+dx} f_Y(x-a) \, dx \\
+  P(X \in [x_0, x_0 + dx]) &amp; = \int_{x=x_0}^{x_0+dx} f_X(x) \, dx
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">dal confronto tra i due termini, e dall’arbitrarietà di <span class="math notranslate nohighlight">\(x_0\)</span> e <span class="math notranslate nohighlight">\(dx\)</span>, si ottiene <span class="math notranslate nohighlight">\(f_{X}(x) = f_Y(x-a)\)</span>.</p>
 </div>
+</details></div>
 <div class="section" id="scalatura">
 <h4><span class="section-number">17.1.4.1.1.2. </span>Scalatura<a class="headerlink" href="#scalatura" title="Permalink to this heading">#</a></h4>
+<p>Data la variabile casuale <span class="math notranslate nohighlight">\(X\)</span> con distribuzione di probabilità <span class="math notranslate nohighlight">\(f_X(x)\)</span> nota, la variabile casuale</p>
+<div class="math notranslate nohighlight">
+\[Y = \frac{X}{a}\]</div>
+<p>ha funzione di probabilità</p>
+<div class="math notranslate nohighlight">
+\[f_Y\left( \frac{x}{a} \right) = a f_X(x)\]</div>
+<p>Tra la media e la varianza delle due variabili casuali valgono le relazioni</p>
+<div class="math notranslate nohighlight">
+\[\mu_Y = \frac{\mu_X}{a} \qquad , \qquad \sigma^2_Y = \frac{\sigma^2_X}{a^2} \ .\]</div>
+<p>La dimostrazione è lasciata come esercizio.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Dimostrazione.<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">La probabilità che la variabile <span class="math notranslate nohighlight">\(Y = \frac{X}{a}\)</span> abbia valore <span class="math notranslate nohighlight">\(y = \frac{x}{a} \in [ y_0, y_0 + dy ]\)</span>, è uguale alla probabilità che l’evento <span class="math notranslate nohighlight">\(X\)</span> abbia valore <span class="math notranslate nohighlight">\(x \in [x_0, x_0 + dx]\)</span>, con <span class="math notranslate nohighlight">\(x_0 = a y_0\)</span> e <span class="math notranslate nohighlight">\(dy = a dx\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  P(Y \in [y_0, y_0 + dy]) &amp; = P\left( \frac{X}{a} \in [y_0, y_0 + dy]\right) = \\
+  &amp; = P(X \in [a y_0, a y_0 + a dy]) = \\
+  &amp; = P(X \in [x_0, x_0 + dx])
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Per la definizione di densità di probabilità,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  P(Y \in [y_0, y_0 + dy]) &amp; = \int_{y=y_0}^{y_0 + dy} f_Y(y) \, dy =  &amp; y_0 = \frac{x_0}{a} \\
+  &amp; = \int_{y=a \, x_0}^{a x_0 + a dx} f_Y(y) \, dy = &amp; y = \frac{x}{a}, \ dy = \frac{dx}{a} \\
+  &amp; = \frac{1}{a} \int_{x=x_0}^{x_0+dx} f_Y\left( \frac{x}{a} \right) \, dx \\
+  P(X \in [x_0, x_0 + dx]) &amp; = \int_{x=x_0}^{x_0+dx} f_X(x) \, dx
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">dal confronto tra i due termini, e dall’arbitrarietà di <span class="math notranslate nohighlight">\(x_0\)</span> e <span class="math notranslate nohighlight">\(dx\)</span>, si ottiene <span class="math notranslate nohighlight">\(f_{X}(x) = \frac{1}{a} f_Y\left(\frac{x}{a}\right)\)</span>.</p>
+</div>
+</details></div>
+<div class="section" id="trasformazione-affine">
+<h4><span class="section-number">17.1.4.1.1.3. </span>Trasformazione affine<a class="headerlink" href="#trasformazione-affine" title="Permalink to this heading">#</a></h4>
+<p>Combinando la traslazione e la scalatura, si ottiene la più generale trasformazione affine</p>
+<div class="math notranslate nohighlight">
+\[X = \frac{Y - y_0}{a} \ ,\]</div>
+<p>usata spesso come <strong>scalatura</strong> delle variabili nel <em>preprocessing</em>. <strong>todo</strong> <em>riferimento a scalatura di variabili su valori significativi del problema, per bilanciare il problema e lavorare con variabili non-dimensionali significatie con lo stesso ordine di grandezza</em> <strong>(!!!)</strong></p>
+<p>Tra la media e la varianza delle due variabili casuali valgono le relazioni</p>
+<div class="math notranslate nohighlight">
+\[\mu_X = \frac{\mu_Y - y_0}{a} \qquad , \qquad \sigma^2_X = \frac{\sigma^2_Y}{a^2} \ .\]</div>
+<p>La dimostrazione è lasciata come esercizio.</p>
+<p>Le tre trasformazione discusse vengono applicate alla <a class="reference internal" href="pfun_continuous_examples.html#statistics-hs-random-variables-continuous-examples-norm"><span class="std std-ref">variabile normale</span></a> <span class="math notranslate nohighlight">\(X \sim N(x; \mu=0, \sigma^2=1)\)</span>. In particolare si mostrano gli effetti delle trasformazioni: 1. <span class="math notranslate nohighlight">\(X = Y + 1\)</span>; 2. <span class="math notranslate nohighlight">\(X = 2 Y\)</span>; 3. <span class="math notranslate nohighlight">\(X = 2 (Y - 1)\)</span></p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reset</span> -f
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="c1"># Define parameters for the distributions</span>
+<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span>                <span class="c1"># Property of Gaussian</span>
+<span class="n">a_transl</span><span class="p">,</span> <span class="n">a_scale</span>  <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span>
+
+<span class="n">transl_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="n">a_transl</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">a_transl</span> <span class="p">])</span>
+<span class="n">scale_v</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">a_scale</span><span class="p">,</span> <span class="n">a_scale</span> <span class="p">])</span>
+<span class="n">mu_v</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">+</span> <span class="n">transl_v</span>
+<span class="n">sigma_v</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">/</span> <span class="n">scale_v</span>
+
+<span class="c1"># Create x values for the distributions</span>
+<span class="n">x0_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">4.</span><span class="p">,</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">.05</span><span class="p">)</span>
+<span class="n">p0_norm</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x0_plot</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma</span><span class="p">)</span>
+
+<span class="n">xv_plot</span><span class="p">,</span> <span class="n">pv_norm</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">transl_v</span><span class="p">)):</span>
+    <span class="n">xv_plot</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">x0_plot</span> <span class="o">/</span> <span class="n">scale_v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">transl_v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">]</span>
+    <span class="n">pv_norm</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x0_plot</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">mu_v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma_v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">]</span>
+    
+<span class="c1"># Create subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Plot</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">transl_v</span><span class="p">)):</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0_plot</span><span class="p">,</span> <span class="n">p0_norm</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;N(x; 0,1)&quot;</span><span class="p">)</span> <span class="c1">#</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xv_plot</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">p0_norm</span><span class="o">*</span><span class="n">scale_v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0_plot</span><span class="p">,</span> <span class="n">pv_norm</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;pdf&quot;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Adjust layout</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/b979d130b13a7df3f58aa944dc788534c1c3dde6bf5c228f935d64593ba45e9f.png" src="../../_images/b979d130b13a7df3f58aa944dc788534c1c3dde6bf5c228f935d64593ba45e9f.png" />
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="section" id="multi-variabile">
 <h2><span class="section-number">17.1.4.2. </span>Multi-variabile<a class="headerlink" href="#multi-variabile" title="Permalink to this heading">#</a></h2>
+<div class="section" id="cambio-di-variabili">
+<h3><span class="section-number">17.1.4.2.1. </span>Cambio di variabili<a class="headerlink" href="#cambio-di-variabili" title="Permalink to this heading">#</a></h3>
+</div>
 <div class="section" id="combinazione-di-variabili">
-<h3><span class="section-number">17.1.4.2.1. </span>Combinazione di variabili<a class="headerlink" href="#combinazione-di-variabili" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.4.2.2. </span>Combinazione di variabili<a class="headerlink" href="#combinazione-di-variabili" title="Permalink to this heading">#</a></h3>
 <div class="section" id="somma">
-<h4><span class="section-number">17.1.4.2.1.1. </span>Somma<a class="headerlink" href="#somma" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">17.1.4.2.2.1. </span>Somma<a class="headerlink" href="#somma" title="Permalink to this heading">#</a></h4>
 <p>Date due variabili casuali <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, con probabilità congiunta <span class="math notranslate nohighlight">\(p_{XY}(x,y)\)</span>, la loro somma <span class="math notranslate nohighlight">\(Z = X + Y\)</span> è una variabile casuale dipendente con distribuzione di probabilità</p>
 <div class="math notranslate nohighlight">
 \[p(z) = \int_y p_{XY}(z-y,y) \, dy = \int_{x} p_{XY}(x, z-x) \, dx \ .\]</div>
 <p>Se le due variabili sono tra di loro <em>statisticamente indipendenti</em>, la densità di probabilità congiunta è uguale al prodotto delle densità di probabilità delle singole variabili, <span class="math notranslate nohighlight">\(p_{XY}(x,y) = p_X(x) p_Y(y)\)</span>, e quindi la densità di probabilità della somma è uguale alla <strong>convoluzione</strong> tra le densità di probabilità delle due variabili,</p>
 <div class="math notranslate nohighlight">
 \[p(z) = \int_y p_{X}(z-y) \, p_{Y}(y) \, dy \ .\]</div>
-<p>Il <strong>valore atteso</strong> della somma è quindi</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Valore atteso<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Il <strong>valore atteso</strong> della somma è quindi</p>
 <div class="math notranslate nohighlight">
 \[E[Z] = \int_z z \, p(z) \, dz = \int_{y,z} z \, p_{XY}(z-y,y) \, dy \, dz =  \int_{x,y} (x+y) \, p_{XY}(x,y) \, dx \, dy \ , \]</div>
-<p>e, nel caso in cui le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
+<p class="sd-card-text">e, nel caso in cui le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   E[Z]
@@ -557,14 +704,22 @@ document.write(`
   &amp; = \int_{x,y} x \, p_X(x) \, p_Y(y) \, dx \, dy + \int_{x,y} y \, p_X(x) \, p_Y(y) \, dx \, dy = \\
   &amp; = \int_x x \, p_X(x) \, dx + \int_y y \, p_Y(y) \, dy = E[X] + E[Y] \ .
 \end{aligned}\end{split}\]</div>
-<p>La <strong>varianza</strong> della somma è</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Varianza<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">La <strong>varianza</strong> della somma è</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
   \sigma_Z^2 = E\left[(Z - E[Z])^2\right] 
   = E\left[Z^2\right] - E[Z]^2
   = \int_z z^2 p(z) \, dz - E[Z]^2
 \end{aligned}\]</div>
-<p>e nel caso le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
+<p class="sd-card-text">e nel caso le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   \sigma_Z^2 
@@ -575,28 +730,49 @@ document.write(`
   &amp; = \sigma_X^2 + \sigma_Y^2 \ .
 \end{aligned}\end{split}\]</div>
 </div>
+</details></div>
 <div class="section" id="prodotto">
-<h4><span class="section-number">17.1.4.2.1.2. </span>Prodotto<a class="headerlink" href="#prodotto" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">17.1.4.2.2.2. </span>Prodotto<a class="headerlink" href="#prodotto" title="Permalink to this heading">#</a></h4>
 <p>Date due variabili casuali <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> con probabilità congiunta <span class="math notranslate nohighlight">\(p_{XY}(x,y)\)</span>, il loro prodotto <span class="math notranslate nohighlight">\(Z = X \cdot Y\)</span> è una variabile casuale dipendente con distribuzione di probabilità</p>
 <div class="math notranslate nohighlight">
 \[p(z) = \int_{y} p_{XY} \left(\frac{z}{y}, y \right) \, dy = \int_{x} p_{XY} \left(x, \frac{z}{x} \right) \, dx\]</div>
-<p>Se le due variabili sono <em>statisticamente indipendenti</em>,…<strong>todo</strong></p>
-<p>Il <strong>valore atteso</strong> del prodotto è</p>
+<p>Se le due variabili sono <em>statisticamente indipendenti</em></p>
+<div class="math notranslate nohighlight">
+\[p(z) = \int_x p_X(x) \, p_Y\left( \frac{z}{x} \right) \, dx\]</div>
+<p>(<strong>todo</strong> <em>ha qualche uso questa formula? Si ritrova la convoluzione con il cambio di variabili <span class="math notranslate nohighlight">\(z=e^v\)</span>, <span class="math notranslate nohighlight">\(x=e^u\)</span></em>)</p>
+<!--
+$$p(e^v) = \int_u p_X(e^u) \, p_Y\left( e^{v-u} \right) e^u \, du$$
+--><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Valore atteso<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Il <strong>valore atteso</strong> del prodotto è</p>
 <div class="math notranslate nohighlight">
 \[E[Z] = \int_z z \, p(z) \, dz = \int_{y,z} z \, p_{XY}\left(\frac{z}{y},y\right) \, dy \, dz =  \int_{x,y} x y \, p_{XY}(x,y) \, dx \, dy \ , \]</div>
-<p>e, nel caso in cui le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
+<p class="sd-card-text">e, nel caso in cui le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   E[Z]
   &amp; = \int_{x,y} x y \, p_X(x) \, p_Y(y) \, dx \, dy = \\
   &amp; = \int_{x} x \, p_X(x) \, dx \cdot \int_y y \, p_Y(y) \, dy = E[X] \cdot E[Y] \ .
 \end{aligned}\end{split}\]</div>
-<p>La <strong>varianza</strong> del prodotto è</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Varianza<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">La <strong>varianza</strong> del prodotto è</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
   \sigma_Z^2 = ...
 \end{aligned}\]</div>
-<p>e nel caso le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
+<p class="sd-card-text">e nel caso le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   \sigma_Z^2 
@@ -605,10 +781,11 @@ document.write(`
   &amp; = \left( \sigma_X^2 + E[X]^2 \right)\left( \sigma_Y^2 + E[Y]^2 \right) - E[X]^2 \, E[Y]^2 = \\
   &amp; = \sigma_X^2 \, \sigma_Y^2 + \sigma_X^2 \, E[Y]^2 + \sigma_Y^2 \, E[X]^2
 \end{aligned}\end{split}\]</div>
-<p>In termini di correlazione, <span class="math notranslate nohighlight">\(R_X^2 = \sigma_X^2 + E[X]^2\)</span>,</p>
+<p class="sd-card-text">In termini di correlazione, <span class="math notranslate nohighlight">\(R_X^2 = \sigma_X^2 + E[X]^2\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[R_Z^2 = R_X^2 \, R_Y^2 \ .\]</div>
 </div>
+</details></div>
 </div>
 </div>
 </div>
@@ -653,11 +830,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="rv_pdf_examples.html"
+       href="pfun_discrete_examples.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">17.1.5. </span>Esempi di funzioni densità di probabilità</p>
+        <p class="prev-next-title"><span class="section-number">17.1.5. </span>Esempi di funzioni di probabilità discreta</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -680,14 +857,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-di-variabile">17.1.4.1.1. Cambio di variabile</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traslazione">17.1.4.1.1.1. Traslazione</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scalatura">17.1.4.1.1.2. Scalatura</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trasformazione-affine">17.1.4.1.1.3. Trasformazione affine</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-variabile">17.1.4.2. Multi-variabile</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinazione-di-variabili">17.1.4.2.1. Combinazione di variabili</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somma">17.1.4.2.1.1. Somma</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prodotto">17.1.4.2.1.2. Prodotto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-di-variabili">17.1.4.2.1. Cambio di variabili</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinazione-di-variabili">17.1.4.2.2. Combinazione di variabili</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somma">17.1.4.2.2.1. Somma</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prodotto">17.1.4.2.2.2. Prodotto</a></li>
 </ul>
 </li>
 </ul>
