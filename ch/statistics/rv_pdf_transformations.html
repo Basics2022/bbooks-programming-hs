@@ -560,7 +560,16 @@ Dimostrazione.<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><strong>todo</strong></p>
+<p class="sd-card-text">La probabilità che la variabile <span class="math notranslate nohighlight">\(Y = X + a\)</span> abbia valore <span class="math notranslate nohighlight">\(y = x + a \in [ y_0, y_0 + dy ]\)</span>, è uguale alla probabilità che l’evento <span class="math notranslate nohighlight">\(X\)</span> abbia valore <span class="math notranslate nohighlight">\(x \in [x_0, x_0 + dx]\)</span>, con <span class="math notranslate nohighlight">\(x_0 = y_0 - a\)</span> e <span class="math notranslate nohighlight">\(dy = dx\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  P(Y \in [y_0, y_0 + dy]) &amp; = P(X + a \in [y_0, y_0 + dy]) = \\
+  &amp; = P(X \in [y_0 - a, y_0 - a + dy]) = \\
+  &amp; = P(X \in [x_0, x_0 + dx])
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Per la definizione di densità di probabilità,</p>
+<div class="math notranslate nohighlight">
+\[P(Y \in [y_0, y_0 + dy]) = \int_{y=y_0}^{y_0 + dx} f_Y(y) \, dy = \int_{x=x_0}^{x_0 + dx} f_X(x) \, dx\]</div>
 </div>
 </details></div>
 </div>
