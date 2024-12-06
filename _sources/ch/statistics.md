@@ -3,14 +3,12 @@
 
 La statistica si occupa dello studio dei fenomeni in condizioni di incertezza o di non determinismo, determinate da una conoscenza incompleta del modello. 
 
-I contenuti seguono l'ordine logico di un approccio alla statistica: dopo aver introdotto la statistica descrittiva e la rappresnetazione dei dati, vengono fornite delle basi di teoria della probabilità necessarie alla deduzione e alle conclusioni tipiche di un'analisi statistica inferenziale.
-
 <!--
 *Questo può essere dovuto sia all'impossibilità di costruire un modello deterministico, sia alla scarsa praticabilità di un modello deterministico di dimensioni enormi, vedi termodinamica classica vs. meccanica statistica* **todo** *fare riferimento, con esempio*.
 -->
 
 `````{only} html
-**Contenuti.**
+**Contenuti.** I contenuti seguono l'ordine logico di un approccio alla statistica: dopo aver introdotto la statistica descrittiva e la rappresnetazione dei dati, vengono fornite delle basi di teoria della probabilità necessarie alla deduzione e alle conclusioni tipiche di un'analisi statistica inferenziale.
 
 ````{dropdown} [Statistica descrittiva](statistics-hs:descriptive)
 ````
