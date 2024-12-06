@@ -538,10 +538,10 @@ document.write(`
 \[\bar{X} = \frac{1}{N} \sum_{n=1}^N X_n \qquad , \qquad S^2 = \frac{1}{N-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ .\]</div>
 <p><strong>Se</strong> i campioni sono variabili i.i.d. gaussiane, con media <span class="math notranslate nohighlight">\(\mu_0\)</span> sotto l’ipotesi nulla <span class="math notranslate nohighlight">\(H_0\)</span>, <span class="math notranslate nohighlight">\(X_n \sim \mathscr{N}(\mu_0, \sigma_X^2)\)</span>, allora:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\bar{X}\)</span> è una variabile gaussiana con media <span class="math notranslate nohighlight">\(\mu_0\)</span> e varianza <span class="math notranslate nohighlight">\(\frac{\sigma^2}{N}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{X}\)</span> è una variabile gaussiana con media <span class="math notranslate nohighlight">\(\mu_0\)</span> e varianza <span class="math notranslate nohighlight">\(\frac{\sigma^2}{N}\)</span>, quindi <span class="math notranslate nohighlight">\(\bar{X}-\mu_0\)</span> ha media nulla e varianza <span class="math notranslate nohighlight">\(\frac{\sigma^2}{N}\)</span>, e quindi <span class="math notranslate nohighlight">\(\frac{\bar{X}-\mu_0}{\frac{\sigma}{\sqrt{N}}} \sim \mathscr{N}(0,1)\)</span></p></li>
 <li><p>ogni <span class="math notranslate nohighlight">\(X_n - \bar{X}\)</span> è una variabile gaussiana con media nulla e varianza <span class="math notranslate nohighlight">\(\sigma^2 - \frac{1}{N}\sigma^2 = \frac{N-1}{N} \sigma^2\)</span></p></li>
 <li><p>e quindi ogni <span class="math notranslate nohighlight">\(Z_n = \frac{X_n - \bar{X}}{\sqrt{ \frac{N-1}{N} \sigma^2 }}\)</span> è una variabile normale</p></li>
-<li><p>e quindi <span class="math notranslate nohighlight">\(\sum_{n=1}^N Z_n^2 = \frac{\sqrt{N}}{\sigma} \)</span> ha una distribuzione di probabilità <span class="math notranslate nohighlight">\(\chi^2_N\)</span></p></li>
+<li><p>e quindi <span class="math notranslate nohighlight">\(\sum_{n=1}^N Z_n^2 = \frac{N}{\sigma^2} S^2 \)</span> ha una distribuzione di probabilità <span class="math notranslate nohighlight">\(\chi^2_N\)</span></p></li>
 </ul>
 </li>
 <li><p>il numero di gradi di libertà è <span class="math notranslate nohighlight">\(n-1\)</span> <strong>todo</strong></p></li>
