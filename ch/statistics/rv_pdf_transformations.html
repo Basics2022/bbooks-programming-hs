@@ -570,10 +570,12 @@ Dimostrazione.<div class="sd-summary-down docutils">
 <p class="sd-card-text">Per la definizione di densità di probabilità,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-  P(Y \in [y_0, y_0 + dy]) &amp; = \int_{y=y_0}^{y_0 + dy} f_Y(y) \, dy = \\
-  &amp; = \int_{y=x_0+a}^{x_0 + a + dx} f_Y(y) \, dy =  &amp; y_0 = x_0 + a\\
-  &amp; = \int_{x=x_0}^{x_0+dy} f_Y(x-a) \, dx &amp; y = x + a
+  P(Y \in [y_0, y_0 + dy]) &amp; = \int_{y=y_0}^{y_0 + dy} f_Y(y) \, dy =  &amp; y_0 = x_0 + a \\
+  &amp; = \int_{y=x_0+a}^{x_0 + a + dx} f_Y(y) \, dy = &amp; x = y - a, \ dy = dx \\
+  &amp; = \int_{x=x_0}^{x_0+dx} f_Y(x-a) \, dx \\
+  P(X \in [x_0, x_0 + dx]) &amp; = \int_{x=x_0}^{x_0+dx} f_X(x) \, dx
 \end{aligned}\end{split}\]</div>
+<p class="sd-card-text">dal confronto tra i due termini, si ottiene <span class="math notranslate nohighlight">\(f_{X}(x) = f_Y(x-a)\)</span>.</p>
 </div>
 </details></div>
 </div>
