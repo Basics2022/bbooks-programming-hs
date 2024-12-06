@@ -3,11 +3,6 @@
 
 La statistica inferenziale si occupa di stabilire le caratteristiche di una popolazione dall'osservazione di un suo campione, usando gli strumenti del calcolo delle probabilità. 
 <!-- La statistica inferenziale usa gli strumenti del calcolo delle probabilità, per svolgere il compito inverso -->
-Esistono (almeno) due approcci alla statistica inferenziale:
-- l'apporccio classico **frequentista**, 
-- l'approccio **bayesiano**
-
-*Del secondo, ci si limita a dire che usa delle *conoscenze pregresse* sul fenomeno e che è stato reso praticabile dai recenti sviluppi nelle capacità di calcolo a disposizione.* **todo** *aggiungere sezione sull'approccio bayesiano?* **todo** *esempi con variabili discrete di dimensione limitata, senza introdurre i problemi sulle scelte di priori-posteriori*
 
 Tra le applicazioni della statistica inferenziale si possono distinguere due applicazioni principali:
 ````{only} html
@@ -26,9 +21,6 @@ La verifica delle ipotesi è un'attività intimamente connessa al metodo sperime
 
 ```
 ````
-
-**todo** *Scelta modello? Serve una discuterne? Rimandato a ML?*
-
 ````{only} latex
 - [**stima**](statistics-hs:inference:estimate) di parametri di una popolazione, noto un campione di essa:
   - **valori puntuali**, come ad esempio la media o la varianza di una popolazione
@@ -40,6 +32,15 @@ La verifica delle ipotesi è un'attività intimamente connessa al metodo sperime
   - **ri-campionamento** e metodi MC: per valutare $p$-value e intervalli di confidenza test di validità di ipotesi
   - *ipotesi multiple*
 ````
+
+Esistono (almeno) due approcci alla statistica inferenziale:
+- l'apporccio classico **frequentista**, 
+- l'approccio **bayesiano**
+
+*Del secondo, ci si limita a dire che usa delle *conoscenze pregresse* sul fenomeno e che è stato reso praticabile dai recenti sviluppi nelle capacità di calcolo a disposizione.* **todo** *aggiungere sezione sull'approccio bayesiano?* **todo** *esempi con variabili discrete di dimensione limitata, senza introdurre i problemi sulle scelte di priori-posteriori*
+
+**todo** *Scelta modello? Serve una discuterne? Rimandato a ML?*
+
 
 <!--
   - ...
