@@ -503,9 +503,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-variabile">17.1.4.2. Multi-variabile</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinazione-di-variabili">17.1.4.2.1. Combinazione di variabili</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somma">17.1.4.2.1.1. Somma</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prodotto">17.1.4.2.1.2. Prodotto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-di-variabili">17.1.4.2.1. Cambio di variabili</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinazione-di-variabili">17.1.4.2.2. Combinazione di variabili</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somma">17.1.4.2.2.1. Somma</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prodotto">17.1.4.2.2.2. Prodotto</a></li>
 </ul>
 </li>
 </ul>
@@ -597,20 +598,30 @@ Dimostrazione.<div class="sd-summary-down docutils">
 </div>
 <div class="section" id="multi-variabile">
 <h2><span class="section-number">17.1.4.2. </span>Multi-variabile<a class="headerlink" href="#multi-variabile" title="Permalink to this heading">#</a></h2>
+<div class="section" id="cambio-di-variabili">
+<h3><span class="section-number">17.1.4.2.1. </span>Cambio di variabili<a class="headerlink" href="#cambio-di-variabili" title="Permalink to this heading">#</a></h3>
+</div>
 <div class="section" id="combinazione-di-variabili">
-<h3><span class="section-number">17.1.4.2.1. </span>Combinazione di variabili<a class="headerlink" href="#combinazione-di-variabili" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.4.2.2. </span>Combinazione di variabili<a class="headerlink" href="#combinazione-di-variabili" title="Permalink to this heading">#</a></h3>
 <div class="section" id="somma">
-<h4><span class="section-number">17.1.4.2.1.1. </span>Somma<a class="headerlink" href="#somma" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">17.1.4.2.2.1. </span>Somma<a class="headerlink" href="#somma" title="Permalink to this heading">#</a></h4>
 <p>Date due variabili casuali <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span>, con probabilità congiunta <span class="math notranslate nohighlight">\(p_{XY}(x,y)\)</span>, la loro somma <span class="math notranslate nohighlight">\(Z = X + Y\)</span> è una variabile casuale dipendente con distribuzione di probabilità</p>
 <div class="math notranslate nohighlight">
 \[p(z) = \int_y p_{XY}(z-y,y) \, dy = \int_{x} p_{XY}(x, z-x) \, dx \ .\]</div>
 <p>Se le due variabili sono tra di loro <em>statisticamente indipendenti</em>, la densità di probabilità congiunta è uguale al prodotto delle densità di probabilità delle singole variabili, <span class="math notranslate nohighlight">\(p_{XY}(x,y) = p_X(x) p_Y(y)\)</span>, e quindi la densità di probabilità della somma è uguale alla <strong>convoluzione</strong> tra le densità di probabilità delle due variabili,</p>
 <div class="math notranslate nohighlight">
 \[p(z) = \int_y p_{X}(z-y) \, p_{Y}(y) \, dy \ .\]</div>
-<p>Il <strong>valore atteso</strong> della somma è quindi</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Valore atteso<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Il <strong>valore atteso</strong> della somma è quindi</p>
 <div class="math notranslate nohighlight">
 \[E[Z] = \int_z z \, p(z) \, dz = \int_{y,z} z \, p_{XY}(z-y,y) \, dy \, dz =  \int_{x,y} (x+y) \, p_{XY}(x,y) \, dx \, dy \ , \]</div>
-<p>e, nel caso in cui le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
+<p class="sd-card-text">e, nel caso in cui le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   E[Z]
@@ -618,14 +629,22 @@ Dimostrazione.<div class="sd-summary-down docutils">
   &amp; = \int_{x,y} x \, p_X(x) \, p_Y(y) \, dx \, dy + \int_{x,y} y \, p_X(x) \, p_Y(y) \, dx \, dy = \\
   &amp; = \int_x x \, p_X(x) \, dx + \int_y y \, p_Y(y) \, dy = E[X] + E[Y] \ .
 \end{aligned}\end{split}\]</div>
-<p>La <strong>varianza</strong> della somma è</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Varianza<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">La <strong>varianza</strong> della somma è</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
   \sigma_Z^2 = E\left[(Z - E[Z])^2\right] 
   = E\left[Z^2\right] - E[Z]^2
   = \int_z z^2 p(z) \, dz - E[Z]^2
 \end{aligned}\]</div>
-<p>e nel caso le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
+<p class="sd-card-text">e nel caso le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   \sigma_Z^2 
@@ -636,28 +655,44 @@ Dimostrazione.<div class="sd-summary-down docutils">
   &amp; = \sigma_X^2 + \sigma_Y^2 \ .
 \end{aligned}\end{split}\]</div>
 </div>
+</details></div>
 <div class="section" id="prodotto">
-<h4><span class="section-number">17.1.4.2.1.2. </span>Prodotto<a class="headerlink" href="#prodotto" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">17.1.4.2.2.2. </span>Prodotto<a class="headerlink" href="#prodotto" title="Permalink to this heading">#</a></h4>
 <p>Date due variabili casuali <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> con probabilità congiunta <span class="math notranslate nohighlight">\(p_{XY}(x,y)\)</span>, il loro prodotto <span class="math notranslate nohighlight">\(Z = X \cdot Y\)</span> è una variabile casuale dipendente con distribuzione di probabilità</p>
 <div class="math notranslate nohighlight">
 \[p(z) = \int_{y} p_{XY} \left(\frac{z}{y}, y \right) \, dy = \int_{x} p_{XY} \left(x, \frac{z}{x} \right) \, dx\]</div>
 <p>Se le due variabili sono <em>statisticamente indipendenti</em>,…<strong>todo</strong></p>
-<p>Il <strong>valore atteso</strong> del prodotto è</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Valore atteso<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Il <strong>valore atteso</strong> del prodotto è</p>
 <div class="math notranslate nohighlight">
 \[E[Z] = \int_z z \, p(z) \, dz = \int_{y,z} z \, p_{XY}\left(\frac{z}{y},y\right) \, dy \, dz =  \int_{x,y} x y \, p_{XY}(x,y) \, dx \, dy \ , \]</div>
-<p>e, nel caso in cui le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
+<p class="sd-card-text">e, nel caso in cui le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   E[Z]
   &amp; = \int_{x,y} x y \, p_X(x) \, p_Y(y) \, dx \, dy = \\
   &amp; = \int_{x} x \, p_X(x) \, dx \cdot \int_y y \, p_Y(y) \, dy = E[X] \cdot E[Y] \ .
 \end{aligned}\end{split}\]</div>
-<p>La <strong>varianza</strong> del prodotto è</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Varianza<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">La <strong>varianza</strong> del prodotto è</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
   \sigma_Z^2 = ...
 \end{aligned}\]</div>
-<p>e nel caso le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
+<p class="sd-card-text">e nel caso le due variabili siano tra di loro <em>statisticamente indipendenti</em>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   \sigma_Z^2 
@@ -666,10 +701,11 @@ Dimostrazione.<div class="sd-summary-down docutils">
   &amp; = \left( \sigma_X^2 + E[X]^2 \right)\left( \sigma_Y^2 + E[Y]^2 \right) - E[X]^2 \, E[Y]^2 = \\
   &amp; = \sigma_X^2 \, \sigma_Y^2 + \sigma_X^2 \, E[Y]^2 + \sigma_Y^2 \, E[X]^2
 \end{aligned}\end{split}\]</div>
-<p>In termini di correlazione, <span class="math notranslate nohighlight">\(R_X^2 = \sigma_X^2 + E[X]^2\)</span>,</p>
+<p class="sd-card-text">In termini di correlazione, <span class="math notranslate nohighlight">\(R_X^2 = \sigma_X^2 + E[X]^2\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[R_Z^2 = R_X^2 \, R_Y^2 \ .\]</div>
 </div>
+</details></div>
 </div>
 </div>
 </div>
@@ -746,9 +782,10 @@ Dimostrazione.<div class="sd-summary-down docutils">
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-variabile">17.1.4.2. Multi-variabile</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinazione-di-variabili">17.1.4.2.1. Combinazione di variabili</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somma">17.1.4.2.1.1. Somma</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prodotto">17.1.4.2.1.2. Prodotto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-di-variabili">17.1.4.2.1. Cambio di variabili</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combinazione-di-variabili">17.1.4.2.2. Combinazione di variabili</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somma">17.1.4.2.2.1. Somma</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prodotto">17.1.4.2.2.2. Prodotto</a></li>
 </ul>
 </li>
 </ul>
