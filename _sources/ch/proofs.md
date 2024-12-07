@@ -10,12 +10,12 @@ La distinzione da una raccolta di appunti personali potrebbe non essere così de
 ```{dropdown}
 :open:
 
-Date due variabili casuali gaussiane indipendenti, $X_1 \sim \mathscr{N}(\mu_1,\sigma^2_1)$, $X_2 \sim \mathscr{N}(\mu_2, \sigma^2_2)$, si valuta la distribuzione della variabile casuale $X_1 + X_2$
+Date due variabili casuali gaussiane indipendenti, $X_1 \sim \mathscr{N}(\mu_1,\sigma^2_1)$, $X_2 \sim \mathscr{N}(\mu_2, \sigma^2_2)$, si valuta la distribuzione della variabile casuale $X_1 + X_2$. La funzione distribuzione di probabilità congiunta delle due variabili casuali indipendenti è
 
 $$\begin{aligned}
  f_{X_1 X_2}(x_1,x_2)
  & = f_{X_1}(x_1) f_{X_2}(x_2) = \\
- & = \frac{1}{\sqrt{2 \pi  \sigma_1^2}} \exp\left[-\frac{(x_1-\mu_1)}{2 \sigma_1^2} \right] \, \frac{1}{\sqrt{2 \pi  \sigma_2^2}} \exp\left[-\frac{(x_2-\mu_2)}{2 \sigma_2^2} \right] = \\\
+ & = \frac{1}{\sqrt{2 \pi  \sigma_1^2}} \exp\left[-\frac{(x_1-\mu_1)^2}{2 \sigma_1^2} \right] \, \frac{1}{\sqrt{2 \pi  \sigma_2^2}} \exp\left[-\frac{(x_2-\mu_2)^2}{2 \sigma_2^2} \right] = \\\
 \end{aligned}$$
 
 ```
