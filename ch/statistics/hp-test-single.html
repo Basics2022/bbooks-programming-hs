@@ -826,7 +826,14 @@ Experiment: Rigged, nrolls: 1000
 </div>
 </div>
 </div>
-<p><strong>Dipendenza del risultato del test dal numero di prove.</strong></p>
+<p><strong>Dipendenza del risultato del test dal numero di prove.</strong>
+Si analizzano i risultati in funzione del numero di lanci fatti in ogni test. Si osserva che:</p>
+<ul class="simple">
+<li><p>nel caso di dado non truccato la statistica test <span class="math notranslate nohighlight">\(X^2\)</span> non dimostra una convergenza (almeno fino a <span class="math notranslate nohighlight">\(n_{rolls} = 5000\)</span>) ma rimane limitata</p></li>
+<li><p>nel caso di dado truccato, la statistica test <span class="math notranslate nohighlight">\(X^2\)</span> cresce circa linearmnete con il numero di lanci <span class="math notranslate nohighlight">\(n_{rolls}\)</span></p></li>
+</ul>
+<p>Nei <span class="math notranslate nohighlight">\(500\)</span> test svolti, il test ha dato risultati falso positivi nel <span class="math notranslate nohighlight">\(4.8%\)</span> dei casi con <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span> nel caso di dado non truccato (<strong>!</strong> ottimo, poiché il test si proponeva di rigettare proprio il <span class="math notranslate nohighlight">\(5\%\)</span> dei casi estremi), mentre ha riconosciuto il dado truccato come tale quasi tutte le volte.</p>
+<p>Il progetto di un esperimento prevede la determinazione del numero di lanci necessario (senza andare troppo oltre! Tempo, soldi e pazienza sono una risorse finite!) per distinguere con la sufficiente accuratezza un dado truccato.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -835,7 +842,7 @@ Experiment: Rigged, nrolls: 1000
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run several tests with increasing number of rolls</span>
-<span class="n">nrolls_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10001</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">nrolls_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5001</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">ntests</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nrolls_v</span><span class="p">)</span>
 
 <span class="c1"># Initialize arrays to store test statistics value and count n.of rejections</span>
@@ -862,10 +869,12 @@ Experiment: Rigged, nrolls: 1000
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_exp</span><span class="p">):</span>
-    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nrolls_v</span><span class="p">,</span> <span class="n">X2_m</span><span class="p">[:,</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nrolls_v</span><span class="p">,</span> <span class="n">X2_m</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">nrolls_v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nrolls_v</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="mi">2</span><span class="o">*</span><span class="p">[</span><span class="n">X2_rej_lim</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
     <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;n.rolls&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">):</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;test statistics, $X^2$&quot;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Experiment: </span><span class="si">{</span><span class="n">name_l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Statistics about rejection rate</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;N. of rejections of H0, over </span><span class="si">{</span><span class="n">ntests</span><span class="si">}</span><span class="s2"> tests&quot;</span><span class="p">)</span>
@@ -879,12 +888,12 @@ Experiment: Rigged, nrolls: 1000
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N. of rejections of H0, over 991 tests
-- Experiment: Fair      ,    32,  3.2%  (false positive) 
-- Experiment: Rigged    ,   989, 99.8% 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N. of rejections of H0, over 500 tests
+- Experiment: Fair      ,    24,  4.8%  (false positive) 
+- Experiment: Rigged    ,   493, 98.6% 
 </pre></div>
 </div>
-<img alt="../../_images/7289cfc37455d7b676404f76d387470fbdaa0aafe66020545be5de6f3e52b8a5.png" src="../../_images/7289cfc37455d7b676404f76d387470fbdaa0aafe66020545be5de6f3e52b8a5.png" />
+<img alt="../../_images/9ebccc87ce678737aa0d84c01f60c8484cfb74e2a8c3a91eeb8d83d862e13398.png" src="../../_images/9ebccc87ce678737aa0d84c01f60c8484cfb74e2a8c3a91eeb8d83d862e13398.png" />
 </div>
 </div>
 </div>
