@@ -18,7 +18,7 @@ $$t_{\nu} \sim T = \frac{Z}{\sqrt{\frac{V}{\nu}}} \ ,$$
 
 con $Z \sim N(0,1)$ e $V \sim \chi^2_{\nu}$, con $\nu = N-1$. Infatti:
 - la variabile $Z := \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \sim \mathscr{N}(0,1)$
-- la somma $\sum_{n=1}^N \left(\frac{X_n - \bar{X}}{\sigma^2}\right)^2 \sim \chi^2_{N-1}$
+- la somma $V := \sum_{n=1}^N \left(\frac{X_n - \bar{X}}{\sigma^2}\right)^2 \sim \chi^2_{N-1}$
 
 ```
 
