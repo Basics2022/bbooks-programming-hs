@@ -61,6 +61,7 @@ parts:
         - file: ch/statistics/t-test
         - file: ch/statistics/linear_regression
         - file: ch/statistics/anova
+  - file: ch/proofs
 - caption: Introduzione ai metodi in statistica e  AI
   numbered: True
   chapters:

@@ -499,9 +499,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momenti">17.1.2.3. Momenti</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-multi-dimensionali">17.1.2.4. Variabili casuali multi-dimensionali</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilita-congiunta-e-teorema-di-bayes">17.1.2.4.1. Probabilità congiunta e teorema di Bayes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-indipendenti">17.1.2.4.2. Variabili indipendenti</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covarianza">17.1.2.4.3. Covarianza</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione">17.1.2.4.4. Correlazione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-di-bayes">17.1.2.4.2. Teorema di Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-indipendenti">17.1.2.4.3. Variabili indipendenti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covarianza">17.1.2.4.4. Covarianza</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione">17.1.2.4.5. Correlazione</a></li>
 </ul>
 </li>
 </ul>
@@ -735,11 +736,17 @@ document.write(`
 </ul>
 <div class="section" id="probabilita-congiunta-e-teorema-di-bayes">
 <h3><span class="section-number">17.1.2.4.1. </span>Probabilità congiunta e teorema di Bayes<a class="headerlink" href="#probabilita-congiunta-e-teorema-di-bayes" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight" id="equation-eq-joint-prob">
+<span class="eqno">(17.1)<a class="headerlink" href="#equation-eq-joint-prob" title="Permalink a questa equazione">#</a></span>\[p(x,y) = p(x|y)p(y) = p(y|x)p(x)\]</div>
+</div>
+<div class="section" id="teorema-di-bayes">
+<span id="statistics-hs-random-variables-bayes-discrete"></span><h3><span class="section-number">17.1.2.4.2. </span>Teorema di Bayes<a class="headerlink" href="#teorema-di-bayes" title="Permalink to this heading">#</a></h3>
+<p>Dalla formula <a class="reference internal" href="#equation-eq-joint-prob">(17.1)</a> della probabilità congiunta è immediato ricavare l’espressione del teorema di Bayes</p>
 <div class="math notranslate nohighlight">
-\[p(x,y) = p(x|y)p(y) = p(y|x)p(x)\]</div>
+\[p(y|x) = \frac{p(x|y)p(y)}{p(x)} \ .\]</div>
 </div>
 <div class="section" id="variabili-indipendenti">
-<h3><span class="section-number">17.1.2.4.2. </span>Variabili indipendenti<a class="headerlink" href="#variabili-indipendenti" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.2.4.3. </span>Variabili indipendenti<a class="headerlink" href="#variabili-indipendenti" title="Permalink to this heading">#</a></h3>
 <p>Due variabili casuali sono indipendenti se la probabilità condizionale di una variabile coincide con la sua probabilità marginale,</p>
 <div class="math notranslate nohighlight">
 \[p(x|y) = p(x) \ ,\]</div>
@@ -748,12 +755,12 @@ document.write(`
 \[p(x,y) = p(x)p(y) \ .\]</div>
 </div>
 <div class="section" id="covarianza">
-<h3><span class="section-number">17.1.2.4.3. </span>Covarianza<a class="headerlink" href="#covarianza" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.2.4.4. </span>Covarianza<a class="headerlink" href="#covarianza" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\sigma^2_{ij} = E[(X_i-\mu_i)(X_j-\mu_j)] = R_{ij} - \mu_i \mu_j\]</div>
 </div>
 <div class="section" id="correlazione">
-<h3><span class="section-number">17.1.2.4.4. </span>Correlazione<a class="headerlink" href="#correlazione" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">17.1.2.4.5. </span>Correlazione<a class="headerlink" href="#correlazione" title="Permalink to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\rho_{XY} = \frac{E[(X-\mu_X)(Y-\mu_Y)]}{E[(X-\mu_X)^2]^{1/2} \, E[(X-\mu_X)^2]^{1/2}} = \frac{\sigma_{XY}^2}{\sigma_X \, \sigma_Y}\]</div>
 </div>
@@ -828,9 +835,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momenti">17.1.2.3. Momenti</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-casuali-multi-dimensionali">17.1.2.4. Variabili casuali multi-dimensionali</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilita-congiunta-e-teorema-di-bayes">17.1.2.4.1. Probabilità congiunta e teorema di Bayes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-indipendenti">17.1.2.4.2. Variabili indipendenti</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covarianza">17.1.2.4.3. Covarianza</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione">17.1.2.4.4. Correlazione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-di-bayes">17.1.2.4.2. Teorema di Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variabili-indipendenti">17.1.2.4.3. Variabili indipendenti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covarianza">17.1.2.4.4. Covarianza</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlazione">17.1.2.4.5. Correlazione</a></li>
 </ul>
 </li>
 </ul>

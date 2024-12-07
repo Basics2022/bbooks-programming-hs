@@ -201,9 +201,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="statistics/random_variables_discrete.html">17.1.2. Variabili casuali discrete</a></li>
 <li class="toctree-l3"><a class="reference internal" href="statistics/random_variables_continuous.html">17.1.3. Variabili casuali continue</a></li>
 <li class="toctree-l3"><a class="reference internal" href="statistics/rv_pdf_transformations.html">17.1.4. Trasformazione di probabilità di densità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="statistics/rv_pdf_examples.html">17.1.5. Esempi di funzioni densità di probabilità</a></li>
-<li class="toctree-l3"><a class="reference internal" href="statistics/iid.html">17.1.6. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="statistics/sampling.html">17.1.7. Campionamento</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics/pfun_discrete_examples.html">17.1.5. Esempi di funzioni di probabilità discreta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics/pfun_continuous_examples.html">17.1.6. Esempi di funzioni di probabilità continua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics/iid.html">17.1.7. Variabili casuali indipendenti e identicamente distribuite, iid.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics/sampling.html">17.1.8. Campionamento</a></li>
 
 
 </ul>
@@ -467,10 +468,10 @@ document.write(`
   <div class="tex2jax_ignore mathjax_ignore section" id="metodi-per-la-statistica">
 <span id="book-statistics-hs"></span><h1><span class="section-number">15. </span>Metodi per la statistica<a class="headerlink" href="#metodi-per-la-statistica" title="Permalink to this heading">#</a></h1>
 <p>La statistica si occupa dello studio dei fenomeni in condizioni di incertezza o di non determinismo, determinate da una conoscenza incompleta del modello.</p>
-<p>I contenuti seguono l’ordine logico di un approccio alla statistica: dopo aver introdotto la statistica descrittiva e la rappresnetazione dei dati, vengono fornite delle basi di teoria della probabilità necessarie alla deduzione e alle conclusioni tipiche di un’analisi statistica inferenziale.</p>
 <!--
 *Questo può essere dovuto sia all'impossibilità di costruire un modello deterministico, sia alla scarsa praticabilità di un modello deterministico di dimensioni enormi, vedi termodinamica classica vs. meccanica statistica* **todo** *fare riferimento, con esempio*.
 -->
+<p><strong>Contenuti.</strong> I contenuti seguono l’ordine logico di un approccio alla statistica: dopo aver introdotto la statistica descrittiva e la rappresnetazione dei dati, vengono fornite delle basi di teoria della probabilità necessarie alla deduzione e alle conclusioni tipiche di un’analisi statistica inferenziale.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <a class="reference internal" href="statistics/descriptive.html#statistics-hs-descriptive"><span class="std std-ref">Statistica descrittiva</span></a><div class="sd-summary-down docutils">
@@ -478,10 +479,11 @@ document.write(`
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">La statistica descrittiva si propone di sintetizzare i dati raccolti in statistiche riassuntive ed esplicative, senza voler dedurre conclusioni riguardo alla popolazione della quale è stato analizzato il campione; una <strong>rappresentazione grafica</strong> dei dati e delle statistiche sintetiche risulta molto efficiente per la mente umana</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Teoria della probabilità<div class="sd-summary-down docutils">
+<a class="reference internal" href="statistics/probability.html#statistics-hs-probability"><span class="std std-ref">Teoria della probabilità</span></a><div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -510,14 +512,15 @@ Teoria della probabilità<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">La statistica inferenziale usa i dati raccolti e gli strumenti della teoria della probabilità per <strong>dedurre</strong> proprietà delle popolazioni dalle quali sono stati osservati dei campioni limitati. Le principlai attività di deduzione sono:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><a class="reference internal" href="statistics/estimate.html#statistics-hs-inference-estimate"><span class="std std-ref">Stima</span></a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="statistics/hp-test.html#statistics-hs-inference-hp-test"><span class="std std-ref">Verifica ipotesi</span></a></p></li>
-<li><p class="sd-card-text"><em>campionamento</em>…</p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="statistics/estimate.html#statistics-hs-inference-estimate"><span class="std std-ref">Stima</span></a> di valori puntuali o intervalli</p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="statistics/hp-test.html#statistics-hs-inference-hp-test"><span class="std std-ref">Verifica di ipotesi</span></a></p></li>
 <li><p class="sd-card-text">…</p></li>
 </ul>
 </div>
-</details><p>La statistica è applicabile in <strong>diversi (tutti?) gli ambiti</strong>: dalla scienze naturali, alle scienze sociali,…
+</details><p>Ulteriori metodi statistici sono descritti nei <a class="reference internal" href="ai.html#book-ai-hs"><span class="std std-ref">metodi per la AI</span></a>.</p>
+<p>La statistica è applicabile in <strong>diversi (tutti?) gli ambiti</strong>: dalla scienze naturali, alle scienze sociali,…
 Secondo uno studio, i 12 metodi statistici (cos’è un metodo statistico?) più usati sono: ANOVA, <span class="math notranslate nohighlight">\(\chi^2\)</span>-test, <span class="math notranslate nohighlight">\(t\)</span>-test, regressione lineare, coefficiente di correlazione di Pearson, Mann-Whitney U-test, Kruskal-Wallis test, Shannon’s diversity index, Turkey’s range test, cluster analysis, Spearman’s rank correlation coefficient, and PCA.</p>
 <p>La statistica è uno strumento fondamentale del <strong>metodo scientifico</strong>, e si occupa dell’intero processo di:</p>
 <ul class="simple">
@@ -525,29 +528,27 @@ Secondo uno studio, i 12 metodi statistici (cos’è un metodo statistico?) più
 <li><p>svolgimento esperimento e raccolta dati</p></li>
 <li><p>analisi dati</p></li>
 </ul>
-<p>A seconda dell’uso dei dati raccolti, si riconoscono due approcci alla statistica:</p>
-<ul>
-<li><p><strong>statistica descrittiva</strong>: riassume i dati raccolti in statistiche riassuntive, senza voler dedurre conclusioni riguardo alla popolazione della quale è stato analizzato il campione; una <strong>rappresentazione grafica</strong> dei dati e delle statistiche sintetiche risulta molto efficiente per la mente umana</p>
-<p><strong>todo</strong> <em>dati di sintesi, non ci sono ipotesi sulle dimensioni di campione e popolazione; una volta disponibili i dati, quelli sono e quelli si riassumono</em></p>
-</li>
-<li><p><strong>statistica inferenziale</strong>: usa i dati raccolti per dedurre proprietà di una popolazione ampia della quale è stato analizzato un campione ristretto. Le deduzioni si possono spesso riassumere in:</p>
-<ul class="simple">
-<li><p><strong>stima</strong> di distribuzioni di probabilità o valori</p></li>
-<li><p><strong>test di ipotesi</strong></p></li>
-</ul>
-</li>
-</ul>
-<p><strong>todo</strong> <em>uniformare diverse applicazioni allo stesso metodo statistico, ad esempio come diverse interpretazioni che possono essere date allo stesso metodo</em></p>
-<ul class="simple">
-<li><p>stime: regressione lineare e lineare generalizzata, minimi quadrati,…</p></li>
-<li><p>…</p></li>
-</ul>
-<p><strong>todo</strong> Statistica e ML:</p>
-<ul class="simple">
-<li><p>SL: regressione e classificazione</p></li>
-<li><p>UL: clustering, dimension reduction</p></li>
-<li><p>ML: otpimization and control</p></li>
-</ul>
+<!--
+A seconda dell'uso dei dati raccolti, si riconoscono due approcci alla statistica:
+- **statistica descrittiva**: riassume i dati raccolti in statistiche riassuntive, senza voler dedurre conclusioni riguardo alla popolazione della quale è stato analizzato il campione; una **rappresentazione grafica** dei dati e delle statistiche sintetiche risulta molto efficiente per la mente umana
+
+  **todo** *dati di sintesi, non ci sono ipotesi sulle dimensioni di campione e popolazione; una volta disponibili i dati, quelli sono e quelli si riassumono*
+
+- **statistica inferenziale**: usa i dati raccolti per dedurre proprietà di una popolazione ampia della quale è stato analizzato un campione ristretto. Le deduzioni si possono spesso riassumere in:
+  - **stima** di distribuzioni di probabilità o valori
+  - **test di ipotesi**
+-->
+<!--
+**todo** *uniformare diverse applicazioni allo stesso metodo statistico, ad esempio come diverse interpretazioni che possono essere date allo stesso metodo*
+- stime: regressione lineare e lineare generalizzata, minimi quadrati,...
+- ...
+-->
+<!--
+**todo** Statistica e ML:
+- SL: regressione e classificazione
+- UL: clustering, dimension reduction
+- ML: otpimization and control
+-->
 </div>
 
     <script type="text/x-thebe-config">
