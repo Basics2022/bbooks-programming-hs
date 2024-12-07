@@ -5,13 +5,14 @@ Questa sezione contiene le dimostrazioni usate all'interno del bbook. Le dimostr
 
 La distinzione da una raccolta di appunti personali potrebbe non essere così definita.
 
-```{dropdown} Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid
-:label: independence-sample-estimators-norm
+(proof:independence-sample-estimators-norm)=
+## Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid
+```{dropdown} 
 
 ```
-
-```{dropdown} $S^2 \sim \chi^2_{N-1}$ per variabili gaussiane iid
-:label: s2-chi2-gauss
+(proof:s2-chi2-gauss)=
+## $S^2 \sim \chi^2_{N-1}$ per variabili gaussiane iid
+```{dropdown} 
 ```
 
 
