@@ -531,6 +531,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[p(t|\text{H}_0) \sim t_{\nu} \ ,\]</div>
 <p>dove il numero di gradi di libertà <span class="math notranslate nohighlight">\(\nu\)</span> della distribuzione <span class="math notranslate nohighlight">\(t_{\nu}\)</span> dipende dal metodo considerato.</p>
+<p>Questi test sono «esatti» se la popolazione ha distribuzione normale. <strong>todo</strong> <em>in caso contrario, la statistica test costruita non segue una distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student. Bisogna valutare l’attendibilità del test in questo caso; per distribuzioni «sufficien</em></p>
 <div class="section" id="test-per-un-campione-valore-medio">
 <h3><span class="section-number">18.2.1.1.1. </span>Test per un campione - valore medio<a class="headerlink" href="#test-per-un-campione-valore-medio" title="Permalink to this heading">#</a></h3>
 <p>E” un test di posizione/stima della media della popolazione della quale è noto un campione di <span class="math notranslate nohighlight">\(N\)</span> osservazioni, <span class="math notranslate nohighlight">\(\mathbf{X} = \{ X_n \}_{n=1:N}\)</span>.</p>
@@ -542,8 +543,12 @@ document.write(`
 <p>è costruita con la <a class="reference internal" href="estimate.html#statistics-hs-inference-estimate-sample-estimators"><span class="std std-ref">media e la varianza campionaria</span></a>,</p>
 <div class="math notranslate nohighlight">
 \[\bar{X} = \frac{1}{N} \sum_{n=1}^N X_n \qquad , \qquad S^2 = \frac{1}{N-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ .\]</div>
-<p>Se i campioni sono gaussiani iid., allora la statistica test segue una distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student con <span class="math notranslate nohighlight">\(N-1\)</span> gradi di liberta, <span class="math notranslate nohighlight">\(t \sim t_{N-1}\)</span></p>
 </li>
+</ul>
+<!--
+  Se i campioni sono gaussiani iid., allora la statistica test segue una distribuzione $t$-Student con $N-1$ gradi di liberta, $t \sim t_{N-1}$
+-->
+<ul class="simple">
 <li><p>quindi, una volta definito il livello di significatività del test, <span class="math notranslate nohighlight">\(\alpha\)</span>, si controlla se la statistica test <span class="math notranslate nohighlight">\(t\)</span> valutata con il campione a disposizione cade nella regione di rifiuto dell’ipotesi della distribuzione <span class="math notranslate nohighlight">\(t_{N-1}\)</span> o meno, per determinare se si deve considerare <span class="math notranslate nohighlight">\(\text{H}_0\)</span> falsificata dal test o meno</p></li>
 </ul>
 <p><strong>Ipotesi.</strong>
