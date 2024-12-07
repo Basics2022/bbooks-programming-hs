@@ -231,22 +231,23 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../proofs.html">19. Dimostrazioni</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione ai metodi in statistica e  AI</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ai.html">19. Introduzione ai metodi in AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ai/sl.html">20. Supervised Learning</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ai/ul.html">21. Unsupervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ai/pca.html">21.1. PCA</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../ai/ica-pca.html">21.2. ICA e PCA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../ai/ica-pca-example-2d.html">21.2.2. FastICA on 2D point clouds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ai/ica-pca-example-time.html">21.2.3. ICA e PCA: segnali in tempo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ai/ica-pca-details.html">21.2.4. ICA e PCA - dettagli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai.html">20. Introduzione ai metodi in AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/sl.html">21. Supervised Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ai/ul.html">22. Unsupervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ai/pca.html">22.1. PCA</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ai/ica-pca.html">22.2. ICA e PCA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ai/ica-pca-example-2d.html">22.2.2. FastICA on 2D point clouds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ai/ica-pca-example-time.html">22.2.3. ICA e PCA: segnali in tempo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ai/ica-pca-details.html">22.2.4. ICA e PCA - dettagli</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ai/ml.html">22. Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai/ml.html">23. Reinforcement Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supporto tecnico</span></p>
 <ul class="nav bd-sidenav">
@@ -539,7 +540,7 @@ document.write(`
 <p><strong>Se</strong> i campioni sono variabili i.i.d. gaussiane, con media <span class="math notranslate nohighlight">\(\mu_0\)</span> sotto l’ipotesi nulla <span class="math notranslate nohighlight">\(H_0\)</span>, <span class="math notranslate nohighlight">\(X_n \sim \mathscr{N}(\mu_0, \sigma^2)\)</span>, allora:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\bar{X}\)</span> è una variabile gaussiana con media <span class="math notranslate nohighlight">\(\mu_0\)</span> e varianza <span class="math notranslate nohighlight">\(\frac{\sigma^2}{N}\)</span>; quindi <span class="math notranslate nohighlight">\(\bar{X}-\mu_0\)</span> ha media nulla e varianza <span class="math notranslate nohighlight">\(\frac{\sigma^2}{N}\)</span>; quindi <span class="math notranslate nohighlight">\(\frac{\bar{X}-\mu_0}{\frac{\sigma}{\sqrt{N}}} \sim \mathscr{N}(0,1)\)</span></p></li>
-<li><p>la varianza campionaria ha una distribuzione <span class="math notranslate nohighlight">\(\chi^2_{N-1}\)</span> [<span class="xref std std-ref">s2-chi2-gauss</span>]</p></li>
+<li><p>la <span class="xref myst">varianza campionaria ha una distribuzione <span class="math notranslate nohighlight">\(\chi^2_{N-1}\)</span></span></p></li>
 </ul>
 </li>
 <li><p>il numero di gradi di libertà è <span class="math notranslate nohighlight">\(n-1\)</span> <strong>todo</strong></p></li>
