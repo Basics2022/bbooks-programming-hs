@@ -17,7 +17,7 @@ Questa affermazione risulta vera poiché la statistica test $t$ può essere ripo
 $$t_{\nu} \sim T = \frac{Z}{\sqrt{\frac{V}{\nu}}} \ ,$$
 
 con $Z \sim N(0,1)$ e $V \sim \chi^2_{\nu}$, con $\nu = N-1$. Infatti:
-- la variabile $Z := \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \sim \mathscr{N}(0,1)$
+- la media campionaria è gaussiana con varianza $\frac{\sigma^2}{N}$. Si definisice quindi la variabile $Z$ con distribuzione normale di media nulla e varianza unitaria, $Z := \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \sim \mathscr{N}(0,1)$
 - la somma $V := \sum_{n=1}^N \left(\frac{X_n - \bar{X}}{\sigma^2}\right)^2 \sim \chi^2_{N-1}$
 
 ```
