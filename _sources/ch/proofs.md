@@ -10,6 +10,8 @@ La distinzione da una raccolta di appunti personali potrebbe non essere così de
 ```{dropdown} Con la stessa varianza
 :open:
 
+**todo**
+
 Date due variabili casuali gaussiane indipendenti, $X_1 \sim \mathscr{N}(\mu_1,\sigma^2)$, $X_2 \sim \mathscr{N}(\mu_2, \sigma^2)$, si valuta la distribuzione della variabile casuale $X_1 \pm X_2$. La funzione di probabilità di questa variabile viene calcolata:
 - applicando un cambio di variabili $X_1, X_2 \rightarrow X_1, Z=X_1 \pm X_2$,
 - calcolando la pdf nelle nuove variabili $f_{X_1 Z}(x_1, z)$
