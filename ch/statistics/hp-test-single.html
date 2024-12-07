@@ -632,7 +632,7 @@ X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{
 <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>   <span class="c1"># (12345)  # initialize numpy default rng</span>
 
 <span class="c1"># N.roll of the experiments</span>
-<span class="n">nrolls</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">nrolls</span> <span class="o">=</span> <span class="mi">1001</span>
 
 <span class="c1"># Categories: six-face dice X = [ 1,2,3,4,5,6 ]</span>
 <span class="n">categ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
@@ -659,6 +659,7 @@ X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{
 \[X^2 = \sum_{k=1}^K \frac{(O_k - E_k)^2}{E_k} \sim \chi^2_{N-1} \ .\]</div>
 <p><strong>todo</strong> <em>link al motivo per cui i dof sono <span class="math notranslate nohighlight">\(N-1\)</span>: sostanzialmente poiché la pdf è determinata da un solo parametro, un solo vincolo, che riduce di 1 il numero di dof</em></p>
 <p><strong>Livello di significatività.</strong> Si sceglie un livello di significatività <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span>, cioè solo il <span class="math notranslate nohighlight">\(5%\)</span> di casi estremi invalidano l’ipotesi nulla. Il livello di significatività determina il valore della statistica test che separa le regioni di accettazione e di rifiuto dell’ipotesi.</p>
+<p>Se si vuole essere più conservativi e rigettare l’ipotesi nulla «solo per dadi palesemente truccati», si può ridurre il livello di significatività del test. Ad esempio, scegliendo <span class="math notranslate nohighlight">\(\alpha = 0.01\)</span> si identificano come truccati solo i risultati estremi che hanno probabilità cumulata di verificarsi dell”<span class="math notranslate nohighlight">\(1\%\)</span> sotto l’ipotesi nulla (1% di falsi positivi).</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -667,12 +668,12 @@ X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Null hypothesis, H0</span>
-<span class="n">e_freq</span> <span class="o">=</span> <span class="n">nrolls</span> <span class="o">*</span> <span class="n">p_fair</span>
+<span class="c1"># e_freq = nrolls * p_fair</span>
 <span class="c1"># statistics ~ Chi^2_{n_categ - 1}</span>
 <span class="n">n_dofs</span> <span class="o">=</span> <span class="n">n_categ</span> <span class="o">-</span> <span class="mi">1</span>           <span class="c1"># n.dofs = n.categories - 1 </span>
 
 <span class="c1"># Significance level</span>
-<span class="n">alpha</span> <span class="o">=</span> <span class="mf">.05</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">.05</span>   <span class="c1"># .05, .01</span>
 
 <span class="c1"># Point X2_rej_lim, discerning acceptance (X2 &lt; X2_rej_lim) from rejection regions (X2 &gt; X2_rej_lim)</span>
 <span class="n">X2_rej_lim</span> <span class="o">=</span> <span class="n">chi2</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">,</span> <span class="n">n_dofs</span><span class="p">)</span>
@@ -680,6 +681,11 @@ X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Rejection and acceptance regions for significance, alpha = </span><span class="si">{</span><span class="n">alpha</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- Not rejection for X2 &lt; </span><span class="si">{</span><span class="n">X2_rej_lim</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- Rejection     for X2 &gt; </span><span class="si">{</span><span class="n">X2_rej_lim</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">alpha_l</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">.05</span><span class="p">,</span> <span class="mf">.01</span><span class="p">,</span> <span class="mf">.005</span><span class="p">,</span> <span class="mf">.001</span> <span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Rejection limits as a function of significance level&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">al</span> <span class="ow">in</span> <span class="n">alpha_l</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;X_rej_lim( alpha=</span><span class="si">{</span><span class="n">al</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2"> ) = </span><span class="si">{</span><span class="n">chi2</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">al</span><span class="p">,</span><span class="w"> </span><span class="n">n_dofs</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -688,6 +694,12 @@ X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rejection and acceptance regions for significance, alpha = 0.05
 - Not rejection for X2 &lt; 11.0705
 - Rejection     for X2 &gt; 11.0705
+
+Rejection limits as a function of significance level
+X_rej_lim( alpha=0.050 ) = 11.0705
+X_rej_lim( alpha=0.010 ) = 15.0863
+X_rej_lim( alpha=0.005 ) = 16.7496
+X_rej_lim( alpha=0.001 ) = 20.5150
 </pre></div>
 </div>
 </div>
@@ -700,29 +712,45 @@ X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run experiments</span>
-<span class="c1"># Initialize lists to collect data</span>
-<span class="n">o_freq_l</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_exp</span><span class="p">,</span> <span class="mi">6</span><span class="p">),)</span>
-<span class="n">X2_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_exp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function for running experiments</span>
+<span class="k">def</span> <span class="nf">run_experiments</span><span class="p">(</span><span class="n">categ</span><span class="p">,</span> <span class="n">prob_l</span><span class="p">,</span> <span class="n">nrolls</span><span class="p">):</span>
 
-<span class="c1"># Loop over experiments</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_exp</span><span class="p">):</span>
-
-    <span class="c1"># Roll the dice and collect outcomes</span>
-    <span class="n">outcomes</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">categ</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">prob_l</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">nrolls</span><span class="p">)</span>
+    <span class="c1"># Expected frequencies</span>
+    <span class="n">e_freq</span> <span class="o">=</span> <span class="n">nrolls</span> <span class="o">*</span> <span class="n">p_fair</span>
     
-    <span class="c1"># Count frequency of each category</span>
-    <span class="n">unique_cat</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">outcomes</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">o_freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-    <span class="n">o_freq</span><span class="p">[</span><span class="n">unique_cat</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span>
+    <span class="c1"># Initialize lists to collect data</span>
+    <span class="n">o_freq_l</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_exp</span><span class="p">,</span> <span class="mi">6</span><span class="p">),)</span>
+    <span class="n">X2_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_exp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    
+    <span class="c1"># Loop over experiments</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_exp</span><span class="p">):</span>
+    
+        <span class="c1"># Roll the dice and collect outcomes</span>
+        <span class="n">outcomes</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">categ</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">prob_l</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">nrolls</span><span class="p">)</span>
+        
+        <span class="c1"># Count frequency of each category</span>
+        <span class="n">unique_cat</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">outcomes</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">o_freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+        <span class="n">o_freq</span><span class="p">[</span><span class="n">unique_cat</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span>
+    
+        <span class="c1"># Store results</span>
+        <span class="n">o_freq_l</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">o_freq</span>
+        <span class="n">X2_v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">o_freq</span> <span class="o">-</span> <span class="n">e_freq</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">e_freq</span><span class="p">)</span>  <span class="c1"># chi-2 statistics test (element-wise operations and sum)</span>
 
-    <span class="c1"># Store results</span>
-    <span class="n">o_freq_l</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">unique_cat</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">o_freq</span>
-    <span class="n">X2_v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">o_freq</span> <span class="o">-</span> <span class="n">e_freq</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">e_freq</span><span class="p">)</span>  <span class="c1"># chi-2 statistics test (element-wise operations and sum)</span>
+    <span class="k">return</span> <span class="n">o_freq_l</span><span class="p">,</span> <span class="n">X2_v</span>
+    
 </pre></div>
 </div>
 </div>
 </details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run experiment</span>
+<span class="n">o_freq_l</span><span class="p">,</span> <span class="n">X2_v</span> <span class="o">=</span> <span class="n">run_experiments</span><span class="p">(</span><span class="n">categ</span><span class="p">,</span> <span class="n">prob_l</span><span class="p">,</span> <span class="n">nrolls</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -750,7 +778,7 @@ X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/dfb025c4cb68d9ee83f61e38990a02cd4e6f13b02c21cd464f63c4075bbb8888.png" src="../../_images/dfb025c4cb68d9ee83f61e38990a02cd4e6f13b02c21cd464f63c4075bbb8888.png" />
+<img alt="../../_images/c3e6c4c63e36a919f5f33a8dc645d593cbb3a6110108e3d8cd2af9bb89a79da3.png" src="../../_images/c3e6c4c63e36a919f5f33a8dc645d593cbb3a6110108e3d8cd2af9bb89a79da3.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -777,19 +805,44 @@ X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Experiment: Fair, nrolls: 1000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Experiment: Fair, nrolls: 1001
 - probability (unknown in real exp.) : [0.1667 0.1667 0.1667 0.1667 0.1667 0.1667]
-- Observed events                    : [163. 174. 189. 165. 151. 158.]
-- Test statistics, X2                : 5.3360
-&gt;&gt; H0 not rejected (5.3360 &lt; X_lim=11.0705): dice is fair
+- Observed events                    : [163. 175. 189. 165. 151. 158.]
+- Test statistics, X2                : 5.4236
+&gt;&gt; H0 not rejected (5.4236 &lt; X_lim=11.0705): dice is fair
 
-Experiment: Rigged, nrolls: 1000
+Experiment: Rigged, nrolls: 1001
 - probability (unknown in real exp.) : [0.1429 0.1429 0.2857 0.1429 0.1429 0.1429]
-- Observed events                    : [124. 163. 292. 126. 139. 156.]
-- Test statistics, X2                : 120.4520
-&gt;&gt; H0 rejected (120.4520 &gt; X_lim=11.0705): dice is rigged
+- Observed events                    : [124. 163. 292. 126. 140. 156.]
+- Test statistics, X2                : 120.0050
+&gt;&gt; H0 rejected (120.0050 &gt; X_lim=11.0705): dice is rigged
 </pre></div>
 </div>
+</div>
+</div>
+<p><strong>Dipendenza del risultato del test dal numero di prove.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nrolls_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10001</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">X2_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">nrolls_v</span><span class="p">),</span> <span class="n">n_exp</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">iroll</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nrolls_v</span><span class="p">)):</span>
+    <span class="n">freq</span><span class="p">,</span> <span class="n">X2_m</span><span class="p">[</span><span class="n">iroll</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">run_experiments</span><span class="p">(</span><span class="n">categ</span><span class="p">,</span> <span class="n">prob_l</span><span class="p">,</span> <span class="n">nrolls_v</span><span class="p">[</span><span class="n">iroll</span><span class="p">])</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nrolls_v</span><span class="p">,</span> <span class="n">X2_m</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ff4148b433add45755bc6980debde9cf5436f07444e29270aba711c96c5d5b44.png" src="../../_images/ff4148b433add45755bc6980debde9cf5436f07444e29270aba711c96c5d5b44.png" />
 </div>
 </div>
 </div>
