@@ -502,7 +502,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-test">18.2.1.2. <span class="math notranslate nohighlight">\(Z\)</span>-test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-2-test">18.2.1.3. <span class="math notranslate nohighlight">\(\chi^2\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-2-test-di-pearson">18.2.1.3. <span class="math notranslate nohighlight">\(\chi^2\)</span>-test di Pearson</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-dado-truccato">18.2.1.3.1. Esempio: dado truccato</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wilcoxon">18.2.1.4. Wilcoxon</a></li>
 </ul>
             </nav>
@@ -572,16 +575,188 @@ document.write(`
 </div>
 </div>
 <div class="section" id="z-test">
-<span id="hp-test-single-z-tests"></span><h2><span class="section-number">18.2.1.2. </span><span class="math notranslate nohighlight">\(Z\)</span>-test<a class="headerlink" href="#z-test" title="Permalink to this heading">#</a></h2>
+<span id="hp-test-single-z"></span><h2><span class="section-number">18.2.1.2. </span><span class="math notranslate nohighlight">\(Z\)</span>-test<a class="headerlink" href="#z-test" title="Permalink to this heading">#</a></h2>
 <p>Test identico al <span class="math notranslate nohighlight">\(t\)</span>-test in cui la statistica test <span class="math notranslate nohighlight">\(z\)</span> segue una distribuzione gaussiana sotto l’ipotesi nulla. Per il legame esistente tra la distribuzione <span class="math notranslate nohighlight">\(t_{\nu}\)</span> e <span class="math notranslate nohighlight">\(\mathscr{N}\)</span>, si può interpretare lo <span class="math notranslate nohighlight">\(Z\)</span>-test come limite del <span class="math notranslate nohighlight">\(t\)</span>-test per un numero di campioni sufficientemente grande.</p>
 </div>
-<div class="section" id="chi-2-test">
-<h2><span class="section-number">18.2.1.3. </span><span class="math notranslate nohighlight">\(\chi^2\)</span>-test<a class="headerlink" href="#chi-2-test" title="Permalink to this heading">#</a></h2>
-<p>Il test <span class="math notranslate nohighlight">\(\chi^2\)</span> viene utilizzato per confrontare le frequenze osservate <span class="math notranslate nohighlight">\(o_k\)</span> e attese <span class="math notranslate nohighlight">\(e_k\)</span> di un insieme di possibili eventi, <span class="math notranslate nohighlight">\(\{ E_k \}_{k=1:K}\)</span>. L’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span> afferma che il fenomeno osservato segue la distribuzione di probabilità descritta dalle frequenze attese. La statistica test è</p>
+<div class="section" id="chi-2-test-di-pearson">
+<span id="hp-test-single-chi2-pearson"></span><h2><span class="section-number">18.2.1.3. </span><span class="math notranslate nohighlight">\(\chi^2\)</span>-test di Pearson<a class="headerlink" href="#chi-2-test-di-pearson" title="Permalink to this heading">#</a></h2>
+<p>Il test <span class="math notranslate nohighlight">\(\chi^2\)</span> di Pearson si applica a dati <strong>categoriali</strong>, per confrontare le <strong>frequenze</strong> delle <span class="math notranslate nohighlight">\(K\)</span> categorie per diversi insiemi. Può essere applicato:</p>
+<ul class="simple">
+<li><p>a un singolo campione, confrontando le frequenze osservate <span class="math notranslate nohighlight">\(\{ O_k \}_{k=1:K}\)</span> con le frequenze attese <span class="math notranslate nohighlight">\(\{ E_k \}_{k=1:K}\)</span>, che costituiscono l’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span></p></li>
+<li><p>a più campioni (<strong>todo</strong> <em>link a test di indipendenza statistica</em>) per stabilire se provengono dalla stessa popolazione, o comunque da popolazioni con la stessa funzione di probabilità.</p></li>
+</ul>
+<p>Il test <span class="math notranslate nohighlight">\(\chi^2\)</span> a un campione viene utilizzato per confrontare le frequenze osservate <span class="math notranslate nohighlight">\(\{ O_k \}_{k=1:K}\)</span>  e attese  <span class="math notranslate nohighlight">\(\{ E_k \}_{k=1:K}\)</span>  di un insieme di possibili eventi, <span class="math notranslate nohighlight">\(\{ X_n \}_{n=1:N}\)</span>.</p>
+<ul>
+<li><p>l”<strong>ipotesi nulla</strong> <span class="math notranslate nohighlight">\(\text{H}_0\)</span> afferma che il fenomeno osservato segue la distribuzione di probabilità descritta dalle frequenze attese, <span class="math notranslate nohighlight">\(\{ E_k \}\)</span>. <em>Supponendo che i dati campionati siano iid</em>, l’ipotesi nulla afferma che il fenomeno dal quale è estratto il campione segue una distribuzione di probabilità categoriale, <span class="math notranslate nohighlight">\(\text{Categorial}(E_1,\dots,E_K)\)</span></p></li>
+<li><p>La statistica test è</p>
 <div class="math notranslate nohighlight">
-\[X^2 = \sum_{k=1}^{K} \frac{(o_k - e_k)^2}{e_k}\]</div>
-<p>Nel caso in cui le frequenze attese sono «sufficientemente grandi» e quelle osservate <span class="math notranslate nohighlight">\(o_k\)</span> abbiano una distribuzione gaussiana, allora <span class="math notranslate nohighlight">\(X^2\)</span> segue una distribuzione <span class="math notranslate nohighlight">\(\chi^2_{K-1}\)</span>.</p>
+\[X^2 := \sum_{k=1}^{K} \frac{(O_k - E_k)^2}{E_k} \ ,\]</div>
+</li>
+</ul>
+<p>Nel caso in cui le frequenze attese sono «sufficientemente grandi» e quelle osservate <span class="math notranslate nohighlight">\(O_k\)</span> abbiano una distribuzione gaussiana, allora <span class="math notranslate nohighlight">\(X^2\)</span> segue una distribuzione <span class="math notranslate nohighlight">\(\chi^2_{K-1}\)</span>.</p>
 <p>… <strong>todo</strong></p>
+<div class="section" id="esempio-dado-truccato">
+<h3><span class="section-number">18.2.1.3.1. </span>Esempio: dado truccato<a class="headerlink" href="#esempio-dado-truccato" title="Permalink to this heading">#</a></h3>
+<p>Ci vengono dati due dadi a 6 facce e ci viene chiesto di verificare con <span class="math notranslate nohighlight">\(n_{rolls} = 50\)</span> lanci se questi dadi possono essere considerati truccati. Noi non lo sappiamo, ma il primo dado non è truccato, mentre il secondo dado è sbilanciato in modo tale che la possibilità che esca la faccia 3 è doppia rispetto a tutte le altre,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+X_1 &amp; \sim \text{Categorial}\left(\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6}\right) \\
+X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{1}{7},\frac{1}{7},\frac{1}{7}\right) 
+\end{aligned}\end{split}\]</div>
+<p>Per ogni esperimento, l’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span> è che il dado non sia truccato e che ogni faccia abbia una probabilità <span class="math notranslate nohighlight">\(\frac{1}{6}\)</span>. La distribuzione di probabilità attesa è</p>
+<div class="math notranslate nohighlight">
+\[X|\text{H}_0 \sim \text{Categorial}\left(\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6}\right) \ .\]</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reset env vars and load libraries</span>
+<span class="o">%</span><span class="k">reset</span> -f
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Random number generators representing dice roll</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>   <span class="c1"># (12345)  # initialize numpy default rng</span>
+
+<span class="c1"># N.roll of the experiments</span>
+<span class="n">nrolls</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="c1"># Categories: six-face dice X = [ 1,2,3,4,5,6 ]</span>
+<span class="n">categ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+
+<span class="c1"># Categorial probabilities of two dice, one fair, one not ( p_rigg(face3) = 2 p_rigg(facek) )</span>
+<span class="n">p_fair</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mf">6.</span>                               <span class="c1"># fair dice</span>
+<span class="n">p_rigg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]);</span> <span class="n">p_rigg</span> <span class="o">=</span> <span class="n">p_rigg</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p_rigg</span><span class="p">)</span>    <span class="c1"># rigged dice</span>
+<span class="c1"># ...you can change p_ above, or add here other p_...</span>
+
+<span class="n">name_l</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Fair&#39;</span><span class="p">,</span> <span class="s1">&#39;Rigged&#39;</span> <span class="p">]</span>  <span class="c1"># name of the experiments</span>
+<span class="n">prob_l</span> <span class="o">=</span> <span class="p">[</span> <span class="n">p_fair</span><span class="p">,</span> <span class="n">p_rigg</span> <span class="p">]</span>    <span class="c1"># collect data of experiments in a list</span>
+<span class="n">n_exp</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">prob_l</span><span class="p">)</span>            <span class="c1"># n. of experiments</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Null hypothesis, H0</span>
+<span class="n">e_freq</span> <span class="o">=</span> <span class="n">nrolls</span> <span class="o">*</span> <span class="n">p_fair</span>
+
+<span class="c1"># Significance level</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">.05</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run experiments</span>
+<span class="c1"># Initialize lists to collect data</span>
+<span class="n">o_freq_l</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_exp</span><span class="p">,</span> <span class="mi">6</span><span class="p">),)</span>
+<span class="n">chi2_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_exp</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># Loop over experiments</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_exp</span><span class="p">):</span>
+
+    <span class="c1"># Roll the dice and collect outcomes</span>
+    <span class="n">outcomes</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">categ</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">prob_l</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">nrolls</span><span class="p">)</span>
+    
+    <span class="c1"># Count frequency of each category</span>
+    <span class="n">unique_cat</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">outcomes</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">o_freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">o_freq</span><span class="p">[</span><span class="n">unique_cat</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span>
+
+    <span class="c1"># Store results</span>
+    <span class="n">o_freq_l</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">unique_cat</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">o_freq</span>
+    <span class="n">chi2_v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">o_freq</span> <span class="o">-</span> <span class="n">e_freq</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">e_freq</span><span class="p">)</span>  <span class="c1"># chi-2 statistics test (element-wise operations and sum)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Results</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_exp</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Experiment: </span><span class="si">{</span><span class="n">name_l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">, nrolls: </span><span class="si">{</span><span class="n">nrolls</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- probability (unknown in real exp.) : </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">array2string</span><span class="p">(</span><span class="n">prob_l</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">precision</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- Observed events                    : </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">array2string</span><span class="p">(</span><span class="n">o_freq_l</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">precision</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- Test statistics, X2                : </span><span class="si">{</span><span class="n">chi2_v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Experiment: Fair, nrolls: 50
+- probability (unknown in real exp.) : [0.1667 0.1667 0.1667 0.1667 0.1667 0.1667]
+- Observed events                    : [ 6. 13.  8.  6.  8.  9.]
+- Test statistics, X2                : 4.000000000000001
+
+Experiment: Rigged, nrolls: 50
+- probability (unknown in real exp.) : [0.1429 0.1429 0.2857 0.1429 0.1429 0.1429]
+- Observed events                    : [ 5. 18. 13.  6.  3.  5.]
+- Test statistics, X2                : 20.560000000000002
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_exp</span><span class="p">):</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">categ</span><span class="p">,</span> <span class="n">o_freq_l</span><span class="p">[</span><span class="n">i</span><span class="p">,:])</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="mi">2</span><span class="o">*</span><span class="p">[</span><span class="n">nrolls</span><span class="o">/</span><span class="mi">6</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mf">.5</span><span class="p">,</span><span class="mf">6.5</span><span class="p">])</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mf">.0</span><span class="p">,</span> <span class="n">nrolls</span><span class="o">/</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_axisbelow</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Experiment: </span><span class="si">{</span><span class="n">name_l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2"> , $X^2 = </span><span class="si">{</span><span class="n">chi2_v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/db97acfd258285ad41d79f45581077c65508437663d73dc056551fc0e26079ec.png" src="../../_images/db97acfd258285ad41d79f45581077c65508437663d73dc056551fc0e26079ec.png" />
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="wilcoxon">
 <h2><span class="section-number">18.2.1.4. </span>Wilcoxon<a class="headerlink" href="#wilcoxon" title="Permalink to this heading">#</a></h2>
@@ -659,7 +834,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-test">18.2.1.2. <span class="math notranslate nohighlight">\(Z\)</span>-test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-2-test">18.2.1.3. <span class="math notranslate nohighlight">\(\chi^2\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-2-test-di-pearson">18.2.1.3. <span class="math notranslate nohighlight">\(\chi^2\)</span>-test di Pearson</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-dado-truccato">18.2.1.3.1. Esempio: dado truccato</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wilcoxon">18.2.1.4. Wilcoxon</a></li>
 </ul>
   </nav></div>
