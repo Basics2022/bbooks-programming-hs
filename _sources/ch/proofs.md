@@ -7,21 +7,27 @@ La distinzione da una raccolta di appunti personali potrebbe non essere così de
 
 (proof:t-test-gaussian)=
 ## Distribuzione della statistica $t \sim t_{N-1}$ nel $t$-test per campioni singoli
-```{dropdown}
+```{dropdown} Dimostrazione
 Dati $N$ campioni $\{ X_n \}_{n=1:N}$ iid con distribuzinone gaussiana $X_n \sim \mathscr{N}(\mu, \sigma^2)$ allora la statistica $t$ dei $t$-test per singolo campione o per coppie di campioni, costruita con la media campionaria $\bar{X}$ e la varianza campionaria $S$ segue una distribuzione $t$-Student con $N-1$ gradi di libertà,
 
-$$t:= \frac{\bar{X}-\mu}{\frac{S}{\sqrt{N}}} \sim t_{N-1}$$
+$$t:= \frac{\bar{X}-\mu}{\frac{S}{\sqrt{N}}} \sim t_{N-1} \ .$$
+
+Questa affermazione risulta vera poiché la statistica test $t$ può essere scritta come  l'espressione che definisce una distribuzione $t_{\nu}$-Student,
+
+$$t_{\nu} \sim T = \frac{Z}{\sqrt{\frac{V}{\nu}}} \ ,$$
+
+con $Z \sim N(0,1)$ e $V \sim \chi^2_{\nu}$.
 
 ```
 
 (proof:independence-sample-estimators-norm)=
 ## Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid
-```{dropdown} 
+```{dropdown} Dimostrazione
 
 ```
 (proof:s2-chi2-gauss)=
 ## $S^2 \sim \chi^2_{N-1}$ per variabili gaussiane iid
-```{dropdown} 
+```{dropdown} Dimostrazione
 ```
 
 

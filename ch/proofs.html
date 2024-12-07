@@ -486,21 +486,25 @@ document.write(`
 <span id="proof-t-test-gaussian"></span><h2><span class="section-number">19.1. </span>Distribuzione della statistica <span class="math notranslate nohighlight">\(t \sim t_{N-1}\)</span> nel <span class="math notranslate nohighlight">\(t\)</span>-test per campioni singoli<a class="headerlink" href="#distribuzione-della-statistica-t-sim-t-n-1-nel-t-test-per-campioni-singoli" title="Permalink to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-kebab-horizontal" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M6 12a2 2 0 11-4 0 2 2 0 014 0zm8 0a2 2 0 11-4 0 2 2 0 014 0zm6 2a2 2 0 100-4 2 2 0 000 4z"></path></svg><div class="sd-summary-down docutils">
+Dimostrazione<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Dati <span class="math notranslate nohighlight">\(N\)</span> campioni <span class="math notranslate nohighlight">\(\{ X_n \}_{n=1:N}\)</span> iid con distribuzinone gaussiana <span class="math notranslate nohighlight">\(X_n \sim \mathscr{N}(\mu, \sigma^2)\)</span> allora la statistica <span class="math notranslate nohighlight">\(t\)</span> dei <span class="math notranslate nohighlight">\(t\)</span>-test per singolo campione o per coppie di campioni, costruita con la media campionaria <span class="math notranslate nohighlight">\(\bar{X}\)</span> e la varianza campionaria <span class="math notranslate nohighlight">\(S\)</span> segue una distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student con <span class="math notranslate nohighlight">\(N-1\)</span> gradi di libertà,</p>
 <div class="math notranslate nohighlight">
-\[t:= \frac{\bar{X}-\mu}{\frac{S}{\sqrt{N}}} \sim t_{N-1}\]</div>
+\[t:= \frac{\bar{X}-\mu}{\frac{S}{\sqrt{N}}} \sim t_{N-1} \ .\]</div>
+<p class="sd-card-text">Questa affermazione risulta vera poiché la statistica test <span class="math notranslate nohighlight">\(t\)</span> può essere scritta come  l’espressione che definisce una distribuzione <span class="math notranslate nohighlight">\(t_{\nu}\)</span>-Student,</p>
+<div class="math notranslate nohighlight">
+\[t_{\nu} \sim T = \frac{Z}{\sqrt{\frac{V}{\nu}}} \ ,\]</div>
+<p class="sd-card-text">con <span class="math notranslate nohighlight">\(Z \sim N(0,1)\)</span> e <span class="math notranslate nohighlight">\(V \sim \chi^2_{\nu}\)</span>.</p>
 </div>
 </details></div>
 <div class="section" id="indipendenza-di-media-campionaria-e-varianza-campionaria-per-variabili-gaussiane-iid">
 <span id="proof-independence-sample-estimators-norm"></span><h2><span class="section-number">19.2. </span>Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid<a class="headerlink" href="#indipendenza-di-media-campionaria-e-varianza-campionaria-per-variabili-gaussiane-iid" title="Permalink to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-kebab-horizontal" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M6 12a2 2 0 11-4 0 2 2 0 014 0zm8 0a2 2 0 11-4 0 2 2 0 014 0zm6 2a2 2 0 100-4 2 2 0 000 4z"></path></svg><div class="sd-summary-down docutils">
+Dimostrazione<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -511,7 +515,7 @@ document.write(`
 <span id="proof-s2-chi2-gauss"></span><h2><span class="section-number">19.3. </span><span class="math notranslate nohighlight">\(S^2 \sim \chi^2_{N-1}\)</span> per variabili gaussiane iid<a class="headerlink" href="#s-2-sim-chi-2-n-1-per-variabili-gaussiane-iid" title="Permalink to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-kebab-horizontal" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M6 12a2 2 0 11-4 0 2 2 0 014 0zm8 0a2 2 0 11-4 0 2 2 0 014 0zm6 2a2 2 0 100-4 2 2 0 000 4z"></path></svg><div class="sd-summary-down docutils">
+Dimostrazione<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
