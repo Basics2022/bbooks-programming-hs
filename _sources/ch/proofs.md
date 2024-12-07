@@ -29,6 +29,7 @@ $$\begin{aligned}
  & = \frac{1}{\sqrt{2\pi\sigma^2}}  \frac{1}{\sqrt{2\pi\sigma^2}}  \exp \left[ - \frac{x_1^2 + x_2^2 - 2 \mu_1 x_1 - 2 \mu_2 x_2 + \mu_1^2 + \mu_2^2}{2 \sigma^2} \right] = \\
  & = \frac{1}{\sqrt{2\pi\sigma^2}}  \frac{1}{\sqrt{2\pi\sigma^2}}  \exp \left[ - \frac{x_1^2 + x_2^2 \pm 2 x_1 x_2 \mp 2 x_1 x_2 - 2 \mu_1 x_1 - 2 \mu_2 x_2 \mp 2 \mu_1 \mu_2 \pm 2 \mu_1 \mu_2 + \mu_1^2 + \mu_2^2}{2 \sigma^2} \right] = \\
  & = \frac{1}{\sqrt{2\pi\sigma^2}}  \frac{1}{\sqrt{2\pi\sigma^2}}  \exp \left[ - \frac{(x_1 \pm x_2)^2 - 2 (x_1 \pm x_2)(\mu_1 \pm \mu_2)  + (\mu_1 \pm \mu_2)^2)}{2 \sigma^2} \right] = \\
+ & = \frac{1}{\sqrt{2\pi\sigma^2}}  \frac{1}{\sqrt{2\pi\sigma^2}}  \exp \left[ - \frac{(z_{\pm} - \mu_{\pm})^2}{2 \sigma^2} \right] = \\
 \end{aligned}$$
 
 
