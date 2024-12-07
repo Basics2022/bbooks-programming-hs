@@ -53,8 +53,6 @@ $$\begin{aligned}
 \end{aligned}$$
 -->
 
-**todo**...
-
 ```
 
 (proof:t-test-gaussian)=
