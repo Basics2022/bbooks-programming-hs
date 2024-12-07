@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>21.2.2. FastICA on 2D point clouds &#8212; Introduzione alla programmazione per le scuole superiori</title>
+    <title>22.2.2. FastICA on 2D point clouds &#8212; Introduzione alla programmazione per le scuole superiori</title>
   
   
   
@@ -72,8 +72,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="21.2.3. ICA e PCA: segnali in tempo" href="ica-pca-example-time.html" />
-    <link rel="prev" title="21.2. ICA e PCA" href="ica-pca.html" />
+    <link rel="next" title="22.2.3. ICA e PCA: segnali in tempo" href="ica-pca-example-time.html" />
+    <link rel="prev" title="22.2. ICA e PCA" href="ica-pca.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -231,22 +231,23 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../proofs.html">19. Dimostrazioni</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione ai metodi in statistica e  AI</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ai.html">19. Introduzione ai metodi in AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sl.html">20. Supervised Learning</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="ul.html">21. Unsupervised Learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="pca.html">21.1. PCA</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="ica-pca.html">21.2. ICA e PCA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">21.2.2. FastICA on 2D point clouds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ica-pca-example-time.html">21.2.3. ICA e PCA: segnali in tempo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ica-pca-details.html">21.2.4. ICA e PCA - dettagli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ai.html">20. Introduzione ai metodi in AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sl.html">21. Supervised Learning</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ul.html">22. Unsupervised Learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pca.html">22.1. PCA</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="ica-pca.html">22.2. ICA e PCA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">22.2.2. FastICA on 2D point clouds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ica-pca-example-time.html">22.2.3. ICA e PCA: segnali in tempo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ica-pca-details.html">22.2.4. ICA e PCA - dettagli</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ml.html">22. Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">23. Reinforcement Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supporto tecnico</span></p>
 <ul class="nav bd-sidenav">
@@ -494,14 +495,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerie-e-funzioni-di-comodo">21.2.2.1. Librerie e funzioni di comodo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">21.2.2.1.1. Import librerie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzioni-utili">21.2.2.1.2. Funzioni utili</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerie-e-funzioni-di-comodo">22.2.2.1. Librerie e funzioni di comodo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">22.2.2.1.1. Import librerie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzioni-utili">22.2.2.1.2. Funzioni utili</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generazione-campione">21.2.2.2. Generazione campione</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ica-e-pca">21.2.2.3. ICA e PCA</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risultati">21.2.2.4. Risultati</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generazione-campione">22.2.2.2. Generazione campione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ica-e-pca">22.2.2.3. ICA e PCA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risultati">22.2.2.4. Risultati</a></li>
 </ul>
             </nav>
         </div>
@@ -514,12 +515,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="fastica-on-2d-point-clouds">
-<span id="ai-ul-ica-pca-example-2d"></span><h1><span class="section-number">21.2.2. </span>FastICA on 2D point clouds<a class="headerlink" href="#fastica-on-2d-point-clouds" title="Permalink to this heading">#</a></h1>
+<span id="ai-ul-ica-pca-example-2d"></span><h1><span class="section-number">22.2.2. </span>FastICA on 2D point clouds<a class="headerlink" href="#fastica-on-2d-point-clouds" title="Permalink to this heading">#</a></h1>
 <p>Esempio disponibile sul sito di <a class="reference external" href="https://scikit-learn.org/dev/auto_examples/decomposition/plot_ica_vs_pca.html#sphx-glr-auto-examples-decomposition-plot-ica-vs-pca-py">scikit-learn</a>.</p>
 <div class="section" id="librerie-e-funzioni-di-comodo">
-<h2><span class="section-number">21.2.2.1. </span>Librerie e funzioni di comodo<a class="headerlink" href="#librerie-e-funzioni-di-comodo" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">22.2.2.1. </span>Librerie e funzioni di comodo<a class="headerlink" href="#librerie-e-funzioni-di-comodo" title="Permalink to this heading">#</a></h2>
 <div class="section" id="import-librerie">
-<h3><span class="section-number">21.2.2.1.1. </span>Import librerie<a class="headerlink" href="#import-librerie" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">22.2.2.1.1. </span>Import librerie<a class="headerlink" href="#import-librerie" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reset</span> -f
@@ -534,7 +535,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="funzioni-utili">
-<h3><span class="section-number">21.2.2.1.2. </span>Funzioni utili<a class="headerlink" href="#funzioni-utili" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">22.2.2.1.2. </span>Funzioni utili<a class="headerlink" href="#funzioni-utili" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### utils</span>
@@ -573,7 +574,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="generazione-campione">
-<h2><span class="section-number">21.2.2.2. </span>Generazione campione<a class="headerlink" href="#generazione-campione" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">22.2.2.2. </span>Generazione campione<a class="headerlink" href="#generazione-campione" title="Permalink to this heading">#</a></h2>
 <p>La formulazione più comune dei metodi usa l’espressione</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{X} = \mathbf{A} \, \mathbf{S} \ ,\]</div>
@@ -622,7 +623,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="ica-e-pca">
-<h2><span class="section-number">21.2.2.3. </span>ICA e PCA<a class="headerlink" href="#ica-e-pca" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">22.2.2.3. </span>ICA e PCA<a class="headerlink" href="#ica-e-pca" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; PCA</span>
@@ -639,7 +640,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="risultati">
-<h2><span class="section-number">21.2.2.4. </span>Risultati<a class="headerlink" href="#risultati" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">22.2.2.4. </span>Risultati<a class="headerlink" href="#risultati" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Print results:</span>
@@ -745,7 +746,7 @@ ICA. indepdent components (rows of the matrix)
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">21.2. </span>ICA e PCA</p>
+        <p class="prev-next-title"><span class="section-number">22.2. </span>ICA e PCA</p>
       </div>
     </a>
     <a class="right-next"
@@ -753,7 +754,7 @@ ICA. indepdent components (rows of the matrix)
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">21.2.3. </span>ICA e PCA: segnali in tempo</p>
+        <p class="prev-next-title"><span class="section-number">22.2.3. </span>ICA e PCA: segnali in tempo</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -772,14 +773,14 @@ ICA. indepdent components (rows of the matrix)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerie-e-funzioni-di-comodo">21.2.2.1. Librerie e funzioni di comodo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">21.2.2.1.1. Import librerie</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzioni-utili">21.2.2.1.2. Funzioni utili</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerie-e-funzioni-di-comodo">22.2.2.1. Librerie e funzioni di comodo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librerie">22.2.2.1.1. Import librerie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funzioni-utili">22.2.2.1.2. Funzioni utili</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generazione-campione">21.2.2.2. Generazione campione</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ica-e-pca">21.2.2.3. ICA e PCA</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risultati">21.2.2.4. Risultati</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generazione-campione">22.2.2.2. Generazione campione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ica-e-pca">22.2.2.3. ICA e PCA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risultati">22.2.2.4. Risultati</a></li>
 </ul>
   </nav></div>
 
