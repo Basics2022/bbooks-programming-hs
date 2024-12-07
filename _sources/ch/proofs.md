@@ -15,6 +15,7 @@ Date due variabili casuali gaussiane indipendenti, $X_1 \sim \mathscr{N}(\mu_1,\
 - calcolando la pdf nelle nuove variabili $f_{X_1 Z}(x_1, z)$
 - marginalizzando rispetto a $X_1$, $f_Z(z) = \int_{x_1} f_{X_1 Z}(x_1, z) dz$
 
+<!--
 Alla funzione distribuzione di probabilità congiunta $f_{X_1 X_2}(x_1, x_2)$ delle due variabili casuali indipendenti,
 
 $$\begin{aligned}
@@ -32,8 +33,8 @@ $$\begin{aligned}
  & = \frac{1}{\sqrt{2\pi\sigma^2}}  \frac{1}{\sqrt{2\pi\sigma^2}}  \exp \left[ - \frac{(z_{\pm} - \mu_{\pm})^2}{2 \sigma^2} \right] = \\
 \end{aligned}$$
 
-
 **completamento quadrato**
+-->
 
 ```
 ```{dropdown} Con varianza diversa

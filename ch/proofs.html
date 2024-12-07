@@ -498,22 +498,26 @@ Con la stessa varianza<div class="sd-summary-down docutils">
 <li><p class="sd-card-text">calcolando la pdf nelle nuove variabili <span class="math notranslate nohighlight">\(f_{X_1 Z}(x_1, z)\)</span></p></li>
 <li><p class="sd-card-text">marginalizzando rispetto a <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(f_Z(z) = \int_{x_1} f_{X_1 Z}(x_1, z) dz\)</span></p></li>
 </ul>
-<p class="sd-card-text">Alla funzione distribuzione di probabilità congiunta <span class="math notranslate nohighlight">\(f_{X_1 X_2}(x_1, x_2)\)</span> delle due variabili casuali indipendenti,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
+<!--
+Alla funzione distribuzione di probabilità congiunta $f_{X_1 X_2}(x_1, x_2)$ delle due variabili casuali indipendenti,
+
+$$\begin{aligned}
  f_{X_1 X_2}(x_1,x_2)
- &amp; = f_{X_1}(x_1) f_{X_2}(x_2) = \\
- &amp; = \frac{1}{\sqrt{2 \pi  \sigma^2}} \exp\left[-\frac{(x_1-\mu_1)^2}{2 \sigma^2} \right] \, \frac{1}{\sqrt{2 \pi  \sigma^2}} \exp\left[-\frac{(x_2-\mu_2)^2}{2 \sigma^2} \right] = \\
-\end{aligned}\end{split}\]</div>
-<p class="sd-card-text">può essere applicato il cambio di variabili, <span class="math notranslate nohighlight">\(x_1 = x_1\)</span>, <span class="math notranslate nohighlight">\(z = x_1 + x_2\)</span>, e ri-organizzata</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
- &amp; = \frac{1}{\sqrt{2\pi\sigma^2}}  \frac{1}{\sqrt{2\pi\sigma^2}}  \exp \left[ - \frac{x_1^2 + x_2^2 - 2 \mu_1 x_1 - 2 \mu_2 x_2 + \mu_1^2 + \mu_2^2}{2 \sigma^2} \right] = \\
- &amp; = \frac{1}{\sqrt{2\pi\sigma^2}}  \frac{1}{\sqrt{2\pi\sigma^2}}  \exp \left[ - \frac{x_1^2 + x_2^2 \pm 2 x_1 x_2 \mp 2 x_1 x_2 - 2 \mu_1 x_1 - 2 \mu_2 x_2 \mp 2 \mu_1 \mu_2 \pm 2 \mu_1 \mu_2 + \mu_1^2 + \mu_2^2}{2 \sigma^2} \right] = \\
- &amp; = \frac{1}{\sqrt{2\pi\sigma^2}}  \frac{1}{\sqrt{2\pi\sigma^2}}  \exp \left[ - \frac{(x_1 \pm x_2)^2 - 2 (x_1 \pm x_2)(\mu_1 \pm \mu_2)  + (\mu_1 \pm \mu_2)^2)}{2 \sigma^2} \right] = \\
- &amp; = \frac{1}{\sqrt{2\pi\sigma^2}}  \frac{1}{\sqrt{2\pi\sigma^2}}  \exp \left[ - \frac{(z_{\pm} - \mu_{\pm})^2}{2 \sigma^2} \right] = \\
-\end{aligned}\end{split}\]</div>
-<p class="sd-card-text"><strong>completamento quadrato</strong></p>
+ & = f_{X_1}(x_1) f_{X_2}(x_2) = \\
+ & = \frac{1}{\sqrt{2 \pi  \sigma^2}} \exp\left[-\frac{(x_1-\mu_1)^2}{2 \sigma^2} \right] \, \frac{1}{\sqrt{2 \pi  \sigma^2}} \exp\left[-\frac{(x_2-\mu_2)^2}{2 \sigma^2} \right] = \\
+\end{aligned}$$
+
+può essere applicato il cambio di variabili, $x_1 = x_1$, $z = x_1 + x_2$, e ri-organizzata 
+
+$$\begin{aligned}
+ & = \frac{1}{\sqrt{2\pi\sigma^2}}  \frac{1}{\sqrt{2\pi\sigma^2}}  \exp \left[ - \frac{x_1^2 + x_2^2 - 2 \mu_1 x_1 - 2 \mu_2 x_2 + \mu_1^2 + \mu_2^2}{2 \sigma^2} \right] = \\
+ & = \frac{1}{\sqrt{2\pi\sigma^2}}  \frac{1}{\sqrt{2\pi\sigma^2}}  \exp \left[ - \frac{x_1^2 + x_2^2 \pm 2 x_1 x_2 \mp 2 x_1 x_2 - 2 \mu_1 x_1 - 2 \mu_2 x_2 \mp 2 \mu_1 \mu_2 \pm 2 \mu_1 \mu_2 + \mu_1^2 + \mu_2^2}{2 \sigma^2} \right] = \\
+ & = \frac{1}{\sqrt{2\pi\sigma^2}}  \frac{1}{\sqrt{2\pi\sigma^2}}  \exp \left[ - \frac{(x_1 \pm x_2)^2 - 2 (x_1 \pm x_2)(\mu_1 \pm \mu_2)  + (\mu_1 \pm \mu_2)^2)}{2 \sigma^2} \right] = \\
+ & = \frac{1}{\sqrt{2\pi\sigma^2}}  \frac{1}{\sqrt{2\pi\sigma^2}}  \exp \left[ - \frac{(z_{\pm} - \mu_{\pm})^2}{2 \sigma^2} \right] = \\
+\end{aligned}$$
+
+**completamento quadrato**
+-->
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
