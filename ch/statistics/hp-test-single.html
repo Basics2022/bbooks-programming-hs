@@ -682,7 +682,12 @@ X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{
 </div>
 </details>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show influence of alpha on rejection set</span>
 
@@ -697,7 +702,7 @@ X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{
 
 <span class="c1"># Plot probability density, f(x), cumulative probability, F(x), and significance alpha(x)=1-F(x)</span>
 <span class="n">x_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">25.</span><span class="p">,</span> <span class="mf">.05</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">chi2</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x_plot</span><span class="p">,</span> <span class="n">n_dofs</span><span class="p">)</span> <span class="p">)</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="n">x_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_plot</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;$\chi^2_</span><span class="si">{</span><span class="n">n_dofs</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
@@ -718,6 +723,7 @@ X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rejection and acceptance regions for significance, alpha = 0.05
 - Not rejection for X2 &lt; 11.0705
@@ -730,7 +736,7 @@ X_rej_lim( alpha=0.002 ) = 18.9074
 X_rej_lim( alpha=0.000 ) = 22.6141
 </pre></div>
 </div>
-<img alt="../../_images/d2da658fc39bb546a2889d563b8868cfec0cf3f52b45d7d03f680160c589e328.png" src="../../_images/d2da658fc39bb546a2889d563b8868cfec0cf3f52b45d7d03f680160c589e328.png" />
+<img alt="../../_images/0efd2fa4aebc7f84a3036424e8a6dfed64e2e966ba0122f5c069df76a019f401.png" src="../../_images/0efd2fa4aebc7f84a3036424e8a6dfed64e2e966ba0122f5c069df76a019f401.png" />
 </div>
 </div>
 <p>Vengono svolti gli esperimenti, raccolti i dati, calcolata la statistica test sui campioni e questa viene utilizzata per trarre le conclusioni sull’ipotesi nulla.</p>
