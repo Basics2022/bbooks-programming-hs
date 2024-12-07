@@ -497,10 +497,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-gaussiana-o-normale-mathscr-n">17.1.6.1. Distribuzione gaussiana o normale, <span class="math notranslate nohighlight">\(\mathscr{N}\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-chi-quadrato-chi-2">17.1.6.2. Distribuzione chi-quadrato, <span class="math notranslate nohighlight">\(\chi^2\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-t-student">17.1.6.3. Distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distrubuzione-gaussiana-come-limite-della-distribuzione-t-student">17.1.6.3.1. Distrubuzione gaussiana come limite della distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-t-student">17.1.6.3. Distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a></li>
 </ul>
             </nav>
         </div>
@@ -537,18 +534,7 @@ document.write(`
 <p>con il numeratore con distribuzione normale, <span class="math notranslate nohighlight">\(Z \sim \mathscr{N}(0,1)\)</span>, e il denominatore con distribuzione chi quadrato, <span class="math notranslate nohighlight">\(K \sim \chi^2_n\)</span>. La pdf è</p>
 <div class="math notranslate nohighlight">
 \[f(x) = \frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{n \, \pi} \, \Gamma\left(\frac{n}{2}\right)} \left( 1 + \frac{x^2}{n} \right)^{-\frac{n + 1}{2}} \ \sim \ \left( 1 + \frac{x^2}{n} \right)^{-\frac{n + 1}{2}} \ .\]</div>
-<div class="section" id="distrubuzione-gaussiana-come-limite-della-distribuzione-t-student">
-<h3><span class="section-number">17.1.6.3.1. </span>Distrubuzione gaussiana come limite della distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student<a class="headerlink" href="#distrubuzione-gaussiana-come-limite-della-distribuzione-t-student" title="Permalink to this heading">#</a></h3>
-<p>Ricordandosi la definizione di <span class="math notranslate nohighlight">\(e^x\)</span> come limite della successione <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty} \left( 1 + \frac{x}{n} \right)^n =: e^x\)</span>, e usando l’approssimazione asintotica per <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span> della funzione Gamma <span class="math notranslate nohighlight">\(\Gamma(n+\alpha) \sim \Gamma(n)n^{\alpha}\)</span>, si può dimostrare che</p>
-<div class="math notranslate nohighlight">
-\[\left( 1 + \frac{x^2}{n} \right)^{-\frac{n+1}{2}} = \left( 1 + \frac{x^2}{n} \right)^{-\frac{1}{2}} \left[ \left( 1 + \frac{x^2}{n} \right)^n \right]^{-\frac{1}{2}} \quad \rightarrow \quad 1 \cdot e^{-\frac{x^2}{2}}\]</div>
-<div class="math notranslate nohighlight">
-\[\frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{n} \, \Gamma\left( \frac{n}{2} \right)} \sim
-  \frac{\Gamma\left(\frac{n}{2}\right) \, \left(\frac{n}{2}\right)^{\frac{1}{2}}}{\sqrt{n} \, \Gamma\left( \frac{n}{2} \right)} = \frac{1}{\sqrt{2}} \ , \]</div>
-<p>e quindi la funzione <span class="math notranslate nohighlight">\(t\)</span>-Student tende alla distribuzione normale con valore atteso <span class="math notranslate nohighlight">\(0\)</span> e varianza unitaria,</p>
-<div class="math notranslate nohighlight">
-\[f(x) \sim \frac{1}{\sqrt{2 \,\pi}} e^{-\frac{x^2}{2}} \ .\]</div>
-</div>
+<p><strong>Proprietà.</strong> Per <span class="math notranslate nohighlight">\(N \rightarrow +\infty\)</span>, la distribuzione <a class="reference internal" href="../proofs.html#proof-t-student-limit-gauss"><span class="std std-ref"><span class="math notranslate nohighlight">\(t_N\)</span> tende alla distribuzione gaussiana <span class="math notranslate nohighlight">\(\mathscr{N}(0,1)\)</span></span></a>.</p>
 </div>
 </div>
 
@@ -617,10 +603,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-gaussiana-o-normale-mathscr-n">17.1.6.1. Distribuzione gaussiana o normale, <span class="math notranslate nohighlight">\(\mathscr{N}\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-chi-quadrato-chi-2">17.1.6.2. Distribuzione chi-quadrato, <span class="math notranslate nohighlight">\(\chi^2\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-t-student">17.1.6.3. Distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distrubuzione-gaussiana-come-limite-della-distribuzione-t-student">17.1.6.3.1. Distrubuzione gaussiana come limite della distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-t-student">17.1.6.3. Distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a></li>
 </ul>
   </nav></div>
 

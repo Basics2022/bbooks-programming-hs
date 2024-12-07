@@ -5,6 +5,20 @@ Questa sezione contiene le dimostrazioni usate all'interno del bbook. Le dimostr
 
 La distinzione da una raccolta di appunti personali potrebbe non essere così definita.
 
+(proof:t-student-limit-gauss)=
+### Distrubuzione gaussiana come limite della distribuzione $t$-Student
+
+Ricordandosi la definizione di $e^x$ come limite della successione $\lim_{n \rightarrow \infty} \left( 1 + \frac{x}{n} \right)^n =: e^x$, e usando l'approssimazione asintotica per $n \rightarrow \infty$ della funzione Gamma $\Gamma(n+\alpha) \sim \Gamma(n)n^{\alpha}$, si può dimostrare che
+
+$$\left( 1 + \frac{x^2}{n} \right)^{-\frac{n+1}{2}} = \left( 1 + \frac{x^2}{n} \right)^{-\frac{1}{2}} \left[ \left( 1 + \frac{x^2}{n} \right)^n \right]^{-\frac{1}{2}} \quad \rightarrow \quad 1 \cdot e^{-\frac{x^2}{2}}$$
+
+$$\frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{n} \, \Gamma\left( \frac{n}{2} \right)} \sim
+  \frac{\Gamma\left(\frac{n}{2}\right) \, \left(\frac{n}{2}\right)^{\frac{1}{2}}}{\sqrt{n} \, \Gamma\left( \frac{n}{2} \right)} = \frac{1}{\sqrt{2}} \ , $$
+
+e quindi la funzione $t$-Student tende alla distribuzione normale con valore atteso $0$ e varianza unitaria,
+
+$$f(x) \sim \frac{1}{\sqrt{2 \,\pi}} e^{-\frac{x^2}{2}} \ .$$
+
 (proof:gauss-independent-sum)=
 ## Somma/differenza di variabili gaussiane indipendenti
 ```{dropdown} Con la stessa varianza

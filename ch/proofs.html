@@ -464,10 +464,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#somma-differenza-di-variabili-gaussiane-indipendenti">19.1. Somma/differenza di variabili gaussiane indipendenti</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-della-statistica-t-sim-t-n-1-nel-t-test-per-campioni-singoli">19.2. Distribuzione della statistica <span class="math notranslate nohighlight">\(t \sim t_{N-1}\)</span> nel <span class="math notranslate nohighlight">\(t\)</span>-test per campioni singoli</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indipendenza-di-media-campionaria-e-varianza-campionaria-per-variabili-gaussiane-iid">19.3. Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-n-1-n-left-frac-x-n-bar-x-sigma-2-right-2-sim-chi-2-n-1-per-variabili-gaussiane-iid">19.4. <span class="math notranslate nohighlight">\(\sum_{n=1}^N \left(\frac{X_n - \bar{X}}{\sigma^2}\right)^2 \sim \chi^2_{N-1}\)</span> per variabili gaussiane iid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distrubuzione-gaussiana-come-limite-della-distribuzione-t-student">19.1. Distrubuzione gaussiana come limite della distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#somma-differenza-di-variabili-gaussiane-indipendenti">19.2. Somma/differenza di variabili gaussiane indipendenti</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-della-statistica-t-sim-t-n-1-nel-t-test-per-campioni-singoli">19.3. Distribuzione della statistica <span class="math notranslate nohighlight">\(t \sim t_{N-1}\)</span> nel <span class="math notranslate nohighlight">\(t\)</span>-test per campioni singoli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indipendenza-di-media-campionaria-e-varianza-campionaria-per-variabili-gaussiane-iid">19.4. Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-n-1-n-left-frac-x-n-bar-x-sigma-2-right-2-sim-chi-2-n-1-per-variabili-gaussiane-iid">19.5. <span class="math notranslate nohighlight">\(\sum_{n=1}^N \left(\frac{X_n - \bar{X}}{\sigma^2}\right)^2 \sim \chi^2_{N-1}\)</span> per variabili gaussiane iid</a></li>
 </ul>
             </nav>
         </div>
@@ -483,8 +484,20 @@ document.write(`
 <span id="statistics-hs-proofs"></span><h1><span class="section-number">19. </span>Dimostrazioni<a class="headerlink" href="#dimostrazioni" title="Permalink to this heading">#</a></h1>
 <p>Questa sezione contiene le dimostrazioni usate all’interno del bbook. Le dimostrazioni vengono fornite per completezza, ma vengono raccolte qui per non appesantire inutilmente le altre sezioni. Alcune di esse possono richiedere qualche strumento che va oltre gli strumenti del valore atteso degli strumenti messi a disposizione dalla preparazione fornita da una scuola superiore.</p>
 <p>La distinzione da una raccolta di appunti personali potrebbe non essere così definita.</p>
+<div class="section" id="distrubuzione-gaussiana-come-limite-della-distribuzione-t-student">
+<h2><span class="section-number">19.1. </span>Distrubuzione gaussiana come limite della distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student<a class="headerlink" href="#distrubuzione-gaussiana-come-limite-della-distribuzione-t-student" title="Permalink to this heading">#</a></h2>
+<p>Ricordandosi la definizione di <span class="math notranslate nohighlight">\(e^x\)</span> come limite della successione <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty} \left( 1 + \frac{x}{n} \right)^n =: e^x\)</span>, e usando l’approssimazione asintotica per <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span> della funzione Gamma <span class="math notranslate nohighlight">\(\Gamma(n+\alpha) \sim \Gamma(n)n^{\alpha}\)</span>, si può dimostrare che</p>
+<div class="math notranslate nohighlight">
+\[\left( 1 + \frac{x^2}{n} \right)^{-\frac{n+1}{2}} = \left( 1 + \frac{x^2}{n} \right)^{-\frac{1}{2}} \left[ \left( 1 + \frac{x^2}{n} \right)^n \right]^{-\frac{1}{2}} \quad \rightarrow \quad 1 \cdot e^{-\frac{x^2}{2}}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{n} \, \Gamma\left( \frac{n}{2} \right)} \sim
+  \frac{\Gamma\left(\frac{n}{2}\right) \, \left(\frac{n}{2}\right)^{\frac{1}{2}}}{\sqrt{n} \, \Gamma\left( \frac{n}{2} \right)} = \frac{1}{\sqrt{2}} \ , \]</div>
+<p>e quindi la funzione <span class="math notranslate nohighlight">\(t\)</span>-Student tende alla distribuzione normale con valore atteso <span class="math notranslate nohighlight">\(0\)</span> e varianza unitaria,</p>
+<div class="math notranslate nohighlight">
+\[f(x) \sim \frac{1}{\sqrt{2 \,\pi}} e^{-\frac{x^2}{2}} \ .\]</div>
+</div>
 <div class="section" id="somma-differenza-di-variabili-gaussiane-indipendenti">
-<span id="proof-gauss-independent-sum"></span><h2><span class="section-number">19.1. </span>Somma/differenza di variabili gaussiane indipendenti<a class="headerlink" href="#somma-differenza-di-variabili-gaussiane-indipendenti" title="Permalink to this heading">#</a></h2>
+<span id="proof-gauss-independent-sum"></span><h2><span class="section-number">19.2. </span>Somma/differenza di variabili gaussiane indipendenti<a class="headerlink" href="#somma-differenza-di-variabili-gaussiane-indipendenti" title="Permalink to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 Con la stessa varianza<div class="sd-summary-down docutils">
@@ -539,7 +552,7 @@ $$\begin{aligned}
 </div>
 </details></div>
 <div class="section" id="distribuzione-della-statistica-t-sim-t-n-1-nel-t-test-per-campioni-singoli">
-<span id="proof-t-test-gaussian"></span><h2><span class="section-number">19.2. </span>Distribuzione della statistica <span class="math notranslate nohighlight">\(t \sim t_{N-1}\)</span> nel <span class="math notranslate nohighlight">\(t\)</span>-test per campioni singoli<a class="headerlink" href="#distribuzione-della-statistica-t-sim-t-n-1-nel-t-test-per-campioni-singoli" title="Permalink to this heading">#</a></h2>
+<span id="proof-t-test-gaussian"></span><h2><span class="section-number">19.3. </span>Distribuzione della statistica <span class="math notranslate nohighlight">\(t \sim t_{N-1}\)</span> nel <span class="math notranslate nohighlight">\(t\)</span>-test per campioni singoli<a class="headerlink" href="#distribuzione-della-statistica-t-sim-t-n-1-nel-t-test-per-campioni-singoli" title="Permalink to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Dimostrazione<div class="sd-summary-down docutils">
@@ -566,7 +579,7 @@ Dimostrazione<div class="sd-summary-down docutils">
 </div>
 </details></div>
 <div class="section" id="indipendenza-di-media-campionaria-e-varianza-campionaria-per-variabili-gaussiane-iid">
-<span id="proof-independence-sample-estimators-norm"></span><h2><span class="section-number">19.3. </span>Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid<a class="headerlink" href="#indipendenza-di-media-campionaria-e-varianza-campionaria-per-variabili-gaussiane-iid" title="Permalink to this heading">#</a></h2>
+<span id="proof-independence-sample-estimators-norm"></span><h2><span class="section-number">19.4. </span>Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid<a class="headerlink" href="#indipendenza-di-media-campionaria-e-varianza-campionaria-per-variabili-gaussiane-iid" title="Permalink to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 Dimostrazione<div class="sd-summary-down docutils">
@@ -578,7 +591,7 @@ Dimostrazione<div class="sd-summary-down docutils">
 </div>
 </details></div>
 <div class="section" id="sum-n-1-n-left-frac-x-n-bar-x-sigma-2-right-2-sim-chi-2-n-1-per-variabili-gaussiane-iid">
-<span id="proof-s2-chi2-gauss"></span><h2><span class="section-number">19.4. </span><span class="math notranslate nohighlight">\(\sum_{n=1}^N \left(\frac{X_n - \bar{X}}{\sigma^2}\right)^2 \sim \chi^2_{N-1}\)</span> per variabili gaussiane iid<a class="headerlink" href="#sum-n-1-n-left-frac-x-n-bar-x-sigma-2-right-2-sim-chi-2-n-1-per-variabili-gaussiane-iid" title="Permalink to this heading">#</a></h2>
+<span id="proof-s2-chi2-gauss"></span><h2><span class="section-number">19.5. </span><span class="math notranslate nohighlight">\(\sum_{n=1}^N \left(\frac{X_n - \bar{X}}{\sigma^2}\right)^2 \sim \chi^2_{N-1}\)</span> per variabili gaussiane iid<a class="headerlink" href="#sum-n-1-n-left-frac-x-n-bar-x-sigma-2-right-2-sim-chi-2-n-1-per-variabili-gaussiane-iid" title="Permalink to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 Dimostrazione<div class="sd-summary-down docutils">
@@ -654,10 +667,11 @@ Dimostrazione<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#somma-differenza-di-variabili-gaussiane-indipendenti">19.1. Somma/differenza di variabili gaussiane indipendenti</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-della-statistica-t-sim-t-n-1-nel-t-test-per-campioni-singoli">19.2. Distribuzione della statistica <span class="math notranslate nohighlight">\(t \sim t_{N-1}\)</span> nel <span class="math notranslate nohighlight">\(t\)</span>-test per campioni singoli</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indipendenza-di-media-campionaria-e-varianza-campionaria-per-variabili-gaussiane-iid">19.3. Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-n-1-n-left-frac-x-n-bar-x-sigma-2-right-2-sim-chi-2-n-1-per-variabili-gaussiane-iid">19.4. <span class="math notranslate nohighlight">\(\sum_{n=1}^N \left(\frac{X_n - \bar{X}}{\sigma^2}\right)^2 \sim \chi^2_{N-1}\)</span> per variabili gaussiane iid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distrubuzione-gaussiana-come-limite-della-distribuzione-t-student">19.1. Distrubuzione gaussiana come limite della distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#somma-differenza-di-variabili-gaussiane-indipendenti">19.2. Somma/differenza di variabili gaussiane indipendenti</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuzione-della-statistica-t-sim-t-n-1-nel-t-test-per-campioni-singoli">19.3. Distribuzione della statistica <span class="math notranslate nohighlight">\(t \sim t_{N-1}\)</span> nel <span class="math notranslate nohighlight">\(t\)</span>-test per campioni singoli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indipendenza-di-media-campionaria-e-varianza-campionaria-per-variabili-gaussiane-iid">19.4. Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-n-1-n-left-frac-x-n-bar-x-sigma-2-right-2-sim-chi-2-n-1-per-variabili-gaussiane-iid">19.5. <span class="math notranslate nohighlight">\(\sum_{n=1}^N \left(\frac{X_n - \bar{X}}{\sigma^2}\right)^2 \sim \chi^2_{N-1}\)</span> per variabili gaussiane iid</a></li>
 </ul>
   </nav></div>
 
