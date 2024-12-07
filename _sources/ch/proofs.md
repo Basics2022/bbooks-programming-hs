@@ -22,7 +22,7 @@ con $Z \sim N(0,1)$ e $V \sim \chi^2_{\nu}$, con $\nu = N-1$. Infatti:
 - per definizione della distribuzione di $t$-Student, $\frac{Z}{\sqrt{V}{N-1}} \sim \chi^2_{N-1}$
 - questo rapporto coincide alla statistica test, infatti:
 
-  $$\frac{Z}{\sqrt{\frac{V}{N-1}}} = \frac{\frac{(\bar{X}-\mu)\sqrt{N}}{\sigma}}{\sqrt{\frac{S^2}{\sigma^2}}} $$
+  $$t_{N-1} \sim \frac{Z}{\sqrt{\frac{V}{N-1}}} = \frac{\frac{(\bar{X}-\mu)\sqrt{N}}{\sigma}}{\sqrt{\frac{S^2}{\sigma^2}}} = \frac{\bar{X} - \mu}{\frac{S}{\sqrt{N}}} =: t \ .$$
 
 ```
 
