@@ -26,6 +26,23 @@ Il test di verifica di un’ipotesi di Fisher si ispira al principio di falsific
     All'aumentare del livello di significatività del test richiesto, si riduce la regione di falsificazione e quindi diventano più stringenti i requisiti sul test per scartare l'ipotesi di partenza.
 ```
 
+**Risultati ed errori.** Un test di ipotesi può portare a due tipi di errore:
+- **tipo I, falso positivo**: rifiuto di un'ipotesi $\text{H}_0$ valida
+- **tipo II, falso negativo**: mancato rifiuto di un'ipotesi $\text{H}_0$ non valida
+
+```{prf:example} Giudizio di un imputato
+In un tribunale, si vuole decidere se l'imputato è innocente. Si considera come ipotesi nulla $\text{H}_0$: "l'imputato è innocente". Le indagini svolte cercano di valutare lo stato dell'imputato e portano alla decisione di condanna o assoluzione. Un errore di **tipo I** corrisponde alla condanna di un imputato innocente; un errore di tipo II corrisponde all'assoluzione di un imputato colpevole.
+```
+
+```{prf:example} Test medico
+**todo** *Definire potenza*, $\beta$, di un test in presenza di un'ipotesi alternativa. Fare esempio con falsi positivi, e affidabilità tamponi Covid.
+
+- $\text{H}_0$ nulla vera: $\alpha$: probabilità di rifiutare $\text{H}_0$; $1-\alpha$: probabilità di non rifiutare $\text{H}_0$
+- $\text{H}_1$ alternativa vera: $1-\beta$: probabilità di rifiutare $\text{H}_0$; $\beta$: probabilità di non rifiutare $\text{H}_0$
+
+
+```
+
 Usando questo approccio, è possibile distinguere diversi test a seconda dei dati disponibili (numero di campioni, dimensione dei campioni, distribuzione attesa delle osservazioni,...), della variabile test utilizzata, e dell'obiettivo del test. Una classificazione rigida dettagliata rischierebbe di risultare poco pratica e imperfetta.
 
 ````{only} html

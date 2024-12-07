@@ -390,7 +390,7 @@ iterazione: for, while, …
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-User input (2) is an even number
+User input = 2 is an even number
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -424,7 +424,7 @@ User input (2) is an even number
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-User input (15). 15 \PYGZpc{} 3 = 0
+User input (15.7). 15.7 \PYGZpc{} 3 = 0
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1162,7 +1162,7 @@ Convergence reached
 Sol, x = \PYGZhy{}0.567143440246582
 residual     : \PYGZhy{}2.348157265297246e\PYGZhy{}07
 n. iterations: 20
-elapsed time : 0.0006415843963623047
+elapsed time : 0.0005490779876708984
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1257,7 +1257,7 @@ Convergence reached
 Sol, x = \PYGZhy{}0.567143285989123
 residual     : 6.927808993140161e\PYGZhy{}09
 n. iterations: 3
-elapsed time : 0.0006017684936523438
+elapsed time : 0.0006461143493652344
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1399,7 +1399,7 @@ Convergence reached
 Sol, x = [\PYGZhy{}0.61803399 \PYGZhy{}0.61803399]
 residual     : [ 0.00000000e+00 \PYGZhy{}2.10942375e\PYGZhy{}13]
 n. iterations: 4
-elapsed time : 0.0010373592376708984
+elapsed time : 0.0011439323425292969
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -2097,130 +2097,9 @@ Attualmente, sono disponibili i mezzi informatici e un gran numero di librerie p
 
 \section{Variabili 1\sphinxhyphen{}dimensionali}
 \label{\detokenize{ch/statistics/descriptive:variabili-1-dimensionali}}
-\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
-
-\begin{sphinxuseclass}{cell_input}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{express} \PYG{k}{as} \PYG{n+nn}{px}
-\PYG{n}{data} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{data}\PYG{o}{.}\PYG{n}{iris}\PYG{p}{(}\PYG{p}{)}
-\PYG{n}{data}\PYG{o}{.}\PYG{n}{head}\PYG{p}{(}\PYG{p}{)}
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimInput}
-\begin{sphinxVerbatimOutput}
-
-\begin{sphinxuseclass}{cell_output}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-   sepal\PYGZus{}length  sepal\PYGZus{}width  petal\PYGZus{}length  petal\PYGZus{}width species  species\PYGZus{}id
-0           5.1          3.5           1.4          0.2  setosa           1
-1           4.9          3.0           1.4          0.2  setosa           1
-2           4.7          3.2           1.3          0.2  setosa           1
-3           4.6          3.1           1.5          0.2  setosa           1
-4           5.0          3.6           1.4          0.2  setosa           1
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimOutput}
-
-\end{sphinxuseclass}
-\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
-
-\begin{sphinxuseclass}{cell_input}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{\PYGZsh{} !pip install plotly==5.10}
-\PYG{c+c1}{\PYGZsh{} !pip install plotly==5.24}
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimInput}
-
-\end{sphinxuseclass}
-\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
-
-\begin{sphinxuseclass}{cell_input}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k+kn}{import} \PYG{n+nn}{plotly} \PYG{k}{as} \PYG{n+nn}{p}
-
-\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{p}\PYG{o}{.}\PYG{n}{\PYGZus{}\PYGZus{}version\PYGZus{}\PYGZus{}}\PYG{p}{)}
-
-\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{io} \PYG{k}{as} \PYG{n+nn}{pio}
-\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{express} \PYG{k}{as} \PYG{n+nn}{px}
-\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{offline} \PYG{k}{as} \PYG{n+nn}{py}
-
-\PYG{n}{df} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{data}\PYG{o}{.}\PYG{n}{iris}\PYG{p}{(}\PYG{p}{)}
-\PYG{n}{fig} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n}{x}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{sepal\PYGZus{}width}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{sepal\PYGZus{}length}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{species}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{size}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{sepal\PYGZus{}length}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-\PYG{n}{fig}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimInput}
-\begin{sphinxVerbatimOutput}
-
-\begin{sphinxuseclass}{cell_output}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-5.24.0
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimOutput}
-
-\end{sphinxuseclass}
-\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
-
-\begin{sphinxuseclass}{cell_input}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{\PYGZsh{} Display Plotly chart}
-\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{graph\PYGZus{}objects} \PYG{k}{as} \PYG{n+nn}{go}
-\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{io} \PYG{k}{as} \PYG{n+nn}{pio}
-
-\PYG{n}{fig} \PYG{o}{=} \PYG{n}{go}\PYG{o}{.}\PYG{n}{Figure}\PYG{p}{(}\PYG{p}{)}
-\PYG{n}{fig}\PYG{o}{.}\PYG{n}{add\PYGZus{}trace}\PYG{p}{(}\PYG{n}{go}\PYG{o}{.}\PYG{n}{Scatter}\PYG{p}{(}\PYG{n}{x}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{9}\PYG{p}{]}\PYG{p}{,} \PYG{n}{name}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{y = x\PYGZca{}2}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}
-\PYG{n}{fig}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
-
-\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\PYG{l+s+sd}{\PYGZsh{} Force MathJax to re\PYGZhy{}render}
-\PYG{l+s+sd}{from IPython.display import display, Javascript}
-\PYG{l+s+sd}{display(Javascript(\PYGZdq{}MathJax.Hub.Queue([\PYGZsq{}Typeset\PYGZsq{}, MathJax.Hub]);\PYGZdq{}))}
-\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimInput}
-\begin{sphinxVerbatimOutput}
-
-\begin{sphinxuseclass}{cell_output}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZsq{}\PYGZbs{}n\PYGZsh{} Force MathJax to re\PYGZhy{}render\PYGZbs{}nfrom IPython.display import display, Javascript\PYGZbs{}ndisplay(Javascript(\PYGZdq{}MathJax.Hub.Queue([\PYGZbs{}\PYGZsq{}Typeset\PYGZbs{}\PYGZsq{}, MathJax.Hub]);\PYGZdq{}))\PYGZbs{}n\PYGZsq{}
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimOutput}
-
-\end{sphinxuseclass}
-\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
-
-\begin{sphinxuseclass}{cell_input}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k+kn}{import} \PYG{n+nn}{plotly}\PYG{n+nn}{.}\PYG{n+nn}{express} \PYG{k}{as} \PYG{n+nn}{px}
-
-\PYG{c+c1}{\PYGZsh{} import plotly.io as pio}
-\PYG{c+c1}{\PYGZsh{} pio.renderers.default = \PYGZdq{}iframe\PYGZus{}connected\PYGZdq{}}
-
-\PYG{n}{df} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{data}\PYG{o}{.}\PYG{n}{iris}\PYG{p}{(}\PYG{p}{)}
-\PYG{n}{fig} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{df}\PYG{p}{,} \PYG{n}{x}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sepal\PYGZus{}width}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{y}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sepal\PYGZus{}length}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{species}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
-\PYG{n}{fig}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
-\PYG{c+c1}{\PYGZsh{} all three of these worked}
-\PYG{c+c1}{\PYGZsh{} fig.show(renderer=\PYGZsq{}iframe\PYGZsq{})}
-\PYG{c+c1}{\PYGZsh{} fig.show(renderer=\PYGZsq{}iframe\PYGZus{}connected\PYGZsq{})}
-\PYG{c+c1}{\PYGZsh{} fig.show(renderer=\PYGZsq{}colab\PYGZsq{})}
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimInput}
-\begin{sphinxVerbatimOutput}
-
-\begin{sphinxuseclass}{cell_output}
-\end{sphinxuseclass}\end{sphinxVerbatimOutput}
-
-\end{sphinxuseclass}
 
 \section{Variabili 2\sphinxhyphen{}dimensionali}
-\label{\detokenize{ch/statistics/descriptive:variabili-2-dimensionali}}\begin{equation*}
-\begin{split}a = 1\end{split}
-\end{equation*}
+\label{\detokenize{ch/statistics/descriptive:variabili-2-dimensionali}}
 
 \section{Variabili di grandi dimensioni}
 \label{\detokenize{ch/statistics/descriptive:variabili-di-grandi-dimensioni}}
@@ -2248,37 +2127,28 @@ Qualitativamente, una variabile casuale è una grandezza che può assumere valor
 
 \sphinxAtStartPar
 \sphinxstylestrong{Contenuti.}
-\begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
-\item {} 
-\sphinxAtStartPar
-Definizione di variabile casuale
+{\hyperref[\detokenize{ch/statistics::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Definizione di variabile casuale}}}}
 
-\item {} 
 \sphinxAtStartPar
-Varaibili casuali discrete
+{\hyperref[\detokenize{ch/statistics::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Variabili casuali discrete}}}}
 
-\item {} 
 \sphinxAtStartPar
-Variabili casuali continue
+{\hyperref[\detokenize{ch/statistics::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Variabili casuali continue}}}}
 
-\item {} 
 \sphinxAtStartPar
-Trasformazione di funzioni di probabilità
+{\hyperref[\detokenize{ch/statistics::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Trasformazione di funzioni di probabilità}}}}
 
-\item {} 
 \sphinxAtStartPar
-Funzioni di probabilità comuni
+{\hyperref[\detokenize{ch/statistics::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Funzioni di probabilità di r.v. discrete comuni}}}}
 
-\item {} 
 \sphinxAtStartPar
-Variabili casuali indipendenti e identicamente distribuite
+{\hyperref[\detokenize{ch/statistics::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Funzioni di probabilità di r.v. continue comuni}}}}
 
-\item {} 
 \sphinxAtStartPar
-Campionamento (\sphinxstylestrong{todo} qui o nella parte di statistica inferenziale, stima?)
+{\hyperref[\detokenize{ch/statistics::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Variabili casuali indipendenti e identicamente distribuite}}}}
 
-\end{enumerate}
+\sphinxAtStartPar
+{\hyperref[\detokenize{ch/statistics::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Campionamento}}}} (\sphinxstylestrong{todo} qui o nella parte di statistica inferenziale, stima?)
 
 \sphinxstepscope
 
@@ -2845,22 +2715,22 @@ In termini di correlazione, \(R_X^2 = \sigma_X^2 + E[X]^2\),
 \subsubsection{Distribuzione gaussiana o normale, \protect\(\mathscr{N}\protect\)}
 \label{\detokenize{ch/statistics/pfun_continuous_examples:distribuzione-gaussiana-o-normale-mathscr-n}}\label{\detokenize{ch/statistics/pfun_continuous_examples:statistics-hs-random-variables-continuous-examples-norm}}
 \sphinxAtStartPar
-\(\mathscr{N}(\mu, \sigma^2)\)
+La funzione densità di probabilità di una variabile casuale gaussiana \(X \sim \mathscr{N}(\mu, \sigma^2)\)  con valore atteso \(\mathbb{E}[X] = \mu\) e varianza \(\mathbb{E}[(X-\mathbb{E}[X])^2]\) è
 \begin{equation*}
-\begin{split}f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \ \sim \ e^{-\frac{(x-\mu)^2}{2\sigma^2}}\end{split}
+\begin{split}f(x;\mu,\sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \qquad \propto \qquad e^{-\frac{(x-\mu)^2}{2\sigma^2}} \ .\end{split}
 \end{equation*}
 
-\subsubsection{Distribuzione chi\sphinxhyphen{}quadrato, \protect\(\chi^2\protect\)}
-\label{\detokenize{ch/statistics/pfun_continuous_examples:distribuzione-chi-quadrato-chi-2}}\label{\detokenize{ch/statistics/pfun_continuous_examples:statistics-hs-random-variables-continuous-examples-chi2}}
+\subsubsection{Distribuzione chi\sphinxhyphen{}quadrato, \protect\(\chi^2_N\protect\)}
+\label{\detokenize{ch/statistics/pfun_continuous_examples:distribuzione-chi-quadrato-chi-2-n}}\label{\detokenize{ch/statistics/pfun_continuous_examples:statistics-hs-random-variables-continuous-examples-chi2}}
 \sphinxAtStartPar
-Date \(n\) variabili casuali \(X_k\) indipendenti con distribuzione normale \(\mathscr{N}(0,1)\), la somma dei loro quadrati,
+Date \(N\) variabili casuali \(\{ X_n \}_{n=1:N}\) {\hyperref[\detokenize{ch/statistics/iid:statistics-hs-random-variables-iid}]{\sphinxcrossref{\DUrole{std,std-ref}{iid}}}} con distribuzione normale \(X_n \sim \mathscr{N}(0,1)\), la somma dei loro quadrati,
 \begin{equation*}
 \begin{split}\chi_n^2 = \sum_{k=1}^{n} X^2_k \ ,\end{split}
 \end{equation*}
 \sphinxAtStartPar
-è una variabile casuale con densità di probabilità \(\chi^2_n\), con \(n\) definito come il numero di gradi di libertà. La distribuzione \(\chi^2_n\) ha una pdf
+è una variabile casuale con densità di probabilità \(\chi^2_N\), con \(N\) definito come il numero di gradi di libertà. La distribuzione \(\chi^2_n\) ha una funzione densità di probabilità
 \begin{equation*}
-\begin{split}f(x) = \frac{1}{2^{\frac{n}{2}} \Gamma\left(\frac{n}{2}\right)} \, x^{\frac{n}{2}-1} \, e^{-\frac{x}{2}} \ \sim \ x^{\frac{n}{2}-1} \, e^{-\frac{n}{2}}\end{split}
+\begin{split}f(x) = \frac{1}{2^{\frac{n}{2}} \Gamma\left(\frac{n}{2}\right)} \, x^{\frac{n}{2}-1} \, e^{-\frac{x}{2}} \qquad \propto \qquad x^{\frac{n}{2}-1} \, e^{-\frac{n}{2}}\end{split}
 \end{equation*}
 
 \subsubsection{Distribuzione \protect\(t\protect\)\sphinxhyphen{}Student}
@@ -2873,41 +2743,28 @@ La \(t\) di Student è la distribuzione di probabilità che governa il rapporto 
 \sphinxAtStartPar
 con il numeratore con distribuzione normale, \(Z \sim \mathscr{N}(0,1)\), e il denominatore con distribuzione chi quadrato, \(K \sim \chi^2_n\). La pdf è
 \begin{equation*}
-\begin{split}f(x) = \frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{n \, \pi} \, \Gamma\left(\frac{n}{2}\right)} \left( 1 + \frac{x^2}{n} \right)^{-\frac{n + 1}{2}} \ \sim \ \left( 1 + \frac{x^2}{n} \right)^{-\frac{n + 1}{2}} \ .\end{split}
+\begin{split}f(x) = \frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{n \, \pi} \, \Gamma\left(\frac{n}{2}\right)} \left( 1 + \frac{x^2}{n} \right)^{-\frac{n + 1}{2}} \qquad \propto \qquad \left( 1 + \frac{x^2}{n} \right)^{-\frac{n + 1}{2}} \ .\end{split}
 \end{equation*}
+\sphinxAtStartPar
+\sphinxstylestrong{Proprietà.} Per \(N \rightarrow +\infty\), la distribuzione {\hyperref[\detokenize{ch/proofs:proof-t-student-limit-gauss}]{\sphinxcrossref{\DUrole{std,std-ref}{\(t_N\) tende alla distribuzione gaussiana \(\mathscr{N}(0,1)\)}}}}.
 
-\paragraph{Distrubuzione gaussiana come limite della distribuzione \protect\(t\protect\)\sphinxhyphen{}Student}
-\label{\detokenize{ch/statistics/pfun_continuous_examples:distrubuzione-gaussiana-come-limite-della-distribuzione-t-student}}
-\sphinxAtStartPar
-Ricordandosi la definizione di \(e^x\) come limite della successione \(\lim_{n \rightarrow \infty} \left( 1 + \frac{x}{n} \right)^n =: e^x\), e usando l’approssimazione asintotica per \(n \rightarrow \infty\) della funzione Gamma \(\Gamma(n+\alpha) \sim \Gamma(n)n^{\alpha}\), si può dimostrare che
-\begin{equation*}
-\begin{split}\left( 1 + \frac{x^2}{n} \right)^{-\frac{n+1}{2}} = \left( 1 + \frac{x^2}{n} \right)^{-\frac{1}{2}} \left[ \left( 1 + \frac{x^2}{n} \right)^n \right]^{-\frac{1}{2}} \quad \rightarrow \quad 1 \cdot e^{-\frac{x^2}{2}}\end{split}
-\end{equation*}\begin{equation*}
-\begin{split}\frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{n} \, \Gamma\left( \frac{n}{2} \right)} \sim
-  \frac{\Gamma\left(\frac{n}{2}\right) \, \left(\frac{n}{2}\right)^{\frac{1}{2}}}{\sqrt{n} \, \Gamma\left( \frac{n}{2} \right)} = \frac{1}{\sqrt{2}} \ , \end{split}
-\end{equation*}
-\sphinxAtStartPar
-e quindi la funzione \(t\)\sphinxhyphen{}Student tende alla distribuzione normale con valore atteso \(0\) e varianza unitaria,
-\begin{equation*}
-\begin{split}f(x) \sim \frac{1}{\sqrt{2 \,\pi}} e^{-\frac{x^2}{2}} \ .\end{split}
-\end{equation*}
 \sphinxstepscope
 
 
 \subsection{Variabili casuali indipendenti e identicamente distribuite, iid.}
-\label{\detokenize{ch/statistics/iid:variabili-casuali-indipendenti-e-identicamente-distribuite-iid}}\label{\detokenize{ch/statistics/iid::doc}}
+\label{\detokenize{ch/statistics/iid:variabili-casuali-indipendenti-e-identicamente-distribuite-iid}}\label{\detokenize{ch/statistics/iid:statistics-hs-random-variables-iid}}\label{\detokenize{ch/statistics/iid::doc}}
 \sphinxAtStartPar
 Due variabili stochastiche \(X\), \(Y\) sono
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-statisticamente indipendenti se la loro probabilità congiunta è uguale al prodotto delle probabilità marginali,
+\sphinxstylestrong{statisticamente indipendenti} se la loro probabilità congiunta è uguale al prodotto delle probabilità marginali,
 \begin{equation*}
 \begin{split}p_{XY}(x,y) = p_X(x) \, p_Y(y) \ ,\end{split}
 \end{equation*}
 \item {} 
 \sphinxAtStartPar
-identicamente distribuite se hanno la stessa densità di probabilità,
+\sphinxstylestrong{identicamente distribuite} se hanno la stessa densità di probabilità,
 \begin{equation*}
 \begin{split}p_X(x) = p_Y(x)\end{split}
 \end{equation*}
@@ -2917,7 +2774,7 @@ identicamente distribuite se hanno la stessa densità di probabilità,
 \subsubsection{Teoremi sulle variabili casuali i.i.d.}
 \label{\detokenize{ch/statistics/iid:teoremi-sulle-variabili-casuali-i-i-d}}
 \sphinxAtStartPar
-Dato un insieme di \(N\) variabili casuali iid \(\{ X_n \}_{n=1:N}\), con valore atteso \(E[X_n] = \mu\) e varianza \(E[(X_n - \mu)^2] = \sigma\), allora la sua media campionaria
+Dato un insieme di \(N\) variabili casuali iid \(\{ X_n \}_{n=1:N}\), con valore atteso \(\mathbb{E}[X_n] = \mu\) e varianza \(\mathbb{E}[(X_n - \mu)^2] = \sigma\), allora la sua media campionaria
 \begin{equation*}
 \begin{split}\bar{X}_N = \frac{1}{N} \sum_{n=1}^N X_n \ \end{split}
 \end{equation*}\begin{itemize}
@@ -2954,97 +2811,6 @@ per il \sphinxstylestrong{teorema del limite centrale}, è una variabile casuale
 
 \end{itemize}
 
-
-\subsubsection{Esempio: teoremi dei grandi numeri e del limite centrale}
-\label{\detokenize{ch/statistics/iid:esempio-teoremi-dei-grandi-numeri-e-del-limite-centrale}}
-
-\paragraph{Librerie e funzioni}
-\label{\detokenize{ch/statistics/iid:librerie-e-funzioni}}
-\begin{sphinxuseclass}{cell}
-\begin{sphinxuseclass}{tag_hide-input}
-\end{sphinxuseclass}
-\end{sphinxuseclass}
-
-\paragraph{Dimensione campione}
-\label{\detokenize{ch/statistics/iid:dimensione-campione}}
-\begin{sphinxuseclass}{cell}
-\begin{sphinxuseclass}{tag_hide-input}
-\end{sphinxuseclass}
-\end{sphinxuseclass}
-
-\paragraph{Definizione delle variabili casuali}
-\label{\detokenize{ch/statistics/iid:definizione-delle-variabili-casuali}}
-\begin{sphinxuseclass}{cell}
-\begin{sphinxuseclass}{tag_hide-input}
-\end{sphinxuseclass}
-\end{sphinxuseclass}
-
-\subsubsection{Stima della distribuzione di probabilità della media campionaria}
-\label{\detokenize{ch/statistics/iid:stima-della-distribuzione-di-probabilita-della-media-campionaria}}
-\sphinxAtStartPar
-Per tutte le popolazioni definite sopra, vengono
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-estratti \(N_s\) campioni,
-
-\item {} 
-\sphinxAtStartPar
-valuata la media campionaria \(\{\overline{X}_s\}_{s = 1:N_s}\),
-
-\item {} 
-\sphinxAtStartPar
-stimata la densità di probabilità \(f_{\overline{X}}(x)\),
-
-\item {} 
-\sphinxAtStartPar
-calcolate le statistiche: media \(\mu_{\overline{x}}\), e variazione standard \(\sigma_{\overline{x}}^2\)
-
-\end{itemize}
-
-\begin{sphinxuseclass}{cell}
-\begin{sphinxuseclass}{tag_hide-input}
-\begin{sphinxuseclass}{tag_hide-output}
-\end{sphinxuseclass}
-\end{sphinxuseclass}
-\end{sphinxuseclass}
-
-\paragraph{Grafici}
-\label{\detokenize{ch/statistics/iid:grafici}}
-
-\subparagraph{Deviazione standard della media campionaria}
-\label{\detokenize{ch/statistics/iid:deviazione-standard-della-media-campionaria}}
-\begin{sphinxuseclass}{cell}
-\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
-
-\begin{sphinxuseclass}{cell_output}
-\noindent\sphinxincludegraphics{{f2b4fc44e307a5254cb4e8d05dbc4b2dcecd51b9653e746abe91841299e4c2bd}.png}
-
-\end{sphinxuseclass}\end{sphinxVerbatimOutput}
-
-\end{sphinxuseclass}
-\end{sphinxuseclass}
-
-\subparagraph{Distribuzione di probabilità}
-\label{\detokenize{ch/statistics/iid:distribuzione-di-probabilita}}
-\begin{sphinxuseclass}{cell}
-\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
-
-\begin{sphinxuseclass}{cell_output}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-Text(0.5, 0.98, \PYGZsq{}Distribution of sample average, scaled\PYGZsq{})
-\end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{c535c85940e180b73b9984a582006b905200174c15cac451787b52adc281ad28}.png}
-
-\noindent\sphinxincludegraphics{{e264ade92a76c4a787dd7a89a4b77f0d383311d5b75e181510080f36bc8a5f94}.png}
-
-\noindent\sphinxincludegraphics{{c89244117e6f2170d427284784d12bc359517626cc736f13a70f6652f6be976d}.png}
-
-\end{sphinxuseclass}\end{sphinxVerbatimOutput}
-
-\end{sphinxuseclass}
-\end{sphinxuseclass}
 \sphinxstepscope
 
 
@@ -3172,7 +2938,7 @@ tende alla distribuzione normale \(\mathscr{N}(0,1)\)
 (\PYGZhy{}5.0, 5.0)
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{f18458077e024425ccdc29a46dee58506209cb2e9e222eafe801d7e56b895031}.png}
+\noindent\sphinxincludegraphics{{c6126aa5edfbeee9427165e06d2d15efc03c49ecd4b6717e7ca1882ee0dea2e6}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -3451,6 +3217,45 @@ All’aumentare del livello di significatività del test richiesto, si riduce la
 \end{enumerate}
 
 \sphinxAtStartPar
+\sphinxstylestrong{Risultati ed errori.} Un test di ipotesi può portare a due tipi di errore:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{tipo I, falso positivo}: rifiuto di un’ipotesi \(\text{H}_0\) valida
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{tipo II, falso negativo}: mancato rifiuto di un’ipotesi \(\text{H}_0\) non valida
+
+\end{itemize}
+\label{ch/statistics/hp-test:example-0}
+\begin{sphinxadmonition}{note}{Example 18.2.1 (Giudizio di un imputato)}
+
+
+
+\sphinxAtStartPar
+In un tribunale, si vuole decidere se l’imputato è innocente. Si considera come ipotesi nulla \(\text{H}_0\): «l’imputato è innocente». Le indagini svolte cercano di valutare lo stato dell’imputato e portano alla decisione di condanna o assoluzione. Un errore di \sphinxstylestrong{tipo I} corrisponde alla condanna di un imputato innocente; un errore di tipo II corrisponde all’assoluzione di un imputato colpevole.
+\end{sphinxadmonition}
+\label{ch/statistics/hp-test:example-1}
+\begin{sphinxadmonition}{note}{Example 18.2.2 (Test medico)}
+
+
+
+\sphinxAtStartPar
+\sphinxstylestrong{todo} \sphinxstyleemphasis{Definire potenza}, \(\beta\), di un test in presenza di un’ipotesi alternativa. Fare esempio con falsi positivi, e affidabilità tamponi Covid.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\(\text{H}_0\) nulla vera: \(\alpha\): probabilità di rifiutare \(\text{H}_0\); \(1-\alpha\): probabilità di non rifiutare \(\text{H}_0\)
+
+\item {} 
+\sphinxAtStartPar
+\(\text{H}_1\) alternativa vera: \(1-\beta\): probabilità di rifiutare \(\text{H}_0\); \(\beta\): probabilità di non rifiutare \(\text{H}_0\)
+
+\end{itemize}
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
 Usando questo approccio, è possibile distinguere diversi test a seconda dei dati disponibili (numero di campioni, dimensione dei campioni, distribuzione attesa delle osservazioni,…), della variabile test utilizzata, e dell’obiettivo del test. Una classificazione rigida dettagliata rischierebbe di risultare poco pratica e imperfetta.
 
 \sphinxAtStartPar
@@ -3477,10 +3282,8 @@ Test di indipendenza tra campioni, intesa come verifica della possibilità che i
 \sphinxstepscope
 
 
-
-
 \subsection{Test su campioni singoli o coppie di campioni}
-\label{\detokenize{ch/statistics/hp-test-single:test-su-campioni-singoli-o-coppie-di-campioni}}\label{\detokenize{ch/statistics/hp-test-single::doc}}
+\label{\detokenize{ch/statistics/hp-test-single:test-su-campioni-singoli-o-coppie-di-campioni}}\label{\detokenize{ch/statistics/hp-test-single:hp-test-single}}\label{\detokenize{ch/statistics/hp-test-single::doc}}
 \sphinxAtStartPar
 \sphinxstylestrong{Test più comuni}
 \begin{itemize}
@@ -3508,7 +3311,7 @@ Wilcoxon
 
 
 \subsubsection{Student \protect\(t\protect\)\sphinxhyphen{}test}
-\label{\detokenize{ch/statistics/hp-test-single:student-t-test}}
+\label{\detokenize{ch/statistics/hp-test-single:student-t-test}}\label{\detokenize{ch/statistics/hp-test-single:hp-test-t-tests}}
 \sphinxAtStartPar
 I \(t\)\sphinxhyphen{}test sono dei test statistici di posizione in cui la statistica test segue una distribuzione \(t\) di Student sotto l’ipotesi nulla \(\text{H}_0\),
 \begin{equation*}
@@ -3517,9 +3320,12 @@ I \(t\)\sphinxhyphen{}test sono dei test statistici di posizione in cui la stati
 \sphinxAtStartPar
 dove il numero di gradi di libertà \(\nu\) della distribuzione \(t_{\nu}\) dipende dal metodo considerato.
 
+\sphinxAtStartPar
+Questi test sono «esatti» se la popolazione ha distribuzione normale. \sphinxstylestrong{todo} \sphinxstyleemphasis{in caso contrario, la statistica test costruita non segue una distribuzione \(t\)\sphinxhyphen{}Student. Bisogna valutare l’attendibilità del test in questo caso; per distribuzioni «sufficientemente simili a quella gaussiana» potrebbero essere validi; il teorema del limite centrale aiuta l’ipotesi di gaussianità; in caso di distribuzioni generiche, meglio affidarsi ad altri test \sphinxhyphen{} non parametrici}
+
 
 \paragraph{Test per un campione \sphinxhyphen{} valore medio}
-\label{\detokenize{ch/statistics/hp-test-single:test-per-un-campione-valore-medio}}
+\label{\detokenize{ch/statistics/hp-test-single:test-per-un-campione-valore-medio}}\label{\detokenize{ch/statistics/hp-test-single:hp-test-single-t-tests-single}}
 \sphinxAtStartPar
 E” un test di posizione/stima della media della popolazione della quale è noto un campione di \(N\) osservazioni, \(\mathbf{X} = \{ X_n \}_{n=1:N}\).
 \begin{itemize}
@@ -3529,18 +3335,19 @@ l’ipotesi nulla \(\text{H}_0\) dichiara che la popolazione ha media \(\mu_0\);
 
 \item {} 
 \sphinxAtStartPar
-la statistica test \(t\),
+la statistica test \(T\),
 \begin{equation*}
-\begin{split}t = \frac{\bar{X} - \mu_0}{\frac{S}{\sqrt{N}}} \ \end{split}
+\begin{split}T = \frac{\bar{X} - \mu_0}{\frac{S}{\sqrt{N}}} \ \end{split}
 \end{equation*}
 \sphinxAtStartPar
 è costruita con la {\hyperref[\detokenize{ch/statistics/estimate:statistics-hs-inference-estimate-sample-estimators}]{\sphinxcrossref{\DUrole{std,std-ref}{media e la varianza campionaria}}}},
 \begin{equation*}
 \begin{split}\bar{X} = \frac{1}{N} \sum_{n=1}^N X_n \qquad , \qquad S^2 = \frac{1}{N-1} \sum_{n=1}^N (X_n - \bar{X})^2 \ .\end{split}
 \end{equation*}
-\sphinxAtStartPar
-Se i campioni sono gaussiani iid., allora la statistica test segue una distribuzione \(t\)\sphinxhyphen{}Student con \(N-1\) gradi di liberta, \(t \sim t_{N-1}\)
+\end{itemize}
 
+
+\begin{itemize}
 \item {} 
 \sphinxAtStartPar
 quindi, una volta definito il livello di significatività del test, \(\alpha\), si controlla se la statistica test \(t\) valutata con il campione a disposizione cade nella regione di rifiuto dell’ipotesi della distribuzione \(t_{N-1}\) o meno, per determinare se si deve considerare \(\text{H}_0\) falsificata dal test o meno
@@ -3549,56 +3356,139 @@ quindi, una volta definito il livello di significatività del test, \(\alpha\), 
 
 \sphinxAtStartPar
 \sphinxstylestrong{Ipotesi.}
-Se i campioni sono variabili i.i.d. gaussiane, con media \(\mu_0\) sotto l’ipotesi nulla \(\text{H}_0\), \(X_n \sim \mathscr{N}(\mu_0, \sigma^2)\), allora la statistica test segue una distribuzione \(t\)\sphinxhyphen{}Student con \(N-1\) gradi di libertà,
+{\hyperref[\detokenize{ch/proofs:proof-t-test-gaussian}]{\sphinxcrossref{\DUrole{std,std-ref}{Come dimostrato in appendice}}}}, se i campioni sono variabili i.i.d. gaussiane, con media \(\mu_0\) sotto l’ipotesi nulla \(\text{H}_0\), \(X_n \sim \mathscr{N}(\mu_0, \sigma^2)\), allora la statistica test segue una distribuzione \(t\)\sphinxhyphen{}Student con \(N-1\) gradi di libertà,
 \begin{equation*}
-\begin{split}t \sim t_{N-1} \ .\end{split}
-\end{equation*}\subsubsection*{Dimostrazione}
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-la media campionaria \(\bar{X} \sim \mathscr{N}\left(\mu_0,\frac{\sigma^2}{N}\right)\) e quindi
-\begin{equation*}
-\begin{split}\mathscr{N}(0,1) \sim Z = \frac{\bar{X} - \mu_0}{\frac{\sigma}{\sqrt{N}}} \end{split}
-\end{equation*}
-\item {} 
-\sphinxAtStartPar
-la varianza campionaria
-\begin{equation*}
-\begin{split}\chi^2_{N-1} \sim V = \sum_{n=1}^N \left( \frac{X_n - \bar{X}}{\sigma} \right)^2 = \frac{N-1}{\sigma^2} S^2 \end{split}
-\end{equation*}
-\end{itemize}
-
-\sphinxAtStartPar
-e quindi
-\begin{equation*}
-\begin{split}t_{N-1} \sim \frac{Z}{\sqrt{\frac{V}{N-1}}} = \frac{\frac{(\bar{X}-\mu_0)\sqrt{N}}{\sigma}}{\frac{S}{\sigma}} = \frac{\bar{X}-\mu_0}{\frac{S}{\sqrt{N}}}\end{split}
+\begin{split}T \sim t_{N-1} \ .\end{split}
 \end{equation*}
 \sphinxAtStartPar
-\sphinxstylestrong{todo} \sphinxstyleemphasis{cosa succede quando la popolazione non ha distribuzione gaussiana? Qual è la robustezza del metodo alla caduta di questa ipotesi?}
+\sphinxstylestrong{todo} \sphinxstyleemphasis{cosa succede quando la popolazione non ha distribuzione gaussiana? Qual è la robustezza del medoto alla caduta di questa ipotesi? Esempio già disponibile con campionamento variabile con distribuzione uniforme; altri metodi, non parametric?}
 
 
-\paragraph{Test per una coppia di campioni \sphinxhyphen{} valore medio}
-\label{\detokenize{ch/statistics/hp-test-single:test-per-una-coppia-di-campioni-valore-medio}}
+\paragraph{Test per una coppia di campioni con stessa varianza \sphinxhyphen{} valore medio}
+\label{\detokenize{ch/statistics/hp-test-single:test-per-una-coppia-di-campioni-con-stessa-varianza-valore-medio}}\label{\detokenize{ch/statistics/hp-test-single:hp-test-single-t-tests-pair}}
+\sphinxAtStartPar
+Un \(t\)\sphinxhyphen{}test per una coppia di campioni \(\{ X_{1,n} \}_{n=1:N}\), \(\{ X_{2,n} \}_{n=1:N}\) presi da due popolazioni \(X_1\), \(X_2\) di cui si ipotizza la stessa varianza \(\sigma^2\), si riduce al \(t\)\sphinxhyphen{}test per campione singolo per la variabile casuale \(X_2 - X_1\).
+
+\sphinxAtStartPar
+\sphinxstylestrong{Variabili gaussiane.} Nel caso in cui le variabili casuali \(X_1\), \(X_2\) abbiano distribuzione gaussiana con la stessa varianza, \(X_1 \sim \mathscr{N}(\mu_1, \sigma^2)\), \(X_2 \sim \mathscr{N}(\mu_2, \sigma^2)\), la variabile \(X_2 - X_1\) è gaussiana con distribuzione
+–>
+\begin{equation*}
+\begin{split}X_2 - X_1 \sim \mathscr{N}(\mu_2-\mu_1, 2 \sigma^2)\end{split}
+\end{equation*}
+\sphinxAtStartPar
+\sphinxstylestrong{todo}
+
+
+\paragraph{Altri \protect\(t\protect\)\sphinxhyphen{}test}
+\label{\detokenize{ch/statistics/hp-test-single:altri-t-test}}\label{\detokenize{ch/statistics/hp-test-single:hp-test-single-t-tests-others}}
+\sphinxAtStartPar
+\sphinxstylestrong{todo} Se campioni di dimensione differente o con varianze differenti, {\hyperref[\detokenize{ch/statistics/hp-test-independence:hp-test-independence-t-welch}]{\sphinxcrossref{\DUrole{std,std-ref}{Welct \(t\)\sphinxhyphen{}test}}}}…
+
 
 \subsubsection{\protect\(Z\protect\)\sphinxhyphen{}test}
-\label{\detokenize{ch/statistics/hp-test-single:z-test}}
+\label{\detokenize{ch/statistics/hp-test-single:z-test}}\label{\detokenize{ch/statistics/hp-test-single:hp-test-single-z}}
 \sphinxAtStartPar
 Test identico al \(t\)\sphinxhyphen{}test in cui la statistica test \(z\) segue una distribuzione gaussiana sotto l’ipotesi nulla. Per il legame esistente tra la distribuzione \(t_{\nu}\) e \(\mathscr{N}\), si può interpretare lo \(Z\)\sphinxhyphen{}test come limite del \(t\)\sphinxhyphen{}test per un numero di campioni sufficientemente grande.
 
 
-\subsubsection{\protect\(\chi^2\protect\)\sphinxhyphen{}test}
-\label{\detokenize{ch/statistics/hp-test-single:chi-2-test}}
+\subsubsection{\protect\(\chi^2\protect\)\sphinxhyphen{}test di Pearson}
+\label{\detokenize{ch/statistics/hp-test-single:chi-2-test-di-pearson}}\label{\detokenize{ch/statistics/hp-test-single:hp-test-single-chi2-pearson}}
 \sphinxAtStartPar
-Il test \(\chi^2\) viene utilizzato per confrontare le frequenze osservate \(o_k\) e attese \(e_k\) di un insieme di possibili eventi, \(\{ E_k \}_{k=1:K}\). L’ipotesi nulla \(\text{H}_0\) afferma che il fenomeno osservato segue la distribuzione di probabilità descritta dalle frequenze attese. La statistica test è
+Il test \(\chi^2\) di Pearson si applica a dati \sphinxstylestrong{categoriali}, per confrontare le \sphinxstylestrong{frequenze} delle \(K\) categorie per diversi insiemi. Può essere applicato:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+a un singolo campione, confrontando le frequenze osservate \(\{ O_k \}_{k=1:K}\) con le frequenze attese \(\{ E_k \}_{k=1:K}\), che costituiscono l’ipotesi nulla \(\text{H}_0\)
+
+\item {} 
+\sphinxAtStartPar
+a più campioni (\sphinxstylestrong{todo} \sphinxstyleemphasis{link a test di indipendenza statistica}) per stabilire se provengono dalla stessa popolazione, o comunque da popolazioni con la stessa funzione di probabilità.
+
+\end{itemize}
+
+\sphinxAtStartPar
+Il test \(\chi^2\) a un campione viene utilizzato per confrontare le frequenze osservate \(\{ O_k \}_{k=1:K}\)  e attese  \(\{ E_k \}_{k=1:K}\)  di un insieme di possibili eventi, \(\{ X_n \}_{n=1:N}\).
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+l”\sphinxstylestrong{ipotesi nulla} \(\text{H}_0\) afferma che il fenomeno osservato segue la distribuzione di probabilità descritta dalle frequenze attese, \(\{ E_k \}\). \sphinxstyleemphasis{Supponendo che i dati campionati siano iid}, l’ipotesi nulla afferma che il fenomeno dal quale è estratto il campione segue una distribuzione di probabilità categoriale, \(\text{Categorial}(E_1,\dots,E_K)\)
+
+\item {} 
+\sphinxAtStartPar
+La statistica test è
 \begin{equation*}
-\begin{split}X^2 = \sum_{k=1}^{K} \frac{(o_k - e_k)^2}{e_k}\end{split}
+\begin{split}X^2 := \sum_{k=1}^{K} \frac{(O_k - E_k)^2}{E_k} \ ,\end{split}
 \end{equation*}
+\end{itemize}
+
 \sphinxAtStartPar
-Nel caso in cui le frequenze attese sono «sufficientemente grandi» e quelle osservate \(o_k\) abbiano una distribuzione gaussiana, allora \(X^2\) segue una distribuzione \(\chi^2_{K-1}\).
+Nel caso in cui le frequenze attese sono «sufficientemente grandi» e quelle osservate \(O_k\) abbiano una distribuzione gaussiana, allora \(X^2\) segue una distribuzione \(\chi^2_{K-1}\).
 
 \sphinxAtStartPar
 … \sphinxstylestrong{todo}
 
+
+\paragraph{Esempio: dado truccato}
+\label{\detokenize{ch/statistics/hp-test-single:esempio-dado-truccato}}
+\sphinxAtStartPar
+Ci vengono dati due dadi a 6 facce e ci viene chiesto di verificare con \(n_{rolls} = 50\) lanci se questi dadi possono essere considerati truccati. Noi non lo sappiamo, ma il primo dado non è truccato, mentre il secondo dado è sbilanciato in modo tale che la possibilità che esca la faccia 3 è doppia rispetto a tutte le altre,
+\begin{equation*}
+\begin{split}\begin{aligned}
+X_1 & \sim \text{Categorial}\left(\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6}\right) \\
+X_2 & \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{1}{7},\frac{1}{7},\frac{1}{7}\right) 
+\end{aligned}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Per ogni esperimento, l’ipotesi nulla \(\text{H}_0\) è che il dado non sia truccato e che ogni faccia abbia una probabilità \(\frac{1}{6}\). La distribuzione di probabilità attesa è
+\begin{equation*}
+\begin{split}X|\text{H}_0 \sim \text{Categorial}\left(\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6}\right) \ .\end{split}
+\end{equation*}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Experiment: Fair, nrolls: 50
+\PYGZhy{} probability (unknown in real exp.) : [0.1667 0.1667 0.1667 0.1667 0.1667 0.1667]
+\PYGZhy{} Observed events                    : [ 6. 13.  8.  6.  8.  9.]
+\PYGZhy{} Test statistics, X2                : 4.000000000000001
+
+Experiment: Rigged, nrolls: 50
+\PYGZhy{} probability (unknown in real exp.) : [0.1429 0.1429 0.2857 0.1429 0.1429 0.1429]
+\PYGZhy{} Observed events                    : [ 5. 18. 13.  6.  3.  5.]
+\PYGZhy{} Test statistics, X2                : 20.560000000000002
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{db97acfd258285ad41d79f45581077c65508437663d73dc056551fc0e26079ec}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
 
 \subsubsection{Wilcoxon}
 \label{\detokenize{ch/statistics/hp-test-single:wilcoxon}}
@@ -3823,7 +3713,7 @@ Text(44.222222222222214, 0.5, \PYGZsq{}y\PYGZsq{})
 
 
 \subsection{Test di indipendenza}
-\label{\detokenize{ch/statistics/hp-test-independence:test-di-indipendenza}}\label{\detokenize{ch/statistics/hp-test-independence::doc}}
+\label{\detokenize{ch/statistics/hp-test-independence:test-di-indipendenza}}\label{\detokenize{ch/statistics/hp-test-independence:hp-test-independence}}\label{\detokenize{ch/statistics/hp-test-independence::doc}}
 \sphinxAtStartPar
 \sphinxstylestrong{Test più comuni}
 \begin{itemize}
@@ -3851,7 +3741,7 @@ Kruskal\sphinxhyphen{}Wallis \(H\)\sphinxhyphen{}test
 
 
 \subsubsection{\protect\(t\protect\)\sphinxhyphen{}test e Welch \protect\(t\protect\)\sphinxhyphen{}test}
-\label{\detokenize{ch/statistics/hp-test-independence:t-test-e-welch-t-test}}
+\label{\detokenize{ch/statistics/hp-test-independence:t-test-e-welch-t-test}}\label{\detokenize{ch/statistics/hp-test-independence:hp-test-independence-t-welch}}
 \sphinxAtStartPar
 Il \(t\)\sphinxhyphen{}test di Welch è un test di posizione per stimare se due popolazioni di cui sono noti due campioni hanno la stessa media. E” una modifica del \(t\)\sphinxhyphen{}test, e si dimostra un criterio più affidabile quando i due campioni hanno varianza diversa e dimensione diversa.
 
@@ -3863,7 +3753,7 @@ Il \(t\)\sphinxhyphen{}test di Welch è un test di posizione per stimare se due 
 
 
 \subsubsection{ANOVA (Analysis of variance)}
-\label{\detokenize{ch/statistics/hp-test-independence:anova-analysis-of-variance}}\begin{itemize}
+\label{\detokenize{ch/statistics/hp-test-independence:anova-analysis-of-variance}}\label{\detokenize{ch/statistics/hp-test-independence:hp-test-independence-anova}}\begin{itemize}
 \item {} 
 \sphinxAtStartPar
 …insieme di metodi statistici…
@@ -3899,24 +3789,24 @@ caso particolare di regressione lineare generalizzata
 
 
 \subsubsection{Tukey test}
-\label{\detokenize{ch/statistics/hp-test-independence:tukey-test}}
-\sphinxAtStartPar
-…\sphinxstylestrong{todo}
-
-
-\subsubsection{Kruskal\sphinxhyphen{}Wallis \protect\(H\protect\)\sphinxhyphen{}test}
-\label{\detokenize{ch/statistics/hp-test-independence:kruskal-wallis-h-test}}
+\label{\detokenize{ch/statistics/hp-test-independence:tukey-test}}\label{\detokenize{ch/statistics/hp-test-independence:hp-test-independence-tukey}}
 \sphinxAtStartPar
 …\sphinxstylestrong{todo}
 
 
 \subsubsection{Mann\sphinxhyphen{}Whitney \protect\(U\protect\)\sphinxhyphen{}test}
-\label{\detokenize{ch/statistics/hp-test-independence:mann-whitney-u-test}}
+\label{\detokenize{ch/statistics/hp-test-independence:mann-whitney-u-test}}\label{\detokenize{ch/statistics/hp-test-independence:hp-test-independence-mann-whitney}}
 \sphinxAtStartPar
 Il test di Mann\sphinxhyphen{}Whitney è un test statistico non parametrico usato per verificare se le popolazioni \(X\), \(Y\) delle quali sono disponibili due campioni \(\{X_n\}_{n=1:n_x}\), \(\{Y_m\}_{m=1:n_y}\), sono identiche.
 
 \sphinxAtStartPar
 … \sphinxstylestrong{todo}
+
+
+\subsubsection{Kruskal\sphinxhyphen{}Wallis \protect\(H\protect\)\sphinxhyphen{}test}
+\label{\detokenize{ch/statistics/hp-test-independence:kruskal-wallis-h-test}}\label{\detokenize{ch/statistics/hp-test-independence:hp-test-independence-kruskal-wallis}}
+\sphinxAtStartPar
+…\sphinxstylestrong{todo}
 
 \sphinxstepscope
 
@@ -4244,10 +4134,10 @@ Il valore medio delle volte che è uscita croce viene usata come statistica test
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}matplotlib.legend.Legend at 0x7f14f7c69d60\PYGZgt{}
+\PYGZlt{}matplotlib.legend.Legend at 0x7efffc9c3d60\PYGZgt{}
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{e42555da5bb0ed5f93836580b4822cf4447f51792b0478fb632c16e4edf359cd}.png}
+\noindent\sphinxincludegraphics{{f9eea85ffaaa615564a1d98cdb01702c377f87e081adeb0a3595e517ebd6bce0}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -4352,7 +4242,7 @@ Sample statistics:
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x7fcc2403ba60\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x7fb3d397da60\PYGZgt{}]
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{b447209d18774c554d77059adc27f1afcb900a0a10e8e9db17f5ca0f6304b8c4}.png}
@@ -4473,7 +4363,7 @@ Reject the null hypothesis: The means of the two classes are significantly diffe
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x7fcc23f5df40\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x7fb3d38a0f40\PYGZgt{}]
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{ad9e0a740f0f409ab9699cc4cac6809aff9c408ab244bacfcd1a9c9e8e4c1ab3}.png}
@@ -4744,11 +4634,91 @@ Questa sezione contiene le dimostrazioni usate all’interno del bbook. Le dimos
 La distinzione da una raccolta di appunti personali potrebbe non essere così definita.
 
 
-\section{Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid}
-\label{\detokenize{ch/proofs:indipendenza-di-media-campionaria-e-varianza-campionaria-per-variabili-gaussiane-iid}}\label{\detokenize{ch/proofs:proof-independence-sample-estimators-norm}}
+\section{Distrubuzione gaussiana come limite della distribuzione \protect\(t\protect\)\sphinxhyphen{}Student}
+\label{\detokenize{ch/proofs:distrubuzione-gaussiana-come-limite-della-distribuzione-t-student}}
+\sphinxAtStartPar
+Per \(N \rightarrow +\infty\), la distribuzione \(t_N\) tende alla distribuzione gaussiana \(\mathscr{N}(0,1)\).
+\subsubsection*{Dimostrazione}
 
-\section{\protect\(S^2 \sim \chi^2_{N-1}\protect\) per variabili gaussiane iid}
-\label{\detokenize{ch/proofs:s-2-sim-chi-2-n-1-per-variabili-gaussiane-iid}}\label{\detokenize{ch/proofs:proof-s2-chi2-gauss}}
+\sphinxAtStartPar
+Ricordandosi la definizione di \(e^x\) come limite della successione \(\lim_{n \rightarrow \infty} \left( 1 + \frac{x}{n} \right)^n =: e^x\), e usando l’approssimazione asintotica per \(n \rightarrow \infty\) della funzione Gamma \(\Gamma(n+\alpha) \sim \Gamma(n)n^{\alpha}\), si può dimostrare che
+\begin{equation*}
+\begin{split}\left( 1 + \frac{x^2}{n} \right)^{-\frac{n+1}{2}} = \left( 1 + \frac{x^2}{n} \right)^{-\frac{1}{2}} \left[ \left( 1 + \frac{x^2}{n} \right)^n \right]^{-\frac{1}{2}} \quad \rightarrow \quad 1 \cdot e^{-\frac{x^2}{2}}\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{n} \, \Gamma\left( \frac{n}{2} \right)} \sim
+  \frac{\Gamma\left(\frac{n}{2}\right) \, \left(\frac{n}{2}\right)^{\frac{1}{2}}}{\sqrt{n} \, \Gamma\left( \frac{n}{2} \right)} = \frac{1}{\sqrt{2}} \ , \end{split}
+\end{equation*}
+\sphinxAtStartPar
+e quindi la funzione \(t\)\sphinxhyphen{}Student tende alla distribuzione normale con valore atteso \(0\) e varianza unitaria,
+\begin{equation*}
+\begin{split}f(x) \sim \frac{1}{\sqrt{2 \,\pi}} e^{-\frac{x^2}{2}} \ .\end{split}
+\end{equation*}
+
+\section{Somma/differenza di variabili gaussiane indipendenti}
+\label{\detokenize{ch/proofs:somma-differenza-di-variabili-gaussiane-indipendenti}}\label{\detokenize{ch/proofs:proof-gauss-independent-sum}}\subsubsection*{Con la stessa varianza}
+
+\sphinxAtStartPar
+\sphinxstylestrong{todo}
+
+
+\subsubsection*{Con varianza diversa}
+
+\sphinxAtStartPar
+\sphinxstylestrong{todo}
+
+
+
+
+\section{Distribuzione della statistica \protect\(t \sim t_{N-1}\protect\) nel \protect\(t\protect\)\sphinxhyphen{}test per campioni singoli}
+\label{\detokenize{ch/proofs:distribuzione-della-statistica-t-sim-t-n-1-nel-t-test-per-campioni-singoli}}\label{\detokenize{ch/proofs:proof-t-test-gaussian}}\subsubsection*{Dimostrazione}
+
+\sphinxAtStartPar
+Dati \(N\) campioni \(\{ X_n \}_{n=1:N}\) iid con distribuzinone gaussiana \(X_n \sim \mathscr{N}(\mu, \sigma^2)\) allora la statistica \(t\) dei \(t\)\sphinxhyphen{}test per singolo campione o per coppie di campioni, costruita con la media campionaria \(\bar{X}\) e la varianza campionaria \(S\) segue una distribuzione \(t\)\sphinxhyphen{}Student con \(N-1\) gradi di libertà,
+\begin{equation*}
+\begin{split}t:= \frac{\bar{X}-\mu}{\frac{S}{\sqrt{N}}} \sim t_{N-1} \ .\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Questa affermazione risulta vera poiché la statistica test \(t\) può essere riportata alla \DUrole{xref,myst}{definizione di una distribuzione \(t_{\nu}\)\sphinxhyphen{}Student},
+\begin{equation*}
+\begin{split}t_{\nu} \sim T = \frac{Z}{\sqrt{\frac{V}{\nu}}} \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+con \(Z \sim N(0,1)\) e \(V \sim \chi^2_{\nu}\), con \(\nu = N-1\). Infatti:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+la media campionaria è gaussiana con varianza \(\frac{\sigma^2}{N}\). Si definisice quindi la variabile \(Z\) con distribuzione normale di media nulla e varianza unitaria, \(Z := \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \sim \mathscr{N}(0,1)\)
+
+\item {} 
+\sphinxAtStartPar
+la somma \(V := \sum_{n=1}^N \left(\frac{X_n - \bar{X}}{\sigma^2}\right)^2\) è una somma di \(N\) variabili normali, di cui solo \(N-1\) sono indipendenti (poiché è stata usata la media campionaria e non il valore medio «vero» della distribuzione), \(V \sim \chi^2_{N-1}\) ({\hyperref[\detokenize{ch/proofs:proof-s2-chi2-gauss}]{\sphinxcrossref{\DUrole{std,std-ref}{dimostrazione}}}}). La variabile \(V\) può essere espressa in termini della varianza campionaria, \(V = (N-1) \frac{S^2}{\sigma^2}\)
+
+\item {} 
+\sphinxAtStartPar
+per definizione della distribuzione di \(t\)\sphinxhyphen{}Student, \(\frac{Z}{\sqrt{V}{N-1}} \sim \chi^2_{N-1}\)
+
+\item {} 
+\sphinxAtStartPar
+questo rapporto coincide alla statistica test, infatti:
+\begin{equation*}
+\begin{split}t_{N-1} \sim \frac{Z}{\sqrt{\frac{V}{N-1}}} = \frac{\frac{(\bar{X}-\mu)\sqrt{N}}{\sigma}}{\sqrt{\frac{S^2}{\sigma^2}}} = \frac{\bar{X} - \mu}{\frac{S}{\sqrt{N}}} =: t \ .\end{split}
+\end{equation*}
+\end{itemize}
+
+
+\section{Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid}
+\label{\detokenize{ch/proofs:indipendenza-di-media-campionaria-e-varianza-campionaria-per-variabili-gaussiane-iid}}\label{\detokenize{ch/proofs:proof-independence-sample-estimators-norm}}\subsubsection*{Dimostrazione}
+
+\sphinxAtStartPar
+\sphinxstylestrong{todo}
+
+
+\section{\protect\(\sum_{n=1}^N \left(\frac{X_n - \bar{X}}{\sigma^2}\right)^2 \sim \chi^2_{N-1}\protect\) per variabili gaussiane iid}
+\label{\detokenize{ch/proofs:sum-n-1-n-left-frac-x-n-bar-x-sigma-2-right-2-sim-chi-2-n-1-per-variabili-gaussiane-iid}}\label{\detokenize{ch/proofs:proof-s2-chi2-gauss}}\subsubsection*{Dimostrazione}
+
+\sphinxAtStartPar
+\sphinxstylestrong{todo}
+
 \sphinxstepscope
 
 
@@ -5464,6 +5434,15 @@ TeX
 
 
 
+\renewcommand{\indexname}{Proof Index}
+\begin{sphinxtheindex}
+\let\bigletter\sphinxstyleindexlettergroup
+\bigletter{example\sphinxhyphen{}0}
+\item\relax\sphinxstyleindexentry{example\sphinxhyphen{}0}\sphinxstyleindexextra{ch/statistics/hp\sphinxhyphen{}test}\sphinxstyleindexpageref{ch/statistics/hp-test:\detokenize{example-0}}
+\indexspace
+\bigletter{example\sphinxhyphen{}1}
+\item\relax\sphinxstyleindexentry{example\sphinxhyphen{}1}\sphinxstyleindexextra{ch/statistics/hp\sphinxhyphen{}test}\sphinxstyleindexpageref{ch/statistics/hp-test:\detokenize{example-1}}
+\end{sphinxtheindex}
 
 \renewcommand{\indexname}{Indice}
 \printindex

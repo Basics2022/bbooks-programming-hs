@@ -69,138 +69,135 @@
 \contentsline {section}{\numberline {16.1}Dimensione dei dati}{58}{section.16.1}%
 \contentsline {section}{\numberline {16.2}Rappresentazione grafica}{58}{section.16.2}%
 \contentsline {section}{\numberline {16.3}Variabili 1\sphinxhyphen {}dimensionali}{58}{section.16.3}%
-\contentsline {section}{\numberline {16.4}Variabili 2\sphinxhyphen {}dimensionali}{59}{section.16.4}%
-\contentsline {section}{\numberline {16.5}Variabili di grandi dimensioni}{59}{section.16.5}%
-\contentsline {chapter}{\numberline {17}Introduzione alla probabilità}{61}{chapter.17}%
-\contentsline {section}{\numberline {17.1}Variabili casuali}{61}{section.17.1}%
-\contentsline {subsection}{\numberline {17.1.1}Definizione di variabile casuale}{62}{subsection.17.1.1}%
-\contentsline {subsubsection}{Definizione}{62}{subsubsection*.7}%
-\contentsline {paragraph}{Esempio 1. Lancio dado non truccato, con variabile casuale corrispondente al valore della faccia}{63}{paragraph*.8}%
-\contentsline {paragraph}{Esempio 2. Lancio dado non truccato, con variabile casuale diverso dal valore della faccia}{63}{paragraph*.9}%
-\contentsline {subsection}{\numberline {17.1.2}Variabili casuali discrete}{63}{subsection.17.1.2}%
-\contentsline {subsubsection}{Funzione di probabilità}{63}{subsubsection*.10}%
-\contentsline {subsubsection}{Esempi di variabili discrete}{64}{subsubsection*.11}%
-\contentsline {subsubsection}{Momenti}{64}{subsubsection*.12}%
-\contentsline {subsubsection}{Variabili casuali multi\sphinxhyphen {}dimensionali}{65}{subsubsection*.13}%
-\contentsline {paragraph}{Probabilità congiunta e teorema di Bayes}{65}{paragraph*.14}%
-\contentsline {paragraph}{Teorema di Bayes}{65}{paragraph*.15}%
-\contentsline {paragraph}{Variabili indipendenti}{65}{paragraph*.16}%
-\contentsline {paragraph}{Covarianza}{66}{paragraph*.17}%
-\contentsline {paragraph}{Correlazione}{66}{paragraph*.18}%
-\contentsline {subsection}{\numberline {17.1.3}Variabili casuali continue}{66}{subsection.17.1.3}%
-\contentsline {subsection}{\numberline {17.1.4}Trasformazione di probabilità di densità}{66}{subsection.17.1.4}%
-\contentsline {subsubsection}{Variabile singola}{66}{subsubsection*.19}%
-\contentsline {paragraph}{Cambio di variabile}{66}{paragraph*.20}%
-\contentsline {subparagraph}{Traslazione}{66}{subparagraph*.21}%
-\contentsline {subparagraph}{Scalatura}{67}{subparagraph*.22}%
-\contentsline {subparagraph}{Trasformazione affine}{68}{subparagraph*.23}%
-\contentsline {subsubsection}{Multi\sphinxhyphen {}variabile}{68}{subsubsection*.24}%
-\contentsline {paragraph}{Cambio di variabili}{68}{paragraph*.25}%
-\contentsline {paragraph}{Combinazione di variabili}{68}{paragraph*.26}%
-\contentsline {subparagraph}{Somma}{68}{subparagraph*.27}%
-\contentsline {subparagraph}{Prodotto}{69}{subparagraph*.28}%
-\contentsline {subsection}{\numberline {17.1.5}Esempi di funzioni di probabilità discreta}{70}{subsection.17.1.5}%
-\contentsline {subsubsection}{Bernoulli}{70}{subsubsection*.29}%
-\contentsline {subsubsection}{Binomiale}{70}{subsubsection*.30}%
-\contentsline {subsubsection}{Poisson}{70}{subsubsection*.31}%
-\contentsline {subsection}{\numberline {17.1.6}Esempi di funzioni di probabilità continua}{70}{subsection.17.1.6}%
-\contentsline {subsubsection}{Distribuzione gaussiana o normale, \(\symscr {N}\)}{70}{subsubsection*.32}%
-\contentsline {subsubsection}{Distribuzione chi\sphinxhyphen {}quadrato, \(\mitchi ^2\)}{71}{subsubsection*.33}%
-\contentsline {subsubsection}{Distribuzione \(t\)\sphinxhyphen {}Student}{71}{subsubsection*.34}%
-\contentsline {paragraph}{Distrubuzione gaussiana come limite della distribuzione \(t\)\sphinxhyphen {}Student}{71}{paragraph*.35}%
-\contentsline {subsection}{\numberline {17.1.7}Variabili casuali indipendenti e identicamente distribuite, iid.}{71}{subsection.17.1.7}%
-\contentsline {subsubsection}{Teoremi sulle variabili casuali i.i.d.}{72}{subsubsection*.36}%
-\contentsline {paragraph}{Convergenza in statistica, \sphinxstylestrong {todo}}{72}{paragraph*.37}%
-\contentsline {subsubsection}{Esempio: teoremi dei grandi numeri e del limite centrale}{72}{subsubsection*.38}%
-\contentsline {paragraph}{Librerie e funzioni}{72}{paragraph*.39}%
-\contentsline {paragraph}{Dimensione campione}{72}{paragraph*.40}%
-\contentsline {paragraph}{Definizione delle variabili casuali}{72}{paragraph*.41}%
-\contentsline {subsubsection}{Stima della distribuzione di probabilità della media campionaria}{72}{subsubsection*.42}%
-\contentsline {paragraph}{Grafici}{73}{paragraph*.43}%
-\contentsline {subparagraph}{Deviazione standard della media campionaria}{73}{subparagraph*.44}%
-\contentsline {subparagraph}{Distribuzione di probabilità}{73}{subparagraph*.45}%
-\contentsline {subsection}{\numberline {17.1.8}Campionamento}{74}{subsection.17.1.8}%
-\contentsline {subsection}{\numberline {17.1.9}Media campionaria}{74}{subsection.17.1.9}%
-\contentsline {subsection}{\numberline {17.1.10}Dimensione del campione, teorema del limite centrale e distribuzione \(t\)\sphinxhyphen {}Student}{74}{subsection.17.1.10}%
-\contentsline {section}{\numberline {17.2}Processi casuali}{76}{section.17.2}%
-\contentsline {chapter}{\numberline {18}Statistica inferenziale}{79}{chapter.18}%
-\contentsline {section}{\numberline {18.1}Stima}{80}{section.18.1}%
-\contentsline {subsection}{\numberline {18.1.1}Stimatori}{80}{subsection.18.1.1}%
-\contentsline {subsubsection}{Media e varianza campionaria senza bias}{80}{subsubsection*.46}%
-\contentsline {section}{\numberline {18.2}Test di verifica delle ipotesi}{81}{section.18.2}%
-\contentsline {subsection}{\numberline {18.2.1}Test su campioni singoli o coppie di campioni}{82}{subsection.18.2.1}%
-\contentsline {subsubsection}{Student \(t\)\sphinxhyphen {}test}{83}{subsubsection*.47}%
-\contentsline {paragraph}{Test per un campione \sphinxhyphen {} valore medio}{83}{paragraph*.48}%
-\contentsline {paragraph}{Test per una coppia di campioni \sphinxhyphen {} valore medio}{84}{paragraph*.49}%
-\contentsline {subsubsection}{\(Z\)\sphinxhyphen {}test}{84}{subsubsection*.50}%
-\contentsline {subsubsection}{\(\mitchi ^2\)\sphinxhyphen {}test}{84}{subsubsection*.51}%
-\contentsline {subsubsection}{Wilcoxon}{84}{subsubsection*.52}%
-\contentsline {subsection}{\numberline {18.2.2}Test di correlazione}{84}{subsection.18.2.2}%
-\contentsline {subsubsection}{Regressione lineare}{84}{subsubsection*.53}%
-\contentsline {paragraph}{Metodo dei minimi quadrati per una regressione lineare}{85}{paragraph*.54}%
-\contentsline {paragraph}{Metodo ed errore}{85}{paragraph*.55}%
-\contentsline {subsubsection}{Correlazione di Pearson}{86}{subsubsection*.56}%
-\contentsline {subsubsection}{Correlazione di Spearman}{87}{subsubsection*.57}%
-\contentsline {subsubsection}{Esempio}{87}{subsubsection*.58}%
-\contentsline {subsection}{\numberline {18.2.3}Test di indipendenza}{88}{subsection.18.2.3}%
-\contentsline {subsubsection}{\(t\)\sphinxhyphen {}test e Welch \(t\)\sphinxhyphen {}test}{88}{subsubsection*.59}%
-\contentsline {subsubsection}{ANOVA (Analysis of variance)}{89}{subsubsection*.60}%
-\contentsline {subsubsection}{Tukey test}{89}{subsubsection*.61}%
-\contentsline {subsubsection}{Kruskal\sphinxhyphen {}Wallis \(H\)\sphinxhyphen {}test}{89}{subsubsection*.62}%
-\contentsline {subsubsection}{Mann\sphinxhyphen {}Whitney \(U\)\sphinxhyphen {}test}{89}{subsubsection*.63}%
-\contentsline {subsection}{\numberline {18.2.4}Esempi}{89}{subsection.18.2.4}%
-\contentsline {subsubsection}{Test di verifica d’ipotesi \sphinxhyphen {} Fisher}{89}{subsubsection*.64}%
-\contentsline {paragraph}{Esempio: moneta truccata o no?}{90}{paragraph*.65}%
-\contentsline {subparagraph}{Import librerie}{90}{subparagraph*.66}%
-\contentsline {subparagraph}{Campione generato dal processo casuale}{90}{subparagraph*.67}%
-\contentsline {subsubsection}{Moneta truccata}{93}{subsubsection*.68}%
-\contentsline {paragraph}{Import librerie e funzioni utili}{93}{paragraph*.69}%
-\contentsline {subparagraph}{Import librerie}{93}{subparagraph*.70}%
-\contentsline {paragraph}{Funzione per lo svolgimento di un esperimento}{93}{paragraph*.71}%
-\contentsline {subparagraph}{Funzione che restituisce la pdf \(p(x|\text {H}_0)\)}{93}{subparagraph*.72}%
-\contentsline {subparagraph}{Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi}{93}{subparagraph*.73}%
-\contentsline {paragraph}{Esperimento}{93}{paragraph*.74}%
-\contentsline {subparagraph}{Livelli di accettazione}{93}{subparagraph*.75}%
-\contentsline {subparagraph}{Svolgimento esperimento}{93}{subparagraph*.76}%
-\contentsline {subparagraph}{Grafici}{94}{subparagraph*.77}%
-\contentsline {subsubsection}{Gambler rabbit}{94}{subsubsection*.78}%
-\contentsline {subsubsection}{\(t\)\sphinxhyphen {}test}{94}{subsubsection*.79}%
-\contentsline {paragraph}{\(t\)\sphinxhyphen {}test per un campione}{95}{paragraph*.80}%
-\contentsline {paragraph}{\(t\)\sphinxhyphen {}test per due campioni}{97}{paragraph*.81}%
-\contentsline {subparagraph}{\(t\)\sphinxhyphen {}test per due variabili indipendenti, con varianza simile e stesso numero di osservazioni}{97}{subparagraph*.82}%
-\contentsline {subsubsection}{Regressione lineare}{99}{subsubsection*.83}%
-\contentsline {subsubsection}{ANOVA \sphinxhyphen {} Analysis of variance}{102}{subsubsection*.84}%
-\contentsline {paragraph}{Metodo}{102}{paragraph*.85}%
-\contentsline {paragraph}{Esempio}{102}{paragraph*.86}%
-\contentsline {chapter}{\numberline {19}Dimostrazioni}{105}{chapter.19}%
-\contentsline {section}{\numberline {19.1}Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid}{105}{section.19.1}%
-\contentsline {section}{\numberline {19.2}\(S^2 \sim \mitchi ^2_{N-1}\) per variabili gaussiane iid}{105}{section.19.2}%
-\contentsline {part}{IV\hspace {1em}Introduzione ai metodi in statistica e AI}{107}{part.4}%
-\contentsline {chapter}{\numberline {20}Introduzione ai metodi in AI}{109}{chapter.20}%
-\contentsline {chapter}{\numberline {21}Supervised Learning}{111}{chapter.21}%
-\contentsline {chapter}{\numberline {22}Unsupervised Learning}{113}{chapter.22}%
-\contentsline {section}{\numberline {22.1}PCA}{113}{section.22.1}%
-\contentsline {subsection}{\numberline {22.1.1}Esempio: compressione di immagini}{113}{subsection.22.1.1}%
-\contentsline {subsubsection}{Preprocessing e SVD}{114}{subsubsection*.87}%
-\contentsline {subsubsection}{Risultati della SVD}{114}{subsubsection*.88}%
-\contentsline {subsubsection}{Ricostruzione dell’immagine compressa}{115}{subsubsection*.89}%
-\contentsline {section}{\numberline {22.2}ICA e PCA}{116}{section.22.2}%
-\contentsline {subsection}{\numberline {22.2.1}Riferimenti}{116}{subsection.22.2.1}%
-\contentsline {subsection}{\numberline {22.2.2}FastICA on 2D point clouds}{116}{subsection.22.2.2}%
-\contentsline {subsubsection}{Librerie e funzioni di comodo}{116}{subsubsection*.90}%
-\contentsline {paragraph}{Import librerie}{116}{paragraph*.91}%
-\contentsline {paragraph}{Funzioni utili}{116}{paragraph*.92}%
-\contentsline {subsubsection}{Generazione campione}{117}{subsubsection*.93}%
-\contentsline {subsubsection}{ICA e PCA}{118}{subsubsection*.94}%
-\contentsline {subsubsection}{Risultati}{118}{subsubsection*.95}%
-\contentsline {subsection}{\numberline {22.2.3}ICA e PCA: segnali in tempo}{120}{subsection.22.2.3}%
-\contentsline {subsection}{\numberline {22.2.4}ICA e PCA \sphinxhyphen {} dettagli}{120}{subsection.22.2.4}%
-\contentsline {subsubsection}{Librerie e funzioni utili}{121}{subsubsection*.97}%
-\contentsline {subsubsection}{Generazione segnale}{121}{subsubsection*.98}%
-\contentsline {subsubsection}{Algoritmo}{121}{subsubsection*.99}%
-\contentsline {paragraph}{Pre\sphinxhyphen {}processing}{121}{paragraph*.100}%
-\contentsline {paragraph}{FastICA}{122}{paragraph*.101}%
-\contentsline {subsubsection}{Applicazione del metodo al segnale}{123}{subsubsection*.102}%
-\contentsline {chapter}{\numberline {23}Reinforcement Learning}{125}{chapter.23}%
-\contentsline {part}{V\hspace {1em}Supporto tecnico}{127}{part.5}%
-\contentsline {chapter}{\numberline {24}Supporto tecnico}{129}{chapter.24}%
+\contentsline {section}{\numberline {16.4}Variabili 2\sphinxhyphen {}dimensionali}{58}{section.16.4}%
+\contentsline {section}{\numberline {16.5}Variabili di grandi dimensioni}{58}{section.16.5}%
+\contentsline {chapter}{\numberline {17}Introduzione alla probabilità}{59}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Variabili casuali}{59}{section.17.1}%
+\contentsline {subsection}{\numberline {17.1.1}Definizione di variabile casuale}{60}{subsection.17.1.1}%
+\contentsline {subsubsection}{Definizione}{60}{subsubsection*.7}%
+\contentsline {paragraph}{Esempio 1. Lancio dado non truccato, con variabile casuale corrispondente al valore della faccia}{61}{paragraph*.8}%
+\contentsline {paragraph}{Esempio 2. Lancio dado non truccato, con variabile casuale diverso dal valore della faccia}{61}{paragraph*.9}%
+\contentsline {subsection}{\numberline {17.1.2}Variabili casuali discrete}{61}{subsection.17.1.2}%
+\contentsline {subsubsection}{Funzione di probabilità}{61}{subsubsection*.10}%
+\contentsline {subsubsection}{Esempi di variabili discrete}{62}{subsubsection*.11}%
+\contentsline {subsubsection}{Momenti}{62}{subsubsection*.12}%
+\contentsline {subsubsection}{Variabili casuali multi\sphinxhyphen {}dimensionali}{63}{subsubsection*.13}%
+\contentsline {paragraph}{Probabilità congiunta e teorema di Bayes}{63}{paragraph*.14}%
+\contentsline {paragraph}{Teorema di Bayes}{63}{paragraph*.15}%
+\contentsline {paragraph}{Variabili indipendenti}{63}{paragraph*.16}%
+\contentsline {paragraph}{Covarianza}{64}{paragraph*.17}%
+\contentsline {paragraph}{Correlazione}{64}{paragraph*.18}%
+\contentsline {subsection}{\numberline {17.1.3}Variabili casuali continue}{64}{subsection.17.1.3}%
+\contentsline {subsection}{\numberline {17.1.4}Trasformazione di probabilità di densità}{64}{subsection.17.1.4}%
+\contentsline {subsubsection}{Variabile singola}{64}{subsubsection*.19}%
+\contentsline {paragraph}{Cambio di variabile}{64}{paragraph*.20}%
+\contentsline {subparagraph}{Traslazione}{64}{subparagraph*.21}%
+\contentsline {subparagraph}{Scalatura}{65}{subparagraph*.22}%
+\contentsline {subparagraph}{Trasformazione affine}{66}{subparagraph*.23}%
+\contentsline {subsubsection}{Multi\sphinxhyphen {}variabile}{66}{subsubsection*.24}%
+\contentsline {paragraph}{Cambio di variabili}{66}{paragraph*.25}%
+\contentsline {paragraph}{Combinazione di variabili}{66}{paragraph*.26}%
+\contentsline {subparagraph}{Somma}{66}{subparagraph*.27}%
+\contentsline {subparagraph}{Prodotto}{67}{subparagraph*.28}%
+\contentsline {subsection}{\numberline {17.1.5}Esempi di funzioni di probabilità discreta}{68}{subsection.17.1.5}%
+\contentsline {subsubsection}{Bernoulli}{68}{subsubsection*.29}%
+\contentsline {subsubsection}{Binomiale}{68}{subsubsection*.30}%
+\contentsline {subsubsection}{Poisson}{68}{subsubsection*.31}%
+\contentsline {subsection}{\numberline {17.1.6}Esempi di funzioni di probabilità continua}{68}{subsection.17.1.6}%
+\contentsline {subsubsection}{Distribuzione gaussiana o normale, \(\symscr {N}\)}{68}{subsubsection*.32}%
+\contentsline {subsubsection}{Distribuzione chi\sphinxhyphen {}quadrato, \(\mitchi ^2_N\)}{69}{subsubsection*.33}%
+\contentsline {subsubsection}{Distribuzione \(t\)\sphinxhyphen {}Student}{69}{subsubsection*.34}%
+\contentsline {subsection}{\numberline {17.1.7}Variabili casuali indipendenti e identicamente distribuite, iid.}{69}{subsection.17.1.7}%
+\contentsline {subsubsection}{Teoremi sulle variabili casuali i.i.d.}{69}{subsubsection*.35}%
+\contentsline {paragraph}{Convergenza in statistica, \sphinxstylestrong {todo}}{70}{paragraph*.36}%
+\contentsline {subsection}{\numberline {17.1.8}Campionamento}{70}{subsection.17.1.8}%
+\contentsline {subsection}{\numberline {17.1.9}Media campionaria}{70}{subsection.17.1.9}%
+\contentsline {subsection}{\numberline {17.1.10}Dimensione del campione, teorema del limite centrale e distribuzione \(t\)\sphinxhyphen {}Student}{70}{subsection.17.1.10}%
+\contentsline {section}{\numberline {17.2}Processi casuali}{72}{section.17.2}%
+\contentsline {chapter}{\numberline {18}Statistica inferenziale}{75}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Stima}{76}{section.18.1}%
+\contentsline {subsection}{\numberline {18.1.1}Stimatori}{76}{subsection.18.1.1}%
+\contentsline {subsubsection}{Media e varianza campionaria senza bias}{76}{subsubsection*.37}%
+\contentsline {section}{\numberline {18.2}Test di verifica delle ipotesi}{77}{section.18.2}%
+\contentsline {subsection}{\numberline {18.2.1}Test su campioni singoli o coppie di campioni}{79}{subsection.18.2.1}%
+\contentsline {subsubsection}{Student \(t\)\sphinxhyphen {}test}{79}{subsubsection*.38}%
+\contentsline {paragraph}{Test per un campione \sphinxhyphen {} valore medio}{79}{paragraph*.39}%
+\contentsline {paragraph}{Test per una coppia di campioni con stessa varianza \sphinxhyphen {} valore medio}{80}{paragraph*.40}%
+\contentsline {paragraph}{Altri \(t\)\sphinxhyphen {}test}{80}{paragraph*.41}%
+\contentsline {subsubsection}{\(Z\)\sphinxhyphen {}test}{80}{subsubsection*.42}%
+\contentsline {subsubsection}{\(\mitchi ^2\)\sphinxhyphen {}test di Pearson}{80}{subsubsection*.43}%
+\contentsline {paragraph}{Esempio: dado truccato}{81}{paragraph*.44}%
+\contentsline {subsubsection}{Wilcoxon}{82}{subsubsection*.45}%
+\contentsline {subsection}{\numberline {18.2.2}Test di correlazione}{82}{subsection.18.2.2}%
+\contentsline {subsubsection}{Regressione lineare}{82}{subsubsection*.46}%
+\contentsline {paragraph}{Metodo dei minimi quadrati per una regressione lineare}{82}{paragraph*.47}%
+\contentsline {paragraph}{Metodo ed errore}{83}{paragraph*.48}%
+\contentsline {subsubsection}{Correlazione di Pearson}{83}{subsubsection*.49}%
+\contentsline {subsubsection}{Correlazione di Spearman}{84}{subsubsection*.50}%
+\contentsline {subsubsection}{Esempio}{84}{subsubsection*.51}%
+\contentsline {subsection}{\numberline {18.2.3}Test di indipendenza}{85}{subsection.18.2.3}%
+\contentsline {subsubsection}{\(t\)\sphinxhyphen {}test e Welch \(t\)\sphinxhyphen {}test}{85}{subsubsection*.52}%
+\contentsline {subsubsection}{ANOVA (Analysis of variance)}{86}{subsubsection*.53}%
+\contentsline {subsubsection}{Tukey test}{86}{subsubsection*.54}%
+\contentsline {subsubsection}{Mann\sphinxhyphen {}Whitney \(U\)\sphinxhyphen {}test}{86}{subsubsection*.55}%
+\contentsline {subsubsection}{Kruskal\sphinxhyphen {}Wallis \(H\)\sphinxhyphen {}test}{86}{subsubsection*.56}%
+\contentsline {subsection}{\numberline {18.2.4}Esempi}{86}{subsection.18.2.4}%
+\contentsline {subsubsection}{Test di verifica d’ipotesi \sphinxhyphen {} Fisher}{86}{subsubsection*.57}%
+\contentsline {paragraph}{Esempio: moneta truccata o no?}{87}{paragraph*.58}%
+\contentsline {subparagraph}{Import librerie}{87}{subparagraph*.59}%
+\contentsline {subparagraph}{Campione generato dal processo casuale}{87}{subparagraph*.60}%
+\contentsline {subsubsection}{Moneta truccata}{90}{subsubsection*.61}%
+\contentsline {paragraph}{Import librerie e funzioni utili}{90}{paragraph*.62}%
+\contentsline {subparagraph}{Import librerie}{90}{subparagraph*.63}%
+\contentsline {paragraph}{Funzione per lo svolgimento di un esperimento}{90}{paragraph*.64}%
+\contentsline {subparagraph}{Funzione che restituisce la pdf \(p(x|\text {H}_0)\)}{90}{subparagraph*.65}%
+\contentsline {subparagraph}{Funzioni per la ricerca degli intervalli di accettazione dell’ipotesi}{90}{subparagraph*.66}%
+\contentsline {paragraph}{Esperimento}{90}{paragraph*.67}%
+\contentsline {subparagraph}{Livelli di accettazione}{90}{subparagraph*.68}%
+\contentsline {subparagraph}{Svolgimento esperimento}{90}{subparagraph*.69}%
+\contentsline {subparagraph}{Grafici}{91}{subparagraph*.70}%
+\contentsline {subsubsection}{Gambler rabbit}{91}{subsubsection*.71}%
+\contentsline {subsubsection}{\(t\)\sphinxhyphen {}test}{91}{subsubsection*.72}%
+\contentsline {paragraph}{\(t\)\sphinxhyphen {}test per un campione}{92}{paragraph*.73}%
+\contentsline {paragraph}{\(t\)\sphinxhyphen {}test per due campioni}{94}{paragraph*.74}%
+\contentsline {subparagraph}{\(t\)\sphinxhyphen {}test per due variabili indipendenti, con varianza simile e stesso numero di osservazioni}{94}{subparagraph*.75}%
+\contentsline {subsubsection}{Regressione lineare}{96}{subsubsection*.76}%
+\contentsline {subsubsection}{ANOVA \sphinxhyphen {} Analysis of variance}{99}{subsubsection*.77}%
+\contentsline {paragraph}{Metodo}{99}{paragraph*.78}%
+\contentsline {paragraph}{Esempio}{99}{paragraph*.79}%
+\contentsline {chapter}{\numberline {19}Dimostrazioni}{101}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Distrubuzione gaussiana come limite della distribuzione \(t\)\sphinxhyphen {}Student}{101}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Somma/differenza di variabili gaussiane indipendenti}{102}{section.19.2}%
+\contentsline {section}{\numberline {19.3}Distribuzione della statistica \(t \sim t_{N-1}\) nel \(t\)\sphinxhyphen {}test per campioni singoli}{102}{section.19.3}%
+\contentsline {section}{\numberline {19.4}Indipendenza di media campionaria e varianza campionaria per variabili gaussiane iid}{103}{section.19.4}%
+\contentsline {section}{\numberline {19.5}\(\sum _{n=1}^N \left (\frac {X_n - \bar {X}}{\mitsigma ^2}\right )^2 \sim \mitchi ^2_{N-1}\) per variabili gaussiane iid}{103}{section.19.5}%
+\contentsline {part}{IV\hspace {1em}Introduzione ai metodi in statistica e AI}{105}{part.4}%
+\contentsline {chapter}{\numberline {20}Introduzione ai metodi in AI}{107}{chapter.20}%
+\contentsline {chapter}{\numberline {21}Supervised Learning}{109}{chapter.21}%
+\contentsline {chapter}{\numberline {22}Unsupervised Learning}{111}{chapter.22}%
+\contentsline {section}{\numberline {22.1}PCA}{111}{section.22.1}%
+\contentsline {subsection}{\numberline {22.1.1}Esempio: compressione di immagini}{111}{subsection.22.1.1}%
+\contentsline {subsubsection}{Preprocessing e SVD}{112}{subsubsection*.80}%
+\contentsline {subsubsection}{Risultati della SVD}{112}{subsubsection*.81}%
+\contentsline {subsubsection}{Ricostruzione dell’immagine compressa}{113}{subsubsection*.82}%
+\contentsline {section}{\numberline {22.2}ICA e PCA}{114}{section.22.2}%
+\contentsline {subsection}{\numberline {22.2.1}Riferimenti}{114}{subsection.22.2.1}%
+\contentsline {subsection}{\numberline {22.2.2}FastICA on 2D point clouds}{114}{subsection.22.2.2}%
+\contentsline {subsubsection}{Librerie e funzioni di comodo}{114}{subsubsection*.83}%
+\contentsline {paragraph}{Import librerie}{114}{paragraph*.84}%
+\contentsline {paragraph}{Funzioni utili}{114}{paragraph*.85}%
+\contentsline {subsubsection}{Generazione campione}{115}{subsubsection*.86}%
+\contentsline {subsubsection}{ICA e PCA}{116}{subsubsection*.87}%
+\contentsline {subsubsection}{Risultati}{116}{subsubsection*.88}%
+\contentsline {subsection}{\numberline {22.2.3}ICA e PCA: segnali in tempo}{118}{subsection.22.2.3}%
+\contentsline {subsection}{\numberline {22.2.4}ICA e PCA \sphinxhyphen {} dettagli}{118}{subsection.22.2.4}%
+\contentsline {subsubsection}{Librerie e funzioni utili}{119}{subsubsection*.90}%
+\contentsline {subsubsection}{Generazione segnale}{119}{subsubsection*.91}%
+\contentsline {subsubsection}{Algoritmo}{119}{subsubsection*.92}%
+\contentsline {paragraph}{Pre\sphinxhyphen {}processing}{119}{paragraph*.93}%
+\contentsline {paragraph}{FastICA}{120}{paragraph*.94}%
+\contentsline {subsubsection}{Applicazione del metodo al segnale}{121}{subsubsection*.95}%
+\contentsline {chapter}{\numberline {23}Reinforcement Learning}{123}{chapter.23}%
+\contentsline {part}{V\hspace {1em}Supporto tecnico}{125}{part.5}%
+\contentsline {chapter}{\numberline {24}Supporto tecnico}{127}{chapter.24}%
+\contentsline {chapter}{Proof Index}{129}{section*.96}%
