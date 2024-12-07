@@ -12,11 +12,13 @@ Dati $N$ campioni $\{ X_n \}_{n=1:N}$ iid con distribuzinone gaussiana $X_n \sim
 
 $$t:= \frac{\bar{X}-\mu}{\frac{S}{\sqrt{N}}} \sim t_{N-1} \ .$$
 
-Questa affermazione risulta vera poiché la statistica test $t$ può essere scritta come  l'espressione che definisce una distribuzione $t_{\nu}$-Student,
+Questa affermazione risulta vera poiché la statistica test $t$ può essere riportata alla [definizione di una distribuzione $t_{\nu}$-Student](),
 
 $$t_{\nu} \sim T = \frac{Z}{\sqrt{\frac{V}{\nu}}} \ ,$$
 
-con $Z \sim N(0,1)$ e $V \sim \chi^2_{\nu}$.
+con $Z \sim N(0,1)$ e $V \sim \chi^2_{\nu}$, con $\nu = N-1$. Infatti:
+- la variabile $Z := \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \sim \mathscr{N}(0,1)$
+- la somma $\sum_{n=1}^N \left(\frac{X_n - \bar{X}}{\sigma^2}\right)^2 \sim \chi^2_{N-1}$
 
 ```
 
