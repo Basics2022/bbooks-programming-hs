@@ -493,13 +493,12 @@ Con la stessa varianza<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text"><strong>todo</strong></p>
-<p class="sd-card-text">Date due variabili casuali gaussiane indipendenti, <span class="math notranslate nohighlight">\(X_1 \sim \mathscr{N}(\mu_1,\sigma^2)\)</span>, <span class="math notranslate nohighlight">\(X_2 \sim \mathscr{N}(\mu_2, \sigma^2)\)</span>, si valuta la distribuzione della variabile casuale <span class="math notranslate nohighlight">\(X_1 \pm X_2\)</span>. La funzione di probabilità di questa variabile viene calcolata:</p>
-<ul class="simple">
-<li><p class="sd-card-text">applicando un cambio di variabili <span class="math notranslate nohighlight">\(X_1, X_2 \rightarrow X_1, Z=X_1 \pm X_2\)</span>,</p></li>
-<li><p class="sd-card-text">calcolando la pdf nelle nuove variabili <span class="math notranslate nohighlight">\(f_{X_1 Z}(x_1, z)\)</span></p></li>
-<li><p class="sd-card-text">marginalizzando rispetto a <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(f_Z(z) = \int_{x_1} f_{X_1 Z}(x_1, z) dz\)</span></p></li>
-</ul>
 <!--
+Date due variabili casuali gaussiane indipendenti, $X_1 \sim \mathscr{N}(\mu_1,\sigma^2)$, $X_2 \sim \mathscr{N}(\mu_2, \sigma^2)$, si valuta la distribuzione della variabile casuale $X_1 \pm X_2$. La funzione di probabilità di questa variabile viene calcolata:
+- applicando un cambio di variabili $X_1, X_2 \rightarrow X_1, Z=X_1 \pm X_2$,
+- calcolando la pdf nelle nuove variabili $f_{X_1 Z}(x_1, z)$
+- marginalizzando rispetto a $X_1$, $f_Z(z) = \int_{x_1} f_{X_1 Z}(x_1, z) dz$
+
 Alla funzione distribuzione di probabilità congiunta $f_{X_1 X_2}(x_1, x_2)$ delle due variabili casuali indipendenti,
 
 $$\begin{aligned}
@@ -528,13 +527,15 @@ Con varianza diversa<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text"><strong>todo</strong></p>
-<p class="sd-card-text">Date due variabili casuali gaussiane indipendenti, <span class="math notranslate nohighlight">\(X_1 \sim \mathscr{N}(\mu_1,\sigma^2_1)\)</span>, <span class="math notranslate nohighlight">\(X_2 \sim \mathscr{N}(\mu_2, \sigma^2_2)\)</span>, si valuta la distribuzione della variabile casuale <span class="math notranslate nohighlight">\(X_1 + X_2\)</span>. La funzione distribuzione di probabilità congiunta delle due variabili casuali indipendenti è</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
+<!--
+Date due variabili casuali gaussiane indipendenti, $X_1 \sim \mathscr{N}(\mu_1,\sigma^2_1)$, $X_2 \sim \mathscr{N}(\mu_2, \sigma^2_2)$, si valuta la distribuzione della variabile casuale $X_1 + X_2$. La funzione distribuzione di probabilità congiunta delle due variabili casuali indipendenti è
+
+$$\begin{aligned}
  f_{X_1 X_2}(x_1,x_2)
- &amp; = f_{X_1}(x_1) f_{X_2}(x_2) = \\
- &amp; = \frac{1}{\sqrt{2 \pi  \sigma_1^2}} \exp\left[-\frac{(x_1-\mu_1)^2}{2 \sigma_1^2} \right] \, \frac{1}{\sqrt{2 \pi  \sigma_2^2}} \exp\left[-\frac{(x_2-\mu_2)^2}{2 \sigma_2^2} \right] = \\\
-\end{aligned}\end{split}\]</div>
+ & = f_{X_1}(x_1) f_{X_2}(x_2) = \\
+ & = \frac{1}{\sqrt{2 \pi  \sigma_1^2}} \exp\left[-\frac{(x_1-\mu_1)^2}{2 \sigma_1^2} \right] \, \frac{1}{\sqrt{2 \pi  \sigma_2^2}} \exp\left[-\frac{(x_2-\mu_2)^2}{2 \sigma_2^2} \right] = \\\
+\end{aligned}$$
+-->
 <p class="sd-card-text"><strong>todo</strong>…</p>
 </div>
 </details></div>
