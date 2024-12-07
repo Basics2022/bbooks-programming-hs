@@ -498,7 +498,26 @@ Test di verifica di Fisher<div class="sd-summary-down docutils">
 </li>
 </ol>
 </div>
-</details><p>Usando questo approccio, è possibile distinguere diversi test a seconda dei dati disponibili (numero di campioni, dimensione dei campioni, distribuzione attesa delle osservazioni,…), della variabile test utilizzata, e dell’obiettivo del test. Una classificazione rigida dettagliata rischierebbe di risultare poco pratica e imperfetta.</p>
+</details><p><strong>Risultati ed errori.</strong> Un test di ipotesi può portare a due tipi di errore:</p>
+<ul class="simple">
+<li><p><strong>tipo I, falso positivo</strong>: rifiuto di un’ipotesi <span class="math notranslate nohighlight">\(\text{H}_0\)</span> valida</p></li>
+<li><p><strong>tipo II, falso negativo</strong>: mancato rifiuto di un’ipotesi <span class="math notranslate nohighlight">\(\text{H}_0\)</span> non valida</p></li>
+</ul>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 18.1 </span> (Giudizio di un imputato)</p>
+<div class="example-content section" id="proof-content">
+<p>In un tribunale, si vuole decidere se l’imputato è innocente. Si considera come ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span>: «l’imputato è innocente». Le indagini svolte cercano di valutare lo stato dell’imputato e portano alla decisione di condanna o assoluzione. Un errore di <strong>tipo I</strong> corrisponde alla condanna di un imputato innocente; un errore di tipo II corrisponde all’assoluzione di un imputato colpevole.</p>
+</div>
+</div><div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 18.2 </span> (Test medico)</p>
+<div class="example-content section" id="proof-content">
+<p><strong>todo</strong> <em>Definire potenza</em>, <span class="math notranslate nohighlight">\(\beta\)</span>, di un test in presenza di un’ipotesi alternativa. Fare esempio con falsi positivi, e affidabilità tamponi Covid.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\text{H}_0\)</span> nulla vera: <span class="math notranslate nohighlight">\(\alpha\)</span>: probabilità di rifiutare <span class="math notranslate nohighlight">\(\text{H}_0\)</span>; <span class="math notranslate nohighlight">\(1-\alpha\)</span>: probabilità di non rifiutare <span class="math notranslate nohighlight">\(\text{H}_0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{H}_1\)</span> alternativa vera: <span class="math notranslate nohighlight">\(1-\beta\)</span>: probabilità di rifiutare <span class="math notranslate nohighlight">\(\text{H}_0\)</span>; <span class="math notranslate nohighlight">\(\beta\)</span>: probabilità di non rifiutare <span class="math notranslate nohighlight">\(\text{H}_0\)</span></p></li>
+</ul>
+</div>
+</div><p>Usando questo approccio, è possibile distinguere diversi test a seconda dei dati disponibili (numero di campioni, dimensione dei campioni, distribuzione attesa delle osservazioni,…), della variabile test utilizzata, e dell’obiettivo del test. Una classificazione rigida dettagliata rischierebbe di risultare poco pratica e imperfetta.</p>
 <p><strong>Usi frequenti.</strong></p>
 <ul class="simple">
 <li><p>Test su campioni singoli o coppie di campioni</p></li>

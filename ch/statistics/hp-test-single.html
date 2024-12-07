@@ -498,6 +498,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#student-t-test">18.2.1.1. Student <span class="math notranslate nohighlight">\(t\)</span>-test</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-per-un-campione-valore-medio">18.2.1.1.1. Test per un campione - valore medio</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-per-una-coppia-di-campioni-con-stessa-varianza-valore-medio">18.2.1.1.2. Test per una coppia di campioni con stessa varianza - valore medio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#altri-t-test">18.2.1.1.3. Altri <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-test">18.2.1.2. <span class="math notranslate nohighlight">\(Z\)</span>-test</a></li>
@@ -514,9 +515,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <!-- ()= -->
-<div class="tex2jax_ignore mathjax_ignore section" id="test-su-campioni-singoli-o-coppie-di-campioni">
-<h1><span class="section-number">18.2.1. </span>Test su campioni singoli o coppie di campioni<a class="headerlink" href="#test-su-campioni-singoli-o-coppie-di-campioni" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="test-su-campioni-singoli-o-coppie-di-campioni">
+<span id="hp-test-single"></span><h1><span class="section-number">18.2.1. </span>Test su campioni singoli o coppie di campioni<a class="headerlink" href="#test-su-campioni-singoli-o-coppie-di-campioni" title="Permalink to this heading">#</a></h1>
 <p><strong>Test più comuni</strong></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(t\)</span>-test</p></li>
@@ -526,14 +526,14 @@ document.write(`
 <li><p>…</p></li>
 </ul>
 <div class="section" id="student-t-test">
-<h2><span class="section-number">18.2.1.1. </span>Student <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#student-t-test" title="Permalink to this heading">#</a></h2>
+<span id="hp-test-t-tests"></span><h2><span class="section-number">18.2.1.1. </span>Student <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#student-t-test" title="Permalink to this heading">#</a></h2>
 <p>I <span class="math notranslate nohighlight">\(t\)</span>-test sono dei test statistici di posizione in cui la statistica test segue una distribuzione <span class="math notranslate nohighlight">\(t\)</span> di Student sotto l’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[p(t|\text{H}_0) \sim t_{\nu} \ ,\]</div>
 <p>dove il numero di gradi di libertà <span class="math notranslate nohighlight">\(\nu\)</span> della distribuzione <span class="math notranslate nohighlight">\(t_{\nu}\)</span> dipende dal metodo considerato.</p>
 <p>Questi test sono «esatti» se la popolazione ha distribuzione normale. <strong>todo</strong> <em>in caso contrario, la statistica test costruita non segue una distribuzione <span class="math notranslate nohighlight">\(t\)</span>-Student. Bisogna valutare l’attendibilità del test in questo caso; per distribuzioni «sufficientemente simili a quella gaussiana» potrebbero essere validi; il teorema del limite centrale aiuta l’ipotesi di gaussianità; in caso di distribuzioni generiche, meglio affidarsi ad altri test - non parametrici</em></p>
 <div class="section" id="test-per-un-campione-valore-medio">
-<h3><span class="section-number">18.2.1.1.1. </span>Test per un campione - valore medio<a class="headerlink" href="#test-per-un-campione-valore-medio" title="Permalink to this heading">#</a></h3>
+<span id="hp-test-single-t-tests-single"></span><h3><span class="section-number">18.2.1.1.1. </span>Test per un campione - valore medio<a class="headerlink" href="#test-per-un-campione-valore-medio" title="Permalink to this heading">#</a></h3>
 <p>E” un test di posizione/stima della media della popolazione della quale è noto un campione di <span class="math notranslate nohighlight">\(N\)</span> osservazioni, <span class="math notranslate nohighlight">\(\mathbf{X} = \{ X_n \}_{n=1:N}\)</span>.</p>
 <ul>
 <li><p>l’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span> dichiara che la popolazione ha media <span class="math notranslate nohighlight">\(\mu_0\)</span>;</p></li>
@@ -558,15 +558,21 @@ document.write(`
 <p><strong>todo</strong> <em>cosa succede quando la popolazione non ha distribuzione gaussiana? Qual è la robustezza del medoto alla caduta di questa ipotesi? Esempio già disponibile con campionamento variabile con distribuzione uniforme; altri metodi, non parametric?</em></p>
 </div>
 <div class="section" id="test-per-una-coppia-di-campioni-con-stessa-varianza-valore-medio">
-<h3><span class="section-number">18.2.1.1.2. </span>Test per una coppia di campioni con stessa varianza - valore medio<a class="headerlink" href="#test-per-una-coppia-di-campioni-con-stessa-varianza-valore-medio" title="Permalink to this heading">#</a></h3>
+<span id="hp-test-single-t-tests-pair"></span><h3><span class="section-number">18.2.1.1.2. </span>Test per una coppia di campioni con stessa varianza - valore medio<a class="headerlink" href="#test-per-una-coppia-di-campioni-con-stessa-varianza-valore-medio" title="Permalink to this heading">#</a></h3>
 <p>Un <span class="math notranslate nohighlight">\(t\)</span>-test per una coppia di campioni <span class="math notranslate nohighlight">\(\{ X_{1,n} \}_{n=1:N}\)</span>, <span class="math notranslate nohighlight">\(\{ X_{2,n} \}_{n=1:N}\)</span> presi da due popolazioni <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(X_2\)</span> di cui si ipotizza la stessa varianza <span class="math notranslate nohighlight">\(\sigma^2\)</span>, si riduce al <span class="math notranslate nohighlight">\(t\)</span>-test per campione singolo per la variabile casuale <span class="math notranslate nohighlight">\(X_2 - X_1\)</span>.</p>
-<p><strong>Variabili gaussiane.</strong> Nel caso in cui le variabili casuali <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(X_2\)</span> abbiano distribuzione gaussiana con la stessa varianza, <span class="math notranslate nohighlight">\(X_1 \sim \mathscr{N}(\mu_1, \sigma^2)\)</span>, <span class="math notranslate nohighlight">\(\X_2 \sim \mathscr{N}(\mu_2, \sigma^2)\)</span>, la variabile <span class="math notranslate nohighlight">\(X_2 - X_1\)</span> è gaussiana con distribuzione</p>
+<p><strong>Variabili gaussiane.</strong> Nel caso in cui le variabili casuali <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(X_2\)</span> abbiano distribuzione gaussiana con la stessa varianza, <span class="math notranslate nohighlight">\(X_1 \sim \mathscr{N}(\mu_1, \sigma^2)\)</span>, <span class="math notranslate nohighlight">\(X_2 \sim \mathscr{N}(\mu_2, \sigma^2)\)</span>, la variabile <span class="math notranslate nohighlight">\(X_2 - X_1\)</span> è gaussiana con distribuzione
+–&gt;</p>
 <div class="math notranslate nohighlight">
 \[X_2 - X_1 \sim \mathscr{N}(\mu_2-\mu_1, 2 \sigma^2)\]</div>
+<p><strong>todo</strong></p>
+</div>
+<div class="section" id="altri-t-test">
+<span id="hp-test-single-t-tests-others"></span><h3><span class="section-number">18.2.1.1.3. </span>Altri <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#altri-t-test" title="Permalink to this heading">#</a></h3>
+<p><strong>todo</strong> Se campioni di dimensione differente o con varianze differenti, <a class="reference internal" href="hp-test-independence.html#hp-test-independence-t-welch"><span class="std std-ref">Welct <span class="math notranslate nohighlight">\(t\)</span>-test</span></a>…</p>
 </div>
 </div>
 <div class="section" id="z-test">
-<h2><span class="section-number">18.2.1.2. </span><span class="math notranslate nohighlight">\(Z\)</span>-test<a class="headerlink" href="#z-test" title="Permalink to this heading">#</a></h2>
+<span id="hp-test-single-z-tests"></span><h2><span class="section-number">18.2.1.2. </span><span class="math notranslate nohighlight">\(Z\)</span>-test<a class="headerlink" href="#z-test" title="Permalink to this heading">#</a></h2>
 <p>Test identico al <span class="math notranslate nohighlight">\(t\)</span>-test in cui la statistica test <span class="math notranslate nohighlight">\(z\)</span> segue una distribuzione gaussiana sotto l’ipotesi nulla. Per il legame esistente tra la distribuzione <span class="math notranslate nohighlight">\(t_{\nu}\)</span> e <span class="math notranslate nohighlight">\(\mathscr{N}\)</span>, si può interpretare lo <span class="math notranslate nohighlight">\(Z\)</span>-test come limite del <span class="math notranslate nohighlight">\(t\)</span>-test per un numero di campioni sufficientemente grande.</p>
 </div>
 <div class="section" id="chi-2-test">
@@ -649,6 +655,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#student-t-test">18.2.1.1. Student <span class="math notranslate nohighlight">\(t\)</span>-test</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-per-un-campione-valore-medio">18.2.1.1.1. Test per un campione - valore medio</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-per-una-coppia-di-campioni-con-stessa-varianza-valore-medio">18.2.1.1.2. Test per una coppia di campioni con stessa varianza - valore medio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#altri-t-test">18.2.1.1.3. Altri <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-test">18.2.1.2. <span class="math notranslate nohighlight">\(Z\)</span>-test</a></li>
