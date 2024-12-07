@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2024.9.16)  7 DEC 2024 19:06
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2024.9.16)  8 DEC 2024 00:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2001,9 +2001,9 @@ LaTeX Info: Redefining \rmfamily on input line 2931.
 LaTeX Info: Redefining \sffamily on input line 2931.
 LaTeX Info: Redefining \ttfamily on input line 2931.
 [71]
-File: c6126aa5edfbeee9427165e06d2d15efc03c49ecd4b6717e7ca1882ee0dea2e6.png Grap
+File: 96839408c44229a6b5ad83f108d10b883f17ee110938b0e7cfede2f5c5cd21dd.png Grap
 hic file (type bmp)
-<c6126aa5edfbeee9427165e06d2d15efc03c49ecd4b6717e7ca1882ee0dea2e6.png>
+<96839408c44229a6b5ad83f108d10b883f17ee110938b0e7cfede2f5c5cd21dd.png>
 LaTeX Info: Redefining \rmfamily on input line 2980.
 LaTeX Info: Redefining \sffamily on input line 2980.
 LaTeX Info: Redefining \ttfamily on input line 2980.
@@ -2064,358 +2064,376 @@ LaTeX Info: Redefining \rmfamily on input line 3431.
 LaTeX Info: Redefining \sffamily on input line 3431.
 LaTeX Info: Redefining \ttfamily on input line 3431.
 [80]
-File: db97acfd258285ad41d79f45581077c65508437663d73dc056551fc0e26079ec.png Grap
+File: 0efd2fa4aebc7f84a3036424e8a6dfed64e2e966ba0122f5c069df76a019f401.png Grap
 hic file (type bmp)
-<db97acfd258285ad41d79f45581077c65508437663d73dc056551fc0e26079ec.png>
-LaTeX Info: Redefining \rmfamily on input line 3493.
-LaTeX Info: Redefining \sffamily on input line 3493.
-LaTeX Info: Redefining \ttfamily on input line 3493.
+<0efd2fa4aebc7f84a3036424e8a6dfed64e2e966ba0122f5c069df76a019f401.png>
+LaTeX Info: Redefining \rmfamily on input line 3490.
+LaTeX Info: Redefining \sffamily on input line 3490.
+LaTeX Info: Redefining \ttfamily on input line 3490.
  [81]
-LaTeX Info: Redefining \rmfamily on input line 3565.
-LaTeX Info: Redefining \sffamily on input line 3565.
-LaTeX Info: Redefining \ttfamily on input line 3565.
- [82]
-Overfull \hbox (107.27835pt too wide) detected at line 3597
+File: dfb025c4cb68d9ee83f61e38990a02cd4e6f13b02c21cd464f63c4075bbb8888.png Grap
+hic file (type bmp)
+<dfb025c4cb68d9ee83f61e38990a02cd4e6f13b02c21cd464f63c4075bbb8888.png>
+
+Overfull \vbox (1.88393pt too high) detected at line 3531
+ []
+
+LaTeX Info: Redefining \rmfamily on input line 3531.
+LaTeX Info: Redefining \sffamily on input line 3531.
+LaTeX Info: Redefining \ttfamily on input line 3531.
+[82]
+File: 9ebccc87ce678737aa0d84c01f60c8484cfb74e2a8c3a91eeb8d83d862e13398.png Grap
+hic file (type bmp)
+<9ebccc87ce678737aa0d84c01f60c8484cfb74e2a8c3a91eeb8d83d862e13398.png>
+LaTeX Info: Redefining \rmfamily on input line 3578.
+LaTeX Info: Redefining \sffamily on input line 3578.
+LaTeX Info: Redefining \ttfamily on input line 3578.
+ [83]
+LaTeX Info: Redefining \rmfamily on input line 3650.
+LaTeX Info: Redefining \sffamily on input line 3650.
+LaTeX Info: Redefining \ttfamily on input line 3650.
+ [84]
+Overfull \hbox (107.27835pt too wide) detected at line 3682
 []
  []
 
-LaTeX Info: Redefining \rmfamily on input line 3627.
-LaTeX Info: Redefining \sffamily on input line 3627.
-LaTeX Info: Redefining \ttfamily on input line 3627.
-[83]
+LaTeX Info: Redefining \rmfamily on input line 3712.
+LaTeX Info: Redefining \sffamily on input line 3712.
+LaTeX Info: Redefining \ttfamily on input line 3712.
+[85]
 File: c0219b89b3d25a5058c0fbeefb64ea7d58c995c486dbf4899c1f7c583a3583e7.png Grap
 hic file (type bmp)
 <c0219b89b3d25a5058c0fbeefb64ea7d58c995c486dbf4899c1f7c583a3583e7.png>
-LaTeX Info: Redefining \rmfamily on input line 3708.
-LaTeX Info: Redefining \sffamily on input line 3708.
-LaTeX Info: Redefining \ttfamily on input line 3708.
- [84]
+LaTeX Info: Redefining \rmfamily on input line 3793.
+LaTeX Info: Redefining \sffamily on input line 3793.
+LaTeX Info: Redefining \ttfamily on input line 3793.
+ [86]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3743.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3743.
-
-LaTeX Info: Redefining \rmfamily on input line 3755.
-LaTeX Info: Redefining \sffamily on input line 3755.
-LaTeX Info: Redefining \ttfamily on input line 3755.
-[85]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3797.
+(hyperref)                removing `math shift' on input line 3828.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3806.
+(hyperref)                removing `math shift' on input line 3828.
 
-LaTeX Info: Redefining \rmfamily on input line 3852.
-LaTeX Info: Redefining \sffamily on input line 3852.
-LaTeX Info: Redefining \ttfamily on input line 3852.
-[86]
-LaTeX Info: Redefining \rmfamily on input line 3921.
-LaTeX Info: Redefining \sffamily on input line 3921.
-LaTeX Info: Redefining \ttfamily on input line 3921.
- [87]
-LaTeX Info: Redefining \rmfamily on input line 4002.
-LaTeX Info: Redefining \sffamily on input line 4002.
-LaTeX Info: Redefining \ttfamily on input line 4002.
- [88]
+LaTeX Info: Redefining \rmfamily on input line 3840.
+LaTeX Info: Redefining \sffamily on input line 3840.
+LaTeX Info: Redefining \ttfamily on input line 3840.
+[87]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3882.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3891.
+
+LaTeX Info: Redefining \rmfamily on input line 3937.
+LaTeX Info: Redefining \sffamily on input line 3937.
+LaTeX Info: Redefining \ttfamily on input line 3937.
+[88]
+LaTeX Info: Redefining \rmfamily on input line 4006.
+LaTeX Info: Redefining \sffamily on input line 4006.
+LaTeX Info: Redefining \ttfamily on input line 4006.
+ [89]
+LaTeX Info: Redefining \rmfamily on input line 4087.
+LaTeX Info: Redefining \sffamily on input line 4087.
+LaTeX Info: Redefining \ttfamily on input line 4087.
+ [90]
 File: 011f32f8b4551cb3cc9cbbf6a5356b4616fc8f3233b4e14cca59515734a02b27.png Grap
 hic file (type bmp)
 <011f32f8b4551cb3cc9cbbf6a5356b4616fc8f3233b4e14cca59515734a02b27.png>
-LaTeX Info: Redefining \rmfamily on input line 4049.
-LaTeX Info: Redefining \sffamily on input line 4049.
-LaTeX Info: Redefining \ttfamily on input line 4049.
- [89]
+LaTeX Info: Redefining \rmfamily on input line 4134.
+LaTeX Info: Redefining \sffamily on input line 4134.
+LaTeX Info: Redefining \ttfamily on input line 4134.
+ [91]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4081.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4081.
-
-LaTeX Info: Redefining \rmfamily on input line 4127.
-LaTeX Info: Redefining \sffamily on input line 4127.
-LaTeX Info: Redefining \ttfamily on input line 4127.
-[90]
-File: f9eea85ffaaa615564a1d98cdb01702c377f87e081adeb0a3595e517ebd6bce0.png Grap
-hic file (type bmp)
-<f9eea85ffaaa615564a1d98cdb01702c377f87e081adeb0a3595e517ebd6bce0.png>
+(hyperref)                removing `math shift' on input line 4166.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4154.
+(hyperref)                removing `subscript' on input line 4166.
 
-LaTeX Info: Redefining \rmfamily on input line 4164.
-LaTeX Info: Redefining \sffamily on input line 4164.
-LaTeX Info: Redefining \ttfamily on input line 4164.
-[91]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4164.
-
-LaTeX Info: Redefining \rmfamily on input line 4226.
-LaTeX Info: Redefining \sffamily on input line 4226.
-LaTeX Info: Redefining \ttfamily on input line 4226.
+LaTeX Info: Redefining \rmfamily on input line 4212.
+LaTeX Info: Redefining \sffamily on input line 4212.
+LaTeX Info: Redefining \ttfamily on input line 4212.
 [92]
+File: 58ae7016b4c11f48d294cb7f957b386159e0e9c6b8e11d63babb4346922a3a02.png Grap
+hic file (type bmp)
+<58ae7016b4c11f48d294cb7f957b386159e0e9c6b8e11d63babb4346922a3a02.png>
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4239.
+
+LaTeX Info: Redefining \rmfamily on input line 4249.
+LaTeX Info: Redefining \sffamily on input line 4249.
+LaTeX Info: Redefining \ttfamily on input line 4249.
+[93]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4249.
+
+LaTeX Info: Redefining \rmfamily on input line 4311.
+LaTeX Info: Redefining \sffamily on input line 4311.
+LaTeX Info: Redefining \ttfamily on input line 4311.
+[94]
 File: b447209d18774c554d77059adc27f1afcb900a0a10e8e9db17f5ca0f6304b8c4.png Grap
 hic file (type bmp)
 <b447209d18774c554d77059adc27f1afcb900a0a10e8e9db17f5ca0f6304b8c4.png>
-LaTeX Info: Redefining \rmfamily on input line 4254.
-LaTeX Info: Redefining \sffamily on input line 4254.
-LaTeX Info: Redefining \ttfamily on input line 4254.
- [93]
+LaTeX Info: Redefining \rmfamily on input line 4339.
+LaTeX Info: Redefining \sffamily on input line 4339.
+LaTeX Info: Redefining \ttfamily on input line 4339.
+ [95]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4254.
+(hyperref)                removing `math shift' on input line 4339.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4267.
+(hyperref)                removing `math shift' on input line 4352.
 
-LaTeX Info: Redefining \rmfamily on input line 4342.
-LaTeX Info: Redefining \sffamily on input line 4342.
-LaTeX Info: Redefining \ttfamily on input line 4342.
-[94]
+LaTeX Info: Redefining \rmfamily on input line 4427.
+LaTeX Info: Redefining \sffamily on input line 4427.
+LaTeX Info: Redefining \ttfamily on input line 4427.
+[96]
 File: ad9e0a740f0f409ab9699cc4cac6809aff9c408ab244bacfcd1a9c9e8e4c1ab3.png Grap
 hic file (type bmp)
 <ad9e0a740f0f409ab9699cc4cac6809aff9c408ab244bacfcd1a9c9e8e4c1ab3.png>
-LaTeX Info: Redefining \rmfamily on input line 4371.
-LaTeX Info: Redefining \sffamily on input line 4371.
-LaTeX Info: Redefining \ttfamily on input line 4371.
- [95]
-LaTeX Info: Redefining \rmfamily on input line 4424.
-LaTeX Info: Redefining \sffamily on input line 4424.
-LaTeX Info: Redefining \ttfamily on input line 4424.
- [96]
-LaTeX Info: Redefining \rmfamily on input line 4485.
-LaTeX Info: Redefining \sffamily on input line 4485.
-LaTeX Info: Redefining \ttfamily on input line 4485.
+LaTeX Info: Redefining \rmfamily on input line 4456.
+LaTeX Info: Redefining \sffamily on input line 4456.
+LaTeX Info: Redefining \ttfamily on input line 4456.
  [97]
-LaTeX Info: Redefining \rmfamily on input line 4547.
-LaTeX Info: Redefining \sffamily on input line 4547.
-LaTeX Info: Redefining \ttfamily on input line 4547.
+LaTeX Info: Redefining \rmfamily on input line 4509.
+LaTeX Info: Redefining \sffamily on input line 4509.
+LaTeX Info: Redefining \ttfamily on input line 4509.
  [98]
-Overfull \hbox (207.99284pt too wide) detected at line 4571
+LaTeX Info: Redefining \rmfamily on input line 4570.
+LaTeX Info: Redefining \sffamily on input line 4570.
+LaTeX Info: Redefining \ttfamily on input line 4570.
+ [99]
+LaTeX Info: Redefining \rmfamily on input line 4632.
+LaTeX Info: Redefining \sffamily on input line 4632.
+LaTeX Info: Redefining \ttfamily on input line 4632.
+ [100]
+Overfull \hbox (207.99284pt too wide) detected at line 4656
 []
  []
 
-LaTeX Info: Redefining \rmfamily on input line 4610.
-LaTeX Info: Redefining \sffamily on input line 4610.
-LaTeX Info: Redefining \ttfamily on input line 4610.
-[99]
-LaTeX Info: Redefining \rmfamily on input line 4628.
-LaTeX Info: Redefining \sffamily on input line 4628.
-LaTeX Info: Redefining \ttfamily on input line 4628.
- [100]
+LaTeX Info: Redefining \rmfamily on input line 4695.
+LaTeX Info: Redefining \sffamily on input line 4695.
+LaTeX Info: Redefining \ttfamily on input line 4695.
+[101]
+LaTeX Info: Redefining \rmfamily on input line 4713.
+LaTeX Info: Redefining \sffamily on input line 4713.
+LaTeX Info: Redefining \ttfamily on input line 4713.
+ [102]
 Capitolo 19.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.40152pt on input line 4637.
+(Font)              scaled to size 14.40152pt on input line 4722.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 4637.
+(Font)              scaled to size 14.39845pt on input line 4722.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4637.
+(hyperref)                removing `math shift' on input line 4722.
 
-[101
+[103
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4672.
+(hyperref)                removing `math shift' on input line 4757.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4672.
+(hyperref)                removing `subscript' on input line 4757.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4672.
+(hyperref)                removing `math shift' on input line 4757.
 
-LaTeX Info: Redefining \rmfamily on input line 4709.
-LaTeX Info: Redefining \sffamily on input line 4709.
-LaTeX Info: Redefining \ttfamily on input line 4709.
-[102]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4716.
-
+LaTeX Info: Redefining \rmfamily on input line 4794.
+LaTeX Info: Redefining \sffamily on input line 4794.
+LaTeX Info: Redefining \ttfamily on input line 4794.
+[104]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4716.
+(hyperref)                removing `math shift' on input line 4801.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 4716.
+(hyperref)                removing `subscript' on input line 4801.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\left' on input line 4716.
+(hyperref)                removing `superscript' on input line 4801.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 4716.
+(hyperref)                removing `\left' on input line 4801.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4716.
+(hyperref)                removing `\begingroup' on input line 4801.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\bar' on input line 4716.
+(hyperref)                removing `subscript' on input line 4801.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 4716.
+(hyperref)                removing `\bar' on input line 4801.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 4716.
+(hyperref)                removing `\endgroup' on input line 4801.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 4716.
+(hyperref)                removing `\@@over' on input line 4801.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\right' on input line 4716.
+(hyperref)                removing `superscript' on input line 4801.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 4716.
+(hyperref)                removing `\right' on input line 4801.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 4716.
+(hyperref)                removing `superscript' on input line 4801.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4716.
+(hyperref)                removing `superscript' on input line 4801.
 
-LaTeX Info: Redefining \rmfamily on input line 4725.
-LaTeX Info: Redefining \sffamily on input line 4725.
-LaTeX Info: Redefining \ttfamily on input line 4725.
-[103]
-LaTeX Info: Redefining \rmfamily on input line 4725.
-LaTeX Info: Redefining \sffamily on input line 4725.
-LaTeX Info: Redefining \ttfamily on input line 4725.
- [104
 
-] [105] [106]
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4801.
+
+LaTeX Info: Redefining \rmfamily on input line 4810.
+LaTeX Info: Redefining \sffamily on input line 4810.
+LaTeX Info: Redefining \ttfamily on input line 4810.
+[105]
+LaTeX Info: Redefining \rmfamily on input line 4810.
+LaTeX Info: Redefining \sffamily on input line 4810.
+LaTeX Info: Redefining \ttfamily on input line 4810.
+ [106
+
+] [107] [108]
 Capitolo 20.
-[107
+[109
 
 ]
-LaTeX Info: Redefining \rmfamily on input line 4767.
-LaTeX Info: Redefining \sffamily on input line 4767.
-LaTeX Info: Redefining \ttfamily on input line 4767.
- [108
+LaTeX Info: Redefining \rmfamily on input line 4852.
+LaTeX Info: Redefining \sffamily on input line 4852.
+LaTeX Info: Redefining \ttfamily on input line 4852.
+ [110
 
 ]
 Capitolo 21.
-[109]
-LaTeX Info: Redefining \rmfamily on input line 4772.
-LaTeX Info: Redefining \sffamily on input line 4772.
-LaTeX Info: Redefining \ttfamily on input line 4772.
- [110
+[111]
+LaTeX Info: Redefining \rmfamily on input line 4857.
+LaTeX Info: Redefining \sffamily on input line 4857.
+LaTeX Info: Redefining \ttfamily on input line 4857.
+ [112
 
 ]
 Capitolo 22.
 File: d15539d1970035394b1f718ad297932c613ca3b0921d5661e4564c59114a0002.png Grap
 hic file (type bmp)
 <d15539d1970035394b1f718ad297932c613ca3b0921d5661e4564c59114a0002.png>
-[111]
+[113]
 File: c6965c58085cc4d71bfdf313c435b306c7f61cb53c920e592c9eb51a68c74a30.png Grap
 hic file (type bmp)
 <c6965c58085cc4d71bfdf313c435b306c7f61cb53c920e592c9eb51a68c74a30.png>
-LaTeX Info: Redefining \rmfamily on input line 4847.
-LaTeX Info: Redefining \sffamily on input line 4847.
-LaTeX Info: Redefining \ttfamily on input line 4847.
- [112]
+LaTeX Info: Redefining \rmfamily on input line 4932.
+LaTeX Info: Redefining \sffamily on input line 4932.
+LaTeX Info: Redefining \ttfamily on input line 4932.
+ [114]
 File: f13f70c80b4dea160b1518e19e0e9bcfcbbb4dd7aaf247870e153c2052f08e9f.png Grap
 hic file (type bmp)
 <f13f70c80b4dea160b1518e19e0e9bcfcbbb4dd7aaf247870e153c2052f08e9f.png>
-LaTeX Info: Redefining \rmfamily on input line 4873.
-LaTeX Info: Redefining \sffamily on input line 4873.
-LaTeX Info: Redefining \ttfamily on input line 4873.
- [113]
-LaTeX Info: Redefining \rmfamily on input line 4965.
-LaTeX Info: Redefining \sffamily on input line 4965.
-LaTeX Info: Redefining \ttfamily on input line 4965.
- [114]
+LaTeX Info: Redefining \rmfamily on input line 4958.
+LaTeX Info: Redefining \sffamily on input line 4958.
+LaTeX Info: Redefining \ttfamily on input line 4958.
+ [115]
+LaTeX Info: Redefining \rmfamily on input line 5050.
+LaTeX Info: Redefining \sffamily on input line 5050.
+LaTeX Info: Redefining \ttfamily on input line 5050.
+ [116]
 File: 8ff1ab26894ba132df999198647f33b134f8fde00b0a45134affaba03dd74337.png Grap
 hic file (type bmp)
 <8ff1ab26894ba132df999198647f33b134f8fde00b0a45134affaba03dd74337.png>
-LaTeX Info: Redefining \rmfamily on input line 5027.
-LaTeX Info: Redefining \sffamily on input line 5027.
-LaTeX Info: Redefining \ttfamily on input line 5027.
- [115]
-LaTeX Info: Redefining \rmfamily on input line 5072.
-LaTeX Info: Redefining \sffamily on input line 5072.
-LaTeX Info: Redefining \ttfamily on input line 5072.
- [116]
+LaTeX Info: Redefining \rmfamily on input line 5112.
+LaTeX Info: Redefining \sffamily on input line 5112.
+LaTeX Info: Redefining \ttfamily on input line 5112.
+ [117]
+LaTeX Info: Redefining \rmfamily on input line 5157.
+LaTeX Info: Redefining \sffamily on input line 5157.
+LaTeX Info: Redefining \ttfamily on input line 5157.
+ [118]
 File: 202fb4a67cbbf402e481e6a7fc837c087fc139b5c7079d8a0091d101d910c739.png Grap
 hic file (type bmp)
 <202fb4a67cbbf402e481e6a7fc837c087fc139b5c7079d8a0091d101d910c739.png>
-LaTeX Info: Redefining \rmfamily on input line 5128.
-LaTeX Info: Redefining \sffamily on input line 5128.
-LaTeX Info: Redefining \ttfamily on input line 5128.
- [117]
-LaTeX Info: Redefining \rmfamily on input line 5176.
-LaTeX Info: Redefining \sffamily on input line 5176.
-LaTeX Info: Redefining \ttfamily on input line 5176.
- [118]
+LaTeX Info: Redefining \rmfamily on input line 5213.
+LaTeX Info: Redefining \sffamily on input line 5213.
+LaTeX Info: Redefining \ttfamily on input line 5213.
+ [119]
+LaTeX Info: Redefining \rmfamily on input line 5261.
+LaTeX Info: Redefining \sffamily on input line 5261.
+LaTeX Info: Redefining \ttfamily on input line 5261.
+ [120]
 File: af2e0e0f0efb820ae2ee778cbb7b4e6da412b0d214bf3833439de303e76f5e01.png Grap
 hic file (type bmp)
 <af2e0e0f0efb820ae2ee778cbb7b4e6da412b0d214bf3833439de303e76f5e01.png>
 File: 734e43a58d86fe173d5e90854135661292f903de9be1925326eefcdd145504a5.png Grap
 hic file (type bmp)
 <734e43a58d86fe173d5e90854135661292f903de9be1925326eefcdd145504a5.png>
-LaTeX Info: Redefining \rmfamily on input line 5217.
-LaTeX Info: Redefining \sffamily on input line 5217.
-LaTeX Info: Redefining \ttfamily on input line 5217.
- [119]
-LaTeX Info: Redefining \rmfamily on input line 5331.
-LaTeX Info: Redefining \sffamily on input line 5331.
-LaTeX Info: Redefining \ttfamily on input line 5331.
- [120]
-LaTeX Info: Redefining \rmfamily on input line 5369.
-LaTeX Info: Redefining \sffamily on input line 5369.
-LaTeX Info: Redefining \ttfamily on input line 5369.
+LaTeX Info: Redefining \rmfamily on input line 5302.
+LaTeX Info: Redefining \sffamily on input line 5302.
+LaTeX Info: Redefining \ttfamily on input line 5302.
  [121]
+LaTeX Info: Redefining \rmfamily on input line 5416.
+LaTeX Info: Redefining \sffamily on input line 5416.
+LaTeX Info: Redefining \ttfamily on input line 5416.
+ [122]
+LaTeX Info: Redefining \rmfamily on input line 5454.
+LaTeX Info: Redefining \sffamily on input line 5454.
+LaTeX Info: Redefining \ttfamily on input line 5454.
+ [123]
 File: 5229b2d554bea96db9ecd8a27fc049d23b561deda63f503c82c45602f29eddfb.png Grap
 hic file (type bmp)
 <5229b2d554bea96db9ecd8a27fc049d23b561deda63f503c82c45602f29eddfb.png>
 File: 8c2e9c6f848caa9d0a1675129104394513a340c5eea74939fde5d631b3084b6a.png Grap
 hic file (type bmp)
 <8c2e9c6f848caa9d0a1675129104394513a340c5eea74939fde5d631b3084b6a.png>
-LaTeX Info: Redefining \rmfamily on input line 5406.
-LaTeX Info: Redefining \sffamily on input line 5406.
-LaTeX Info: Redefining \ttfamily on input line 5406.
- [122]
+LaTeX Info: Redefining \rmfamily on input line 5491.
+LaTeX Info: Redefining \sffamily on input line 5491.
+LaTeX Info: Redefining \ttfamily on input line 5491.
+ [124]
 Capitolo 23.
-[123
+[125
 
 ]
-LaTeX Info: Redefining \rmfamily on input line 5411.
-LaTeX Info: Redefining \sffamily on input line 5411.
-LaTeX Info: Redefining \ttfamily on input line 5411.
- [124
+LaTeX Info: Redefining \rmfamily on input line 5496.
+LaTeX Info: Redefining \sffamily on input line 5496.
+LaTeX Info: Redefining \ttfamily on input line 5496.
+ [126
 
-] [125] [126]
+] [127] [128]
 Capitolo 24.
-[127
+[129
 
 ]
-LaTeX Info: Redefining \rmfamily on input line 5438.
-LaTeX Info: Redefining \sffamily on input line 5438.
-LaTeX Info: Redefining \ttfamily on input line 5438.
- [128
+LaTeX Info: Redefining \rmfamily on input line 5523.
+LaTeX Info: Redefining \sffamily on input line 5523.
+LaTeX Info: Redefining \ttfamily on input line 5523.
+ [130
 
-] [129
+] [131
 
 
 ] (./book.ind)
@@ -2453,15 +2471,15 @@ braces):
 >  {italian/babelname}  =>  {italian}
 >  {italian/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {italian/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5449.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 5449.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5534.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5534.
  (./book.aux
 LaTeX Info: Redefining \rmfamily on input line 20.
 LaTeX Info: Redefining \sffamily on input line 20.
 LaTeX Info: Redefining \ttfamily on input line 20.
 )
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 5449.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5449.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 5534.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5534.
 
 Package rerunfilecheck Info: File `book.out' has not changed.
 (rerunfilecheck)             Checksum: 5A62CD1121F30CAA7086441CECF3FBEB;17164.
@@ -2471,12 +2489,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 42643 strings out of 481789
- 971486 string characters out of 5937152
- 1707707 words of memory out of 5000000
- 58782 multiletter control sequences out of 15000+600000
+ 42655 strings out of 481789
+ 972326 string characters out of 5937152
+ 1707705 words of memory out of 5000000
+ 58792 multiletter control sequences out of 15000+600000
  541366 words of font info for 145 fonts, out of 8000000 for 9000
  15 hyphenation exceptions out of 8191
- 71i,28n,109p,1309b,2280s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,28n,109p,1309b,2290s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on book.pdf (133 pages).
+Output written on book.pdf (135 pages).

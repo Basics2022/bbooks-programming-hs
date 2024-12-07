@@ -87,7 +87,7 @@
         
 
 \title{Introduzione alla programmazione per le scuole superiori}
-\date{07 dic 2024}
+\date{08 dic 2024}
 \release{}
 \author{basics}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -1162,7 +1162,7 @@ Convergence reached
 Sol, x = \PYGZhy{}0.567143440246582
 residual     : \PYGZhy{}2.348157265297246e\PYGZhy{}07
 n. iterations: 20
-elapsed time : 0.0005490779876708984
+elapsed time : 0.0006227493286132812
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1257,7 +1257,7 @@ Convergence reached
 Sol, x = \PYGZhy{}0.567143285989123
 residual     : 6.927808993140161e\PYGZhy{}09
 n. iterations: 3
-elapsed time : 0.0006461143493652344
+elapsed time : 0.0005528926849365234
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -1399,7 +1399,7 @@ Convergence reached
 Sol, x = [\PYGZhy{}0.61803399 \PYGZhy{}0.61803399]
 residual     : [ 0.00000000e+00 \PYGZhy{}2.10942375e\PYGZhy{}13]
 n. iterations: 4
-elapsed time : 0.0011439323425292969
+elapsed time : 0.0007610321044921875
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -2938,7 +2938,7 @@ tende alla distribuzione normale \(\mathscr{N}(0,1)\)
 (\PYGZhy{}5.0, 5.0)
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{c6126aa5edfbeee9427165e06d2d15efc03c49ecd4b6717e7ca1882ee0dea2e6}.png}
+\noindent\sphinxincludegraphics{{96839408c44229a6b5ad83f108d10b883f17ee110938b0e7cfede2f5c5cd21dd}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -3438,19 +3438,62 @@ X_1 & \sim \text{Categorial}\left(\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6
 X_2 & \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{1}{7},\frac{1}{7},\frac{1}{7}\right) 
 \end{aligned}\end{split}
 \end{equation*}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}
+\end{sphinxuseclass}
+\end{sphinxuseclass}
 \sphinxAtStartPar
-Per ogni esperimento, l’ipotesi nulla \(\text{H}_0\) è che il dado non sia truccato e che ogni faccia abbia una probabilità \(\frac{1}{6}\). La distribuzione di probabilità attesa è
+\sphinxstylestrong{Ipotesi nulla.} Per ogni esperimento, l’ipotesi nulla \(\text{H}_0\) è che il dado non sia truccato e che ogni faccia abbia una probabilità \(\frac{1}{6}\). La distribuzione di probabilità attesa è
 \begin{equation*}
 \begin{split}X|\text{H}_0 \sim \text{Categorial}\left(\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6}\right) \ .\end{split}
 \end{equation*}
+\sphinxAtStartPar
+\sphinxstylestrong{Statistica test.} Assumendo che la differenza tra le frequenze osservate e quelle attese abbiano una distribuzione gaussiana \(\sim \mathscr{N}(0, E^2)\), la statistica test ha una distribuzione
+\begin{equation*}
+\begin{split}X^2 = \sum_{k=1}^K \frac{(O_k - E_k)^2}{E_k} \sim \chi^2_{N-1} \ .\end{split}
+\end{equation*}
+\sphinxAtStartPar
+\sphinxstylestrong{todo} \sphinxstyleemphasis{link al motivo per cui i dof sono \(N-1\): sostanzialmente poiché la pdf è determinata da un solo parametro, un solo vincolo, che riduce di 1 il numero di dof}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Livello di significatività.} Si sceglie un livello di significatività \(\alpha = 0.05\), cioè solo il \(5\%\) di casi estremi invalidano l’ipotesi nulla. Il livello di significatività determina il valore della statistica test che separa le regioni di accettazione e di rifiuto dell’ipotesi.
+
 \begin{sphinxuseclass}{cell}
 \begin{sphinxuseclass}{tag_hide-input}
 \end{sphinxuseclass}
 \end{sphinxuseclass}
+\sphinxAtStartPar
+Se si vuole essere più conservativi e rigettare l’ipotesi nulla «solo per dadi palesemente truccati», si può ridurre il livello di significatività del test. Ad esempio, scegliendo \(\alpha = 0.01\) si identificano come truccati solo i risultati estremi che hanno probabilità cumulata di verificarsi dell”\(1\%\) sotto l’ipotesi nulla (1\% di falsi positivi).
+
 \begin{sphinxuseclass}{cell}
-\begin{sphinxuseclass}{tag_hide-input}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Rejection and acceptance regions for significance, alpha = 0.05
+\PYGZhy{} Not rejection for X2 \PYGZlt{} 11.0705
+\PYGZhy{} Rejection     for X2 \PYGZgt{} 11.0705
+
+Rejection limits as a function of significance level
+X\PYGZus{}rej\PYGZus{}lim( alpha=0.050 ) = 11.0705
+X\PYGZus{}rej\PYGZus{}lim( alpha=0.010 ) = 15.0863
+X\PYGZus{}rej\PYGZus{}lim( alpha=0.002 ) = 18.9074
+X\PYGZus{}rej\PYGZus{}lim( alpha=0.000 ) = 22.6141
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{0efd2fa4aebc7f84a3036424e8a6dfed64e2e966ba0122f5c069df76a019f401}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
 \end{sphinxuseclass}
 \end{sphinxuseclass}
+\sphinxAtStartPar
+Vengono svolti gli esperimenti, raccolti i dati, calcolata la statistica test sui campioni e questa viene utilizzata per trarre le conclusioni sull’ipotesi nulla.
+
 \begin{sphinxuseclass}{cell}
 \begin{sphinxuseclass}{tag_hide-input}
 \end{sphinxuseclass}
@@ -3463,17 +3506,7 @@ Per ogni esperimento, l’ipotesi nulla \(\text{H}_0\) è che il dado non sia tr
 \begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
 
 \begin{sphinxuseclass}{cell_output}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-Experiment: Fair, nrolls: 50
-\PYGZhy{} probability (unknown in real exp.) : [0.1667 0.1667 0.1667 0.1667 0.1667 0.1667]
-\PYGZhy{} Observed events                    : [ 6. 13.  8.  6.  8.  9.]
-\PYGZhy{} Test statistics, X2                : 4.000000000000001
-
-Experiment: Rigged, nrolls: 50
-\PYGZhy{} probability (unknown in real exp.) : [0.1429 0.1429 0.2857 0.1429 0.1429 0.1429]
-\PYGZhy{} Observed events                    : [ 5. 18. 13.  6.  3.  5.]
-\PYGZhy{} Test statistics, X2                : 20.560000000000002
-\end{sphinxVerbatim}
+\noindent\sphinxincludegraphics{{dfb025c4cb68d9ee83f61e38990a02cd4e6f13b02c21cd464f63c4075bbb8888}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -3483,7 +3516,59 @@ Experiment: Rigged, nrolls: 50
 \begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
 
 \begin{sphinxuseclass}{cell_output}
-\noindent\sphinxincludegraphics{{db97acfd258285ad41d79f45581077c65508437663d73dc056551fc0e26079ec}.png}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Experiment: Fair, nrolls: 1000
+\PYGZhy{} probability (unknown in real exp.) : [0.1667 0.1667 0.1667 0.1667 0.1667 0.1667]
+\PYGZhy{} Observed events                    : [163. 174. 189. 165. 151. 158.]
+\PYGZhy{} Test statistics, X2                : 5.3360
+\PYGZgt{}\PYGZgt{} H0 not rejected (5.3360 \PYGZlt{} X\PYGZus{}lim=11.0705): dice is fair
+
+Experiment: Rigged, nrolls: 1000
+\PYGZhy{} probability (unknown in real exp.) : [0.1429 0.1429 0.2857 0.1429 0.1429 0.1429]
+\PYGZhy{} Observed events                    : [124. 163. 292. 126. 139. 156.]
+\PYGZhy{} Test statistics, X2                : 120.4520
+\PYGZgt{}\PYGZgt{} H0 rejected (120.4520 \PYGZgt{} X\PYGZus{}lim=11.0705): dice is rigged
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\sphinxAtStartPar
+\sphinxstylestrong{Dipendenza del risultato del test dal numero di prove.}
+Si analizzano i risultati in funzione del numero di lanci fatti in ogni test. Si osserva che:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+nel caso di dado non truccato la statistica test \(X^2\) non dimostra una convergenza (almeno fino a \(n_{rolls} = 5000\)) ma rimane limitata
+
+\item {} 
+\sphinxAtStartPar
+nel caso di dado truccato, la statistica test \(X^2\) cresce circa linearmnete con il numero di lanci \(n_{rolls}\)
+
+\end{itemize}
+
+\sphinxAtStartPar
+Nei \(500\) test svolti, il test ha dato risultati falso positivi nel \(4.8\%\) dei casi con \(\alpha = 0.05\) nel caso di dado non truccato (\sphinxstylestrong{!} ottimo, poiché il test si proponeva di rigettare proprio il \(5\%\) dei casi estremi), mentre ha riconosciuto il dado truccato come tale quasi tutte le volte.
+
+\sphinxAtStartPar
+Il progetto di un esperimento prevede la determinazione del numero di lanci necessario (senza andare troppo oltre! Tempo, soldi e pazienza sono una risorse finite!) per distinguere con la sufficiente accuratezza un dado truccato.
+
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}
+\end{sphinxuseclass}
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}
+\begin{sphinxuseclass}{tag_hide-input}\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+N. of rejections of H0, over 500 tests
+\PYGZhy{} Experiment: Fair      ,    24,  4.8\PYGZpc{}  (false positive) 
+\PYGZhy{} Experiment: Rigged    ,   493, 98.6\PYGZpc{} 
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{9ebccc87ce678737aa0d84c01f60c8484cfb74e2a8c3a91eeb8d83d862e13398}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -4134,10 +4219,10 @@ Il valore medio delle volte che è uscita croce viene usata come statistica test
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}matplotlib.legend.Legend at 0x7efffc9c3d60\PYGZgt{}
+\PYGZlt{}matplotlib.legend.Legend at 0x7f4ecc12ca30\PYGZgt{}
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{f9eea85ffaaa615564a1d98cdb01702c377f87e081adeb0a3595e517ebd6bce0}.png}
+\noindent\sphinxincludegraphics{{58ae7016b4c11f48d294cb7f957b386159e0e9c6b8e11d63babb4346922a3a02}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -4242,7 +4327,7 @@ Sample statistics:
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x7fb3d397da60\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x7fb1f5af3a60\PYGZgt{}]
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{b447209d18774c554d77059adc27f1afcb900a0a10e8e9db17f5ca0f6304b8c4}.png}
@@ -4363,7 +4448,7 @@ Reject the null hypothesis: The means of the two classes are significantly diffe
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x7fb3d38a0f40\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x7fb1f5a14f70\PYGZgt{}]
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{ad9e0a740f0f409ab9699cc4cac6809aff9c408ab244bacfcd1a9c9e8e4c1ab3}.png}
