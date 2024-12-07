@@ -15,7 +15,8 @@ Date due variabili casuali gaussiane indipendenti, $X_1 \sim \mathscr{N}(\mu_1,\
 $$\begin{aligned}
  f_{X_1 X_2}(x_1,x_2)
  & = f_{X_1}(x_1) f_{X_2}(x_2) = \\
- & = \frac{1}{\sqrt{2 \pi  \sigma_1^2}} \exp\left[-\frac{(x_1-\mu_1)}{2 \sigma_1^2} \right] \, \frac{1}{\sqrt{2 \pi  \sigma_2^2}} \exp\left[-\frac{(x_2-\mu_2)}{2 \sigma_2^2} \right]$$
+ & = \frac{1}{\sqrt{2 \pi  \sigma_1^2}} \exp\left[-\frac{(x_1-\mu_1)}{2 \sigma_1^2} \right] \, \frac{1}{\sqrt{2 \pi  \sigma_2^2}} \exp\left[-\frac{(x_2-\mu_2)}{2 \sigma_2^2} \right] = \\\
+\end{aligned}$$
 
 ```
 
