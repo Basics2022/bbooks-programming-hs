@@ -603,9 +603,6 @@ document.write(`
 X_1 &amp; \sim \text{Categorial}\left(\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6}\right) \\
 X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{1}{7},\frac{1}{7},\frac{1}{7}\right) 
 \end{aligned}\end{split}\]</div>
-<p>Per ogni esperimento, l’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span> è che il dado non sia truccato e che ogni faccia abbia una probabilità <span class="math notranslate nohighlight">\(\frac{1}{6}\)</span>. La distribuzione di probabilità attesa è</p>
-<div class="math notranslate nohighlight">
-\[X|\text{H}_0 \sim \text{Categorial}\left(\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6}\right) \ .\]</div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -654,6 +651,14 @@ X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{
 </div>
 </details>
 </div>
+<p><strong>Ipotesi nulla.</strong> Per ogni esperimento, l’ipotesi nulla <span class="math notranslate nohighlight">\(\text{H}_0\)</span> è che il dado non sia truccato e che ogni faccia abbia una probabilità <span class="math notranslate nohighlight">\(\frac{1}{6}\)</span>. La distribuzione di probabilità attesa è</p>
+<div class="math notranslate nohighlight">
+\[X|\text{H}_0 \sim \text{Categorial}\left(\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6}\right) \ .\]</div>
+<p><strong>Statistica test.</strong> Assumendo che la differenza tra le frequenze osservate e quelle attese abbiano una distribuzione gaussiana <span class="math notranslate nohighlight">\(\sim \mathscr{N}(0, E^2)\)</span>, la statistica test ha una distribuzione</p>
+<div class="math notranslate nohighlight">
+\[X^2 = \sum_{k=1}^K \frac{(O_k - E_k)^2}{E_k} \sim \chi^2_{N-1} \ .\]</div>
+<p><strong>todo</strong> <em>link al motivo per cui i dof sono <span class="math notranslate nohighlight">\(N-1\)</span>: sostanzialmente poiché la pdf è determinata da un solo parametro, un solo vincolo, che riduce di 1 il numero di dof</em></p>
+<p><strong>Livello di significatività.</strong> Si sceglie un livello di significatività <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span>, cioè solo il <span class="math notranslate nohighlight">\(5%\)</span> di casi estremi invalidano l’ipotesi nulla. Questo livello di significatività determina il valore che separa le regioni di accettazione e di rifiuto dell’ipotesi, $$</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
