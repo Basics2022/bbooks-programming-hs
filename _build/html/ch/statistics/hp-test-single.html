@@ -77,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HJXVQD0KFB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HJXVQD0KFB');
+</script>
+
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -658,7 +667,7 @@ X_2 &amp; \sim \text{Categorial}\left(\frac{1}{7},\frac{1}{7},\frac{2}{7},\frac{
 <div class="math notranslate nohighlight">
 \[X^2 = \sum_{k=1}^K \frac{(O_k - E_k)^2}{E_k} \sim \chi^2_{N-1} \ .\]</div>
 <p><strong>todo</strong> <em>link al motivo per cui i dof sono <span class="math notranslate nohighlight">\(N-1\)</span>: sostanzialmente poiché la pdf è determinata da un solo parametro, un solo vincolo, che riduce di 1 il numero di dof</em></p>
-<p><strong>Livello di significatività.</strong> Si sceglie un livello di significatività <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span>, cioè solo il <span class="math notranslate nohighlight">\(5%\)</span> di casi estremi invalidano l’ipotesi nulla. Il livello di significatività determina il valore della statistica test che separa le regioni di accettazione e di rifiuto dell’ipotesi.</p>
+<p><strong>Livello di significatività.</strong> Si sceglie un livello di significatività <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span>, cioè solo il <span class="math notranslate nohighlight">\(5\%\)</span> di casi estremi invalidano l’ipotesi nulla. Il livello di significatività determina il valore della statistica test che separa le regioni di accettazione e di rifiuto dell’ipotesi.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -867,7 +876,7 @@ Si analizzano i risultati in funzione del numero di lanci fatti in ogni test. Si
 <li><p>nel caso di dado non truccato la statistica test <span class="math notranslate nohighlight">\(X^2\)</span> non dimostra una convergenza (almeno fino a <span class="math notranslate nohighlight">\(n_{rolls} = 5000\)</span>) ma rimane limitata</p></li>
 <li><p>nel caso di dado truccato, la statistica test <span class="math notranslate nohighlight">\(X^2\)</span> cresce circa linearmnete con il numero di lanci <span class="math notranslate nohighlight">\(n_{rolls}\)</span></p></li>
 </ul>
-<p>Nei <span class="math notranslate nohighlight">\(500\)</span> test svolti, il test ha dato risultati falso positivi nel <span class="math notranslate nohighlight">\(4.8%\)</span> dei casi con <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span> nel caso di dado non truccato (<strong>!</strong> ottimo, poiché il test si proponeva di rigettare proprio il <span class="math notranslate nohighlight">\(5\%\)</span> dei casi estremi), mentre ha riconosciuto il dado truccato come tale quasi tutte le volte.</p>
+<p>Nei <span class="math notranslate nohighlight">\(500\)</span> test svolti, il test ha dato risultati falso positivi nel <span class="math notranslate nohighlight">\(4.8\%\)</span> dei casi con <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span> nel caso di dado non truccato (<strong>!</strong> ottimo, poiché il test si proponeva di rigettare proprio il <span class="math notranslate nohighlight">\(5\%\)</span> dei casi estremi), mentre ha riconosciuto il dado truccato come tale quasi tutte le volte.</p>
 <p>Il progetto di un esperimento prevede la determinazione del numero di lanci necessario (senza andare troppo oltre! Tempo, soldi e pazienza sono una risorse finite!) per distinguere con la sufficiente accuratezza un dado truccato.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
